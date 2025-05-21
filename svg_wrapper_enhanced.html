@@ -1,68 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SVG Wrapper Enhanced</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced SVG Viewer Wrapper</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background-color: #000;
+      font-family: sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
     }
-    #wrapper {
+
+    .toolbar {
+      padding: 20px 10px 10px;
       width: 100%;
-      height: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      transform-origin: 0 0;
-      transform: scale(1);
-    }
-    .btn-bar {
-      position: absolute;
-      top: 10px;
-      left: 10px;
+      background-color: #222;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
       z-index: 10;
     }
-    .btn {
-      margin: 5px;
-      padding: 10px 20px;
-      background: red;
-      color: white;
-      border: none;
-      border-radius: 5px;
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 1rem;
       font-weight: bold;
+      background-color: #00bcd4;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0097a7;
+    }
+
+    iframe {
+      width: 100%;
+      height: 90vh; /* Leaves space for top buttons */
+      border: none;
     }
   </style>
 </head>
 <body>
-  <div class="btn-bar">
-    <button class="btn" id="overdriveBtn">Overdrive Zoom 🚀</button>
-    <button class="btn" onclick="window.location.href='full_svg.html'">Basic View</button>
-  </div>
-  <div id="wrapper">
-    <iframe id="svgFrame" src="full_svg.html"></iframe>
+
+  <div class="toolbar">
+    <h2>Mobile Zoom Viewer</h2>
+    <a href="index.html" class="button">🔙 Return to Main Viewer</a>
+    <a href="full_svg.html" class="button">📱 Open Full SVG (Zoom + Overdrive)</a>
   </div>
 
-  <script>
-    const iframe = document.getElementById('svgFrame');
-    let scale = 1;
-    let overdrive = false;
+  <!-- The iframe shows the embedded SVG page -->
+  <iframe src="full_svg.html"></iframe>
 
-    document.getElementById('overdriveBtn').addEventListener('click', () => {
-      overdrive = !overdrive;
-      scale = overdrive ? 2 : 1;
-      iframe.style.transform = `scale(${scale})`;
-      document.getElementById('overdriveBtn').textContent = overdrive ? "Normal Zoom 🔍" : "Overdrive Zoom 🚀";
-    });
-  </script>
 </body>
 </html>
