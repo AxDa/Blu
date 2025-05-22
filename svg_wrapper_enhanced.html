@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SVG Wrapper Enhanced</title>
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       overflow: hidden;
       font-family: sans-serif;
+      background: #000;
     }
 
     .toolbar {
@@ -23,21 +24,22 @@
       flex-wrap: wrap;
       justify-content: center;
       z-index: 9999;
-      padding: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+      padding: 6px 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
     }
 
     .button {
-      margin: 5px;
-      padding: 10px 16px;
+      margin: 4px;
+      padding: 10px 14px;
       background-color: #007BFF;
       border: none;
       border-radius: 6px;
       color: white;
-      font-size: 15px;
+      font-size: 14px;
       cursor: pointer;
       font-weight: bold;
       transition: background-color 0.3s ease;
+      white-space: nowrap;
     }
 
     .button:hover {
@@ -46,10 +48,10 @@
 
     .iframe-container {
       position: absolute;
-      top: 10px; /* Adjust if toolbar wraps more than 1 row */
+      top: 64px; /* Height of toolbar */
       left: 0;
       width: 100%;
-      height: calc(100% - 80px);
+      height: calc(100% - 64px);
     }
 
     iframe {
@@ -59,14 +61,21 @@
     }
 
     @media (max-width: 600px) {
+      .toolbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+      }
+
       .button {
-        width: 90%;
+        width: 95%;
         font-size: 16px;
+        padding: 12px 16px;
       }
 
       .iframe-container {
-        top: 120px; /* Allow more room if buttons wrap */
-        height: calc(100% - 120px);
+        top: 240px; /* Leave room for stacked buttons */
+        height: calc(100% - 240px);
       }
     }
   </style>
@@ -76,12 +85,12 @@
     <button class="button" onclick="window.location.href='index.html'">🏠 Main Viewer</button>
     <button class="button" onclick="window.location.href='full_svg.html'">🖼️ Desktop Mode</button>
     <button class="button" onclick="window.location.href='toggle_image.html'">🛰️ Secret Station</button>
-    <button class="button" onclick="window.location.href='toggle_image_sss.html'">🛰️ Secret Station_blu_print</button>
-    <button class="button" onclick="alert('Overdrive coming soon to mobile!')">⚡ Overdrive</button>
+    <button class="button" onclick="window.location.href='toggle_image_sss.html'">📘 Station Blueprint</button>
+    <button class="button" onclick="alert('⚡ Overdrive Zoom coming soon to mobile!')">⚡ Overdrive</button>
   </div>
 
   <div class="iframe-container">
-    <iframe src="full_svg.html"></iframe>
+    <iframe src="full_svg.html" title="Enhanced SVG Viewer"></iframe>
   </div>
 </body>
 </html>
