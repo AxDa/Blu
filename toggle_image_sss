@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secret Space Station Image</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: black;
+      color: white;
+    }
+    img {
+      width: 80%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🚀 Secret Space Station Blueprint 🛰️</h1>
+<img src="./View_secret_space_station.png">
+
+<br><br>
+<button id="toggle-back-btn" style="padding: 10px; font-size: 16px; background: #00ccff; border: none; cursor: pointer;">
+    Back to Full SVG 🖼️
+</button>
+
+<script>
+  document.getElementById("toggle-back-btn").addEventListener("click", function() {
+      window.location.href = "./full_svg.html";
+  });
+</script>
+
+</body>
+</html>
