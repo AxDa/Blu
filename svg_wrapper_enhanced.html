@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"/>
   <title>SVG Wrapper Enhanced</title>
   <style>
     html, body {
@@ -137,6 +137,12 @@
       width: 100%;
       height: 100%;
       border: none;
+    }
+
+    iframe {
+      touch-action: auto;
+      zoom: 1;
+      transform-origin: 0 0;
     }
 
     @media (max-width: 600px) {
