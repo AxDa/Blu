@@ -1,6 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SVG Wrapper Enhanced</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    .toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #111;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px;
+      z-index: 9999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    }
+
+    .button {
+      margin: 5px;
+      padding: 10px 16px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #005bb5;
+    }
+
+    /* Adjust SVG space below toolbar */
+    .iframe-container {
+      position: absolute;
+      top: 160px; /* Adjusted height for 3+ rows of buttons */
+      left: 0;
+      width: 100%;
+      height: calc(100% - 160px);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Responsive for small screens */
+    @media (max-width: 600px) {
+      .button {
+        width: 90%;
+        font-size: 16px;
+      }
+
+      .iframe-container {
+        top: 220px; /* More space for stacked mobile layout */
+        height: calc(100% - 220px);
+      }
+    }
+  </style>
+</head>
   <meta charset="UTF-8" />
   <title>FINV2AXMP CSV Viewer</title>
   <div id="pagination" style="margin-top: 1em;"></div>
