@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Embedded MP3 with SVG</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; }
+    iframe { border: none; width: 100%; height: 120px; }
+  </style>
+</head>
+<body>
+  <h2>Embedded Audio Playback</h2>
+  <div>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="100">
+  <rect x="10" y="10" width="100" height="30" fill="red" stroke="black" stroke-width="1"/>
+  <text x="120" y="30" font-size="14">bleaktyrestperambulator.mp3</text>
+</svg>
+
+  </div>
+  <audio controls>
+    <source src="data:audio/mpeg;base64,SUQzAwAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
