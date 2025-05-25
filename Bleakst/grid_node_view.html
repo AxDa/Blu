@@ -94,7 +94,7 @@
   <audio controls src="audio/your_file.mp3"></audio>  
 </html>
 
-### 🧩 HTML + JavaScript Template (del nada _-_háo wúlǐyóu-毫无理由 ) = 🌩️ Cabin Pressure: Stable | Altitude: Holding Pattern | Next Waypoint: Audio Deployment 🧩 ###
+### 🧩 HTML + JavaScript Template (Drop-in Ready)
 
 ```html
 <!DOCTYPE html>
@@ -102,6 +102,11 @@
 <head>
   <meta charset="UTF-8" />
   <title>Gang Group Filter View</title>
+  <style>
+    circle {
+      transition: opacity 0.3s ease;
+    }
+  </style>
   <style>
     body {
       background: black;
@@ -145,6 +150,33 @@
   <object id="svgObject" type="image/svg+xml" data="output_with_grid_nodes.svg" width="100%" height="100%"></object>
 
   <script>
+    const svgObject = document.getElementById("svgObject");
+    
+    svgObject.addEventListener("load", () => {
+      const svgDoc = svgObject.contentDocument;
+      const allNodes = svgDoc.querySelectorAll("circle");
+    
+      // Listen to dropdown
+      document.getElementById("gangFilter").addEventListener("change", function() {
+        const selectedGang = this.value;
+    
+        allNodes.forEach(node => {
+          const classes = node.getAttribute("class") || "";
+    
+          if (selectedGang === "All" || classes.includes(`gang-${selectedGang.replace(/\s/g, "_")}`)) {
+            node.style.display = "inline";
+          } else {
+            node.node.style.opacity = "0";
+            node.style.pointerEvents = "none";
+            node.style.opacity = "1";
+            node.style.pointerEvents = "auto";
+          }
+        });
+      });
+    });
+  </script>
+
+  <script>
     document.getElementById("gangSelect").addEventListener("change", function () {
       const selected = this.value;
       const svgDoc = document.getElementById("svgObject").contentDocument;
@@ -156,7 +188,10 @@
         if (selected === "all" || (cls && cls.includes(`gang-${selected.replace(" ", "_")}`))) {
           node.style.display = "";
         } else {
-          node.style.display = "none";
+          node.node.style.opacity = "0";
+          node.style.pointerEvents = "none";
+          node.style.opacity = "1";
+          node.style.pointerEvents = "auto";
         }
       });
 
@@ -166,7 +201,10 @@
         if (selected === "all" || (cls && cls.includes(`gang-${selected.replace(" ", "_")}`))) {
           label.style.display = "";
         } else {
-          label.style.display = "none";
+          label.node.style.opacity = "0";
+          node.style.pointerEvents = "none";
+          node.style.opacity = "1";
+          node.style.pointerEvents = "auto";
         }
       });
     });
