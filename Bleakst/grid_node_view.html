@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +31,22 @@
       background-color: black;
     }
   </style>
+  <select id="gang-filter" onchange="filterGang(this.value)">
+    <option value="all">All Gangs</option>
+    <option value="Agency">Agency</option>
+    <option value="Siren">Siren</option>
+    <option value="Aire">Aire</option>
+    <option value="Bleakst">Bleakst</option>
+    <option value="Neighbour">Neighbour</option>
+    <option value="Bleed">Bleed</option>
+    <option value="Corporation">Corporation</option>
+    <option value="Fireworks">Fireworks</option>
+    <option value="K9">K9</option>
+    <option value="Leo">Leo</option>
+    <option value="Perambulator">Perambulator</option>
+    <option value="Sonics">Sonics</option>
+    <option value="Street Circus">Street Circus</option>
+  </select>
 </head>
 <body>
 
@@ -44,7 +59,37 @@
   <br>
   <button class="button" onclick="window.location.href='https://axda.github.io/Blu/full_svg.html'">🔙 Return to Full SVG View</button>
 </div>
+<div id="legend" style="padding: 12px; background: #111; color: white; font-family: sans-serif; display: flex; flex-wrap: wrap;">
+    <strong style="margin-right: 10px;">Gang Legend:</strong>
+    <span style="color:#e6194B;">⬤ Agency</span>&nbsp;
+    <span style="color:#4363d8;">⬤ Siren</span>&nbsp;
+    <span style="color:#3cb44b;">⬤ Aire</span>&nbsp;
+    <span style="color:#ffe119;">⬤ Bleakst</span>&nbsp;
+    <span style="color:#f58231;">⬤ Neighbour</span>&nbsp;
+    <span style="color:#911eb4;">⬤ Bleed</span>&nbsp;
+    <span style="color:#46f0f0;">⬤ Corporation</span>&nbsp;
+    <span style="color:#f032e6;">⬤ Fireworks</span>&nbsp;
+    <span style="color:#bcf60c;">⬤ K9</span>&nbsp;
+    <span style="color:#fabebe;">⬤ Leo</span>&nbsp;
+    <span style="color:#008080;">⬤ Perambulator</span>&nbsp;
+    <span style="color:#e6beff;">⬤ Sonics</span>&nbsp;
+    <span style="color:#9a6324;">⬤ Street Circus</span>
+  </div>
+
 
 </body>
+<script>
+    function filterGang(group) {
+      const allNodes = document.querySelectorAll('circle, text');
+      allNodes.forEach(el => el.style.display = 'none');
+    
+      if (group === 'all') {
+        allNodes.forEach(el => el.style.display = '');
+      } else {
+        const nodes = document.querySelectorAll(`.gang-${group.replace(' ', '_')}`);
+        nodes.forEach(el => el.style.display = '');
+      }
+    }
+    </script>
+  <audio controls src="audio/your_file.mp3"></audio>  
 </html>
-
