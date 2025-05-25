@@ -23,6 +23,11 @@
       color: black;
       cursor: pointer;
     }
+    select {
+      font-size: 16px;
+      margin: 10px;
+      padding: 5px 10px;
+    }
     svg {
       max-width: 100%;
       height: auto;
@@ -31,104 +36,13 @@
       background-color: black;
     }
   </style>
-  <select id="gang-filter" onchange="filterGang(this.value)">
-    <option value="all">All Gangs</option>
-    <option value="Agency">Agency</option>
-    <option value="Siren">Siren</option>
-    <option value="Aire">Aire</option>
-    <option value="Bleakst">Bleakst</option>
-    <option value="Neighbour">Neighbour</option>
-    <option value="Bleed">Bleed</option>
-    <option value="Corporation">Corporation</option>
-    <option value="Fireworks">Fireworks</option>
-    <option value="K9">K9</option>
-    <option value="Leo">Leo</option>
-    <option value="Perambulator">Perambulator</option>
-    <option value="Sonics">Sonics</option>
-    <option value="Street Circus">Street Circus</option>
-  </select>
 </head>
 <body>
 
-<div class="container">
-  <h1>🛰️ Grid Node Overlay</h1>
-  <object data="output_with_grid_nodes_the ash of Thera whispers, the link is open, but the gate keeper is blind May 24, 2025, 08_19_58 AM.svg" type="image/svg+xml" width="100%" height="1000px">
-    Your browser does not support SVGs.
-  </object>
-  
-  <br>
-  <button class="button" onclick="window.location.href='https://axda.github.io/Blu/full_svg.html'">🔙 Return to Full SVG View</button>
-</div>
-<div id="legend" style="padding: 12px; background: #111; color: white; font-family: sans-serif; display: flex; flex-wrap: wrap;">
-    <strong style="margin-right: 10px;">Gang Legend:</strong>
-    <span style="color:#e6194B;">⬤ Agency</span>&nbsp;
-    <span style="color:#4363d8;">⬤ Siren</span>&nbsp;
-    <span style="color:#3cb44b;">⬤ Aire</span>&nbsp;
-    <span style="color:#ffe119;">⬤ Bleakst</span>&nbsp;
-    <span style="color:#f58231;">⬤ Neighbour</span>&nbsp;
-    <span style="color:#911eb4;">⬤ Bleed</span>&nbsp;
-    <span style="color:#46f0f0;">⬤ Corporation</span>&nbsp;
-    <span style="color:#f032e6;">⬤ Fireworks</span>&nbsp;
-    <span style="color:#bcf60c;">⬤ K9</span>&nbsp;
-    <span style="color:#fabebe;">⬤ Leo</span>&nbsp;
-    <span style="color:#008080;">⬤ Perambulator</span>&nbsp;
-    <span style="color:#e6beff;">⬤ Sonics</span>&nbsp;
-    <span style="color:#9a6324;">⬤ Street Circus</span>
-  </div>
-
-
-</body>
-<script>
-    function filterGang(group) {
-      const allNodes = document.querySelectorAll('circle, text');
-      allNodes.forEach(el => el.style.display = 'none');
-    
-      if (group === 'all') {
-        allNodes.forEach(el => el.style.display = '');
-      } else {
-        const nodes = document.querySelectorAll(`.gang-${group.replace(' ', '_')}`);
-        nodes.forEach(el => el.style.display = '');
-      }
-    }
-    </script>
-  <audio controls src="audio/your_file.mp3"></audio>  
-</html>
-
-### 🧩 HTML + JavaScript Template (Drop-in Ready) del nada -_- háo wúlǐyóu 毫无理由 🧩 ###
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Gang Group Filter View</title>
-  <style>
-    circle {
-      transition: opacity 0.3s ease;
-    }
-  </style>
-  <style>
-    body {
-      background: black;
-      color: white;
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    #controls {
-      padding: 12px;
-      background: #111;
-    }
-    select {
-      font-size: 16px;
-      padding: 4px 8px;
-    }
-  </style>
-</head>
-<body>
-  <div id="controls">
-    <label for="gangSelect">Filter by Gang:</label>
-    <select id="gangSelect">
+  <!-- Header Filter -->
+  <div>
+    <label for="gang-filter">Filter by Gang:</label>
+    <select id="gang-filter">
       <option value="all">All Gangs</option>
       <option value="Agency">Agency</option>
       <option value="Siren">Siren</option>
@@ -146,100 +60,111 @@
     </select>
   </div>
 
-  <!-- Load SVG directly -->
-  <object id="svgObject" type="image/svg+xml" data="output_with_grid_nodes.svg" width="100%" height="100%"></object>
+  <div class="container">
+    <h1>🛰️ Grid Node Overlay</h1>
 
-  <script>
-    const svgObject = document.querySelector("object");
+    <!-- Embedded SVG -->
+    <object id="svgObject" data="output_with_grid_nodes_the ash of Thera whispers, the link is open, but the gate keeper is blind May 24, 2025, 08_19_58 AM.svg" type="image/svg+xml" width="100%" height="1000px">
+      Your browser does not support SVGs.
+    </object>
+
+    <br>
+    <button class="button" onclick="window.location.href='https://axda.github.io/Blu/full_svg.html'">
+      🔙 Return to Full SVG View
+    </button>
+  </div>
+
+  <!-- Gang Legend -->
+  <div id="legend" style="padding: 12px; background: #111; color: white; font-family: sans-serif; display: flex; flex-wrap: wrap;">
+    <strong style="margin-right: 10px;">Gang Legend:</strong>
+    <span style="color:#e6194B;">⬤ Agency</span>&nbsp;
+    <span style="color:#4363d8;">⬤ Siren</span>&nbsp;
+    <span style="color:#3cb44b;">⬤ Aire</span>&nbsp;
+    <span style="color:#ffe119;">⬤ Bleakst</span>&nbsp;
+    <span style="color:#f58231;">⬤ Neighbour</span>&nbsp;
+    <span style="color:#911eb4;">⬤ Bleed</span>&nbsp;
+    <span style="color:#46f0f0;">⬤ Corporation</span>&nbsp;
+    <span style="color:#f032e6;">⬤ Fireworks</span>&nbsp;
+    <span style="color:#bcf60c;">⬤ K9</span>&nbsp;
+    <span style="color:#fabebe;">⬤ Leo</span>&nbsp;
+    <span style="color:#008080;">⬤ Perambulator</span>&nbsp;
+    <span style="color:#e6beff;">⬤ Sonics</span>&nbsp;
+    <span style="color:#9a6324;">⬤ Street Circus</span>
+  </div>
+
+  <!-- Footer Filter and Audio Player -->
+  <div style="margin: 20px 0;">
+    <label for="gang-filter-footer">Filter by Gang:</label>
+    <select id="gang-filter-footer">
+      <option value="all">All Gangs</option>
+      <option value="Agency">Agency</option>
+      <option value="Siren">Siren</option>
+      <option value="Aire">Aire</option>
+      <option value="Bleakst">Bleakst</option>
+      <option value="Neighbour">Neighbour</option>
+      <option value="Bleed">Bleed</option>
+      <option value="Corporation">Corporation</option>
+      <option value="Fireworks">Fireworks</option>
+      <option value="K9">K9</option>
+      <option value="Leo">Leo</option>
+      <option value="Perambulator">Perambulator</option>
+      <option value="Sonics">Sonics</option>
+      <option value="Street Circus">Street Circus</option>
+    </select>
+
+    <br><br>
+    <audio controls src="audio/your_file.mp3"></audio>
+  </div>
+
+</html>
+
+### 🧩 HTML + JavaScript Template (Drop-in Ready) del nada -_- háo wúlǐyóu 毫无理由 🧩 ###  <audio controls src="audio/your_file.mp3"></audio>  
+</html>
   
-    svgObject.addEventListener("load", () => {
+  <!-- JavaScript Filtering Logic -->
+  <script>
+    function filterGang(group) {
+      const svgObject = document.getElementById("svgObject");
       const svgDoc = svgObject.contentDocument;
-      const allNodes = svgDoc.querySelectorAll("circle");
-      const allLabels = svgDoc.querySelectorAll("text");
-  
-      document.getElementById("gang-filter").addEventListener("change", function () {
-        const selected = this.value;
-        allNodes.forEach(node => {
-          const cls = node.getAttribute("class") || "";
-          if (selected === "all" || cls.includes(`gang-${selected.replace(" ", "_")}`)) {
-            node.style.display = "";
-          } else {
-            node.style.display = "none";
-          }
-        });
-  
-        allLabels.forEach(label => {
-          const prev = label.previousElementSibling;
-          const cls = prev && prev.getAttribute("class") || "";
-          if (selected === "all" || cls.includes(`gang-${selected.replace(" ", "_")}`)) {
-            label.style.display = "";
-          } else {
-            label.style.display = "none";
-          }
-        });
-      });
-    });
-  </script>
 
-  <script>
-    const svgObject = document.getElementById("svgObject");
-    
-    svgObject.addEventListener("load", () => {
-      const svgDoc = svgObject.contentDocument;
-      const allNodes = svgDoc.querySelectorAll("circle");
-    
-      // Listen to dropdown
-      document.getElementById("gangFilter").addEventListener("change", function() {
-        const selectedGang = this.value;
-    
-        allNodes.forEach(node => {
-          const classes = node.getAttribute("class") || "";
-    
-          if (selectedGang === "All" || classes.includes(`gang-${selectedGang.replace(/\s/g, "_")}`)) {
-            node.style.display = "inline";
-          } else {
-            node.node.style.opacity = "0";
-            node.style.pointerEvents = "none";
-            node.style.opacity = "1";
-            node.style.pointerEvents = "auto";
-          }
-        });
-      });
-    });
-  </script>
+      if (!svgDoc) return;
 
-  <script>
-    document.getElementById("gangSelect").addEventListener("change", function () {
-      const selected = this.value;
-      const svgDoc = document.getElementById("svgObject").contentDocument;
       const allNodes = svgDoc.querySelectorAll("circle");
       const allLabels = svgDoc.querySelectorAll("text");
 
       allNodes.forEach(node => {
-        const cls = node.getAttribute("class");
-        if (selected === "all" || (cls && cls.includes(`gang-${selected.replace(" ", "_")}`))) {
-          node.style.display = "";
-        } else {
-          node.node.style.opacity = "0";
-          node.style.pointerEvents = "none";
-          node.style.opacity = "1";
-          node.style.pointerEvents = "auto";
-        }
+        const cls = node.getAttribute("class") || "";
+        node.style.display = (group === "all" || cls.includes(`gang-${group.replace(" ", "_")}`)) ? "" : "none";
       });
 
       allLabels.forEach(label => {
-        const nextTo = label.previousElementSibling;
-        const cls = nextTo && nextTo.getAttribute("class");
-        if (selected === "all" || (cls && cls.includes(`gang-${selected.replace(" ", "_")}`))) {
-          label.style.display = "";
-        } else {
-          label.node.style.opacity = "0";
-          node.style.pointerEvents = "none";
-          node.style.opacity = "1";
-          node.style.pointerEvents = "auto";
-        }
+        const sibling = label.previousElementSibling;
+        const cls = sibling?.getAttribute("class") || "";
+        label.style.display = (group === "all" || cls.includes(`gang-${group.replace(" ", "_")}`)) ? "" : "none";
+      });
+    }
+
+    function syncDropdowns(value) {
+      document.getElementById("gang-filter").value = value;
+      document.getElementById("gang-filter-footer").value = value;
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const svgObject = document.getElementById("svgObject");
+
+      svgObject.addEventListener("load", () => {
+        document.getElementById("gang-filter").addEventListener("change", function () {
+          filterGang(this.value);
+          syncDropdowns(this.value);
+        });
+
+        document.getElementById("gang-filter-footer").addEventListener("change", function () {
+          filterGang(this.value);
+          syncDropdowns(this.value);
+        });
       });
     });
   </script>
+
 </body>
 </html>
