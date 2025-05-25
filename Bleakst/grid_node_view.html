@@ -150,6 +150,38 @@
   <object id="svgObject" type="image/svg+xml" data="output_with_grid_nodes.svg" width="100%" height="100%"></object>
 
   <script>
+    const svgObject = document.querySelector("object");
+  
+    svgObject.addEventListener("load", () => {
+      const svgDoc = svgObject.contentDocument;
+      const allNodes = svgDoc.querySelectorAll("circle");
+      const allLabels = svgDoc.querySelectorAll("text");
+  
+      document.getElementById("gang-filter").addEventListener("change", function () {
+        const selected = this.value;
+        allNodes.forEach(node => {
+          const cls = node.getAttribute("class") || "";
+          if (selected === "all" || cls.includes(`gang-${selected.replace(" ", "_")}`)) {
+            node.style.display = "";
+          } else {
+            node.style.display = "none";
+          }
+        });
+  
+        allLabels.forEach(label => {
+          const prev = label.previousElementSibling;
+          const cls = prev && prev.getAttribute("class") || "";
+          if (selected === "all" || cls.includes(`gang-${selected.replace(" ", "_")}`)) {
+            label.style.display = "";
+          } else {
+            label.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+
+  <script>
     const svgObject = document.getElementById("svgObject");
     
     svgObject.addEventListener("load", () => {
