@@ -93,3 +93,83 @@
     </script>
   <audio controls src="audio/your_file.mp3"></audio>  
 </html>
+
+### 🧩 HTML + JavaScript Template (Drop-in Ready)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gang Group Filter View</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #controls {
+      padding: 12px;
+      background: #111;
+    }
+    select {
+      font-size: 16px;
+      padding: 4px 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <label for="gangSelect">Filter by Gang:</label>
+    <select id="gangSelect">
+      <option value="all">All Gangs</option>
+      <option value="Agency">Agency</option>
+      <option value="Siren">Siren</option>
+      <option value="Aire">Aire</option>
+      <option value="Bleakst">Bleakst</option>
+      <option value="Neighbour">Neighbour</option>
+      <option value="Bleed">Bleed</option>
+      <option value="Corporation">Corporation</option>
+      <option value="Fireworks">Fireworks</option>
+      <option value="K9">K9</option>
+      <option value="Leo">Leo</option>
+      <option value="Perambulator">Perambulator</option>
+      <option value="Sonics">Sonics</option>
+      <option value="Street Circus">Street Circus</option>
+    </select>
+  </div>
+
+  <!-- Load SVG directly -->
+  <object id="svgObject" type="image/svg+xml" data="output_with_grid_nodes.svg" width="100%" height="100%"></object>
+
+  <script>
+    document.getElementById("gangSelect").addEventListener("change", function () {
+      const selected = this.value;
+      const svgDoc = document.getElementById("svgObject").contentDocument;
+      const allNodes = svgDoc.querySelectorAll("circle");
+      const allLabels = svgDoc.querySelectorAll("text");
+
+      allNodes.forEach(node => {
+        const cls = node.getAttribute("class");
+        if (selected === "all" || (cls && cls.includes(`gang-${selected.replace(" ", "_")}`))) {
+          node.style.display = "";
+        } else {
+          node.style.display = "none";
+        }
+      });
+
+      allLabels.forEach(label => {
+        const nextTo = label.previousElementSibling;
+        const cls = nextTo && nextTo.getAttribute("class");
+        if (selected === "all" || (cls && cls.includes(`gang-${selected.replace(" ", "_")}`))) {
+          label.style.display = "";
+        } else {
+          label.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
