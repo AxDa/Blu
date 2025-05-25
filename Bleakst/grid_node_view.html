@@ -36,6 +36,8 @@
       background-color: black;
     }
   </style>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg-pan-zoom/3.6.1/svg-pan-zoom.min.js"></script>
 </head>
 <body>
 
@@ -122,49 +124,64 @@
 </html>
   
   <!-- JavaScript Filtering Logic -->
-  <script>
-    function filterGang(group) {
-      const svgObject = document.getElementById("svgObject");
-      const svgDoc = svgObject.contentDocument;
+<script>
+  function filterGang(group) {
+    const svgObject = document.getElementById("svgObject");
+    const svgDoc = svgObject.contentDocument;
 
-      if (!svgDoc) return;
+    if (!svgDoc) return;
 
-      const allNodes = svgDoc.querySelectorAll("circle");
-      const allLabels = svgDoc.querySelectorAll("text");
+    const allNodes = svgDoc.querySelectorAll("circle");
+    const allLabels = svgDoc.querySelectorAll("text");
 
-      allNodes.forEach(node => {
-        const cls = node.getAttribute("class") || "";
-        node.style.display = (group === "all" || cls.includes(`gang-${group.replace(" ", "_")}`)) ? "" : "none";
-      });
-
-      allLabels.forEach(label => {
-        const sibling = label.previousElementSibling;
-        const cls = sibling?.getAttribute("class") || "";
-        label.style.display = (group === "all" || cls.includes(`gang-${group.replace(" ", "_")}`)) ? "" : "none";
-      });
-    }
-
-    function syncDropdowns(value) {
-      document.getElementById("gang-filter").value = value;
-      document.getElementById("gang-filter-footer").value = value;
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const svgObject = document.getElementById("svgObject");
-
-      svgObject.addEventListener("load", () => {
-        document.getElementById("gang-filter").addEventListener("change", function () {
-          filterGang(this.value);
-          syncDropdowns(this.value);
-        });
-
-        document.getElementById("gang-filter-footer").addEventListener("change", function () {
-          filterGang(this.value);
-          syncDropdowns(this.value);
-        });
-      });
+    allNodes.forEach(node => {
+      const cls = node.getAttribute("class") || "";
+      node.style.display = (group === "all" || cls.includes(`gang-${group.replace(" ", "_")}`)) ? "" : "none";
     });
-  </script>
+
+    allLabels.forEach(label => {
+      const sibling = label.previousElementSibling;
+      const cls = sibling?.getAttribute("class") || "";
+      label.style.display = (group === "all" || cls.includes(`gang-${group.replace(" ", "_")}`)) ? "" : "none";
+    });
+  }
+
+  function syncDropdowns(value) {
+    document.getElementById("gang-filter").value = value;
+    document.getElementById("gang-filter-footer").value = value;
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const svgObject = document.getElementById("svgObject");
+
+    svgObject.addEventListener("load", () => {
+      // Filter syncing
+      document.getElementById("gang-filter").addEventListener("change", function () {
+        filterGang(this.value);
+        syncDropdowns(this.value);
+      });
+
+      document.getElementById("gang-filter-footer").addEventListener("change", function () {
+        filterGang(this.value);
+        syncDropdowns(this.value);
+      });
+
+      // ✅ Enable pan + zoom
+      const innerSvg = svgObject.contentDocument.querySelector("svg");
+      if (innerSvg) {
+        svgPanZoom(innerSvg, {
+          zoomEnabled: true,
+          controlIconsEnabled: true,
+          fit: true,
+          center: true,
+          minZoom: 0.5,
+          maxZoom: 10,
+        });
+      }
+    });
+  });
+</script>
+
 
 </body>
 </html>
