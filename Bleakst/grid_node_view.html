@@ -26,6 +26,8 @@
     .gang-legend {
       cursor: pointer;
     }
+
+    /* Pulse effect for filtered nodes */
     @keyframes pulse {
       0% { r: 4; opacity: 0.5; }
       50% { r: 7; opacity: 1; }
@@ -69,8 +71,10 @@
   </select>
 </div>
 
+<!-- Load SVG -->
+<object id="svgObject" type="image/svg+xml" data="output_with_grid_nodes_the ash of Thera whispers, the link is open, but the gate keeper is blind May 24, 2025, 08_19_58 AM.svg" width="100%" height="1000px"></object>
 <div id="svgWrapper">
-  <object id="svgObject" type="image/svg+xml" data="output_with_grid_nodes_the ash of Thera whispers, the link is open, but the gate keeper is blind May 24, 2025, 08_19_58 AM.svg"></object>
+  <object id="svgObject" type="image/svg+xml" data="output_with_grid_nodes.svg"></object>
 </div>
 
 <div id="legend">
@@ -94,6 +98,7 @@
 
 </html>
 
+### 🧩 HTML + JavaScript Template (Drop-in Ready) del nada -_- háo wúlǐyóu 毫无理由 🧩 ###  <audio controls src="audio/your_file.mp3"></audio>  
 ### 🧩 HTML + JavaScript Template (Drop-in ⚙️ FUNCTIONAL DETAILS Ready) del nada -_- háo wúlǐyóu 毫无理由 🧩 ###  <audio controls src="audio/your_file.mp3"></audio>  
 </html>
 
@@ -134,6 +139,7 @@
   }
 
   document.getElementById("svgObject").addEventListener("load", () => {
+    // Dropdown filtering
     const svgDoc = document.getElementById("svgObject").contentDocument;
 
     // Apply panzoom to SVG root
@@ -148,17 +154,22 @@
       filterGang(this.value);
     });
 
+    // Clickable legend
     document.querySelectorAll(".gang-legend").forEach(span => {
       span.addEventListener("click", () => {
         const gang = span.dataset.gang;
         filterGang(gang);
         syncDropdowns(gang);
       });
+
+      // Hover highlight
       span.addEventListener("mouseenter", () => {
+        const svgDoc = document.getElementById("svgObject").contentDocument;
         const nodes = svgDoc.querySelectorAll(`.gang-${span.dataset.gang.replace(/\s/g, "_")}`);
         nodes.forEach(n => n.style.stroke = "white");
       });
       span.addEventListener("mouseleave", () => {
+        const svgDoc = document.getElementById("svgObject").contentDocument;
         const nodes = svgDoc.querySelectorAll(`.gang-${span.dataset.gang.replace(/\s/g, "_")}`);
         nodes.forEach(n => n.style.stroke = "");
       });
