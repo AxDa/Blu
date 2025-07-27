@@ -27,5 +27,9 @@
     <source src="bleaktyrestperambulator.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+<button onclick="window.location.href='https://axda.github.io/Blu/toggle_image.html'">
+  🖼️ Return to Image Toggle View
+</button>
+
 </body>
 </html>
