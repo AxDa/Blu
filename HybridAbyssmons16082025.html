@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Testimony Nodes: #node3,4, 8,9,10,16,17, & #node22</title>
+  <style>
+    body {
+      background-color: #111;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-family: Helvetica, sans-serif;
+    }
+    svg {
+      width: 100%;
+      max-width: 1440px;
+      height: auto;
+      margin-top: 20px;
+    }
+    audio {
+      margin-top: 20px;
+      width: 320px;
+      background-color: #222;
+      border: 1px solid #555;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Embedded SVG -->
+  <object id="graph" type="image/svg+xml" data="HybridAbyssmons.svg"></object>
+
+  <!-- Audio Players -->
+  <audio id="audioPlayer3" controls style="display:none;">
+    <source src="Thisistheimagea.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <audio id="audioPlayer3a" controls style="display:none;">
+    <source src="Thisistheimagea.mp3"  
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <audio id="audioPlayer4" controls style="display:none;">
+    <source src="feminine.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="audioPlayer17" controls style="display:none;">
+    <source src="Thisistheimage1bb.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="audioPlayer8" controls style="display:none;">
+    <source src="Thisistheimagev01.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="audioPlayer10" controls style="display:none;">
+    <source src="Thisistheimagev02.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="audioPlayer9" controls style="display:none;">
+    <source src="Thisistheimagev02a.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="audioPlayer22" controls style="display:none;">
+    <source src="Thisistheimage.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+    
+  <audio id="audioPlayer16" controls style="display:none;">
+    <source src="Thisistheimage1.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    document.getElementById("graph").addEventListener("load", function () {
+      const svgDoc = this.contentDocument;
+
+      const setupNode = (nodeId, audioId, iconX, iconY) => {
+        const node = svgDoc.getElementById(nodeId);
+        if (node) {
+          node.style.cursor = "pointer";
+
+          // Add speaker icon
+          const speaker = svgDoc.createElementNS("http://www.w3.org/2000/svg", "text");
+          speaker.setAttribute("x", iconX); // Adjust as needed
+          speaker.setAttribute("y", iconY);
+          speaker.setAttribute("fill", "#FFD700");
+          speaker.setAttribute("font-size", "16");
+          speaker.textContent = "🔊 play";// speaker.textContent = "🔊";
+          node.appendChild(speaker);
+
+          // Click to play audio
+          node.addEventListener("click", function () {
+            const audio = document.getElementById(audioId);
+            audio.style.display = "block";
+            audio.scrollIntoView({ behavior: "smooth" });
+            audio.play();
+          });
+        }
+      };
+
+      setupNode("node3", "audioPlayer3", "1544.05", "-803.336");
+      setupNode("node3", "audioPlayer3a", "1210.05", "-803.336");
+      setupNode("node4", "audioPlayer4", "1565.74", "-606.31702");
+      setupNode("node17", "audioPlayer17", "1277.17", "-1183.0699");
+      setupNode("node8", "audioPlayer8", "1738.78", "-1411.4399");
+      setupNode("node10", "audioPlayer10", "516.737", "-592.59601");
+      setupNode("node9", "audioPlayer9", "8146.263", "-329.80801");
+      setupNode("node22", "audioPlayer22", "2180.6599", "-14.3");
+      setupNode("node16", "audioPlayer16", "856.263", "-1276.86");
+    });
+  </script>
+
+</body>
+</html>
