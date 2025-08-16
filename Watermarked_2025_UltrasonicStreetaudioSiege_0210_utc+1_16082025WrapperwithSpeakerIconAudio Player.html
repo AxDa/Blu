@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Testimony Node: #node5</title>
+  <style>
+    body {
+      background-color: #111;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-family: Helvetica, sans-serif;
+    }
+    svg {
+      width: 100%;
+      max-width: 1440px;
+      height: auto;
+      margin-top: 20px;
+    }
+    audio {
+      margin-top: 20px;
+      width: 320px;
+      background-color: #222;
+      border: 1px solid #555;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Embedded SVG -->
+  <object id="graph" type="image/svg+xml" data="Watermarked_2025_UltrasonicStreetaudioSiege_0210_utc+1_16082025.svg"></object>
+
+  <!-- Audio Player -->
+  <audio id="audioPlayer" controls>
+    <source src="Bleakst_Platosound_2335_utc+1_15082025_v1.21_axd.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    document.getElementById("graph").addEventListener("load", function () {
+      const svgDoc = this.contentDocument;
+      const node = svgDoc.getElementById("node5");
+
+      if (node) {
+        node.style.cursor = "pointer";
+
+        // Add speaker icon overlay
+        const speaker = svgDoc.createElementNS("http://www.w3.org/2000/svg", "text");
+        speaker.setAttribute("x", "10");  // Adjust position as needed
+        speaker.setAttribute("y", "10");
+        speaker.setAttribute("fill", "#FFD700");
+        speaker.setAttribute("font-size", "16");
+        speaker.textContent = "🔊";
+        node.appendChild(speaker);
+
+        // Click to play audio
+        node.addEventListener("click", function () {
+          const audio = document.getElementById("audioPlayer");
+          audio.scrollIntoView({ behavior: "smooth" });
+          audio.play();
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
