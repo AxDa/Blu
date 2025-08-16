@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Testimony Nodes: #node7 & #node8</title>
+  <style>
+    body {
+      background-color: #111;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-family: Helvetica, sans-serif;
+    }
+    svg {
+      width: 100%;
+      max-width: 1440px;
+      height: auto;
+      margin-top: 20px;
+    }
+    audio {
+      margin-top: 20px;
+      width: 320px;
+      background-color: #222;
+      border: 1px solid #555;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Embedded SVG -->
+  <object id="graph" type="image/svg+xml" data="Watermarked_2025_UltrasonicStreetaudioSiege_0723_utc+1_16082025.svg"></object>
+
+  <!-- Audio Players -->
+  <audio id="audioPlayer7" controls style="display:none;">
+    <source src="Bleaksthoover_0506_0510_utc+1_16082025_v0.1.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <audio id="audioPlayer8" controls style="display:none;">
+    <source src="Bleaksthoover_0506_0510_utc+1_16082025_v1.2_axd.mp3" 
+    type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    document.getElementById("graph").addEventListener("load", function () {
+      const svgDoc = this.contentDocument;
+
+      const setupNode = (nodeId, audioId, iconY) => {
+        const node = svgDoc.getElementById(nodeId);
+        if (node) {
+          node.style.cursor = "pointer";
+
+          // Add speaker icon
+          const speaker = svgDoc.createElementNS("http://www.w3.org/2000/svg", "text");
+          speaker.setAttribute("x", "-15"); // Adjust as needed
+          speaker.setAttribute("y", iconY);
+          speaker.setAttribute("fill", "#FFD700");
+          speaker.setAttribute("font-size", "16");
+          speaker.textContent = "🔊 play";// speaker.textContent = "🔊";
+          node.appendChild(speaker);
+
+          // Click to play audio
+          node.addEventListener("click", function () {
+            const audio = document.getElementById(audioId);
+            audio.style.display = "block";
+            audio.scrollIntoView({ behavior: "smooth" });
+            audio.play();
+          });
+        }
+      };
+
+      setupNode("node7", "audioPlayer7", "-116.5");
+      setupNode("node8", "audioPlayer8", "-62.5");
+    });
+  </script>
+
+</body>
+</html>
