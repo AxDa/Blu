@@ -78,6 +78,13 @@
     </button>
 
     <button onclick="
+    const el = document.getElementById('audioContainer21');
+    el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    ">
+    Toggle Audio 21 before sea green thresholds
+    </button> 
+
+    <button onclick="
     const el = document.getElementById('audioContainer20');
     el.style.display = (el.style.display === 'block') ? 'none' : 'block';
     ">
@@ -169,6 +176,15 @@
         <p>Node 3: “Thisistheimagea.mp3 -Thresholds between known and unknowable”</p>
      <audio id="audioPlayer3" controls>
        <source src="Thisistheimagea.mp3" 
+        type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    </div>
+
+    <div id="audioContainer21" style="display:none;">
+      <p>Node 21: “before.mp3 -before sea green thresholds between known and unknowable”</p>
+    <audio id="audioPlayer21" controls>
+      <source src="before.mp3" 
         type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -317,17 +333,18 @@
       };
 
       setupNode("node3", "audioPlayer3", "audioContainer3", "950.065", "-198.119");
-      setupNode("node18", "audioPlayer18", "audioContainer18", "1235.4399", "-198.119");
-      setupNode("ellipse802", "audioPlayer802", "audioContainer802", "1185.4399", "-198.119");//node19"1967.97", "-394.89001"
-      setupNode("node15", "audioPlayer15", "audioContainer15", "1115.4399", "-198.119");
+      setupNode("node21", "audioPlayer21", "audioContainer21", "900.065", "-208.119");
+      setupNode("node18", "audioPlayer18", "audioContainer18", "1215.4399", "-208.119");
+      setupNode("ellipse802", "audioPlayer802", "audioContainer802", "1165.4399", "-198.119");//node19"1967.97", "-394.89001"
+      setupNode("node15", "audioPlayer15", "audioContainer15", "1115.4399", "-208.119");
       setupNode("node3", "audioPlayer3a", "audioContainer3a", "1540.05", "-803.336");
       setupNode("node4", "audioPlayer4", "audioContainer4", "765.74", "-606.31702");
       setupNode("node17", "audioPlayer17", "audioContainer17", "1300.00", "-198.119");
-      setupNode("node8", "audioPlayer8", "audioContainer8", "1438.78", "-198.119");
+      setupNode("node8", "audioPlayer8", "audioContainer8", "1438.78", "-198.119"); //4ap
       setupNode("node10", "audioPlayer10", "audioContainer10", "516.737", "-592.59601");
       setupNode("node9", "audioPlayer9", "audioContainer9", "1055.4399", "-198.119");
-      setupNode("node22", "audioPlayer22", "audioContainer22", "1005.4399", "-198.119");
-      setupNode("node16", "audioPlayer16", "audioContainer16", "856.263", "-198.119");
+      setupNode("node22", "audioPlayer22", "audioContainer22", "1005.4399", "-208.119");
+      setupNode("node16", "audioPlayer16", "audioContainer16", "856.263", "-198.119");//16
     });
   </script>
 
