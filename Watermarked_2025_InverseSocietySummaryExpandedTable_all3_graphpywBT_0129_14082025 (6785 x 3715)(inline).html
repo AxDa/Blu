@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive SVG Viewer</title>
+  <script src="svg-pan-zoom.min.js"></script>
+  <style>
+    body { margin: 0; background-color: #f0f0f0; }
+    #svg-container { width: 100vw; height: 100vh; overflow: visible; }
+    svg { width: 100%; height: 100%; }
+
+  </style>
+</head>
+<body>
+  <div id="svg-container">
+    <!-- Replace 'your-diagram.svg' with your file name -->
+    <object id="svg-object" type="image/svg+xml" data="Watermarked_2025_InverseSocietySummaryExpandedTable_all3_graphpywBT_0129_14082025 (2723 x 1487).svg"></object>
+  </div>
+
+  <script>
+    window.onload = function () {
+      svgPanZoom('#svg-object', {
+        zoomEnabled: true,
+        controlIconsEnabled: true,
+        fit: true,
+        center: true
+
+      });
+    };
+
+  </script>
+</body>
+</html>
