@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive SVG Viewer</title>
+  <script src="svg-pan-zoom.min.js"></script>
+  <style>
+    body { margin: 0; background-color: #f0f0f0; }
+    #svg-container { width: 100vw; height: 100vh; overflow: visible; }
+    svg { width: 100%; height: 100%; }
+
+  </style>
+<style>
+    #buttonPanel {
+      position: fixed;
+      top: 100px;
+      left: 10px;
+      z-index: 1000;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+    }
+  
+    #buttonPanel button {
+      display: block;
+      margin-bottom: 6px;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    #buttonPanel button:hover {
+      background-color: #666;
+    }
+  </style>
+  </head>
+  <body>
+  
+  <div id="buttonPanel">
+
+    <button 
+       onclick="window.open('WmstreetsoundCivilSocietal_Visualization_0026_utc1_22082025svg.html', '_blank')" 
+       aria-label="Open Streetsound Civil Societal Visualization"
+       data-node-id="streetsoundCivilSocietal_Visualization">
+       Refresh: Streetsound Civil Societal
+    </button>
+  
+    <button 
+      onclick="window.open('drip_echo_nodes_interactive.html', '_blank')" 
+      aria-label="Open interactive map of drip echo memory nodes"
+      data-node-id="dripEcho_2025_interactive">
+      Open: Drip Echo Nodes
+    </button>
+  
+    <button 
+      onclick="window.open('HybridAbyssmons16082025.htm', '_blank')" 
+      aria-label="Open hybrid abyssmon node mapping from August 2025"
+      data-node-id="abyssmon_16082025">
+      Open: Hybrid Abyssmons
+    </button>
+  
+    <button 
+      onclick="window.open('Watermarked_2025_InverseSocietySummaryExpandedTable_all3_graphpywBT_0129_14082025 (6785 x 3715)(inline).html', '_blank')" 
+      aria-label="Open expanded inverse society summary table with graph overlays"
+      data-node-id="inverseSociety_graphpywBT_14082025">
+      Open: Inverse Society Summary Table
+    </button>
+  
+    <button 
+      onclick="window.open('thera_whispers_above_cauldera_fin_axd.html', '_blank')" 
+      aria-label="Open final version of Thera Whispers testimony above Cauldera"
+      data-node-id="theraWhispers_final_axd">
+      Open: Thera Whispers Above Cauldera
+    </button>
+  </div>
+  <div id="svg-container">
+    <!-- Replace 'your-diagram.svg' with your file name -->
+    <object id="svg-object" type="image/svg+xml" data="WmstreetsoundCivilSocietal_Visualization_0026_utc1_22082025.svg"></object>
+  </div>
+
+  <script>
+    window.onload = function () {
+      svgPanZoom('#svg-object', {
+        zoomEnabled: true,
+        controlIconsEnabled: true,
+        fit: true,
+        center: true
+
+      });
+    };
+
+  </script>
+</body>
+</html>
