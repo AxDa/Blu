@@ -1,0 +1,28 @@
+[
+  {
+    "node_id": "node15_audio",
+    "title_id": "title281",
+    "title": "Alaska (US)",
+    "tags": [],
+    "audio_files": [
+      "node15.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node16",
+    "title_id": "title288",
+    "title": "Gambier Islands (French Polynesia)",
+    "tags": [],
+    "audio_files": [
+      "node16.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  }
+]
