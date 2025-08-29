@@ -54,7 +54,7 @@
   {
     "node_id": "node22_audio",
     "title_id": "title395",
-    "title": "United States \n(California",
+    "title": "United States \n(California, Oregon, Washington)",
     "tags": [],
     "audio_files": [
       "node23.mp3"
@@ -94,7 +94,7 @@
     "node_id": "node28_audio",
     "title_id": "title462",
     "title": "Mexico (Chihuahua, Sonora)",
-    "tags": [],
+    "tags": ["K9"],
     "audio_files": [
       "node28.mp3"
     ],
