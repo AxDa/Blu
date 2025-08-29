@@ -28,7 +28,7 @@
   {
     "node_id": "node17_audio",
     "title_id": "title309",
-    "title": "Aleutian Islands \n(US",
+    "title": "Aleutian Islands \n(US)",
     "tags": [],
     "audio_files": [
       "node17.mp3"
@@ -71,6 +71,58 @@
     "tags": [],
     "audio_files": [
       "node9.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node8_audio",
+    "title_id": "title182",
+    "title": "Palmyra Atoll \n(US)",
+    "tags": [],
+    "audio_files": [
+      "node8.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  }
+  {
+    "node_id": "node28_audio",
+    "title_id": "title462",
+    "title": "Mexico (Chihuahua, Sonora)",
+    "tags": [],
+    "audio_files": [
+      "node28.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  }
+  {
+    "node_id": "node29_audio",
+    "title_id": "title476",
+    "title": "Chile (Easter Island &\n Salas y Gómez (ST))",
+    "tags": [],
+    "audio_files": [
+      "node29.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  }
+  {
+    "node_id": "node30_audio",
+    "title_id": "title485",
+    "title": "Belize",
+    "tags": [],
+    "audio_files": [
+      "node30.mp3"
     ],
     "coordinates": {
       "x": 11.2,
