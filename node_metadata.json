@@ -13,7 +13,7 @@
     }
   },
   {
-    "node_id": "node16",
+    "node_id": "node16_audio",
     "title_id": "title288",
     "title": "Gambier Islands (French Polynesia)",
     "tags": [],
@@ -24,5 +24,56 @@
       "x": 11.2,
       "y": 1783.208
     }
+  }
+  {
+    "node_id": "node17_audio",
+    "title_id": "title309",
+    "title": "Aleutian Islands \n(US",
+    "tags": [],
+    "audio_files": [
+      "node17.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  }
+  {
+    "node_id": "node22_audio",
+    "title_id": "title388",
+    "title": "Canada (British Columbia)",
+    "tags": [],
+    "audio_files": [
+      "node22.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  }
+  {
+    "node_id": "node22_audio",
+    "title_id": "title395",
+    "title": "United States \n(California",
+    "tags": [],
+    "audio_files": [
+      "node23.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+    {
+      "node_id": "node9_audio",
+      "title_id": "title198",
+      "title": "Hawaii",
+      "tags": [],
+      "audio_files": [
+        "node9.mp3"
+      ],
+      "coordinates": {
+        "x": 11.2,
+        "y": 1783.208
+      }
   }
 ]
