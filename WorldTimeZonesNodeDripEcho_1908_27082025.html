@@ -80,9 +80,12 @@
 </head>
 <body>
   <!-- Sidebar -->
-  <div id="sidebar" class="sidebar">
+  <br> <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar</button>
+  
+  <div id="sidebar" class="sidebar" onmousedown="startDrag(event)">
     <h2>Node Index</h2>
-    <input type='text' id='searchBox' placeholder='Search titles...' onkeyup='filterNodes()' />
+    <input type="text" id="searchBox" placeholder="Search titles..." onkeyup="filterNodes()" />  
+    
     <button onclick="toggleDock()">Dock/Undock</button>
     <ul id='nodeList'>
   <li><a href='#' onclick="playNodeAudio('node1'); showPlayCue('node1')">Baker Island \n(US)</a></li>
@@ -398,15 +401,7 @@
     </ul>
   </div>
 
-  <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar</button>
 
-  <div id="sidebar" class="sidebar" onmousedown="startDrag(event)">
-    <h2>Node Index</h2>
-    <input type="text" id="searchBox" placeholder="Search titles..." onkeyup="filterNodes()" />
-    <ul id="nodeList">
-      <!-- Node list items injected here -->
-    </ul>
-  </div>
 
   <!-- Main SVG Area -->
   <div class="main">

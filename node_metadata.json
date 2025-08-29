@@ -24,7 +24,7 @@
       "x": 11.2,
       "y": 1783.208
     }
-  }
+  },
   {
     "node_id": "node17_audio",
     "title_id": "title309",
@@ -37,7 +37,7 @@
       "x": 11.2,
       "y": 1783.208
     }
-  }
+  },
   {
     "node_id": "node22_audio",
     "title_id": "title388",
@@ -50,7 +50,7 @@
       "x": 11.2,
       "y": 1783.208
     }
-  }
+  },
   {
     "node_id": "node22_audio",
     "title_id": "title395",
@@ -63,17 +63,19 @@
       "x": 11.2,
       "y": 1783.208
     }
-    {
-      "node_id": "node9_audio",
-      "title_id": "title198",
-      "title": "Hawaii",
-      "tags": [],
-      "audio_files": [
-        "node9.mp3"
-      ],
-      "coordinates": {
-        "x": 11.2,
-        "y": 1783.208
-      }
+  },
+  {
+    "node_id": "node9_audio",
+    "title_id": "title198",
+    "title": "Hawaii",
+    "tags": [],
+    "audio_files": [
+      "node9.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
   }
+
 ]
