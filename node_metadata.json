@@ -127,8 +127,8 @@
     "coordinates": {
       "x": 11.2,
       "y": 1783.208
-    }
-  },
+    },
+  }
   {
     "node_id": "node7_audio",
     "title_id": "title166",
@@ -141,7 +141,19 @@
       "x": 11.2,
       "y": 1783.208
     }
+  },
+  {
+    "node_id": "node6_audio",
+    "title_id": "title150",
+    "title": "Jarvis Island \n(US)",
+    "tags": [],
+    "audio_files": [
+      "node6.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
   }
-
 
 ]
