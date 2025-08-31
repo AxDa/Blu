@@ -94,7 +94,7 @@
     "node_id": "node28_audio",
     "title_id": "title462",
     "title": "Mexico (Chihuahua, Sonora)",
-    "tags": ["K9"],
+    "tags": ["k9"],
     "audio_files": [
       "node28.mp3"
     ],
@@ -133,7 +133,7 @@
     "node_id": "node7_audio",
     "title_id": "title166",
     "title": "Kingman Reef \n(US)",
-    "tags": [],
+    "tags": ["ice", "icesiren", "siren", "blue"],
     "audio_files": [
       "node7.mp3"
     ],
@@ -146,16 +146,27 @@
     "node_id": "node6_audio",
     "title_id": "title150",
     "title": "Jarvis Island \n(US)",
-    "tags": [],
+    "tags": ["perambulator", "tyre"],
     "audio_files": [
       "node6.mp3"
     ],
     "coordinates": {
       "x": 11.2,
       "y": 1783.208
-   }
+    }
+  },
+
+  {
+    "node_id": "node5_audio",
+    "title_id": "title134",
+    "title": "Midway Atoll \n(US)",
+    "tags": ["proxy", "speakers", "stathmoreaveharehillsla", "business", "circumstantialbbcreau", "yellow"],
+    "audio_files": [
+      "node5.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
   }
-
 ]
-
-
