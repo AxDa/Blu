@@ -181,6 +181,19 @@
     "x": 11.2,
     "y": 1783.208
   }
+},
+{
+"node_id": "node3_audio",
+"title_id": "title113",
+"title": "American Samoa",
+"tags": ["aire"],
+"audio_files": [
+  "node3.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
