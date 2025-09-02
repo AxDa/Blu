@@ -324,7 +324,20 @@
                       "x": 11.2,
                       "y": 1783.208
                     }
-                    }
+                    },
+                    {
+                      "node_id": "node31_audio",
+                      "title_id": "title506",
+                      "title": "Costa Rica",
+                      "tags": ["costacough", "bloodangels", "siren", "blue"],
+                      "audio_files": [
+                        "node31.mp3"
+                      ],
+                      "coordinates": {
+                        "x": 11.2,
+                        "y": 1783.208
+                      }
+                      }
   
 
 ]
