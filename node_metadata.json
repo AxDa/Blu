@@ -194,6 +194,84 @@
   "x": 11.2,
   "y": 1783.208
 }
-}
+},
+{
+  "node_id": "node2_audio",
+  "title_id": "title99",
+  "title": "Howland Island (US)",
+  "tags": ["siren, blue, important"],
+  "audio_files": [
+    "node2.mp3"
+  ],
+  "coordinates": {
+    "x": 11.2,
+    "y": 1783.208
+  }
+  },
+  {
+    "node_id": "node1_audio",
+    "title_id": "title90",
+    "title": "Baker Island (US)",
+    "tags": ["proxy, circus, confide"],
+    "audio_files": [
+      "node1.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+    },
+    {
+      "node_id": "node12_audio",
+      "title_id": "title235",
+      "title": "Johnston Atoll (US)",
+      "tags": ["aire"],
+      "audio_files": [
+        "node12.mp3"
+      ],
+      "coordinates": {
+        "x": 11.2,
+        "y": 1783.208
+      }
+      },
+      {
+        "node_id": "node13_audio",
+        "title_id": "title249",
+        "title": "Tuamotu Archipelago (French Polynesia)",
+        "tags": ["parambulator", "exhaust"],
+        "audio_files": [
+          "node13.mp3"
+        ],
+        "coordinates": {
+          "x": 11.2,
+          "y": 1783.208
+        }
+        },
+        {
+          "node_id": "node10_audio",
+          "title_id": "title205",
+          "title": "French Polynesia (Tahiti)",
+          "tags": ["cor" ],
+          "audio_files": [
+            "node10.mp3"
+          ],
+          "coordinates": {
+            "x": 11.2,
+            "y": 1783.208
+          }
+          },
+          {
+            "node_id": "node11_audio",
+            "title_id": "title221",
+            "title": "Tuamotu Archipelago (French Polynesia)",
+            "tags": ["cor" ],
+            "audio_files": [
+              "node11.mp3"
+            ],
+            "coordinates": {
+              "x": 11.2,
+              "y": 1783.208
+            }
+            }
 
 ]
