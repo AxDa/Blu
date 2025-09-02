@@ -311,7 +311,20 @@
                     "x": 11.2,
                     "y": 1783.208
                   }
-                  }
+                  },
+                  {
+                    "node_id": "node26_audio",
+                    "title_id": "title439",
+                    "title": "Canada (Alberta)",
+                    "tags": ["baffle"],
+                    "audio_files": [
+                      "node26.mp3"
+                    ],
+                    "coordinates": {
+                      "x": 11.2,
+                      "y": 1783.208
+                    }
+                    }
   
 
 ]
