@@ -298,7 +298,20 @@
                   "x": 11.2,
                   "y": 1783.208
                 }
-                }
+                },
+                {
+                  "node_id": "node25_audio",
+                  "title_id": "title425",
+                  "title": "Pitcairn Islands",
+                  "tags": ["muscle", "tools", "analytics", "1229", "important" ],
+                  "audio_files": [
+                    "node25.mp3"
+                  ],
+                  "coordinates": {
+                    "x": 11.2,
+                    "y": 1783.208
+                  }
+                  }
   
 
 ]
