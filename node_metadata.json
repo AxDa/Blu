@@ -337,7 +337,20 @@
                         "x": 11.2,
                         "y": 1783.208
                       }
-                      }
+                      },
+                      {
+                        "node_id": "node32_audio",
+                        "title_id": "title527",
+                        "title": "Guatemala",
+                        "tags": ["siren", "blue", "05:27" ],
+                        "audio_files": [
+                          "node321.mp3"
+                        ],
+                        "coordinates": {
+                          "x": 11.2,
+                          "y": 1783.208
+                        }
+                        }
   
 
 ]
