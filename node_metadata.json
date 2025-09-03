@@ -196,161 +196,201 @@
 }
 },
 {
-  "node_id": "node2_audio",
-  "title_id": "title99",
-  "title": "Howland Island (US)",
-  "tags": ["siren, blue, important"],
-  "audio_files": [
-    "node2.mp3"
-  ],
-  "coordinates": {
-    "x": 11.2,
-    "y": 1783.208
-  }
-  },
-  {
-    "node_id": "node1_audio",
-    "title_id": "title90",
-    "title": "Baker Island (US)",
-    "tags": ["proxy, circus, confide"],
-    "audio_files": [
-      "node1.mp3"
-    ],
-    "coordinates": {
-      "x": 11.2,
-      "y": 1783.208
-    }
-    },
-    {
-      "node_id": "node12_audio",
-      "title_id": "title235",
-      "title": "Johnston Atoll (US)",
-      "tags": ["aire"],
-      "audio_files": [
-        "node12.mp3"
-      ],
-      "coordinates": {
-        "x": 11.2,
-        "y": 1783.208
-      }
-      },
-      {
-        "node_id": "node13_audio",
-        "title_id": "title249",
-        "title": "Tuamotu Archipelago (French Polynesia)",
-        "tags": ["parambulator", "exhaust"],
-        "audio_files": [
-          "node13.mp3"
-        ],
-        "coordinates": {
-          "x": 11.2,
-          "y": 1783.208
-        }
-        },
-        {
-          "node_id": "node10_audio",
-          "title_id": "title205",
-          "title": "French Polynesia (Tahiti)",
-          "tags": ["cor" ],
-          "audio_files": [
-            "node10.mp3"
-          ],
-          "coordinates": {
-            "x": 11.2,
-            "y": 1783.208
-          }
-          },
-          {
-            "node_id": "node11_audio",
-            "title_id": "title221",
-            "title": "Tuamotu Archipelago (French Polynesia)",
-            "tags": ["cor" ],
-            "audio_files": [
-              "node11.mp3"
-            ],
-            "coordinates": {
-              "x": 11.2,
-              "y": 1783.208
-            }
-            },
-            {
-              "node_id": "node14_audio",
-              "title_id": "title265",
-              "title": "Society Islands (French Polynesia)",
-              "tags": ["siren", "blue", "10:42" ],
-              "audio_files": [
-                "node14.mp3"
-              ],
-              "coordinates": {
-                "x": 11.2,
-                "y": 1783.208
-              }
-              },
-              {
-                "node_id": "node24_audio",
-                "title_id": "title411",
-                "title": "Mexico (Baja California)",
-                "tags": ["bang'n", "analytics", "1117", "important" ],
-                "audio_files": [
-                  "node24.mp3"
-                ],
-                "coordinates": {
-                  "x": 11.2,
-                  "y": 1783.208
-                }
-                },
-                {
-                  "node_id": "node25_audio",
-                  "title_id": "title425",
-                  "title": "Pitcairn Islands",
-                  "tags": ["muscle", "tools", "analytics", "1229", "important" ],
-                  "audio_files": [
-                    "node25.mp3"
-                  ],
-                  "coordinates": {
-                    "x": 11.2,
-                    "y": 1783.208
-                  }
-                  },
-                  {
-                    "node_id": "node26_audio",
-                    "title_id": "title439",
-                    "title": "Canada (Alberta)",
-                    "tags": ["baffle"],
-                    "audio_files": [
-                      "node26.mp3"
-                    ],
-                    "coordinates": {
-                      "x": 11.2,
-                      "y": 1783.208
-                    }
-                    },
-                    {
-                      "node_id": "node31_audio",
-                      "title_id": "title506",
-                      "title": "Costa Rica",
-                      "tags": ["costacough", "bloodangels", "siren", "blue"],
-                      "audio_files": [
-                        "node31.mp3"
-                      ],
-                      "coordinates": {
-                        "x": 11.2,
-                        "y": 1783.208
-                      }
-                      },
-                      {
-                        "node_id": "node32_audio",
-                        "title_id": "title527",
-                        "title": "Guatemala",
-                        "tags": ["siren", "blue", "05:27" ],
-                        "audio_files": [
-                          "node321.mp3"
-                        ],
-                        "coordinates": {
-                          "x": 11.2,
-                          "y": 1783.208
-                        }
-                        }
-  
+"node_id": "node2_audio",
+"title_id": "title99",
+"title": "Howland Island (US)",
+"tags": ["siren, blue, important"],
+"audio_files": [
+  "node2.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node1_audio",
+"title_id": "title90",
+"title": "Baker Island (US)",
+"tags": ["proxy, circus, confide"],
+"audio_files": [
+  "node1.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node12_audio",
+"title_id": "title235",
+"title": "Johnston Atoll (US)",
+"tags": ["aire"],
+"audio_files": [
+  "node12.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node13_audio",
+"title_id": "title249",
+"title": "Tuamotu Archipelago (French Polynesia)",
+"tags": ["parambulator", "exhaust"],
+"audio_files": [
+  "node13.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node10_audio",
+"title_id": "title205",
+"title": "French Polynesia (Tahiti)",
+"tags": ["cor" ],
+"audio_files": [
+  "node10.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node11_audio",
+"title_id": "title221",
+"title": "Tuamotu Archipelago (French Polynesia)",
+"tags": ["cor" ],
+"audio_files": [
+  "node11.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node14_audio",
+"title_id": "title265",
+"title": "Society Islands (French Polynesia)",
+"tags": ["siren", "blue", "10:42" ],
+"audio_files": [
+  "node14.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node24_audio",
+"title_id": "title411",
+"title": "Mexico (Baja California)",
+"tags": ["bang'n", "analytics", "1117", "important" ],
+"audio_files": [
+  "node24.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node25_audio",
+"title_id": "title425",
+"title": "Pitcairn Islands",
+"tags": ["muscle", "tools", "analytics", "1229", "important" ],
+"audio_files": [
+  "node25.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node26_audio",
+"title_id": "title439",
+"title": "Canada (Alberta)",
+"tags": ["baffle"],
+"audio_files": [
+  "node26.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node31_audio",
+"title_id": "title506",
+"title": "Costa Rica",
+"tags": ["costacough", "bloodangels", "siren", "blue"],
+"audio_files": [
+  "node31.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node32_audio",
+"title_id": "title527",
+"title": "Guatemala",
+"tags": ["siren", "blue", "05:27" ],
+"audio_files": [
+  "node32.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node33_audio",
+"title_id": "title548",
+"title": "Honduras",
+"tags": ["parambulator", "exhaust", "09:14", "important"],
+"audio_files": [
+  "node33.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node34_audio",
+"title_id": "title569",
+"title": "Nicaragua",
+"tags": ["parambulator", "exhaust", "09:21" ],
+"audio_files": [
+  "node34.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node35_audio",
+"title_id": "title590",
+"title": "El Salvador",
+"tags": ["parambulator", "exhaust", "09:42" ],
+"audio_files": [
+  "node35.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
+
+
 
 ]
