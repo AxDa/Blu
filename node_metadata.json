@@ -389,7 +389,99 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node36_audio",
+"title_id": "title611",
+"title": "Mexico (Central Region)",
+"tags": ["parambulator", "exhaust", "11:31" ],
+"audio_files": [
+  "node36.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
+},
+{
+"node_id": "node37_audio",
+"title_id": "title632",
+"title": "United States (Central Region)",
+"tags": [ "11:55" ],
+"audio_files": [
+  "node37.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node38_audio",
+"title_id": "title653",
+"title": "Canada (Central Region)",
+"tags": ["parambulator", "exhaust", "12:00" ],
+"audio_files": [
+  "node38.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+  "node_id": "node39_audio",
+  "title_id": "title674",
+  "title": "Ecuador (Galápagos)",
+  "tags": ["12:11" ],
+  "audio_files": [
+    "node39.mp3"
+  ],
+  "coordinates": {
+    "x": 11.2,
+    "y": 1783.208
+  }
+  },
+  {
+  "node_id": "node43_audio",
+  "title_id": "title744",
+  "title": "Chile (Easter Island &\n Salas y Gómez (DST))",
+  "tags": ["Important", "12:42" ],
+  "audio_files": [
+    "node43.mp3"
+  ],
+  "coordinates": {
+    "x": 11.2,
+    "y": 1783.208
+  }
+  },
+  {
+  "node_id": "node44_audio",
+  "title_id": "title753",
+  "title": "Colombia",
+  "tags": ["Important", "aire", "16:18" ],
+  "audio_files": [
+    "node44.mp3"
+  ],
+  "coordinates": {
+    "x": 11.2,
+    "y": 1783.208
+  }
+  },
+  {
+  "node_id": "node45_audio",
+  "title_id": "title767",
+  "title": "Panama",
+  "tags": ["Important", "16:43" ],
+  "audio_files": [
+    "node45.mp3"
+  ],
+  "coordinates": {
+    "x": 11.2,
+    "y": 1783.208
+  }
+  }
+
 
 
 
