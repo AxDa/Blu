@@ -430,83 +430,96 @@
 }
 },
 {
-  "node_id": "node39_audio",
-  "title_id": "title674",
-  "title": "Ecuador (Galápagos)",
-  "tags": ["12:11" ],
+"node_id": "node39_audio",
+"title_id": "title674",
+"title": "Ecuador (Galápagos)",
+"tags": ["12:11" ],
+"audio_files": [
+  "node39.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node43_audio",
+"title_id": "title744",
+"title": "Chile (Easter Island &\n Salas y Gómez (DST))",
+"tags": ["Important", "12:42" ],
+"audio_files": [
+  "node43.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node44_audio",
+"title_id": "title753",
+"title": "Colombia",
+"tags": ["Important", "aire", "16:18" ],
+"audio_files": [
+  "node44.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node45_audio",
+"title_id": "title767",
+"title": "Panama",
+"tags": ["Important", "16:43" ],
+"audio_files": [
+  "node45.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node46_audio",
+"title_id": "title781",
+"title": "Peru",
+"tags": ["Important", "siren", "blue", "12:58" ],
+"audio_files": [
+  "node46.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node47_audio",
+"title_id": "title795",
+"title": "Ecuador (Mainland)",
+"tags": ["Important", "siren", "blue", "14:01" ],
+"audio_files": [
+  "node47.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+  "node_id": "node48_audio",
+  "title_id": "title809",
+  "title": "Cuba",
+  "tags": ["parambulator", "horn", "15:57" ],
   "audio_files": [
-    "node39.mp3"
+    "node48.mp3"
   ],
   "coordinates": {
     "x": 11.2,
     "y": 1783.208
   }
-  },
-  {
-  "node_id": "node43_audio",
-  "title_id": "title744",
-  "title": "Chile (Easter Island &\n Salas y Gómez (DST))",
-  "tags": ["Important", "12:42" ],
-  "audio_files": [
-    "node43.mp3"
-  ],
-  "coordinates": {
-    "x": 11.2,
-    "y": 1783.208
   }
-  },
-  {
-  "node_id": "node44_audio",
-  "title_id": "title753",
-  "title": "Colombia",
-  "tags": ["Important", "aire", "16:18" ],
-  "audio_files": [
-    "node44.mp3"
-  ],
-  "coordinates": {
-    "x": 11.2,
-    "y": 1783.208
-  }
-  },
-  {
-  "node_id": "node45_audio",
-  "title_id": "title767",
-  "title": "Panama",
-  "tags": ["Important", "16:43" ],
-  "audio_files": [
-    "node45.mp3"
-  ],
-  "coordinates": {
-    "x": 11.2,
-    "y": 1783.208
-  }
-  },
-  {
-  "node_id": "node46_audio",
-  "title_id": "title781",
-  "title": "Peru",
-  "tags": ["Important", "siren", "blue", "12:58" ],
-  "audio_files": [
-    "node46.mp3"
-  ],
-  "coordinates": {
-    "x": 11.2,
-    "y": 1783.208
-  }
-  },
-  {
-    "node_id": "node47_audio",
-    "title_id": "title795",
-    "title": "Ecuador (Mainland)",
-    "tags": ["Important", "siren", "blue", "14:01" ],
-    "audio_files": [
-      "node47.mp3"
-    ],
-    "coordinates": {
-      "x": 11.2,
-      "y": 1783.208
-    }
-    }
 
 
 
