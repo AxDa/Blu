@@ -508,12 +508,38 @@
 }
 },
 {
-  "node_id": "node48_audio",
-  "title_id": "title809",
-  "title": "Cuba",
-  "tags": ["parambulator", "horn", "15:57" ],
+"node_id": "node48_audio",
+"title_id": "title809",
+"title": "Cuba",
+"tags": ["parambulator", "horn", "15:57" ],
+"audio_files": [
+  "node48.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node49_audio",
+"title_id": "title823",
+"title": "Haiti",
+"tags": ["parambulator", "exhaust", "18:52" ],
+"audio_files": [
+  "node49.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+  "node_id": "node50_audio",
+  "title_id": "title837",
+  "title": "Jamaica",
+  "tags": ["firework", "crackle", "19:32" ],
   "audio_files": [
-    "node48.mp3"
+    "node50.mp3"
   ],
   "coordinates": {
     "x": 11.2,
