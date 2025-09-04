@@ -493,7 +493,20 @@
     "x": 11.2,
     "y": 1783.208
   }
-  }
+  },
+  {
+    "node_id": "node47_audio",
+    "title_id": "title795",
+    "title": "Ecuador (Mainland)",
+    "tags": ["Important", "siren", "blue", "14:01" ],
+    "audio_files": [
+      "node47.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+    }
 
 
 
