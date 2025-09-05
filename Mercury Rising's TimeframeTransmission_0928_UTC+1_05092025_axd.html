@@ -196,6 +196,22 @@
       margin-top: 0.5em;
     }
 
+    #toggleFooterBtn {
+      position: absolute;
+      left: 145px;
+      top: 45px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #11afaf;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+
+    }
+
     #audioFooter {
      position: fixed;
      bottom: 0;
@@ -218,11 +234,12 @@
 <body>
     <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
     <button id="triggerButton">Toggle Image</button>
+    <button id="toggleFooterBtn" onclick="toggleFooter()">Hide Audio Panel</button>
   
     <div 
          id="viewImageButton" onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html')" style="cursor:pointer; color:#00BFFF;"> 🔍 View Image_Large</button>
          <button id="viewImageButton" onclick="openNodeImageInNewTab()"> 🔍WorldTimeZones</button>
-         <button id="toggleFooterBtn" onclick="toggleFooter()">Hide Audio Panel</button>
+         
     </div>
     <div
      id="sidebar" class="sidebar" onmousedown="startDrag(event)">
