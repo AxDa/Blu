@@ -573,18 +573,31 @@
 }
 },
 {
-  "node_id": "node53_audio",
-  "title_id": "title879",
-  "title": "Bolivia",
-  "tags": ["siren", "exhaust", "gang_groups" "blue", "k9" "10:23", "thru" "11:12", "ice", "hollow", "soda", "malt" ],
-  "audio_files": [
-    "node53.mp3"
-  ],
-  "coordinates": {
-    "x": 11.2,
-    "y": 1783.208
-  }
-  }
+"node_id": "node53_audio",
+"title_id": "title879",
+"title": "Bolivia",
+"tags": ["siren", "exhaust", "gang_groups", "blue", "k9", "10:23", "thru", "11:12", "ice", "hollow", "soda", "malt" ],
+"audio_files": [
+  "node53.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node54_audio",
+"title_id": "title893",
+"title": "Eastern United States",
+"tags": ["gang_groups", "13:02", "ice", "hollow", "aire"],
+"audio_files": [
+  "node54.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
     
   
 
