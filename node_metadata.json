@@ -576,7 +576,7 @@
 "node_id": "node53_audio",
 "title_id": "title879",
 "title": "Bolivia",
-"tags": ["siren", "exhaust", "gang_groups", "blue", "k9", "10:23", "thru", "11:12", "ice", "hollow", "soda", "malt" ],
+"tags": ["siren", "exhaust", "gang_groups", "blue", "k9", "10:23", "thru", "11:12", "ice", "hollow", "soda", "malt", "perambulator" ],
 "audio_files": [
   "node53.mp3"
 ],
@@ -615,9 +615,35 @@
 "node_id": "node56_audio",
 "title_id": "title921",
 "title": "Venezuela",
-"tags": ["gang_groups", "18:48", "thru", "18:50", "single 2\" shell", "fireworks", "hollow", "plus", "18:55"],
+"tags": ["gang_groups", "18:48", "thru", "18:50",  "single 2\" shell", "fireworks", "hollow", "plus", "18:55"],
 "audio_files": [
   "node56.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node57_audio",
+"title_id": "title928",
+"title": "Barbados",
+"tags": ["aire", "18:28", "gang_groups", "ice"],
+"audio_files": [
+  "node57.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node58_audio",
+"title_id": "title942",
+"title": "Grenada",
+"tags": ["aire", "18:28", "gang_groups", "ice"],
+"audio_files": [
+  "node58.mp3"
 ],
 "coordinates": {
   "x": 11.2,
@@ -626,9 +652,4 @@
 }
   
 
-
 ]
-
-
-
-
