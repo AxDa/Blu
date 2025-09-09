@@ -688,8 +688,22 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node62_audio",
+"title_id": "title100",
+"title": "Puerto Rico",
+"tags": ["Bleak", "Siren", "blue", "20:30" ],
+"audio_files": [
+"node62.mp3"
+],
+"coordinates": {
+"x": 11.2,
+"y": 1783.208
+}
 }
   
 
 
 ]
+
