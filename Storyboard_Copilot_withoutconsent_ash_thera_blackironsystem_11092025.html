@@ -474,6 +474,317 @@
     <input type="text" id="searchBox" placeholder="Search titles..." onkeyup="filterNodes()" />  
     
     <button onclick="toggleDock()">Dock/Undock</button>
+    <ul id='nodeList'>
+      <li><a href='#' onclick="playNodeAudio('node1'); showPlayCue('node1')">Baker Island \n(US)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node2'); showPlayCue('node2')">Howland Island \(US)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node3'); showPlayCue('node3')">American Samoa</a></li>
+      <li><a href='#' onclick="playNodeAudio('node4'); showPlayCue('node4')">Niue</a></li>
+      <li><a href='#' onclick="playNodeAudio('node5'); showPlayCue('node5')">Midway Atoll \n(US)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node6'); showPlayCue('node6')">Jarvis Island \n(US)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node7'); showPlayCue('node7')">Kingman Reef \n(US)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node8'); showPlayCue('node8')">Palmyra Atoll \n(US)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node9'); showPlayCue('node9')">Hawaii</a></li>
+      <li><a href='#' onclick="playNodeAudio('node10'); showPlayCue('node10')">French Polynesia \n(Tahiti)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node11'); showPlayCue('node11')">Cook Islands</a></li>
+      <li><a href='#' onclick="playNodeAudio('node12'); showPlayCue('node12')">Johnston Atoll (US)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node13'); showPlayCue('node13')">Tuamotu Archipelago \n(French Polynesia)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node14'); showPlayCue('node14')">Society Islands \n(French Polynesia)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node15'); showPlayCue('node15')">Alaska (US)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node16'); showPlayCue('node16')">Gambier Islands (French Polynesia)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node17'); showPlayCue('node17')">Aleutian Islands \n(US, Standard Time)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node18'); showPlayCue('node18')">UTC−12</a></li>
+      <li><a href='#' onclick="playNodeAudio('node19'); showPlayCue('node19')">UTC−11</a></li>
+      <li><a href='#' onclick="playNodeAudio('node20'); showPlayCue('node20')">UTC−10</a></li>
+      <li><a href='#' onclick="playNodeAudio('node21'); showPlayCue('node21')">UTC−9</a></li>
+      <li><a href='#' onclick="playNodeAudio('node22'); showPlayCue('node22')">Canada (British Columbia)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node23'); showPlayCue('node23')">United States \n(California, Oregon, Washington)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node24'); showPlayCue('node24')">Mexico (Baja California)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node25'); showPlayCue('node25')">Pitcairn Islands</a></li>
+      <li><a href='#' onclick="playNodeAudio('node26'); showPlayCue('node26')">Canada (Alberta)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node27'); showPlayCue('node27')">United States \n(Arizona, Colorado, Utah)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node28'); showPlayCue('node28')">Mexico (Chihuahua, Sonora)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node29'); showPlayCue('node29')">Chile (Easter Island &\n Salas y Gómez (ST))</a></li>
+      <li><a href='#' onclick="playNodeAudio('node30'); showPlayCue('node30')">Belize</a></li>
+      <li><a href='#' onclick="playNodeAudio('node31'); showPlayCue('node31')">Costa Rica</a></li>
+      <li><a href='#' onclick="playNodeAudio('node32'); showPlayCue('node32')">Guatemala</a></li>
+      <li><a href='#' onclick="playNodeAudio('node33'); showPlayCue('node33')">Honduras</a></li>
+      <li><a href='#' onclick="playNodeAudio('node34'); showPlayCue('node34')">Nicaragua</a></li>
+      <li><a href='#' onclick="playNodeAudio('node35'); showPlayCue('node35')">El Salvador</a></li>
+      <li><a href='#' onclick="playNodeAudio('node36'); showPlayCue('node36')">Mexico (Central Region)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node37'); showPlayCue('node37')">United States (Central Region)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node38'); showPlayCue('node38')">Canada (Central Region)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node39'); showPlayCue('node39')">Ecuador (Galápagos)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node40'); showPlayCue('node40')">UTC−8</a></li>
+      <li><a href='#' onclick="playNodeAudio('node41'); showPlayCue('node41')">UTC−7</a></li>
+      <li><a href='#' onclick="playNodeAudio('node42'); showPlayCue('node42')">UTC−6</a></li>
+      <li><a href='#' onclick="playNodeAudio('node43'); showPlayCue('node43')">Chile (Easter Island &\n Salas y Gómez (DST))</a></li>
+      <li><a href='#' onclick="playNodeAudio('node44'); showPlayCue('node44')">Colombia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node45'); showPlayCue('node45')">Panama</a></li>
+      <li><a href='#' onclick="playNodeAudio('node46'); showPlayCue('node46')">Peru</a></li>
+      <li><a href='#' onclick="playNodeAudio('node47'); showPlayCue('node47')">Ecuador (Mainland)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node48'); showPlayCue('node48')">Cuba</a></li>
+      <li><a href='#' onclick="playNodeAudio('node49'); showPlayCue('node49')">Haiti</a></li>
+      <li><a href='#' onclick="playNodeAudio('node50'); showPlayCue('node50')">Jamaica</a></li>
+      <li><a href='#' onclick="playNodeAudio('node51'); showPlayCue('node51')">Bahamas</a></li>
+      <li><a href='#' onclick="playNodeAudio('node52'); showPlayCue('node52')">Dominican Republic</a></li>
+      <li><a href='#' onclick="playNodeAudio('node53'); showPlayCue('node53')">Bolivia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node54'); showPlayCue('node54')">Eastern United States</a></li>
+      <li><a href='#' onclick="playNodeAudio('node55'); showPlayCue('node55')">Eastern Canada</a></li>
+      <li><a href='#' onclick="playNodeAudio('node56'); showPlayCue('node56')">Venezuela</a></li>
+      <li><a href='#' onclick="playNodeAudio('node57'); showPlayCue('node57')">Barbados</a></li>
+      <li><a href='#' onclick="playNodeAudio('node58'); showPlayCue('node58')">Grenada</a></li>
+      <li><a href='#' onclick="playNodeAudio('node59'); showPlayCue('node59')">Saint Lucia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node60'); showPlayCue('node60')">Saint Vincent \nand the Grenadines</a></li>
+      <li><a href='#' onclick="playNodeAudio('node61'); showPlayCue('node61')">Trinidad and Tobago</a></li>
+      <li><a href='#' onclick="playNodeAudio('node62'); showPlayCue('node62')">Puerto Rico</a></li>
+      <li><a href='#' onclick="playNodeAudio('node63'); showPlayCue('node63')">Aruba</a></li>
+      <li><a href='#' onclick="playNodeAudio('node64'); showPlayCue('node64')">Curacao</a></li>
+      <li><a href='#' onclick="playNodeAudio('node65'); showPlayCue('node65')">French Guiana</a></li>
+      <li><a href='#' onclick="playNodeAudio('node66'); showPlayCue('node66')">Suriname</a></li>
+      <li><a href='#' onclick="playNodeAudio('node67'); showPlayCue('node67')">Guyana</a></li>
+      <li><a href='#' onclick="playNodeAudio('node68'); showPlayCue('node68')">Chile (DST)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node69'); showPlayCue('node69')">Chile (Magallanes &\n Chilean Antarctica (year round))</a></li>
+      <li><a href='#' onclick="playNodeAudio('node70'); showPlayCue('node70')">Argentina</a></li>
+      <li><a href='#' onclick="playNodeAudio('node71'); showPlayCue('node71')">Brazil (East)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node72'); showPlayCue('node72')">Uruguay</a></li>
+      <li><a href='#' onclick="playNodeAudio('node73'); showPlayCue('node73')">Paraguay</a></li>
+      <li><a href='#' onclick="playNodeAudio('node74'); showPlayCue('node74')">Saint Pierre and Miquelon</a></li>
+      <li><a href='#' onclick="playNodeAudio('node75'); showPlayCue('node75')">UTC−5</a></li>
+      <li><a href='#' onclick="playNodeAudio('node76'); showPlayCue('node76')">UTC−4</a></li>
+      <li><a href='#' onclick="playNodeAudio('node77'); showPlayCue('node77')">UTC−3</a></li>
+      <li><a href='#' onclick="playNodeAudio('node78'); showPlayCue('node78')">Saint Pierre and \nMiquelon (Standard Time)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node79'); showPlayCue('node79')">Fernando de Noronha (Brazil)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node80'); showPlayCue('node80')">South Georgia and \nthe South Sandwich Islands</a></li>
+      <li><a href='#' onclick="playNodeAudio('node81'); showPlayCue('node81')">Cape Verde</a></li>
+      <li><a href='#' onclick="playNodeAudio('node82'); showPlayCue('node82')">Azores (Portugal)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node83'); showPlayCue('node83')">Ittoqqortoormiit \n(Greenland, DST)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node84'); showPlayCue('node84')">Iceland</a></li>
+      <li><a href='#' onclick="playNodeAudio('node85'); showPlayCue('node85')">Greenwich Mean Time \n(UK, Ireland)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node86'); showPlayCue('node86')">Portugal (Mainland)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node87'); showPlayCue('node87')">Canary Islands (Spain)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node88'); showPlayCue('node88')">Gambia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node89'); showPlayCue('node89')">Ghana</a></li>
+      <li><a href='#' onclick="playNodeAudio('node90'); showPlayCue('node90')">Guinea</a></li>
+      <li><a href='#' onclick="playNodeAudio('node91'); showPlayCue('node91')">Mali</a></li>
+      <li><a href='#' onclick="playNodeAudio('node92'); showPlayCue('node92')">Mauritania</a></li>
+      <li><a href='#' onclick="playNodeAudio('node93'); showPlayCue('node93')">Senegal</a></li>
+      <li><a href='#' onclick="playNodeAudio('node94'); showPlayCue('node94')">Sierra Leone</a></li>
+      <li><a href='#' onclick="playNodeAudio('node95'); showPlayCue('node95')">Togo</a></li>
+      <li><a href='#' onclick="playNodeAudio('node96'); showPlayCue('node96')">Algeria</a></li>
+      <li><a href='#' onclick="playNodeAudio('node97'); showPlayCue('node97')">Angola</a></li>
+      <li><a href='#' onclick="playNodeAudio('node98'); showPlayCue('node98')">Benin</a></li>
+      <li><a href='#' onclick="playNodeAudio('node99'); showPlayCue('node99')">Cameroon</a></li>
+      <li><a href='#' onclick="playNodeAudio('node100'); showPlayCue('node100')">Central African Republic</a></li>
+      <li><a href='#' onclick="playNodeAudio('node101'); showPlayCue('node101')">Chad</a></li>
+      <li><a href='#' onclick="playNodeAudio('node102'); showPlayCue('node102')">Congo (Brazzaville)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node103'); showPlayCue('node103')">Democratic Republic \nof Congo (West)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node104'); showPlayCue('node104')">Equatorial Guinea</a></li>
+      <li><a href='#' onclick="playNodeAudio('node105'); showPlayCue('node105')">Gabon</a></li>
+      <li><a href='#' onclick="playNodeAudio('node106'); showPlayCue('node106')">Morocco</a></li>
+      <li><a href='#' onclick="playNodeAudio('node107'); showPlayCue('node107')">Nigeria</a></li>
+      <li><a href='#' onclick="playNodeAudio('node108'); showPlayCue('node108')">Tunisia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node109'); showPlayCue('node109')">Western Europe \n(France, Germany, Italy, Spain)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node110'); showPlayCue('node110')">Andorra</a></li>
+      <li><a href='#' onclick="playNodeAudio('node111'); showPlayCue('node111')">Belgium</a></li>
+      <li><a href='#' onclick="playNodeAudio('node112'); showPlayCue('node112')">Luxembourg</a></li>
+      <li><a href='#' onclick="playNodeAudio('node113'); showPlayCue('node113')">Netherlands</a></li>
+      <li><a href='#' onclick="playNodeAudio('node114'); showPlayCue('node114')">Norway</a></li>
+      <li><a href='#' onclick="playNodeAudio('node115'); showPlayCue('node115')">Sweden</a></li>
+      <li><a href='#' onclick="playNodeAudio('node116'); showPlayCue('node116')">Denmark</a></li>
+      <li><a href='#' onclick="playNodeAudio('node117'); showPlayCue('node117')">UTC−2</a></li>
+      <li><a href='#' onclick="playNodeAudio('node118'); showPlayCue('node118')">UTC−1</a></li>
+      <li><a href='#' onclick="playNodeAudio('node119'); showPlayCue('node119')">UTC±0</a></li>
+      <li><a href='#' onclick="playNodeAudio('node120'); showPlayCue('node120')">UTC+1</a></li>
+      <li><a href='#' onclick="playNodeAudio('node121'); showPlayCue('node121')">South Africa</a></li>
+      <li><a href='#' onclick="playNodeAudio('node122'); showPlayCue('node122')">Egypt</a></li>
+      <li><a href='#' onclick="playNodeAudio('node123'); showPlayCue('node123')">Libya</a></li>
+      <li><a href='#' onclick="playNodeAudio('node124'); showPlayCue('node124')">Sudan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node125'); showPlayCue('node125')">Israel</a></li>
+      <li><a href='#' onclick="playNodeAudio('node126'); showPlayCue('node126')">Palestine</a></li>
+      <li><a href='#' onclick="playNodeAudio('node127'); showPlayCue('node127')">Jordan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node128'); showPlayCue('node128')">Lebanon</a></li>
+      <li><a href='#' onclick="playNodeAudio('node129'); showPlayCue('node129')">Syria</a></li>
+      <li><a href='#' onclick="playNodeAudio('node130'); showPlayCue('node130')">Greece</a></li>
+      <li><a href='#' onclick="playNodeAudio('node131'); showPlayCue('node131')">Bulgaria</a></li>
+      <li><a href='#' onclick="playNodeAudio('node132'); showPlayCue('node132')">Romania</a></li>
+      <li><a href='#' onclick="playNodeAudio('node133'); showPlayCue('node133')">Ukraine (Standard Time)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node134'); showPlayCue('node134')">Finland (Standard Time)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node135'); showPlayCue('node135')">Cyprus</a></li>
+      <li><a href='#' onclick="playNodeAudio('node136'); showPlayCue('node136')">Turkey (Permanent UTC+3)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node137'); showPlayCue('node137')">Saudi Arabia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node138'); showPlayCue('node138')">Iraq</a></li>
+      <li><a href='#' onclick="playNodeAudio('node139'); showPlayCue('node139')">Kuwait</a></li>
+      <li><a href='#' onclick="playNodeAudio('node140'); showPlayCue('node140')">Qatar</a></li>
+      <li><a href='#' onclick="playNodeAudio('node141'); showPlayCue('node141')">Bahrain</a></li>
+      <li><a href='#' onclick="playNodeAudio('node142'); showPlayCue('node142')">Yemen</a></li>
+      <li><a href='#' onclick="playNodeAudio('node143'); showPlayCue('node143')">Somalia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node144'); showPlayCue('node144')">Ethiopia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node145'); showPlayCue('node145')">Kenya</a></li>
+      <li><a href='#' onclick="playNodeAudio('node146'); showPlayCue('node146')">Tanzania</a></li>
+      <li><a href='#' onclick="playNodeAudio('node147'); showPlayCue('node147')">Uganda</a></li>
+      <li><a href='#' onclick="playNodeAudio('node148'); showPlayCue('node148')">Russia (Moscow)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node149'); showPlayCue('node149')">Belarus</a></li>
+      <li><a href='#' onclick="playNodeAudio('node150'); showPlayCue('node150')">Georgia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node151'); showPlayCue('node151')">Armenia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node152'); showPlayCue('node152')">Azerbaijan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node153'); showPlayCue('node153')">United Arab Emirates</a></li>
+      <li><a href='#' onclick="playNodeAudio('node154'); showPlayCue('node154')">Oman</a></li>
+      <li><a href='#' onclick="playNodeAudio('node155'); showPlayCue('node155')">Mauritius</a></li>
+      <li><a href='#' onclick="playNodeAudio('node156'); showPlayCue('node156')">Seychelles</a></li>
+      <li><a href='#' onclick="playNodeAudio('node157'); showPlayCue('node157')">Russia (Samara)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node158'); showPlayCue('node158')">Afghanistan (UTC+4:30)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node159'); showPlayCue('node159')">Pakistan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node160'); showPlayCue('node160')">Uzbekistan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node161'); showPlayCue('node161')">Turkmenistan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node162'); showPlayCue('node162')">Tajikistan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node163'); showPlayCue('node163')">Kazakhstan (West)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node164'); showPlayCue('node164')">Maldives</a></li>
+      <li><a href='#' onclick="playNodeAudio('node165'); showPlayCue('node165')">UTC+2</a></li>
+      <li><a href='#' onclick="playNodeAudio('node166'); showPlayCue('node166')">UTC+3</a></li>
+      <li><a href='#' onclick="playNodeAudio('node167'); showPlayCue('node167')">Iran (UTC+3:30)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node168'); showPlayCue('node168')">UTC+4</a></li>
+      <li><a href='#' onclick="playNodeAudio('node169'); showPlayCue('node169')">UTC+5</a></li>
+      <li><a href='#' onclick="playNodeAudio('node170'); showPlayCue('node170')">Bangladesh</a></li>
+      <li><a href='#' onclick="playNodeAudio('node171'); showPlayCue('node171')">Bhutan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node172'); showPlayCue('node172')">Kazakhstan (East)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node173'); showPlayCue('node173')">Kyrgyzstan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node174'); showPlayCue('node174')">Cocos Islands (Australia)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node175'); showPlayCue('node175')">British Indian \nOcean Territory</a></li>
+      <li><a href='#' onclick="playNodeAudio('node176'); showPlayCue('node176')">Thailand</a></li>
+      <li><a href='#' onclick="playNodeAudio('node177'); showPlayCue('node177')">Vietnam</a></li>
+      <li><a href='#' onclick="playNodeAudio('node178'); showPlayCue('node178')">Cambodia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node179'); showPlayCue('node179')">Laos</a></li>
+      <li><a href='#' onclick="playNodeAudio('node180'); showPlayCue('node180')">Indonesia \n(Western Region)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node181'); showPlayCue('node181')">Christmas Island (Australia)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node182'); showPlayCue('node182')">Russia \n(Novosibirsk\nKrasnoyarsk)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node183'); showPlayCue('node183')">Mongolia \n(Western Region)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node184'); showPlayCue('node184')">China (Mainland)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node185'); showPlayCue('node185')">Hong Kong</a></li>
+      <li><a href='#' onclick="playNodeAudio('node186'); showPlayCue('node186')">Macau</a></li>
+      <li><a href='#' onclick="playNodeAudio('node187'); showPlayCue('node187')">Taiwan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node188'); showPlayCue('node188')">Malaysia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node189'); showPlayCue('node189')">Singapore</a></li>
+      <li><a href='#' onclick="playNodeAudio('node190'); showPlayCue('node190')">Philippines</a></li>
+      <li><a href='#' onclick="playNodeAudio('node191'); showPlayCue('node191')">Brunei</a></li>
+      <li><a href='#' onclick="playNodeAudio('node192'); showPlayCue('node192')">Indonesia \n(Central Region)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node193'); showPlayCue('node193')">Western Australia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node194'); showPlayCue('node194')">Russia (Irkutsk)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node195'); showPlayCue('node195')">Mongolia \n(Eastern Region)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node196'); showPlayCue('node196')">Japan</a></li>
+      <li><a href='#' onclick="playNodeAudio('node197'); showPlayCue('node197')">South Korea</a></li>
+      <li><a href='#' onclick="playNodeAudio('node198'); showPlayCue('node198')">North Korea</a></li>
+      <li><a href='#' onclick="playNodeAudio('node199'); showPlayCue('node199')">East Timor</a></li>
+      <li><a href='#' onclick="playNodeAudio('node200'); showPlayCue('node200')">Indonesia \n(Eastern Region)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node201'); showPlayCue('node201')">Russia (Yakutsk)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node202'); showPlayCue('node202')">Palau</a></li>
+      <li><a href='#' onclick="playNodeAudio('node203'); showPlayCue('node203')">UTC+6</a></li>
+      <li><a href='#' onclick="playNodeAudio('node204'); showPlayCue('node204')">UTC+7</a></li>
+      <li><a href='#' onclick="playNodeAudio('node205'); showPlayCue('node205')">UTC+8</a></li>
+      <li><a href='#' onclick="playNodeAudio('node206'); showPlayCue('node206')">UTC+9</a></li>
+      <li><a href='#' onclick="playNodeAudio('node207'); showPlayCue('node207')">Eastern Australia \n(Queensland, NSW, Victoria)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node208'); showPlayCue('node208')">Papua New Guinea</a></li>
+      <li><a href='#' onclick="playNodeAudio('node209'); showPlayCue('node209')">Guam</a></li>
+      <li><a href='#' onclick="playNodeAudio('node210'); showPlayCue('node210')">Northern Mariana Islands</a></li>
+      <li><a href='#' onclick="playNodeAudio('node211'); showPlayCue('node211')">Russia (Vladivostok)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node212'); showPlayCue('node212')">Federated States of \nMicronesia (Western)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node213'); showPlayCue('node213')">Solomon Islands</a></li>
+      <li><a href='#' onclick="playNodeAudio('node214'); showPlayCue('node214')">New Caledonia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node215'); showPlayCue('node215')">Vanuatu</a></li>
+      <li><a href='#' onclick="playNodeAudio('node216'); showPlayCue('node216')">Federated States of \nMicronesia (Eastern)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node217'); showPlayCue('node217')">Russia (Magadan)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node218'); showPlayCue('node218')">Norfolk Island (Australia)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node219'); showPlayCue('node219')">Bougainville \n(Papua New Guinea)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node220'); showPlayCue('node220')">Fiji</a></li>
+      <li><a href='#' onclick="playNodeAudio('node221'); showPlayCue('node221')">Tuvalu</a></li>
+      <li><a href='#' onclick="playNodeAudio('node222'); showPlayCue('node222')">Nauru</a></li>
+      <li><a href='#' onclick="playNodeAudio('node223'); showPlayCue('node223')">Kiribati \n(Gilbert Islands)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node224'); showPlayCue('node224')">Marshall Islands</a></li>
+      <li><a href='#' onclick="playNodeAudio('node225'); showPlayCue('node225')">Wallis and Futuna</a></li>
+      <li><a href='#' onclick="playNodeAudio('node226'); showPlayCue('node226')">New Zealand (Standard Time)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node227'); showPlayCue('node227')">Russia (Kamchatka)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node228'); showPlayCue('node228')">Wake Island (US)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node229'); showPlayCue('node229')">Tonga</a></li>
+      <li><a href='#' onclick="playNodeAudio('node230'); showPlayCue('node230')">Samoa</a></li>
+      <li><a href='#' onclick="playNodeAudio('node231'); showPlayCue('node231')">Tokelau</a></li>
+      <li><a href='#' onclick="playNodeAudio('node232'); showPlayCue('node232')">New Zealand \n(Daylight Saving Time)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node233'); showPlayCue('node233')">Kiribati (Phoenix Islands)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node234'); showPlayCue('node234')">Kiribati (Line Islands)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node235'); showPlayCue('node235')">Kiritimati \n(Christmas Island)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node236'); showPlayCue('node236')">UTC+10</a></li>
+      <li><a href='#' onclick="playNodeAudio('node237'); showPlayCue('node237')">UTC+11</a></li>
+      <li><a href='#' onclick="playNodeAudio('node238'); showPlayCue('node238')">UTC+12</a></li>
+      <li><a href='#' onclick="playNodeAudio('node239'); showPlayCue('node239')">UTC+13</a></li>
+      <li><a href='#' onclick="playNodeAudio('node240'); showPlayCue('node240')">UTC+14</a></li>
+      <li><a href='#' onclick="playNodeAudio('node241'); showPlayCue('node241')">India (UTC+5:30)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node242'); showPlayCue('node242')">Sri Lanka \n(UTC+5:30)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node243'); showPlayCue('node243')">South Asia \n& East Asia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node244'); showPlayCue('node244')">Nepal (UTC+5:45)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node245'); showPlayCue('node245')">Myanmar \n(UTC+6:30)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node246'); showPlayCue('node246')">Cocos (Keeling) Islands \n(Australia)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node247'); showPlayCue('node247')">Eucla (Australia) (UTC+8:45)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node248'); showPlayCue('node248')">Australia \n(Northern Territory (UTC+9:30))</a></li>
+      <li><a href='#' onclick="playNodeAudio('node249'); showPlayCue('node249')">Australia \n(South Australia (UTC+9:30))</a></li>
+      <li><a href='#' onclick="playNodeAudio('node250'); showPlayCue('node250')">Australia \n(Broken Hill (UTC+9:30))</a></li>
+      <li><a href='#' onclick="playNodeAudio('node251'); showPlayCue('node251')">Lord Howe Island \n(Australia (UTC+10:30))</a></li>
+      <li><a href='#' onclick="playNodeAudio('node252'); showPlayCue('node252')">Chatham Islands \n(New Zealand (UTC+12:35))</a></li>
+      <li><a href='#' onclick="playNodeAudio('node253'); showPlayCue('node253')">Newfoundland \n(Canada (−3:30))</a></li>
+      <li><a href='#' onclick="playNodeAudio('node254'); showPlayCue('node254')">Venezuela (−4:30)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node255'); showPlayCue('node255')">United Kingdom (DST)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node256'); showPlayCue('node256')">Ireland DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node257'); showPlayCue('node257')">Portugal DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node258'); showPlayCue('node258')">Spain DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node259'); showPlayCue('node259')">France DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node260'); showPlayCue('node260')">Germany DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node261'); showPlayCue('node261')">Italy DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node262'); showPlayCue('node262')">Netherlands DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node263'); showPlayCue('node263')">Belgium DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node264'); showPlayCue('node264')">Switzerland DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node265'); showPlayCue('node265')">Austria DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node266'); showPlayCue('node266')">Poland DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node267'); showPlayCue('node267')">Czech Republic DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node268'); showPlayCue('node268')">Hungary DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node269'); showPlayCue('node269')">Slovakia DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node270'); showPlayCue('node270')">Slovenia DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node271'); showPlayCue('node271')">Croatia DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node272'); showPlayCue('node272')">Serbia DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node273'); showPlayCue('node273')">Bosnia and Herzegovina DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node274'); showPlayCue('node274')">North Macedonia DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node275'); showPlayCue('node275')">Greece DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node276'); showPlayCue('node276')">Bulgaria DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node277'); showPlayCue('node277')">Romania DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node278'); showPlayCue('node278')">Ukraine DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node279'); showPlayCue('node279')">Norway DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node280'); showPlayCue('node280')">Sweden DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node281'); showPlayCue('node281')">Finland DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node282'); showPlayCue('node282')">Estonia DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node283'); showPlayCue('node283')">Latvia DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node284'); showPlayCue('node284')">Lithuania DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node285'); showPlayCue('node285')">West Africa \n&\n Europe West</a></li>
+      <li><a href='#' onclick="playNodeAudio('node286'); showPlayCue('node286')">United States (except Arizona, Hawaii)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node287'); showPlayCue('node287')">Canada \n(except Saskatchewan,\n Yukon) DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node288'); showPlayCue('node288')">Mexico (Baja California \nand border municipalities) DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node289'); showPlayCue('node289')">Greenland (Pituffik Space Base) DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node290'); showPlayCue('node290')">Saint Pierre\n and \nMiquelon DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node291'); showPlayCue('node291')">Bahamas DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node292'); showPlayCue('node292')">Bermuda DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node293'); showPlayCue('node293')">Haiti DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node294'); showPlayCue('node294')">Cuba DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node295'); showPlayCue('node295')">South \nAmerica</a></li>
+      <li><a href='#' onclick="playNodeAudio('node296'); showPlayCue('node296')">Chile (except Aysén\n and\n Magallanes)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node297'); showPlayCue('node297')">Paraguay DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node298'); showPlayCue('node298')">Israel DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node299'); showPlayCue('node299')">Lebanon DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node300'); showPlayCue('node300')">Iran (DST)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node301'); showPlayCue('node301')">Palestine DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node302'); showPlayCue('node302')">Egypt DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node303'); showPlayCue('node303')">Middle East \n&\n Central Asia</a></li>
+      <li><a href='#' onclick="playNodeAudio('node304'); showPlayCue('node304')">Oceania</a></li>
+      <li><a href='#' onclick="playNodeAudio('node305'); showPlayCue('node305')">New Zealand \n(Mainland)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node306'); showPlayCue('node306')">Chatham Islands (NZ) DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node307'); showPlayCue('node307')">Australia \n(NSW, Victoria, \nTasmania, SA, ACT)</a></li>
+      <li><a href='#' onclick="playNodeAudio('node308'); showPlayCue('node308')">Lord Howe Island\n (Australia) DST</a></li>
+      <li><a href='#' onclick="playNodeAudio('node309'); showPlayCue('node309')">Norfolk Island \n(Australia) DST</a></li>  
+    </ul>
   </div>    
 <div id="svgContainer">
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -835,14 +1146,14 @@ if (audio.paused) {
 
 <div id="audioFooter">
 <div id="audioPanel">
-<span>🔊 Transmission: node63</span>
-<audio id="audioPlayer" src="node63.mp3" preload="auto" controls></audio>
+<span>🔊 Transmission: node2</span>
+<audio id="audioPlayer" src="node2.mp3" preload="auto" controls></audio>
 <button onclick="toggleAudio('audioPlayer')">Play / Pause</button>
 </div>
 
 <div id="audioPanel2">
-<span>🔊 Transmission: node64</span>
-<audio id="audioPlayer2" src="node64.mp3" preload="auto" controls></audio>
+<span>🔊 Transmission: node10</span>
+<audio id="audioPlayer2" src="node10.mp3" preload="auto" controls></audio>
 <button onclick="toggleAudio('audioPlayer2')">Play / Pause</button>
 </div>
 </div>
