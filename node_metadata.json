@@ -680,7 +680,7 @@
 "node_id": "node61_audio",
 "title_id": "title986",
 "title": "Trinidad and Tobago",
-"tags": ["Bleak", "Siren", "blue", "20:05" ],
+"tags": ["Bleak", "siren", "blue", "20:05" ],
 "audio_files": [
   "node61.mp3"
 ],
@@ -691,21 +691,44 @@
 },
 {
 "node_id": "node62_audio",
-"title_id": "title1000",
+"title_id": "title100",
 "title": "Puerto Rico",
 "tags": ["Bleak", "perambulator", "horn", "20:30" ],
 "audio_files": [
-"node62.mp3"
+  "node62.mp3"
 ],
 "coordinates": {
-"x": 11.2,
-"y": 1783.208
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node63_audio",
+"title_id": "title1014",
+"title": "Aruba",
+"tags": ["Bleak", "siren", "blue", "20:41" ],
+"audio_files": [
+  "node63.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node64_audio",
+"title_id": "title1028",
+"title": "Curacao",
+"tags": ["Bleak", "agency", "22:21" ],
+"audio_files": [
+  "node64.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
 }
+
   
 
-
 ]
-
-
-
