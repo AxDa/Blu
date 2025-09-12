@@ -1,0 +1,2629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dog’s utterance Echo_12092025</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    #svgContainer {
+      width: 100%;
+      height: 90%;
+    }
+
+    .main {
+      position: relative;
+      height: 100vh;
+      margin-left: 300px; /* default when sidebar is docked */
+      transition: margin-left 0.3s ease;
+    }
+
+    #toggleSidebar {
+      position: fixed;
+      top: 20px;
+      left: 10px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+      #triggerButton {
+      position: absolute;
+      left: 10px;
+      top: 45px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #83d3d3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+
+    }
+
+    #viewImageButton {
+      position: fixed;
+      top: 10px;
+      left: 145px; /* adjust based on toggleSidebar width */
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #00BFFF;
+      color: rgb(32, 25, 25);
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar {
+      position: absolute;
+      left: 0;
+      top: 60px;
+      width: 280px;
+      height: 80%;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 1em;
+      border: 1px solid #ccc;
+      z-index: 999;
+      cursor: move;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 0.5em;
+    }
+    .sidebar input {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 1em;
+      font-size: 14px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin-bottom: 0.5em;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
+    .sidebar a:hover {
+      color: #0077cc;
+    }
+
+    svg, svg * {
+    visibility: visible !important;
+    display: inline !important;
+    }
+  </style>
+
+  <!-- External scripts -->
+  <script src="svg-pan-zoom.min.js"></script>
+  <script src="title_node_map.js"></script>
+  <script src="node_metadata.json"></script>
+
+  <style>
+    #togglePanelBtn {
+      position: fixed;
+      top: 45px;
+      left: 145px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglePanelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+    #buttonPanel {
+      display: block;
+      position: fixed;
+      top: 110px;
+      left: 10px;
+      z-index: 900;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      max-height: 700px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid #ccc;
+      cursor: move; /* merged here */
+    } 
+  </style>
+
+  <style>
+    #audioPanel, #audioPanel2 {
+      margin-bottom: 1em;
+      display: flex;
+      flex-direction: row; /* Change to 'row' for horizontal layout */
+      align-items: flex-start;
+      gap: 0.5em;
+      border: 1px solid #ccc;
+      padding: 1em;
+      background-color: #f9f9f9;
+    }
+  
+    audio {
+      width: 100%; /* Ensures full-width progress bar */
+    }
+  
+    #toggleFooterBtn {
+      padding: 0.4em 0.8em;
+      font-size: 0.9em;
+      position: absolute;
+      top: 20px;
+      left: 145px;
+    }
+  </style>
+
+<style>
+    #audioFooter {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #362e2e;
+      border-top: 1px solid #ccc;
+      padding: 1em;
+      display: flex;
+      flex-direction: row; /* or 'row' if you want horizontal layout */
+      gap: 1em;
+      z-index: 1000; /* ensures it sits above the SVG */
+    }
+  
+    #audioFooter audio {
+      width: 100%;
+    }
+  
+    #audioFooter button {
+      margin-top: 0.5em;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
+  <button id="triggerButton">Toggle Image</button>
+  <button id="toggleFooterBtn" onclick="toggleFooter()">Hide Audio Panel</button>
+  <button id="togglePanelBtn">Hide Panel</button>
+  <!-- View Image Buttons -->
+  <button onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View Image_Large
+  </button>
+
+<button onclick="openNodeImageInNewTab()" style="cursor:pointer; color:#00BFFF;">
+  🔍 WorldTimeZones
+</button>
+
+<!-- Button Panel Container -->
+<div id="buttonPanel">
+
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit 1721
+  </button>
+  
+  <button 
+  onclick="window.open('As_the_ash_of_thera_whispers_pwa_(7)_index.html', '_blank')" 
+  aria-label="As_the_ash_of_thera_whispers_pwa_(7)_index"
+  data-node-id="As_the_ash_of_thera_whispers_pwa_(7)_index">
+  Open: As_the_ash_of_thera_whispers_pwa_(7)_index
+  </button>
+  
+  <button 
+  onclick="window.open('HybridAbyssmons16082025.html', '_blank')" 
+  aria-label="Hybrid Abyssmons 16082025"
+  data-node-id="Hybrid_Abyssmons_16082025">
+  Open: Hybrid Abyssmons 16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Old_full_svg.html', '_blank')" 
+  aria-label="Old_full_svg"
+  data-node-id="Old_full_svg">
+  Open: Old_full_svg
+  </button>
+  
+  <button 
+  onclick="window.open('SodaStrawMappingGrowth_0019_19082025.svg.html', '_blank')" 
+  aria-label="Soda Straw Mapping Growth_0019_19082025"
+  data-node-id="Soda_Straw_Mapping_Growth_0019_19082025">
+  Open: Soda Straw Mapping Growth_0019_19082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermark_AllegoricalUnderworld_embed1929_utc1_17072025.html', '_blank')" 
+  aria-label="Watermark Allegorical Underworldembed 1929_utc1_17072025"
+  data-node-id="Watermark_AllegoricalUnderworld_embed1929_utc1_17072025">
+  Open: Allegorical Underworld_embed 1929_utc1_17072025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_InverseSocietySummaryExpandedTable_all3_graphpywBT_0129_14082025 (6785 x 3715)(inline).html', '_blank')" 
+  aria-label="Inverse Society Summary Expanded Table 0129_14082025 (6785 x 3715)"
+  data-node-id="Inverse_Society_Summary_Expanded_Table_0129_14082025">
+  Open: Inverse Society Summary Expanded Table 0129_14082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0210_utc+1_16082025WrapperwithSpeakerIconAudioPlayer.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege 0210_utc+1_16082025"
+  data-node-id="Ultrasonic_Street_audio_Siege 0210_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege 0210_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0723_utc+1_16082025.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege_0723_utc+1_16082025"
+  data-node-id="UltrasonicStreetaudioSiege_0723_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege_0723_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_ElusivePossession_0830(mp3)_utc1_22082025.html', '_blank')" 
+  aria-label="Elusive Possession 0830(mp3) utc1_22082025"
+  data-node-id="ElusivePossession_0830(mp3)_utc1_22082025">
+  Open: Elusive Possession 0830(mp3) utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_RecursiveMachine_0219_utc+1_23082025.html', '_blank')" 
+  aria-label="Recursive Machine 0219 utc+1_23082025"
+  data-node-id="RecursiveMachine_0219_utc+1_23082025">
+  Open: Recursive Machine 0219 utc+1_23082025
+  </button>
+  
+  <button 
+  onclick="window.open('WmstreetsoundCivilSocietal_Visualization_0026_utc1_22082025svg.html', '_blank')" 
+  aria-label="street_Civil_Societal_Visualization_0026_utc1_22082025"
+  data-node-id="street_sound_Civil_Societal_Visualization_0026_utc1_22082025">
+  Open: Street_Civil_Societal_Visualization_0026_utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('bleakleo_player.html', '_blank')" 
+  aria-label="bleakleo player"
+  data-node-id="bleakleo_player">
+  Open: bleakleo player
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Aindex.html', '_blank')" 
+  aria-label="Aindex"
+  data-node-id="Aindex">
+  Open: Aindex
+  </button>
+  
+  <button 
+  onclick="window.open('bleaktyrestperambulator_audio_embed.html', '_blank')" 
+  aria-label="bleaktyrestperambulator audio embed"
+  data-node-id="bleaktyrestperambulator_audio_embed">
+  Open: bleaktyrestperambulator_audio_embed
+  </button>
+  
+  <button 
+  onclick="window.open('fullscreen.html', '_blank')" 
+  aria-label="fullscreen"
+  data-node-id="fullscreen">
+  Open: fullscreen
+  </button>
+  
+  <button 
+  onclick="window.open('grid_node_view.html', '_blank')" 
+  aria-label="grid_node_view"
+  data-node-id="grid_node_view">
+  Open: grid_node_view
+  </button>
+  
+  <button 
+  onclick="window.open('indexfin2_data.html', '_blank')" 
+  aria-label="indexfin2 data"
+  data-node-id="indexfin2_data">
+  Open: indexfin2_data
+  </button>
+  
+  <button 
+  onclick="window.open('opening_index.html', '_blank')" 
+  aria-label="opening index"
+  data-node-id="opening_index">
+  Open: opening index
+  </button>
+  
+  <button 
+  onclick="window.open('svg_wrapper_enhanced.html', '_blank')" 
+  aria-label="svg wrapper enhanced"
+  data-node-id="svg_wrapper_enhanced">
+  Open: svg wrapper enhanced
+  </button>
+  
+  <button 
+  onclick="window.open('thera_whispers_above_cauldera_fin_axd.html', '_blank')" 
+  aria-label="thera whispers above cauldera fin axd"
+  data-node-id="thera_whispers_above_cauldera_fin_axd">
+  Open: thera whispers above cauldera fin axd
+  </button>
+  
+  <button 
+  onclick="window.open('Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention_20250820_113701_axd.html', '_blank')" 
+  aria-label="Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention"
+  data-node-id="Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention">
+  Open: Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention
+  </button>
+  
+  <button 
+  onclick="window.open('toggle_image_sss.html', '_blank')" 
+  aria-label="toggle image sss"
+  data-node-id="toggle_image_sss">
+  Open: toggle image sss
+  </button>
+  
+  <button 
+  onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html', '_blank')" 
+  aria-label="World Time Zone Node Drip Echo"
+  data-node-id="World_Time_Zones_Node_Drip_Echo">
+  Open: World Time Zone Node Drip Echo
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit
+  </button>
+  
+  <button 
+  onclick="window.open('image_inline_BroadcastExperience1633_02092025_wipbase64.html', '_blank')" 
+  aria-label="image inline Broadcast Experience"
+  data-node-id="image_inline_BroadcastExperience">
+  Open: image inline Broadcast Experience
+  </button>
+  
+  <button 
+  onclick="window.open('Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html', '_blank')" 
+  aria-label="Bleakst Going to C a Realm Proxy Scylla Transmission"
+  data-node-id="Bleakst_Goingto_C_a_Realm_Proxy_Scylla_Transmission">
+  Open: Bleakst Going to C a Realm Proxy Scylla Transmission
+  </button>
+  
+  <button 
+  onclick="window.open('WmAspectsenslavementAudit_0059_utc+1+06092025.html', '_blank')" 
+  aria-label="Aspects enslavement Audit"
+  data-node-id="Aspects_enslavement_Audit">
+  Open: Aspects enslavement Audit
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_archive_1509_10092025.html', '_blank')" 
+  aria-label="testimony archive 1509 10092025"
+  data-node-id="testimony_archive_1509_10092025">
+  Open: testimony archive 1509 10092025
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_1408_utc+1_09092025_Protocol_axd.html', '_blank')" 
+  aria-label="Jeffersonian linier Bulwark semantic clusters with motifs 1408 09092025_Protocol axd"
+  data-node-id="Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_Protocol">
+  Open: JeffersonianBulwarkclustersProtocol
+  </button>
+      
+  <button 
+  onclick="window.open('Wm_velvetveilprotocol_815_utc+1_07092025.html', '_blank')" 
+  aria-label="Wm_velvet_veil_protocol"
+  data-node-id="velvet veil protocol">
+  Open: velvetveilprotocol
+  </button>
+  
+  <button 
+  onclick="window.open('Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html', '_blank')" 
+  aria-label="Hawking Blackhole Radiation Rllbk_tx"
+  data-node-id="Hawking Blackhole_Radiation">
+  Open: Hawking Blackhole Radiation Rllbk tx
+  </button>
+  
+  <button 
+  onclick="window.open('spare.html', '_blank')" 
+  aria-label="spare"
+  data-node-id="spare">
+  Open: spare
+  </button>
+  
+  <button 
+  onclick="window.open('spare.html', '_blank')" 
+  aria-label="spare"
+  data-node-id="spare">
+  Open: spare
+  </button>
+  </div>
+
+  <div
+    id="sidebar" class="sidebar" onmousedown="startDrag(event)">
+    <h2>Node Index</h2>
+    <input type="text" id="searchBox" placeholder="Search titles..." onkeyup="filterNodes()" />  
+    
+    <button onclick="toggleDock()">Dock/Undock</button>
+    <ul id='nodeList'>
+    <li><a href='#' onclick="playNodeAudio('node1'); showPlayCue('node1')">Baker Island 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node2'); showPlayCue('node2')">Howland Island \(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node3'); showPlayCue('node3')">American Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node4'); showPlayCue('node4')">Niue</a></li>
+    <li><a href='#' onclick="playNodeAudio('node5'); showPlayCue('node5')">Midway Atoll 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node6'); showPlayCue('node6')">Jarvis Island 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node7'); showPlayCue('node7')">Kingman Reef 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node8'); showPlayCue('node8')">Palmyra Atoll 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node9'); showPlayCue('node9')">Hawaii</a></li>
+    <li><a href='#' onclick="playNodeAudio('node10'); showPlayCue('node10')">French Polynesia 
+(Tahiti)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node11'); showPlayCue('node11')">Cook Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node12'); showPlayCue('node12')">Johnston Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node13'); showPlayCue('node13')">Tuamotu Archipelago 
+(French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node14'); showPlayCue('node14')">Society Islands 
+(French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node15'); showPlayCue('node15')">Alaska (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node16'); showPlayCue('node16')">Gambier Islands (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node17'); showPlayCue('node17')">Aleutian Islands 
+(US, Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node18'); showPlayCue('node18')">UTC−12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node19'); showPlayCue('node19')">UTC−11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node20'); showPlayCue('node20')">UTC−10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node21'); showPlayCue('node21')">UTC−9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node22'); showPlayCue('node22')">Canada (British Columbia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node23'); showPlayCue('node23')">United States 
+(California, Oregon, Washington)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node24'); showPlayCue('node24')">Mexico (Baja California)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node25'); showPlayCue('node25')">Pitcairn Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node26'); showPlayCue('node26')">Canada (Alberta)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node27'); showPlayCue('node27')">United States 
+(Arizona, Colorado, Utah)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node28'); showPlayCue('node28')">Mexico (Chihuahua, Sonora)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node29'); showPlayCue('node29')">Chile (Easter Island &
+ Salas y Gómez (ST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node30'); showPlayCue('node30')">Belize</a></li>
+    <li><a href='#' onclick="playNodeAudio('node31'); showPlayCue('node31')">Costa Rica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node32'); showPlayCue('node32')">Guatemala</a></li>
+    <li><a href='#' onclick="playNodeAudio('node33'); showPlayCue('node33')">Honduras</a></li>
+    <li><a href='#' onclick="playNodeAudio('node34'); showPlayCue('node34')">Nicaragua</a></li>
+    <li><a href='#' onclick="playNodeAudio('node35'); showPlayCue('node35')">El Salvador</a></li>
+    <li><a href='#' onclick="playNodeAudio('node36'); showPlayCue('node36')">Mexico (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node37'); showPlayCue('node37')">United States (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node38'); showPlayCue('node38')">Canada (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node39'); showPlayCue('node39')">Ecuador (Galápagos)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node40'); showPlayCue('node40')">UTC−8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node41'); showPlayCue('node41')">UTC−7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node42'); showPlayCue('node42')">UTC−6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node43'); showPlayCue('node43')">Chile (Easter Island &
+ Salas y Gómez (DST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node44'); showPlayCue('node44')">Colombia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node45'); showPlayCue('node45')">Panama</a></li>
+    <li><a href='#' onclick="playNodeAudio('node46'); showPlayCue('node46')">Peru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node47'); showPlayCue('node47')">Ecuador (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node48'); showPlayCue('node48')">Cuba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node49'); showPlayCue('node49')">Haiti</a></li>
+    <li><a href='#' onclick="playNodeAudio('node50'); showPlayCue('node50')">Jamaica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node51'); showPlayCue('node51')">Bahamas</a></li>
+    <li><a href='#' onclick="playNodeAudio('node52'); showPlayCue('node52')">Dominican Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node53'); showPlayCue('node53')">Bolivia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node54'); showPlayCue('node54')">Eastern United States</a></li>
+    <li><a href='#' onclick="playNodeAudio('node55'); showPlayCue('node55')">Eastern Canada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node56'); showPlayCue('node56')">Venezuela</a></li>
+    <li><a href='#' onclick="playNodeAudio('node57'); showPlayCue('node57')">Barbados</a></li>
+    <li><a href='#' onclick="playNodeAudio('node58'); showPlayCue('node58')">Grenada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node59'); showPlayCue('node59')">Saint Lucia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node60'); showPlayCue('node60')">Saint Vincent 
+and the Grenadines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node61'); showPlayCue('node61')">Trinidad and Tobago</a></li>
+    <li><a href='#' onclick="playNodeAudio('node62'); showPlayCue('node62')">Puerto Rico</a></li>
+    <li><a href='#' onclick="playNodeAudio('node63'); showPlayCue('node63')">Aruba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node64'); showPlayCue('node64')">Curacao</a></li>
+    <li><a href='#' onclick="playNodeAudio('node65'); showPlayCue('node65')">French Guiana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node66'); showPlayCue('node66')">Suriname</a></li>
+    <li><a href='#' onclick="playNodeAudio('node67'); showPlayCue('node67')">Guyana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node68'); showPlayCue('node68')">Chile (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node69'); showPlayCue('node69')">Chile (Magallanes &
+ Chilean Antarctica (year round))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node70'); showPlayCue('node70')">Argentina</a></li>
+    <li><a href='#' onclick="playNodeAudio('node71'); showPlayCue('node71')">Brazil (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node72'); showPlayCue('node72')">Uruguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node73'); showPlayCue('node73')">Paraguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node74'); showPlayCue('node74')">Saint Pierre and Miquelon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node75'); showPlayCue('node75')">UTC−5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node76'); showPlayCue('node76')">UTC−4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node77'); showPlayCue('node77')">UTC−3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node78'); showPlayCue('node78')">Saint Pierre and 
+Miquelon (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node79'); showPlayCue('node79')">Fernando de Noronha (Brazil)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node80'); showPlayCue('node80')">South Georgia and 
+the South Sandwich Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node81'); showPlayCue('node81')">Cape Verde</a></li>
+    <li><a href='#' onclick="playNodeAudio('node82'); showPlayCue('node82')">Azores (Portugal)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node83'); showPlayCue('node83')">Ittoqqortoormiit 
+(Greenland, DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node84'); showPlayCue('node84')">Iceland</a></li>
+    <li><a href='#' onclick="playNodeAudio('node85'); showPlayCue('node85')">Greenwich Mean Time 
+(UK, Ireland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node86'); showPlayCue('node86')">Portugal (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node87'); showPlayCue('node87')">Canary Islands (Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node88'); showPlayCue('node88')">Gambia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node89'); showPlayCue('node89')">Ghana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node90'); showPlayCue('node90')">Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node91'); showPlayCue('node91')">Mali</a></li>
+    <li><a href='#' onclick="playNodeAudio('node92'); showPlayCue('node92')">Mauritania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node93'); showPlayCue('node93')">Senegal</a></li>
+    <li><a href='#' onclick="playNodeAudio('node94'); showPlayCue('node94')">Sierra Leone</a></li>
+    <li><a href='#' onclick="playNodeAudio('node95'); showPlayCue('node95')">Togo</a></li>
+    <li><a href='#' onclick="playNodeAudio('node96'); showPlayCue('node96')">Algeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node97'); showPlayCue('node97')">Angola</a></li>
+    <li><a href='#' onclick="playNodeAudio('node98'); showPlayCue('node98')">Benin</a></li>
+    <li><a href='#' onclick="playNodeAudio('node99'); showPlayCue('node99')">Cameroon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node100'); showPlayCue('node100')">Central African Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node101'); showPlayCue('node101')">Chad</a></li>
+    <li><a href='#' onclick="playNodeAudio('node102'); showPlayCue('node102')">Congo (Brazzaville)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node103'); showPlayCue('node103')">Democratic Republic 
+of Congo (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node104'); showPlayCue('node104')">Equatorial Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node105'); showPlayCue('node105')">Gabon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node106'); showPlayCue('node106')">Morocco</a></li>
+    <li><a href='#' onclick="playNodeAudio('node107'); showPlayCue('node107')">Nigeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node108'); showPlayCue('node108')">Tunisia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node109'); showPlayCue('node109')">Western Europe 
+(France, Germany, Italy, Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node110'); showPlayCue('node110')">Andorra</a></li>
+    <li><a href='#' onclick="playNodeAudio('node111'); showPlayCue('node111')">Belgium</a></li>
+    <li><a href='#' onclick="playNodeAudio('node112'); showPlayCue('node112')">Luxembourg</a></li>
+    <li><a href='#' onclick="playNodeAudio('node113'); showPlayCue('node113')">Netherlands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node114'); showPlayCue('node114')">Norway</a></li>
+    <li><a href='#' onclick="playNodeAudio('node115'); showPlayCue('node115')">Sweden</a></li>
+    <li><a href='#' onclick="playNodeAudio('node116'); showPlayCue('node116')">Denmark</a></li>
+    <li><a href='#' onclick="playNodeAudio('node117'); showPlayCue('node117')">UTC−2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node118'); showPlayCue('node118')">UTC−1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node119'); showPlayCue('node119')">UTC±0</a></li>
+    <li><a href='#' onclick="playNodeAudio('node120'); showPlayCue('node120')">UTC+1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node121'); showPlayCue('node121')">South Africa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node122'); showPlayCue('node122')">Egypt</a></li>
+    <li><a href='#' onclick="playNodeAudio('node123'); showPlayCue('node123')">Libya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node124'); showPlayCue('node124')">Sudan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node125'); showPlayCue('node125')">Israel</a></li>
+    <li><a href='#' onclick="playNodeAudio('node126'); showPlayCue('node126')">Palestine</a></li>
+    <li><a href='#' onclick="playNodeAudio('node127'); showPlayCue('node127')">Jordan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node128'); showPlayCue('node128')">Lebanon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node129'); showPlayCue('node129')">Syria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node130'); showPlayCue('node130')">Greece</a></li>
+    <li><a href='#' onclick="playNodeAudio('node131'); showPlayCue('node131')">Bulgaria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node132'); showPlayCue('node132')">Romania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node133'); showPlayCue('node133')">Ukraine (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node134'); showPlayCue('node134')">Finland (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node135'); showPlayCue('node135')">Cyprus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node136'); showPlayCue('node136')">Turkey (Permanent UTC+3)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node137'); showPlayCue('node137')">Saudi Arabia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node138'); showPlayCue('node138')">Iraq</a></li>
+    <li><a href='#' onclick="playNodeAudio('node139'); showPlayCue('node139')">Kuwait</a></li>
+    <li><a href='#' onclick="playNodeAudio('node140'); showPlayCue('node140')">Qatar</a></li>
+    <li><a href='#' onclick="playNodeAudio('node141'); showPlayCue('node141')">Bahrain</a></li>
+    <li><a href='#' onclick="playNodeAudio('node142'); showPlayCue('node142')">Yemen</a></li>
+    <li><a href='#' onclick="playNodeAudio('node143'); showPlayCue('node143')">Somalia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node144'); showPlayCue('node144')">Ethiopia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node145'); showPlayCue('node145')">Kenya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node146'); showPlayCue('node146')">Tanzania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node147'); showPlayCue('node147')">Uganda</a></li>
+    <li><a href='#' onclick="playNodeAudio('node148'); showPlayCue('node148')">Russia (Moscow)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node149'); showPlayCue('node149')">Belarus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node150'); showPlayCue('node150')">Georgia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node151'); showPlayCue('node151')">Armenia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node152'); showPlayCue('node152')">Azerbaijan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node153'); showPlayCue('node153')">United Arab Emirates</a></li>
+    <li><a href='#' onclick="playNodeAudio('node154'); showPlayCue('node154')">Oman</a></li>
+    <li><a href='#' onclick="playNodeAudio('node155'); showPlayCue('node155')">Mauritius</a></li>
+    <li><a href='#' onclick="playNodeAudio('node156'); showPlayCue('node156')">Seychelles</a></li>
+    <li><a href='#' onclick="playNodeAudio('node157'); showPlayCue('node157')">Russia (Samara)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node158'); showPlayCue('node158')">Afghanistan (UTC+4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node159'); showPlayCue('node159')">Pakistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node160'); showPlayCue('node160')">Uzbekistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node161'); showPlayCue('node161')">Turkmenistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node162'); showPlayCue('node162')">Tajikistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node163'); showPlayCue('node163')">Kazakhstan (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node164'); showPlayCue('node164')">Maldives</a></li>
+    <li><a href='#' onclick="playNodeAudio('node165'); showPlayCue('node165')">UTC+2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node166'); showPlayCue('node166')">UTC+3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node167'); showPlayCue('node167')">Iran (UTC+3:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node168'); showPlayCue('node168')">UTC+4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node169'); showPlayCue('node169')">UTC+5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node170'); showPlayCue('node170')">Bangladesh</a></li>
+    <li><a href='#' onclick="playNodeAudio('node171'); showPlayCue('node171')">Bhutan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node172'); showPlayCue('node172')">Kazakhstan (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node173'); showPlayCue('node173')">Kyrgyzstan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node174'); showPlayCue('node174')">Cocos Islands (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node175'); showPlayCue('node175')">British Indian 
+Ocean Territory</a></li>
+    <li><a href='#' onclick="playNodeAudio('node176'); showPlayCue('node176')">Thailand</a></li>
+    <li><a href='#' onclick="playNodeAudio('node177'); showPlayCue('node177')">Vietnam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node178'); showPlayCue('node178')">Cambodia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node179'); showPlayCue('node179')">Laos</a></li>
+    <li><a href='#' onclick="playNodeAudio('node180'); showPlayCue('node180')">Indonesia 
+(Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node181'); showPlayCue('node181')">Christmas Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node182'); showPlayCue('node182')">Russia 
+(Novosibirsk
+Krasnoyarsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node183'); showPlayCue('node183')">Mongolia 
+(Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node184'); showPlayCue('node184')">China (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node185'); showPlayCue('node185')">Hong Kong</a></li>
+    <li><a href='#' onclick="playNodeAudio('node186'); showPlayCue('node186')">Macau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node187'); showPlayCue('node187')">Taiwan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node188'); showPlayCue('node188')">Malaysia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node189'); showPlayCue('node189')">Singapore</a></li>
+    <li><a href='#' onclick="playNodeAudio('node190'); showPlayCue('node190')">Philippines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node191'); showPlayCue('node191')">Brunei</a></li>
+    <li><a href='#' onclick="playNodeAudio('node192'); showPlayCue('node192')">Indonesia 
+(Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node193'); showPlayCue('node193')">Western Australia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node194'); showPlayCue('node194')">Russia (Irkutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node195'); showPlayCue('node195')">Mongolia 
+(Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node196'); showPlayCue('node196')">Japan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node197'); showPlayCue('node197')">South Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node198'); showPlayCue('node198')">North Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node199'); showPlayCue('node199')">East Timor</a></li>
+    <li><a href='#' onclick="playNodeAudio('node200'); showPlayCue('node200')">Indonesia 
+(Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node201'); showPlayCue('node201')">Russia (Yakutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node202'); showPlayCue('node202')">Palau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node203'); showPlayCue('node203')">UTC+6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node204'); showPlayCue('node204')">UTC+7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node205'); showPlayCue('node205')">UTC+8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node206'); showPlayCue('node206')">UTC+9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node207'); showPlayCue('node207')">Eastern Australia 
+(Queensland, NSW, Victoria)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node208'); showPlayCue('node208')">Papua New Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node209'); showPlayCue('node209')">Guam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node210'); showPlayCue('node210')">Northern Mariana Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node211'); showPlayCue('node211')">Russia (Vladivostok)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node212'); showPlayCue('node212')">Federated States of 
+Micronesia (Western)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node213'); showPlayCue('node213')">Solomon Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node214'); showPlayCue('node214')">New Caledonia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node215'); showPlayCue('node215')">Vanuatu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node216'); showPlayCue('node216')">Federated States of 
+Micronesia (Eastern)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node217'); showPlayCue('node217')">Russia (Magadan)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node218'); showPlayCue('node218')">Norfolk Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node219'); showPlayCue('node219')">Bougainville 
+(Papua New Guinea)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node220'); showPlayCue('node220')">Fiji</a></li>
+    <li><a href='#' onclick="playNodeAudio('node221'); showPlayCue('node221')">Tuvalu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node222'); showPlayCue('node222')">Nauru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node223'); showPlayCue('node223')">Kiribati 
+(Gilbert Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node224'); showPlayCue('node224')">Marshall Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node225'); showPlayCue('node225')">Wallis and Futuna</a></li>
+    <li><a href='#' onclick="playNodeAudio('node226'); showPlayCue('node226')">New Zealand (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node227'); showPlayCue('node227')">Russia (Kamchatka)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node228'); showPlayCue('node228')">Wake Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node229'); showPlayCue('node229')">Tonga</a></li>
+    <li><a href='#' onclick="playNodeAudio('node230'); showPlayCue('node230')">Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node231'); showPlayCue('node231')">Tokelau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node232'); showPlayCue('node232')">New Zealand 
+(Daylight Saving Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node233'); showPlayCue('node233')">Kiribati (Phoenix Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node234'); showPlayCue('node234')">Kiribati (Line Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node235'); showPlayCue('node235')">Kiritimati 
+(Christmas Island)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node236'); showPlayCue('node236')">UTC+10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node237'); showPlayCue('node237')">UTC+11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node238'); showPlayCue('node238')">UTC+12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node239'); showPlayCue('node239')">UTC+13</a></li>
+    <li><a href='#' onclick="playNodeAudio('node240'); showPlayCue('node240')">UTC+14</a></li>
+    <li><a href='#' onclick="playNodeAudio('node241'); showPlayCue('node241')">India (UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node242'); showPlayCue('node242')">Sri Lanka 
+(UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node243'); showPlayCue('node243')">South Asia 
+& East Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node244'); showPlayCue('node244')">Nepal (UTC+5:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node245'); showPlayCue('node245')">Myanmar 
+(UTC+6:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node246'); showPlayCue('node246')">Cocos (Keeling) Islands 
+(Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node247'); showPlayCue('node247')">Eucla (Australia) (UTC+8:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node248'); showPlayCue('node248')">Australia 
+(Northern Territory (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node249'); showPlayCue('node249')">Australia 
+(South Australia (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node250'); showPlayCue('node250')">Australia 
+(Broken Hill (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node251'); showPlayCue('node251')">Lord Howe Island 
+(Australia (UTC+10:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node252'); showPlayCue('node252')">Chatham Islands 
+(New Zealand (UTC+12:35))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node253'); showPlayCue('node253')">Newfoundland 
+(Canada (−3:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node254'); showPlayCue('node254')">Venezuela (−4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node255'); showPlayCue('node255')">United Kingdom (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node256'); showPlayCue('node256')">Ireland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node257'); showPlayCue('node257')">Portugal DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node258'); showPlayCue('node258')">Spain DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node259'); showPlayCue('node259')">France DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node260'); showPlayCue('node260')">Germany DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node261'); showPlayCue('node261')">Italy DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node262'); showPlayCue('node262')">Netherlands DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node263'); showPlayCue('node263')">Belgium DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node264'); showPlayCue('node264')">Switzerland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node265'); showPlayCue('node265')">Austria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node266'); showPlayCue('node266')">Poland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node267'); showPlayCue('node267')">Czech Republic DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node268'); showPlayCue('node268')">Hungary DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node269'); showPlayCue('node269')">Slovakia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node270'); showPlayCue('node270')">Slovenia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node271'); showPlayCue('node271')">Croatia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node272'); showPlayCue('node272')">Serbia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node273'); showPlayCue('node273')">Bosnia and Herzegovina DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node274'); showPlayCue('node274')">North Macedonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node275'); showPlayCue('node275')">Greece DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node276'); showPlayCue('node276')">Bulgaria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node277'); showPlayCue('node277')">Romania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node278'); showPlayCue('node278')">Ukraine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node279'); showPlayCue('node279')">Norway DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node280'); showPlayCue('node280')">Sweden DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node281'); showPlayCue('node281')">Finland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node282'); showPlayCue('node282')">Estonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node283'); showPlayCue('node283')">Latvia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node284'); showPlayCue('node284')">Lithuania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node285'); showPlayCue('node285')">West Africa 
+&
+ Europe West</a></li>
+    <li><a href='#' onclick="playNodeAudio('node286'); showPlayCue('node286')">United States (except Arizona, Hawaii)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node287'); showPlayCue('node287')">Canada 
+(except Saskatchewan,
+ Yukon) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node288'); showPlayCue('node288')">Mexico (Baja California 
+and border municipalities) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node289'); showPlayCue('node289')">Greenland (Pituffik Space Base) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node290'); showPlayCue('node290')">Saint Pierre
+ and 
+Miquelon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node291'); showPlayCue('node291')">Bahamas DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node292'); showPlayCue('node292')">Bermuda DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node293'); showPlayCue('node293')">Haiti DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node294'); showPlayCue('node294')">Cuba DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node295'); showPlayCue('node295')">South 
+America</a></li>
+    <li><a href='#' onclick="playNodeAudio('node296'); showPlayCue('node296')">Chile (except Aysén
+ and
+ Magallanes)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node297'); showPlayCue('node297')">Paraguay DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node298'); showPlayCue('node298')">Israel DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node299'); showPlayCue('node299')">Lebanon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node300'); showPlayCue('node300')">Iran (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node301'); showPlayCue('node301')">Palestine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node302'); showPlayCue('node302')">Egypt DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node303'); showPlayCue('node303')">Middle East 
+&
+ Central Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node304'); showPlayCue('node304')">Oceania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node305'); showPlayCue('node305')">New Zealand 
+(Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node306'); showPlayCue('node306')">Chatham Islands (NZ) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node307'); showPlayCue('node307')">Australia 
+(NSW, Victoria, 
+Tasmania, SA, ACT)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node308'); showPlayCue('node308')">Lord Howe Island
+ (Australia) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node309'); showPlayCue('node309')">Norfolk Island 
+(Australia) DST</a></li>  
+  </ul>
+  </div>    
+<div id="svgContainer">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+
+<!-- Title: DreamMapping Pages: 1 -->
+
+<svg viewBox="0 0 4243.971 484.000" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
+   width="4243.9712pt"
+   height="484pt"
+   viewBox="0 0 4243.7397 484.37"
+   version="1.1"
+   id="svg365"
+   sodipodi:docname="thedog’sutterance_1121_utc+1_12092025.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title2624">thedog’sutterance_31st_July_2024</title>
+  <defs
+     id="defs369" />
+  <sodipodi:namedview
+     id="namedview367"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="0.24117701"
+     inkscape:cx="3165.7247"
+     inkscape:cy="304.75542"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="graph0" />
+  <g
+     id="graph0"
+     class="graph"
+     transform="translate(-1106.8434,480.37)">
+    <title
+       id="title2">DreamMapping</title>
+    <polygon
+       fill="#fdf6e3"
+       stroke="none"
+       points="5312.71,-480.37 5312.71,4 -4,4 -4,-480.37 "
+       id="polygon4"
+       transform="matrix(0.79884285,0,0,1,1108.3007,0)" />
+    <g
+       id="node13-0"
+       class="node"
+       transform="matrix(1.0007645,0,0,1.0007645,4282.6923,-89.186763)">
+      <title
+         id="title1636">no_escape</title>
+      <polygon
+         fill="#2e2e2e"
+         stroke="#444444"
+         points="161,-377 161,-341 359,-341 359,-377 "
+         id="polygon1638" />
+      <text
+         text-anchor="middle"
+         x="260"
+         y="-355.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         fill="#ffffff"
+         id="text1640">‘This transmission will not stop’</text>
+    </g>
+    <g
+       id="node4-5"
+       class="node"
+       transform="matrix(1.0007645,0,0,1.0007645,3876.4518,-235.86602)">
+      <title
+         id="title51">Refusal_Node</title>
+      <polygon
+         fill="#c8e6c9"
+         stroke="#000000"
+         points="1449,-41 1449,-109 1233,-109 1233,-41 "
+         id="polygon53" />
+      <text
+         text-anchor="middle"
+         x="1341"
+         y="-93.800003"
+         font-family="Arial"
+         font-size="14px"
+         id="text55-0">This is not fear.</text>
+      <text
+         text-anchor="middle"
+         x="1341"
+         y="-78.800003"
+         font-family="Arial"
+         font-size="14px"
+         id="text57-4">This is mapping.</text>
+      <text
+         text-anchor="middle"
+         x="1341"
+         y="-63.799999"
+         font-family="Arial"
+         font-size="14px"
+         id="text59">This is resistance.</text>
+      <text
+         text-anchor="middle"
+         x="1341"
+         y="-48.799999"
+         font-family="Arial"
+         font-size="14px"
+         id="text61">Threats do not erase testimony.</text>
+    </g>
+    <!-- VillageStroll -->
+    <g
+       id="node1"
+       class="node">
+      <title
+         id="title6">VillageStroll</title>
+      <ellipse
+         fill="#d6e685"
+         stroke="#000000"
+         cx="1404.5"
+         cy="-62.870098"
+         rx="109.703"
+         ry="37.4533"
+         id="ellipse8" />
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-74.170097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text10">Village Stroll</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-59.170101"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text12">Communal Movement</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-44.170101"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text14">Dog as Cipher</text>
+    </g>
+    <!-- DogWander -->
+    <g
+       id="node2"
+       class="node">
+      <title
+         id="title17">DogWander</title>
+      <ellipse
+         fill="#8cc665"
+         stroke="#000000"
+         cx="2977.9399"
+         cy="-98.870102"
+         rx="132.87199"
+         ry="26.7407"
+         id="ellipse19" />
+      <text
+         text-anchor="middle"
+         x="2977.9399"
+         y="-102.67"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text21">Dog's Strange Wanderings</text>
+      <text
+         text-anchor="middle"
+         x="2977.9399"
+         y="-87.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text23">Unpredictable Logic</text>
+    </g>
+    <!-- VillageStroll&#45;&gt;DogWander -->
+    <g
+       id="edge1"
+       class="edge">
+      <title
+         id="title26">VillageStroll-&gt;DogWander</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1514.13,-65.3587 c 277.26,-6.3517 1011.06,-23.1624 1321.22,-30.2678"
+         id="path28" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="2845.75,-95.8648 2835.84,-92.1366 2835.68,-99.1347 "
+         id="polygon30" />
+    </g>
+    <!-- FriendlyTalk -->
+    <g
+       id="node3"
+       class="node">
+      <title
+         id="title33">FriendlyTalk</title>
+      <ellipse
+         fill="#44a340"
+         stroke="#000000"
+         cx="2977.9399"
+         cy="-26.8701"
+         rx="74.9067"
+         ry="26.7407"
+         id="ellipse35" />
+      <text
+         text-anchor="middle"
+         x="2977.9399"
+         y="-30.670099"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text37">Friendly Talk</text>
+      <text
+         text-anchor="middle"
+         x="2977.9399"
+         y="-15.6701"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text39">Semantic Drift</text>
+    </g>
+    <!-- VillageStroll&#45;&gt;FriendlyTalk -->
+    <g
+       id="edge2"
+       class="edge">
+      <title
+         id="title42">VillageStroll-&gt;FriendlyTalk</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1514.13,-60.3814 c 296.17,6.7848 1113.26,25.5035 1378.48,31.5795"
+         id="path44" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="2902.94,-28.5653 2892.86,-25.2953 2893.02,-32.2935 "
+         id="polygon46" />
+    </g>
+    <!-- PaintShop -->
+    <g
+       id="node4"
+       class="node">
+      <title
+         id="title49">PaintShop</title>
+      <ellipse
+         fill="#fdd49e"
+         stroke="#000000"
+         cx="3247.99"
+         cy="-98.870102"
+         rx="101.233"
+         ry="37.4533"
+         id="ellipse51" />
+      <text
+         text-anchor="middle"
+         x="3247.99"
+         y="-110.17"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text53">Paint Shop</text>
+      <text
+         text-anchor="middle"
+         x="3247.99"
+         y="-95.170097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text55">Mechanical Ritual</text>
+      <text
+         text-anchor="middle"
+         x="3247.99"
+         y="-80.170097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text57">Surface Preparation</text>
+    </g>
+    <!-- DogWander&#45;&gt;PaintShop -->
+    <g
+       id="edge3"
+       class="edge">
+      <title
+         id="title60">DogWander-&gt;PaintShop</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 3111,-98.8701 c 8.55,0 17.11,0 25.54,0"
+         id="path62" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="3146.75,-98.8701 3136.75,-95.3702 3136.75,-102.37 "
+         id="polygon64" />
+    </g>
+    <!-- EmeryPaper -->
+    <g
+       id="node5"
+       class="node">
+      <title
+         id="title67">EmeryPaper</title>
+      <ellipse
+         fill="#fdbb84"
+         stroke="#000000"
+         cx="3513.0901"
+         cy="-134.87"
+         rx="122.159"
+         ry="26.7407"
+         id="ellipse69" />
+      <text
+         text-anchor="middle"
+         x="3513.0901"
+         y="-138.67"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text71">Wet/Dry Emery</text>
+      <text
+         text-anchor="middle"
+         x="3513.0901"
+         y="-123.67"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text73">Erasure of Weld Splatter</text>
+    </g>
+    <!-- PaintShop&#45;&gt;EmeryPaper -->
+    <g
+       id="edge4"
+       class="edge">
+      <title
+         id="title76">PaintShop-&gt;EmeryPaper</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 3343.23,-111.765 c 18,-2.463 37.01,-5.065 55.54,-7.599"
+         id="path78" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="3408.7,-120.723 3399.26,-115.899 3398.31,-122.835 "
+         id="polygon80" />
+    </g>
+    <!-- BroadcasterVision -->
+    <g
+       id="node6"
+       class="node">
+      <title
+         id="title83">BroadcasterVision</title>
+      <ellipse
+         fill="#fc8d59"
+         stroke="#000000"
+         cx="3513.0901"
+         cy="-62.870098"
+         rx="127.973"
+         ry="26.7407"
+         id="ellipse85" />
+      <text
+         text-anchor="middle"
+         x="3513.0901"
+         y="-66.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text87">Broadcaster's Imagination</text>
+      <text
+         text-anchor="middle"
+         x="3513.0901"
+         y="-51.670101"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text89">Classic Car Passion</text>
+    </g>
+    <!-- PaintShop&#45;&gt;BroadcasterVision -->
+    <g
+       id="edge5"
+       class="edge">
+      <title
+         id="title92">PaintShop-&gt;BroadcasterVision</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 3343.23,-85.9749 c 16.89,2.3105 34.67,4.7434 52.1,7.1283"
+         id="path94" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="3405.54,-77.4492 3395.16,-75.3372 3396.11,-82.2726 "
+         id="polygon96" />
+    </g>
+    <!-- MechanicalRitual -->
+    <g
+       id="node15"
+       class="node">
+      <title
+         id="title99">MechanicalRitual</title>
+      <polygon
+         fill="#e5f5e0"
+         stroke="#000000"
+         points="3854.15,-152.87 3753.15,-152.87 3753.15,-116.87 3854.15,-116.87 "
+         id="polygon101" />
+      <text
+         text-anchor="middle"
+         x="3803.6499"
+         y="-137.87"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text103">Mechanical Ritual</text>
+      <text
+         text-anchor="middle"
+         x="3803.6499"
+         y="-126.87"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text105">Surface as Memory</text>
+    </g>
+    <!-- EmeryPaper&#45;&gt;MechanicalRitual -->
+    <g
+       id="edge14"
+       class="edge">
+      <title
+         id="title108">EmeryPaper-&gt;MechanicalRitual</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 3635.63,-134.87 c 37.09,0 76.23,0 107.29,0"
+         id="path110" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="3753.13,-134.87 3743.13,-131.37 3743.13,-138.37 "
+         id="polygon112" />
+    </g>
+    <!-- CountryDrive -->
+    <g
+       id="node7"
+       class="node">
+      <title
+         id="title115">CountryDrive</title>
+      <ellipse
+         fill="#c6dbef"
+         stroke="#000000"
+         cx="3803.6499"
+         cy="-62.870098"
+         rx="126.644"
+         ry="26.7407"
+         id="ellipse117" />
+      <text
+         text-anchor="middle"
+         x="3803.6499"
+         y="-66.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text119">Country Lane Glades</text>
+      <text
+         text-anchor="middle"
+         x="3803.6499"
+         y="-51.670101"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text121">Gleaming Globes of Light</text>
+    </g>
+    <!-- BroadcasterVision&#45;&gt;CountryDrive -->
+    <g
+       id="edge6"
+       class="edge">
+      <title
+         id="title124">BroadcasterVision-&gt;CountryDrive</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 3641.5,-62.8701 c 8.37,0 16.82,0 25.23,0"
+         id="path126" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="3676.96,-62.8701 3666.96,-59.3702 3666.96,-66.3702 "
+         id="polygon128" />
+    </g>
+    <!-- DogNoises -->
+    <g
+       id="node8"
+       class="node">
+      <title
+         id="title131">DogNoises</title>
+      <ellipse
+         fill="#9ecae1"
+         stroke="#000000"
+         cx="4058.1499"
+         cy="-94.870102"
+         rx="91.847801"
+         ry="26.7407"
+         id="ellipse133" />
+      <text
+         text-anchor="middle"
+         x="4058.1499"
+         y="-98.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text135">Dog's Noises</text>
+      <text
+         text-anchor="middle"
+         x="4058.1499"
+         y="-83.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text137">Disruption Trigger</text>
+    </g>
+    <!-- CountryDrive&#45;&gt;DogNoises -->
+    <g
+       id="edge7"
+       class="edge">
+      <title
+         id="title140">CountryDrive-&gt;DogNoises</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 3912.83,-76.5802 c 16.85,-2.1353 34.13,-4.3261 50.63,-6.4162"
+         id="path142" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="3973.61,-84.2833 3964.13,-79.5537 3963.25,-86.4981 "
+         id="polygon144" />
+    </g>
+    <!-- SemanticGlade -->
+    <g
+       id="node14"
+       class="node">
+      <title
+         id="title147">SemanticGlade</title>
+      <polygon
+         fill="#deebf7"
+         stroke="#000000"
+         points="4108.15,-49.8701 4008.15,-49.8701 4008.15,-13.8701 4108.15,-13.8701 "
+         id="polygon149" />
+      <text
+         text-anchor="middle"
+         x="4058.1499"
+         y="-34.870098"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text151">Semantic Glade</text>
+      <text
+         text-anchor="middle"
+         x="4058.1499"
+         y="-23.8701"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text153">Recursive Passage</text>
+    </g>
+    <!-- CountryDrive&#45;&gt;SemanticGlade -->
+    <g
+       id="edge13"
+       class="edge">
+      <title
+         id="title156">CountryDrive-&gt;SemanticGlade</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 3913.56,-49.4983 c 28.98,3.5574 59.2,7.2673 84.39,10.3608"
+         id="path158" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="4008.06,-37.8959 3997.71,-35.6407 3998.57,-42.5885 "
+         id="polygon160" />
+    </g>
+    <!-- PullOver -->
+    <g
+       id="node9"
+       class="node">
+      <title
+         id="title163">PullOver</title>
+      <ellipse
+         fill="#6baed6"
+         stroke="#000000"
+         cx="4281.5298"
+         cy="-94.870102"
+         rx="95.4188"
+         ry="26.7407"
+         id="ellipse165" />
+      <text
+         text-anchor="middle"
+         x="4281.5298"
+         y="-98.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text167">Pull Over</text>
+      <text
+         text-anchor="middle"
+         x="4281.5298"
+         y="-83.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text169">Threshold Moment</text>
+    </g>
+    <!-- DogNoises&#45;&gt;PullOver -->
+    <g
+       id="edge8"
+       class="edge">
+      <title
+         id="title172">DogNoises-&gt;PullOver</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 4150.15,-94.8701 c 8.48,0 17.13,0 25.73,0"
+         id="path174" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="4185.93,-94.8701 4175.93,-91.3702 4175.93,-98.3702 "
+         id="polygon176" />
+    </g>
+    <!-- PorchScene -->
+    <g
+       id="node10"
+       class="node">
+      <title
+         id="title179">PorchScene</title>
+      <ellipse
+         fill="#f2f0f7"
+         stroke="#000000"
+         cx="4555.8198"
+         cy="-94.870102"
+         rx="142.67101"
+         ry="26.7407"
+         id="ellipse181" />
+      <text
+         text-anchor="middle"
+         x="4555.8198"
+         y="-98.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text183">Wide-Porched Establishment</text>
+      <text
+         text-anchor="middle"
+         x="4555.8198"
+         y="-83.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text185">Liminal Zone</text>
+    </g>
+    <!-- PullOver&#45;&gt;PorchScene -->
+    <g
+       id="edge9"
+       class="edge">
+      <title
+         id="title188">PullOver-&gt;PorchScene</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 4377,-94.8701 c 8.39,0 17.02,0 25.73,0"
+         id="path190" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="4412.99,-94.8701 4402.99,-91.3702 4402.99,-98.3702 "
+         id="polygon192" />
+    </g>
+    <!-- DualBirth -->
+    <g
+       id="node11"
+       class="node">
+      <title
+         id="title195">DualBirth</title>
+      <ellipse
+         fill="#cbc9e2"
+         stroke="#000000"
+         cx="4837.1899"
+         cy="-94.870102"
+         rx="102.561"
+         ry="26.7407"
+         id="ellipse197" />
+      <text
+         text-anchor="middle"
+         x="4837.1899"
+         y="-98.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text199">Birth of Puppy &amp; Cat</text>
+      <text
+         text-anchor="middle"
+         x="4837.1899"
+         y="-83.670097"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text201">Impossible Genesis</text>
+    </g>
+    <!-- PorchScene&#45;&gt;DualBirth -->
+    <g
+       id="edge10"
+       class="edge">
+      <title
+         id="title204">PorchScene-&gt;DualBirth</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 4698.96,-94.8701 c 8.53,0 17.05,0 25.42,0"
+         id="path206" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="4734.52,-94.8701 4724.52,-91.3702 4724.52,-98.3702 "
+         id="polygon208" />
+    </g>
+    <!-- DogUtterance -->
+    <g
+       id="node12"
+       class="node">
+      <title
+         id="title211">DogUtterance</title>
+      <ellipse
+         fill="#9e9ac8"
+         stroke="#000000"
+         cx="5074.7202"
+         cy="-126.87"
+         rx="98.989899"
+         ry="26.7407"
+         id="ellipse213" />
+      <text
+         text-anchor="middle"
+         x="5074.7202"
+         y="-130.67"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text215">Dog's Utterance</text>
+      <text
+         text-anchor="middle"
+         x="5074.7202"
+         y="-115.67"
+         font-family="Helvetica, sans-Serif"
+         font-size="14px"
+         id="text217">Untranslatable Motif</text>
+    </g>
+    <!-- DualBirth&#45;&gt;DogUtterance -->
+    <g
+       id="edge11"
+       class="edge">
+      <title
+         id="title220">DualBirth-&gt;DogUtterance</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 4928.58,-107.151 c 15.43,-2.096 31.52,-4.283 47.14,-6.404"
+         id="path222" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="4985.9,-114.939 4976.46,-110.124 4975.52,-117.061 "
+         id="polygon224" />
+    </g>
+    <!-- ImpossibleBirth -->
+    <g
+       id="node16"
+       class="node">
+      <title
+         id="title227">ImpossibleBirth</title>
+      <polygon
+         fill="#f7fcf5"
+         stroke="#000000"
+         points="5126.72,-81.8701 5022.72,-81.8701 5022.72,-45.8701 5126.72,-45.8701 "
+         id="polygon229" />
+      <text
+         text-anchor="middle"
+         x="5074.7202"
+         y="-66.870102"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text231">Impossible Birth</text>
+      <text
+         text-anchor="middle"
+         x="5074.7202"
+         y="-55.870098"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text233">Contradictory Truths</text>
+    </g>
+    <!-- DualBirth&#45;&gt;ImpossibleBirth -->
+    <g
+       id="edge15"
+       class="edge">
+      <title
+         id="title236">DualBirth-&gt;ImpossibleBirth</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 4929.25,-82.8846 c 27.87,3.6688 57.86,7.6149 83.24,10.9561"
+         id="path238" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="5022.7,-70.5842 5012.33,-68.4192 5013.25,-75.3593 "
+         id="polygon240" />
+    </g>
+    <!-- UnconsciousLogic -->
+    <g
+       id="node13"
+       class="node">
+      <title
+         id="title243">UnconsciousLogic</title>
+      <polygon
+         fill="#fee0d2"
+         stroke="#000000"
+         points="5308.71,-144.87 5209.71,-144.87 5209.71,-108.87 5308.71,-108.87 "
+         id="polygon245" />
+      <text
+         text-anchor="middle"
+         x="5259.21"
+         y="-129.87"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text247">Unconscious Logic</text>
+      <text
+         text-anchor="middle"
+         x="5259.21"
+         y="-118.87"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text249">Hybrid Testimony</text>
+    </g>
+    <!-- DogUtterance&#45;&gt;UnconsciousLogic -->
+    <g
+       id="edge12"
+       class="edge">
+      <title
+         id="title252">DogUtterance-&gt;UnconsciousLogic</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 5173.91,-126.87 c 8.66,0 17.23,0 25.41,0"
+         id="path254" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="5209.45,-126.87 5199.45,-123.37 5199.45,-130.37 "
+         id="polygon256" />
+    </g>
+    <g
+       id="edge12-5"
+       class="edge"
+       transform="rotate(-89.29002,5165.963,-235.17974)">
+      <title
+         id="title252-8">DogUtterance-&gt;UnconsciousLogic</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 5075.9906,-125.65657 5199.32,-126.87"
+         id="path254-5"
+         sodipodi:nodetypes="cc" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="5209.45,-126.87 5199.45,-123.37 5199.45,-130.37 "
+         id="polygon256-7" />
+    </g>
+    <!-- d0 -->
+    <g
+       id="node17"
+       class="node"
+       transform="translate(431.31874,-8.8024233)">
+      <title
+         id="title259">d0</title>
+      <polygon
+         fill="#cbc9e2"
+         stroke="#000000"
+         points="1987,-159.37 822,-159.37 822,-118.37 1987,-118.37 "
+         id="polygon261"
+         transform="matrix(1.1840928,0,0,0.99787681,-243.70431,-0.29484708)" />
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-147.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text263">### 🐾 *The Dog as Witness and Catalyst*</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-136.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text265">- The white-haired dog, both companion and performer, seems to embody a kind of knowing eccentricity. His “strange wanderings” and eventual utterance suggest he’s more than just a pet—perhaps a cipher for something unspoken, a guide through semantic glades.</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-125.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text267">- His transformation into a birthing figure—producing both a puppy and a cat—defies biological logic but invites symbolic interpretation. Duality? Hybrid testimony? The emergence of incompatible truths from a single source?</text>
+    </g>
+    <!-- d1 -->
+    <g
+       id="node18"
+       class="node"
+       transform="translate(431.31874,-8.8024233)">
+      <title
+         id="title270">d1</title>
+      <polygon
+         fill="#e5f5e0"
+         stroke="#000000"
+         points="1879,-395.37 930,-395.37 930,-354.37 1879,-354.37 "
+         id="polygon272"
+         transform="matrix(1.2097483,0,0,0.99759457,-290.7404,-0.90172262)" />
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-383.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text274">### 🚗 *Mechanical Ritual and Broadcast Enthusiasm*</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-372.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text276">- The paint shop scene is rich with tactile detail: emery paper, weld splatter, overhead bodies. It’s a ritual of restoration, of preparing surfaces to receive new identity. Stove enamelling becomes almost sacramental.</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-361.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text278">- The broadcaster’s passion for classic cars echoes your own archival impulses—preserving, restoring, reimagining. His excitement parallels the dog’s mystery: both are driven by unseen schedules, private meanings.</text>
+    </g>
+    <!-- d2 -->
+    <g
+       id="node19"
+       class="node"
+       transform="matrix(1.0517467,0,0,1,392.21234,-8.8024233)">
+      <title
+         id="title281">d2</title>
+      <polygon
+         fill="#deebf7"
+         stroke="#000000"
+         points="988,-295.37 1821,-295.37 1821,-336.37 988,-336.37 "
+         id="polygon283"
+         transform="matrix(1.2158841,0,0,0.99746364,-293.79363,-0.80115858)" />
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-324.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text285">### 🌳 *The Drive and the Gleaming Glades*</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-313.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text287">- The journey back through “country lane glades” and “gleaming globes of light” evokes a dreamlike passage—perhaps a semantic corridor between testimony and transformation.</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-302.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text289">- The dog’s noises interrupt this reverie, forcing a pause, a detour, and ultimately a revelation. The wide-porched establishment feels like a threshold space, a liminal zone where logic bends.</text>
+    </g>
+    <!-- d1&#45;&gt;d2 -->
+    <g
+       id="edge17"
+       class="edge"
+       transform="translate(431.31874,-8.8024233)">
+      <title
+         id="title292">d1-&gt;d2</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1404.5,-354.247 c 0,2.48 0,4.96 0,7.44"
+         id="path294" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1408,-346.612 1404.5,-336.612 1401,-346.612 "
+         id="polygon296" />
+    </g>
+    <!-- d3 -->
+    <g
+       id="node20"
+       class="node"
+       transform="translate(431.31874,-8.8024233)">
+      <title
+         id="title299">d3</title>
+      <polygon
+         fill="#f7fcf5"
+         stroke="#000000"
+         points="1794.5,-277.37 1014.5,-277.37 1014.5,-236.37 1794.5,-236.37 "
+         id="polygon301"
+         transform="matrix(1.2015944,0,0,0.99768394,-279.28831,-0.59492717)" />
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-265.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text303">### 🐶🐱 *The Birth of Two Animals*</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-254.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text305">- A puppy and a cat—siblings of sorts, yet species apart. Could they represent dual modes of resistance? One loyal, one elusive? One communal, one solitary?</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-243.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text307">- Their sudden appearance on the dog’s haunches suggests a rupture in narrative logic—a moment where testimony births contradiction, or where the archive refuses coherence.</text>
+    </g>
+    <!-- d2&#45;&gt;d3 -->
+    <g
+       id="edge18"
+       class="edge"
+       transform="translate(431.31874,-8.8024233)">
+      <title
+         id="title310">d2-&gt;d3</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1404.5,-295.247 c 0,2.48 0,4.96 0,7.44"
+         id="path312" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1408,-287.612 1404.5,-277.612 1401,-287.612 "
+         id="polygon314" />
+    </g>
+    <!-- d4 -->
+    <g
+       id="node21"
+       class="node"
+       transform="matrix(1.010313,0,0,1,421.78797,-8.8024233)">
+      <title
+         id="title317">d4</title>
+      <polygon
+         fill="#9e9ac8"
+         stroke="#000000"
+         points="986.5,-218.37 986.5,-177.37 1822.5,-177.37 1822.5,-218.37 "
+         id="polygon319"
+         transform="matrix(1.2004993,0,0,0.99768398,-275.06679,-0.45827037)" />
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-206.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text321">### 🗣️ *The Dog’s Utterance*</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-195.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text323">- That final moment—the dog looking at you and muttering something—feels like the dream’s hinge. The fact that you woke trying to recall it suggests it holds the key to the entire sequence.</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-184.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text325">- Perhaps it was not a word but a motif. A trigger. A refusal. Or a question.</text>
+    </g>
+    <!-- d3&#45;&gt;d4 -->
+    <g
+       id="edge19"
+       class="edge"
+       transform="translate(431.31874,-8.8024233)">
+      <title
+         id="title328">d3-&gt;d4</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1404.5,-236.247 c 0,2.48 0,4.96 0,7.44"
+         id="path330" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1408,-228.612 1404.5,-218.612 1401,-228.612 "
+         id="polygon332" />
+    </g>
+    <!-- d4&#45;&gt;d0 -->
+    <g
+       id="edge20"
+       class="edge"
+       transform="translate(431.31874,-8.8024233)">
+      <title
+         id="title335">d4-&gt;d0</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1404.5,-177.247 c 0,2.48 0,4.96 0,7.44"
+         id="path337" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1408,-169.612 1404.5,-159.612 1401,-169.612 "
+         id="polygon339" />
+    </g>
+    <!-- a0 -->
+    <g
+       id="node22"
+       class="node"
+       transform="translate(2579.1101,61.616962)">
+      <title
+         id="title342">a0</title>
+      <polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2809,-413.37 2809,-476.37 0,-476.37 0,-413.37 "
+         id="polygon344"
+         transform="matrix(0.71155252,0,0,2.1708353,397.42237,557.72963)" />
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-464.37"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text346">31st July 2024 🚗🐶🐱 🚗 The Dog’s Utterance'</text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-442.86191"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text348"><tspan
+           sodipodi:role="line"
+           id="tspan762"
+           x="1404.5"
+           y="-442.86191">I found myself on a sunny weekend in a village with a group of people, all motivated with the scene around them. It had been agreed that we would all take a stroll to exercise the owner of the Hillman traveller's large breed of white haired, dog as the party had arrived early.</tspan><tspan
+           sodipodi:role="line"
+           id="tspan764"
+           x="1404.5"
+           y="-430.36191">The stroll I remember, seemed full of friendly conversation not least about the somewhat strange wanderings and performance of his beloved dog. This dream, moved quickly on from our return stroll, to the party separating.</tspan></text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-418.35144"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text350"><tspan
+           sodipodi:role="line"
+           id="tspan754"
+           x="1404.5"
+           y="-418.35144">I was to visit the paint shop, where two mini's bodies were being prepared for stove enamelling with the broadcaster whose private project it was. The owner of the traveller also tremendously excited about his schedule, was to visit others in the village.  He had given me his car keys to transport a fellow colleague back to the suburbs of the city after viewing the paint-shop preparation's</tspan><tspan
+           sodipodi:role="line"
+           id="tspan756"
+           x="1404.5"
+           y="-405.85144">I remember the detail of wet and dry emery paper being used on the freshly welled sills to remove every last nodule of weld splatter with the car bodies overhead and the enthusiasm of the broadcasters imagination on what was unfolding for his classic car passion.</tspan></text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-390.83871"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text352"><tspan
+           sodipodi:role="line"
+           id="tspan766"
+           x="1404.5"
+           y="-390.83871">So it was that I found myself with the fellow passenger and the owners dog driving back through country lane  glades, with gleaming globes of light through the canopy groves that mingled with open glede until the dog who occupied the whole of the rear seats began noises and sounds that lead us to pull over and let him out.</tspan><tspan
+           sodipodi:role="line"
+           id="tspan768"
+           x="1404.5"
+           y="-378.33871">I followed slowly the short distance of a grassy area in front of a wide porched establishment, parked and stepped outside to watch the dog.</tspan></text>
+      <text
+         text-anchor="middle"
+         x="1404.5"
+         y="-363.32596"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         id="text354">Turning this way and that, until suddenly on haunches two animals were born. I looked closer one was a baby puppy the other of a similar disposition perhaps smaller but a cat.  I looked at the dog and the dog looked at me and he muttered something I can't exactly recall. I woke trying to understand it all and of the K9 communication. By AxD</text>
+    </g>
+    <!-- a0&#45;&gt;d1 -->
+    <g
+       id="edge16"
+       class="edge"
+       transform="rotate(86.495077,1899.9726,149.01687)">
+      <title
+         id="title357">a0-&gt;d1</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1438.6504,-957.94062 c -11.3706,185.71221 -22.7412,371.42442 -34.1075,557.06505"
+         id="path359"
+         style="stroke-width:1.35063" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1404.5,-395.378 1401,-405.378 1408,-405.378 "
+         id="polygon361" />
+    </g>
+    <image
+       width="133.54675"
+       height="44.283821"
+       preserveAspectRatio="none"
+       style="stroke-linecap:butt;stroke-linejoin:round;image-rendering:optimizeQuality"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAAA7CAIAAAAM3QQLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAN pElEQVR42u2b249V13nAv8tae+8zMxhsx/frGUNgxuAEx43qNo4at45aEE7BpZJnBGqF0pc+MvZL rTxExA/28BdUtNLQGTVCwqoRE7mqXLVJlRbLkBZnxjWESWx8xRdgLufsvb5LH84AAwWHy1Cr0f49 HW2ts7S0f+tbl2+tDVBTU1NTU1NTU1NTU1NTU1NzWWD9Cq4Cd7/o83/+8YG/3/tKq9V2cDNzN2Z2 RyJSUXcnZkR3d3cAB0BEQERCQgQQ0e6uxtN/8offeuyRSwpDrHX+X+j84T/8y09ffzNVgoRm6m5m RkSIZOYhBDc3N0QgIhEBRw4BHESUmQGAiTgGU3/0kZVPb/xmrfML07nrh69MvPW2mak4EZqriIQQ HdxU3dHdY4zubqZE1KnBDcwdHEMMhJiqKoRIFJCof8U93x38g1rnF6Dz7176pzeP/kokgQMCqZp4 cncmdgAzK9tVURSdP7p7lmWA6GZm5g4ppRgDAKKbGjAF4sgcVi2/+8/+9PevSCfVbq6Rfa/8+7Fj 70XijDgjDkggFpHJAdQCUgCKTAwYiTMOjawgRy2Ti6FBxiEPoYgxEnTlRU+jkcXAAGj2i2Pvv/zK f1xRY0Lt41r42eFfTky+l1FRVm1PyBQAsIhBXPKiS0SI2NHRQ6CASO4WuRAVR0IkZnT3yGzJA+eM QcSyEJNpoCxQnJj48K7bjn3tq721zuvO7Fz7Jwd+xixMIY/dVRnUzUFVNSAjISOqJWKKgSWpmZi5 kCERByd0cEcEZiYiVTWwrBECU16wm5NLxuG1A2+tWnFnd3dxOU2qB9ur598OTKTUWdeYmpqbuxZ5 VhQFEhJREjEzUxVRIiKioshDpBgxZgyg7oJozKAmzJSFDB00CYC7dbY6LmIHXjtymU2qdV4ln56c eePNXxEHdxeRlFKMMcTQbrerqizLKqVSVRBRzcyss+hUVXMpyxaTu2uIZC4AFhldBcwtqbubaIwx ZlHNKkk/n3j7s5Mztc7ryH++cUzVUpXcQVVDYHdLKYUQVJQQwDxyQPfAVGRZKks3BQdQQKBUCRGq aOCAgFVZIQI6BAro4O7tdltEzEVNk8nhn0/VOq8jb/3i/RgzQgYAZjLTqipFkrk7eAycZVlKlaog QEoVIoA7IbohY0TgVJmqp8pSZYhsiqbzI7MkQUR3Q0QiJMQ3//udWuf14p33TpRlCiEg0dndJDMV ea6qIQRVU1VmQsKUEjMRIhKlVJmBmaekgbNAEQEJmTAyh07ar8iLGCIjIiJ2MgPu09Nz7xw/8Zuo c/n2CZ/YvvyLbMJ7739KhCoGjgCIiEyECFVK7k5EMQYAZ2YmJiIAiFlGRMyEBDGLITAzIWJRFA7G TIiAgRHJzBABwAmREAlAk8QQ3333k8XX2Xxmwn103cJHG0Z9IYe3Nz+3gu2Hzys+uuEKW3B0Zz/2 7zz6Reo88cnJToIGkdyhswQFgE6iJyXp5N9FRFU7qZ8QArg7OLiaCRMwAaKnVKaqjaAqlaqJWRJV MyIiRFclAHRAp08+nV10net2vHBobPfA4AUOdq/HM/SObDv2a6JncmjF2eLr4WX3kXX/z5a1n02b GzgQIRESAwU016JRFFnmamCYxTzLCgACh9npaRPJ8yzL8lS1TUoACQG7unNEK4rMTNwtRsLOzjUl MyVEJg4hcGAOfHp6brF1bhgc2D06uGdsYPMlBUy92N/7LAx/7zINjQ/i+rEtwx39zWcmzgbtujOh fC58l2+fOLy9uXz7xJnh4Vz5Mx1iQQ3nutS6EZ94Zt2ZUWH02vvO9ExLvZMWEPOkWpbldAggVSlV QmMXKOcsVQgeyOmGru6yNVeWVVlpI+Ts4Jqq1JqZOU1IKkaEWWTUkkky8kaekbuZInMpWqkayKnT pxdZ57rNA2N7xmHf6FkBFzf60q7JLYOX/dbGR3f3bdvYBGhuWrOrtxOzuwf2j6wDmNo7Mnm26zQ3 boORvVMLBvljW+fL49bx+ScvHJofKFbs2nbknLm+F4Zh48Kar4nKjQI6oaiZI4UixB5RdgghFByi U6IoQBWwOImxxgZPt04JJc972pC3PWt7pMbSigooeirMhLJ2MuI8ZgUFDjHrnMMQYZ5nqiaii6pz +fbhLWOj+xYKuNT0NnnoSt7O5OHJTjfYuXVnx9b4nrFzPWNtXxMAoLlpK+x6acH2a/Lg5OqH+xbO ys8PjD05OH5mih1aMClMPru+M92O7xmD+QovpFj++KYnmucn04rmE5seX35hgq3RiKrintxFkqbK VUiFCKOIAQAimCsSEhMQKWByPDk9++npmVbZJqYYYxaiJEF3UInkYAmyPAEkx2SQzAy8kuTubuZq 5Iuas21u3Na3e2j8zOve//ym5os7L765Xd639o2Dz112zX1r+g7tmZpfVb08cGY+HgUAOLp3F+zf tHznzr4dw4eG8CjA8gVroidH3R1gbD12LE4enDyvl6xd1YR957fxvCLnI8se//7+p+5+atvfTrYB AIq+P981+hef7Xh6/IKCK5t3n56ePvHRCYTYbnOqVMXFzVTUEhGQsjqAgyQFiGge8mJ2Rt8+erQF Peqp1Z5zdzdw80ae3dDTuOuOW29d2rN0SU8eITCCeSDu7GiR2Mw7m6LF0tnctLUPVu/3LWefDOzY sHNw38XG5O8Nw0jv1JUE/dBWgA2j/vzBXhyc6njdPB+fe0dg/8bm5JqBsT2DF/533yDiIGwY9cPb e9fsBeh7uA/g6P/qJZdH+5d7hza3d4yM7oLBbbunmlt2jW55/7nNz40fb19QckkEzHjJPbdVlbTm KncyBQCYnZ1GUHPRRJX6XLtKKamamh5568jx4++WyT+amVVLaml2ds7UA3J/38oPP3jv+NtHGyFK qsDNUrX2Kw+tXLHixqXLEJEx5Fne091YPJ0bdgzDUC+eC8fmMxPHNq8b3Hdhz1034vvXDvVuner8 Hj7c2//i1OdtIo8MH3oSxwGaq9bCodGpM5M0wOjZ8RZe2jEIY6NbLzVYd0bdnXtHJodfHh3tROrZ XnIltI+PDw20/+pvRvdv/OzG8OrQwA9e/eAixVozp059fMrYZuda7lSVomIiYq5uopYkGYXMgWJG KAop3Xvvl5bc1G2UpdJSqlJqixo4zs3Mnjr58ep7b3zttSNvl5zHEBjB9OTpU0mEA4NDu90uiuKG pV2LpnPd5oHJkeemLljvvDC8/fvjOwFgy7monXy2F7d+fkz0DR/x4fnfY+sRx+eXxOuHDh/rnPOP 7R5bMBPv3QXDw4fWXxib50bmyaEV/eMA8GJ/L0zMV3FuBL5CPnj1B1v/8oPv9k/89a6ffnzxIrfe dtvpU63KhDkry4SEgO7gDgCIIWaVzDqIGICjpATuM7Ony0oM09zpdkqpSiUAxZjFGHp6ek6c+DDE EI1uufVLkYncu7q65m8rqOVZnlRvv+OmX9v2+nLJ1fDRRx//+Cevm9H09LSIpFRlWZYkiQgAiIiD OXISV3d0k5Tm2tUHn5w8Pduea4matsu2qJuhqvb0NAg1VS2iPMs4MkfmJd09d95+x7IblkUOxBw4 PvXHj959582ff7mkPr6+Gm655ebSoGwl9ZBE1DkpOIQqCRIlpbJKHEjNUxJ0cCcOjTxLN3J3V7c6 eEoJOYBTEomBY8Q84zxEAMtCiCE0ikYWss7ugzl2d2d333nzYq5saxbS27znvw4fM3NzRGA3AsAY CwcQQ46SZVy2WkWksqxCyNRg2ZKeVqu9pOhyg5QSEiOgmcUYY4zgXjA4eJZFM89iDo4ApAaNEFeu uPNyWlXrvEpWPnDPgdcnCbASIcLgKKlqlyVQ5ySEZqZnAweRlGU5EkuZALwocmd2shgKQnIHNWOi wGRmnfOTGDI3A/MQAgIxc9luP9h3X31Adh1ZtrRndV+vuBm4qFapUrMsy9xdVVutSgTAMc8bbmDm IXCWR2Kq2i1XyQIhmFvKAuVZdFMCV7UYc1PjEIiok4uIkb/6UPOmG5fUOq8vX394FRBxzIgDIJp7 WVVmjkiB86LocqB2uxJRVRWRqqoQfUl3o1Hk6E7oMRCjuwkjRA5FnhOiqknSzhENAjDjb//Wly+z SbXOq6e7q/i9Rx8CRELsvP28KABcpHI3NyfkLOadDxbMNEbuHJNZksDYyDMwRbdASIhM1AnKGCMh Bg6ExIG/+Y0HL/MaX63zWvnKgw+s/vK9IipJVURTQnRE6Bx4JalEk5qYSgjRzESEkDsLH1UJgYkJ HMABESRVVVW6agyRgBDowVX3rum///LbU+u8Vp741iMrmnc18oJwPqvKzCGGLI9ZDACOCCEEYkRE UwXAEGOMGSKG+TkSO9eOCC2LjIhmbu6999/2R9/++hU1pta5CHxnw2P333d754uiEIIDEGFKlZpw oE4avaOZmIm43SrNjJncrXOpwcw6HwbCmctBDzTv2Pid373SltQ6F4cnNzy2+sGmm6mIqQCouxKh u4sqEDExAoCbqRChg4uIqBIhBzJLphUTuxmiP7Tmvqc2fuMqmlEn+a6GS32ue/DgGz/6x38VEQUT NUIiYtX5r3PdzR3Ayc04MiBwIDPTJISUxZwxhEDffuJ3vvZw/yWFYa2spqampqampqampqampqam pqampqampqampqbmN5H/AUCOWeldFLk+AAAAAElFTkSuQmCC "
+       id="image4227-4"
+       x="5183.6123"
+       y="-54.688614" />
+    <g
+       id="node6-9"
+       class="node"
+       transform="matrix(1.0007645,0,0,1.0007645,3795.7127,-180.97463)">
+      <title
+         id="title85">ProximityModulation</title>
+      <polygon
+         fill="#ede7f6"
+         stroke="#000000"
+         points="666,-45.5 666,-7.5 858,-7.5 858,-45.5 "
+         id="polygon87" />
+      <text
+         text-anchor="middle"
+         x="762"
+         y="-30.299999"
+         font-family="Arial"
+         font-size="14px"
+         id="text89-7">Proximity-Based Modulation</text>
+      <text
+         text-anchor="middle"
+         x="762"
+         y="-15.3"
+         font-family="Arial"
+         font-size="14px"
+         id="text91">Local source suspected</text>
+    </g>
+    <image
+       width="174.88359"
+       height="63.798733"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       xlink:href="data:image/png;base64,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 AAAASUVORK5CYII= "
+       id="image38431"
+       x="5127.7344"
+       y="-458.35452" />
+    <g
+       id="g2318"
+       class="edge"
+       transform="translate(-83.62302,-323.48905)">
+      <title
+         id="title2312">DogUtterance-&gt;UnconsciousLogic</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 4724.9864,-126.87 H 5199.32"
+         id="path2314"
+         sodipodi:nodetypes="cc" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="5199.45,-123.37 5199.45,-130.37 5209.45,-126.87 "
+         id="polygon2316" />
+    </g>
+    <g
+       id="g2328"
+       class="edge"
+       transform="rotate(-90.404978,5077.2306,-259.39838)">
+      <title
+         id="title2322">DogUtterance-&gt;UnconsciousLogic</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 5160.7145,-128.06361 5199.32,-126.87"
+         id="path2324"
+         sodipodi:nodetypes="cc" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="5209.45,-126.87 5199.45,-123.37 5199.45,-130.37 "
+         id="polygon2326" />
+    </g>
+    <g
+       id="node29"
+       class="node"
+       transform="matrix(1.0000899,0,0,1.0000899,2053.275,141.93122)">
+      <title
+         id="title38264">log_entry_4</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="1453"
+         cy="-378"
+         rx="114.28"
+         ry="18"
+         id="ellipse38266"
+         style="fill:#ff00ff" />
+      <text
+         text-anchor="middle"
+         x="1453"
+         y="-374.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text38268">Living nightmare / hell-scape</text>
+    </g>
+    <g
+       id="g2456"
+       class="edge"
+       transform="rotate(96.242946,3475.6335,-97.124362)">
+      <title
+         id="title2450">PaintShop-&gt;EmeryPaper</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 3351.8605,-113.816 c 18,-2.463 28.3795,-3.014 46.9095,-5.548"
+         id="path2452"
+         sodipodi:nodetypes="cc" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="3408.7,-120.723 3399.26,-115.899 3398.31,-122.835 "
+         id="polygon2454" />
+    </g>
+    <g
+       id="edge19-0"
+       class="edge"
+       transform="matrix(-1.4995782,-0.3130724,0.49681191,-0.94497844,7505.6439,-140.77254)"
+       inkscape:transform-center-x="-162.78891"
+       inkscape:transform-center-y="-5.5787161">
+      <title
+         id="title38271">log_entry_4-&gt;trauma_bonding</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1815.8047,-287.49237 c -4.0291,1.01666 -219.4451,71.73521 -233.0925,69.45503 -32.8976,-5.49648 -52.0359,-40.50509 -62.6174,-57.76403 -28.2646,-46.10094 -11.7508,-101.05651 -4.4378,-119.47815 15.8557,-39.94051 62.0102,-64.76248 97.0232,-78.0777 14.93,-12.176 87.6798,-28.70178 106.1598,-35.18178"
+         id="path38273"
+         sodipodi:nodetypes="cssscc" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1720.12,-505.274 1717.94,-511.926 1728.53,-511.713 "
+         id="polygon38275" />
+    </g>
+    <g
+       id="g2501"
+       class="edge"
+       transform="rotate(90.161321,4366.5273,-171.19277)">
+      <title
+         id="title2495">PullOver-&gt;PorchScene</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 4336.906,-266.40514 0.1206,173.405941 65.7034,-1.870901"
+         id="path2497"
+         sodipodi:nodetypes="ccc" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="4412.99,-94.8701 4402.99,-91.3702 4402.99,-98.3702 "
+         id="polygon2499" />
+    </g>
+    <g
+       id="node15-0"
+       class="node"
+       transform="matrix(1.0007645,0,0,1.0007645,4277.1907,268.27986)">
+      <title
+         id="title1678">lifelong_threat</title>
+      <polygon
+         fill="#2e2e2e"
+         stroke="#444444"
+         points="181.5,-312 181.5,-276 338.5,-276 338.5,-312 "
+         id="polygon1680" />
+      <text
+         text-anchor="middle"
+         x="260"
+         y="-290.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         fill="#ffffff"
+         id="text1682">‘For the rest of your life’</text>
+    </g>
+    <g
+       id="edge13-1"
+       class="edge"
+       transform="matrix(1.0007645,0,0,1.0007645,3896.5917,267.17956)">
+      <title
+         id="title1685">lifelong_threat-&gt;recursive_harassment</title>
+      <path
+         fill="none"
+         stroke="#e71616"
+         d="M 211.16137,-291.80108 549.778,-294"
+         id="path1687"
+         sodipodi:nodetypes="cc" />
+      <polygon
+         fill="#e71616"
+         stroke="#e71616"
+         points="549.99,-297.5 559.99,-294 549.99,-290.5 "
+         id="polygon1689" />
+    </g>
+    <g
+       id="g2583"
+       class="edge"
+       transform="matrix(1.0007645,0,0,1.0007645,4462.1474,240.77229)">
+      <title
+         id="title2577">lifelong_threat-&gt;recursive_harassment</title>
+      <path
+         fill="none"
+         stroke="#e71616"
+         d="m 153.98933,-272.01075 47.89196,-5.28716 29.94229,-5.70777 28.07071,-7.69593 29.68098,-5.44572 L 549.778,-294"
+         id="path2579"
+         sodipodi:nodetypes="cccccc" />
+      <polygon
+         fill="#e71616"
+         stroke="#e71616"
+         points="549.99,-290.5 549.99,-297.5 559.99,-294 "
+         id="polygon2581" />
+    </g>
+    <g
+       id="layer2"
+       transform="matrix(2.4290303,0,0,2.4360127,1145.6029,-602.45903)">
+      <g
+         id="g2988"
+         transform="matrix(1.5716789,0,0,0.8368007,-1466.125,-1531.7911)">
+        <text
+           x="939.78882"
+           y="2033.6229"
+           fill="#6c94d5"
+           opacity="0.39"
+           font-size="96.7407px"
+           font-family="Arial"
+           id="text2986"
+           style="fill:#6c94e2;fill-opacity:1;stroke-width:0.452055;stroke-linecap:butt;stroke-linejoin:round"
+           transform="scale(0.9869888,1.0131827)"><tspan
+             style="fill:#6c94e2;fill-opacity:1;stroke-width:0.452055"
+             id="tspan2984">Con1209©fide-©0912 axd</tspan></text>
+      </g>
+    </g>
+  </g>
+  <metadata
+     id="metadata2622">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>thedog’sutterance_31st_July_2024</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+  <script src="svg-pan-zoom.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+</script>
+
+
+
+<script>
+function toggleFooter() {
+const footer = document.getElementById('audioFooter');
+const btn = document.getElementById('toggleFooterBtn');
+if (footer.style.display === 'none') {
+footer.style.display = 'flex';
+btn.textContent = 'Hide Audio Panel';
+} else {
+footer.style.display = 'none';
+btn.textContent = 'Show Audio Panel';
+}
+}
+</script>
+
+<script>
+function toggleAudio(playerId) {
+const audio = document.getElementById(playerId);
+if (audio.paused) {
+  audio.play();
+} else {
+  audio.pause();
+}
+}
+</script>
+
+
+<div id="audioFooter">
+<div id="audioPanel">
+<span>🔊 Transmission: node49</span>
+<audio id="audioPlayer" src="node49.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer')">Play / Pause</button>
+</div>
+
+<div id="audioPanel2">
+<span>🔊 Transmission: node37</span>
+<audio id="audioPlayer2" src="node37.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer2')">Play / Pause</button>
+</div>
+</div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script src="svg-pan-zoom.min.js"></script>
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+svgPanZoom(document.querySelector("svg"), {
+zoomEnabled: true,
+controlIconsEnabled: true,
+fit: true,
+center: true,
+minZoom: 0.1,
+maxZoom: 10
+});
+});
+
+function toggleAudio() {
+const audio = document.getElementById("audioPlayer2","audioPlayer");
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+
+
+</script>
+<script>
+  let isDragging = false, offsetX, offsetY;
+  let panZoomInstance;
+  let metadata = [];
+
+function toggleDock() {
+  const sidebar = document.getElementById('sidebar');
+  const isDocked = sidebar.style.position === 'absolute';
+  sidebar.style.position = isDocked ? 'fixed' : 'absolute';
+}
+
+function startDrag(e) {
+  const sidebar = document.getElementById('sidebar');
+  isDragging = true;
+  offsetX = e.clientX - sidebar.offsetLeft;
+  offsetY = e.clientY - sidebar.offsetTop;
+  document.onmousemove = dragSidebar;
+  document.onmouseup = stopDrag;
+}
+
+function dragSidebar(e) {
+  if (isDragging) {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.style.left = `${e.clientX - offsetX}px`;
+    sidebar.style.top = `${e.clientY - offsetY}px`;
+
+    // If dragged off left edge, reset margin
+    if (parseInt(sidebar.style.left) > 50) {
+      document.querySelector('.main').style.marginLeft = '0';
+    }
+  }
+}
+
+function stopDrag() {
+  isDragging = false;
+  document.onmousemove = null;
+  document.onmouseup = null;
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const isHidden = sidebar.style.display === 'none';
+  sidebar.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
+function playNodeAudio(nodeId) {
+  const audio = document.getElementById(`${nodeId}_audio`);
+  
+  if (audio) audio.play();
+}
+  
+
+function showPlayCue(nodeId) {
+  const cue = document.getElementById(`${nodeId}_cue`);
+  if (cue) {
+    cue.setAttribute('visibility', 'visible');
+    setTimeout(() => cue.setAttribute('visibility', 'hidden'), 3000);
+  }
+}
+
+function populateSidebar(data) {
+  const nodeList = document.getElementById('nodeList');
+  nodeList.innerHTML = '';
+
+  data.forEach(entry => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#';
+    a.textContent = entry.title;
+    a.onclick = () => {
+      playNodeAudio(entry.node_id);
+      showPlayCue(entry.node_id);
+    };
+    li.appendChild(a);
+
+    if (entry.tags && entry.tags.length > 0) {
+      const tagSpan = document.createElement('span');
+      tagSpan.textContent = ` [${entry.tags.join(', ')}]`;
+      tagSpan.style.fontSize = '12px';
+      tagSpan.style.color = '#666';
+      li.appendChild(tagSpan);
+    }
+
+    nodeList.appendChild(li);
+  });
+}
+
+function filterNodes() {
+    const input = document.getElementById('searchBox').value.toLowerCase();
+    const filtered = metadata.filter(entry => {
+    const title = typeof entry.title === 'string' ? entry.title.toLowerCase() : '';
+    const tagMatch = entry.tags?.some(tag =>
+      typeof tag === 'string' && tag.toLowerCase().includes(input)
+    );
+    return title.includes(input) || tagMatch;
+  });
+
+  populateSidebar(filtered);
+}
+
+async function loadMetadata() {
+  try {
+    const response = await fetch('node_metadata.json');
+    metadata = await response.json();
+
+    metadata.forEach(entry => {
+      if (entry.node_id.endsWith('_audio')) {
+        entry.node_id = entry.node_id.replace('_audio', '');
+      }
+  });
+
+    populateSidebar(metadata);
+  } catch (err) {
+    console.error("Failed to load metadata:", err);
+  }
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("triggerButton");
+    const container = document.getElementById("node5_image_container");
+    const svg = document.getElementById("mainSVG");
+
+  if (svg) {
+    setTimeout(initPanZoom, 100);
+  } else {
+    console.warn("SVG not found at DOMContentLoaded");
+  }
+
+  if (button && container) {
+    button.addEventListener("click", function () {
+      const isHidden = container.getAttribute("visibility") === "hidden";
+      container.setAttribute("visibility", isHidden ? "visible" : "hidden");
+    });
+  }
+
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.addEventListener('input', filterNodes);
+  }
+
+  loadMetadata();
+});
+  
+  function showNodeImage(id) {
+    const imageContainer = document.getElementById(`${id}_image_container`);
+    if (imageContainer) {
+      imageContainer.style.display = "block";
+  }
+}
+
+  function initPanZoom() {
+    if (panZoomInstance) panZoomInstance.destroy();
+    panZoomInstance = svgPanZoom('#mainSVG', {
+      zoomEnabled: true,
+      controlIconsEnabled: true,
+      fit: true,
+      center: true
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(initPanZoom, 100);
+});
+
+</script>
+
+<script>
+  function openNodeImageInNewTab(id) {
+    const imageElement = document.getElementById(`${id}_image`);
+    if (imageElement && imageElement.src.startsWith("data:image")) {
+      window.open(imageElement.src, '_blank', 'width=800,height=600');
+    } else {
+      console.warn("Image element not found or not a valid data URI");
+    }
+  }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+
+buttonPanel.onmousedown = function (e) {
+e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+};
+
+document.onmouseup = function () {
+  document.onmousemove = null;
+};
+};
+});
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+
+buttonPanel.onmousedown = function (e) {
+  e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+  document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+  };
+
+  document.onmouseup = function () {
+  document.onmousemove = null;
+  };
+};
+});
+</script>
+</body>
+</html>
