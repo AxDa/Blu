@@ -732,7 +732,7 @@
 "node_id": "node65_audio",
 "title_id": "title1042",
 "title": "French Guiana",
-"tags": ["Bass", "Speaker" "agency", "18:04", "leo"  ],
+"tags": ["Bass", "Speaker", "agency", "18:04", "leo"  ],
 "audio_files": [
   "node65.mp3"
 ],
@@ -794,3 +794,4 @@
 }
 }
 ]
+
