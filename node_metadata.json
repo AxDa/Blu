@@ -727,7 +727,74 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node65_audio",
+"title_id": "title1042",
+"title": "French Guiana",
+"tags": ["Bass", "Speaker" "agency", "18:04", "leo"  ],
+"audio_files": [
+  "node65.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
+},
+{
+"node_id": "node66_audio",
+"title_id": "title1049",
+"title": "Suriname",
+"tags": ["Bleak", "16:20" ],
+"audio_files": [
+  "node66.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node67_audio",
+"title_id": "title1063",
+"title": "Guyana",
+"tags": ["k9", "16:20" ],
+"audio_files": [
+  "node67.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node68_audio",
+"title_id": "title1077",
+"title": "Chile (DST)",
+"tags": ["sasquerade", "0534"],
+"audio_files": [
+  "node68.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node69_audio",
+"title_id": "title1091",
+"title": "Chile (Magallanes &\n Chilean Antarctica (year round))",
+"tags": ["sasquerade", "060040", "0602"],
+"audio_files": [
+  "node69.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
+
+
 
   
 
