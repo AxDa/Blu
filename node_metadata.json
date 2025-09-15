@@ -818,12 +818,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node72_audio",
+"title_id": "title1135",
+"title": "Uruguay",
+"tags": ["Bleak", "Siren", "blue", "0951"],
+"audio_files": [
+  "node72.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
-
-
-
-
-  
-
+}
 
 ]
