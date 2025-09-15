@@ -184,7 +184,7 @@
     }
   </style>
  
- <style>
+  <style>
     #audioFooter {
       position: fixed;
       bottom: 0;
@@ -206,11 +206,69 @@
     }
   
     #audioFooter button {
-  margin-top: 0.2em; /* Reduced button spacing */
-  font-size: 0.75em;  /* Optional: shrink button text */
-  padding: 0.3em 0.6em; /* Optional: shrink button size */
- }
+    margin-top: 0.2em; /* Reduced button spacing */
+    font-size: 0.75em;  /* Optional: shrink button text */
+    padding: 0.3em 0.6em; /* Optional: shrink button size */
+  }
  
+  #container_meta_panel {
+    position: fixed;
+    top: 120px;
+    left: 600px;
+    width: 260px;
+    height: 340px;
+    background: #dbcfa5;
+    border: 3px solid #332e2e1c;
+    padding: 5px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .data_container {
+    width: 100px;
+    height: 100px;
+    background-image: url('icon_default.png'); /* 🌒 default icon */
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #999;
+    position: relative;
+    cursor: move;
+  }
+
+  .data_container:hover::before {
+    content: "Over and out, luminous resistor. 🌒 git lumin";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 10px;
+    background: #333;
+    color: #fff;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+
+  #expansion_panel {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    border: 2px solid #000;
+    display: none;
+    z-index: 1000;
+  }
+
+  #panel_iframe {
+    width: 100%;
+    height: 90%;
+    border: none;
+  }
     
   </style>
  </head>
@@ -227,7 +285,28 @@
   <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
     🔍 View_mare_Large
   </button>
- 
+  
+  <button onclick="toggledataPanel()">Toggle Meta Panel</button>
+
+  <!-- Draggable Panel -->
+  <div id="container_meta_panel" >
+    <div class="grid" style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 10px; padding: 10px;">
+      <div class="data_container" data-page="file:///C:/PythonScripts/Notsillyatall/WorldTimeZonesNodeDripEcho_1908_27082025.htmll" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data_container" data-page="file:///C:/PythonScripts/Notsillyatall/AllBackAcoustics_2211_utc+1_14092025_axd.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data_container" data-page="Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data_container" data-page="page4.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data_container" data-page="Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data_container" data-page="Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+    </div>
+  </div>
+  
+
+   <div id="expansion_panel">
+    <button onclick="closePanel()">Close</button>
+    <iframe id="panel_iframe"></iframe>
+    </div>
+ </div>
+
  <!-- Button Panel Container -->
  <div id="buttonPanel">
  
@@ -150574,26 +150653,28 @@ lwED3i0E8Eakb2cf8f8BuO+69Pz47IUAAAAASUVORK5CYII=
     </rdf:RDF>
   </metadata>
 </svg>  </div>
-  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
-  <script src="svg-pan-zoom.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-const toggleBtn = document.getElementById("togglePanelBtn");
-const panel = document.getElementById("buttonPanel");
 
-toggleBtn.onclick = function () {
-if (panel.style.display === "none") {
-  panel.style.display = "block";
-  toggleBtn.textContent = "Hide Panel";
-} else {
-  panel.style.display = "none";
-  toggleBtn.textContent = "Show Panel";
-}
-};
-});
-</script>
+<div id="audioFooter">
+<div id="audioPanel">
+<span>🔊 Transmission: node22</span>
+<audio id="audioPlayer" src="node22.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer')">Play / Pause</button>
+</div>
+
+<div id="audioPane44">
+<span>🔊 Transmission: node69</span>
+<audio id="audioPlayer2" src="node69.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer2')">Play / Pause</button>
+</div>
+</div>
 
 
+</body>
+
+### 🧠 JavaScript
+
+<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script src="svg-pan-zoom.min.js"></script>
 
 <script>
 function toggleFooter() {
@@ -150613,33 +150694,83 @@ btn.textContent = 'Show Audio Panel';
 function toggleAudio(playerId) {
 const audio = document.getElementById(playerId);
 if (audio.paused) {
-  audio.play();
+audio.play();
 } else {
-  audio.pause();
+audio.pause();
 }
 }
 </script>
 
-
-<div id="audioFooter">
-<div id="audioPanel">
-<span>🔊 Transmission: node22</span>
-<audio id="audioPlayer" src="node22.mp3" preload="auto" controls></audio>
-<button onclick="toggleAudio('audioPlayer')">Play / Pause</button>
-</div>
-
-<div id="audioPane44">
-<span>🔊 Transmission: node69</span>
-<audio id="audioPlayer2" src="node69.mp3" preload="auto" controls></audio>
-<button onclick="toggleAudio('audioPlayer2')">Play / Pause</button>
-</div>
-</div>
-
-
-</body>
-<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
-<script src="svg-pan-zoom.min.js"></script>
 <script>
+let viewCounts = new Map();
+let currentContainer = null;
+
+function toggledataPanel() {
+  const panel = document.getElementById("container_meta_panel");
+  panel.style.display = panel.style.display === "none" ? "block" : "none";
+}
+
+function openPanel(el, pagePath) {
+  currentContainer = el;
+  const panel = document.getElementById("expansion_panel");
+  const iframe = document.getElementById("panel_iframe");
+
+  iframe.src = pagePath;
+  panel.style.display = "block";
+
+  if (!el.dataset.id) {
+    el.dataset.id = 'container_' + Math.random().toString(36).substr(2, 9);
+  }
+
+  const id = el.dataset.id;
+  viewCounts.set(id, (viewCounts.get(id) || 0) + 1);
+}
+
+function closePanel() {
+  const panel = document.getElementById("expansion_panel");
+  panel.style.display = "none";
+
+  if (!currentContainer) return;
+
+  const id = currentContainer.dataset.id;
+  const count = viewCounts.get(id);
+
+  if (count === 1) {
+    currentContainer.style.backgroundImage = "url('icon_bw.png')"; // grayscale
+  } else if (count === 2) {
+    currentContainer.style.backgroundImage = "url('icon_green.png')";
+  } else if (count === 3) {
+    currentContainer.style.backgroundImage = "url('icon_orange.png')";
+  } else if (count >= 4) {
+    currentContainer.style.backgroundImage = "url('icon_red.png')";
+  }
+
+  currentContainer = null;
+}
+
+
+</script>
+
+<script>
+    
+
+// Apply only to panels
+document.addEventListener("DOMContentLoaded", function () {
+  makeDraggable(document.getElementById("buttonPanel"));
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+
 window.addEventListener("DOMContentLoaded", function () {
 svgPanZoom(document.querySelector("svg"), {
 zoomEnabled: true,
@@ -150651,6 +150782,8 @@ maxZoom: 10
 });
 });
 
+
+
 function toggleAudio() {
 const audio = document.getElementById("audioPlayer2","audioPlayer");
 if (audio.paused) {
@@ -150660,8 +150793,35 @@ audio.pause();
 }
 }
 
+function makeDraggable(el) {
+  el.onmousedown = function (e) {
+    e.preventDefault();
+    const rect = el.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
 
+    function onMouseMove(e) {
+      el.style.left = `${e.clientX - offsetX}px`;
+      el.style.top = `${e.clientY - offsetY}px`;
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', function stopDrag() {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', stopDrag);
+    });
+  };
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  makeDraggable(document.getElementById("container_meta_panel"));
+});
 </script>
+
+
+
+
+
 <script>
   let isDragging = false, offsetX, offsetY;
   let panZoomInstance;
@@ -150867,7 +151027,7 @@ document.onmousemove = function (e) {
   buttonPanel.style.top = newTop + "px";
 };
 
-document.onmouseup = function () {
+  document.onmouseup = function () {
   document.onmousemove = null;
 };
 };
