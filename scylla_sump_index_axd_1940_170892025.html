@@ -15,11 +15,8 @@
     }
     #svgContainer {
       width: 100%;
-      height: 100%;
-      z-index: 9999;
-      /*pointer-events: none;*/
+      height: 90%;
     }
-
  
     .main {
       position: relative;
@@ -235,13 +232,12 @@
 
   #data_svg_container {
     width: 80px;
-    height: 100px;
+    height: 180px;
     background-size: cover;
     background-position: center;
     border: 1px solid #999;
-    position: absolute;
+    position: relative;
     cursor: move;
-    z-index: 2;
   }
   .data1_container {
     width: 40px;
@@ -274,9 +270,7 @@
    background-position: center;
    background-repeat: no-repeat;
    border: 1px solid rgb(180, 37, 37);
-   position: absolute;
-   display: flex;
-   flex-direction: column;
+   position: relative;
    cursor: pointer;
    }
 
@@ -296,38 +290,19 @@
    transition: opacity 0.3s ease-in-out;
    }
 
-  #expansion1_panel {
+  #expansion_panel {
     position: fixed;
     top: 50px;
     left: 50px;
     width: 800px;
     height: 600px;
-    background: #0af057;
+    background: #fff;
     border: 2px solid #000;
     display: none;
     z-index: 1000;
   }
 
-  #expansion_panel {
-    display: none; 
-    position: relative;
-    top: 50px;
-    left: 450px;
-    width: 900px;
-    height: 800px;
-    background: #9c2d2d;
-    border: 2px solid #000;
-    z-index: 1;
-  }
-
   #panel_iframe {
-    width: 100%;
-    height: 90%;
-    border: none;
-  }
-
-  #panel_iframe1 {
-    left: 500px;
     width: 100%;
     height: 90%;
     border: none;
@@ -408,9 +383,8 @@
 </div>
 
 <div id="expansion_panel">
-    <button onclick="closePanel()">ClosePanel</button>
+   <button onclick="closePanel()">ClosePanel</button>
    <iframe id="panel_iframe" ></iframe>
-   
  </div>
 
   <!-- Draggable Panel -->
