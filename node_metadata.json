@@ -870,6 +870,45 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node79_audio",
+"title_id": "title1228",
+"title": "Fernando de Noronha (Brazil)",
+"tags": ["Bleak", "Siren", "blue", "2132"],
+"audio_files": [
+  "node79.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node80_audio",
+"title_id": "title1242",
+"title": "South Georgia and \nthe South Sandwich Islands",
+"tags": ["Bleak", "emp", "xxx", "", "2152"],
+"audio_files": [
+  "node80.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node81_audio",
+"title_id": "title1258",
+"title": "Cape Verde",
+"tags": ["Bleakstaire", "2143", "2234", "2236", "2238"],
+"audio_files": [
+  "node81.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
