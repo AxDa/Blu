@@ -831,6 +831,18 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node73_audio",
+"title_id": "title1149",
+"title": "Paraguay",
+"tags": ["Bleak", "Siren", "burlington", "blue", "1851"],
+"audio_files": [
+  "node73.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
 
 ]
