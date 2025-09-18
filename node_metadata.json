@@ -857,6 +857,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node78_audio",
+"title_id": "title1219",
+"title": "Saint Pierre and \nMiquelon (Standard Time)",
+"tags": ["Bleak", "perambulator", "exhaust", "1938", "2007"],
+"audio_files": [
+  "node78.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
