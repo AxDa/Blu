@@ -823,7 +823,7 @@
 "node_id": "node72_audio",
 "title_id": "title1135",
 "title": "Uruguay",
-"tags": ["Bleak", "Siren", "burlington", "blue", "0951"],
+"tags": ["Bleak", "Siren", "blue", "0951"],
 "audio_files": [
   "node72.mp3"
 ],
@@ -839,6 +839,19 @@
 "tags": ["Bleak", "Siren", "burlington", "blue", "1851"],
 "audio_files": [
   "node73.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node74_audio",
+"title_id": "title1163",
+"title": "Saint Pierre and Miquelon",
+"tags": ["Bleak", "soda", "agency", "BBCreau", "1938", "1940"],
+"audio_files": [
+  "node74.mp3"
 ],
 "coordinates": {
   "x": 11.2,
