@@ -926,7 +926,7 @@
 {
 "node_id": "node83_audio",
 "title_id": "title1279",
-"title": "Ittoqqortoormiit \n(Greenland, DST)",
+"title": "Ittoqqortoormiit (Greenland, DST)",
 "tags": ["Bleakstaire", "0027", "0037"],
 "audio_files": [
   "node83.mp3"
@@ -936,5 +936,6 @@
   "y": 1783.208
 }
 }
+
 
 ]
