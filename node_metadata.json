@@ -909,6 +909,32 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node82_audio",
+"title_id": "title1269",
+"title": "Azores (Portugal)",
+"tags": ["Bleakst", "Siren", "0023"],
+"audio_files": [
+  "node82.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node83_audio",
+"title_id": "title1279",
+"title": "Ittoqqortoormiit \n(Greenland, DST)",
+"tags": ["Bleakstaire", "0027", "0037"],
+"audio_files": [
+  "node83.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
