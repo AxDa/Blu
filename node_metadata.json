@@ -961,6 +961,33 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node86_audio",
+"title_id": "title1318",
+"title": "Portugal (Mainland)",
+"tags": ["Bleaksirenst", "1231"],
+"audio_files": [
+  "node86.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
+},
+{
+"node_id": "node87_audio",
+"title_id": "title1332",
+"title": "Canary Islands (Spain)",
+"tags": ["Bleakstatiredshed", "1230"],
+"audio_files": [
+  "node87.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
+
 
 ]
