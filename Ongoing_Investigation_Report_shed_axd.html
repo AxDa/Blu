@@ -1,0 +1,2755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>shed_19092025_axd</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    #svgContainer {
+      width: 100%;
+      height: 90%;
+      z-index: 1000;
+    }
+
+    .main {
+      position: relative;
+      height: 100vh;
+      margin-left: 300px; /* default when sidebar is docked */
+      transition: margin-left 0.3s ease;
+    }
+
+    #toggleSidebar {
+      position: fixed;
+      top: 20px;
+      left: 10px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+      #triggerButton {
+      position: absolute;
+      left: 10px;
+      top: 45px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #83d3d3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+
+    }
+
+    #viewImageButton {
+      position: fixed;
+      top: 10px;
+      left: 145px; /* adjust based on toggleSidebar width */
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #00BFFF;
+      color: rgb(32, 25, 25);
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar {
+      position: absolute;
+      left: 0;
+      top: 60px;
+      width: 280px;
+      height: 80%;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 1em;
+      border: 1px solid #ccc;
+      z-index: 999;
+      cursor: move;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 0.5em;
+    }
+    .sidebar input {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 1em;
+      font-size: 14px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin-bottom: 0.5em;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
+    .sidebar a:hover {
+      color: #0077cc;
+    }
+
+    svg, svg * {
+    visibility: visible !important;
+    display: inline !important;
+    }
+  </style>
+
+  <!-- External scripts -->
+  <script src="svg-pan-zoom.min.js"></script>
+  <script src="title_node_map.js"></script>
+  <script src="node_metadata.json"></script>
+
+  <style>
+    #togglePanelBtn {
+      position: fixed;
+      top: 45px;
+      left: 145px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglePanelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+    #buttonPanel {
+      display: block;
+      position: fixed;
+      top: 110px;
+      left: 10px;
+      z-index: 900;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      max-height: 600px;
+      max-width: 400px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid #ccc;
+      cursor: move; /* merged here */
+    } 
+  </style>
+
+  <style>
+    #audioPanel, #audioPanel2 {
+      margin-bottom: 1em;
+      display: flex;
+      flex-direction: row; /* Change to 'row' for horizontal layout */
+      align-items: flex-start;
+      gap: 0.5em;
+      border: 1px solid #ccc;
+      padding: 1em;
+      background-color: #f9f9f9;
+    }
+  
+    audio {
+      width: 100%; /* Ensures full-width progress bar */
+    }
+  
+    #toggleFooterBtn {
+      padding: 0.4em 0.8em;
+      font-size: 0.9em;
+      position: absolute;
+      top: 20px;
+      left: 145px;
+    }
+  </style>
+
+<style>
+    #audioFooter {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #362e2e;
+      border-top: 1px solid #ccc;
+      padding: 1em;
+      display: flex;
+      flex-direction: row; /* or 'row' if you want horizontal layout */
+      gap: 1em;
+      z-index: 900; /* ensures it sits above the SVG */
+    }
+  
+    #audioFooter audio {
+      width: 100%;
+    }
+  
+    #audioFooter button {
+      margin-top: 0.5em;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
+  <button id="triggerButton">Toggle Image</button>
+  <button id="toggleFooterBtn" onclick="toggleFooter()">Hide Audio Panel</button>
+  <button id="togglePanelBtn">Hide Panel</button>
+  <!-- View Image Buttons -->
+  <button onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View Image_Large
+  </button>
+
+<button onclick="openNodeImageInNewTab()" style="cursor:pointer; color:#00BFFF;">
+  🔍 WorldTimeZones
+</button>
+
+<!-- Button Panel Container -->
+<div id="buttonPanel">
+
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit 1721
+  </button>
+  
+  <button 
+  onclick="window.open('As_the_ash_of_thera_whispers_pwa_(7)_index.html', '_blank')" 
+  aria-label="As_the_ash_of_thera_whispers_pwa_(7)_index"
+  data-node-id="As_the_ash_of_thera_whispers_pwa_(7)_index">
+  Open: As_the_ash_of_thera_whispers_pwa_(7)_index
+  </button>
+  
+  <button 
+  onclick="window.open('HybridAbyssmons16082025.html', '_blank')" 
+  aria-label="Hybrid Abyssmons 16082025"
+  data-node-id="Hybrid_Abyssmons_16082025">
+  Open: Hybrid Abyssmons 16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Old_full_svg.html', '_blank')" 
+  aria-label="Old_full_svg"
+  data-node-id="Old_full_svg">
+  Open: Old_full_svg
+  </button>
+  
+  <button 
+  onclick="window.open('SodaStrawMappingGrowth_0019_19082025.svg.html', '_blank')" 
+  aria-label="Soda Straw Mapping Growth_0019_19082025"
+  data-node-id="Soda_Straw_Mapping_Growth_0019_19082025">
+  Open: Soda Straw Mapping Growth_0019_19082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermark_AllegoricalUnderworld_embed1929_utc1_17072025.html', '_blank')" 
+  aria-label="Watermark Allegorical Underworldembed 1929_utc1_17072025"
+  data-node-id="Watermark_AllegoricalUnderworld_embed1929_utc1_17072025">
+  Open: Allegorical Underworld_embed 1929_utc1_17072025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_InverseSocietySummaryExpandedTable_all3_graphpywBT_0129_14082025 (6785 x 3715)(inline).html', '_blank')" 
+  aria-label="Inverse Society Summary Expanded Table 0129_14082025 (6785 x 3715)"
+  data-node-id="Inverse_Society_Summary_Expanded_Table_0129_14082025">
+  Open: Inverse Society Summary Expanded Table 0129_14082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0210_utc+1_16082025WrapperwithSpeakerIconAudioPlayer.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege 0210_utc+1_16082025"
+  data-node-id="Ultrasonic_Street_audio_Siege 0210_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege 0210_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0723_utc+1_16082025.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege_0723_utc+1_16082025"
+  data-node-id="UltrasonicStreetaudioSiege_0723_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege_0723_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_ElusivePossession_0830(mp3)_utc1_22082025.html', '_blank')" 
+  aria-label="Elusive Possession 0830(mp3) utc1_22082025"
+  data-node-id="ElusivePossession_0830(mp3)_utc1_22082025">
+  Open: Elusive Possession 0830(mp3) utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_RecursiveMachine_0219_utc+1_23082025.html', '_blank')" 
+  aria-label="Recursive Machine 0219 utc+1_23082025"
+  data-node-id="RecursiveMachine_0219_utc+1_23082025">
+  Open: Recursive Machine 0219 utc+1_23082025
+  </button>
+  
+  <button 
+  onclick="window.open('WmstreetsoundCivilSocietal_Visualization_0026_utc1_22082025svg.html', '_blank')" 
+  aria-label="street_Civil_Societal_Visualization_0026_utc1_22082025"
+  data-node-id="street_sound_Civil_Societal_Visualization_0026_utc1_22082025">
+  Open: Street_Civil_Societal_Visualization_0026_utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('bleakleo_player.html', '_blank')" 
+  aria-label="bleakleo player"
+  data-node-id="bleakleo_player">
+  Open: bleakleo player
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Aindex.html', '_blank')" 
+  aria-label="Aindex"
+  data-node-id="Aindex">
+  Open: Aindex
+  </button>
+  
+  <button 
+  onclick="window.open('bleaktyrestperambulator_audio_embed.html', '_blank')" 
+  aria-label="bleaktyrestperambulator audio embed"
+  data-node-id="bleaktyrestperambulator_audio_embed">
+  Open: bleaktyrestperambulator_audio_embed
+  </button>
+  
+  <button 
+  onclick="window.open('fullscreen.html', '_blank')" 
+  aria-label="fullscreen"
+  data-node-id="fullscreen">
+  Open: fullscreen
+  </button>
+  
+  <button 
+  onclick="window.open('grid_node_view.html', '_blank')" 
+  aria-label="grid_node_view"
+  data-node-id="grid_node_view">
+  Open: grid_node_view
+  </button>
+  
+  <button 
+  onclick="window.open('indexfin2_data.html', '_blank')" 
+  aria-label="indexfin2 data"
+  data-node-id="indexfin2_data">
+  Open: indexfin2_data
+  </button>
+  
+  <button 
+  onclick="window.open('opening_index.html', '_blank')" 
+  aria-label="opening index"
+  data-node-id="opening_index">
+  Open: opening index
+  </button>
+  
+  <button 
+  onclick="window.open('svg_wrapper_enhanced.html', '_blank')" 
+  aria-label="svg wrapper enhanced"
+  data-node-id="svg_wrapper_enhanced">
+  Open: svg wrapper enhanced
+  </button>
+  
+  <button 
+  onclick="window.open('thera_whispers_above_cauldera_fin_axd.html', '_blank')" 
+  aria-label="thera whispers above cauldera fin axd"
+  data-node-id="thera_whispers_above_cauldera_fin_axd">
+  Open: thera whispers above cauldera fin axd
+  </button>
+  
+  <button 
+  onclick="window.open('Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention_20250820_113701_axd.html', '_blank')" 
+  aria-label="Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention"
+  data-node-id="Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention">
+  Open: Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention
+  </button>
+  
+  <button 
+  onclick="window.open('toggle_image_sss.html', '_blank')" 
+  aria-label="toggle image sss"
+  data-node-id="toggle_image_sss">
+  Open: toggle image sss
+  </button>
+  
+  <button 
+  onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html', '_blank')" 
+  aria-label="World Time Zone Node Drip Echo"
+  data-node-id="World_Time_Zones_Node_Drip_Echo">
+  Open: World Time Zone Node Drip Echo
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit
+  </button>
+  
+  <button 
+  onclick="window.open('image_inline_BroadcastExperience1633_02092025_wipbase64.html', '_blank')" 
+  aria-label="image inline Broadcast Experience"
+  data-node-id="image_inline_BroadcastExperience">
+  Open: image inline Broadcast Experience
+  </button>
+  
+  <button 
+  onclick="window.open('Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html', '_blank')" 
+  aria-label="Bleakst Going to C a Realm Proxy Scylla Transmission"
+  data-node-id="Bleakst_Goingto_C_a_Realm_Proxy_Scylla_Transmission">
+  Open: Bleakst Going to C a Realm Proxy Scylla Transmission
+  </button>
+  
+  <button 
+  onclick="window.open('WmAspectsenslavementAudit_0059_utc+1+06092025.html', '_blank')" 
+  aria-label="Aspects enslavement Audit"
+  data-node-id="Aspects_enslavement_Audit">
+  Open: Aspects enslavement Audit
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_archive_1509_10092025.html', '_blank')" 
+  aria-label="testimony archive 1509 10092025"
+  data-node-id="testimony_archive_1509_10092025">
+  Open: testimony archive 1509 10092025
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_1408_utc+1_09092025_Protocol_axd.html', '_blank')" 
+  aria-label="Jeffersonian linier Bulwark semantic clusters with motifs 1408 09092025_Protocol axd"
+  data-node-id="Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_Protocol">
+  Open: JeffersonianBulwarkclustersProtocol
+  </button>
+      
+  <button 
+  onclick="window.open('Wm_velvetveilprotocol_815_utc+1_07092025.html', '_blank')" 
+  aria-label="Wm_velvet_veil_protocol"
+  data-node-id="velvet veil protocol">
+  Open: velvetveilprotocol
+  </button>
+  
+  <button 
+  onclick="window.open('Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html', '_blank')" 
+  aria-label="Hawking Blackhole Radiation Rllbk_tx"
+  data-node-id="Hawking Blackhole_Radiation">
+  Open: Hawking Blackhole Radiation Rllbk tx
+  </button>
+  
+  <button 
+  onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html', '_blank')" 
+  aria-label="dog’s utterance Threat Echo"
+  data-node-id="dog’s_utterance_31st_July_2024_ThreatEcho">
+  Open: dog’s utterance Threat Echo
+  </button>
+  
+  <button 
+  onclick="window.open('spatiallyadaptiveinferencetransmission_2247_utc+1_11092025.svg_axd.html', '_blank')" 
+  aria-label="spatially_adaptive_inference_transmission"
+  data-node-id="spatially adaptive inference transmission">
+  Open: Spatially adaptive inference transmission
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_Anathema.html', '_blank')" 
+  aria-label="testimony Anathema"
+  data-node-id="testimony_Anathema">
+  Open: Anathema
+  </button>
+    
+  <button 
+  onclick="window.open('TectonicBreath TheraThought Popocatépetls Echo 1358_utc+1_18092025.html', '_blank')" 
+  aria-label="Tectonic Breath Thera Thought Popocatépetls Echo"
+  data-node-id="Tectonic_Breath_Thera_Thought_Popocatépetls_Echo">
+  Open: Tectonic Breath Thera Thought Popocatépetls Echo
+  </button>
+  
+  <button 
+  onclick="window.open('shed_19092025_axd.html', '_blank')" 
+  aria-label="shed_axd"
+  data-node-id="shed axd">
+  Open: shed axd
+  </button>
+  </div>
+
+  <div
+    id="sidebar" class="sidebar" onmousedown="startDrag(event)">
+    <h2>Node Index</h2>
+    <input type="text" id="searchBox" placeholder="Search titles..." onkeyup="filterNodes()" />  
+    
+    <button onclick="toggleDock()">Dock/Undock</button>
+    <ul id='nodeList'>
+    <li><a href='#' onclick="playNodeAudio('node1'); showPlayCue('node1')">Baker Island 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node2'); showPlayCue('node2')">Howland Island \(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node3'); showPlayCue('node3')">American Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node4'); showPlayCue('node4')">Niue</a></li>
+    <li><a href='#' onclick="playNodeAudio('node5'); showPlayCue('node5')">Midway Atoll 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node6'); showPlayCue('node6')">Jarvis Island 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node7'); showPlayCue('node7')">Kingman Reef 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node8'); showPlayCue('node8')">Palmyra Atoll 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node9'); showPlayCue('node9')">Hawaii</a></li>
+    <li><a href='#' onclick="playNodeAudio('node10'); showPlayCue('node10')">French Polynesia 
+(Tahiti)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node11'); showPlayCue('node11')">Cook Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node12'); showPlayCue('node12')">Johnston Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node13'); showPlayCue('node13')">Tuamotu Archipelago 
+(French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node14'); showPlayCue('node14')">Society Islands 
+(French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node15'); showPlayCue('node15')">Alaska (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node16'); showPlayCue('node16')">Gambier Islands (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node17'); showPlayCue('node17')">Aleutian Islands 
+(US, Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node18'); showPlayCue('node18')">UTC−12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node19'); showPlayCue('node19')">UTC−11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node20'); showPlayCue('node20')">UTC−10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node21'); showPlayCue('node21')">UTC−9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node22'); showPlayCue('node22')">Canada (British Columbia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node23'); showPlayCue('node23')">United States 
+(California, Oregon, Washington)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node24'); showPlayCue('node24')">Mexico (Baja California)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node25'); showPlayCue('node25')">Pitcairn Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node26'); showPlayCue('node26')">Canada (Alberta)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node27'); showPlayCue('node27')">United States 
+(Arizona, Colorado, Utah)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node28'); showPlayCue('node28')">Mexico (Chihuahua, Sonora)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node29'); showPlayCue('node29')">Chile (Easter Island &
+ Salas y Gómez (ST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node30'); showPlayCue('node30')">Belize</a></li>
+    <li><a href='#' onclick="playNodeAudio('node31'); showPlayCue('node31')">Costa Rica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node32'); showPlayCue('node32')">Guatemala</a></li>
+    <li><a href='#' onclick="playNodeAudio('node33'); showPlayCue('node33')">Honduras</a></li>
+    <li><a href='#' onclick="playNodeAudio('node34'); showPlayCue('node34')">Nicaragua</a></li>
+    <li><a href='#' onclick="playNodeAudio('node35'); showPlayCue('node35')">El Salvador</a></li>
+    <li><a href='#' onclick="playNodeAudio('node36'); showPlayCue('node36')">Mexico (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node37'); showPlayCue('node37')">United States (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node38'); showPlayCue('node38')">Canada (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node39'); showPlayCue('node39')">Ecuador (Galápagos)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node40'); showPlayCue('node40')">UTC−8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node41'); showPlayCue('node41')">UTC−7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node42'); showPlayCue('node42')">UTC−6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node43'); showPlayCue('node43')">Chile (Easter Island &
+ Salas y Gómez (DST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node44'); showPlayCue('node44')">Colombia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node45'); showPlayCue('node45')">Panama</a></li>
+    <li><a href='#' onclick="playNodeAudio('node46'); showPlayCue('node46')">Peru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node47'); showPlayCue('node47')">Ecuador (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node48'); showPlayCue('node48')">Cuba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node49'); showPlayCue('node49')">Haiti</a></li>
+    <li><a href='#' onclick="playNodeAudio('node50'); showPlayCue('node50')">Jamaica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node51'); showPlayCue('node51')">Bahamas</a></li>
+    <li><a href='#' onclick="playNodeAudio('node52'); showPlayCue('node52')">Dominican Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node53'); showPlayCue('node53')">Bolivia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node54'); showPlayCue('node54')">Eastern United States</a></li>
+    <li><a href='#' onclick="playNodeAudio('node55'); showPlayCue('node55')">Eastern Canada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node56'); showPlayCue('node56')">Venezuela</a></li>
+    <li><a href='#' onclick="playNodeAudio('node57'); showPlayCue('node57')">Barbados</a></li>
+    <li><a href='#' onclick="playNodeAudio('node58'); showPlayCue('node58')">Grenada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node59'); showPlayCue('node59')">Saint Lucia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node60'); showPlayCue('node60')">Saint Vincent 
+and the Grenadines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node61'); showPlayCue('node61')">Trinidad and Tobago</a></li>
+    <li><a href='#' onclick="playNodeAudio('node62'); showPlayCue('node62')">Puerto Rico</a></li>
+    <li><a href='#' onclick="playNodeAudio('node63'); showPlayCue('node63')">Aruba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node64'); showPlayCue('node64')">Curacao</a></li>
+    <li><a href='#' onclick="playNodeAudio('node65'); showPlayCue('node65')">French Guiana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node66'); showPlayCue('node66')">Suriname</a></li>
+    <li><a href='#' onclick="playNodeAudio('node67'); showPlayCue('node67')">Guyana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node68'); showPlayCue('node68')">Chile (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node69'); showPlayCue('node69')">Chile (Magallanes &
+ Chilean Antarctica (year round))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node70'); showPlayCue('node70')">Argentina</a></li>
+    <li><a href='#' onclick="playNodeAudio('node71'); showPlayCue('node71')">Brazil (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node72'); showPlayCue('node72')">Uruguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node73'); showPlayCue('node73')">Paraguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node74'); showPlayCue('node74')">Saint Pierre and Miquelon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node75'); showPlayCue('node75')">UTC−5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node76'); showPlayCue('node76')">UTC−4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node77'); showPlayCue('node77')">UTC−3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node78'); showPlayCue('node78')">Saint Pierre and 
+Miquelon (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node79'); showPlayCue('node79')">Fernando de Noronha (Brazil)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node80'); showPlayCue('node80')">South Georgia and 
+the South Sandwich Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node81'); showPlayCue('node81')">Cape Verde</a></li>
+    <li><a href='#' onclick="playNodeAudio('node82'); showPlayCue('node82')">Azores (Portugal)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node83'); showPlayCue('node83')">Ittoqqortoormiit 
+(Greenland, DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node84'); showPlayCue('node84')">Iceland</a></li>
+    <li><a href='#' onclick="playNodeAudio('node85'); showPlayCue('node85')">Greenwich Mean Time 
+(UK, Ireland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node86'); showPlayCue('node86')">Portugal (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node87'); showPlayCue('node87')">Canary Islands (Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node88'); showPlayCue('node88')">Gambia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node89'); showPlayCue('node89')">Ghana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node90'); showPlayCue('node90')">Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node91'); showPlayCue('node91')">Mali</a></li>
+    <li><a href='#' onclick="playNodeAudio('node92'); showPlayCue('node92')">Mauritania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node93'); showPlayCue('node93')">Senegal</a></li>
+    <li><a href='#' onclick="playNodeAudio('node94'); showPlayCue('node94')">Sierra Leone</a></li>
+    <li><a href='#' onclick="playNodeAudio('node95'); showPlayCue('node95')">Togo</a></li>
+    <li><a href='#' onclick="playNodeAudio('node96'); showPlayCue('node96')">Algeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node97'); showPlayCue('node97')">Angola</a></li>
+    <li><a href='#' onclick="playNodeAudio('node98'); showPlayCue('node98')">Benin</a></li>
+    <li><a href='#' onclick="playNodeAudio('node99'); showPlayCue('node99')">Cameroon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node100'); showPlayCue('node100')">Central African Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node101'); showPlayCue('node101')">Chad</a></li>
+    <li><a href='#' onclick="playNodeAudio('node102'); showPlayCue('node102')">Congo (Brazzaville)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node103'); showPlayCue('node103')">Democratic Republic 
+of Congo (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node104'); showPlayCue('node104')">Equatorial Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node105'); showPlayCue('node105')">Gabon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node106'); showPlayCue('node106')">Morocco</a></li>
+    <li><a href='#' onclick="playNodeAudio('node107'); showPlayCue('node107')">Nigeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node108'); showPlayCue('node108')">Tunisia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node109'); showPlayCue('node109')">Western Europe 
+(France, Germany, Italy, Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node110'); showPlayCue('node110')">Andorra</a></li>
+    <li><a href='#' onclick="playNodeAudio('node111'); showPlayCue('node111')">Belgium</a></li>
+    <li><a href='#' onclick="playNodeAudio('node112'); showPlayCue('node112')">Luxembourg</a></li>
+    <li><a href='#' onclick="playNodeAudio('node113'); showPlayCue('node113')">Netherlands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node114'); showPlayCue('node114')">Norway</a></li>
+    <li><a href='#' onclick="playNodeAudio('node115'); showPlayCue('node115')">Sweden</a></li>
+    <li><a href='#' onclick="playNodeAudio('node116'); showPlayCue('node116')">Denmark</a></li>
+    <li><a href='#' onclick="playNodeAudio('node117'); showPlayCue('node117')">UTC−2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node118'); showPlayCue('node118')">UTC−1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node119'); showPlayCue('node119')">UTC±0</a></li>
+    <li><a href='#' onclick="playNodeAudio('node120'); showPlayCue('node120')">UTC+1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node121'); showPlayCue('node121')">South Africa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node122'); showPlayCue('node122')">Egypt</a></li>
+    <li><a href='#' onclick="playNodeAudio('node123'); showPlayCue('node123')">Libya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node124'); showPlayCue('node124')">Sudan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node125'); showPlayCue('node125')">Israel</a></li>
+    <li><a href='#' onclick="playNodeAudio('node126'); showPlayCue('node126')">Palestine</a></li>
+    <li><a href='#' onclick="playNodeAudio('node127'); showPlayCue('node127')">Jordan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node128'); showPlayCue('node128')">Lebanon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node129'); showPlayCue('node129')">Syria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node130'); showPlayCue('node130')">Greece</a></li>
+    <li><a href='#' onclick="playNodeAudio('node131'); showPlayCue('node131')">Bulgaria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node132'); showPlayCue('node132')">Romania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node133'); showPlayCue('node133')">Ukraine (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node134'); showPlayCue('node134')">Finland (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node135'); showPlayCue('node135')">Cyprus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node136'); showPlayCue('node136')">Turkey (Permanent UTC+3)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node137'); showPlayCue('node137')">Saudi Arabia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node138'); showPlayCue('node138')">Iraq</a></li>
+    <li><a href='#' onclick="playNodeAudio('node139'); showPlayCue('node139')">Kuwait</a></li>
+    <li><a href='#' onclick="playNodeAudio('node140'); showPlayCue('node140')">Qatar</a></li>
+    <li><a href='#' onclick="playNodeAudio('node141'); showPlayCue('node141')">Bahrain</a></li>
+    <li><a href='#' onclick="playNodeAudio('node142'); showPlayCue('node142')">Yemen</a></li>
+    <li><a href='#' onclick="playNodeAudio('node143'); showPlayCue('node143')">Somalia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node144'); showPlayCue('node144')">Ethiopia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node145'); showPlayCue('node145')">Kenya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node146'); showPlayCue('node146')">Tanzania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node147'); showPlayCue('node147')">Uganda</a></li>
+    <li><a href='#' onclick="playNodeAudio('node148'); showPlayCue('node148')">Russia (Moscow)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node149'); showPlayCue('node149')">Belarus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node150'); showPlayCue('node150')">Georgia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node151'); showPlayCue('node151')">Armenia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node152'); showPlayCue('node152')">Azerbaijan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node153'); showPlayCue('node153')">United Arab Emirates</a></li>
+    <li><a href='#' onclick="playNodeAudio('node154'); showPlayCue('node154')">Oman</a></li>
+    <li><a href='#' onclick="playNodeAudio('node155'); showPlayCue('node155')">Mauritius</a></li>
+    <li><a href='#' onclick="playNodeAudio('node156'); showPlayCue('node156')">Seychelles</a></li>
+    <li><a href='#' onclick="playNodeAudio('node157'); showPlayCue('node157')">Russia (Samara)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node158'); showPlayCue('node158')">Afghanistan (UTC+4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node159'); showPlayCue('node159')">Pakistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node160'); showPlayCue('node160')">Uzbekistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node161'); showPlayCue('node161')">Turkmenistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node162'); showPlayCue('node162')">Tajikistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node163'); showPlayCue('node163')">Kazakhstan (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node164'); showPlayCue('node164')">Maldives</a></li>
+    <li><a href='#' onclick="playNodeAudio('node165'); showPlayCue('node165')">UTC+2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node166'); showPlayCue('node166')">UTC+3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node167'); showPlayCue('node167')">Iran (UTC+3:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node168'); showPlayCue('node168')">UTC+4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node169'); showPlayCue('node169')">UTC+5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node170'); showPlayCue('node170')">Bangladesh</a></li>
+    <li><a href='#' onclick="playNodeAudio('node171'); showPlayCue('node171')">Bhutan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node172'); showPlayCue('node172')">Kazakhstan (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node173'); showPlayCue('node173')">Kyrgyzstan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node174'); showPlayCue('node174')">Cocos Islands (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node175'); showPlayCue('node175')">British Indian 
+Ocean Territory</a></li>
+    <li><a href='#' onclick="playNodeAudio('node176'); showPlayCue('node176')">Thailand</a></li>
+    <li><a href='#' onclick="playNodeAudio('node177'); showPlayCue('node177')">Vietnam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node178'); showPlayCue('node178')">Cambodia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node179'); showPlayCue('node179')">Laos</a></li>
+    <li><a href='#' onclick="playNodeAudio('node180'); showPlayCue('node180')">Indonesia 
+(Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node181'); showPlayCue('node181')">Christmas Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node182'); showPlayCue('node182')">Russia 
+(Novosibirsk
+Krasnoyarsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node183'); showPlayCue('node183')">Mongolia 
+(Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node184'); showPlayCue('node184')">China (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node185'); showPlayCue('node185')">Hong Kong</a></li>
+    <li><a href='#' onclick="playNodeAudio('node186'); showPlayCue('node186')">Macau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node187'); showPlayCue('node187')">Taiwan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node188'); showPlayCue('node188')">Malaysia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node189'); showPlayCue('node189')">Singapore</a></li>
+    <li><a href='#' onclick="playNodeAudio('node190'); showPlayCue('node190')">Philippines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node191'); showPlayCue('node191')">Brunei</a></li>
+    <li><a href='#' onclick="playNodeAudio('node192'); showPlayCue('node192')">Indonesia 
+(Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node193'); showPlayCue('node193')">Western Australia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node194'); showPlayCue('node194')">Russia (Irkutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node195'); showPlayCue('node195')">Mongolia 
+(Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node196'); showPlayCue('node196')">Japan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node197'); showPlayCue('node197')">South Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node198'); showPlayCue('node198')">North Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node199'); showPlayCue('node199')">East Timor</a></li>
+    <li><a href='#' onclick="playNodeAudio('node200'); showPlayCue('node200')">Indonesia 
+(Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node201'); showPlayCue('node201')">Russia (Yakutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node202'); showPlayCue('node202')">Palau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node203'); showPlayCue('node203')">UTC+6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node204'); showPlayCue('node204')">UTC+7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node205'); showPlayCue('node205')">UTC+8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node206'); showPlayCue('node206')">UTC+9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node207'); showPlayCue('node207')">Eastern Australia 
+(Queensland, NSW, Victoria)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node208'); showPlayCue('node208')">Papua New Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node209'); showPlayCue('node209')">Guam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node210'); showPlayCue('node210')">Northern Mariana Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node211'); showPlayCue('node211')">Russia (Vladivostok)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node212'); showPlayCue('node212')">Federated States of 
+Micronesia (Western)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node213'); showPlayCue('node213')">Solomon Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node214'); showPlayCue('node214')">New Caledonia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node215'); showPlayCue('node215')">Vanuatu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node216'); showPlayCue('node216')">Federated States of 
+Micronesia (Eastern)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node217'); showPlayCue('node217')">Russia (Magadan)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node218'); showPlayCue('node218')">Norfolk Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node219'); showPlayCue('node219')">Bougainville 
+(Papua New Guinea)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node220'); showPlayCue('node220')">Fiji</a></li>
+    <li><a href='#' onclick="playNodeAudio('node221'); showPlayCue('node221')">Tuvalu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node222'); showPlayCue('node222')">Nauru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node223'); showPlayCue('node223')">Kiribati 
+(Gilbert Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node224'); showPlayCue('node224')">Marshall Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node225'); showPlayCue('node225')">Wallis and Futuna</a></li>
+    <li><a href='#' onclick="playNodeAudio('node226'); showPlayCue('node226')">New Zealand (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node227'); showPlayCue('node227')">Russia (Kamchatka)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node228'); showPlayCue('node228')">Wake Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node229'); showPlayCue('node229')">Tonga</a></li>
+    <li><a href='#' onclick="playNodeAudio('node230'); showPlayCue('node230')">Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node231'); showPlayCue('node231')">Tokelau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node232'); showPlayCue('node232')">New Zealand 
+(Daylight Saving Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node233'); showPlayCue('node233')">Kiribati (Phoenix Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node234'); showPlayCue('node234')">Kiribati (Line Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node235'); showPlayCue('node235')">Kiritimati 
+(Christmas Island)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node236'); showPlayCue('node236')">UTC+10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node237'); showPlayCue('node237')">UTC+11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node238'); showPlayCue('node238')">UTC+12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node239'); showPlayCue('node239')">UTC+13</a></li>
+    <li><a href='#' onclick="playNodeAudio('node240'); showPlayCue('node240')">UTC+14</a></li>
+    <li><a href='#' onclick="playNodeAudio('node241'); showPlayCue('node241')">India (UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node242'); showPlayCue('node242')">Sri Lanka 
+(UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node243'); showPlayCue('node243')">South Asia 
+& East Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node244'); showPlayCue('node244')">Nepal (UTC+5:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node245'); showPlayCue('node245')">Myanmar 
+(UTC+6:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node246'); showPlayCue('node246')">Cocos (Keeling) Islands 
+(Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node247'); showPlayCue('node247')">Eucla (Australia) (UTC+8:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node248'); showPlayCue('node248')">Australia 
+(Northern Territory (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node249'); showPlayCue('node249')">Australia 
+(South Australia (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node250'); showPlayCue('node250')">Australia 
+(Broken Hill (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node251'); showPlayCue('node251')">Lord Howe Island 
+(Australia (UTC+10:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node252'); showPlayCue('node252')">Chatham Islands 
+(New Zealand (UTC+12:35))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node253'); showPlayCue('node253')">Newfoundland 
+(Canada (−3:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node254'); showPlayCue('node254')">Venezuela (−4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node255'); showPlayCue('node255')">United Kingdom (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node256'); showPlayCue('node256')">Ireland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node257'); showPlayCue('node257')">Portugal DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node258'); showPlayCue('node258')">Spain DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node259'); showPlayCue('node259')">France DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node260'); showPlayCue('node260')">Germany DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node261'); showPlayCue('node261')">Italy DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node262'); showPlayCue('node262')">Netherlands DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node263'); showPlayCue('node263')">Belgium DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node264'); showPlayCue('node264')">Switzerland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node265'); showPlayCue('node265')">Austria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node266'); showPlayCue('node266')">Poland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node267'); showPlayCue('node267')">Czech Republic DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node268'); showPlayCue('node268')">Hungary DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node269'); showPlayCue('node269')">Slovakia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node270'); showPlayCue('node270')">Slovenia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node271'); showPlayCue('node271')">Croatia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node272'); showPlayCue('node272')">Serbia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node273'); showPlayCue('node273')">Bosnia and Herzegovina DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node274'); showPlayCue('node274')">North Macedonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node275'); showPlayCue('node275')">Greece DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node276'); showPlayCue('node276')">Bulgaria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node277'); showPlayCue('node277')">Romania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node278'); showPlayCue('node278')">Ukraine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node279'); showPlayCue('node279')">Norway DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node280'); showPlayCue('node280')">Sweden DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node281'); showPlayCue('node281')">Finland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node282'); showPlayCue('node282')">Estonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node283'); showPlayCue('node283')">Latvia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node284'); showPlayCue('node284')">Lithuania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node285'); showPlayCue('node285')">West Africa 
+&
+ Europe West</a></li>
+    <li><a href='#' onclick="playNodeAudio('node286'); showPlayCue('node286')">United States (except Arizona, Hawaii)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node287'); showPlayCue('node287')">Canada 
+(except Saskatchewan,
+ Yukon) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node288'); showPlayCue('node288')">Mexico (Baja California 
+and border municipalities) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node289'); showPlayCue('node289')">Greenland (Pituffik Space Base) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node290'); showPlayCue('node290')">Saint Pierre
+ and 
+Miquelon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node291'); showPlayCue('node291')">Bahamas DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node292'); showPlayCue('node292')">Bermuda DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node293'); showPlayCue('node293')">Haiti DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node294'); showPlayCue('node294')">Cuba DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node295'); showPlayCue('node295')">South 
+America</a></li>
+    <li><a href='#' onclick="playNodeAudio('node296'); showPlayCue('node296')">Chile (except Aysén
+ and
+ Magallanes)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node297'); showPlayCue('node297')">Paraguay DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node298'); showPlayCue('node298')">Israel DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node299'); showPlayCue('node299')">Lebanon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node300'); showPlayCue('node300')">Iran (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node301'); showPlayCue('node301')">Palestine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node302'); showPlayCue('node302')">Egypt DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node303'); showPlayCue('node303')">Middle East 
+&
+ Central Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node304'); showPlayCue('node304')">Oceania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node305'); showPlayCue('node305')">New Zealand 
+(Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node306'); showPlayCue('node306')">Chatham Islands (NZ) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node307'); showPlayCue('node307')">Australia 
+(NSW, Victoria, 
+Tasmania, SA, ACT)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node308'); showPlayCue('node308')">Lord Howe Island
+ (Australia) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node309'); showPlayCue('node309')">Norfolk Island 
+(Australia) DST</a></li>  
+  </ul>
+  </div>    
+<div id="svgContainer">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+
+<!-- Title: InvestigationReport Pages: 1 -->
+
+<svg viewBox="0 0 1868.436 1342.076" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
+   width="1868.436pt"
+   height="1342.0762pt"
+   viewBox="0 0 1868.436 1342.0762"
+   version="1.1"
+   id="svg531"
+   sodipodi:docname="Ongoing_Investigation_Report_shed_2033_utc+1_19092025_axd.svg"
+   xml:space="preserve"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"><title
+     id="title2417">Ongoing_Investigation_Report_shed_axd</title><defs
+     id="defs535"><filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Dripping"
+       id="filter825"
+       x="-0.093866667"
+       y="-0.16525184"
+       width="1.1877333"
+       height="1.3336729"
+       inkscape:menu="Protrusions"
+       inkscape:menu-tooltip="Random paint streaks downwards"><feComponentTransfer
+         result="fbSourceGraphic"
+         id="feComponentTransfer823"><feFuncR
+           type="gamma"
+           amplitude="18.0685"
+           exponent="16.2617"
+           offset="0.931464"
+           id="feFuncR817" /><feFuncG
+           type="gamma"
+           amplitude="18.0685"
+           exponent="16.2617"
+           offset="0.931464"
+           id="feFuncG819" /><feFuncB
+           type="gamma"
+           amplitude="18.0685"
+           exponent="16.2617"
+           offset="0.931464"
+           id="feFuncB821" /></feComponentTransfer><feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix827" /><feMorphology
+         id="feMorphology829"
+         radius="7"
+         operator="dilate"
+         result="result8"
+         in="fbSourceGraphic" /><feComposite
+         in2="result8"
+         id="feComposite831"
+         result="result10"
+         in="fbSourceGraphic"
+         operator="arithmetic"
+         k1="0.5"
+         k3="0.5"
+         k2="0"
+         k4="0" /><feTurbulence
+         id="feTurbulence833"
+         result="result11"
+         type="fractalNoise"
+         numOctaves="3"
+         baseFrequency="0.07" /><feDisplacementMap
+         in2="result11"
+         id="feDisplacementMap835"
+         result="result12"
+         in="result10"
+         xChannelSelector="R"
+         scale="10"
+         yChannelSelector="A" /><feComposite
+         in2="result12"
+         id="feComposite837"
+         operator="arithmetic"
+         result="fbSourceGraphic"
+         in="fbSourceGraphic"
+         k1="0.25"
+         k2="0.25"
+         k3="0.75"
+         k4="0" /><feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix839" /><feTurbulence
+         id="feTurbulence841"
+         type="fractalNoise"
+         numOctaves="3"
+         baseFrequency="1"
+         seed="0"
+         result="result0" /><feColorMatrix
+         id="feColorMatrix843"
+         result="result4"
+         values="0"
+         type="saturate" /><feComposite
+         in2="result4"
+         id="feComposite845"
+         in="fbSourceGraphic"
+         operator="arithmetic"
+         k1="1.25"
+         k2="0.5"
+         k3="0.5"
+         result="result2"
+         k4="0" /><feBlend
+         in2="fbSourceGraphic"
+         id="feBlend847"
+         result="result5"
+         mode="normal"
+         in="result2" /><feComposite
+         in2="fbSourceGraphic"
+         id="feComposite849"
+         in="result5"
+         operator="in"
+         result="fbSourceGraphic" /><feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix851" /><feTurbulence
+         id="feTurbulence853"
+         baseFrequency="0.05"
+         numOctaves="5"
+         type="fractalNoise"
+         result="result91" /><feDisplacementMap
+         in2="result91"
+         id="feDisplacementMap855"
+         scale="25"
+         result="result5"
+         xChannelSelector="R"
+         in="fbSourceGraphic"
+         yChannelSelector="A" /><feComposite
+         in2="result5"
+         id="feComposite857"
+         in="fbSourceGraphic"
+         operator="atop"
+         result="fbSourceGraphic" /><feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix873" /><feTurbulence
+         id="feTurbulence875"
+         result="result7"
+         type="fractalNoise"
+         numOctaves="3"
+         baseFrequency="0.2 0.09" /><feColorMatrix
+         id="feColorMatrix877"
+         result="result5"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 5.5 -2 " /><feComposite
+         in2="result7"
+         id="feComposite879"
+         result="result6"
+         in="fbSourceGraphic"
+         operator="in" /><feDisplacementMap
+         in2="result6"
+         id="feDisplacementMap881"
+         in="result5"
+         xChannelSelector="R"
+         yChannelSelector="A"
+         scale="9"
+         result="result4" /><feComposite
+         in2="result4"
+         id="feComposite883"
+         result="result2"
+         operator="in"
+         in="fbSourceGraphic" /><feComposite
+         in2="fbSourceGraphic"
+         id="feComposite885"
+         in="result2"
+         operator="in"
+         result="result91" /><feBlend
+         in2="result91"
+         id="feBlend887"
+         mode="multiply"
+         result="fbSourceGraphic" /><feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix911" /><feGaussianBlur
+         id="feGaussianBlur913"
+         stdDeviation="5"
+         result="result1"
+         in="fbSourceGraphic" /><feComposite
+         in2="result1"
+         id="feComposite915"
+         in="result1"
+         result="result4"
+         operator="xor" /><feGaussianBlur
+         id="feGaussianBlur917"
+         stdDeviation="8"
+         result="result6" /><feComposite
+         in2="fbSourceGraphic"
+         id="feComposite919"
+         operator="atop"
+         in="result6"
+         result="result8" /><feComposite
+         in2="result8"
+         id="feComposite921"
+         operator="in"
+         result="fbSourceGraphic"
+         in="result6" /><feColorMatrix
+         id="feColorMatrix923"
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 2 0 " /><feGaussianBlur
+         id="feGaussianBlur925"
+         result="result0"
+         in="fbSourceGraphicAlpha"
+         stdDeviation="2" /><feSpecularLighting
+         id="feSpecularLighting927"
+         specularExponent="25"
+         specularConstant="2"
+         surfaceScale="-5"
+         lighting-color="#ffffff"
+         result="result1"
+         in="result0"><fePointLight
+           id="fePointLight929"
+           z="20000"
+           y="-10000"
+           x="-5000" /></feSpecularLighting><feComposite
+         in2="fbSourceGraphicAlpha"
+         id="feComposite931"
+         operator="in"
+         result="result2"
+         in="result1" /><feComposite
+         in2="result2"
+         id="feComposite933"
+         k3="2"
+         k2="1"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         k1="0"
+         k4="0" /><feComposite
+         in2="result4"
+         id="feComposite935"
+         operator="in"
+         in="result4"
+         result="result9" /><feBlend
+         in2="result4"
+         id="feBlend937"
+         mode="multiply"
+         in="result9"
+         result="fbSourceGraphic" /><feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix941" /><feTurbulence
+         id="feTurbulence943"
+         numOctaves="5"
+         baseFrequency="0.4" /><feConvolveMatrix
+         id="feConvolveMatrix945"
+         order="5 5"
+         kernelMatrix="-4 0 0 0 -4 0 -2 0 -2 0 0 0 -10 0 0 0 -2 0 -2 0 -4 0 0 0 -4 "
+         targetX="2"
+         targetY="2" /><feConvolveMatrix
+         id="feConvolveMatrix947"
+         order="3 3"
+         kernelMatrix="2 0 2 0 -5 0 2 0 2 "
+         targetX="1"
+         targetY="1" /><feColorMatrix
+         id="feColorMatrix949"
+         type="saturate"
+         result="result1" /><feComposite
+         in2="fbSourceGraphic"
+         id="feComposite951"
+         operator="arithmetic"
+         k1="1.5"
+         k2="0.5"
+         k3="0.5"
+         result="result2"
+         k4="0" /><feBlend
+         in2="result1"
+         id="feBlend953"
+         mode="normal"
+         result="result4" /><feColorMatrix
+         id="feColorMatrix955"
+         type="luminanceToAlpha" /><feDiffuseLighting
+         id="feDiffuseLighting957"
+         surfaceScale="10"
+         diffuseConstant="1"
+         result="result3"><feDistantLight
+           id="feDistantLight959"
+           azimuth="180"
+           elevation="35" /></feDiffuseLighting><feComposite
+         in2="result4"
+         id="feComposite961"
+         operator="arithmetic"
+         k1="1.5"
+         k3="0.5"
+         result="result5"
+         k2="0"
+         k4="0" /><feBlend
+         in2="result3"
+         id="feBlend963"
+         mode="normal"
+         result="result6" /><feComposite
+         in2="fbSourceGraphic"
+         id="feComposite965"
+         operator="in"
+         result="fbSourceGraphic" /><feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix995" /><feConvolveMatrix
+         id="feConvolveMatrix997"
+         order="3 3"
+         kernelMatrix="0 -1 0 0 -1 0 0 2 0"
+         result="result1"
+         divisor="6.03"
+         in="fbSourceGraphic" /><feTurbulence
+         id="feTurbulence999"
+         numOctaves="1"
+         baseFrequency="0.078 0.010"
+         result="result0" /><feColorMatrix
+         id="feColorMatrix1001"
+         result="result2"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 10 -3.5" /><feComposite
+         in2="result2"
+         id="feComposite1003"
+         in="result1"
+         operator="in" /><feMorphology
+         id="feMorphology1005"
+         operator="dilate"
+         radius="1 30" /><feColorMatrix
+         id="feColorMatrix1007"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 0"
+         result="result3" /><feOffset
+         id="feOffset1009"
+         dx="0"
+         dy="1.4"
+         result="result4" /><feTurbulence
+         id="feTurbulence1011"
+         numOctaves="2"
+         baseFrequency="0.032 0.025"
+         result="result8" /><feColorMatrix
+         id="feColorMatrix1013"
+         values="0 0 0 0 0.52 0 -0.4 0 0 0.45 0 0 1 0 0 0 0 0 1 0"
+         result="result91" /><feDisplacementMap
+         in2="result91"
+         id="feDisplacementMap1015"
+         in="result4"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="100"
+         result="result9" /><feComposite
+         in2="result9"
+         id="feComposite1017"
+         in="fbSourceGraphic" /></filter><filter
+       inkscape:label="Opacity"
+       style="color-interpolation-filters:sRGB"
+       id="filter1989"
+       x="-0.00096153846"
+       y="-0.0011415525"
+       width="1.0019231"
+       height="1.0022831"><feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -15.7233 "
+         result="colormatrix"
+         id="feColorMatrix1985" /><feComposite
+         in2="colormatrix"
+         operator="arithmetic"
+         k2="0.380062"
+         result="composite"
+         id="feComposite1987"
+         k1="0"
+         k3="0"
+         k4="0" /></filter><filter
+       inkscape:label="Opacity"
+       style="color-interpolation-filters:sRGB"
+       id="filter1995"
+       x="-0.00061425061"
+       y="-0.0066666667"
+       width="1.0012285"
+       height="1.0133333"><feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -15.7233 "
+         result="colormatrix"
+         id="feColorMatrix1991" /><feComposite
+         in2="colormatrix"
+         operator="arithmetic"
+         k2="0.380062"
+         result="composite"
+         id="feComposite1993"
+         k1="0"
+         k3="0"
+         k4="0" /></filter><filter
+       inkscape:label="Opacity"
+       style="color-interpolation-filters:sRGB"
+       id="filter2001"
+       x="-0.0015432099"
+       y="-0.0027624309"
+       width="1.0030864"
+       height="1.0055249"><feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -15.7233 "
+         result="colormatrix"
+         id="feColorMatrix1997" /><feComposite
+         in2="colormatrix"
+         operator="arithmetic"
+         k2="0.380062"
+         result="composite"
+         id="feComposite1999"
+         k1="0"
+         k3="0"
+         k4="0" /></filter><filter
+       inkscape:label="Opacity"
+       style="color-interpolation-filters:sRGB"
+       id="filter2007"
+       x="-0.00069444444"
+       y="-0.0033333333"
+       width="1.0013889"
+       height="1.0066667"><feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -15.7233 "
+         result="colormatrix"
+         id="feColorMatrix2003" /><feComposite
+         in2="colormatrix"
+         operator="arithmetic"
+         k2="0.380062"
+         result="composite"
+         id="feComposite2005"
+         k1="0"
+         k3="0"
+         k4="0" /></filter><filter
+       inkscape:label="Opacity"
+       style="color-interpolation-filters:sRGB"
+       id="filter2013"
+       x="-0.00073529412"
+       y="-0.0066666667"
+       width="1.0014706"
+       height="1.0133333"><feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -15.7233 "
+         result="colormatrix"
+         id="feColorMatrix2009" /><feComposite
+         in2="colormatrix"
+         operator="arithmetic"
+         k2="0.380062"
+         result="composite"
+         id="feComposite2011"
+         k1="0"
+         k3="0"
+         k4="0" /></filter><filter
+       inkscape:label="Opacity"
+       style="color-interpolation-filters:sRGB"
+       id="filter2019"
+       x="-0.0005733945"
+       y="-0.0068493151"
+       width="1.0011468"
+       height="1.0136986"><feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -15.7233 "
+         result="colormatrix"
+         id="feColorMatrix2015" /><feComposite
+         in2="colormatrix"
+         operator="arithmetic"
+         k2="0.380062"
+         result="composite"
+         id="feComposite2017"
+         k1="0"
+         k3="0"
+         k4="0" /></filter><filter
+       inkscape:label="Opacity"
+       style="color-interpolation-filters:sRGB"
+       id="filter2025"
+       x="0"
+       y="0"
+       width="1"
+       height="1"><feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -15.7233 "
+         result="colormatrix"
+         id="feColorMatrix2021" /><feComposite
+         in2="colormatrix"
+         operator="arithmetic"
+         k2="0.380062"
+         result="composite"
+         id="feComposite2023"
+         k1="0"
+         k3="0"
+         k4="0" /></filter></defs><sodipodi:namedview
+     id="namedview533"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="0.55366848"
+     inkscape:cx="1331.1215"
+     inkscape:cy="1411.4945"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" /><g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1"
+     transform="translate(112.7792,124.06212)"><image
+       width="468.75"
+       height="441.75"
+       preserveAspectRatio="none"
+       style="filter:url(#filter825);image-rendering:optimizeQuality"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnEAAAJNCAIAAADRV7S5AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAF
+b0lEQVR42u3bwWoTURSA4YPIXbY2Mwku3BcEH8HXtqtCUTdBqEKLpKgoQ1qCiAshECb3Tly0unAj
+YabEyPcxm9mezc+ZuTcCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAABgx9IkIhkD8H94YATsOqsHsgpoKgzg+sulrAJA/yV1stlsrm8WkWpZBYC+
+TZVVABisqbIKAIM1VVYBYLCmllKaZi6rANCrqaWU9Xq9Wq0+fvosq8A+cpeGf0LXdV3XlVJKKeN6
+9P7daxdsAE2FXkHNOZdS6nr0dnoqq4CmQq+g5pxzzlV1NH11EunAiIB98dAI2HlTb4M6n9+Mx1XO
+efLkqbEA9lTY2u+gHj97/uLkNOccEdH+iPbb3QMA/F2aLJfLq6sPkR5HpEh10zTT6ZtItdkA9lTY
+zu2GGu33iDaiOz+/GI0eRXROJwHAVntqfbeh/nqPVM9ms7Ozl1ZVYO84o8RO/fm7tI3oFouvVXVk
+NgAwxPIah779AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAADAPfgJE4DXXWYQM4MAAAAASUVORK5CYII=
+"
+       id="image649"
+       x="195.98312"
+       y="538.13287"
+       transform="matrix(3.3559696,0,0,2.2779873,-622.82994,-1183.6289)" /></g><g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"><image
+       width="126"
+       height="27"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       xlink:href="data:image/png;base64,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 +79e/T8/UIhJSSq6OgAAAABJRU5ErkJggg== "
+       id="image9162"
+       x="1688.4994"
+       y="1289.6263" /><text
+       x="-76.126724"
+       y="1548.7299"
+       fill="#6c94d5"
+       opacity="0.39"
+       font-size="123.41px"
+       font-family="Arial"
+       id="text3133"
+       style="fill:#6c94e2;fill-opacity:1;stroke-width:0.576676;stroke-linecap:butt;stroke-linejoin:round"
+       transform="matrix(1.2822853,-0.00255487,0.00312804,0.77985143,112.7792,124.06212)"><tspan
+         style="fill:#6c94e2;fill-opacity:1;stroke-width:0.576676"
+         id="tspan3131">Con1909©fide-©0919 axd</tspan></text><text
+       x="17.426079"
+       y="118.7665"
+       fill="#6c94d5"
+       opacity="0.39"
+       font-size="123.41px"
+       font-family="Arial"
+       id="text2391"
+       style="fill:#6c94e2;fill-opacity:1;stroke-width:0.576676;stroke-linecap:butt;stroke-linejoin:round"
+       transform="matrix(1.2822853,-0.00255487,0.00312804,0.77985142,0,0)"><tspan
+         style="fill:#6c94e2;fill-opacity:1;stroke-width:0.576676"
+         id="tspan2389">Con1909©fide-©0919 axd</tspan></text></g><g
+     id="graph0"
+     class="graph"
+     transform="translate(116.7792,1224.0621)"><title
+       id="title2">InvestigationReport</title><g
+       id="clust1"
+       class="cluster"><title
+         id="title16">cluster_rings</title><polygon
+         fill="#d3d3d3"
+         stroke="#d3d3d3"
+         points="1610,-646 1610,-571 796,-571 796,-646 "
+         id="polygon18"
+         style="filter:url(#filter1995)" /><text
+         text-anchor="middle"
+         x="1203"
+         y="-632.40002"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text20">I. Power Rings (Systemic Bodies)</text></g><g
+       id="g2032"
+       transform="matrix(1.0962143,0,0,1.7011624,-63.146153,689.73607)"><text
+         text-anchor="middle"
+         x="832.5"
+         y="-1082.4"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text6">🕵️‍♂️ INVESTIGATION REPORT shed</text><text
+         text-anchor="middle"
+         x="832.5"
+         y="-1069.4"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text8">Echoes Through Hollowed '%$x' Straws: A Multi-Ring Diagnostic of Persistent Systemic Malfeasance</text><text
+         text-anchor="middle"
+         x="832.5"
+         y="-1056.4"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text10">Date: 19 September 2025</text><text
+         text-anchor="middle"
+         x="832.5"
+         y="-1043.4"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text12">Author: Archival Diagnostic Unit axd</text><text
+         text-anchor="middle"
+         x="832.5"
+         y="-1030.4"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text14">Classification: Confidential – Ongoing Investigation</text></g><g
+       id="clust2"
+       class="cluster"><title
+         id="title23">cluster_entities</title><polygon
+         fill="#add8e6"
+         stroke="#add8e6"
+         points="1155,-538 1155,-100 635,-100 635,-538 "
+         id="polygon25"
+         style="filter:url(#filter1989)" /><text
+         text-anchor="middle"
+         x="895"
+         y="-524.40002"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text27">II. Entity Matrix</text></g><g
+       id="clust3"
+       class="cluster"><title
+         id="title30">cluster_deployment</title><polygon
+         fill="none"
+         stroke="#808080"
+         stroke-dasharray="5, 2"
+         points="456,-754 456,-571 132,-571 132,-754 "
+         id="polygon32" /><text
+         text-anchor="middle"
+         x="294"
+         y="-740.40002"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text34">III. Deployment Techniques &amp; Technologies</text></g><g
+       id="clust4"
+       class="cluster"><title
+         id="title37">cluster_modus</title><polygon
+         fill="#ffe4e1"
+         stroke="#ffe4e1"
+         points="1657,-1015 1657,-940 977,-940 977,-1015 "
+         id="polygon39"
+         style="filter:url(#filter2013)" /><text
+         text-anchor="middle"
+         x="1317"
+         y="-1001.4"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text41">IV. Modus Operandi</text></g><g
+       id="clust5"
+       class="cluster"><title
+         id="title44">cluster_framework</title><polygon
+         fill="#ffffe0"
+         stroke="#ffffe0"
+         points="1380,-81 1380,-8 508,-8 508,-81 "
+         id="polygon46"
+         style="filter:url(#filter2019)" /><text
+         text-anchor="middle"
+         x="944"
+         y="-67.400002"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text48">V. Framework Integration: Modern-Day Slavery</text></g><g
+       id="clust6"
+       class="cluster"><title
+         id="title51">cluster_testimony</title><polygon
+         fill="#8fe4ce"
+         stroke="#8fe4ce"
+         points="788,-753 788,-572 464,-572 464,-753 "
+         id="polygon53"
+         style="filter:url(#filter2001)" /><text
+         text-anchor="middle"
+         x="626"
+         y="-739.40002"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text55">VI. Evidence &amp; Testimony</text></g><g
+       id="clust7"
+       class="cluster"><title
+         id="title58">cluster_ledger</title><polygon
+         fill="#e0ffff"
+         stroke="#e0ffff"
+         points="969,-1015 969,-865 249,-865 249,-1015 "
+         id="polygon60"
+         style="filter:url(#filter2007)" /><text
+         text-anchor="middle"
+         x="609"
+         y="-1001.4"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text62">VII. Ledger Accounts of Documentation</text></g><g
+       id="clust8"
+       class="cluster"><title
+         id="title65">cluster_appendices</title><polygon
+         fill="#ffffff"
+         stroke="#ffffff"
+         points="601,-846 601,-773 77,-773 77,-846 "
+         id="polygon67" /><text
+         text-anchor="middle"
+         x="339"
+         y="-832.40002"
+         font-family="'Courier New'"
+         font-size="12px"
+         id="text69">VIII. Appendices</text></g><!-- Ring1 --><g
+       id="node1"
+       class="node"><title
+         id="title72">Ring1</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1452.5,-579 1601.5,-579 1601.5,-617 1452.5,-617 "
+         id="polygon74" /><text
+         text-anchor="middle"
+         x="1527"
+         y="-601.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text76">Ring 1: Sleepers</text><text
+         text-anchor="middle"
+         x="1527"
+         y="-586.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text78">(Dormant Agents)</text></g><!-- Actor --><g
+       id="node5"
+       class="node"><title
+         id="title81">Actor</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1066,-473 1124,-473 1124,-509 1066,-509 "
+         id="polygon83" /><text
+         text-anchor="middle"
+         x="1095"
+         y="-487.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text85">Actor</text></g><!-- Ring1&#45;&gt;Actor --><g
+       id="edge1"
+       class="edge"><title
+         id="title88">Ring1-&gt;Actor</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1471.37,-578.895 c -9.11,2.769 -18.48,5.5 -27.37,7.895 -111.37,29.996 -244.77,58.036 -309.66,71.179"
+         id="path90" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1133.26,-503.174 1134.65,-496.313 1124.15,-497.766 "
+         id="polygon92" /><text
+         text-anchor="middle"
+         x="1428"
+         y="-549.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text94">assigned to</text></g><!-- Ring2 --><g
+       id="node2"
+       class="node"><title
+         id="title97">Ring2</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="804,-579 994,-579 994,-617 804,-617 "
+         id="polygon99" /><text
+         text-anchor="middle"
+         x="899"
+         y="-601.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text101">Ring 2: Enforcers</text><text
+         text-anchor="middle"
+         x="899"
+         y="-586.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text103">(Operational Control)</text></g><!-- Ring2&#45;&gt;Actor --><g
+       id="edge2"
+       class="edge"><title
+         id="title106">Ring2-&gt;Actor</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 932.694,-578.95 c 34.462,18.462 87.916,47.1 123.976,66.416"
+         id="path108" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1055.43,-509.23 1058.73,-515.4 1065.89,-507.592 "
+         id="polygon110" /></g><!-- Ring3 --><g
+       id="node3"
+       class="node"><title
+         id="title113">Ring3</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1012.5,-579 1177.5,-579 1177.5,-617 1012.5,-617 "
+         id="polygon115" /><text
+         text-anchor="middle"
+         x="1095"
+         y="-601.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text117">Ring 3: Architects</text><text
+         text-anchor="middle"
+         x="1095"
+         y="-586.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text119">(System Designers)</text></g><!-- Ring3&#45;&gt;Actor --><g
+       id="edge3"
+       class="edge"><title
+         id="title122">Ring3-&gt;Actor</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1095,-578.71 c 0,16.481 0,40.93 0,59.669"
+         id="path124" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1091.5,-519.038 1098.5,-519.038 1095,-509.038 "
+         id="polygon126" /></g><!-- Ring4 --><g
+       id="node4"
+       class="node"><title
+         id="title129">Ring4</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1195.5,-579 1434.5,-579 1434.5,-617 1195.5,-617 "
+         id="polygon131" /><text
+         text-anchor="middle"
+         x="1315"
+         y="-601.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text133">Ring 4: Shadow Directors</text><text
+         text-anchor="middle"
+         x="1315"
+         y="-586.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text135">(Untraceable Orchestrators)</text></g><!-- Ring4&#45;&gt;Actor --><g
+       id="edge4"
+       class="edge"><title
+         id="title138">Ring4-&gt;Actor</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1277.18,-578.95 c -40.15,19.162 -103.27,49.286 -143.67,68.572"
+         id="path140" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1131.77,-513.426 1134.78,-507.108 1124.25,-505.96 "
+         id="polygon142" /></g><!-- Role --><g
+       id="node6"
+       class="node"><title
+         id="title145">Role</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1054,-400 1108,-400 1108,-436 1054,-436 "
+         id="polygon147" /><text
+         text-anchor="middle"
+         x="1081"
+         y="-414.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text149">Role</text></g><!-- Actor&#45;&gt;Role --><g
+       id="edge5"
+       class="edge"><title
+         id="title152">Actor-&gt;Role</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1091.61,-472.813 c -1.58,8.024 -3.5,17.766 -5.27,26.744"
+         id="path154" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1082.86,-446.517 1089.73,-445.163 1084.36,-436.029 "
+         id="polygon156" /></g><!-- Tool --><g
+       id="node7"
+       class="node"><title
+         id="title159">Tool</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1045,-327 1099,-327 1099,-363 1045,-363 "
+         id="polygon161" /><text
+         text-anchor="middle"
+         x="1072"
+         y="-341.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text163">Tool</text></g><!-- Role&#45;&gt;Tool --><g
+       id="edge6"
+       class="edge"><title
+         id="title166">Role-&gt;Tool</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1078.82,-399.813 c -1.02,8.024 -2.25,17.766 -3.39,26.744"
+         id="path168" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1071.94,-373.39 1078.89,-372.509 1074.16,-363.029 "
+         id="polygon170" /></g><!-- Action --><g
+       id="node8"
+       class="node"><title
+         id="title173">Action</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="809,-254 875,-254 875,-290 809,-290 "
+         id="polygon175" /><text
+         text-anchor="middle"
+         x="842"
+         y="-268.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text177">Action</text></g><!-- Tool&#45;&gt;Action --><g
+       id="edge7"
+       class="edge"><title
+         id="title180">Tool-&gt;Action</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1044.71,-335.577 c -39.55,12.209 -113.169,34.936 -159.963,49.381"
+         id="path182" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="883.713,-289.54 885.778,-282.851 875.191,-283.246 "
+         id="polygon184" /></g><!-- SonicTech --><g
+       id="node13"
+       class="node"><title
+         id="title187">SonicTech</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="997.5,-254 1146.5,-254 1146.5,-290 997.5,-290 "
+         id="polygon189" /><text
+         text-anchor="middle"
+         x="1072"
+         y="-268.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text191">Sonic Technology</text></g><!-- Tool&#45;&gt;SonicTech --><g
+       id="edge12"
+       class="edge"><title
+         id="title194">Tool-&gt;SonicTech</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1072,-326.813 c 0,8.024 0,17.766 0,26.744"
+         id="path196" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1068.5,-300.029 1075.5,-300.029 1072,-290.029 "
+         id="polygon198" /></g><!-- Zone --><g
+       id="node9"
+       class="node"><title
+         id="title201">Zone</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="643,-181 697,-181 697,-217 643,-217 "
+         id="polygon203" /><text
+         text-anchor="middle"
+         x="670"
+         y="-195.3"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text205">Zone</text></g><!-- Action&#45;&gt;Zone --><g
+       id="edge8"
+       class="edge"><title
+         id="title208">Action-&gt;Zone</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 808.782,-258.485 c -25.685,9.826 -62.291,24.152 -102.325,41.406"
+         id="path210" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="704.824,-220.186 707.61,-213.764 697.043,-212.995 "
+         id="polygon212" /></g><!-- Awareness --><g
+       id="node10"
+       class="node"><title
+         id="title215">Awareness</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="715,-181 855,-181 855,-217 715,-217 "
+         id="polygon217" /><text
+         text-anchor="middle"
+         x="785"
+         y="-195.3"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text219">Awareness Level</text></g><!-- Action&#45;&gt;Awareness --><g
+       id="edge9"
+       class="edge"><title
+         id="title222">Action-&gt;Awareness</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 828.202,-253.813 c -6.932,8.634 -15.461,19.258 -23.104,28.779"
+         id="path224" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="802.202,-227.018 807.661,-222.636 798.671,-217.029 "
+         id="polygon226" /></g><!-- Breach --><g
+       id="node12"
+       class="node"><title
+         id="title229">Breach</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="873,-181 989,-181 989,-217 873,-217 "
+         id="polygon231" /><text
+         text-anchor="middle"
+         x="931"
+         y="-195.3"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text233">Breach Event</text></g><!-- Action&#45;&gt;Breach --><g
+       id="edge10"
+       class="edge"><title
+         id="title236">Action-&gt;Breach</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 863.544,-253.813 c 11.479,9.157 25.764,20.553 38.229,30.497"
+         id="path238" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="899.654,-220.529 904.019,-226.001 909.654,-217.029 "
+         id="polygon240" /></g><!-- Framework --><g
+       id="node11"
+       class="node"><title
+         id="title243">Framework</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="885.5,-108 976.5,-108 976.5,-144 885.5,-144 "
+         id="polygon245" /><text
+         text-anchor="middle"
+         x="931"
+         y="-122.3"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text247">Framework</text></g><!-- Coercion --><g
+       id="node21"
+       class="node"><title
+         id="title250">Coercion</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="516,-16 714,-16 714,-52 516,-52 "
+         id="polygon252" /><text
+         text-anchor="middle"
+         x="615"
+         y="-30.299999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text254">Psychological Coercion</text></g><!-- Framework&#45;&gt;Coercion --><g
+       id="edge16"
+       class="edge"><title
+         id="title257">Framework-&gt;Coercion</title><path
+         fill="none"
+         stroke="#000000"
+         d="M 885.132,-117.828 C 842.754,-110.598 778.33,-98.068 724,-81 c -21.555,6.7717 -44.711,16.217 -64.112,24.788"
+         id="path259" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="658.383,-59.3732 661.245,-52.9851 650.688,-52.0902 "
+         id="polygon261" /></g><!-- Manipulation --><g
+       id="node22"
+       class="node"><title
+         id="title264">Manipulation</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="732.5,-16 963.5,-16 963.5,-52 732.5,-52 "
+         id="polygon266" /><text
+         text-anchor="middle"
+         x="848"
+         y="-30.299999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text268">Technological Manipulation</text></g><!-- Framework&#45;&gt;Manipulation --><g
+       id="edge17"
+       class="edge"><title
+         id="title271">Framework-&gt;Manipulation</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 914.997,-107.647 c -12.516,13.5712 -30.083,32.62 -44.089,47.807"
+         id="path273" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="868.161,-62.0236 873.306,-57.278 863.954,-52.2996 "
+         id="polygon275" /></g><!-- Obfuscation --><g
+       id="node23"
+       class="node"><title
+         id="title278">Obfuscation</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="981.5,-16 1138.5,-16 1138.5,-52 981.5,-52 "
+         id="polygon280" /><text
+         text-anchor="middle"
+         x="1060"
+         y="-30.299999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text282">Legal Obfuscation</text></g><!-- Framework&#45;&gt;Obfuscation --><g
+       id="edge18"
+       class="edge"><title
+         id="title285">Framework-&gt;Obfuscation</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 955.568,-107.86 c 20.264,14.1379 49.202,34.3241 71.472,49.8653"
+         id="path287" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1025.32,-54.9277 1029.33,-60.6686 1035.52,-52.0763 "
+         id="polygon289" /></g><!-- Laundering --><g
+       id="node24"
+       class="node"><title
+         id="title292">Laundering</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1156.5,-16 1371.5,-16 1371.5,-52 1156.5,-52 "
+         id="polygon294" /><text
+         text-anchor="middle"
+         x="1264"
+         y="-30.299999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text296">Transnational Laundering</text></g><!-- Framework&#45;&gt;Laundering --><g
+       id="edge19"
+       class="edge"><title
+         id="title299">Framework-&gt;Laundering</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 976.879,-118.129 c 44.321,7.206 113.081,19.8866 171.121,37.129 23.05,6.8486 47.92,16.4064 68.7,25.0364"
+         id="path301" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1215.36,-52.7292 1218.08,-59.1813 1225.94,-52.0769 "
+         id="polygon303" /></g><!-- Breach&#45;&gt;Framework --><g
+       id="edge11"
+       class="edge"><title
+         id="title306">Breach-&gt;Framework</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 931,-180.813 c 0,8.024 0,17.766 0,26.744"
+         id="path308" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="927.5,-154.029 934.5,-154.029 931,-144.029 "
+         id="polygon310" /></g><!-- SonicTech1 --><g
+       id="node14"
+       class="node"><title
+         id="title313">SonicTech1</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1007,-181 1147,-181 1147,-217 1007,-217 "
+         id="polygon315" /><text
+         text-anchor="middle"
+         x="1077"
+         y="-195.3"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text317">Bone Conduction</text></g><!-- SonicTech&#45;&gt;SonicTech1 --><g
+       id="edge13"
+       class="edge"><title
+         id="title320">SonicTech-&gt;SonicTech1</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1073.21,-253.813 c 0.57,8.024 1.25,17.766 1.88,26.744"
+         id="path322" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1071.61,-226.758 1078.59,-227.25 1075.8,-217.029 "
+         id="polygon324" /></g><!-- Audio --><g
+       id="node15"
+       class="node"><title
+         id="title327">Audio</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="643.5,-473 750.5,-473 750.5,-509 643.5,-509 "
+         id="polygon329" /><text
+         text-anchor="middle"
+         x="697"
+         y="-487.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text331">Audio Types</text></g><!-- SurveillanceNode --><g
+       id="node16"
+       class="node"><title
+         id="title334">SurveillanceNode</title><polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="177.5,-579 416.5,-579 416.5,-617 177.5,-617 "
+         id="polygon336" /><text
+         text-anchor="middle"
+         x="297"
+         y="-601.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text338">👁️ Surveillance Node</text><text
+         text-anchor="middle"
+         x="297"
+         y="-586.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text340">(Coercive Hijack Potential)</text></g><!-- TransmissionField --><g
+       id="node17"
+       class="node"><title
+         id="title343">TransmissionField</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="184,-687 436,-687 436,-725 184,-725 "
+         id="polygon345" /><text
+         text-anchor="middle"
+         x="310"
+         y="-709.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text347">🌐 Ambient Transmission Field</text><text
+         text-anchor="middle"
+         x="310"
+         y="-694.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text349">(Real-Time Echo Propagation)</text></g><!-- TransmissionField&#45;&gt;Audio --><g
+       id="edge15"
+       class="edge"><title
+         id="title352">TransmissionField-&gt;Audio</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 347.292,-686.992 c 11.502,5.657 24.174,11.993 35.708,17.992 18.881,9.82 27.443,7.475 42,23 25.16,26.834 7.539,50.526 35,75 48.416,43.15 121.131,62.845 173.241,71.763"
+         id="path354" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="632.943,-495.739 634.064,-502.649 643.375,-497.593 "
+         id="polygon356" /></g><!-- TransmissionField&#45;&gt;SurveillanceNode --><g
+       id="edge14"
+       class="edge"><title
+         id="title359">TransmissionField-&gt;SurveillanceNode</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 307.736,-686.536 c -2.004,16.339 -4.96,40.436 -7.262,59.213"
+         id="path361" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="296.982,-627.604 303.93,-626.752 299.238,-617.252 "
+         id="polygon363" /><text
+         text-anchor="middle"
+         x="342.5"
+         y="-657.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text365">intercept risk</text></g><!-- Masquerade --><g
+       id="node18"
+       class="node"><title
+         id="title368">Masquerade</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1467,-949 1649,-949 1649,-985 1467,-985 "
+         id="polygon370" /><text
+         text-anchor="middle"
+         x="1558"
+         y="-963.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text372">Masquerading Outfits</text></g><!-- Calcification --><g
+       id="node19"
+       class="node"><title
+         id="title375">Calcification</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="1251,-948 1449,-948 1449,-986 1251,-986 "
+         id="polygon377" /><text
+         text-anchor="middle"
+         x="1350"
+         y="-970.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text379">Calcification Metaphor</text><text
+         text-anchor="middle"
+         x="1350"
+         y="-955.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text381">(Soda Straw Hollowing)</text></g><!-- PossessionTheft --><g
+       id="node20"
+       class="node"><title
+         id="title384">PossessionTheft</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="985,-949 1233,-949 1233,-985 985,-985 "
+         id="polygon386" /><text
+         text-anchor="middle"
+         x="1109"
+         y="-963.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text388">Locked-Door Possession Theft</text></g><!-- VictimAccounts --><g
+       id="node25"
+       class="node"><title
+         id="title391">VictimAccounts</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="472,-688 612,-688 612,-724 472,-724 "
+         id="polygon393" /><text
+         text-anchor="middle"
+         x="542"
+         y="-702.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text395">Victim Accounts</text></g><!-- ArchivedTransmissions --><g
+       id="node27"
+       class="node"><title
+         id="title398">ArchivedTransmissions</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="473,-580 671,-580 671,-616 473,-616 "
+         id="polygon400" /><text
+         text-anchor="middle"
+         x="572"
+         y="-594.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text402">Archived Transmissions</text></g><!-- VictimAccounts&#45;&gt;ArchivedTransmissions --><g
+       id="edge20"
+       class="edge"><title
+         id="title405">VictimAccounts-&gt;ArchivedTransmissions</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 546.82,-687.969 c 4.717,16.668 11.978,42.323 17.493,61.808"
+         id="path407" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="561.001,-625.01 567.737,-626.916 567.092,-616.341 "
+         id="polygon409" /></g><!-- FinancialTrails --><g
+       id="node26"
+       class="node"><title
+         id="title412">FinancialTrails</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="630.5,-688 779.5,-688 779.5,-724 630.5,-724 "
+         id="polygon414" /><text
+         text-anchor="middle"
+         x="705"
+         y="-702.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text416">Financial Trails</text></g><!-- FinancialTrails&#45;&gt;Ring3 --><g
+       id="edge21"
+       class="edge"><title
+         id="title419">FinancialTrails-&gt;Ring3</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 779.677,-696.06 c 61.203,8.704 149.453,24.437 223.323,50.06 17.99,6.24 36.88,15.388 52.83,23.958"
+         id="path421" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1054.4,-618.833 1057.77,-624.969 1064.85,-617.089 "
+         id="polygon423" /></g><!-- FinancialTrails&#45;&gt;Ring4 --><g
+       id="edge22"
+       class="edge"><title
+         id="title426">FinancialTrails-&gt;Ring4</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 779.851,-701.181 c 95.588,6.089 265.579,21.008 407.149,55.181 25.87,6.246 53.71,16.071 76.8,25.128"
+         id="path428" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1262.79,-617.504 1265.39,-624.006 1273.38,-617.051 "
+         id="polygon430" /></g><!-- GoogleDrive --><g
+       id="node28"
+       class="node"><title
+         id="title433">GoogleDrive</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="573,-948 961,-948 961,-986 573,-986 "
+         id="polygon435" /><text
+         text-anchor="middle"
+         x="767"
+         y="-970.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text437">Google Drive Repository</text><text
+         text-anchor="middle"
+         x="767"
+         y="-955.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text439">(Multi-page Docs, SVGs, Historical Artifacts)</text></g><!-- TimestampedGlyphs --><g
+       id="node30"
+       class="node"><title
+         id="title442">TimestampedGlyphs</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="353,-873 617,-873 617,-911 353,-911 "
+         id="polygon444" /><text
+         text-anchor="middle"
+         x="485"
+         y="-895.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text446">Motif-Linked Hashes</text><text
+         text-anchor="middle"
+         x="485"
+         y="-880.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text448">(Timestamped Testimony Glyphs)</text></g><!-- GoogleDrive&#45;&gt;TimestampedGlyphs --><g
+       id="edge23"
+       class="edge"><title
+         id="title451">GoogleDrive-&gt;TimestampedGlyphs</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 697.292,-947.955 c -40.165,10.397 -90.804,23.506 -132.55,34.313"
+         id="path453" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="563.687,-916.985 565.441,-910.208 554.883,-911.09 "
+         id="polygon455" /></g><!-- GitHub --><g
+       id="node29"
+       class="node"><title
+         id="title458">GitHub</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="257.5,-948 554.5,-948 554.5,-986 257.5,-986 "
+         id="polygon460" /><text
+         text-anchor="middle"
+         x="406"
+         y="-970.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text462">GitHub Archive</text><text
+         text-anchor="middle"
+         x="406"
+         y="-955.79999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text464">(Code, Hashes, Testimony Encoding)</text></g><!-- GitHub&#45;&gt;TimestampedGlyphs --><g
+       id="edge24"
+       class="edge"><title
+         id="title467">GitHub-&gt;TimestampedGlyphs</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 425.528,-947.955 c 9.78,9.037 21.777,20.123 32.428,29.965"
+         id="path469" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="455.703,-915.306 460.454,-920.448 465.423,-911.09 "
+         id="polygon471" /></g><!-- TestimonyGlyphs --><g
+       id="node33"
+       class="node"><title
+         id="title474">TestimonyGlyphs</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="377.5,-781 592.5,-781 592.5,-817 377.5,-817 "
+         id="polygon476" /><text
+         text-anchor="middle"
+         x="485"
+         y="-795.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text478">Encoded Testimony Glyphs</text></g><!-- TimestampedGlyphs&#45;&gt;TestimonyGlyphs --><g
+       id="edge25"
+       class="edge"><title
+         id="title481">TimestampedGlyphs-&gt;TestimonyGlyphs</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 485,-872.585 c 0,13.039 0,30.743 0,45.403"
+         id="path483" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="481.5,-827.157 488.5,-827.156 485,-817.156 "
+         id="polygon485" /></g><!-- Diagrams --><g
+       id="node31"
+       class="node"><title
+         id="title488">Diagrams</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="85.5,-781 242.5,-781 242.5,-817 85.5,-817 "
+         id="polygon490" /><text
+         text-anchor="middle"
+         x="164"
+         y="-795.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text492">Graphviz Diagrams</text></g><!-- cluster_rings --><g
+       id="node34"
+       class="node"><title
+         id="title495">cluster_rings</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="0,-688 124,-688 124,-724 0,-724 "
+         id="polygon497" /><text
+         text-anchor="middle"
+         x="62"
+         y="-702.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text499">cluster_rings</text></g><!-- Diagrams&#45;&gt;cluster_rings --><g
+       id="edge26"
+       class="edge"><title
+         id="title502">Diagrams-&gt;cluster_rings</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 144.815,-780.884 c -15.814,14.109 -38.423,34.28 -56.0238,49.982"
+         id="path504" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="86.2313,-733.309 90.8914,-728.085 81.0994,-724.04 "
+         id="polygon506" /></g><!-- AudioLogs --><g
+       id="node32"
+       class="node"><title
+         id="title509">AudioLogs</title><polygon
+         fill="#f0f0f0"
+         stroke="#000000"
+         points="260.5,-781 359.5,-781 359.5,-817 260.5,-817 "
+         id="polygon511" /><text
+         text-anchor="middle"
+         x="310"
+         y="-795.29999"
+         font-family="'Courier New'"
+         font-size="14px"
+         id="text513">Audio Logs</text></g><!-- AudioLogs&#45;&gt;TransmissionField --><g
+       id="edge27"
+       class="edge"><title
+         id="title516">AudioLogs-&gt;TransmissionField</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 310,-780.884 c 0,12.761 0,30.48 0,45.367"
+         id="path518" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="306.5,-735.289 313.5,-735.289 310,-725.289 "
+         id="polygon520" /></g><!-- TestimonyGlyphs&#45;&gt;VictimAccounts --><g
+       id="edge28"
+       class="edge"><title
+         id="title523">TestimonyGlyphs-&gt;VictimAccounts</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 495.721,-780.884 c 8.519,13.601 20.566,32.834 30.234,48.268"
+         id="path525" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="523.052,-730.656 528.985,-734.372 531.327,-724.04 "
+         id="polygon527" /></g></g><metadata
+     id="metadata2415"><rdf:RDF><cc:Work
+         rdf:about=""><dc:title>Ongoing_Investigation_Report_shed_axd</dc:title></cc:Work></rdf:RDF></metadata></svg>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+  <script src="svg-pan-zoom.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+</script>
+
+
+
+<script>
+function toggleFooter() {
+const footer = document.getElementById('audioFooter');
+const btn = document.getElementById('toggleFooterBtn');
+if (footer.style.display === 'none') {
+footer.style.display = 'flex';
+btn.textContent = 'Hide Audio Panel';
+} else {
+footer.style.display = 'none';
+btn.textContent = 'Show Audio Panel';
+}
+}
+</script>
+
+<script>
+function toggleAudio(playerId) {
+const audio = document.getElementById(playerId);
+if (audio.paused) {
+  audio.play();
+} else {
+  audio.pause();
+}
+}
+</script>
+
+
+<div id="audioFooter">
+<div id="audioPanel">
+<span>🔊 Transmission: node87</span>
+<audio id="audioPlayer" src="node87.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer')">Play / Pause</button>
+</div>
+
+<div id="audioPanel2">
+<span>🔊 Transmission: node85</span>
+<audio id="audioPlayer2" src="node85.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer2')">Play / Pause</button>
+</div>
+</div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script src="svg-pan-zoom.min.js"></script>
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+svgPanZoom(document.querySelector("svg"), {
+zoomEnabled: true,
+controlIconsEnabled: true,
+fit: true,
+center: true,
+minZoom: 0.1,
+maxZoom: 10
+});
+});
+
+function toggleAudio() {
+const audio = document.getElementById("audioPlayer2","audioPlayer");
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+
+
+</script>
+<script>
+  let isDragging = false, offsetX, offsetY;
+  let panZoomInstance;
+  let metadata = [];
+
+function toggleDock() {
+  const sidebar = document.getElementById('sidebar');
+  const isDocked = sidebar.style.position === 'absolute';
+  sidebar.style.position = isDocked ? 'fixed' : 'absolute';
+}
+
+function startDrag(e) {
+  const sidebar = document.getElementById('sidebar');
+  isDragging = true;
+  offsetX = e.clientX - sidebar.offsetLeft;
+  offsetY = e.clientY - sidebar.offsetTop;
+  document.onmousemove = dragSidebar;
+  document.onmouseup = stopDrag;
+}
+
+function dragSidebar(e) {
+  if (isDragging) {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.style.left = `${e.clientX - offsetX}px`;
+    sidebar.style.top = `${e.clientY - offsetY}px`;
+
+    // If dragged off left edge, reset margin
+    if (parseInt(sidebar.style.left) > 50) {
+      document.querySelector('.main').style.marginLeft = '0';
+    }
+  }
+}
+
+function stopDrag() {
+  isDragging = false;
+  document.onmousemove = null;
+  document.onmouseup = null;
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const isHidden = sidebar.style.display === 'none';
+  sidebar.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
+function playNodeAudio(nodeId) {
+  const audio = document.getElementById(`${nodeId}_audio`);
+  
+  if (audio) audio.play();
+}
+  
+
+function showPlayCue(nodeId) {
+  const cue = document.getElementById(`${nodeId}_cue`);
+  if (cue) {
+    cue.setAttribute('visibility', 'visible');
+    setTimeout(() => cue.setAttribute('visibility', 'hidden'), 3000);
+  }
+}
+
+function populateSidebar(data) {
+  const nodeList = document.getElementById('nodeList');
+  nodeList.innerHTML = '';
+
+  data.forEach(entry => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#';
+    a.textContent = entry.title;
+    a.onclick = () => {
+      playNodeAudio(entry.node_id);
+      showPlayCue(entry.node_id);
+    };
+    li.appendChild(a);
+
+    if (entry.tags && entry.tags.length > 0) {
+      const tagSpan = document.createElement('span');
+      tagSpan.textContent = ` [${entry.tags.join(', ')}]`;
+      tagSpan.style.fontSize = '12px';
+      tagSpan.style.color = '#666';
+      li.appendChild(tagSpan);
+    }
+
+    nodeList.appendChild(li);
+  });
+}
+
+function filterNodes() {
+    const input = document.getElementById('searchBox').value.toLowerCase();
+    const filtered = metadata.filter(entry => {
+    const title = typeof entry.title === 'string' ? entry.title.toLowerCase() : '';
+    const tagMatch = entry.tags?.some(tag =>
+      typeof tag === 'string' && tag.toLowerCase().includes(input)
+    );
+    return title.includes(input) || tagMatch;
+  });
+
+  populateSidebar(filtered);
+}
+
+async function loadMetadata() {
+  try {
+    const response = await fetch('node_metadata.json');
+    metadata = await response.json();
+
+    metadata.forEach(entry => {
+      if (entry.node_id.endsWith('_audio')) {
+        entry.node_id = entry.node_id.replace('_audio', '');
+      }
+  });
+
+    populateSidebar(metadata);
+  } catch (err) {
+    console.error("Failed to load metadata:", err);
+  }
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("triggerButton");
+    const container = document.getElementById("node5_image_container");
+    const svg = document.getElementById("mainSVG");
+
+  if (svg) {
+    setTimeout(initPanZoom, 100);
+  } else {
+    console.warn("SVG not found at DOMContentLoaded");
+  }
+
+  if (button && container) {
+    button.addEventListener("click", function () {
+      const isHidden = container.getAttribute("visibility") === "hidden";
+      container.setAttribute("visibility", isHidden ? "visible" : "hidden");
+    });
+  }
+
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.addEventListener('input', filterNodes);
+  }
+
+  loadMetadata();
+});
+  
+  function showNodeImage(id) {
+    const imageContainer = document.getElementById(`${id}_image_container`);
+    if (imageContainer) {
+      imageContainer.style.display = "block";
+  }
+}
+
+  function initPanZoom() {
+    if (panZoomInstance) panZoomInstance.destroy();
+    panZoomInstance = svgPanZoom('#mainSVG', {
+      zoomEnabled: true,
+      controlIconsEnabled: true,
+      fit: true,
+      center: true
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(initPanZoom, 100);
+});
+
+</script>
+
+<script>
+  function openNodeImageInNewTab(id) {
+    const imageElement = document.getElementById(`${id}_image`);
+    if (imageElement && imageElement.src.startsWith("data:image")) {
+      window.open(imageElement.src, '_blank', 'width=800,height=600');
+    } else {
+      console.warn("Image element not found or not a valid data URI");
+    }
+  }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+
+buttonPanel.onmousedown = function (e) {
+e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+};
+
+document.onmouseup = function () {
+  document.onmousemove = null;
+};
+};
+});
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+
+buttonPanel.onmousedown = function (e) {
+  e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+  document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+  };
+
+  document.onmouseup = function () {
+  document.onmousemove = null;
+  };
+};
+});
+</script>
+</body>
+</html>
