@@ -987,6 +987,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node88_audio",
+"title_id": "title1346",
+"title": "Gambia",
+"tags": ["Bleakst", "type n", "1148", "1149"],
+"audio_files": [
+  "node88.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 
