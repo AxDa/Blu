@@ -1,0 +1,4314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JeffersonianThermocoupleReciterScale_1421_utc+1_23092025</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    #svgContainer {
+      width: 100%;
+      height: 90%;
+    }
+
+    .main {
+      position: relative;
+      height: 100vh;
+      margin-left: 300px; /* default when sidebar is docked */
+      transition: margin-left 0.3s ease;
+    }
+
+    #toggleSidebar {
+      position: fixed;
+      top: 20px;
+      left: 10px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+      #triggerButton {
+      position: absolute;
+      left: 10px;
+      top: 45px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #83d3d3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+
+    }
+
+    #viewImageButton {
+      position: fixed;
+      top: 10px;
+      left: 145px; /* adjust based on toggleSidebar width */
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #00BFFF;
+      color: rgb(32, 25, 25);
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar {
+      position: absolute;
+      left: 50;
+      top: 60px;
+      width: 220px;
+      height: 80%;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 1em;
+      border: 1px solid #ccc;
+      z-index: 999;
+      cursor: move;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 0.5em;
+    }
+    .sidebar input {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 1em;
+      font-size: 14px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin-bottom: 0.5em;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
+    .sidebar a:hover {
+      color: #0077cc;
+    }
+
+    svg, svg * {
+    visibility: visible !important;
+    display: inline !important;
+    }
+  </style>
+
+  <!-- External scripts -->
+  <script src="svg-pan-zoom.min.js"></script>
+  <script src="title_node_map.js"></script>
+  <script src="node_metadata.json"></script>
+
+  <style>
+    #togglePanelBtn {
+      position: fixed;
+      top: 45px;
+      left: 145px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglePanelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+    #buttonPanel {
+      display: block;
+      position: fixed;
+      top: 110px;
+      left: 10px;
+      width: 160px;
+      z-index: 900;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      max-height: 700px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid #ccc;
+      cursor: move; /* merged here */
+    } 
+  </style>
+
+  <style>
+    #audioPanel, #audioPanel2 {
+      margin-bottom: 0.5em;
+      display: flex;
+      flex-direction: row; /* Change to 'row' for horizontal layout */
+      align-items: flex-start;
+      gap: 0.5em;
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      background-color: #f9f9f9;
+    }
+  
+    audio {
+      width: 100%; /* Ensures full-width progress bar */
+    }
+  
+    #toggleFooterBtn {
+      padding: 0.4em 0.8em;
+      font-size: 0.9em;
+      position: absolute;
+      top: 20px;
+      left: 145px;
+    }
+  </style>
+
+<style>
+    #audioFooter {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #362e2e;
+      border-top: 1px solid #ccc;
+      padding: 0.5em;
+      display: flex;
+      flex-direction: row; /* or 'row' if you want horizontal layout */
+      gap: 1em;
+      z-index: 1000; /* ensures it sits above the SVG */
+    }
+  
+    #audioFooter audio {
+      width: 100%;
+    }
+  
+    #audioFooter button {
+      margin-top: 0.5em;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
+  <button id="triggerButton">Toggle Image</button>
+  <button id="toggleFooterBtn" onclick="toggleFooter()">Hide Audio Panel</button>
+  <button id="togglePanelBtn">Hide Panel</button>
+  <!-- View Image Buttons -->
+  <button onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View Image_Large
+  </button>
+
+<button onclick="openNodeImageInNewTab()" style="cursor:pointer; color:#00BFFF;">
+  🔍 WorldTimeZones
+</button>
+
+<!-- Button Panel Container -->
+<div id="buttonPanel">
+
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit 1721
+  </button>
+  
+  <button 
+  onclick="window.open('As_the_ash_of_thera_whispers_pwa_(7)_index.html', '_blank')" 
+  aria-label="As_the_ash_of_thera_whispers_pwa_(7)_index"
+  data-node-id="As_the_ash_of_thera_whispers_pwa_(7)_index">
+  Open: As_the_ash_of_thera_whispers_pwa_(7)_index
+  </button>
+  
+  <button 
+  onclick="window.open('HybridAbyssmons16082025.html', '_blank')" 
+  aria-label="Hybrid Abyssmons 16082025"
+  data-node-id="Hybrid_Abyssmons_16082025">
+  Open: Hybrid Abyssmons 16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Old_full_svg.html', '_blank')" 
+  aria-label="Old_full_svg"
+  data-node-id="Old_full_svg">
+  Open: Old_full_svg
+  </button>
+  
+  <button 
+  onclick="window.open('SodaStrawMappingGrowth_0019_19082025.svg.html', '_blank')" 
+  aria-label="Soda Straw Mapping Growth_0019_19082025"
+  data-node-id="Soda_Straw_Mapping_Growth_0019_19082025">
+  Open: Soda Straw Mapping Growth_0019_19082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermark_AllegoricalUnderworld_embed1929_utc1_17072025.html', '_blank')" 
+  aria-label="Watermark Allegorical Underworldembed 1929_utc1_17072025"
+  data-node-id="Watermark_AllegoricalUnderworld_embed1929_utc1_17072025">
+  Open: Allegorical Underworld_embed 1929_utc1_17072025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_InverseSocietySummaryExpandedTable_all3_graphpywBT_0129_14082025 (6785 x 3715)(inline).html', '_blank')" 
+  aria-label="Inverse Society Summary Expanded Table 0129_14082025 (6785 x 3715)"
+  data-node-id="Inverse_Society_Summary_Expanded_Table_0129_14082025">
+  Open: Inverse Society Summary Expanded Table 0129_14082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0210_utc+1_16082025WrapperwithSpeakerIconAudioPlayer.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege 0210_utc+1_16082025"
+  data-node-id="Ultrasonic_Street_audio_Siege 0210_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege 0210_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0723_utc+1_16082025.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege_0723_utc+1_16082025"
+  data-node-id="UltrasonicStreetaudioSiege_0723_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege_0723_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_ElusivePossession_0830(mp3)_utc1_22082025.html', '_blank')" 
+  aria-label="Elusive Possession 0830(mp3) utc1_22082025"
+  data-node-id="ElusivePossession_0830(mp3)_utc1_22082025">
+  Open: Elusive Possession 0830(mp3) utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_RecursiveMachine_0219_utc+1_23082025.html', '_blank')" 
+  aria-label="Recursive Machine 0219 utc+1_23082025"
+  data-node-id="RecursiveMachine_0219_utc+1_23082025">
+  Open: Recursive Machine 0219 utc+1_23082025
+  </button>
+  
+  <button 
+  onclick="window.open('WmstreetsoundCivilSocietal_Visualization_0026_utc1_22082025svg.html', '_blank')" 
+  aria-label="street_Civil_Societal_Visualization_0026_utc1_22082025"
+  data-node-id="street_sound_Civil_Societal_Visualization_0026_utc1_22082025">
+  Open: Street_Civil_Societal_Visualization_0026_utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('bleakleo_player.html', '_blank')" 
+  aria-label="bleakleo player"
+  data-node-id="bleakleo_player">
+  Open: bleakleo player
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Aindex.html', '_blank')" 
+  aria-label="Aindex"
+  data-node-id="Aindex">
+  Open: Aindex
+  </button>
+  
+  <button 
+  onclick="window.open('bleaktyrestperambulator_audio_embed.html', '_blank')" 
+  aria-label="bleaktyrestperambulator audio embed"
+  data-node-id="bleaktyrestperambulator_audio_embed">
+  Open: bleaktyrestperambulator_audio_embed
+  </button>
+  
+  <button 
+  onclick="window.open('fullscreen.html', '_blank')" 
+  aria-label="fullscreen"
+  data-node-id="fullscreen">
+  Open: fullscreen
+  </button>
+  
+  <button 
+  onclick="window.open('grid_node_view.html', '_blank')" 
+  aria-label="grid_node_view"
+  data-node-id="grid_node_view">
+  Open: grid_node_view
+  </button>
+  
+  <button 
+  onclick="window.open('indexfin2_data.html', '_blank')" 
+  aria-label="indexfin2 data"
+  data-node-id="indexfin2_data">
+  Open: indexfin2_data
+  </button>
+  
+  <button 
+  onclick="window.open('opening_index.html', '_blank')" 
+  aria-label="opening index"
+  data-node-id="opening_index">
+  Open: opening index
+  </button>
+  
+  <button 
+  onclick="window.open('svg_wrapper_enhanced.html', '_blank')" 
+  aria-label="svg wrapper enhanced"
+  data-node-id="svg_wrapper_enhanced">
+  Open: svg wrapper enhanced
+  </button>
+  
+  <button 
+  onclick="window.open('thera_whispers_above_cauldera_fin_axd.html', '_blank')" 
+  aria-label="thera whispers above cauldera fin axd"
+  data-node-id="thera_whispers_above_cauldera_fin_axd">
+  Open: thera whispers above cauldera fin axd
+  </button>
+  
+  <button 
+  onclick="window.open('Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention_20250820_113701_axd.html', '_blank')" 
+  aria-label="Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention"
+  data-node-id="Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention">
+  Open: Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention
+  </button>
+  
+  <button 
+  onclick="window.open('toggle_image_sss.html', '_blank')" 
+  aria-label="toggle image sss"
+  data-node-id="toggle_image_sss">
+  Open: toggle image sss
+  </button>
+  
+  <button 
+  onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html', '_blank')" 
+  aria-label="World Time Zone Node Drip Echo"
+  data-node-id="World_Time_Zones_Node_Drip_Echo">
+  Open: World Time Zone Node Drip Echo
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit
+  </button>
+  
+  <button 
+  onclick="window.open('image_inline_BroadcastExperience1633_02092025_wipbase64.html', '_blank')" 
+  aria-label="image inline Broadcast Experience"
+  data-node-id="image_inline_BroadcastExperience">
+  Open: image inline Broadcast Experience
+  </button>
+  
+  <button 
+  onclick="window.open('Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html', '_blank')" 
+  aria-label="Bleakst Going to C a Realm Proxy Scylla Transmission"
+  data-node-id="Bleakst_Goingto_C_a_Realm_Proxy_Scylla_Transmission">
+  Open: Bleakst Going to C a Realm Proxy Scylla Transmission
+  </button>
+  
+  <button 
+  onclick="window.open('WmAspectsenslavementAudit_0059_utc+1+06092025.html', '_blank')" 
+  aria-label="Aspects enslavement Audit"
+  data-node-id="Aspects_enslavement_Audit">
+  Open: Aspects enslavement Audit
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_archive_1509_10092025.html', '_blank')" 
+  aria-label="testimony archive 1509 10092025"
+  data-node-id="testimony_archive_1509_10092025">
+  Open: testimony archive 1509 10092025
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_1408_utc+1_09092025_Protocol_axd.html', '_blank')" 
+  aria-label="Jeffersonian linier Bulwark semantic clusters with motifs 1408 09092025_Protocol axd"
+  data-node-id="Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_Protocol">
+  Open: JeffersonianBulwarkclustersProtocol
+  </button>
+      
+  <button 
+  onclick="window.open('Wm_velvetveilprotocol_815_utc+1_07092025.html', '_blank')" 
+  aria-label="Wm_velvet_veil_protocol"
+  data-node-id="velvet veil protocol">
+  Open: velvetveilprotocol
+  </button>
+  
+  <button 
+  onclick="window.open('Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html', '_blank')" 
+  aria-label="Hawking Blackhole Radiation Rllbk_tx"
+  data-node-id="Hawking Blackhole_Radiation">
+  Open: Hawking Blackhole Radiation Rllbk tx
+  </button>
+  
+  <button 
+  onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html', '_blank')" 
+  aria-label="dog’s utterance Threat Echo"
+  data-node-id="dog’s_utterance_31st_July_2024_ThreatEcho">
+  Open: dog’s utterance Threat Echo
+  </button>
+  
+  <button 
+  onclick="window.open('spatiallyadaptiveinferencetransmission_2247_utc+1_11092025.svg_axd.html', '_blank')" 
+  aria-label="spatially_adaptive_inference_transmission"
+  data-node-id="spatially adaptive inference transmission">
+  Open: Spatially adaptive inference transmission
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_Anathema.html', '_blank')" 
+  aria-label="testimony Anathema"
+  data-node-id="testimony_Anathema">
+  Open: Anathema
+  </button>
+    
+  <button 
+  onclick="window.open('spare.html', '_blank')" 
+  aria-label="spare"
+  data-node-id="spare">
+  Open: spare
+  </button>
+  
+  <button 
+  onclick="window.open('spare.html', '_blank')" 
+  aria-label="spare"
+  data-node-id="spare">
+  Open: spare
+  </button>
+  </div>
+
+  <div
+    id="sidebar" class="sidebar" onmousedown="startDrag(event)">
+    <h2>Node Index</h2>
+    <input type="text" id="searchBox" placeholder="Search titles..." onkeyup="filterNodes()" />  
+    
+    <button onclick="toggleDock()">Dock/Undock</button>
+    <ul id='nodeList'>
+    <li><a href='#' onclick="playNodeAudio('node1'); showPlayCue('node1')">Baker Island 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node2'); showPlayCue('node2')">Howland Island \(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node3'); showPlayCue('node3')">American Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node4'); showPlayCue('node4')">Niue</a></li>
+    <li><a href='#' onclick="playNodeAudio('node5'); showPlayCue('node5')">Midway Atoll 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node6'); showPlayCue('node6')">Jarvis Island 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node7'); showPlayCue('node7')">Kingman Reef 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node8'); showPlayCue('node8')">Palmyra Atoll 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node9'); showPlayCue('node9')">Hawaii</a></li>
+    <li><a href='#' onclick="playNodeAudio('node10'); showPlayCue('node10')">French Polynesia 
+(Tahiti)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node11'); showPlayCue('node11')">Cook Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node12'); showPlayCue('node12')">Johnston Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node13'); showPlayCue('node13')">Tuamotu Archipelago 
+(French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node14'); showPlayCue('node14')">Society Islands 
+(French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node15'); showPlayCue('node15')">Alaska (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node16'); showPlayCue('node16')">Gambier Islands (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node17'); showPlayCue('node17')">Aleutian Islands 
+(US, Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node18'); showPlayCue('node18')">UTC−12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node19'); showPlayCue('node19')">UTC−11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node20'); showPlayCue('node20')">UTC−10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node21'); showPlayCue('node21')">UTC−9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node22'); showPlayCue('node22')">Canada (British Columbia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node23'); showPlayCue('node23')">United States 
+(California, Oregon, Washington)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node24'); showPlayCue('node24')">Mexico (Baja California)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node25'); showPlayCue('node25')">Pitcairn Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node26'); showPlayCue('node26')">Canada (Alberta)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node27'); showPlayCue('node27')">United States 
+(Arizona, Colorado, Utah)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node28'); showPlayCue('node28')">Mexico (Chihuahua, Sonora)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node29'); showPlayCue('node29')">Chile (Easter Island &
+ Salas y Gómez (ST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node30'); showPlayCue('node30')">Belize</a></li>
+    <li><a href='#' onclick="playNodeAudio('node31'); showPlayCue('node31')">Costa Rica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node32'); showPlayCue('node32')">Guatemala</a></li>
+    <li><a href='#' onclick="playNodeAudio('node33'); showPlayCue('node33')">Honduras</a></li>
+    <li><a href='#' onclick="playNodeAudio('node34'); showPlayCue('node34')">Nicaragua</a></li>
+    <li><a href='#' onclick="playNodeAudio('node35'); showPlayCue('node35')">El Salvador</a></li>
+    <li><a href='#' onclick="playNodeAudio('node36'); showPlayCue('node36')">Mexico (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node37'); showPlayCue('node37')">United States (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node38'); showPlayCue('node38')">Canada (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node39'); showPlayCue('node39')">Ecuador (Galápagos)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node40'); showPlayCue('node40')">UTC−8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node41'); showPlayCue('node41')">UTC−7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node42'); showPlayCue('node42')">UTC−6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node43'); showPlayCue('node43')">Chile (Easter Island &
+ Salas y Gómez (DST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node44'); showPlayCue('node44')">Colombia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node45'); showPlayCue('node45')">Panama</a></li>
+    <li><a href='#' onclick="playNodeAudio('node46'); showPlayCue('node46')">Peru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node47'); showPlayCue('node47')">Ecuador (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node48'); showPlayCue('node48')">Cuba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node49'); showPlayCue('node49')">Haiti</a></li>
+    <li><a href='#' onclick="playNodeAudio('node50'); showPlayCue('node50')">Jamaica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node51'); showPlayCue('node51')">Bahamas</a></li>
+    <li><a href='#' onclick="playNodeAudio('node52'); showPlayCue('node52')">Dominican Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node53'); showPlayCue('node53')">Bolivia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node54'); showPlayCue('node54')">Eastern United States</a></li>
+    <li><a href='#' onclick="playNodeAudio('node55'); showPlayCue('node55')">Eastern Canada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node56'); showPlayCue('node56')">Venezuela</a></li>
+    <li><a href='#' onclick="playNodeAudio('node57'); showPlayCue('node57')">Barbados</a></li>
+    <li><a href='#' onclick="playNodeAudio('node58'); showPlayCue('node58')">Grenada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node59'); showPlayCue('node59')">Saint Lucia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node60'); showPlayCue('node60')">Saint Vincent 
+and the Grenadines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node61'); showPlayCue('node61')">Trinidad and Tobago</a></li>
+    <li><a href='#' onclick="playNodeAudio('node62'); showPlayCue('node62')">Puerto Rico</a></li>
+    <li><a href='#' onclick="playNodeAudio('node63'); showPlayCue('node63')">Aruba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node64'); showPlayCue('node64')">Curacao</a></li>
+    <li><a href='#' onclick="playNodeAudio('node65'); showPlayCue('node65')">French Guiana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node66'); showPlayCue('node66')">Suriname</a></li>
+    <li><a href='#' onclick="playNodeAudio('node67'); showPlayCue('node67')">Guyana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node68'); showPlayCue('node68')">Chile (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node69'); showPlayCue('node69')">Chile (Magallanes &
+ Chilean Antarctica (year round))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node70'); showPlayCue('node70')">Argentina</a></li>
+    <li><a href='#' onclick="playNodeAudio('node71'); showPlayCue('node71')">Brazil (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node72'); showPlayCue('node72')">Uruguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node73'); showPlayCue('node73')">Paraguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node74'); showPlayCue('node74')">Saint Pierre and Miquelon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node75'); showPlayCue('node75')">UTC−5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node76'); showPlayCue('node76')">UTC−4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node77'); showPlayCue('node77')">UTC−3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node78'); showPlayCue('node78')">Saint Pierre and 
+Miquelon (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node79'); showPlayCue('node79')">Fernando de Noronha (Brazil)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node80'); showPlayCue('node80')">South Georgia and 
+the South Sandwich Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node81'); showPlayCue('node81')">Cape Verde</a></li>
+    <li><a href='#' onclick="playNodeAudio('node82'); showPlayCue('node82')">Azores (Portugal)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node83'); showPlayCue('node83')">Ittoqqortoormiit 
+(Greenland, DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node84'); showPlayCue('node84')">Iceland</a></li>
+    <li><a href='#' onclick="playNodeAudio('node85'); showPlayCue('node85')">Greenwich Mean Time 
+(UK, Ireland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node86'); showPlayCue('node86')">Portugal (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node87'); showPlayCue('node87')">Canary Islands (Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node88'); showPlayCue('node88')">Gambia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node89'); showPlayCue('node89')">Ghana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node90'); showPlayCue('node90')">Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node91'); showPlayCue('node91')">Mali</a></li>
+    <li><a href='#' onclick="playNodeAudio('node92'); showPlayCue('node92')">Mauritania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node93'); showPlayCue('node93')">Senegal</a></li>
+    <li><a href='#' onclick="playNodeAudio('node94'); showPlayCue('node94')">Sierra Leone</a></li>
+    <li><a href='#' onclick="playNodeAudio('node95'); showPlayCue('node95')">Togo</a></li>
+    <li><a href='#' onclick="playNodeAudio('node96'); showPlayCue('node96')">Algeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node97'); showPlayCue('node97')">Angola</a></li>
+    <li><a href='#' onclick="playNodeAudio('node98'); showPlayCue('node98')">Benin</a></li>
+    <li><a href='#' onclick="playNodeAudio('node99'); showPlayCue('node99')">Cameroon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node100'); showPlayCue('node100')">Central African Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node101'); showPlayCue('node101')">Chad</a></li>
+    <li><a href='#' onclick="playNodeAudio('node102'); showPlayCue('node102')">Congo (Brazzaville)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node103'); showPlayCue('node103')">Democratic Republic 
+of Congo (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node104'); showPlayCue('node104')">Equatorial Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node105'); showPlayCue('node105')">Gabon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node106'); showPlayCue('node106')">Morocco</a></li>
+    <li><a href='#' onclick="playNodeAudio('node107'); showPlayCue('node107')">Nigeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node108'); showPlayCue('node108')">Tunisia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node109'); showPlayCue('node109')">Western Europe 
+(France, Germany, Italy, Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node110'); showPlayCue('node110')">Andorra</a></li>
+    <li><a href='#' onclick="playNodeAudio('node111'); showPlayCue('node111')">Belgium</a></li>
+    <li><a href='#' onclick="playNodeAudio('node112'); showPlayCue('node112')">Luxembourg</a></li>
+    <li><a href='#' onclick="playNodeAudio('node113'); showPlayCue('node113')">Netherlands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node114'); showPlayCue('node114')">Norway</a></li>
+    <li><a href='#' onclick="playNodeAudio('node115'); showPlayCue('node115')">Sweden</a></li>
+    <li><a href='#' onclick="playNodeAudio('node116'); showPlayCue('node116')">Denmark</a></li>
+    <li><a href='#' onclick="playNodeAudio('node117'); showPlayCue('node117')">UTC−2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node118'); showPlayCue('node118')">UTC−1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node119'); showPlayCue('node119')">UTC±0</a></li>
+    <li><a href='#' onclick="playNodeAudio('node120'); showPlayCue('node120')">UTC+1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node121'); showPlayCue('node121')">South Africa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node122'); showPlayCue('node122')">Egypt</a></li>
+    <li><a href='#' onclick="playNodeAudio('node123'); showPlayCue('node123')">Libya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node124'); showPlayCue('node124')">Sudan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node125'); showPlayCue('node125')">Israel</a></li>
+    <li><a href='#' onclick="playNodeAudio('node126'); showPlayCue('node126')">Palestine</a></li>
+    <li><a href='#' onclick="playNodeAudio('node127'); showPlayCue('node127')">Jordan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node128'); showPlayCue('node128')">Lebanon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node129'); showPlayCue('node129')">Syria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node130'); showPlayCue('node130')">Greece</a></li>
+    <li><a href='#' onclick="playNodeAudio('node131'); showPlayCue('node131')">Bulgaria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node132'); showPlayCue('node132')">Romania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node133'); showPlayCue('node133')">Ukraine (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node134'); showPlayCue('node134')">Finland (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node135'); showPlayCue('node135')">Cyprus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node136'); showPlayCue('node136')">Turkey (Permanent UTC+3)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node137'); showPlayCue('node137')">Saudi Arabia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node138'); showPlayCue('node138')">Iraq</a></li>
+    <li><a href='#' onclick="playNodeAudio('node139'); showPlayCue('node139')">Kuwait</a></li>
+    <li><a href='#' onclick="playNodeAudio('node140'); showPlayCue('node140')">Qatar</a></li>
+    <li><a href='#' onclick="playNodeAudio('node141'); showPlayCue('node141')">Bahrain</a></li>
+    <li><a href='#' onclick="playNodeAudio('node142'); showPlayCue('node142')">Yemen</a></li>
+    <li><a href='#' onclick="playNodeAudio('node143'); showPlayCue('node143')">Somalia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node144'); showPlayCue('node144')">Ethiopia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node145'); showPlayCue('node145')">Kenya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node146'); showPlayCue('node146')">Tanzania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node147'); showPlayCue('node147')">Uganda</a></li>
+    <li><a href='#' onclick="playNodeAudio('node148'); showPlayCue('node148')">Russia (Moscow)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node149'); showPlayCue('node149')">Belarus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node150'); showPlayCue('node150')">Georgia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node151'); showPlayCue('node151')">Armenia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node152'); showPlayCue('node152')">Azerbaijan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node153'); showPlayCue('node153')">United Arab Emirates</a></li>
+    <li><a href='#' onclick="playNodeAudio('node154'); showPlayCue('node154')">Oman</a></li>
+    <li><a href='#' onclick="playNodeAudio('node155'); showPlayCue('node155')">Mauritius</a></li>
+    <li><a href='#' onclick="playNodeAudio('node156'); showPlayCue('node156')">Seychelles</a></li>
+    <li><a href='#' onclick="playNodeAudio('node157'); showPlayCue('node157')">Russia (Samara)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node158'); showPlayCue('node158')">Afghanistan (UTC+4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node159'); showPlayCue('node159')">Pakistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node160'); showPlayCue('node160')">Uzbekistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node161'); showPlayCue('node161')">Turkmenistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node162'); showPlayCue('node162')">Tajikistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node163'); showPlayCue('node163')">Kazakhstan (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node164'); showPlayCue('node164')">Maldives</a></li>
+    <li><a href='#' onclick="playNodeAudio('node165'); showPlayCue('node165')">UTC+2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node166'); showPlayCue('node166')">UTC+3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node167'); showPlayCue('node167')">Iran (UTC+3:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node168'); showPlayCue('node168')">UTC+4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node169'); showPlayCue('node169')">UTC+5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node170'); showPlayCue('node170')">Bangladesh</a></li>
+    <li><a href='#' onclick="playNodeAudio('node171'); showPlayCue('node171')">Bhutan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node172'); showPlayCue('node172')">Kazakhstan (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node173'); showPlayCue('node173')">Kyrgyzstan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node174'); showPlayCue('node174')">Cocos Islands (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node175'); showPlayCue('node175')">British Indian 
+Ocean Territory</a></li>
+    <li><a href='#' onclick="playNodeAudio('node176'); showPlayCue('node176')">Thailand</a></li>
+    <li><a href='#' onclick="playNodeAudio('node177'); showPlayCue('node177')">Vietnam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node178'); showPlayCue('node178')">Cambodia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node179'); showPlayCue('node179')">Laos</a></li>
+    <li><a href='#' onclick="playNodeAudio('node180'); showPlayCue('node180')">Indonesia 
+(Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node181'); showPlayCue('node181')">Christmas Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node182'); showPlayCue('node182')">Russia 
+(Novosibirsk
+Krasnoyarsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node183'); showPlayCue('node183')">Mongolia 
+(Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node184'); showPlayCue('node184')">China (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node185'); showPlayCue('node185')">Hong Kong</a></li>
+    <li><a href='#' onclick="playNodeAudio('node186'); showPlayCue('node186')">Macau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node187'); showPlayCue('node187')">Taiwan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node188'); showPlayCue('node188')">Malaysia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node189'); showPlayCue('node189')">Singapore</a></li>
+    <li><a href='#' onclick="playNodeAudio('node190'); showPlayCue('node190')">Philippines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node191'); showPlayCue('node191')">Brunei</a></li>
+    <li><a href='#' onclick="playNodeAudio('node192'); showPlayCue('node192')">Indonesia 
+(Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node193'); showPlayCue('node193')">Western Australia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node194'); showPlayCue('node194')">Russia (Irkutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node195'); showPlayCue('node195')">Mongolia 
+(Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node196'); showPlayCue('node196')">Japan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node197'); showPlayCue('node197')">South Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node198'); showPlayCue('node198')">North Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node199'); showPlayCue('node199')">East Timor</a></li>
+    <li><a href='#' onclick="playNodeAudio('node200'); showPlayCue('node200')">Indonesia 
+(Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node201'); showPlayCue('node201')">Russia (Yakutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node202'); showPlayCue('node202')">Palau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node203'); showPlayCue('node203')">UTC+6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node204'); showPlayCue('node204')">UTC+7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node205'); showPlayCue('node205')">UTC+8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node206'); showPlayCue('node206')">UTC+9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node207'); showPlayCue('node207')">Eastern Australia 
+(Queensland, NSW, Victoria)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node208'); showPlayCue('node208')">Papua New Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node209'); showPlayCue('node209')">Guam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node210'); showPlayCue('node210')">Northern Mariana Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node211'); showPlayCue('node211')">Russia (Vladivostok)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node212'); showPlayCue('node212')">Federated States of 
+Micronesia (Western)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node213'); showPlayCue('node213')">Solomon Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node214'); showPlayCue('node214')">New Caledonia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node215'); showPlayCue('node215')">Vanuatu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node216'); showPlayCue('node216')">Federated States of 
+Micronesia (Eastern)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node217'); showPlayCue('node217')">Russia (Magadan)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node218'); showPlayCue('node218')">Norfolk Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node219'); showPlayCue('node219')">Bougainville 
+(Papua New Guinea)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node220'); showPlayCue('node220')">Fiji</a></li>
+    <li><a href='#' onclick="playNodeAudio('node221'); showPlayCue('node221')">Tuvalu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node222'); showPlayCue('node222')">Nauru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node223'); showPlayCue('node223')">Kiribati 
+(Gilbert Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node224'); showPlayCue('node224')">Marshall Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node225'); showPlayCue('node225')">Wallis and Futuna</a></li>
+    <li><a href='#' onclick="playNodeAudio('node226'); showPlayCue('node226')">New Zealand (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node227'); showPlayCue('node227')">Russia (Kamchatka)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node228'); showPlayCue('node228')">Wake Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node229'); showPlayCue('node229')">Tonga</a></li>
+    <li><a href='#' onclick="playNodeAudio('node230'); showPlayCue('node230')">Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node231'); showPlayCue('node231')">Tokelau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node232'); showPlayCue('node232')">New Zealand 
+(Daylight Saving Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node233'); showPlayCue('node233')">Kiribati (Phoenix Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node234'); showPlayCue('node234')">Kiribati (Line Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node235'); showPlayCue('node235')">Kiritimati 
+(Christmas Island)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node236'); showPlayCue('node236')">UTC+10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node237'); showPlayCue('node237')">UTC+11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node238'); showPlayCue('node238')">UTC+12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node239'); showPlayCue('node239')">UTC+13</a></li>
+    <li><a href='#' onclick="playNodeAudio('node240'); showPlayCue('node240')">UTC+14</a></li>
+    <li><a href='#' onclick="playNodeAudio('node241'); showPlayCue('node241')">India (UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node242'); showPlayCue('node242')">Sri Lanka 
+(UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node243'); showPlayCue('node243')">South Asia 
+& East Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node244'); showPlayCue('node244')">Nepal (UTC+5:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node245'); showPlayCue('node245')">Myanmar 
+(UTC+6:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node246'); showPlayCue('node246')">Cocos (Keeling) Islands 
+(Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node247'); showPlayCue('node247')">Eucla (Australia) (UTC+8:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node248'); showPlayCue('node248')">Australia 
+(Northern Territory (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node249'); showPlayCue('node249')">Australia 
+(South Australia (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node250'); showPlayCue('node250')">Australia 
+(Broken Hill (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node251'); showPlayCue('node251')">Lord Howe Island 
+(Australia (UTC+10:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node252'); showPlayCue('node252')">Chatham Islands 
+(New Zealand (UTC+12:35))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node253'); showPlayCue('node253')">Newfoundland 
+(Canada (−3:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node254'); showPlayCue('node254')">Venezuela (−4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node255'); showPlayCue('node255')">United Kingdom (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node256'); showPlayCue('node256')">Ireland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node257'); showPlayCue('node257')">Portugal DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node258'); showPlayCue('node258')">Spain DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node259'); showPlayCue('node259')">France DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node260'); showPlayCue('node260')">Germany DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node261'); showPlayCue('node261')">Italy DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node262'); showPlayCue('node262')">Netherlands DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node263'); showPlayCue('node263')">Belgium DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node264'); showPlayCue('node264')">Switzerland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node265'); showPlayCue('node265')">Austria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node266'); showPlayCue('node266')">Poland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node267'); showPlayCue('node267')">Czech Republic DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node268'); showPlayCue('node268')">Hungary DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node269'); showPlayCue('node269')">Slovakia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node270'); showPlayCue('node270')">Slovenia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node271'); showPlayCue('node271')">Croatia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node272'); showPlayCue('node272')">Serbia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node273'); showPlayCue('node273')">Bosnia and Herzegovina DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node274'); showPlayCue('node274')">North Macedonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node275'); showPlayCue('node275')">Greece DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node276'); showPlayCue('node276')">Bulgaria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node277'); showPlayCue('node277')">Romania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node278'); showPlayCue('node278')">Ukraine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node279'); showPlayCue('node279')">Norway DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node280'); showPlayCue('node280')">Sweden DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node281'); showPlayCue('node281')">Finland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node282'); showPlayCue('node282')">Estonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node283'); showPlayCue('node283')">Latvia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node284'); showPlayCue('node284')">Lithuania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node285'); showPlayCue('node285')">West Africa 
+&
+ Europe West</a></li>
+    <li><a href='#' onclick="playNodeAudio('node286'); showPlayCue('node286')">United States (except Arizona, Hawaii)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node287'); showPlayCue('node287')">Canada 
+(except Saskatchewan,
+ Yukon) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node288'); showPlayCue('node288')">Mexico (Baja California 
+and border municipalities) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node289'); showPlayCue('node289')">Greenland (Pituffik Space Base) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node290'); showPlayCue('node290')">Saint Pierre
+ and 
+Miquelon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node291'); showPlayCue('node291')">Bahamas DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node292'); showPlayCue('node292')">Bermuda DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node293'); showPlayCue('node293')">Haiti DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node294'); showPlayCue('node294')">Cuba DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node295'); showPlayCue('node295')">South 
+America</a></li>
+    <li><a href='#' onclick="playNodeAudio('node296'); showPlayCue('node296')">Chile (except Aysén
+ and
+ Magallanes)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node297'); showPlayCue('node297')">Paraguay DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node298'); showPlayCue('node298')">Israel DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node299'); showPlayCue('node299')">Lebanon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node300'); showPlayCue('node300')">Iran (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node301'); showPlayCue('node301')">Palestine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node302'); showPlayCue('node302')">Egypt DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node303'); showPlayCue('node303')">Middle East 
+&
+ Central Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node304'); showPlayCue('node304')">Oceania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node305'); showPlayCue('node305')">New Zealand 
+(Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node306'); showPlayCue('node306')">Chatham Islands (NZ) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node307'); showPlayCue('node307')">Australia 
+(NSW, Victoria, 
+Tasmania, SA, ACT)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node308'); showPlayCue('node308')">Lord Howe Island
+ (Australia) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node309'); showPlayCue('node309')">Norfolk Island 
+(Australia) DST</a></li>  
+  </ul>
+  </div>    
+<div id="svgContainer">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+
+<!-- Title: SemanticResistanceArchive Pages: 1 -->
+
+<svg viewBox="0 0 5808 5349" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
+   width="4356pt"
+   height="3885pt"
+   viewBox="0.00 0.00 4356.00 3885.00"
+   version="1.1"
+   id="svg4511"
+   sodipodi:docname="JeffersonianThermocoupleReciterScale_1421_utc+1_23092025.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs4515" />
+  <sodipodi:namedview
+     id="namedview4513"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="0.16158301"
+     inkscape:cx="1454.3608"
+     inkscape:cy="3023.2139"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="graph0" />
+  <g
+     id="graph0"
+     class="graph"
+     transform="scale(1 1) rotate(0) translate(4 3881)">
+    <title
+       id="title3409">SemanticResistanceArchive</title>
+    <polygon
+       fill="white"
+       stroke="none"
+       points="-4,4 -4,-3881 4352,-3881 4352,4 -4,4"
+       id="polygon3411"
+       style="fill:#f4d7d7" />
+    <text
+       text-anchor="middle"
+       x="2174"
+       y="-3860.2"
+       font-family="Times New Roman,serif"
+       font-size="16.00"
+       id="text3413">Semantic Archive</text>
+    <text
+       text-anchor="middle"
+       x="2174"
+       y="-3842.2"
+       font-family="Times New Roman,serif"
+       font-size="16.00"
+       id="text3415"> JeffersonianThermocouple,</text>
+    <text
+       text-anchor="middle"
+       x="2174"
+       y="-3824.2"
+       font-family="Times New Roman,serif"
+       font-size="16.00"
+       id="text3417"> the Reciter Scale,</text>
+    <text
+       text-anchor="middle"
+       x="2174"
+       y="-3806.2"
+       font-family="Times New Roman,serif"
+       font-size="16.00"
+       id="text3419"> the UK electricity standing charge indictment,</text>
+    <text
+       text-anchor="middle"
+       x="2174"
+       y="-3788.2"
+       font-family="Times New Roman,serif"
+       font-size="16.00"
+       id="text3421"> and the systemic mappings of</text>
+    <text
+       text-anchor="middle"
+       x="2174"
+       y="-3770.2"
+       font-family="Times New Roman,serif"
+       font-size="16.00"
+       id="text3423"> civil society, deception, and institutional erosion and</text>
+    <text
+       text-anchor="middle"
+       x="2174"
+       y="-3752.2"
+       font-family="Times New Roman,serif"
+       font-size="16.00"
+       id="text3425"> 14/05/2025 updated 22/09/2025</text>
+    <g
+       id="clust1"
+       class="cluster">
+      <title
+         id="title3427">cluster_truth_flame</title>
+      <polygon
+         fill="orange"
+         stroke="orange"
+         points="1494,-3172 1494,-3412 1616,-3412 1616,-3172 1494,-3172"
+         id="polygon3429" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-3395.2"
+         font-family="Times New Roman,serif"
+         font-size="16.00"
+         id="text3431">🔥 Truth Flame</text>
+    </g>
+    <g
+       id="clust2"
+       class="cluster">
+      <title
+         id="title3434">cluster_jeffersonian</title>
+      <polygon
+         fill="lightblue"
+         stroke="lightblue"
+         points="293.5,-3326 293.5,-3566 494.5,-3566 494.5,-3326 293.5,-3326"
+         id="polygon3436" />
+      <text
+         text-anchor="middle"
+         x="394"
+         y="-3549.2"
+         font-family="Times New Roman,serif"
+         font-size="16.00"
+         id="text3438">🏛️ Jeffersonian Ideals</text>
+    </g>
+    <g
+       id="clust3"
+       class="cluster">
+      <title
+         id="title3441">cluster_thermocouple</title>
+      <polygon
+         fill="#8fe4ce"
+         stroke="#8fe4ce"
+         points="2554.5,-3355 2554.5,-3487 3492,-3487 3492,-3355 2554.5,-3355"
+         id="polygon3443" />
+      <text
+         text-anchor="middle"
+         x="3023.25"
+         y="-3470.2"
+         font-family="Times New Roman,serif"
+         font-size="16.00"
+         id="text3445">🧠 Jeffersonian Thermocouple</text>
+    </g>
+    <g
+       id="clust4"
+       class="cluster">
+      <title
+         id="title3448">cluster_machinery</title>
+      <polygon
+         fill="lightgrey"
+         stroke="lightgrey"
+         points="3785.5,-3275 3785.5,-3515 3955.5,-3515 3955.5,-3275 3785.5,-3275"
+         id="polygon3450" />
+      <text
+         text-anchor="middle"
+         x="3870.5"
+         y="-3498.2"
+         font-family="Times New Roman,serif"
+         font-size="16.00"
+         id="text3452">⚙️ Systemic Machinery</text>
+    </g>
+    <g
+       id="clust6"
+       class="cluster">
+      <title
+         id="title3455">cluster_inhumanity</title>
+      <polygon
+         fill="lightcoral"
+         stroke="lightcoral"
+         points="3316.5,-3495 3316.5,-3735 3511.5,-3735 3511.5,-3495 3316.5,-3495"
+         id="polygon3457" />
+      <text
+         text-anchor="middle"
+         x="3414"
+         y="-3718.2"
+         font-family="Times New Roman,serif"
+         font-size="16.00"
+         id="text3459">💔 Man's Inhumanity to Man</text>
+    </g>
+    <g
+       id="clust5"
+       class="cluster">
+      <title
+         id="title3462">cluster_smoke_mirrors</title>
+      <polygon
+         fill="#eedd82"
+         stroke="#eedd82"
+         points="2956,-3053 2956,-3347 3195,-3347 3195,-3053 2956,-3053"
+         id="polygon3464" />
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-3330.2"
+         font-family="Times New Roman,serif"
+         font-size="16.00"
+         id="text3466">🎩 Smoke and Mirrors</text>
+    </g>
+    <g
+       id="clust7"
+       class="cluster">
+      <title
+         id="title3469">cluster_reciter</title>
+      <polygon
+         fill="lightpink"
+         stroke="lightpink"
+         points="311.5,-3601 311.5,-3679 3158,-3679 3158,-3601 311.5,-3601"
+         id="polygon3471" />
+      <text
+         text-anchor="middle"
+         x="1734.75"
+         y="-3662.2"
+         font-family="Times New Roman,serif"
+         font-size="16.00"
+         id="text3473">📉 Reciter Scale of Degradation</text>
+    </g>
+    <g
+       id="clust8"
+       class="cluster">
+      <title
+         id="title3476">cluster_RingHierarchy</title>
+      <polygon
+         fill="lightgray"
+         stroke="lightgray"
+         points="1328.5,-1094 1328.5,-1532 2862,-1532 2862,-1094 1328.5,-1094"
+         id="polygon3478" />
+      <text
+         text-anchor="middle"
+         x="2095.25"
+         y="-1515.2"
+         font-family="Times New Roman,serif"
+         font-size="16.00"
+         id="text3480">Rings of Hierarchical Control</text>
+    </g>
+    <g
+       id="clust9"
+       class="cluster">
+      <title
+         id="title3483">cluster_AcousticControl</title>
+      <polygon
+         fill="lightcyan"
+         stroke="lightcyan"
+         points="1262.5,-900 1262.5,-1086 1847.5,-1086 1847.5,-900 1262.5,-900"
+         id="polygon3485" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-1069.2"
+         font-family="Times New Roman,serif"
+         font-size="16.00"
+         id="text3487">Acoustic Surveillance</text>
+    </g>
+    <!-- n102 -->
+    <g
+       id="node1"
+       class="node">
+      <title
+         id="title3490">n102</title>
+      <polygon
+         fill="lightgrey"
+         stroke="none"
+         points="602.5,-1841 185.5,-1841 185.5,-1275 602.5,-1275 602.5,-1841"
+         id="polygon3492" />
+      <image
+         xlink:href="Storyboard%20(27)%20Copilot_20250701_162611.png"
+         width="397px"
+         height="554px"
+         preserveAspectRatio="xMinYMin meet"
+         x="196"
+         y="-1835"
+         id="image3494" />
+    </g>
+    <!-- i1 -->
+    <!-- n102&#45;&gt;i1 -->
+    <g
+       id="edge60"
+       class="edge"
+       transform="matrix(0.00886533,-1.6627694,-0.60564889,0.79573201,-565.12322,1657.6918)">
+      <title
+         id="title3497">n102-&gt;i1</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1347.652,-1568.5315 123.137,6.9315 13.3685,0.7528 46.279,2.605"
+         id="path3499"
+         sodipodi:nodetypes="cccc"
+         style="stroke-width:1.68687" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1530.88,-1554.5 1530.88,-1561.5 1540.88,-1558 "
+         id="polygon3501"
+         transform="matrix(1.3893773,0.24531304,1.3221301,2.7291132,1463.2277,2318.1568)"
+         inkscape:transform-center-x="2.8329255"
+         inkscape:transform-center-y="-3.3024659" />
+    </g>
+    <!-- Reason -->
+    <g
+       id="node2"
+       class="node">
+      <title
+         id="title3504">Reason</title>
+      <polygon
+         fill="gold"
+         stroke="black"
+         points="1588,-3378 1522,-3378 1522,-3342 1588,-3342 1588,-3378"
+         id="polygon3506" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-3356.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3508">Reason</text>
+    </g>
+    <!-- Sensor -->
+    <g
+       id="node10"
+       class="node">
+      <title
+         id="title3511">Sensor</title>
+      <polygon
+         fill="palegreen"
+         stroke="black"
+         points="2705,-3399 2607,-3399 2607,-3363 2705,-3363 2705,-3399"
+         id="polygon3513" />
+      <text
+         text-anchor="middle"
+         x="2656"
+         y="-3377.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3515">Truth Sensor</text>
+    </g>
+    <!-- Reason&#45;&gt;Sensor -->
+    <g
+       id="edge1"
+       class="edge">
+      <title
+         id="title3518">Reason-&gt;Sensor</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M1588,-3360.61C1740.77,-3363.53 2396.76,-3376.07 2596.84,-3379.89"
+         id="path3520" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2596.79,-3383.39 2606.85,-3380.08 2596.92,-3376.39 2596.79,-3383.39"
+         id="polygon3522" />
+    </g>
+    <!-- Liberty -->
+    <g
+       id="node3"
+       class="node">
+      <title
+         id="title3525">Liberty</title>
+      <polygon
+         fill="gold"
+         stroke="black"
+         points="1584.5,-3324 1525.5,-3324 1525.5,-3288 1584.5,-3288 1584.5,-3324"
+         id="polygon3527" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-3302.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3529">Liberty</text>
+    </g>
+    <!-- Liberty&#45;&gt;Sensor -->
+    <g
+       id="edge2"
+       class="edge">
+      <title
+         id="title3532">Liberty-&gt;Sensor</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M1584.54,-3306.11C1682.36,-3306.71 2013.01,-3310.37 2285,-3333 2395.59,-3342.2 2523.87,-3360.59 2596.64,-3371.74"
+         id="path3534" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2596.54,-3375.27 2606.96,-3373.33 2597.61,-3368.35 2596.54,-3375.27"
+         id="polygon3536" />
+    </g>
+    <!-- Transparency -->
+    <g
+       id="node4"
+       class="node">
+      <title
+         id="title3539">Transparency</title>
+      <polygon
+         fill="gold"
+         stroke="black"
+         points="1606.5,-3270 1503.5,-3270 1503.5,-3234 1606.5,-3234 1606.5,-3270"
+         id="polygon3541" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-3248.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3543">Transparency</text>
+    </g>
+    <!-- Transparency&#45;&gt;Sensor -->
+    <g
+       id="edge3"
+       class="edge">
+      <title
+         id="title3546">Transparency-&gt;Sensor</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M1606.76,-3249.86C1725.97,-3245.71 2032.78,-3240.11 2285,-3279 2397.58,-3296.36 2524.81,-3336.02 2596.91,-3360.46"
+         id="path3548" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2596.11,-3363.89 2606.71,-3363.8 2598.37,-3357.26 2596.11,-3363.89"
+         id="polygon3550" />
+    </g>
+    <!-- CivicCourage -->
+    <g
+       id="node5"
+       class="node">
+      <title
+         id="title3553">CivicCourage</title>
+      <polygon
+         fill="gold"
+         stroke="black"
+         points="1608,-3216 1502,-3216 1502,-3180 1608,-3180 1608,-3216"
+         id="polygon3555" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-3194.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3557">Civic Courage</text>
+    </g>
+    <!-- CivicCourage&#45;&gt;Sensor -->
+    <g
+       id="edge4"
+       class="edge">
+      <title
+         id="title3560">CivicCourage-&gt;Sensor</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M1608.3,-3194.66C1728.86,-3188.09 2035.14,-3177.95 2285,-3225 2356.69,-3238.5 2372.5,-3251.33 2440,-3279 2500.19,-3303.68 2567.67,-3336.58 2610.7,-3358.26"
+         id="path3562" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2609.26,-3361.46 2619.77,-3362.84 2612.42,-3355.21 2609.26,-3361.46"
+         id="polygon3564" />
+    </g>
+    <!-- Skepticism -->
+    <g
+       id="node6"
+       class="node">
+      <title
+         id="title3567">Skepticism</title>
+      <polygon
+         fill="lightcyan"
+         stroke="black"
+         points="467.5,-3532 320.5,-3532 320.5,-3496 467.5,-3496 467.5,-3532"
+         id="polygon3569" />
+      <text
+         text-anchor="middle"
+         x="394"
+         y="-3510.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3571">Skepticism of Power</text>
+    </g>
+    <!-- FailSafe -->
+    <g
+       id="node13"
+       class="node">
+      <title
+         id="title3574">FailSafe</title>
+      <polygon
+         fill="palegreen"
+         stroke="black"
+         points="2749.5,-3453 2562.5,-3453 2562.5,-3417 2749.5,-3417 2749.5,-3453"
+         id="polygon3576" />
+      <text
+         text-anchor="middle"
+         x="2656"
+         y="-3431.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3578">Failsafe Against Deception</text>
+    </g>
+    <!-- Skepticism&#45;&gt;FailSafe -->
+    <g
+       id="edge11"
+       class="edge">
+      <title
+         id="title3581">Skepticism-&gt;FailSafe</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M467.563,-3513.17C719.114,-3510.08 1577.05,-3497.97 2285,-3469 2353.95,-3466.18 2371.26,-3465.99 2440,-3460 2476.54,-3456.82 2516.48,-3452.43 2551.9,-3448.21"
+         id="path3583" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2552.74,-3451.64 2562.26,-3446.97 2551.91,-3444.69 2552.74,-3451.64"
+         id="polygon3585" />
+    </g>
+    <!-- Decentralization -->
+    <g
+       id="node7"
+       class="node">
+      <title
+         id="title3588">Decentralization</title>
+      <polygon
+         fill="lightcyan"
+         stroke="black"
+         points="486.5,-3478 301.5,-3478 301.5,-3442 486.5,-3442 486.5,-3478"
+         id="polygon3590" />
+      <text
+         text-anchor="middle"
+         x="394"
+         y="-3456.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3592">Decentralized Governance</text>
+    </g>
+    <!-- Decentralization&#45;&gt;FailSafe -->
+    <g
+       id="edge12"
+       class="edge">
+      <title
+         id="title3595">Decentralization-&gt;FailSafe</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M486.74,-3460.39C774.611,-3461.39 1685.76,-3462.73 2440,-3444 2476.54,-3443.09 2516.56,-3441.56 2552.05,-3440.02"
+         id="path3597" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2552.59,-3443.5 2562.42,-3439.57 2552.28,-3436.51 2552.59,-3443.5"
+         id="polygon3599" />
+    </g>
+    <!-- Enlightenment -->
+    <g
+       id="node8"
+       class="node">
+      <title
+         id="title3602">Enlightenment</title>
+      <polygon
+         fill="lightcyan"
+         stroke="black"
+         points="471,-3424 317,-3424 317,-3388 471,-3388 471,-3424"
+         id="polygon3604" />
+      <text
+         text-anchor="middle"
+         x="394"
+         y="-3402.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3606">Enlightenment Values</text>
+    </g>
+    <!-- Enlightenment&#45;&gt;Sensor -->
+    <g
+       id="edge13"
+       class="edge">
+      <title
+         id="title3609">Enlightenment-&gt;Sensor</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M471.112,-3408.3C557.046,-3410.78 701.051,-3414.56 825,-3416 1473.85,-3423.54 1636.83,-3446.59 2285,-3416 2395.42,-3410.79 2523.76,-3396.88 2596.58,-3388.24"
+         id="path3611" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2597.4,-3391.67 2606.91,-3387.01 2596.57,-3384.72 2597.4,-3391.67"
+         id="polygon3613" />
+    </g>
+    <!-- FreePress -->
+    <g
+       id="node9"
+       class="node">
+      <title
+         id="title3616">FreePress</title>
+      <polygon
+         fill="lightcyan"
+         stroke="black"
+         points="438,-3370 350,-3370 350,-3334 438,-3334 438,-3370"
+         id="polygon3618" />
+      <text
+         text-anchor="middle"
+         x="394"
+         y="-3348.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3620">Free Press</text>
+    </g>
+    <!-- FreePress&#45;&gt;Transparency -->
+    <g
+       id="edge14"
+       class="edge">
+      <title
+         id="title3623">FreePress-&gt;Transparency</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M438.12,-3359.71C513.811,-3371.02 673.409,-3384.8 788,-3325 811.26,-3312.86 801.551,-3290.77 825,-3279 941.18,-3220.68 1339.8,-3238.53 1493.18,-3247.89"
+         id="path3625" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="1493.16,-3251.4 1503.36,-3248.52 1493.59,-3244.41 1493.16,-3251.4"
+         id="polygon3627" />
+    </g>
+    <!-- Voltage -->
+    <g
+       id="node11"
+       class="node">
+      <title
+         id="title3630">Voltage</title>
+      <polygon
+         fill="palegreen"
+         stroke="black"
+         points="3125.5,-3399 3025.5,-3399 3025.5,-3363 3125.5,-3363 3125.5,-3399"
+         id="polygon3632" />
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-3377.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3634">Civic Voltage</text>
+    </g>
+    <!-- Sensor&#45;&gt;Voltage -->
+    <g
+       id="edge5"
+       class="edge">
+      <title
+         id="title3637">Sensor-&gt;Voltage</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M2705.3,-3381C2782.16,-3381 2932.09,-3381 3015.29,-3381"
+         id="path3639" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3015.34,-3384.5 3025.34,-3381 3015.34,-3377.5 3015.34,-3384.5"
+         id="polygon3641" />
+    </g>
+    <!-- GateControl -->
+    <g
+       id="node12"
+       class="node">
+      <title
+         id="title3644">GateControl</title>
+      <polygon
+         fill="palegreen"
+         stroke="black"
+         points="3484,-3399 3344,-3399 3344,-3363 3484,-3363 3484,-3399"
+         id="polygon3646" />
+      <text
+         text-anchor="middle"
+         x="3414"
+         y="-3377.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3648">Gate Control Signal</text>
+    </g>
+    <!-- Voltage&#45;&gt;GateControl -->
+    <g
+       id="edge6"
+       class="edge">
+      <title
+         id="title3651">Voltage-&gt;GateControl</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3125.79,-3381C3180.37,-3381 3269.16,-3381 3333.58,-3381"
+         id="path3653" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3333.7,-3384.5 3343.7,-3381 3333.7,-3377.5 3333.7,-3384.5"
+         id="polygon3655" />
+    </g>
+    <!-- Bureaucracy -->
+    <g
+       id="node14"
+       class="node">
+      <title
+         id="title3658">Bureaucracy</title>
+      <polygon
+         fill="lightyellow"
+         stroke="black"
+         points="3935.5,-3481 3805.5,-3481 3805.5,-3445 3935.5,-3445 3935.5,-3481"
+         id="polygon3660" />
+      <text
+         text-anchor="middle"
+         x="3870.5"
+         y="-3459.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3662">Bureaucratic Gate</text>
+    </g>
+    <!-- GateControl&#45;&gt;Bureaucracy -->
+    <g
+       id="edge7"
+       class="edge">
+      <title
+         id="title3665">GateControl-&gt;Bureaucracy</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3484.1,-3395.98C3504.93,-3400.35 3527.86,-3405.01 3549,-3409 3633.08,-3424.86 3730,-3440.88 3795.06,-3451.3"
+         id="path3667" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3794.79,-3454.8 3805.22,-3452.93 3795.89,-3447.89 3794.79,-3454.8"
+         id="polygon3669" />
+      <text
+         text-anchor="middle"
+         x="3643.5"
+         y="-3444.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text3671">Opens gate only when truth burns</text>
+    </g>
+    <!-- PolicyEngine -->
+    <g
+       id="node15"
+       class="node">
+      <title
+         id="title3674">PolicyEngine</title>
+      <polygon
+         fill="lightyellow"
+         stroke="black"
+         points="3922,-3373 3819,-3373 3819,-3337 3922,-3337 3922,-3373"
+         id="polygon3676" />
+      <text
+         text-anchor="middle"
+         x="3870.5"
+         y="-3351.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3678">Policy Engine</text>
+    </g>
+    <!-- GateControl&#45;&gt;PolicyEngine -->
+    <g
+       id="edge8"
+       class="edge">
+      <title
+         id="title3681">GateControl-&gt;PolicyEngine</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3484.03,-3377.05C3572.47,-3371.99 3724.38,-3363.3 3808.68,-3358.48"
+         id="path3683" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3809.08,-3361.96 3818.86,-3357.9 3808.68,-3354.97 3809.08,-3361.96"
+         id="polygon3685" />
+    </g>
+    <!-- LegalSystem -->
+    <g
+       id="node16"
+       class="node">
+      <title
+         id="title3688">LegalSystem</title>
+      <polygon
+         fill="lightyellow"
+         stroke="black"
+         points="3922.5,-3319 3818.5,-3319 3818.5,-3283 3922.5,-3283 3922.5,-3319"
+         id="polygon3690" />
+      <text
+         text-anchor="middle"
+         x="3870.5"
+         y="-3297.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3692">Legal System</text>
+    </g>
+    <!-- GateControl&#45;&gt;LegalSystem -->
+    <g
+       id="edge9"
+       class="edge">
+      <title
+         id="title3695">GateControl-&gt;LegalSystem</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3484.03,-3368.85C3572.32,-3353.31 3723.87,-3326.63 3808.25,-3311.78"
+         id="path3697" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3808.96,-3315.21 3818.2,-3310.03 3807.74,-3308.32 3808.96,-3315.21"
+         id="polygon3699" />
+    </g>
+    <!-- PublicDiscourse -->
+    <g
+       id="node17"
+       class="node">
+      <title
+         id="title3702">PublicDiscourse</title>
+      <polygon
+         fill="lightyellow"
+         stroke="black"
+         points="3932.5,-3427 3808.5,-3427 3808.5,-3391 3932.5,-3391 3932.5,-3427"
+         id="polygon3704" />
+      <text
+         text-anchor="middle"
+         x="3870.5"
+         y="-3405.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3706">Public Discourse</text>
+    </g>
+    <!-- GateControl&#45;&gt;PublicDiscourse -->
+    <g
+       id="edge10"
+       class="edge">
+      <title
+         id="title3709">GateControl-&gt;PublicDiscourse</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3484.03,-3385.25C3568.86,-3390.48 3712.09,-3399.3 3798.03,-3404.6"
+         id="path3711" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3798.02,-3408.1 3808.22,-3405.22 3798.45,-3401.12 3798.02,-3408.1"
+         id="polygon3713" />
+    </g>
+    <!-- Illusion -->
+    <g
+       id="node18"
+       class="node">
+      <title
+         id="title3716">Illusion</title>
+      <polygon
+         fill="lemonchiffon"
+         stroke="black"
+         points="3150,-3313 3001,-3313 3001,-3277 3150,-3277 3150,-3313"
+         id="polygon3718" />
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-3291.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3720">Illusion of Legitimacy</text>
+    </g>
+    <!-- FailSafe&#45;&gt;Illusion -->
+    <g
+       id="edge20"
+       class="edge">
+      <title
+         id="title3723">FailSafe-&gt;Illusion</title>
+      <path
+         fill="none"
+         stroke="darkgreen"
+         stroke-dasharray="1,5"
+         d="M2749.71,-3430.95C2785.56,-3427.29 2826.44,-3420.5 2862,-3408 2908.09,-3391.8 2912.97,-3374.14 2956,-3351 2978.08,-3339.13 3003.11,-3327.1 3024.46,-3317.25"
+         id="path3725" />
+      <polygon
+         fill="darkgreen"
+         stroke="darkgreen"
+         points="3026.04,-3320.38 3033.67,-3313.03 3023.12,-3314.01 3026.04,-3320.38"
+         id="polygon3727" />
+    </g>
+    <!-- PRSpin -->
+    <g
+       id="node20"
+       class="node">
+      <title
+         id="title3730">PRSpin</title>
+      <polygon
+         fill="lemonchiffon"
+         stroke="black"
+         points="3187,-3205 2964,-3205 2964,-3169 3187,-3169 3187,-3205"
+         id="polygon3732" />
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-3183.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3734">‘Universal Safety Net’ Messaging</text>
+    </g>
+    <!-- FailSafe&#45;&gt;PRSpin -->
+    <g
+       id="edge21"
+       class="edge">
+      <title
+         id="title3737">FailSafe-&gt;PRSpin</title>
+      <path
+         fill="none"
+         stroke="darkgreen"
+         stroke-dasharray="1,5"
+         d="M2749.63,-3445.28C2789,-3444.5 2832.51,-3435.99 2862,-3408 2879.7,-3391.2 2862.11,-3376.31 2872,-3354 2893.98,-3304.43 2922.9,-3306.06 2946,-3257 2954.36,-3239.25 2942.09,-3227.84 2956,-3214 2956.95,-3213.06 2957.92,-3212.15 2958.91,-3211.26"
+         id="path3739" />
+      <polygon
+         fill="darkgreen"
+         stroke="darkgreen"
+         points="2961.19,-3213.92 2966.98,-3205.05 2956.92,-3208.38 2961.19,-3213.92"
+         id="polygon3741" />
+    </g>
+    <!-- Illusion&#45;&gt;Bureaucracy -->
+    <g
+       id="edge15"
+       class="edge">
+      <title
+         id="title3744">Illusion-&gt;Bureaucracy</title>
+      <path
+         fill="none"
+         stroke="red"
+         stroke-dasharray="5,2"
+         d="M3150.1,-3286.52C3282.08,-3275.4 3561.67,-3270.96 3738,-3405 3750.68,-3414.64 3743.21,-3426.5 3756,-3436 3767.62,-3444.64 3781.61,-3450.56 3795.73,-3454.6"
+         id="path3746" />
+      <polygon
+         fill="red"
+         stroke="red"
+         points="3794.94,-3458.01 3805.5,-3457.11 3796.68,-3451.23 3794.94,-3458.01"
+         id="polygon3748" />
+    </g>
+    <!-- Distraction -->
+    <g
+       id="node19"
+       class="node">
+      <title
+         id="title3751">Distraction</title>
+      <polygon
+         fill="lemonchiffon"
+         stroke="black"
+         points="3142,-3259 3009,-3259 3009,-3223 3142,-3223 3142,-3259"
+         id="polygon3753" />
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-3237.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3755">Distraction Tactics</text>
+    </g>
+    <!-- Distraction&#45;&gt;PublicDiscourse -->
+    <g
+       id="edge16"
+       class="edge">
+      <title
+         id="title3758">Distraction-&gt;PublicDiscourse</title>
+      <path
+         fill="none"
+         stroke="red"
+         stroke-dasharray="5,2"
+         d="M3142,-3238.6C3291.62,-3234.57 3652.14,-3233.45 3738,-3312 3761.7,-3333.68 3733.08,-3359.49 3756,-3382 3767.55,-3393.34 3782.95,-3400.23 3798.67,-3404.35"
+         id="path3760" />
+      <polygon
+         fill="red"
+         stroke="red"
+         points="3797.94,-3407.77 3808.46,-3406.57 3799.48,-3400.94 3797.94,-3407.77"
+         id="polygon3762" />
+    </g>
+    <!-- PRSpin&#45;&gt;PolicyEngine -->
+    <g
+       id="edge17"
+       class="edge">
+      <title
+         id="title3765">PRSpin-&gt;PolicyEngine</title>
+      <path
+         fill="none"
+         stroke="red"
+         stroke-dasharray="5,2"
+         d="M3187.14,-3182.5C3353.86,-3178.13 3658.5,-3180.34 3738,-3250 3764.76,-3273.45 3730.93,-3302.76 3756,-3328 3769.92,-3342.01 3789.7,-3349.27 3808.86,-3352.88"
+         id="path3767" />
+      <polygon
+         fill="red"
+         stroke="red"
+         points="3808.36,-3356.34 3818.78,-3354.45 3809.46,-3349.43 3808.36,-3356.34"
+         id="polygon3769" />
+    </g>
+    <!-- DataFog -->
+    <g
+       id="node21"
+       class="node">
+      <title
+         id="title3772">DataFog</title>
+      <polygon
+         fill="lemonchiffon"
+         stroke="black"
+         points="3138.5,-3151 3012.5,-3151 3012.5,-3115 3138.5,-3115 3138.5,-3151"
+         id="polygon3774" />
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-3129.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3776">Data Obfuscation</text>
+    </g>
+    <!-- DataFog&#45;&gt;LegalSystem -->
+    <g
+       id="edge18"
+       class="edge">
+      <title
+         id="title3779">DataFog-&gt;LegalSystem</title>
+      <path
+         fill="none"
+         stroke="red"
+         stroke-dasharray="5,2"
+         d="M3138.67,-3126.44C3259.41,-3116.25 3531.85,-3105.77 3738,-3191 3782.62,-3209.45 3823.49,-3248.68 3847.45,-3274.96"
+         id="path3781" />
+      <polygon
+         fill="red"
+         stroke="red"
+         points="3845.06,-3277.53 3854.33,-3282.66 3850.28,-3272.87 3845.06,-3277.53"
+         id="polygon3783" />
+    </g>
+    <!-- HistoricalAmnesia -->
+    <g
+       id="node22"
+       class="node">
+      <title
+         id="title3786">HistoricalAmnesia</title>
+      <polygon
+         fill="lemonchiffon"
+         stroke="black"
+         points="3181.5,-3097 2969.5,-3097 2969.5,-3061 3181.5,-3061 3181.5,-3097"
+         id="polygon3788" />
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-3075.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3790">Pre-1990: No Standing Charge</text>
+    </g>
+    <!-- HistoricalAmnesia&#45;&gt;Transparency -->
+    <g
+       id="edge19"
+       class="edge">
+      <title
+         id="title3793">HistoricalAmnesia-&gt;Transparency</title>
+      <path
+         fill="none"
+         stroke="red"
+         stroke-dasharray="5,2"
+         d="M2986.09,-3097.04C2809.94,-3132.69 2420.52,-3210.04 2285,-3225 2038.28,-3252.23 1742.05,-3253.59 1616.72,-3252.73"
+         id="path3795" />
+      <polygon
+         fill="red"
+         stroke="red"
+         points="1616.59,-3249.23 1606.56,-3252.66 1616.54,-3256.23 1616.59,-3249.23"
+         id="polygon3797" />
+    </g>
+    <!-- LowUsagePunishment -->
+    <g
+       id="node23"
+       class="node">
+      <title
+         id="title3800">LowUsagePunishment</title>
+      <polygon
+         fill="mistyrose"
+         stroke="black"
+         points="3491,-3701 3337,-3701 3337,-3665 3491,-3665 3491,-3701"
+         id="polygon3802" />
+      <text
+         text-anchor="middle"
+         x="3414"
+         y="-3679.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3804">Low Usage Penalized</text>
+    </g>
+    <!-- LowUsagePunishment&#45;&gt;Bureaucracy -->
+    <g
+       id="edge22"
+       class="edge">
+      <title
+         id="title3807">LowUsagePunishment-&gt;Bureaucracy</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3491.02,-3684.66C3559.98,-3682.88 3662.16,-3671.77 3738,-3627 3793.82,-3594.04 3835.49,-3527.87 3855.77,-3490.43"
+         id="path3809" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3859.11,-3491.61 3860.69,-3481.13 3852.92,-3488.34 3859.11,-3491.61"
+         id="polygon3811" />
+    </g>
+    <!-- ElderlyImpact -->
+    <g
+       id="node24"
+       class="node">
+      <title
+         id="title3814">ElderlyImpact</title>
+      <polygon
+         fill="mistyrose"
+         stroke="black"
+         points="3497.5,-3647 3330.5,-3647 3330.5,-3611 3497.5,-3611 3497.5,-3647"
+         id="polygon3816" />
+      <text
+         text-anchor="middle"
+         x="3414"
+         y="-3625.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3818">Elderly Pay Year-Round</text>
+    </g>
+    <!-- ElderlyImpact&#45;&gt;PublicDiscourse -->
+    <g
+       id="edge23"
+       class="edge">
+      <title
+         id="title3821">ElderlyImpact-&gt;PublicDiscourse</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3497.64,-3625.55C3582.21,-3620.18 3705.68,-3606.67 3738,-3573 3780.53,-3528.69 3714.87,-3481.6 3756,-3436 3767.01,-3423.79 3782.45,-3416.61 3798.4,-3412.5"
+         id="path3823" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3799.34,-3415.88 3808.36,-3410.32 3797.84,-3409.04 3799.34,-3415.88"
+         id="polygon3825" />
+    </g>
+    <!-- EnergyPoverty -->
+    <g
+       id="node25"
+       class="node">
+      <title
+         id="title3828">EnergyPoverty</title>
+      <polygon
+         fill="mistyrose"
+         stroke="black"
+         points="3470.5,-3593 3357.5,-3593 3357.5,-3557 3470.5,-3557 3470.5,-3593"
+         id="polygon3830" />
+      <text
+         text-anchor="middle"
+         x="3414"
+         y="-3571.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3832">Energy Poverty</text>
+    </g>
+    <!-- EnergyPoverty&#45;&gt;PolicyEngine -->
+    <g
+       id="edge24"
+       class="edge">
+      <title
+         id="title3835">EnergyPoverty-&gt;PolicyEngine</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3470.69,-3573.07C3553.2,-3568.97 3702.04,-3556.47 3738,-3519 3780.53,-3474.69 3714.87,-3427.6 3756,-3382 3769.4,-3367.14 3789.36,-3359.73 3808.82,-3356.23"
+         id="path3837" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3809.53,-3359.66 3818.91,-3354.74 3808.51,-3352.74 3809.53,-3359.66"
+         id="polygon3839" />
+    </g>
+    <!-- DailyChargeBurden -->
+    <g
+       id="node26"
+       class="node">
+      <title
+         id="title3842">DailyChargeBurden</title>
+      <polygon
+         fill="mistyrose"
+         stroke="black"
+         points="3503.5,-3539 3324.5,-3539 3324.5,-3503 3503.5,-3503 3503.5,-3539"
+         id="polygon3844" />
+      <text
+         text-anchor="middle"
+         x="3414"
+         y="-3517.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3846">Standing Charge &gt; Usage</text>
+    </g>
+    <!-- DailyChargeBurden&#45;&gt;LegalSystem -->
+    <g
+       id="edge25"
+       class="edge">
+      <title
+         id="title3849">DailyChargeBurden-&gt;LegalSystem</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3503.54,-3515.69C3587.87,-3508.7 3706.5,-3493.15 3738,-3460 3778.78,-3417.08 3716.23,-3371.87 3756,-3328 3769.32,-3313.3 3789.06,-3305.9 3808.36,-3302.36"
+         id="path3851" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3809.01,-3305.8 3818.37,-3300.84 3807.96,-3298.88 3809.01,-3305.8"
+         id="polygon3853" />
+    </g>
+    <!-- TraitsUncommon -->
+    <g
+       id="node27"
+       class="node">
+      <title
+         id="title3856">TraitsUncommon</title>
+      <polygon
+         fill="mintcream"
+         stroke="black"
+         points="468.5,-3645 319.5,-3645 319.5,-3609 468.5,-3609 468.5,-3645"
+         id="polygon3858" />
+      <text
+         text-anchor="middle"
+         x="394"
+         y="-3623.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3860">Traits not uncommon</text>
+    </g>
+    <!-- DeviantExposed -->
+    <g
+       id="node28"
+       class="node">
+      <title
+         id="title3863">DeviantExposed</title>
+      <polygon
+         fill="lemonchiffon"
+         stroke="black"
+         points="1640.5,-3645 1469.5,-3645 1469.5,-3609 1640.5,-3609 1640.5,-3645"
+         id="polygon3865" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-3623.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3867">Deviant exposed person</text>
+    </g>
+    <!-- TraitsUncommon&#45;&gt;DeviantExposed -->
+    <g
+       id="edge26"
+       class="edge">
+      <title
+         id="title3870">TraitsUncommon-&gt;DeviantExposed</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M468.821,-3627C671.139,-3627 1234.35,-3627 1459.36,-3627"
+         id="path3872" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="1459.49,-3630.5 1469.49,-3627 1459.49,-3623.5 1459.49,-3630.5"
+         id="polygon3874" />
+    </g>
+    <!-- DisgraceHumanity -->
+    <g
+       id="node29"
+       class="node">
+      <title
+         id="title3877">DisgraceHumanity</title>
+      <polygon
+         fill="mistyrose"
+         stroke="black"
+         points="2736,-3645 2576,-3645 2576,-3609 2736,-3609 2736,-3645"
+         id="polygon3879" />
+      <text
+         text-anchor="middle"
+         x="2656"
+         y="-3623.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3881">A disgrace to humanity</text>
+    </g>
+    <!-- DeviantExposed&#45;&gt;DisgraceHumanity -->
+    <g
+       id="edge27"
+       class="edge">
+      <title
+         id="title3884">DeviantExposed-&gt;DisgraceHumanity</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M1640.87,-3627C1844.24,-3627 2357.92,-3627 2565.71,-3627"
+         id="path3886" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2565.97,-3630.5 2575.97,-3627 2565.97,-3623.5 2565.97,-3630.5"
+         id="polygon3888" />
+    </g>
+    <!-- SystemicConspirator -->
+    <g
+       id="node30"
+       class="node">
+      <title
+         id="title3891">SystemicConspirator</title>
+      <polygon
+         fill="lightcoral"
+         stroke="black"
+         points="3150,-3645 3001,-3645 3001,-3609 3150,-3609 3150,-3645"
+         id="polygon3893" />
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-3623.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3895">Systemic conspirator</text>
+    </g>
+    <!-- DisgraceHumanity&#45;&gt;SystemicConspirator -->
+    <g
+       id="edge28"
+       class="edge">
+      <title
+         id="title3898">DisgraceHumanity-&gt;SystemicConspirator</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M2736.02,-3627C2808.72,-3627 2916.2,-3627 2990.46,-3627"
+         id="path3900" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2990.71,-3630.5 3000.71,-3627 2990.71,-3623.5 2990.71,-3630.5"
+         id="polygon3902" />
+    </g>
+    <!-- n0 -->
+    <g
+       id="node31"
+       class="node">
+      <title
+         id="title3905">n0</title>
+      <ellipse
+         fill="lightgray"
+         stroke="black"
+         stroke-width="3"
+         cx="2656"
+         cy="-1300"
+         rx="198"
+         ry="198"
+         id="ellipse3907" />
+      <text
+         text-anchor="middle"
+         x="2656"
+         y="-1288.8"
+         font-family="Arial"
+         font-size="44.00"
+         id="text3909">Core Node</text>
+    </g>
+    <!-- Ring1 -->
+    <g
+       id="node32"
+       class="node">
+      <title
+         id="title3912">Ring1</title>
+      <polygon
+         fill="lightblue"
+         stroke="black"
+         points="1773.5,-1399 1336.5,-1399 1336.5,-1363 1773.5,-1363 1773.5,-1399"
+         id="polygon3914" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-1377.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3916">{Ring 1|Civilian Influence|Neighborhood Surveillance|Local Actors}</text>
+    </g>
+    <!-- Ring1&#45;&gt;n0 -->
+    <g
+       id="edge29"
+       class="edge">
+      <title
+         id="title3919">Ring1-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1773.7,-1379.07C1918.81,-1376.28 2113.63,-1369.63 2285,-1354 2337.19,-1349.24 2393.25,-1342.11 2445.55,-1334.58"
+         id="path3921" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2446.48,-1339.76 2460.56,-1332.4 2444.96,-1329.36 2446.48,-1339.76"
+         id="polygon3923" />
+    </g>
+    <!-- Ring2 -->
+    <g
+       id="node33"
+       class="node">
+      <title
+         id="title3926">Ring2</title>
+      <polygon
+         fill="#8fe4ce"
+         stroke="black"
+         points="1749.5,-1345 1360.5,-1345 1360.5,-1309 1749.5,-1309 1749.5,-1345"
+         id="polygon3928" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-1323.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3930">{Ring 2|Private Security|Contractors|Comms Infrastructure}</text>
+    </g>
+    <!-- Ring2&#45;&gt;n0 -->
+    <g
+       id="edge30"
+       class="edge">
+      <title
+         id="title3933">Ring2-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1749.63,-1322.24C1943.82,-1317.47 2242.04,-1310.15 2442.61,-1305.22"
+         id="path3935" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2442.92,-1310.46 2457.78,-1304.85 2442.66,-1299.97 2442.92,-1310.46"
+         id="polygon3937" />
+    </g>
+    <!-- Ring3 -->
+    <g
+       id="node34"
+       class="node">
+      <title
+         id="title3940">Ring3</title>
+      <polygon
+         fill="lightyellow"
+         stroke="black"
+         points="1736.5,-1291 1373.5,-1291 1373.5,-1255 1736.5,-1255 1736.5,-1291"
+         id="polygon3942" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-1269.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3944">{Ring 3|Cybersecurity|Surveillance|Military Intelligence}</text>
+    </g>
+    <!-- Ring3&#45;&gt;n0 -->
+    <g
+       id="edge31"
+       class="edge">
+      <title
+         id="title3947">Ring3-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1736.55,-1277.44C1930.28,-1282.2 2237.72,-1289.75 2442.85,-1294.79"
+         id="path3949" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2442.93,-1300.04 2458.06,-1295.16 2443.19,-1289.54 2442.93,-1300.04"
+         id="polygon3951" />
+    </g>
+    <!-- Ring4 -->
+    <g
+       id="node35"
+       class="node">
+      <title
+         id="title3954">Ring4</title>
+      <polygon
+         fill="lightpink"
+         stroke="black"
+         points="1741,-1237 1369,-1237 1369,-1201 1741,-1201 1741,-1237"
+         id="polygon3956" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-1215.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3958">{Ring 4|Strategic Command|Agencies|Global Oversight}</text>
+    </g>
+    <!-- Ring4&#45;&gt;n0 -->
+    <g
+       id="edge32"
+       class="edge">
+      <title
+         id="title3961">Ring4-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1741.37,-1220.35C1888.92,-1222.76 2100.54,-1229.17 2285,-1246 2337.19,-1250.76 2393.25,-1257.89 2445.55,-1265.42"
+         id="path3963" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2444.96,-1270.64 2460.56,-1267.6 2446.48,-1260.24 2444.96,-1270.64"
+         id="polygon3965" />
+    </g>
+    <!-- LinearUltrasonic -->
+    <g
+       id="node36"
+       class="node">
+      <title
+         id="title3968">LinearUltrasonic</title>
+      <polygon
+         fill="lightgray"
+         stroke="black"
+         points="1839.5,-1052 1270.5,-1052 1270.5,-1016 1839.5,-1016 1839.5,-1052"
+         id="polygon3970" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-1030.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3972">{Linear Ultrasonic Properties|Non-linear interactions|Parametric arrays|Directional focus}</text>
+    </g>
+    <!-- LinearUltrasonic&#45;&gt;n0 -->
+    <g
+       id="edge33"
+       class="edge">
+      <title
+         id="title3975">LinearUltrasonic-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="dimgray"
+         stroke-width="2"
+         d="M1839.56,-1027.17C1976.73,-1031.03 2142.21,-1046.38 2285,-1090 2352.13,-1110.5 2420.4,-1144.72 2479.72,-1179.65"
+         id="path3977" />
+      <polygon
+         fill="dimgray"
+         stroke="dimgray"
+         stroke-width="2"
+         points="2477.06,-1184.17 2492.63,-1187.34 2482.43,-1175.15 2477.06,-1184.17"
+         id="polygon3979" />
+    </g>
+    <!-- StreetAcoustics -->
+    <g
+       id="node37"
+       class="node">
+      <title
+         id="title3982">StreetAcoustics</title>
+      <polygon
+         fill="lightcoral"
+         stroke="black"
+         points="1747.5,-998 1362.5,-998 1362.5,-962 1747.5,-962 1747.5,-998"
+         id="polygon3984" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-976.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text3986">{Urban Soundscape|Street Sounds|Neighbor Wall Bleeds}</text>
+    </g>
+    <!-- StreetAcoustics&#45;&gt;n0 -->
+    <g
+       id="edge34"
+       class="edge">
+      <title
+         id="title3989">StreetAcoustics-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="dimgray"
+         stroke-width="2"
+         d="M1747.84,-962.815C1897.1,-955.202 2107.92,-957.18 2285,-1007 2369.83,-1030.86 2448.68,-1086.39 2511.61,-1142.75"
+         id="path3991" />
+      <polygon
+         fill="dimgray"
+         stroke="dimgray"
+         stroke-width="2"
+         points="2508.14,-1146.7 2522.77,-1152.91 2515.21,-1138.93 2508.14,-1146.7"
+         id="polygon3993" />
+    </g>
+    <!-- SonicSurveillance -->
+    <g
+       id="node38"
+       class="node">
+      <title
+         id="title3996">SonicSurveillance</title>
+      <polygon
+         fill="#eedd82"
+         stroke="black"
+         points="1763,-944 1347,-944 1347,-908 1763,-908 1763,-944"
+         id="polygon3998" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-922.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4000">{Sonic Surveillance|Cohort Operations|Vectorized Observation}</text>
+    </g>
+    <!-- SonicSurveillance&#45;&gt;n0 -->
+    <g
+       id="edge35"
+       class="edge">
+      <title
+         id="title4003">SonicSurveillance-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="dimgray"
+         stroke-width="2"
+         d="M1763.09,-916.158C1910.14,-913.406 2111.45,-918.264 2285,-953 2357.12,-967.436 2381.21,-966.802 2440,-1011 2479.07,-1040.37 2514.33,-1078.75 2544.45,-1117.9"
+         id="path4005" />
+      <polygon
+         fill="dimgray"
+         stroke="dimgray"
+         stroke-width="2"
+         points="2540.41,-1121.25 2553.64,-1130.06 2548.79,-1114.93 2540.41,-1121.25"
+         id="polygon4007" />
+    </g>
+    <!-- n103 -->
+    <g
+       id="node39"
+       class="node">
+      <title
+         id="title4010">n103</title>
+      <polygon
+         fill="lightgrey"
+         stroke="none"
+         points="788,-3316 -5.68434e-014,-3316 -5.68434e-014,-2152 788,-2152 788,-3316"
+         id="polygon4012" />
+      <image
+         xlink:href="Storyboard%20Copilot_20250701_162611.png"
+         width="768px"
+         height="1152px"
+         preserveAspectRatio="xMinYMin meet"
+         x="10"
+         y="-3310"
+         id="image4014" />
+    </g>
+    <!-- i0 -->
+    <!-- n103&#45;&gt;i0 -->
+    <g
+       id="edge62"
+       class="edge"
+       transform="rotate(18.342668,881.64252,-2983.1979)">
+      <title
+         id="title4017">n103-&gt;i0</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 852.77119,-2730.9604 1530.65,-2734"
+         id="path4019"
+         sodipodi:nodetypes="cc" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1530.77,-2730.5 1530.77,-2737.5 1540.77,-2734 "
+         id="polygon4021" />
+    </g>
+    <!-- CognitiveEncoder -->
+    <g
+       id="node40"
+       class="node">
+      <title
+         id="title4024">CognitiveEncoder</title>
+      <polygon
+         fill="lightgray"
+         stroke="black"
+         points="2786,-64 2526,-64 2526,-26 2786,-26 2786,-64"
+         id="polygon4026" />
+      <text
+         text-anchor="middle"
+         x="2656"
+         y="-48.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4028">🧠 Cognitive Encoder</text>
+      <text
+         text-anchor="middle"
+         x="2656"
+         y="-33.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4030">Neural Activity → Ultrasonic Modulation</text>
+    </g>
+    <!-- PrivacyDampener -->
+    <g
+       id="node42"
+       class="node">
+      <title
+         id="title4033">PrivacyDampener</title>
+      <polygon
+         fill="lightgray"
+         stroke="black"
+         points="3184.5,-64 2966.5,-64 2966.5,-26 3184.5,-26 3184.5,-64"
+         id="polygon4035" />
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-48.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4037">🛡️ Privacy Dampener</text>
+      <text
+         text-anchor="middle"
+         x="3075.5"
+         y="-33.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4039">Selective Inhibition + Encryption</text>
+    </g>
+    <!-- CognitiveEncoder&#45;&gt;PrivacyDampener -->
+    <g
+       id="edge36"
+       class="edge">
+      <title
+         id="title4042">CognitiveEncoder-&gt;PrivacyDampener</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M2786.24,-45C2840.46,-45 2903.1,-45 2956.1,-45"
+         id="path4044" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2956.22,-48.5001 2966.22,-45 2956.22,-41.5001 2956.22,-48.5001"
+         id="polygon4046" />
+      <text
+         text-anchor="middle"
+         x="2909"
+         y="-48.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text4048">neural stream</text>
+    </g>
+    <!-- BoneTransmitter -->
+    <g
+       id="node41"
+       class="node">
+      <title
+         id="title4051">BoneTransmitter</title>
+      <polygon
+         fill="#eedd82"
+         stroke="black"
+         points="3531,-64 3297,-64 3297,-26 3531,-26 3531,-64"
+         id="polygon4053" />
+      <text
+         text-anchor="middle"
+         x="3414"
+         y="-48.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4055">🦴 Bone-Conducted Transmitter</text>
+      <text
+         text-anchor="middle"
+         x="3414"
+         y="-33.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4057">Skull Emission of Ultrasonic Signal</text>
+    </g>
+    <!-- AmbientField -->
+    <g
+       id="node44"
+       class="node">
+      <title
+         id="title4060">AmbientField</title>
+      <polygon
+         fill="lightgrey"
+         stroke="black"
+         points="3985,-64 3756,-64 3756,-26 3985,-26 3985,-64"
+         id="polygon4062" />
+      <text
+         text-anchor="middle"
+         x="3870.5"
+         y="-48.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4064">🌐 Ambient Transmission Field</text>
+      <text
+         text-anchor="middle"
+         x="3870.5"
+         y="-33.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4066">Real-Time Ultrasonic Propagation</text>
+    </g>
+    <!-- BoneTransmitter&#45;&gt;AmbientField -->
+    <g
+       id="edge38"
+       class="edge">
+      <title
+         id="title4069">BoneTransmitter-&gt;AmbientField</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3531.16,-45C3596.83,-45 3678.91,-45 3745.78,-45"
+         id="path4071" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3745.96,-48.5001 3755.96,-45 3745.96,-41.5001 3745.96,-48.5001"
+         id="polygon4073" />
+      <text
+         text-anchor="middle"
+         x="3643.5"
+         y="-48.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text4075">ultrasonic emission</text>
+    </g>
+    <!-- PrivacyDampener&#45;&gt;BoneTransmitter -->
+    <g
+       id="edge37"
+       class="edge">
+      <title
+         id="title4078">PrivacyDampener-&gt;BoneTransmitter</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3184.82,-45C3217.21,-45 3253,-45 3286.45,-45"
+         id="path4080" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="3286.75,-48.5001 3296.75,-45 3286.75,-41.5001 3286.75,-48.5001"
+         id="polygon4082" />
+      <text
+         text-anchor="middle"
+         x="3242"
+         y="-48.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text4084">filtered signal</text>
+    </g>
+    <!-- FeedbackLoop -->
+    <g
+       id="node43"
+       class="node">
+      <title
+         id="title4087">FeedbackLoop</title>
+      <polygon
+         fill="lightgray"
+         stroke="black"
+         points="1712,-64 1398,-64 1398,-26 1712,-26 1712,-64"
+         id="polygon4089" />
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-48.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4091">🔁 Neural Feedback Loop</text>
+      <text
+         text-anchor="middle"
+         x="1555"
+         y="-33.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4093">Recursive Modulation Based on Receiver State</text>
+    </g>
+    <!-- FeedbackLoop&#45;&gt;n0 -->
+    <g
+       id="edge57"
+       class="edge">
+      <title
+         id="title4096">FeedbackLoop-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1712.25,-41.3768C1860.47,-40.2066 2089.03,-44.2896 2285,-73 2355.39,-83.3133 2391.57,-60.8811 2440,-113 2568.63,-251.427 2622.74,-784.496 2643.48,-1087.06"
+         id="path4098" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2638.26,-1087.57 2644.51,-1102.19 2648.73,-1086.87 2638.26,-1087.57"
+         id="polygon4100" />
+    </g>
+    <!-- FeedbackLoop&#45;&gt;CognitiveEncoder -->
+    <g
+       id="edge39"
+       class="edge">
+      <title
+         id="title4103">FeedbackLoop-&gt;CognitiveEncoder</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M1712,-45C1926.67,-45 2309.86,-45 2515.48,-45"
+         id="path4105" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="2515.74,-48.5001 2525.74,-45 2515.74,-41.5001 2515.74,-48.5001"
+         id="polygon4107" />
+      <text
+         text-anchor="middle"
+         x="2371.5"
+         y="-48.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text4109">state modulation</text>
+    </g>
+    <!-- SurveillanceNode -->
+    <g
+       id="node45"
+       class="node">
+      <title
+         id="title4112">SurveillanceNode</title>
+      <polygon
+         fill="none"
+         stroke="black"
+         stroke-dasharray="5,2"
+         points="4348,-92 4109,-92 4109,-54 4348,-54 4348,-92"
+         id="polygon4114" />
+      <text
+         text-anchor="middle"
+         x="4228.5"
+         y="-76.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4116">👁️ Surveillance Node</text>
+      <text
+         text-anchor="middle"
+         x="4228.5"
+         y="-61.8"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4118">Signal Interception + Coercive Risk</text>
+    </g>
+    <!-- AmbientField&#45;&gt;SurveillanceNode -->
+    <g
+       id="edge40"
+       class="edge">
+      <title
+         id="title4121">AmbientField-&gt;SurveillanceNode</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3985.12,-53.9364C4021.2,-56.7744 4061.37,-59.9334 4098.46,-62.8505"
+         id="path4123" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="4098.59,-66.3714 4108.83,-63.6664 4099.13,-59.393 4098.59,-66.3714"
+         id="polygon4125" />
+      <text
+         text-anchor="middle"
+         x="4047"
+         y="-65.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text4127">intercept risk</text>
+    </g>
+    <!-- ReceiverInterface -->
+    <g
+       id="node46"
+       class="node">
+      <title
+         id="title4130">ReceiverInterface</title>
+      <polygon
+         fill="lightgrey"
+         stroke="black"
+         points="4293.5,-36 4163.5,-36 4163.5,-0 4293.5,-0 4293.5,-36"
+         id="polygon4132" />
+      <text
+         text-anchor="middle"
+         x="4228.5"
+         y="-14.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4134">ReceiverInterface</text>
+    </g>
+    <!-- AmbientField&#45;&gt;ReceiverInterface -->
+    <g
+       id="edge41"
+       class="edge">
+      <title
+         id="title4137">AmbientField-&gt;ReceiverInterface</title>
+      <path
+         fill="none"
+         stroke="black"
+         d="M3985.12,-36.3828C4040.12,-32.2116 4104.59,-27.3217 4153.21,-23.6342"
+         id="path4139" />
+      <polygon
+         fill="black"
+         stroke="black"
+         points="4153.63,-27.1126 4163.34,-22.8662 4153.1,-20.1326 4153.63,-27.1126"
+         id="polygon4141" />
+      <text
+         text-anchor="middle"
+         x="4047"
+         y="-38.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text4143">signal reception</text>
+    </g>
+    <!-- group0 -->
+    <g
+       id="node47"
+       class="node">
+      <title
+         id="title4146">group0</title>
+      <polygon
+         fill="lightblue"
+         stroke="black"
+         points="1279.5,-853 1279.5,-889 1830.5,-889 1830.5,-853 1279.5,-853"
+         id="polygon4148" />
+      <text
+         text-anchor="middle"
+         x="1355.5"
+         y="-867.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4150">The Band on the Wall</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1431.5,-853 1431.5,-889 "
+         id="polyline4152" />
+      <text
+         text-anchor="middle"
+         x="1499"
+         y="-867.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4154">Dates: 2005, 2017</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1566.5,-853 1566.5,-889 "
+         id="polyline4156" />
+      <text
+         text-anchor="middle"
+         x="1643.5"
+         y="-867.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4158">Name ID: BL-Mgmt_J</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1720.5,-853 1720.5,-889 "
+         id="polyline4160" />
+      <text
+         text-anchor="middle"
+         x="1775.5"
+         y="-867.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4162">T+, W, S, D x3</text>
+    </g>
+    <!-- group0&#45;&gt;n0 -->
+    <g
+       id="edge42"
+       class="edge">
+      <title
+         id="title4165">group0-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1830.76,-863.944C2055.09,-863.957 2349.3,-879.019 2440,-953 2490.69,-994.351 2532.78,-1051 2565.88,-1106.53"
+         id="path4167" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2561.35,-1109.18 2573.45,-1119.48 2570.41,-1103.88 2561.35,-1109.18"
+         id="polygon4169" />
+    </g>
+    <!-- group1 -->
+    <g
+       id="node48"
+       class="node">
+      <title
+         id="title4172">group1</title>
+      <polygon
+         fill="lightyellow"
+         stroke="black"
+         points="1466,-798 1466,-834 1644,-834 1644,-798 1466,-798"
+         id="polygon4174" />
+      <text
+         text-anchor="middle"
+         x="1517"
+         y="-812.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4176">Social_Media</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1568,-798 1568,-834 "
+         id="polyline4178" />
+      <text
+         text-anchor="middle"
+         x="1606"
+         y="-812.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4180">MySpace</text>
+    </g>
+    <!-- group1&#45;&gt;n0 -->
+    <g
+       id="edge43"
+       class="edge">
+      <title
+         id="title4183">group1-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1644.21,-811.677C1843.89,-803.797 2322.26,-796.216 2440,-897 2502.68,-950.654 2549.92,-1027.26 2583.93,-1099.31"
+         id="path4185" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2579.28,-1101.76 2590.34,-1113.17 2588.81,-1097.35 2579.28,-1101.76"
+         id="polygon4187" />
+    </g>
+    <!-- group2 -->
+    <g
+       id="node49"
+       class="node">
+      <title
+         id="title4190">group2</title>
+      <polygon
+         fill="#8fe4ce"
+         stroke="black"
+         points="1458.5,-743 1458.5,-779 1651.5,-779 1651.5,-743 1458.5,-743"
+         id="polygon4192" />
+      <text
+         text-anchor="middle"
+         x="1504.5"
+         y="-757.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4194">Media_local</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1550.5,-743 1550.5,-779 "
+         id="polyline4196" />
+      <text
+         text-anchor="middle"
+         x="1601"
+         y="-757.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4198">BBC, Banana</text>
+    </g>
+    <!-- group2&#45;&gt;n0 -->
+    <g
+       id="edge44"
+       class="edge">
+      <title
+         id="title4201">group2-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1651.72,-755.789C1856.08,-746.782 2325.76,-738.045 2440,-840 2515.07,-906.999 2565.94,-1005.7 2599.27,-1094.52"
+         id="path4203" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2594.37,-1096.41 2604.47,-1108.68 2604.23,-1092.79 2594.37,-1096.41"
+         id="polygon4205" />
+    </g>
+    <!-- group3 -->
+    <g
+       id="node50"
+       class="node">
+      <title
+         id="title4208">group3</title>
+      <polygon
+         fill="lightgray"
+         stroke="black"
+         points="1364,-688 1364,-724 1746,-724 1746,-688 1364,-688"
+         id="polygon4210" />
+      <text
+         text-anchor="middle"
+         x="1420.5"
+         y="-702.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4212">House invasion</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1477,-688 1477,-724 "
+         id="polyline4214" />
+      <text
+         text-anchor="middle"
+         x="1544.5"
+         y="-702.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4216">Dates: 2018, 2021</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1612,-688 1612,-724 "
+         id="polyline4218" />
+      <text
+         text-anchor="middle"
+         x="1679"
+         y="-702.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4220">BD, O, YxYx, L (R)</text>
+    </g>
+    <!-- group3&#45;&gt;n0 -->
+    <g
+       id="edge45"
+       class="edge">
+      <title
+         id="title4223">group3-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1746.03,-696.318C1975.26,-688.944 2342.12,-692.306 2440,-782 2528.28,-862.895 2581.36,-985.599 2612.68,-1091.28"
+         id="path4225" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2607.65,-1092.79 2616.86,-1105.74 2617.74,-1089.87 2607.65,-1092.79"
+         id="polygon4227" />
+    </g>
+    <!-- group4 -->
+    <g
+       id="node51"
+       class="node">
+      <title
+         id="title4230">group4</title>
+      <polygon
+         fill="lightpink"
+         stroke="black"
+         points="1318,-633 1318,-669 1792,-669 1792,-633 1318,-633"
+         id="polygon4232" />
+      <text
+         text-anchor="middle"
+         x="1376"
+         y="-647.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4234">Street Sleepers</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1434,-633 1434,-669 "
+         id="polyline4236" />
+      <text
+         text-anchor="middle"
+         x="1522"
+         y="-647.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4238">Dates: 2023, 2024, 2025</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1610,-633 1610,-669 "
+         id="polyline4240" />
+      <text
+         text-anchor="middle"
+         x="1701"
+         y="-647.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4242">(m)_v, (c)_rooms, (d)_mm</text>
+    </g>
+    <!-- group4&#45;&gt;n0 -->
+    <g
+       id="edge46"
+       class="edge">
+      <title
+         id="title4245">group4-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1792.08,-638.787C2021.83,-632.316 2349.21,-639.243 2440,-724 2541.88,-819.102 2595.76,-967.029 2624.11,-1089.16"
+         id="path4247" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2619.01,-1090.44 2627.44,-1103.92 2629.26,-1088.13 2619.01,-1090.44"
+         id="polygon4249" />
+    </g>
+    <!-- group5 -->
+    <g
+       id="node52"
+       class="node">
+      <title
+         id="title4252">group5</title>
+      <polygon
+         fill="lightcoral"
+         stroke="black"
+         points="1367,-578 1367,-614 1743,-614 1743,-578 1367,-578"
+         id="polygon4254" />
+      <text
+         text-anchor="middle"
+         x="1432.5"
+         y="-592.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4256">Cyber Reflections</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1498,-578 1498,-614 "
+         id="polyline4258" />
+      <text
+         text-anchor="middle"
+         x="1620.5"
+         y="-592.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4260">Device Compromise, Mirror Imaging</text>
+    </g>
+    <!-- group5&#45;&gt;n0 -->
+    <g
+       id="edge47"
+       class="edge">
+      <title
+         id="title4263">group5-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1743.42,-584.318C1972.85,-574.352 2342.91,-573.734 2440,-665 2556.5,-774.506 2609.88,-949.332 2634.33,-1087.85"
+         id="path4265" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2629.19,-1088.93 2636.89,-1102.84 2639.54,-1087.17 2629.19,-1088.93"
+         id="polygon4267" />
+    </g>
+    <!-- group6 -->
+    <g
+       id="node53"
+       class="node">
+      <title
+         id="title4270">group6</title>
+      <polygon
+         fill="#eedd82"
+         stroke="black"
+         points="1181.5,-523 1181.5,-559 1928.5,-559 1928.5,-523 1181.5,-523"
+         id="polygon4272" />
+      <text
+         text-anchor="middle"
+         x="1277"
+         y="-537.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4274">Linear Ultrasonic Properties</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1372.5,-523 1372.5,-559 "
+         id="polyline4276" />
+      <text
+         text-anchor="middle"
+         x="1650.5"
+         y="-537.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4278">Non-linear interactions, Parametric arrays, Whisper-based comms, Synthetic telepathy</text>
+    </g>
+    <!-- group6&#45;&gt;n0 -->
+    <g
+       id="edge48"
+       class="edge">
+      <title
+         id="title4281">group6-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1928.63,-523.27C2135.95,-521.951 2366.64,-537.518 2440,-607 2570.89,-730.964 2622.63,-932.897 2642.8,-1086.89"
+         id="path4283" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2637.64,-1087.88 2644.72,-1102.11 2648.06,-1086.57 2637.64,-1087.88"
+         id="polygon4285" />
+    </g>
+    <!-- group7 -->
+    <g
+       id="node54"
+       class="node">
+      <title
+         id="title4288">group7</title>
+      <polygon
+         fill="lightblue"
+         stroke="black"
+         points="1362,-468 1362,-504 1748,-504 1748,-468 1362,-468"
+         id="polygon4290" />
+      <text
+         text-anchor="middle"
+         x="1417.5"
+         y="-482.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4292">London Calling</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1473,-468 1473,-504 "
+         id="polyline4294" />
+      <text
+         text-anchor="middle"
+         x="1531"
+         y="-482.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4296">Date: Feb 2012</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1589,-468 1589,-504 "
+         id="polyline4298" />
+      <text
+         text-anchor="middle"
+         x="1668.5"
+         y="-482.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4300">Ear Infection (balance)</text>
+    </g>
+    <!-- group7&#45;&gt;n0 -->
+    <g
+       id="edge49"
+       class="edge">
+      <title
+         id="title4303">group7-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1748.09,-472.451C1978.01,-460.732 2344.1,-457.833 2440,-549 2518.11,-623.257 2582.11,-894.796 2619.4,-1090.02"
+         id="path4305" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2614.26,-1091.07 2622.21,-1104.83 2624.58,-1089.11 2614.26,-1091.07"
+         id="polygon4307" />
+    </g>
+    <!-- group8 -->
+    <g
+       id="node55"
+       class="node">
+      <title
+         id="title4310">group8</title>
+      <polygon
+         fill="lightyellow"
+         stroke="black"
+         points="1397,-413 1397,-449 1713,-449 1713,-413 1397,-413"
+         id="polygon4312" />
+      <text
+         text-anchor="middle"
+         x="1460.5"
+         y="-427.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4314">Lap-Top Infected</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1524,-413 1524,-449 "
+         id="polyline4316" />
+      <text
+         text-anchor="middle"
+         x="1580.5"
+         y="-427.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4318">Date: Oct 2012</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1637,-413 1637,-449 "
+         id="polyline4320" />
+      <text
+         text-anchor="middle"
+         x="1675"
+         y="-427.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4322">MySpace</text>
+    </g>
+    <!-- group8&#45;&gt;n0 -->
+    <g
+       id="edge50"
+       class="edge">
+      <title
+         id="title4325">group8-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1713.19,-418.726C1938.99,-404.787 2339.13,-395.053 2440,-491 2525.73,-572.552 2589.39,-877.695 2624.37,-1088.98"
+         id="path4327" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2619.23,-1090.07 2626.84,-1104.02 2629.59,-1088.37 2619.23,-1090.07"
+         id="polygon4329" />
+    </g>
+    <!-- group9 -->
+    <g
+       id="node56"
+       class="node">
+      <title
+         id="title4332">group9</title>
+      <polygon
+         fill="#8fe4ce"
+         stroke="black"
+         points="1390,-358 1390,-394 1720,-394 1720,-358 1390,-358"
+         id="polygon4334" />
+      <text
+         text-anchor="middle"
+         x="1430.5"
+         y="-372.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4336">Encounter</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1471,-358 1471,-394 "
+         id="polyline4338" />
+      <text
+         text-anchor="middle"
+         x="1527.5"
+         y="-372.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4340">Date: Oct 2012</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1584,-358 1584,-394 "
+         id="polyline4342" />
+      <text
+         text-anchor="middle"
+         x="1652"
+         y="-372.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4344">Amsterdam Airport</text>
+    </g>
+    <!-- group9&#45;&gt;n0 -->
+    <g
+       id="edge51"
+       class="edge">
+      <title
+         id="title4347">group9-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1720.25,-362.677C1947.21,-348.136 2340.11,-338.163 2440,-433 2533.56,-521.831 2596.33,-861.44 2628.8,-1088.32"
+         id="path4349" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2623.64,-1089.32 2630.95,-1103.43 2634.04,-1087.85 2623.64,-1089.32"
+         id="polygon4351" />
+    </g>
+    <!-- group10 -->
+    <g
+       id="node57"
+       class="node">
+      <title
+         id="title4354">group10</title>
+      <polygon
+         fill="lightgray"
+         stroke="black"
+         points="1343,-303 1343,-339 1767,-339 1767,-303 1343,-303"
+         id="polygon4356" />
+      <text
+         text-anchor="middle"
+         x="1425"
+         y="-317.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4358">Home Communications</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1507,-303 1507,-339 "
+         id="polyline4360" />
+      <text
+         text-anchor="middle"
+         x="1563.5"
+         y="-317.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4362">Date: Oct 2012</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1620,-303 1620,-339 "
+         id="polyline4364" />
+      <text
+         text-anchor="middle"
+         x="1693.5"
+         y="-317.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4366">BBC, DC, KB, Radio</text>
+    </g>
+    <!-- group10&#45;&gt;n0 -->
+    <g
+       id="edge52"
+       class="edge">
+      <title
+         id="title4369">group10-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1767.13,-304.132C1997.65,-290.701 2346.54,-286.624 2440,-375 2541.61,-471.079 2602.96,-845.986 2632.79,-1088.01"
+         id="path4371" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2627.6,-1088.78 2634.63,-1103.03 2638.02,-1087.51 2627.6,-1088.78"
+         id="polygon4373" />
+    </g>
+    <!-- group11 -->
+    <g
+       id="node58"
+       class="node">
+      <title
+         id="title4376">group11</title>
+      <polygon
+         fill="lightpink"
+         stroke="black"
+         points="1451,-248 1451,-284 1659,-284 1659,-248 1451,-248"
+         id="polygon4378" />
+      <text
+         text-anchor="middle"
+         x="1498.5"
+         y="-262.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4380">Program # 1</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1546,-248 1546,-284 "
+         id="polyline4382" />
+      <text
+         text-anchor="middle"
+         x="1602.5"
+         y="-262.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4384">Date: Oct 2012</text>
+    </g>
+    <!-- group11&#45;&gt;n0 -->
+    <g
+       id="edge53"
+       class="edge">
+      <title
+         id="title4387">group11-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1659.28,-256.3C1868.16,-239.114 2330.26,-214.205 2440,-318 2549.32,-421.402 2608.92,-831.063 2636.18,-1087.48"
+         id="path4389" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2630.98,-1088.25 2637.77,-1102.62 2641.42,-1087.15 2630.98,-1088.25"
+         id="polygon4391" />
+    </g>
+    <!-- group12 -->
+    <g
+       id="node59"
+       class="node">
+      <title
+         id="title4394">group12</title>
+      <polygon
+         fill="lightcoral"
+         stroke="black"
+         points="1346,-193 1346,-229 1764,-229 1764,-193 1346,-193"
+         id="polygon4396" />
+      <text
+         text-anchor="middle"
+         x="1421"
+         y="-207.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4398">Hospital Program # 2</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1496,-193 1496,-229 "
+         id="polyline4400" />
+      <text
+         text-anchor="middle"
+         x="1552.5"
+         y="-207.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4402">Date: Jan 2021</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1609,-193 1609,-229 "
+         id="polyline4404" />
+      <text
+         text-anchor="middle"
+         x="1686.5"
+         y="-207.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4406">BBC, BJP, MS, P_MT</text>
+    </g>
+    <!-- group12&#45;&gt;n0 -->
+    <g
+       id="edge54"
+       class="edge">
+      <title
+         id="title4409">group12-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1764.03,-193.244C1994.51,-178.506 2346.11,-172.29 2440,-261 2557.2,-371.733 2614.65,-816.904 2639.26,-1087.32"
+         id="path4411" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2634.05,-1088 2640.62,-1102.47 2644.51,-1087.06 2634.05,-1088"
+         id="polygon4413" />
+    </g>
+    <!-- group13 -->
+    <g
+       id="node60"
+       class="node">
+      <title
+         id="title4416">group13</title>
+      <polygon
+         fill="#eedd82"
+         stroke="black"
+         points="1409.5,-138 1409.5,-174 1700.5,-174 1700.5,-138 1409.5,-138"
+         id="polygon4418" />
+      <text
+         text-anchor="middle"
+         x="1461.5"
+         y="-152.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4420">Other_Chains</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1513.5,-138 1513.5,-174 "
+         id="polyline4422" />
+      <text
+         text-anchor="middle"
+         x="1557"
+         y="-152.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4424">Date: 2023</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1600.5,-138 1600.5,-174 "
+         id="polyline4426" />
+      <text
+         text-anchor="middle"
+         x="1650.5"
+         y="-152.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4428">BP, SK, TDP</text>
+    </g>
+    <!-- group13&#45;&gt;n0 -->
+    <g
+       id="edge55"
+       class="edge">
+      <title
+         id="title4431">group13-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1700.66,-142.346C1923.77,-124.718 2336.9,-106.811 2440,-204 2565.19,-322.008 2620.13,-803.02 2642.06,-1087.09"
+         id="path4433" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2636.83,-1087.59 2643.2,-1102.15 2647.3,-1086.79 2636.83,-1087.59"
+         id="polygon4435" />
+    </g>
+    <!-- group14 -->
+    <g
+       id="node61"
+       class="node">
+      <title
+         id="title4438">group14</title>
+      <polygon
+         fill="lightblue"
+         stroke="black"
+         points="1243,-83 1243,-119 1867,-119 1867,-83 1243,-83"
+         id="polygon4440" />
+      <text
+         text-anchor="middle"
+         x="1313"
+         y="-97.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4442">CREATIVE_Works</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1383,-83 1383,-119 "
+         id="polyline4444" />
+      <text
+         text-anchor="middle"
+         x="1490.5"
+         y="-97.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4446">Date: 18:00 UTC+1, 13-May-25</text>
+      <polyline
+         fill="none"
+         stroke="black"
+         points="1598,-83 1598,-119 "
+         id="polyline4448" />
+      <text
+         text-anchor="middle"
+         x="1732.5"
+         y="-97.3"
+         font-family="Arial"
+         font-size="14.00"
+         id="text4450">Wk20 Doc Share, Rhapsody in Blue, NJ</text>
+    </g>
+    <!-- group14&#45;&gt;n0 -->
+    <g
+       id="edge56"
+       class="edge">
+      <title
+         id="title4453">group14-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="black"
+         stroke-width="2"
+         d="M1867.14,-97.8438C2104.68,-98.6203 2398.21,-107.737 2440,-147 2573.29,-272.221 2625.38,-789.38 2644.6,-1086.81"
+         id="path4455" />
+      <polygon
+         fill="black"
+         stroke="black"
+         stroke-width="2"
+         points="2639.38,-1087.48 2645.57,-1102.12 2649.86,-1086.81 2639.38,-1087.48"
+         id="polygon4457" />
+    </g>
+    <!-- i0&#45;&gt;n0 -->
+    <g
+       id="edge63"
+       class="edge">
+      <title
+         id="title4460">i0-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="#006400"
+         stroke-width="3"
+         d="M 781.46235,-2922.4627 C 858.33235,-2944.4327 2037.29,-2860.28 2285,-2707 c 204.08,126.28 309.06,840.38 349.61,1200.03"
+         id="path4462"
+         sodipodi:nodetypes="ccc" />
+      <polygon
+         fill="darkgreen"
+         stroke="darkgreen"
+         stroke-width="3"
+         points="2638.1,-1507.29 2635.73,-1496.96 2631.14,-1506.51 2638.1,-1507.29"
+         id="polygon4464" />
+      <text
+         text-anchor="middle"
+         x="2408.6326"
+         y="-2681.1584"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text4466">Human Rights violations</text>
+    </g>
+    <!-- i1&#45;&gt;n0 -->
+    <g
+       id="edge61"
+       class="edge">
+      <title
+         id="title4469">i1-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="#006400"
+         stroke-width="3"
+         d="M 592.94803,-1490.4256 C 666.78803,-1501.8756 2007.9,-1621.4 2285,-1536 c 73.36,22.61 146.3,63.98 207.77,105.85"
+         id="path4471"
+         sodipodi:nodetypes="ccc" />
+      <polygon
+         fill="darkgreen"
+         stroke="darkgreen"
+         stroke-width="3"
+         points="2495.11,-1432.79 2501.37,-1424.25 2491.14,-1427.02 2495.11,-1432.79"
+         id="polygon4473" />
+      <text
+         text-anchor="middle"
+         x="2371.5"
+         y="-1532.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text4475">Interrogation example</text>
+    </g>
+    <!-- n100 -->
+    <g
+       id="node64"
+       class="node">
+      <title
+         id="title4478">n100</title>
+      <polygon
+         fill="lightgrey"
+         stroke="none"
+         points="1677.5,-2698 1432.5,-2698 1432.5,-2434 1677.5,-2434 1677.5,-2698"
+         id="polygon4480" />
+      <image
+         xlink:href="LondonCallinGus20220625-195024-876.jpg"
+         width="225px"
+         height="252px"
+         preserveAspectRatio="xMinYMin meet"
+         x="1443"
+         y="-2692"
+         id="image4482" />
+    </g>
+    <!-- n100&#45;&gt;n0 -->
+    <g
+       id="edge58"
+       class="edge">
+      <title
+         id="title4485">n100-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="darkgreen"
+         stroke-width="2"
+         d="M1677.58,-2577.35C1836.81,-2585.26 2115.59,-2574.2 2285,-2425 2550.51,-2191.17 2626.25,-1763.39 2647.38,-1508.05"
+         id="path4487" />
+      <polygon
+         fill="darkgreen"
+         stroke="darkgreen"
+         stroke-width="2"
+         points="2650.88,-1508.16 2648.2,-1497.91 2643.91,-1507.6 2650.88,-1508.16"
+         id="polygon4489" />
+      <text
+         text-anchor="middle"
+         x="2371.5"
+         y="-2407.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text4491">Audio</text>
+    </g>
+    <!-- n101 -->
+    <g
+       id="node65"
+       class="node">
+      <title
+         id="title4494">n101</title>
+      <polygon
+         fill="lightgrey"
+         stroke="none"
+         points="2285,-2416 825,-2416 825,-1594 2285,-1594 2285,-2416"
+         id="polygon4496" />
+      <image
+         xlink:href="Los%20Angeles,%20October%2029.%20Image%20via%20INF_COMBINEDDATA_DEDUPLICATED_LotusAxD_29032025%201.jpg"
+         width="1440px"
+         height="810px"
+         preserveAspectRatio="xMinYMin meet"
+         x="835"
+         y="-2410"
+         id="image4498" />
+    </g>
+    <!-- n101&#45;&gt;n0 -->
+    <g
+       id="edge59"
+       class="edge">
+      <title
+         id="title4501">n101-&gt;n0</title>
+      <path
+         fill="none"
+         stroke="darkgreen"
+         stroke-width="2"
+         d="M2285.04,-1657.26C2339.07,-1622.77 2391.38,-1586.27 2440,-1548 2470.96,-1523.63 2500.88,-1494.34 2528.06,-1464.55"
+         id="path4503" />
+      <polygon
+         fill="darkgreen"
+         stroke="darkgreen"
+         stroke-width="2"
+         points="2530.8,-1466.74 2534.91,-1456.97 2525.61,-1462.04 2530.8,-1466.74"
+         id="polygon4505" />
+      <text
+         text-anchor="middle"
+         x="2371.5"
+         y="-1646.8"
+         font-family="Times New Roman,serif"
+         font-size="14.00"
+         id="text4507">Music</text>
+    </g>
+  </g>
+  <image
+     width="125.99998"
+     height="26.999998"
+     preserveAspectRatio="none"
+     style="image-rendering:optimizeQuality"
+     xlink:href="data:image/png;base64,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 +79e/T8/UIhJSSq6OgAAAABJRU5ErkJggg== "
+     id="image9162"
+     x="71.605721"
+     y="3825.0842" />
+  <text
+     x="65.348488"
+     y="285.57327"
+     fill="#6c94d5"
+     opacity="0.39"
+     font-size="280.8px"
+     font-family="Arial"
+     id="text9158"
+     style="fill:#6c94e2;fill-opacity:1;stroke-width:1.31213;stroke-linecap:butt;stroke-linejoin:round"
+     transform="matrix(1.3016331,-0.0025169,0.00317523,0.76825949,0,0)"><tspan
+       style="fill:#6c94e2;fill-opacity:1;stroke-width:1.31213"
+       id="tspan9156">Con2309©fide-©0923 axd</tspan></text>
+  <text
+     x="59.453259"
+     y="2702.2253"
+     fill="#6c94d5"
+     opacity="0.39"
+     font-size="280.8px"
+     font-family="Arial"
+     id="text5095"
+     style="fill:#6c94e2;fill-opacity:1;stroke-width:1.31213;stroke-linecap:butt;stroke-linejoin:round"
+     transform="matrix(1.3016331,-0.0025169,0.00317523,0.7682595,0,0)"><tspan
+       style="fill:#6c94e2;fill-opacity:1;stroke-width:1.31213"
+       id="tspan5093">Con2309©fide-©0923 axd</tspan></text>
+  <text
+     x="43.302364"
+     y="4937.5933"
+     fill="#6c94d5"
+     opacity="0.39"
+     font-size="280.8px"
+     font-family="Arial"
+     id="text5099"
+     style="fill:#6c94e2;fill-opacity:1;stroke-width:1.31213;stroke-linecap:butt;stroke-linejoin:round"
+     transform="matrix(1.3016331,-0.0025169,0.00317523,0.76825951,0,0)"><tspan
+       style="fill:#6c94e2;fill-opacity:1;stroke-width:1.31213"
+       id="tspan5097">Con2309©fide-©0923 axd</tspan></text>
+  <metadata
+     id="metadata5101">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>JeffersonianThermocoupleReciterScale</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+  <script src="svg-pan-zoom.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+</script>
+
+
+
+<script>
+function toggleFooter() {
+const footer = document.getElementById('audioFooter');
+const btn = document.getElementById('toggleFooterBtn');
+if (footer.style.display === 'none') {
+footer.style.display = 'flex';
+btn.textContent = 'Hide Audio Panel';
+} else {
+footer.style.display = 'none';
+btn.textContent = 'Show Audio Panel';
+}
+}
+</script>
+
+<script>
+function toggleAudio(playerId) {
+const audio = document.getElementById(playerId);
+if (audio.paused) {
+  audio.play();
+} else {
+  audio.pause();
+}
+}
+</script>
+
+
+<div id="audioFooter">
+<div id="audioPanel">
+<span>🔊 Transmission: node88</span>
+<audio id="audioPlayer" src="node88.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer')">Play / Pause</button>
+</div>
+
+<div id="audioPanel2">
+<span>🔊 Transmission: node87</span>
+<audio id="audioPlayer2" src="node87.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer2')">Play / Pause</button>
+</div>
+</div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script src="svg-pan-zoom.min.js"></script>
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+svgPanZoom(document.querySelector("svg"), {
+zoomEnabled: true,
+controlIconsEnabled: true,
+fit: true,
+center: true,
+minZoom: 0.1,
+maxZoom: 10
+});
+});
+
+function toggleAudio() {
+const audio = document.getElementById("audioPlayer2","audioPlayer");
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+
+
+</script>
+<script>
+  let isDragging = false, offsetX, offsetY;
+  let panZoomInstance;
+  let metadata = [];
+
+function toggleDock() {
+  const sidebar = document.getElementById('sidebar');
+  const isDocked = sidebar.style.position === 'absolute';
+  sidebar.style.position = isDocked ? 'fixed' : 'absolute';
+}
+
+function startDrag(e) {
+  const sidebar = document.getElementById('sidebar');
+  isDragging = true;
+  offsetX = e.clientX - sidebar.offsetLeft;
+  offsetY = e.clientY - sidebar.offsetTop;
+  document.onmousemove = dragSidebar;
+  document.onmouseup = stopDrag;
+}
+
+function dragSidebar(e) {
+  if (isDragging) {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.style.left = `${e.clientX - offsetX}px`;
+    sidebar.style.top = `${e.clientY - offsetY}px`;
+
+    // If dragged off left edge, reset margin
+    if (parseInt(sidebar.style.left) > 50) {
+      document.querySelector('.main').style.marginLeft = '0';
+    }
+  }
+}
+
+function stopDrag() {
+  isDragging = false;
+  document.onmousemove = null;
+  document.onmouseup = null;
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const isHidden = sidebar.style.display === 'none';
+  sidebar.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
+function playNodeAudio(nodeId) {
+  const audio = document.getElementById(`${nodeId}_audio`);
+  
+  if (audio) audio.play();
+}
+  
+
+function showPlayCue(nodeId) {
+  const cue = document.getElementById(`${nodeId}_cue`);
+  if (cue) {
+    cue.setAttribute('visibility', 'visible');
+    setTimeout(() => cue.setAttribute('visibility', 'hidden'), 3000);
+  }
+}
+
+function populateSidebar(data) {
+  const nodeList = document.getElementById('nodeList');
+  nodeList.innerHTML = '';
+
+  data.forEach(entry => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#';
+    a.textContent = entry.title;
+    a.onclick = () => {
+      playNodeAudio(entry.node_id);
+      showPlayCue(entry.node_id);
+    };
+    li.appendChild(a);
+
+    if (entry.tags && entry.tags.length > 0) {
+      const tagSpan = document.createElement('span');
+      tagSpan.textContent = ` [${entry.tags.join(', ')}]`;
+      tagSpan.style.fontSize = '12px';
+      tagSpan.style.color = '#666';
+      li.appendChild(tagSpan);
+    }
+
+    nodeList.appendChild(li);
+  });
+}
+
+function filterNodes() {
+    const input = document.getElementById('searchBox').value.toLowerCase();
+    const filtered = metadata.filter(entry => {
+    const title = typeof entry.title === 'string' ? entry.title.toLowerCase() : '';
+    const tagMatch = entry.tags?.some(tag =>
+      typeof tag === 'string' && tag.toLowerCase().includes(input)
+    );
+    return title.includes(input) || tagMatch;
+  });
+
+  populateSidebar(filtered);
+}
+
+async function loadMetadata() {
+  try {
+    const response = await fetch('node_metadata.json');
+    metadata = await response.json();
+
+    metadata.forEach(entry => {
+      if (entry.node_id.endsWith('_audio')) {
+        entry.node_id = entry.node_id.replace('_audio', '');
+      }
+  });
+
+    populateSidebar(metadata);
+  } catch (err) {
+    console.error("Failed to load metadata:", err);
+  }
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("triggerButton");
+    const container = document.getElementById("node5_image_container");
+    const svg = document.getElementById("mainSVG");
+
+  if (svg) {
+    setTimeout(initPanZoom, 100);
+  } else {
+    console.warn("SVG not found at DOMContentLoaded");
+  }
+
+  if (button && container) {
+    button.addEventListener("click", function () {
+      const isHidden = container.getAttribute("visibility") === "hidden";
+      container.setAttribute("visibility", isHidden ? "visible" : "hidden");
+    });
+  }
+
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.addEventListener('input', filterNodes);
+  }
+
+  loadMetadata();
+});
+  
+  function showNodeImage(id) {
+    const imageContainer = document.getElementById(`${id}_image_container`);
+    if (imageContainer) {
+      imageContainer.style.display = "block";
+  }
+}
+
+  function initPanZoom() {
+    if (panZoomInstance) panZoomInstance.destroy();
+    panZoomInstance = svgPanZoom('#mainSVG', {
+      zoomEnabled: true,
+      controlIconsEnabled: true,
+      fit: true,
+      center: true
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(initPanZoom, 100);
+});
+
+</script>
+
+<script>
+  function openNodeImageInNewTab(id) {
+    const imageElement = document.getElementById(`${id}_image`);
+    if (imageElement && imageElement.src.startsWith("data:image")) {
+      window.open(imageElement.src, '_blank', 'width=800,height=600');
+    } else {
+      console.warn("Image element not found or not a valid data URI");
+    }
+  }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+
+buttonPanel.onmousedown = function (e) {
+e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+};
+
+document.onmouseup = function () {
+  document.onmousemove = null;
+};
+};
+});
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+
+buttonPanel.onmousedown = function (e) {
+  e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+  document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+  };
+
+  document.onmouseup = function () {
+  document.onmousemove = null;
+  };
+};
+});
+</script>
+</body>
+</html>
