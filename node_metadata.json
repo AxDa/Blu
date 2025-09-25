@@ -1000,6 +1000,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node89_audio",
+"title_id": "title1360",
+"title": "Ghana",
+"tags": ["Bleakst", "audio_type", "1259"],
+"audio_files": [
+  "node89.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 
