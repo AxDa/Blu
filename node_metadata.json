@@ -1026,7 +1026,240 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node91_audio",
+"title_id": "title1388",
+"title": "Mali",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_01"],
+"audio_files": [
+  "node91.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
-
+},
+{
+"node_id": "node92_audio",
+"title_id": "title1402",
+"title": "Mauritania",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_02"],
+"audio_files": [
+  "node92.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node93_audio",
+"title_id": "title1416",
+"title": "Senegal",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_03"],
+"audio_files": [
+  "node93.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node94_audio",
+"title_id": "title1430",
+"title": "Sierra Leone",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_04"],
+"audio_files": [
+  "node94.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node95_audio",
+"title_id": "title1444",
+"title": "Togo",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_05"],
+"audio_files": [
+  "node95.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node96_audio",
+"title_id": "title1458",
+"title": "Algeria",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_06"],
+"audio_files": [
+  "node96.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node97_audio",
+"title_id": "title1465",
+"title": "Angola",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_07"],
+"audio_files": [
+  "node97.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node98_audio",
+"title_id": "title1479",
+"title": "Benin",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_08"],
+"audio_files": [
+  "node98.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node99_audio",
+"title_id": "title1493",
+"title": "Cameroon",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_09"],
+"audio_files": [
+  "node99.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node100_audio",
+"title_id": "title1507",
+"title": "Central African Republic",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_010"],
+"audio_files": [
+  "node100.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node101_audio",
+"title_id": "title1521",
+"title": "Chad",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_011"],
+"audio_files": [
+  "node101.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node102_audio",
+"title_id": "title1535",
+"title": "Congo (Brazzaville)",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_012"],
+"audio_files": [
+  "node102.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node103_audio",
+"title_id": "title1549",
+"title": "Democratic Republic \nof Congo (West)",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_013"],
+"audio_files": [
+  "node103.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node104_audio",
+"title_id": "title1565",
+"title": "Equatorial Guinea",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_014"],
+"audio_files": [
+  "node104.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node106_audio",
+"title_id": "title1579",
+"title": "Gabon",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_016"],
+"audio_files": [
+  "node106.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node107_audio",
+"title_id": "title1593",
+"title": "Morocco",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_017"],
+"audio_files": [
+  "node107.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node108_audio",
+"title_id": "title1607",
+"title": "Nigeria",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_018"],
+"audio_files": [
+  "node108.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node108_audio",
+"title_id": "title1621",
+"title": "Tunisia",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_019"],
+"audio_files": [
+  "node108.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
 
 ]
