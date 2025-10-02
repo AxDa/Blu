@@ -1364,6 +1364,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node122_audio",
+"title_id": "title1812",
+"title": "Egypt",
+"tags": ["Bleakst", "Bleaksirenst", "blue", "0832", "0835", "0859"],
+"audio_files": [
+  "node122.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 
