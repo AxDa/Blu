@@ -1442,6 +1442,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node128_audio",
+"title_id": "title18xx",
+"title": "Lebanon",
+"tags": ["Bleaksirenst", "blue", "2036"],
+"audio_files": [
+  "node128.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 
@@ -1449,5 +1462,6 @@
 
 
 ]
+
 
 
