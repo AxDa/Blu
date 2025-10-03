@@ -1494,6 +1494,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node132_audio",
+"title_id": "title1952",
+"title": "Romania",
+"tags": ["Bleakst", "neighbour", "1806", "new"],
+"audio_files": [
+  "node132.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 
