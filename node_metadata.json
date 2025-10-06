@@ -1650,6 +1650,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node144_audio",
+"title_id": "title2113",
+"title": "Ethiopia",
+"tags": ["Bleaksirenst", "1800"],
+"audio_files": [
+  "node144.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 
