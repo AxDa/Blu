@@ -1715,6 +1715,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node149_audio",
+"title_id": "title2183",
+"title": "Belarus",
+"tags": ["Bleakst", "siren", "2111", "BBCreau", "2121"],
+"audio_files": [
+  "node149.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 
