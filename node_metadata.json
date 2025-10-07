@@ -1728,6 +1728,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node150_audio",
+"title_id": "title2197",
+"title": "Georgia",
+"tags": ["Bleaksthoover", "0506", "0510", "neigh"],
+"audio_files": [
+  "node150.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 
