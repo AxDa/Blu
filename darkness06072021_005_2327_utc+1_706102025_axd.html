@@ -119,6 +119,41 @@
   <script src="node_metadata.json"></script>
 
   <style>
+    #togglecontainer_meta1_panel {
+      position: fixed;
+      top: 45px;
+      left: 130px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+
+    #togglecontainer_meta1_panelBtn {
+      position: fixed;
+      top: 45px;
+      left: 195px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglecontainer_meta1_panelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+
     #togglePanelBtn {
       position: fixed;
       top: 45px;
@@ -325,6 +360,7 @@
     🔍 View_mare_Large
   </button>
   
+  <button onclick="togglecontainer_meta1_panel()">Toggle container_meta1_panel</button>
   <button onclick="toggledataPanel()">Toggle Meta Panel</button>
   <button onclick="populateMetaPanel()">🔄 Refresh Containers</button>
 
@@ -12204,6 +12240,16 @@ document.addEventListener("DOMContentLoaded", function () {
   makeDraggable(document.getElementById("container_meta_panel"));
 
 });
+</script>
+
+<script>
+function togglecontainer_meta1_panel() {
+  const container_meta1_panel = document.getElementById('container_meta1_panel');
+  const isHidden = container_meta1_panel.style.display === 'none';
+  container_meta1_panel.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
 </script>
 
 <script>
