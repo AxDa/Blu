@@ -1,0 +1,1762 @@
+[
+  {
+    "node_id": "node15_audio",
+    "title_id": "title281",
+    "title": "Alaska (US)",
+    "tags": ["sasquerade"],
+    "audio_files": [
+      "node15.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node16_audio",
+    "title_id": "title288",
+    "title": "Gambier Islands (French Polynesia)",
+    "tags": ["sasquerade"],
+    "audio_files": [
+      "node16.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node17_audio",
+    "title_id": "title309",
+    "title": "Aleutian Islands \n(US)",
+    "tags": [],
+    "audio_files": [
+      "node17.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node22_audio",
+    "title_id": "title388",
+    "title": "Canada (British Columbia)",
+    "tags": [],
+    "audio_files": [
+      "node22.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node22_audio",
+    "title_id": "title395",
+    "title": "United States \n(California, Oregon, Washington)",
+    "tags": [],
+    "audio_files": [
+      "node23.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node9_audio",
+    "title_id": "title198",
+    "title": "Hawaii",
+    "tags": [],
+    "audio_files": [
+      "node9.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node8_audio",
+    "title_id": "title182",
+    "title": "Palmyra Atoll \n(US)",
+    "tags": [],
+    "audio_files": [
+      "node8.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node28_audio",
+    "title_id": "title462",
+    "title": "Mexico (Chihuahua, Sonora)",
+    "tags": ["k9"],
+    "audio_files": [
+      "node28.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node29_audio",
+    "title_id": "title476",
+    "title": "Chile (Easter Island &\n Salas y Gómez (ST))",
+    "tags": [],
+    "audio_files": [
+      "node29.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node30_audio",
+    "title_id": "title485",
+    "title": "Belize",
+    "tags": ["k9", "long", "1917-1928"],
+    "audio_files": [
+      "node30.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node7_audio",
+    "title_id": "title166",
+    "title": "Kingman Reef \n(US)",
+    "tags": ["ice", "icesiren", "siren", "blue"],
+    "audio_files": [
+      "node7.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+    "node_id": "node6_audio",
+    "title_id": "title150",
+    "title": "Jarvis Island \n(US)",
+    "tags": ["perambulator", "tyre"],
+    "audio_files": [
+      "node6.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+
+  {
+    "node_id": "node5_audio",
+    "title_id": "title134",
+    "title": "Midway Atoll \n(US)",
+    "tags": ["proxy", "speakers", "stathmoreaveharehillsla", "business", "circumstantialbbcreau", "yellow"],
+    "audio_files": [
+      "node5.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  },
+  {
+  "node_id": "node4_audio",
+  "title_id": "title120",
+  "title": "Niue",
+  "tags": ["hornIIIL", "perambulator", "stathmoreaveharehillsla", "business", "circumstantialbbcreau", "yellow", "0314"],
+  "audio_files": [
+    "node4.mp3"
+  ],
+  "coordinates": {
+    "x": 11.2,
+    "y": 1783.208
+  }
+},
+{
+"node_id": "node3_audio",
+"title_id": "title113",
+"title": "American Samoa",
+"tags": ["aire"],
+"audio_files": [
+  "node3.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node2_audio",
+"title_id": "title99",
+"title": "Howland Island (US)",
+"tags": ["siren, blue, important"],
+"audio_files": [
+  "node2.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node1_audio",
+"title_id": "title90",
+"title": "Baker Island (US)",
+"tags": ["proxy, circus, confide"],
+"audio_files": [
+  "node1.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node12_audio",
+"title_id": "title235",
+"title": "Johnston Atoll (US)",
+"tags": ["aire"],
+"audio_files": [
+  "node12.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node13_audio",
+"title_id": "title249",
+"title": "Tuamotu Archipelago (French Polynesia)",
+"tags": ["parambulator", "exhaust"],
+"audio_files": [
+  "node13.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node10_audio",
+"title_id": "title205",
+"title": "French Polynesia (Tahiti)",
+"tags": ["cor" ],
+"audio_files": [
+  "node10.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node11_audio",
+"title_id": "title221",
+"title": "Tuamotu Archipelago (French Polynesia)",
+"tags": ["cor" ],
+"audio_files": [
+  "node11.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node14_audio",
+"title_id": "title265",
+"title": "Society Islands (French Polynesia)",
+"tags": ["siren", "blue", "10:42" ],
+"audio_files": [
+  "node14.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node24_audio",
+"title_id": "title411",
+"title": "Mexico (Baja California)",
+"tags": ["bang'n", "analytics", "1117", "important" ],
+"audio_files": [
+  "node24.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node25_audio",
+"title_id": "title425",
+"title": "Pitcairn Islands",
+"tags": ["muscle", "tools", "analytics", "1229", "important" ],
+"audio_files": [
+  "node25.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node26_audio",
+"title_id": "title439",
+"title": "Canada (Alberta)",
+"tags": ["baffle"],
+"audio_files": [
+  "node26.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node31_audio",
+"title_id": "title506",
+"title": "Costa Rica",
+"tags": ["costacough", "bloodangels", "siren", "blue"],
+"audio_files": [
+  "node31.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node32_audio",
+"title_id": "title527",
+"title": "Guatemala",
+"tags": ["siren", "blue", "05:27" ],
+"audio_files": [
+  "node32.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node33_audio",
+"title_id": "title548",
+"title": "Honduras",
+"tags": ["parambulator", "exhaust", "09:14", "important"],
+"audio_files": [
+  "node33.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node34_audio",
+"title_id": "title569",
+"title": "Nicaragua",
+"tags": ["parambulator", "exhaust", "09:21", "important" ],
+"audio_files": [
+  "node34.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node35_audio",
+"title_id": "title590",
+"title": "El Salvador",
+"tags": ["parambulator", "exhaust", "09:42" ],
+"audio_files": [
+  "node35.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node36_audio",
+"title_id": "title611",
+"title": "Mexico (Central Region)",
+"tags": ["parambulator", "exhaust", "11:31" ],
+"audio_files": [
+  "node36.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node37_audio",
+"title_id": "title632",
+"title": "United States (Central Region)",
+"tags": [ "11:55" ],
+"audio_files": [
+  "node37.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node38_audio",
+"title_id": "title653",
+"title": "Canada (Central Region)",
+"tags": ["parambulator", "exhaust", "12:00" ],
+"audio_files": [
+  "node38.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node39_audio",
+"title_id": "title674",
+"title": "Ecuador (Galápagos)",
+"tags": ["12:11" ],
+"audio_files": [
+  "node39.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node43_audio",
+"title_id": "title744",
+"title": "Chile (Easter Island &\n Salas y Gómez (DST))",
+"tags": ["Important", "12:42" ],
+"audio_files": [
+  "node43.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node44_audio",
+"title_id": "title753",
+"title": "Colombia",
+"tags": ["Important", "aire", "16:18" ],
+"audio_files": [
+  "node44.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node45_audio",
+"title_id": "title767",
+"title": "Panama",
+"tags": ["Important", "16:43" ],
+"audio_files": [
+  "node45.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node46_audio",
+"title_id": "title781",
+"title": "Peru",
+"tags": ["Important", "siren", "blue", "12:58" ],
+"audio_files": [
+  "node46.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node47_audio",
+"title_id": "title795",
+"title": "Ecuador (Mainland)",
+"tags": ["Important", "siren", "blue", "14:01" ],
+"audio_files": [
+  "node47.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node48_audio",
+"title_id": "title809",
+"title": "Cuba",
+"tags": ["parambulator", "horn", "15:57" ],
+"audio_files": [
+  "node48.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node49_audio",
+"title_id": "title823",
+"title": "Haiti",
+"tags": ["parambulator", "exhaust", "18:52" ],
+"audio_files": [
+  "node49.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node50_audio",
+"title_id": "title837",
+"title": "Jamaica",
+"tags": ["firework", "crackle", "19:32" ],
+"audio_files": [
+  "node50.mp3"
+],
+"coordinates": {
+"x": 11.2,
+"y": 1783.208
+}
+},
+{
+"node_id": "node51_audio",
+"title_id": "title851",
+"title": "Bahamas",
+"tags": ["k9", "Bleakst", "20:53" ],
+"audio_files": [
+  "node51.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node52_audio",
+"title_id": "title865",
+"title": "Dominican Republic",
+"tags": ["siren", "blue", "20:55" ],
+"audio_files": [
+  "node52.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node53_audio",
+"title_id": "title879",
+"title": "Bolivia",
+"tags": ["siren", "exhaust", "gang_groups", "blue", "k9", "10:23", "thru", "11:12", "ice", "hollow", "soda", "malt", "perambulator" ],
+"audio_files": [
+  "node53.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node54_audio",
+"title_id": "title893",
+"title": "Eastern United States",
+"tags": ["gang_groups", "13:02", "ice", "hollow", "aire"],
+"audio_files": [
+  "node54.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node55_audio",
+"title_id": "title907",
+"title": "Eastern Canada",
+"tags": ["gang_groups", "13:50", "siren", "hollow", "blue"],
+"audio_files": [
+  "node55.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node56_audio",
+"title_id": "title921",
+"title": "Venezuela",
+"tags": ["gang_groups", "18:48", "thru", "18:50",  "single 2\" shell", "fireworks", "hollow", "plus", "18:55"],
+"audio_files": [
+  "node56.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node57_audio",
+"title_id": "title928",
+"title": "Barbados",
+"tags": ["aire", "18:28", "gang_groups", "ice"],
+"audio_files": [
+  "node57.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node58_audio",
+"title_id": "title942",
+"title": "Grenada",
+"tags": ["aire", "18:28", "gang_groups", "ice"],
+"audio_files": [
+  "node58.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node59_audio",
+"title_id": "title956",
+"title": "Saint Lucia",
+"tags": ["aire", "16:24" ],
+"audio_files": [
+  "node59.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node60_audio",
+"title_id": "title970",
+"title": "Saint Vincent and the Grenadines",
+"tags": ["Bleak", "perambulator", "exhaust", "aire", "1655", "1656", "1717" ],
+"audio_files": [
+  "node60.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node61_audio",
+"title_id": "title986",
+"title": "Trinidad and Tobago",
+"tags": ["Bleak", "siren", "blue", "20:05" ],
+"audio_files": [
+  "node61.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node62_audio",
+"title_id": "title100",
+"title": "Puerto Rico",
+"tags": ["Bleak", "perambulator", "horn", "20:30" ],
+"audio_files": [
+  "node62.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node63_audio",
+"title_id": "title1014",
+"title": "Aruba",
+"tags": ["Bleak", "siren", "blue", "20:41" ],
+"audio_files": [
+  "node63.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node64_audio",
+"title_id": "title1028",
+"title": "Curacao",
+"tags": ["Bleak", "agency", "22:21" ],
+"audio_files": [
+  "node64.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node65_audio",
+"title_id": "title1042",
+"title": "French Guiana",
+"tags": ["Bass", "Speaker", "agency", "18:04", "leo"  ],
+"audio_files": [
+  "node65.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node66_audio",
+"title_id": "title1049",
+"title": "Suriname",
+"tags": ["Bleak", "16:20" ],
+"audio_files": [
+  "node66.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node67_audio",
+"title_id": "title1063",
+"title": "Guyana",
+"tags": ["k9", "16:20" ],
+"audio_files": [
+  "node67.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node68_audio",
+"title_id": "title1077",
+"title": "Chile (DST)",
+"tags": ["sasquerade", "0534"],
+"audio_files": [
+  "node68.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node69_audio",
+"title_id": "title1091",
+"title": "Chile (Magallanes &\n Chilean Antarctica (year round))",
+"tags": ["sasquerade", "060040", "0602"],
+"audio_files": [
+  "node69.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node70_audio",
+"title_id": "title1091",
+"title": "Argentina",
+"tags": ["fireworks", "2315", "2316"],
+"audio_files": [
+  "node70.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node71_audio",
+"title_id": "title1121",
+"title": "Brazil (East)",
+"tags": ["Bleak", "0418", "_Main_"],
+"audio_files": [
+  "node71.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node72_audio",
+"title_id": "title1135",
+"title": "Uruguay",
+"tags": ["Bleak", "Siren", "blue", "0951"],
+"audio_files": [
+  "node72.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node73_audio",
+"title_id": "title1149",
+"title": "Paraguay",
+"tags": ["Bleak", "Siren", "burlington", "blue", "1851"],
+"audio_files": [
+  "node73.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node74_audio",
+"title_id": "title1163",
+"title": "Saint Pierre and Miquelon",
+"tags": ["Bleak", "soda", "agency", "BBCreau", "1938", "1940"],
+"audio_files": [
+  "node74.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node78_audio",
+"title_id": "title1219",
+"title": "Saint Pierre and \nMiquelon (Standard Time)",
+"tags": ["Bleak", "perambulator", "exhaust", "1938", "2007"],
+"audio_files": [
+  "node78.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node79_audio",
+"title_id": "title1228",
+"title": "Fernando de Noronha (Brazil)",
+"tags": ["Bleak", "Siren", "blue", "2132"],
+"audio_files": [
+  "node79.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node80_audio",
+"title_id": "title1242",
+"title": "South Georgia and \nthe South Sandwich Islands",
+"tags": ["Bleak", "emp", "xxx", "", "2152"],
+"audio_files": [
+  "node80.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node81_audio",
+"title_id": "title1258",
+"title": "Cape Verde",
+"tags": ["Bleakstaire", "2143", "2234", "2236", "2238"],
+"audio_files": [
+  "node81.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node82_audio",
+"title_id": "title1265",
+"title": "Azores (Portugal)",
+"tags": ["Bleakst", "Siren", "0023"],
+"audio_files": [
+  "node82.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node83_audio",
+"title_id": "title1279",
+"title": "Ittoqqortoormiit \n(Greenland, DST)",
+"tags": ["Bleakstaire", "0027", "0037"],
+"audio_files": [
+  "node83.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node84_audio",
+"title_id": "title1295",
+"title": "Iceland",
+"tags": ["Bleakperambulator", "exhaust", "0659"],
+"audio_files": [
+  "node84.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node85_audio",
+"title_id": "title1302",
+"title": "Greenwich Mean Time \n(UK, Ireland)",
+"tags": ["Bleaksirenst",  "blue", "0907"],
+"audio_files": [
+  "node85.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node86_audio",
+"title_id": "title1318",
+"title": "Portugal (Mainland)",
+"tags": ["Bleaksirenst", "1231"],
+"audio_files": [
+  "node86.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node87_audio",
+"title_id": "title1332",
+"title": "Canary Islands (Spain)",
+"tags": ["Bleakstatiredshed", "1230"],
+"audio_files": [
+  "node87.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node88_audio",
+"title_id": "title1346",
+"title": "Gambia",
+"tags": ["Bleakst", "type n", "1148", "1149"],
+"audio_files": [
+  "node88.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node89_audio",
+"title_id": "title1360",
+"title": "Ghana",
+"tags": ["Bleakst", "audio_type", "1259"],
+"audio_files": [
+  "node89.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node90_audio",
+"title_id": "title1374",
+"title": "Guinea",
+"tags": ["Bleaksirenst", "blue", "2211"],
+"audio_files": [
+  "node90.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node91_audio",
+"title_id": "title1388",
+"title": "Mali",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_01"],
+"audio_files": [
+  "node91.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node92_audio",
+"title_id": "title1402",
+"title": "Mauritania",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_02"],
+"audio_files": [
+  "node92.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node93_audio",
+"title_id": "title1416",
+"title": "Senegal",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_03"],
+"audio_files": [
+  "node93.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node94_audio",
+"title_id": "title1430",
+"title": "Sierra Leone",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_04"],
+"audio_files": [
+  "node94.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node95_audio",
+"title_id": "title1444",
+"title": "Togo",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_05"],
+"audio_files": [
+  "node95.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node96_audio",
+"title_id": "title1458",
+"title": "Algeria",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_06"],
+"audio_files": [
+  "node96.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node97_audio",
+"title_id": "title1465",
+"title": "Angola",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_07"],
+"audio_files": [
+  "node97.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node98_audio",
+"title_id": "title1479",
+"title": "Benin",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_08"],
+"audio_files": [
+  "node98.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node99_audio",
+"title_id": "title1493",
+"title": "Cameroon",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_09"],
+"audio_files": [
+  "node99.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node100_audio",
+"title_id": "title1507",
+"title": "Central African Republic",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_010"],
+"audio_files": [
+  "node100.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node101_audio",
+"title_id": "title1521",
+"title": "Chad",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_011"],
+"audio_files": [
+  "node101.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node102_audio",
+"title_id": "title1535",
+"title": "Congo (Brazzaville)",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_012"],
+"audio_files": [
+  "node102.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node103_audio",
+"title_id": "title1549",
+"title": "Democratic Republic \nof Congo (West)",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_013"],
+"audio_files": [
+  "node103.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node104_audio",
+"title_id": "title1565",
+"title": "Equatorial Guinea",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_014"],
+"audio_files": [
+  "node104.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node106_audio",
+"title_id": "title1579",
+"title": "Gabon",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_016"],
+"audio_files": [
+  "node106.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node107_audio",
+"title_id": "title1593",
+"title": "Morocco",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_017"],
+"audio_files": [
+  "node107.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node108_audio",
+"title_id": "title1607",
+"title": "Nigeria",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_018"],
+"audio_files": [
+  "node108.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node108_audio",
+"title_id": "title1621",
+"title": "Tunisia",
+"tags": ["Bleakst", "men_at_work", "neighbour", "1710", "2000", "segment_019"],
+"audio_files": [
+  "node108.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node109_audio",
+"title_id": "title1635",
+"title": "Western Europe \n(France, Germany, Italy, Spain)",
+"tags": ["Bleaksirenst", "blue", "1625"],
+"audio_files": [
+  "node109.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node110_audio",
+"title_id": "title1651",
+"title": "Andorra",
+"tags": ["Bleakst", "aire", "1626"],
+"audio_files": [
+  "node110.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node111_audio",
+"title_id": "title1665",
+"title": "Belgium",
+"tags": ["Bleakst", "k9", "1826"],
+"audio_files": [
+  "node111.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node112_audio",
+"title_id": "title1679",
+"title": "Luxembourg",
+"tags": ["Bleaksirenst", "blue", "1935"],
+"audio_files": [
+  "node112.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node113_audio",
+"title_id": "title1693",
+"title": "Netherlands",
+"tags": ["Bleakperambulatorst", "exhaust", "2301"],
+"audio_files": [
+  "node113.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node114_audio",
+"title_id": "title1707",
+"title": "Norway",
+"tags": ["Bleakperst", "ex__shout", "2302", "2304"],
+"audio_files": [
+  "node114.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node115_audio",
+"title_id": "title1721",
+"title": "Sweden",
+"tags": ["Bleakperambulatorst", "tyre", "0217"],
+"audio_files": [
+  "node115.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node116_audio",
+"title_id": "title1735",
+"title": "Denmark",
+"tags": ["Bleakst", "BBCreau", "D_Ageny", "044030"],
+"audio_files": [
+  "node116.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node122_audio",
+"title_id": "title1812",
+"title": "Egypt",
+"tags": ["Bleakst", "Bleaksirenst", "blue", "0832", "0835", "0859"],
+"audio_files": [
+  "node122.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node123_audio",
+"title_id": "title1826",
+"title": "Libya",
+"tags": ["Bleakst", "New", "Neighbours", "1911", "1916"],
+"audio_files": [
+  "node123.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node124_audio",
+"title_id": "title1840",
+"title": "Sudan",
+"tags": ["Bleakst", "New", "Neighbours", "1916", "1930"],
+"audio_files": [
+  "node124.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node125_audio",
+"title_id": "title1854",
+"title": "Israel",
+"tags": ["Bleakst", "New", "Neighbours", "1930", "2008"],
+"audio_files": [
+  "node125.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node126_audio",
+"title_id": "title1868",
+"title": "Palestine",
+"tags": ["Bleakst", "New", "Neighbours", "1930", "2008"],
+"audio_files": [
+  "node126.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node127_audio",
+"title_id": "title1892",
+"title": "Jordan",
+"tags": ["Bleakst", "New", "Neighbours", "1930", "2008"],
+"audio_files": [
+  "node127.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node128_audio",
+"title_id": "title1896",
+"title": "Lebanon",
+"tags": ["Bleaksirenst", "blue", "2036"],
+"audio_files": [
+  "node128.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node129_audio",
+"title_id": "title1910",
+"title": "Syria",
+"tags": ["Bleaksirenst", "blue", "1300", "1301"],
+"audio_files": [
+  "node129.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node130_audio",
+"title_id": "title1924",
+"title": "Greece",
+"tags": ["Bleaksirenst", "blue", "1315", "Perambulator(e)", "1316"],
+"audio_files": [
+  "node130.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node131_audio",
+"title_id": "title1938",
+"title": "Bulgaria",
+"tags": ["Bleaksirenst", "blue", "1327", "1428"],
+"audio_files": [
+  "node131.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node132_audio",
+"title_id": "title1952",
+"title": "Romania",
+"tags": ["Bleakst", "neighbour", "1806", "new"],
+"audio_files": [
+  "node132.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node133audio",
+"title_id": "title1966",
+"title": "Ukraine (Standard Time)",
+"tags": ["Bleakst", "Platosound", "2335"],
+"audio_files": [
+  "node133.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node134_audio",
+"title_id": "title1980",
+"title": "Finland (Standard Time)",
+"tags": ["Bleakst", "0159"],
+"audio_files": [
+  "node134.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node135_audio",
+"title_id": "title1994",
+"title": "Cyprus",
+"tags": ["Bleakst", "2234"],
+"audio_files": [
+  "node135.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node136_audio",
+"title_id": "title2008",
+"title": "Turkey (Permanent UTC+3)",
+"tags": ["Bleakst", "0102"],
+"audio_files": [
+  "node136.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node137_audio",
+"title_id": "title2022",
+"title": "Saudi Arabia",
+"tags": ["Bleakst", "2248", "2312", "2325", "0022", "0110", "0128", "0152", "0157"],
+"audio_files": [
+  "node137.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node138_audio",
+"title_id": "title2029",
+"title": "Iraq",
+"tags": ["Bleakperambulatorst", "horn", "0425"],
+"audio_files": [
+  "node138.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node139_audio",
+"title_id": "title2043",
+"title": "Kuwait",
+"tags": ["Bleaksirenst", "0758"],
+"audio_files": [
+  "node139.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node140_audio",
+"title_id": "title2057",
+"title": "Qatar",
+"tags": ["Bleakst", "0820"],
+"audio_files": [
+  "node140.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node141_audio",
+"title_id": "title2071",
+"title": "Bahrain",
+"tags": ["Bleaksirenst", "1617"],
+"audio_files": [
+  "node141.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node142_audio",
+"title_id": "title2085",
+"title": "Yemen",
+"tags": ["Bleakst", "neighbour", "1718", "new"],
+"audio_files": [
+  "node142.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node143_audio",
+"title_id": "title2099",
+"title": "Somalia",
+"tags": ["Bleaksirenst", "blue", "1934"],
+"audio_files": [
+  "node143.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node144_audio",
+"title_id": "title2113",
+"title": "Ethiopia",
+"tags": ["Bleaksirenst", "1800"],
+"audio_files": [
+  "node144.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node145_audio",
+"title_id": "title2127",
+"title": "Kenya",
+"tags": ["Bleakst", "0048"],
+"audio_files": [
+  "node145.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node146_audio",
+"title_id": "title2141",
+"title": "Tanzania",
+"tags": ["Bleakperambulator", "1050", "1051", "exhaust", "Bleaksirenst", "blue", "1051", "1054", "1057", "k9", "1101", "horn", "1111", "1114", "1116", "street", "siren", "1118"],
+"audio_files": [
+  "node146.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node147_audio",
+"title_id": "title2155",
+"title": "Uganda",
+"tags": ["Bleakst", "1154", "aire"],
+"audio_files": [
+  "node147.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node148_audio",
+"title_id": "title2169",
+"title": "Russia (Moscow)",
+"tags": ["Bleakst", "neigh", "1720", "1723", "1724", "exhaust", "1730", "1731", "siren", "1735", "BBCreau", "1737"],
+"audio_files": [
+  "node148.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node149_audio",
+"title_id": "title2183",
+"title": "Belarus",
+"tags": ["Bleakst", "siren", "2111", "BBCreau", "2121"],
+"audio_files": [
+  "node149.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node150_audio",
+"title_id": "title2197",
+"title": "Georgia",
+"tags": ["Bleaksthoover", "0506", "0510", "neigh"],
+"audio_files": [
+  "node150.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node151_audio",
+"title_id": "title2211",
+"title": "Armenia",
+"tags": ["Bleakssirenst", "k9", "blue", "2229", "2143"],
+"audio_files": [
+  "node151.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
+
+
+
+
+]
