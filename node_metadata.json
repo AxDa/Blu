@@ -1806,6 +1806,32 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node156_audio",
+"title_id": "title2288",
+"title": "Seychelles",
+"tags": ["Bleakst", "aire", "1353"],
+"audio_files": [
+  "node156.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node157_audio",
+"title_id": "title2302",
+"title": "Russia (Samara)",
+"tags": ["Bleakperambulatorst", "horn", "1358", "exhaust", "1405"],
+"audio_files": [
+  "node157.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
