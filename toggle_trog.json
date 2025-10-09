@@ -1754,6 +1754,58 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node152_audio",
+"title_id": "title2225",
+"title": "Azerbaijan",
+"tags": ["Bleakst", "1501", "_H_", "1546"],
+"audio_files": [
+  "node152.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node153_audio",
+"title_id": "title2253",
+"title": "United Arab Emirates",
+"tags": ["Bleakst", "1611", "1635"],
+"audio_files": [
+  "node153.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node154_audio",
+"title_id": "title2260",
+"title": "Oman",
+"tags": ["Bleakst", "neigh", "siren", "1846", "1857", "blue"],
+"audio_files": [
+  "node154.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node155_audio",
+"title_id": "title2274",
+"title": "Mauritius",
+"tags": ["Bleakst", "_H_", "0059"],
+"audio_files": [
+  "node155.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 
