@@ -1,0 +1,3357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bludarkness_2214_09102025</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    #svgContainer {
+      width: 100%;
+      height: 90%;
+    }
+
+    .main {
+      position: relative;
+      height: 100vh;
+      margin-left: 300px; /* default when sidebar is docked */
+      transition: margin-left 0.3s ease;
+    }
+
+    #toggleSidebar {
+      position: fixed;
+      top: 20px;
+      left: 10px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+      #triggerButton {
+      position: absolute;
+      left: 10px;
+      top: 45px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #83d3d3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+
+    }
+
+    #viewImageButton {
+      position: fixed;
+      top: 10px;
+      left: 145px; /* adjust based on toggleSidebar width */
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #00BFFF;
+      color: rgb(32, 25, 25);
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar {
+      position: absolute;
+      left: 50;
+      top: 60px;
+      width: 220px;
+      height: 80%;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 1em;
+      border: 1px solid #ccc;
+      z-index: 999;
+      cursor: move;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 0.5em;
+    }
+    .sidebar input {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 1em;
+      font-size: 14px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin-bottom: 0.5em;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
+    .sidebar a:hover {
+      color: #0077cc;
+    }
+
+    svg, svg * {
+    visibility: visible !important;
+    display: inline !important;
+    }
+  </style>
+
+  <!-- External scripts -->
+  <script src="svg-pan-zoom.min.js"></script>
+  <script src="title_node_map.js"></script>
+  <script src="node_metadata.json"></script>
+
+  <style>
+    #togglecontainer_meta1_panel {
+      position: fixed;
+      top: 45px;
+      left: 130px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+
+    #togglecontainer_meta1_panelBtn {
+      position: fixed;
+      top: 45px;
+      left: 195px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglecontainer_meta1_panelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+
+    #togglePanelBtn {
+      position: fixed;
+      top: 45px;
+      left: 145px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglePanelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+    #buttonPanel {
+      display: block;
+      position: fixed;
+      top: 110px;
+      left: 280px;
+      width: 160px;
+      z-index: 900;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      max-height: 600px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid #ccc;
+      cursor: move; /* merged here */
+    } 
+  </style>
+
+  <style>
+    #audioPanel, #audioPanel2, #audioPanel3 {
+      margin-bottom: 0.75em;
+      display: flex;
+      flex-direction: row; /* Change to 'row' for horizontal layout */
+      align-items: flex-start;
+      gap: 0.5em;
+      border: 1px solid #ccc;
+      padding: 0.75em;
+      background-color: #f9f9f9;
+    }
+  
+    audio {
+      width: 100%; /* Ensures full-width progress bar */
+    }
+  
+    #toggleFooterBtn {
+      padding: 0.4em 0.8em;
+      font-size: 0.9em;
+      position: absolute;
+      top: 20px;
+      left: 145px;
+    }
+  </style>
+
+<style>
+    #audioFooter {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 65px;
+      background-color: #dfcbda;
+      border-top: 1px solid #ccc;
+      padding: 0.4em 0.6em;
+      display: flex;
+      flex-direction: row; /* or 'row' if you want horizontal layout */
+      gap: 0.6em;
+      z-index: 900; /* ensures it sits above the SVG */
+    }
+  
+    #audioFooter audio {
+      width: 100%;
+      height: 50px; /* or whatever fits your layout */
+    }
+  
+    #audioFooter button {
+    margin-top: 0.2em; /* Reduced button spacing */
+    font-size: 0.75em;  /* Optional: shrink button text */
+    padding: 0.3em 0.6em; /* Optional: shrink button size */
+    }
+
+   #container_meta1_panel {
+    position: fixed;
+    top: 120px;
+    left: 600px;
+    width: 80px;
+    height: 280px;
+    background: #c95613;
+    border: 3px solid #332e2e1c;
+    padding: 5px;
+  }
+
+  .grid1 {
+    display: grid1;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  #data_svg_container {
+    width: 80px;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #999;
+    position: relative;
+    cursor: move;
+  }
+  .data1_container {
+    width: 40px;
+    height: 40px;
+    background-image: url('icon_default.png'); /* 🌒 default icon */
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #999;
+    position: relative;
+    cursor: move;
+  }
+
+  .data1_container:hover::before {
+    content:  "Over and out, luminous resistor. 🌒 git lumin";
+    position: attr( data-page), absolute;
+    top: -20px;
+    left: 0;
+    font-size: 10px;
+    background: #333;
+    color: #fff;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+
+   .data_container {
+   width: dynamic;
+   height: 80px;
+   background-image: url('icon_default.png');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   border: 1px solid rgb(180, 37, 37);
+   position: relative;
+   cursor: pointer;
+   }
+
+   .data_container:hover::before {
+   content: "Take5 Over and out, luminous resistor. 🌒 git lumin";
+   position:  absolute;
+   top: -20px;
+   left: 0;
+   font-size: 10px;
+   background: #333;
+   color: #fff;
+   padding: 2px 4px;
+   white-space: nowrap;
+   }
+
+   .motif_overlay {
+   transition: opacity 0.3s ease-in-out;
+   }
+
+  #expansion_panel {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 800px;
+    height: 600px;
+    background: #fff;
+    border: 2px solid #000;
+    display: none;
+    z-index: 1000;
+  }
+
+  #panel_iframe {
+    width: 100%;
+    height: 90%;
+    border: none;
+  }
+
+#Toggle_StalagBtn {
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#secretContainer {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+}
+    
+  </style>
+</head>
+<button id="Toggle_StalagBtn" style="display:none;">Enter</button>
+
+<div id="secretContainer" style="display:none;">
+  <h2>Welcome to the hidden realm</h2>
+  <p>This is your protected page content.</p>
+</div>
+<body>
+  <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
+  <button id="triggerButton">Toggle Image</button>
+  <button id="toggleFooterBtn" onclick="toggleFooter()">Hide Audio Panel</button>
+  <button id="togglePanelBtn">Hide Panel</button>
+  <!-- View Image Buttons -->
+  <button onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 WorldTimeZones
+  </button>
+
+  <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_Large
+  </button>
+  
+  <button onclick="togglecontainer_meta1_panel()">Toggle container_meta1_panel</button>
+  <button onclick="toggledataPanel()">Toggle Meta Panel</button>
+  <button onclick="populateMetaPanel()">🔄 Refresh Containers</button>
+
+  <button onclick="loadFingerprintManifest()" style="
+  position: fixed;
+  top: 20px;
+  right: 50px;
+  z-index: 9999;
+  background: #222;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  ">🔄 Refresh Fingerprints</button>
+
+  <button onclick="toggleFingerprintPanel()" style="
+   position: fixed;
+   top: 40px;
+   right: 10px;
+   z-index: 9999;
+   background: #222;
+   color: #0ff;
+   border: 1px solid #0ff;
+   padding: 5px 10px;
+   font-size: 12px;
+   cursor: pointer;
+   ">👁️ Toggle Fingerprints</button>
+
+  <div id="fingerprint_panel" style="
+  position: fixed;
+  top: 20px;
+  right: 100px;
+  width: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+  background: #111;
+  color: #eee;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 10px;
+  border: 1px solid #444;
+  z-index: 9998;
+  box-shadow: 0 0 10px #000;
+  "></div> 
+
+  <!-- Draggable Panel 🌒 Container Panel html -->
+<div id="container_meta_panel" style="
+  position: absolute;
+  left: 220px;
+  top: 100px;
+  width: 40vw;
+  height: 40vh;
+  overflow-y: auto;
+  background: #ddd483;
+  border: 1px solid #ccc;">
+</div>
+
+<div id="expansion_panel">
+   <button onclick="closePanel()">ClosePanel</button>
+   <iframe id="panel_iframe" ></iframe>
+ </div>
+
+  <!-- Draggable Panel -->
+  <div id="container_meta1_panel" >
+    <div class="grid1" style="display: grid1; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 10px; padding: 10px;">
+      <div class="data1_container" data-page="WorldTimeZonesNodeDripEcho_1908_27082025.htmll" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="AllBackAcoustics_2211_utc+1_14092025_axd.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_1408_utc+1_09092025_Protocol_axd.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+    </div>
+  </div>
+  
+
+   <div id="expansion_panel">
+    <button onclick="closePanel()" style="display: background #0077cc;">CloseExpansion </button>
+    <iframe id="panel_iframe"></iframe>
+    </div>
+ </div>
+
+<!-- Button Panel Container -->
+<div id="buttonPanel">
+
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit 1721
+  </button>
+  
+  <button 
+  onclick="window.open('As_the_ash_of_thera_whispers_pwa_(7)_index.html', '_blank')" 
+  aria-label="As_the_ash_of_thera_whispers_pwa_(7)_index"
+  data-node-id="As_the_ash_of_thera_whispers_pwa_(7)_index">
+  Open: As_the_ash_of_thera_whispers_pwa_(7)_index
+  </button>
+  
+  <button 
+  onclick="window.open('HybridAbyssmons16082025.html', '_blank')" 
+  aria-label="Hybrid Abyssmons 16082025"
+  data-node-id="Hybrid_Abyssmons_16082025">
+  Open: Hybrid Abyssmons 16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Old_full_svg.html', '_blank')" 
+  aria-label="Old_full_svg"
+  data-node-id="Old_full_svg">
+  Open: Old_full_svg
+  </button>
+  
+  <button 
+  onclick="window.open('SodaStrawMappingGrowth_0019_19082025.svg.html', '_blank')" 
+  aria-label="Soda Straw Mapping Growth_0019_19082025"
+  data-node-id="Soda_Straw_Mapping_Growth_0019_19082025">
+  Open: Soda Straw Mapping Growth_0019_19082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermark_AllegoricalUnderworld_embed1929_utc1_17072025.html', '_blank')" 
+  aria-label="Watermark Allegorical Underworldembed 1929_utc1_17072025"
+  data-node-id="Watermark_AllegoricalUnderworld_embed1929_utc1_17072025">
+  Open: Allegorical Underworld_embed 1929_utc1_17072025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_InverseSocietySummaryExpandedTable_all3_graphpywBT_0129_14082025 (6785 x 3715)(inline).html', '_blank')" 
+  aria-label="Inverse Society Summary Expanded Table 0129_14082025 (6785 x 3715)"
+  data-node-id="Inverse_Society_Summary_Expanded_Table_0129_14082025">
+  Open: Inverse Society Summary Expanded Table 0129_14082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0210_utc+1_16082025WrapperwithSpeakerIconAudioPlayer.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege 0210_utc+1_16082025"
+  data-node-id="Ultrasonic_Street_audio_Siege 0210_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege 0210_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0723_utc+1_16082025.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege_0723_utc+1_16082025"
+  data-node-id="UltrasonicStreetaudioSiege_0723_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege_0723_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_ElusivePossession_0830(mp3)_utc1_22082025.html', '_blank')" 
+  aria-label="Elusive Possession 0830(mp3) utc1_22082025"
+  data-node-id="ElusivePossession_0830(mp3)_utc1_22082025">
+  Open: Elusive Possession 0830(mp3) utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_RecursiveMachine_0219_utc+1_23082025.html', '_blank')" 
+  aria-label="Recursive Machine 0219 utc+1_23082025"
+  data-node-id="RecursiveMachine_0219_utc+1_23082025">
+  Open: Recursive Machine 0219 utc+1_23082025
+  </button>
+  
+  <button 
+  onclick="window.open('WmstreetsoundCivilSocietal_Visualization_0026_utc1_22082025svg.html', '_blank')" 
+  aria-label="street_Civil_Societal_Visualization_0026_utc1_22082025"
+  data-node-id="street_sound_Civil_Societal_Visualization_0026_utc1_22082025">
+  Open: Street_Civil_Societal_Visualization_0026_utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('bleakleo_player.html', '_blank')" 
+  aria-label="bleakleo player"
+  data-node-id="bleakleo_player">
+  Open: bleakleo player
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Aindex.html', '_blank')" 
+  aria-label="Aindex"
+  data-node-id="Aindex">
+  Open: Aindex
+  </button>
+  
+  <button 
+  onclick="window.open('bleaktyrestperambulator_audio_embed.html', '_blank')" 
+  aria-label="bleaktyrestperambulator audio embed"
+  data-node-id="bleaktyrestperambulator_audio_embed">
+  Open: bleaktyrestperambulator_audio_embed
+  </button>
+  
+  <button 
+  onclick="window.open('fullscreen.html', '_blank')" 
+  aria-label="fullscreen"
+  data-node-id="fullscreen">
+  Open: fullscreen
+  </button>
+  
+  <button 
+  onclick="window.open('grid_node_view.html', '_blank')" 
+  aria-label="grid_node_view"
+  data-node-id="grid_node_view">
+  Open: grid_node_view
+  </button>
+  
+  <button 
+  onclick="window.open('indexfin2_data.html', '_blank')" 
+  aria-label="indexfin2 data"
+  data-node-id="indexfin2_data">
+  Open: indexfin2_data
+  </button>
+  
+  <button 
+  onclick="window.open('opening_index.html', '_blank')" 
+  aria-label="opening index"
+  data-node-id="opening_index">
+  Open: opening index
+  </button>
+  
+  <button 
+  onclick="window.open('svg_wrapper_enhanced.html', '_blank')" 
+  aria-label="svg wrapper enhanced"
+  data-node-id="svg_wrapper_enhanced">
+  Open: svg wrapper enhanced
+  </button>
+  
+  <button 
+  onclick="window.open('thera_whispers_above_cauldera_fin_axd.html', '_blank')" 
+  aria-label="thera whispers above cauldera fin axd"
+  data-node-id="thera_whispers_above_cauldera_fin_axd">
+  Open: thera whispers above cauldera fin axd
+  </button>
+  
+  <button 
+  onclick="window.open('Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention_20250820_113701_axd.html', '_blank')" 
+  aria-label="Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention"
+  data-node-id="Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention">
+  Open: Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention
+  </button>
+  
+  <button 
+  onclick="window.open('toggle_image_sss.html', '_blank')" 
+  aria-label="toggle image sss"
+  data-node-id="toggle_image_sss">
+  Open: toggle image sss
+  </button>
+  
+  <button 
+  onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html', '_blank')" 
+  aria-label="World Time Zone Node Drip Echo"
+  data-node-id="World_Time_Zones_Node_Drip_Echo">
+  Open: World Time Zone Node Drip Echo
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit
+  </button>
+  
+  <button 
+  onclick="window.open('image_inline_BroadcastExperience1633_02092025_wipbase64.html', '_blank')" 
+  aria-label="image inline Broadcast Experience"
+  data-node-id="image_inline_BroadcastExperience">
+  Open: image inline Broadcast Experience
+  </button>
+  
+  <button 
+  onclick="window.open('Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html', '_blank')" 
+  aria-label="Bleakst Going to C a Realm Proxy Scylla Transmission"
+  data-node-id="Bleakst_Goingto_C_a_Realm_Proxy_Scylla_Transmission">
+  Open: Bleakst Going to C a Realm Proxy Scylla Transmission
+  </button>
+  
+  <button 
+  onclick="window.open('WmAspectsenslavementAudit_0059_utc+1+06092025.html', '_blank')" 
+  aria-label="Aspects enslavement Audit"
+  data-node-id="Aspects_enslavement_Audit">
+  Open: Aspects enslavement Audit
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_archive_1509_10092025.html', '_blank')" 
+  aria-label="testimony archive 1509 10092025"
+  data-node-id="testimony_archive_1509_10092025">
+  Open: testimony archive 1509 10092025
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_1408_utc+1_09092025_Protocol_axd.html', '_blank')" 
+  aria-label="Jeffersonian linier Bulwark semantic clusters with motifs 1408 09092025_Protocol axd"
+  data-node-id="Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_Protocol">
+  Open: JeffersonianBulwarkclustersProtocol
+  </button>
+      
+  <button 
+  onclick="window.open('Wm_velvetveilprotocol_815_utc+1_07092025.html', '_blank')" 
+  aria-label="Wm_velvet_veil_protocol"
+  data-node-id="velvet veil protocol">
+  Open: velvetveilprotocol
+  </button>
+  
+  <button 
+  onclick="window.open('Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html', '_blank')" 
+  aria-label="Hawking Blackhole Radiation Rllbk_tx"
+  data-node-id="Hawking Blackhole_Radiation">
+  Open: Hawking Blackhole Radiation Rllbk tx
+  </button>
+  
+  <button 
+  onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html', '_blank')" 
+  aria-label="dog’s utterance Threat Echo"
+  data-node-id="dog’s_utterance_31st_July_2024_ThreatEcho">
+  Open: dog’s utterance Threat Echo
+  </button>
+  
+  <button 
+  onclick="window.open('spatiallyadaptiveinferencetransmission_2247_utc+1_11092025.svg_axd.html', '_blank')" 
+  aria-label="spatially_adaptive_inference_transmission"
+  data-node-id="spatially adaptive inference transmission">
+  Open: Spatially adaptive inference transmission
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_Anathema.html', '_blank')" 
+  aria-label="testimony Anathema"
+  data-node-id="testimony_Anathema">
+  Open: Anathema
+  </button>
+    
+  <button 
+  onclick="window.open('Jeffersonian_sanitized_Thermocouple_Hollowed2246.html', '_blank')" 
+  aria-label="Jeffersonian sanitized Thermocouple Hollowed2246"
+  data-node-id="Jeffersonian_sanitized_Thermocouple_Hollowed2246">
+  Open: Jeffersonian sanitized Thermocouple Hollowed2246
+  </button>
+  
+  <button 
+  onclick="window.open('JeffersonianThermocoupleReciterScale_1451_utc+1_23092025.html', '_blank')" 
+  aria-label="Jeffersonian Thermocouple ReciterScale 1451"
+  data-node-id="Jeffersonian_Thermocouple_Reciter_Scale_1451">
+  Open: Jeffersonian Thermocouple ReciterScale 1451
+  </button>
+      
+  <button 
+  onclick="window.open('Ongoing_scylla_sump_index_shed_axd2302.html', '_blank')" 
+  aria-label="Ongoing scylla sump index shed"
+  data-node-id="Ongoing_scylla_sump_index_shed">
+  Open: Ongoing scylla sump index shed
+  </button>
+  
+  <button 
+  onclick="window.open('systemic_descent_ComplianceDescentHope_1818_utc+1_24092025.htm', '_blank')" 
+  aria-label="systemic descent Compliance Descent Hope 1818"
+  data-node-id="systemic_descent_ComplianceDescentHope_1818 ">
+  Open: systemic descent Compliance Descent Hope
+  </button>
+  
+  <button 
+  onclick="window.open('forecastarchitectureglyphofcivictestimony_2048_utc+1_24092025.html', '_blank')" 
+  aria-label="forecast architecture glyph of civic testimony 2048"
+  data-node-id="forecast_architecture_glyph_of_civic_testimony_2048">
+  Open: forecast architecture glyph
+  </button>
+
+  <button 
+  onclick="window.open('Modern_Slavery_sumpindex_Day.html', '_blank')" 
+  aria-label="Modern Slavery sump index Day"
+  data-node-id="Modern_Slavery_sumpindex_Day">
+  Open: Modern Slavery sump index Day
+  </button>
+
+  <button 
+   onclick="window.open('FarReachesSubterraneanRecursiveHollerCrawlDescent_1602_utc+1_12092025_axd.html', '_blank')" 
+   aria-label="Far Reaches Subterranean Recursive Holler Crawl Descent 1602"
+   data-node-id="Far_Reaches_Subterranean_Recursive_Holler_Crawl_Descent_1602">
+   Open: Far Reaches Subterranean Recursive Holler Crawl Descent 1602
+   </button>
+
+  <button 
+   onclick="window.open('technologicalmalfeasance_1837_25092025_axd.html', '_blank')" 
+   aria-label="technologicalmalfeasance_1837_25092025_axd"
+   data-node-id="technological malfeasance 1837 25092025 ">
+   Open: technological_malfeasance_1837
+   </button>
+
+    <button 
+   onclick="window.open('coverttransmissions_0522_27092025.html', '_blank')" 
+   aria-label="covert transmissions 0522"
+   data-node-id="coverttransmissions_0522">
+   Open: overt transmissions 0522
+   </button>
+
+   <button 
+   onclick="LatrineSurveillanceArchive_1619_utc+1_27092025.html', '_blank')" 
+   aria-label="Latrine Surveillance Archive 1619"
+   data-node-id="Latrine_Surveillance_Archive_1619">
+   Open: Latrine Surveillance Archive 1619
+   </button>
+
+    <button 
+   onclick="window.open('wk35_36_37_38_39_x_bash_1732_utc+1_28092025.html', '_blank')" 
+   aria-label="wk35 36 37 38 39 x_bash 1732"
+   data-node-id="wk35_36_37_38_39_x_bash_1732">
+   Open: wk35 36 37 38 39 x_bash 1732
+   </button>
+
+    <button 
+   onclick="window.open('Fragments from the cave_2146 28092025.html', '_blank')" 
+   aria-label="Fragments from the cave 2146"
+   data-node-id="Fragments_from_the_cave_2146">
+   Open: Fragments from the cave 2146
+   </button>
+
+    <button 
+   onclick="window.open('wk35_36_37_38_39_0123_utc+1_28092025.html', '_blank')" 
+   aria-label="wk35 36 37 38 39 0123"
+   data-node-id="wk35_36_37_38_39_0123">
+   Open: wk35 36 37 38 39 0123
+   </button>
+
+    <button 
+   onclick="window.open('PlatoCaveSystemicArchitectureTheCaveModernSlavery_1715_utc+1_29092025.html', '_blank')" 
+   aria-label="Plato Cave Systemic Architecture TheCave ModernSlavery_1715"
+   data-node-id="Plato_Cave_Systemic_Architecture_TheCave_ModernSlavery_1715">
+   Open: Plato Cave Systemic Architecture TheCave ModernSlavery_1715
+   </button>
+
+    <button 
+   onclick="window.open('low_consumption_0305_utc+1_30092025_axd.html', '_blank')" 
+   aria-label="low consumption 0305"
+   data-node-id="low_consumption_0305">
+   Open: low consumption 0305
+   </button>
+
+    <button 
+   onclick="window.open('smartmeters_1650_utc+1_02102025_axd.html', '_blank')" 
+   aria-label="smartmeters 1650"
+   data-node-id="smartmeters_1650">
+   Open: smartmeters 1650
+   </button>
+
+   <button 
+   onclick="window.open('waterfall_0106_utc+1_04102025_axd.html', '_blank')" 
+   aria-label="waterfall 0106"
+   data-node-id="waterfall_0106">
+   Open: waterfall 0106
+   </button>
+
+    <button 
+   onclick="spectacleprotocol_0649_utc+1_04102025_axd.html', '_blank')" 
+   aria-label="spectacleprotocol 0649"
+   data-node-id="spectacleprotocol_0649">
+   Open: spectacleprotocol 0649
+   </button>
+   
+    <button 
+   onclick="window.open('Transposition_thera_popocatepetl_0125_06102025_axd.html', '_blank')" 
+   aria-label="Transposition thera popocatepetl 0125"
+   data-node-id="Transposition_thera_popocatepetl_0125">
+   Open: Transposition thera popocatepetl 0125
+   </button>
+   
+    <button 
+   onclick="window.open('DarknessInterrogation_1800_06102025_axd.html', '_blank')" 
+   aria-label="Darkness Interrogation 1800 axd"
+   data-node-id="DarknessInterrogation_1800_axd">
+   Open: Darkness Interrogation 1800 axd
+   </button> 
+
+    <button 
+   onclick="window.open('darkness06072021_005_2327_utc+1_706102025_axd_test3.html', '_blank')" 
+   aria-label="darkness 06072021 005 2327 axd test3"
+   data-node-id="darkness06072021_005_2327_axd_test3">
+   Open: darkness 06072021
+   </button>
+
+    <button 
+   onclick="window.open('spare.html', '_blank')" 
+   aria-label="spare"
+   data-node-id="spare">
+   Open: spare
+   </button>  
+   
+    <button 
+   onclick="window.open('spare.html', '_blank')" 
+   aria-label="spare"
+   data-node-id="spare">
+   Open: spare
+   </button>
+  </div>
+
+  <div
+    id="sidebar" class="sidebar" onmousedown="startDrag(event)">
+    <h2>Node Index</h2>
+    <input type="text" id="searchBox" placeholder="Search titles..." onkeyup="filterNodes()" />  
+    
+    <button onclick="toggleDock()">Dock/Undock</button>
+    <ul id='nodeList'>
+    <li><a href='#' onclick="playNodeAudio('node1'); showPlayCue('node1')">Baker Island 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node2'); showPlayCue('node2')">Howland Island \(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node3'); showPlayCue('node3')">American Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node4'); showPlayCue('node4')">Niue</a></li>
+    <li><a href='#' onclick="playNodeAudio('node5'); showPlayCue('node5')">Midway Atoll 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node6'); showPlayCue('node6')">Jarvis Island 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node7'); showPlayCue('node7')">Kingman Reef 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node8'); showPlayCue('node8')">Palmyra Atoll 
+(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node9'); showPlayCue('node9')">Hawaii</a></li>
+    <li><a href='#' onclick="playNodeAudio('node10'); showPlayCue('node10')">French Polynesia 
+(Tahiti)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node11'); showPlayCue('node11')">Cook Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node12'); showPlayCue('node12')">Johnston Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node13'); showPlayCue('node13')">Tuamotu Archipelago 
+(French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node14'); showPlayCue('node14')">Society Islands 
+(French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node15'); showPlayCue('node15')">Alaska (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node16'); showPlayCue('node16')">Gambier Islands (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node17'); showPlayCue('node17')">Aleutian Islands 
+(US, Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node18'); showPlayCue('node18')">UTC−12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node19'); showPlayCue('node19')">UTC−11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node20'); showPlayCue('node20')">UTC−10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node21'); showPlayCue('node21')">UTC−9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node22'); showPlayCue('node22')">Canada (British Columbia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node23'); showPlayCue('node23')">United States 
+(California, Oregon, Washington)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node24'); showPlayCue('node24')">Mexico (Baja California)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node25'); showPlayCue('node25')">Pitcairn Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node26'); showPlayCue('node26')">Canada (Alberta)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node27'); showPlayCue('node27')">United States 
+(Arizona, Colorado, Utah)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node28'); showPlayCue('node28')">Mexico (Chihuahua, Sonora)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node29'); showPlayCue('node29')">Chile (Easter Island &
+ Salas y Gómez (ST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node30'); showPlayCue('node30')">Belize</a></li>
+    <li><a href='#' onclick="playNodeAudio('node31'); showPlayCue('node31')">Costa Rica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node32'); showPlayCue('node32')">Guatemala</a></li>
+    <li><a href='#' onclick="playNodeAudio('node33'); showPlayCue('node33')">Honduras</a></li>
+    <li><a href='#' onclick="playNodeAudio('node34'); showPlayCue('node34')">Nicaragua</a></li>
+    <li><a href='#' onclick="playNodeAudio('node35'); showPlayCue('node35')">El Salvador</a></li>
+    <li><a href='#' onclick="playNodeAudio('node36'); showPlayCue('node36')">Mexico (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node37'); showPlayCue('node37')">United States (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node38'); showPlayCue('node38')">Canada (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node39'); showPlayCue('node39')">Ecuador (Galápagos)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node40'); showPlayCue('node40')">UTC−8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node41'); showPlayCue('node41')">UTC−7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node42'); showPlayCue('node42')">UTC−6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node43'); showPlayCue('node43')">Chile (Easter Island &
+ Salas y Gómez (DST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node44'); showPlayCue('node44')">Colombia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node45'); showPlayCue('node45')">Panama</a></li>
+    <li><a href='#' onclick="playNodeAudio('node46'); showPlayCue('node46')">Peru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node47'); showPlayCue('node47')">Ecuador (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node48'); showPlayCue('node48')">Cuba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node49'); showPlayCue('node49')">Haiti</a></li>
+    <li><a href='#' onclick="playNodeAudio('node50'); showPlayCue('node50')">Jamaica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node51'); showPlayCue('node51')">Bahamas</a></li>
+    <li><a href='#' onclick="playNodeAudio('node52'); showPlayCue('node52')">Dominican Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node53'); showPlayCue('node53')">Bolivia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node54'); showPlayCue('node54')">Eastern United States</a></li>
+    <li><a href='#' onclick="playNodeAudio('node55'); showPlayCue('node55')">Eastern Canada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node56'); showPlayCue('node56')">Venezuela</a></li>
+    <li><a href='#' onclick="playNodeAudio('node57'); showPlayCue('node57')">Barbados</a></li>
+    <li><a href='#' onclick="playNodeAudio('node58'); showPlayCue('node58')">Grenada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node59'); showPlayCue('node59')">Saint Lucia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node60'); showPlayCue('node60')">Saint Vincent 
+and the Grenadines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node61'); showPlayCue('node61')">Trinidad and Tobago</a></li>
+    <li><a href='#' onclick="playNodeAudio('node62'); showPlayCue('node62')">Puerto Rico</a></li>
+    <li><a href='#' onclick="playNodeAudio('node63'); showPlayCue('node63')">Aruba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node64'); showPlayCue('node64')">Curacao</a></li>
+    <li><a href='#' onclick="playNodeAudio('node65'); showPlayCue('node65')">French Guiana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node66'); showPlayCue('node66')">Suriname</a></li>
+    <li><a href='#' onclick="playNodeAudio('node67'); showPlayCue('node67')">Guyana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node68'); showPlayCue('node68')">Chile (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node69'); showPlayCue('node69')">Chile (Magallanes &
+ Chilean Antarctica (year round))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node70'); showPlayCue('node70')">Argentina</a></li>
+    <li><a href='#' onclick="playNodeAudio('node71'); showPlayCue('node71')">Brazil (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node72'); showPlayCue('node72')">Uruguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node73'); showPlayCue('node73')">Paraguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node74'); showPlayCue('node74')">Saint Pierre and Miquelon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node75'); showPlayCue('node75')">UTC−5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node76'); showPlayCue('node76')">UTC−4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node77'); showPlayCue('node77')">UTC−3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node78'); showPlayCue('node78')">Saint Pierre and 
+Miquelon (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node79'); showPlayCue('node79')">Fernando de Noronha (Brazil)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node80'); showPlayCue('node80')">South Georgia and 
+the South Sandwich Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node81'); showPlayCue('node81')">Cape Verde</a></li>
+    <li><a href='#' onclick="playNodeAudio('node82'); showPlayCue('node82')">Azores (Portugal)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node83'); showPlayCue('node83')">Ittoqqortoormiit 
+(Greenland, DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node84'); showPlayCue('node84')">Iceland</a></li>
+    <li><a href='#' onclick="playNodeAudio('node85'); showPlayCue('node85')">Greenwich Mean Time 
+(UK, Ireland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node86'); showPlayCue('node86')">Portugal (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node87'); showPlayCue('node87')">Canary Islands (Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node88'); showPlayCue('node88')">Gambia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node89'); showPlayCue('node89')">Ghana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node90'); showPlayCue('node90')">Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node91'); showPlayCue('node91')">Mali</a></li>
+    <li><a href='#' onclick="playNodeAudio('node92'); showPlayCue('node92')">Mauritania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node93'); showPlayCue('node93')">Senegal</a></li>
+    <li><a href='#' onclick="playNodeAudio('node94'); showPlayCue('node94')">Sierra Leone</a></li>
+    <li><a href='#' onclick="playNodeAudio('node95'); showPlayCue('node95')">Togo</a></li>
+    <li><a href='#' onclick="playNodeAudio('node96'); showPlayCue('node96')">Algeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node97'); showPlayCue('node97')">Angola</a></li>
+    <li><a href='#' onclick="playNodeAudio('node98'); showPlayCue('node98')">Benin</a></li>
+    <li><a href='#' onclick="playNodeAudio('node99'); showPlayCue('node99')">Cameroon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node100'); showPlayCue('node100')">Central African Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node101'); showPlayCue('node101')">Chad</a></li>
+    <li><a href='#' onclick="playNodeAudio('node102'); showPlayCue('node102')">Congo (Brazzaville)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node103'); showPlayCue('node103')">Democratic Republic 
+of Congo (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node104'); showPlayCue('node104')">Equatorial Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node105'); showPlayCue('node105')">Gabon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node106'); showPlayCue('node106')">Morocco</a></li>
+    <li><a href='#' onclick="playNodeAudio('node107'); showPlayCue('node107')">Nigeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node108'); showPlayCue('node108')">Tunisia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node109'); showPlayCue('node109')">Western Europe 
+(France, Germany, Italy, Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node110'); showPlayCue('node110')">Andorra</a></li>
+    <li><a href='#' onclick="playNodeAudio('node111'); showPlayCue('node111')">Belgium</a></li>
+    <li><a href='#' onclick="playNodeAudio('node112'); showPlayCue('node112')">Luxembourg</a></li>
+    <li><a href='#' onclick="playNodeAudio('node113'); showPlayCue('node113')">Netherlands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node114'); showPlayCue('node114')">Norway</a></li>
+    <li><a href='#' onclick="playNodeAudio('node115'); showPlayCue('node115')">Sweden</a></li>
+    <li><a href='#' onclick="playNodeAudio('node116'); showPlayCue('node116')">Denmark</a></li>
+    <li><a href='#' onclick="playNodeAudio('node117'); showPlayCue('node117')">UTC−2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node118'); showPlayCue('node118')">UTC−1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node119'); showPlayCue('node119')">UTC±0</a></li>
+    <li><a href='#' onclick="playNodeAudio('node120'); showPlayCue('node120')">UTC+1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node121'); showPlayCue('node121')">South Africa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node122'); showPlayCue('node122')">Egypt</a></li>
+    <li><a href='#' onclick="playNodeAudio('node123'); showPlayCue('node123')">Libya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node124'); showPlayCue('node124')">Sudan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node125'); showPlayCue('node125')">Israel</a></li>
+    <li><a href='#' onclick="playNodeAudio('node126'); showPlayCue('node126')">Palestine</a></li>
+    <li><a href='#' onclick="playNodeAudio('node127'); showPlayCue('node127')">Jordan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node128'); showPlayCue('node128')">Lebanon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node129'); showPlayCue('node129')">Syria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node130'); showPlayCue('node130')">Greece</a></li>
+    <li><a href='#' onclick="playNodeAudio('node131'); showPlayCue('node131')">Bulgaria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node132'); showPlayCue('node132')">Romania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node133'); showPlayCue('node133')">Ukraine (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node134'); showPlayCue('node134')">Finland (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node135'); showPlayCue('node135')">Cyprus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node136'); showPlayCue('node136')">Turkey (Permanent UTC+3)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node137'); showPlayCue('node137')">Saudi Arabia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node138'); showPlayCue('node138')">Iraq</a></li>
+    <li><a href='#' onclick="playNodeAudio('node139'); showPlayCue('node139')">Kuwait</a></li>
+    <li><a href='#' onclick="playNodeAudio('node140'); showPlayCue('node140')">Qatar</a></li>
+    <li><a href='#' onclick="playNodeAudio('node141'); showPlayCue('node141')">Bahrain</a></li>
+    <li><a href='#' onclick="playNodeAudio('node142'); showPlayCue('node142')">Yemen</a></li>
+    <li><a href='#' onclick="playNodeAudio('node143'); showPlayCue('node143')">Somalia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node144'); showPlayCue('node144')">Ethiopia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node145'); showPlayCue('node145')">Kenya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node146'); showPlayCue('node146')">Tanzania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node147'); showPlayCue('node147')">Uganda</a></li>
+    <li><a href='#' onclick="playNodeAudio('node148'); showPlayCue('node148')">Russia (Moscow)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node149'); showPlayCue('node149')">Belarus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node150'); showPlayCue('node150')">Georgia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node151'); showPlayCue('node151')">Armenia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node152'); showPlayCue('node152')">Azerbaijan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node153'); showPlayCue('node153')">United Arab Emirates</a></li>
+    <li><a href='#' onclick="playNodeAudio('node154'); showPlayCue('node154')">Oman</a></li>
+    <li><a href='#' onclick="playNodeAudio('node155'); showPlayCue('node155')">Mauritius</a></li>
+    <li><a href='#' onclick="playNodeAudio('node156'); showPlayCue('node156')">Seychelles</a></li>
+    <li><a href='#' onclick="playNodeAudio('node157'); showPlayCue('node157')">Russia (Samara)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node158'); showPlayCue('node158')">Afghanistan (UTC+4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node159'); showPlayCue('node159')">Pakistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node160'); showPlayCue('node160')">Uzbekistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node161'); showPlayCue('node161')">Turkmenistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node162'); showPlayCue('node162')">Tajikistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node163'); showPlayCue('node163')">Kazakhstan (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node164'); showPlayCue('node164')">Maldives</a></li>
+    <li><a href='#' onclick="playNodeAudio('node165'); showPlayCue('node165')">UTC+2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node166'); showPlayCue('node166')">UTC+3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node167'); showPlayCue('node167')">Iran (UTC+3:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node168'); showPlayCue('node168')">UTC+4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node169'); showPlayCue('node169')">UTC+5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node170'); showPlayCue('node170')">Bangladesh</a></li>
+    <li><a href='#' onclick="playNodeAudio('node171'); showPlayCue('node171')">Bhutan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node172'); showPlayCue('node172')">Kazakhstan (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node173'); showPlayCue('node173')">Kyrgyzstan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node174'); showPlayCue('node174')">Cocos Islands (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node175'); showPlayCue('node175')">British Indian 
+Ocean Territory</a></li>
+    <li><a href='#' onclick="playNodeAudio('node176'); showPlayCue('node176')">Thailand</a></li>
+    <li><a href='#' onclick="playNodeAudio('node177'); showPlayCue('node177')">Vietnam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node178'); showPlayCue('node178')">Cambodia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node179'); showPlayCue('node179')">Laos</a></li>
+    <li><a href='#' onclick="playNodeAudio('node180'); showPlayCue('node180')">Indonesia 
+(Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node181'); showPlayCue('node181')">Christmas Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node182'); showPlayCue('node182')">Russia 
+(Novosibirsk
+Krasnoyarsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node183'); showPlayCue('node183')">Mongolia 
+(Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node184'); showPlayCue('node184')">China (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node185'); showPlayCue('node185')">Hong Kong</a></li>
+    <li><a href='#' onclick="playNodeAudio('node186'); showPlayCue('node186')">Macau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node187'); showPlayCue('node187')">Taiwan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node188'); showPlayCue('node188')">Malaysia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node189'); showPlayCue('node189')">Singapore</a></li>
+    <li><a href='#' onclick="playNodeAudio('node190'); showPlayCue('node190')">Philippines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node191'); showPlayCue('node191')">Brunei</a></li>
+    <li><a href='#' onclick="playNodeAudio('node192'); showPlayCue('node192')">Indonesia 
+(Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node193'); showPlayCue('node193')">Western Australia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node194'); showPlayCue('node194')">Russia (Irkutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node195'); showPlayCue('node195')">Mongolia 
+(Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node196'); showPlayCue('node196')">Japan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node197'); showPlayCue('node197')">South Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node198'); showPlayCue('node198')">North Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node199'); showPlayCue('node199')">East Timor</a></li>
+    <li><a href='#' onclick="playNodeAudio('node200'); showPlayCue('node200')">Indonesia 
+(Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node201'); showPlayCue('node201')">Russia (Yakutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node202'); showPlayCue('node202')">Palau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node203'); showPlayCue('node203')">UTC+6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node204'); showPlayCue('node204')">UTC+7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node205'); showPlayCue('node205')">UTC+8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node206'); showPlayCue('node206')">UTC+9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node207'); showPlayCue('node207')">Eastern Australia 
+(Queensland, NSW, Victoria)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node208'); showPlayCue('node208')">Papua New Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node209'); showPlayCue('node209')">Guam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node210'); showPlayCue('node210')">Northern Mariana Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node211'); showPlayCue('node211')">Russia (Vladivostok)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node212'); showPlayCue('node212')">Federated States of 
+Micronesia (Western)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node213'); showPlayCue('node213')">Solomon Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node214'); showPlayCue('node214')">New Caledonia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node215'); showPlayCue('node215')">Vanuatu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node216'); showPlayCue('node216')">Federated States of 
+Micronesia (Eastern)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node217'); showPlayCue('node217')">Russia (Magadan)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node218'); showPlayCue('node218')">Norfolk Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node219'); showPlayCue('node219')">Bougainville 
+(Papua New Guinea)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node220'); showPlayCue('node220')">Fiji</a></li>
+    <li><a href='#' onclick="playNodeAudio('node221'); showPlayCue('node221')">Tuvalu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node222'); showPlayCue('node222')">Nauru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node223'); showPlayCue('node223')">Kiribati 
+(Gilbert Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node224'); showPlayCue('node224')">Marshall Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node225'); showPlayCue('node225')">Wallis and Futuna</a></li>
+    <li><a href='#' onclick="playNodeAudio('node226'); showPlayCue('node226')">New Zealand (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node227'); showPlayCue('node227')">Russia (Kamchatka)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node228'); showPlayCue('node228')">Wake Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node229'); showPlayCue('node229')">Tonga</a></li>
+    <li><a href='#' onclick="playNodeAudio('node230'); showPlayCue('node230')">Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node231'); showPlayCue('node231')">Tokelau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node232'); showPlayCue('node232')">New Zealand 
+(Daylight Saving Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node233'); showPlayCue('node233')">Kiribati (Phoenix Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node234'); showPlayCue('node234')">Kiribati (Line Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node235'); showPlayCue('node235')">Kiritimati 
+(Christmas Island)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node236'); showPlayCue('node236')">UTC+10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node237'); showPlayCue('node237')">UTC+11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node238'); showPlayCue('node238')">UTC+12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node239'); showPlayCue('node239')">UTC+13</a></li>
+    <li><a href='#' onclick="playNodeAudio('node240'); showPlayCue('node240')">UTC+14</a></li>
+    <li><a href='#' onclick="playNodeAudio('node241'); showPlayCue('node241')">India (UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node242'); showPlayCue('node242')">Sri Lanka 
+(UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node243'); showPlayCue('node243')">South Asia 
+& East Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node244'); showPlayCue('node244')">Nepal (UTC+5:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node245'); showPlayCue('node245')">Myanmar 
+(UTC+6:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node246'); showPlayCue('node246')">Cocos (Keeling) Islands 
+(Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node247'); showPlayCue('node247')">Eucla (Australia) (UTC+8:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node248'); showPlayCue('node248')">Australia 
+(Northern Territory (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node249'); showPlayCue('node249')">Australia 
+(South Australia (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node250'); showPlayCue('node250')">Australia 
+(Broken Hill (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node251'); showPlayCue('node251')">Lord Howe Island 
+(Australia (UTC+10:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node252'); showPlayCue('node252')">Chatham Islands 
+(New Zealand (UTC+12:35))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node253'); showPlayCue('node253')">Newfoundland 
+(Canada (−3:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node254'); showPlayCue('node254')">Venezuela (−4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node255'); showPlayCue('node255')">United Kingdom (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node256'); showPlayCue('node256')">Ireland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node257'); showPlayCue('node257')">Portugal DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node258'); showPlayCue('node258')">Spain DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node259'); showPlayCue('node259')">France DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node260'); showPlayCue('node260')">Germany DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node261'); showPlayCue('node261')">Italy DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node262'); showPlayCue('node262')">Netherlands DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node263'); showPlayCue('node263')">Belgium DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node264'); showPlayCue('node264')">Switzerland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node265'); showPlayCue('node265')">Austria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node266'); showPlayCue('node266')">Poland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node267'); showPlayCue('node267')">Czech Republic DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node268'); showPlayCue('node268')">Hungary DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node269'); showPlayCue('node269')">Slovakia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node270'); showPlayCue('node270')">Slovenia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node271'); showPlayCue('node271')">Croatia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node272'); showPlayCue('node272')">Serbia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node273'); showPlayCue('node273')">Bosnia and Herzegovina DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node274'); showPlayCue('node274')">North Macedonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node275'); showPlayCue('node275')">Greece DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node276'); showPlayCue('node276')">Bulgaria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node277'); showPlayCue('node277')">Romania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node278'); showPlayCue('node278')">Ukraine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node279'); showPlayCue('node279')">Norway DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node280'); showPlayCue('node280')">Sweden DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node281'); showPlayCue('node281')">Finland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node282'); showPlayCue('node282')">Estonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node283'); showPlayCue('node283')">Latvia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node284'); showPlayCue('node284')">Lithuania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node285'); showPlayCue('node285')">West Africa 
+&
+ Europe West</a></li>
+    <li><a href='#' onclick="playNodeAudio('node286'); showPlayCue('node286')">United States (except Arizona, Hawaii)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node287'); showPlayCue('node287')">Canada 
+(except Saskatchewan,
+ Yukon) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node288'); showPlayCue('node288')">Mexico (Baja California 
+and border municipalities) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node289'); showPlayCue('node289')">Greenland (Pituffik Space Base) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node290'); showPlayCue('node290')">Saint Pierre
+ and 
+Miquelon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node291'); showPlayCue('node291')">Bahamas DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node292'); showPlayCue('node292')">Bermuda DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node293'); showPlayCue('node293')">Haiti DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node294'); showPlayCue('node294')">Cuba DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node295'); showPlayCue('node295')">South 
+America</a></li>
+    <li><a href='#' onclick="playNodeAudio('node296'); showPlayCue('node296')">Chile (except Aysén
+ and
+ Magallanes)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node297'); showPlayCue('node297')">Paraguay DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node298'); showPlayCue('node298')">Israel DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node299'); showPlayCue('node299')">Lebanon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node300'); showPlayCue('node300')">Iran (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node301'); showPlayCue('node301')">Palestine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node302'); showPlayCue('node302')">Egypt DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node303'); showPlayCue('node303')">Middle East 
+&
+ Central Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node304'); showPlayCue('node304')">Oceania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node305'); showPlayCue('node305')">New Zealand 
+(Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node306'); showPlayCue('node306')">Chatham Islands (NZ) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node307'); showPlayCue('node307')">Australia 
+(NSW, Victoria, 
+Tasmania, SA, ACT)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node308'); showPlayCue('node308')">Lord Howe Island
+ (Australia) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node309'); showPlayCue('node309')">Norfolk Island 
+(Australia) DST</a></li>  
+  </ul>
+  </div>    
+<div id="svgContainer">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+
+<!-- Title: G Pages: 1 -->
+
+<svg viewBox="0 0 3620.306 643.445" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
+   width="3620.3057pt"
+   height="643.44482pt"
+   viewBox="0 0 3619.8019 643.44482"
+   version="1.1"
+   id="svg565"
+   xml:space="preserve"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"><title
+     id="title6352">bludarkness_2214</title><defs
+     id="defs569"><linearGradient
+       id="linearGradient3910"><stop
+         style="stop-color:#f18305;stop-opacity:1;"
+         offset="0"
+         id="stop3906" /><stop
+         style="stop-color:#f18305;stop-opacity:0;"
+         offset="1"
+         id="stop3908" /></linearGradient><linearGradient
+       xlink:href="#linearGradient3910"
+       id="linearGradient3912"
+       x1="31.384359"
+       y1="-52.179253"
+       x2="55.242439"
+       y2="-52.179253"
+       gradientUnits="userSpaceOnUse" /></defs><g
+     id="graph0"
+     class="graph"
+     transform="translate(14.143027,508.79028)"><title
+       id="title2">G</title><polygon
+       fill="#ffffff"
+       stroke="none"
+       points="-4,-497 3588.5,-497 3588.5,4 -4,4 "
+       id="polygon4"
+       transform="matrix(1.0077399,0,0,1.284321,-10.362015,129.51726)"
+       style="fill:#333333" /><text
+       text-anchor="middle"
+       x="1792.25"
+       y="-469"
+       font-family="'Comic Sans MS'"
+       font-size="25px"
+       id="text6"><tspan
+         style="fill:#ffffff"
+         id="tspan844">Blu/darkness</tspan></text><g
+       id="clust1"
+       class="cluster"><title
+         id="title8">cluster_corporation</title><polygon
+         fill="none"
+         stroke="#d3d3d3"
+         stroke-dasharray="1, 5"
+         points="62,-270.5 1587,-270.5 1587,-30.5 62,-30.5 "
+         id="polygon10"
+         transform="matrix(0.99986681,0,0,1.4476601,0.10981115,121.19361)" /><text
+         text-anchor="middle"
+         x="824.5"
+         y="-246.5"
+         font-family="'Comic Sans MS'"
+         font-size="25px"
+         id="text12"><tspan
+           style="fill:#ffffff"
+           id="tspan948">Session n1–n75 (Pre-Disclosure)</tspan></text></g><!-- e1 --><g
+       id="node1"
+       class="node"><title
+         id="title15">e1</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="968.5,-420.5 968.5,-456.5 1309.5,-456.5 1309.5,-420.5 "
+         id="polygon17" /><text
+         text-anchor="middle"
+         x="1139"
+         y="-434.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text19">Blu/darkness06072021_005_2327_utc+1_706102025_axd</text></g><!-- c0 --><g
+       id="node17"
+       class="node"><title
+         id="title22">c0</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="1096.5,-316.5 1096.5,-352.5 1181.5,-352.5 1181.5,-316.5 "
+         id="polygon24" /><text
+         text-anchor="middle"
+         x="1139"
+         y="-330.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text26">Corporation</text></g><!-- e1&#45;&gt;c0 --><g
+       id="edge41"
+       class="edge"><title
+         id="title29">e1-&gt;c0</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1139,-420.197 c 0,15.774 0,39.333 0,57.603"
+         id="path31" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1139,-352.547 1134.63,-362.547 1143.38,-362.547 "
+         id="polygon33" /></g><!-- e2 --><g
+       id="node2"
+       class="node"><title
+         id="title36">e2</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="1835.5,-300.5 1835.5,-368.5 2140.5,-368.5 2140.5,-300.5 "
+         id="polygon38" /><text
+         text-anchor="middle"
+         x="1988"
+         y="-353.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text40">01:29 utc+1</text><text
+         text-anchor="middle"
+         x="1988"
+         y="-338.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text42">Tuesday “Gone with wind” 7th October 2025 wk41</text><text
+         text-anchor="middle"
+         x="1988"
+         y="-323.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text44">Update [[title=“2127]] → [n145]]</text><text
+         text-anchor="middle"
+         x="1988"
+         y="-308.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text46">e.g Bleakst, 0048</text></g><!-- e2a --><g
+       id="node3"
+       class="node"><title
+         id="title49">e2a</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="1503,-285.5 1503,-383.5 1817,-383.5 1817,-285.5 "
+         id="polygon51" /><text
+         text-anchor="middle"
+         x="1660"
+         y="-368.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text53">16:55 utc+1</text><text
+         text-anchor="middle"
+         x="1660"
+         y="-353.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text55">Update [[title=“2155, 2141]] → [n145 146]]</text><text
+         text-anchor="middle"
+         x="1660"
+         y="-338.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text57">e.g “Bleakperambulator”, “1050”, “1051”, “exhaust”,</text><text
+         text-anchor="middle"
+         x="1660"
+         y="-323.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text59">“Bleaksirenst”, “blue”, “1051”, “1054”, “1057”,</text><text
+         text-anchor="middle"
+         x="1660"
+         y="-308.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text61">“k9”, “1101”, “horn”, “1111”, “1114”, “1116”,</text><text
+         text-anchor="middle"
+         x="1660"
+         y="-293.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text63">“street”, “siren”, “1118”, “1154”, “aire”</text></g><!-- e3 --><g
+       id="node4"
+       class="node"><title
+         id="title66">e3</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="1199.5,-293 1199.5,-376 1484.5,-376 1484.5,-293 "
+         id="polygon68" /><text
+         text-anchor="middle"
+         x="1342"
+         y="-360.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text70">18:33 utc+1</text><text
+         text-anchor="middle"
+         x="1342"
+         y="-345.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text72">Update [[title=“2169]] → [n148]]</text><text
+         text-anchor="middle"
+         x="1342"
+         y="-330.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text74">e.g “Bleakst”, “neigh”, “1720”, “1723”, “1724”,</text><text
+         text-anchor="middle"
+         x="1342"
+         y="-315.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text76">“exhaust”, “1730”, “1731”, “siren”,</text><text
+         text-anchor="middle"
+         x="1342"
+         y="-300.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text78">“1735”, “BBCreau”, “1737”</text></g><!-- e4 --><g
+       id="node5"
+       class="node"><title
+         id="title81">e4</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2158.5,-300.5 2158.5,-368.5 2463.5,-368.5 2463.5,-300.5 "
+         id="polygon83" /><text
+         text-anchor="middle"
+         x="2311"
+         y="-353.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text85">21:55 utc+1</text><text
+         text-anchor="middle"
+         x="2311"
+         y="-338.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text87">Tuesday “Gone with wind” 7th October 2025 wk41</text><text
+         text-anchor="middle"
+         x="2311"
+         y="-323.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text89">Update [[title=“2183]] → [n149]]</text><text
+         text-anchor="middle"
+         x="2311"
+         y="-308.29999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text91">e.g Bleakst, siren, 2111, 2121, BBCreau</text></g><!-- e5 --><g
+       id="node6"
+       class="node"><title
+         id="title94">e5</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2482,-308 2482,-361 2738,-361 2738,-308 "
+         id="polygon96" /><text
+         text-anchor="middle"
+         x="2610"
+         y="-345.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text98">22:27 utc+1</text><text
+         text-anchor="middle"
+         x="2610"
+         y="-330.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text100">Update [[title=“2197]] → [n150]]</text><text
+         text-anchor="middle"
+         x="2610"
+         y="-315.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text102">e.g Bleaksthoover, siren, 0506, 0510, neigh</text></g><!-- e16 --><g
+       id="node7"
+       class="node"><title
+         id="title105">e16</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2049,-173 2049,-226 2279,-226 2279,-173 "
+         id="polygon107" /><text
+         text-anchor="middle"
+         x="2164"
+         y="-210.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text109">23:09 utc+1</text><text
+         text-anchor="middle"
+         x="2164"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text111">Update [[title=“2211]] → [n151]]</text><text
+         text-anchor="middle"
+         x="2164"
+         y="-180.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text113">e.g Bleakssirenst, k9, blue, 2229, 2143</text></g><!-- e5&#45;&gt;e16 --><!-- e7 --><g
+       id="node8"
+       class="node"><title
+         id="title116">e7</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2297,-150.5 2297,-248.5 2675,-248.5 2675,-150.5 "
+         id="polygon118" /><text
+         text-anchor="middle"
+         x="2486"
+         y="-233.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text120">16:19 utc+1</text><text
+         text-anchor="middle"
+         x="2486"
+         y="-218.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text122">Harassment and intimidation log</text><text
+         text-anchor="middle"
+         x="2486"
+         y="-203.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text124">Blu/darkness06072021_005_2327_utc+1_706102025_axd_test2.</text><text
+         text-anchor="middle"
+         x="2486"
+         y="-188.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text126">Bleakst_1501_1519_utc+1_08102025.mp3</text><text
+         text-anchor="middle"
+         x="2486"
+         y="-173.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text128">Bleakst_1542_1547_utc+1_08102025</text><text
+         text-anchor="middle"
+         x="2486"
+         y="-158.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text130">Bleakst_1542_1547_utc+1_08102025.mp3</text></g><!-- e16&#45;&gt;e7 --><!-- e8 --><g
+       id="node9"
+       class="node"><title
+         id="title133">e8</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2693.5,-165.5 2693.5,-233.5 2964.5,-233.5 2964.5,-165.5 "
+         id="polygon135" /><text
+         text-anchor="middle"
+         x="2829"
+         y="-218.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text137">17:04utc+1</text><text
+         text-anchor="middle"
+         x="2829"
+         y="-203.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text139">WYPCN Log → UNHR →↓↓→ Compliance</text><text
+         text-anchor="middle"
+         x="2829"
+         y="-188.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text141">Update [[title=“2225”]] → [n152]]</text><text
+         text-anchor="middle"
+         x="2829"
+         y="-173.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text143">e.g Bleakst, 1501, _H_, 1546</text></g><!-- e7&#45;&gt;e8 --><!-- e9 --><g
+       id="node10"
+       class="node"><title
+         id="title146">e9</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2983,-173 2983,-226 3185,-226 3185,-173 "
+         id="polygon148" /><text
+         text-anchor="middle"
+         x="3084"
+         y="-210.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text150">17:21 utc+1</text><text
+         text-anchor="middle"
+         x="3084"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text152">Update [[title=“2253]] → [n153]]</text><text
+         text-anchor="middle"
+         x="3084"
+         y="-180.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text154">e.g Bleakst, 1611, 1635</text></g><!-- e8&#45;&gt;e9 --><!-- e10 --><g
+       id="node11"
+       class="node"><title
+         id="title157">e10</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="3203.5,-158 3203.5,-241 3584.5,-241 3584.5,-158 "
+         id="polygon159" /><text
+         text-anchor="middle"
+         x="3394"
+         y="-225.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text161">19:17utc+1</text><text
+         text-anchor="middle"
+         x="3394"
+         y="-210.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text163">Bleakst_neigh_siren_blue_1846_1857utc+1_08102025_v0.1</text><text
+         text-anchor="middle"
+         x="3394"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text165">Bleakst_neigh_siren_blue_1846_1857utc+1_08102025_v0.1.mp3</text><text
+         text-anchor="middle"
+         x="3394"
+         y="-180.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text167">Update [[title=“2260]] → [n154]]</text><text
+         text-anchor="middle"
+         x="3394"
+         y="-165.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text169">e.g Bleakst, neigh, siren, 1846, 1857, blue</text></g><!-- e9&#45;&gt;e10 --><!-- e11 --><g
+       id="node12"
+       class="node"><title
+         id="title172">e11</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="1595,-23 1595,-91 1797,-91 1797,-23 "
+         id="polygon174" /><text
+         text-anchor="middle"
+         x="1696"
+         y="-75.800003"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text176">Harassment and intimidation log</text><text
+         text-anchor="middle"
+         x="1696"
+         y="-60.799999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text178">14:36 utc+1</text><text
+         text-anchor="middle"
+         x="1696"
+         y="-45.799999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text180">Update [[title=“2274]] → [n155]]</text><text
+         text-anchor="middle"
+         x="1696"
+         y="-30.799999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text182">e.g Bleakst, 0059, _H_</text></g><!-- e12 --><g
+       id="node13"
+       class="node"><title
+         id="title185">e12</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="1815,-30.5 1815,-83.5 2227,-83.5 2227,-30.5 "
+         id="polygon187" /><text
+         text-anchor="middle"
+         x="2021"
+         y="-68.300003"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text189">02:12 utc+1</text><text
+         text-anchor="middle"
+         x="2021"
+         y="-53.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text191">Update [[title=“2288, 2302]] → [n156 157]]</text><text
+         text-anchor="middle"
+         x="2021"
+         y="-38.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text193">e.g Bleakst, aire, Bleakperambulatorst, horn, 1353, 1358, exhaust, 1405</text></g><!-- e11&#45;&gt;e12 --><!-- e13 --><g
+       id="node14"
+       class="node"><title
+         id="title196">e13</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2245.5,-15.5 2245.5,-98.5 2506.5,-98.5 2506.5,-15.5 "
+         id="polygon198" /><text
+         text-anchor="middle"
+         x="2376"
+         y="-83.300003"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text200">17:01 utc+1</text><text
+         text-anchor="middle"
+         x="2376"
+         y="-68.300003"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text202">Update [[title=“2316, 2330]] → [n158 159]]</text><text
+         text-anchor="middle"
+         x="2376"
+         y="-53.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text204">e.g Bleakst, aire, Bleakperabulatorst, 1534,</text><text
+         text-anchor="middle"
+         x="2376"
+         y="-38.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text206">1539, exhaust, 1541, horn, 1544,</text><text
+         text-anchor="middle"
+         x="2376"
+         y="-23.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text208">1554, 1600, aire, 1605</text></g><!-- e12&#45;&gt;e13 --><!-- e14 --><g
+       id="node15"
+       class="node"><title
+         id="title211">e14</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2524.5,-0.5 2524.5,-113.5 2815.5,-113.5 2815.5,-0.5 "
+         id="polygon213" /><text
+         text-anchor="middle"
+         x="2670"
+         y="-98.300003"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text215">19:50 utc+1</text><text
+         text-anchor="middle"
+         x="2670"
+         y="-83.300003"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text217">Update [[title=“2337]] → [n160]]</text><text
+         text-anchor="middle"
+         x="2670"
+         y="-68.300003"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text219">e.g Bleakperambulatorst, horn, 1441, 1510, 1533,</text><text
+         text-anchor="middle"
+         x="2670"
+         y="-53.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text221">hornexhaust1542, aire, 1605, 1625, 1719,</text><text
+         text-anchor="middle"
+         x="2670"
+         y="-38.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text223">exhaust, 1726, 1748, neigh, 1759, 1800,</text><text
+         text-anchor="middle"
+         x="2670"
+         y="-23.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text225">1816, horn, 1818, 1819, agency, 1821,</text><text
+         text-anchor="middle"
+         x="2670"
+         y="-8.3000002"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text227">1822, horn, 1824, aire, 1604, 1605</text></g><!-- e13&#45;&gt;e14 --><!-- e15 --><g
+       id="node16"
+       class="node"><title
+         id="title230">e15</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="2834,-30.5 2834,-83.5 3052,-83.5 3052,-30.5 "
+         id="polygon232" /><text
+         text-anchor="middle"
+         x="2943"
+         y="-68.300003"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text234">20:26 utc+1</text><text
+         text-anchor="middle"
+         x="2943"
+         y="-53.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text236">Update [[title=“2351]] → [n161]]</text><text
+         text-anchor="middle"
+         x="2943"
+         y="-38.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text238">e.g Bleakperambulatorst, horn, 2006</text></g><!-- e14&#45;&gt;e15 --><!-- c0&#45;&gt;e2 --><g
+       id="edge26"
+       class="edge"><title
+         id="title241">c0-&gt;e2</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1149.1,-352.766 c 10.19,-16.341 27.59,-39.214 49.9,-49.234 62.64,-28.13 550.54,-12.832 618,0 31.27,5.948 64.13,17.505 92.59,29.399"
+         id="path243" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1919.06,-368.562 1908.15,-368.459 1911.58,-376.508 "
+         id="polygon245" /></g><!-- c0&#45;&gt;e2a --><g
+       id="edge27"
+       class="edge"><title
+         id="title248">c0-&gt;e2a</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1149.1,-352.766 c 10.19,-16.341 27.59,-39.214 49.9,-49.234 57.78,-25.945 222.73,-11.532 285,0 18.86,3.492 38.3,8.922 57.08,15.22"
+         id="path250" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1550.53,-383.519 1539.65,-382.644 1542.51,-390.916 "
+         id="polygon252" /></g><!-- c0&#45;&gt;e3 --><g
+       id="edge28"
+       class="edge"><title
+         id="title255">c0-&gt;e3</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1181.82,-334.5 c 2.46,0 4.93,0 7.39,0"
+         id="path257" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1199.34,-334.5 1189.34,-330.125 1189.34,-338.875 "
+         id="polygon259" /></g><!-- c0&#45;&gt;e4 --><g
+       id="edge29"
+       class="edge"><title
+         id="title262">c0-&gt;e4</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1149.1,-352.766 c 10.19,-16.341 27.59,-39.214 49.9,-49.234 47.74,-21.439 890.6,-9.831 942,0 31.1,5.949 63.77,17.507 92.07,29.4"
+         id="path264" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="2242.49,-368.561 2231.57,-368.481 2235.02,-376.523 "
+         id="polygon266" /></g><!-- c0&#45;&gt;e5 --><g
+       id="edge30"
+       class="edge"><title
+         id="title269">c0-&gt;e5</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1149.1,-352.766 c 10.19,-16.341 27.59,-39.214 49.9,-49.234 64.11,-28.79 1196.36,-15.099 1265,0 32.34,7.115 66.05,22.124 92.92,36.186"
+         id="path271" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="2565.76,-361.094 2554.88,-361.946 2559,-369.664 "
+         id="polygon273" /></g><!-- c0&#45;&gt;e16 --><g
+       id="edge40"
+       class="edge"><title
+         id="title276">c0-&gt;e16</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1151.57,-316.159 c 9.23,11.174 22.83,24.768 38.43,31.159 86.9,35.589 754.19,-9.383 845,14.5 30.07,7.908 60.78,24.179 84.69,39.045"
+         id="path278" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="2128.18,-226.059 2117.39,-227.732 2122.08,-235.116 "
+         id="polygon280" /></g><!-- c0&#45;&gt;e7 --><g
+       id="edge31"
+       class="edge"><title
+         id="title283">c0-&gt;e7</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1151.56,-316.14 c 9.22,11.184 22.82,24.78 38.44,31.14 56.5,23.01 1037.94,3.788 1098,14.5 23.9,4.262 48.76,11.042 72.46,18.742"
+         id="path285" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="2370.19,-248.527 2359.32,-247.528 2362.08,-255.832 "
+         id="polygon287" /></g><!-- c0&#45;&gt;e8 --><g
+       id="edge32"
+       class="edge"><title
+         id="title290">c0-&gt;e8</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1151.56,-316.122 c 9.21,11.191 22.81,24.79 38.44,31.122 76.93,31.172 1413.18,-4.401 1494,14.5 28.24,6.605 57.41,19.355 82.11,32.183"
+         id="path292" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="2775,-233.598 2764.12,-234.422 2768.22,-242.151 "
+         id="polygon294" /></g><!-- c0&#45;&gt;e9 --><g
+       id="edge33"
+       class="edge"><title
+         id="title297">c0-&gt;e9</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1151.55,-316.114 c 9.22,11.194 22.82,24.794 38.45,31.114 91.89,37.15 1688.95,-13.598 1784,14.5 26.02,7.692 51.79,23.53 71.84,38.197"
+         id="path299" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="3054.07,-226.116 3043.45,-228.63 3048.71,-235.623 "
+         id="polygon301" /></g><!-- c0&#45;&gt;e10 --><g
+       id="edge34"
+       class="edge"><title
+         id="title304">c0-&gt;e10</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1151.55,-316.11 c 9.22,11.197 22.81,24.797 38.45,31.11 51.62,20.843 1949.15,4.975 2004,14.5 31.56,5.481 64.79,15.332 94.9,25.946"
+         id="path306" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="3298.56,-241.085 3287.67,-240.346 3290.63,-248.582 "
+         id="polygon308" /></g><!-- c0&#45;&gt;e11 --><g
+       id="edge35"
+       class="edge"><title
+         id="title311">c0-&gt;e11</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1151.61,-316.254 c 9.24,11.133 22.85,24.716 38.39,31.254 41.1,17.289 356.63,10.104 401,14.5 192.68,19.091 244.2,15.505 430,70"
+         id="path313" /><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 2021,-198.5 c 49.26,14.448 -168.18,63.442 -215,84.5 -12.58,5.659 -25.79,12.013 -38.52,18.3547"
+         id="path315" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1758.32,-91.0398 1765.29,-99.439 1769.22,-91.6205 "
+         id="polygon317" /></g><!-- c0&#45;&gt;e12 --><g
+       id="edge36"
+       class="edge"><title
+         id="title320">c0-&gt;e12</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 2021,-198.5 c 19.81,5.81 13.42,65.36 6.82,105.0455"
+         id="path322" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="2026.11,-83.591 2023.51,-94.1918 2032.13,-92.6957 "
+         id="polygon324" /></g><!-- c0&#45;&gt;e13 --><g
+       id="edge37"
+       class="edge"><title
+         id="title327">c0-&gt;e13</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 2021,-198.5 c 22.21,6.516 1.14,33.772 19,48.5 68.33,56.3452 110.91,11.432 196,36 11.91,3.438 24.2,7.519 36.32,11.889"
+         id="path329" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="2282,-98.5516 2271.11,-97.8969 2274.13,-106.109 "
+         id="polygon331" /></g><!-- c0&#45;&gt;e14 --><g
+       id="edge38"
+       class="edge"><title
+         id="title334">c0-&gt;e14</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 2021,-198.5 c 22.21,6.516 0.38,34.741 19,48.5 82.89,61.2627 356.2,16.373 474.46,36.022"
+         id="path336" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="2524.39,-112.091 2513.75,-109.659 2515.38,-118.255 "
+         id="polygon338" /></g><!-- c0&#45;&gt;e15 --><g
+       id="edge39"
+       class="edge"><title
+         id="title341">c0-&gt;e15</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 2021,-198.5 c 22.21,6.516 0.18,35.018 19,48.5 70.98,50.8478 700.28,14.867 785,36 22.51,5.616 45.88,15.6901 65.83,25.7606"
+         id="path343" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="2899.73,-83.6287 2888.84,-84.3407 2892.86,-92.1113 "
+         id="polygon345" /></g><!-- c3 --><g
+       id="node20"
+       class="node"><title
+         id="title348">c3</title><polygon
+         fill="#330000"
+         stroke="#000000"
+         points="70.5,-181.5 70.5,-217.5 175.5,-217.5 175.5,-181.5 "
+         id="polygon350" /><text
+         text-anchor="middle"
+         x="123"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         fill="#ffffff"
+         id="text352">plate's criminals</text></g><!-- c0&#45;&gt;c3 --><g
+       id="edge14"
+       class="edge"><title
+         id="title355">c0-&gt;c3</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1096.48,-332.588 c -174.305,3.996 -828.908,21.595 -911.48,62.088 -19.617,9.62 -35.744,28.472 -46.628,44.191"
+         id="path357" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="132.582,-217.51 134.424,-228.269 141.734,-223.459 "
+         id="polygon359" /></g><!-- c4 --><g
+       id="node21"
+       class="node"><title
+         id="title362">c4</title><polygon
+         fill="#660000"
+         stroke="#000000"
+         points="194,-181.5 194,-217.5 278,-217.5 278,-181.5 "
+         id="polygon364" /><text
+         text-anchor="middle"
+         x="236"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         fill="#ffffff"
+         id="text366">crime flare's</text></g><!-- c0&#45;&gt;c4 --><g
+       id="edge15"
+       class="edge"><title
+         id="title369">c0-&gt;c4</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1096.32,-332.435 c -162.669,4.34 -738.187,22.381 -809.32,61.935 -17.412,9.682 -30.462,28.094 -39.001,43.605"
+         id="path371" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="243.266,-217.716 243.96,-228.609 251.738,-224.599 "
+         id="polygon373" /></g><!-- c5 --><g
+       id="node22"
+       class="node"><title
+         id="title376">c5</title><polygon
+         fill="#990000"
+         stroke="#000000"
+         points="549,-181.5 549,-217.5 671,-217.5 671,-181.5 "
+         id="polygon378" /><text
+         text-anchor="middle"
+         x="610"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         fill="#ffffff"
+         id="text380">exhausts colusions</text></g><!-- c0&#45;&gt;c5 --><g
+       id="edge16"
+       class="edge"><title
+         id="title383">c0-&gt;c5</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1096.43,-331.119 c -99.348,6.106 -343.578,24.443 -416.43,60.619 -20.651,10.255 -38.882,28.985 -51.557,44.492"
+         id="path385" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="621.992,-217.799 624.731,-228.365 631.611,-222.959 "
+         id="polygon387" /></g><!-- c6 --><g
+       id="node23"
+       class="node"><title
+         id="title390">c6</title><polygon
+         fill="#cc0000"
+         stroke="#000000"
+         points="425.5,-180.5 425.5,-218.5 530.5,-218.5 530.5,-180.5 "
+         id="polygon392" /><text
+         text-anchor="middle"
+         x="478"
+         y="-203.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         fill="#ffffff"
+         id="text394">around the horn</text><text
+         text-anchor="middle"
+         x="478"
+         y="-188.3"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         fill="#ffffff"
+         id="text396">of vice</text></g><!-- c0&#45;&gt;c6 --><g
+       id="edge17"
+       class="edge"><title
+         id="title399">c0-&gt;c6</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1096.1,-332.974 c -120.372,2.096 -458.827,12.405 -556.1,62.474 -18.944,9.751 -34.759,27.902 -45.675,43.277"
+         id="path401" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="488.478,-218.576 490.455,-229.31 497.704,-224.409 "
+         id="polygon403" /></g><!-- c7 --><g
+       id="node24"
+       class="node"><title
+         id="title406">c7</title><polygon
+         fill="#ff3333"
+         stroke="#000000"
+         points="296.5,-181.5 296.5,-217.5 407.5,-217.5 407.5,-181.5 "
+         id="polygon408" /><text
+         text-anchor="middle"
+         x="352"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text410">transmission tyre</text></g><!-- c0&#45;&gt;c7 --><g
+       id="edge18"
+       class="edge"><title
+         id="title413">c0-&gt;c7</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1096.29,-333.789 c -136.387,-0.306 -559.541,3.685 -680.29,63.289 -19.934,9.84 -36.641,28.768 -47.982,44.463"
+         id="path415" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="362.283,-217.729 364.363,-228.444 371.564,-223.473 "
+         id="polygon417" /></g><!-- c8 --><g
+       id="node25"
+       class="node"><title
+         id="title420">c8</title><polygon
+         fill="#ff6666"
+         stroke="#000000"
+         points="1473.5,-173 1473.5,-226 1578.5,-226 1578.5,-173 "
+         id="polygon422" /><text
+         text-anchor="middle"
+         x="1526"
+         y="-210.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text424">radio</text><text
+         text-anchor="middle"
+         x="1526"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text426">broad spectrum</text><text
+         text-anchor="middle"
+         x="1526"
+         y="-180.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text428">cast</text></g><!-- c0&#45;&gt;c8 --><g
+       id="edge19"
+       class="edge"><title
+         id="title431">c0-&gt;c8</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1151.65,-316.336 c 9.25,11.095 22.86,24.668 38.35,31.336 56,24.113 219.08,-11.989 274,14.5 16.35,7.885 30.24,22.233 40.71,35.895"
+         id="path433" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1510.77,-226.251 1501.36,-231.773 1508.44,-236.913 "
+         id="polygon435" /></g><!-- c9 --><g
+       id="node26"
+       class="node"><title
+         id="title438">c9</title><polygon
+         fill="#ff6666"
+         stroke="#000000"
+         points="1359,-181.5 1359,-217.5 1455,-217.5 1455,-181.5 "
+         id="polygon440" /><text
+         text-anchor="middle"
+         x="1407"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text442">evilshort wave</text></g><!-- c0&#45;&gt;c9 --><g
+       id="edge20"
+       class="edge"><title
+         id="title445">c0-&gt;c9</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1152.14,-316.043 c 9.28,10.923 22.73,24.182 37.86,31.043 64.63,29.298 96.22,-18.576 159,14.5 18.68,9.839 33.67,28.505 43.73,44.088"
+         id="path447" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1398.07,-217.683 1389.12,-223.927 1396.58,-228.496 "
+         id="polygon449" /></g><!-- c10 --><g
+       id="node27"
+       class="node"><title
+         id="title452">c10</title><polygon
+         fill="#ff9999"
+         stroke="#000000"
+         points="1243.5,-181.5 1243.5,-217.5 1340.5,-217.5 1340.5,-181.5 "
+         id="polygon454" /><text
+         text-anchor="middle"
+         x="1292"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text456">cybertinter-net</text></g><!-- c0&#45;&gt;c10 --><g
+       id="edge21"
+       class="edge"><title
+         id="title459">c0-&gt;c10</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1153.56,-316.216 c 9.47,10.297 22.6,22.933 36.44,31.216 17.67,10.574 26.99,2.898 44,14.5 17.11,11.672 31.92,29.774 42.29,44.645"
+         id="path461" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1281.87,-217.545 1272.67,-223.41 1279.93,-228.286 "
+         id="polygon463" /></g><!-- c11 --><g
+       id="node28"
+       class="node"><title
+         id="title466">c11</title><polygon
+         fill="#ffcccc"
+         stroke="#000000"
+         points="1158.5,-181.5 1158.5,-217.5 1225.5,-217.5 1225.5,-181.5 "
+         id="polygon468" /><text
+         text-anchor="middle"
+         x="1192"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text470">manyfeet</text></g><!-- c0&#45;&gt;c11 --><g
+       id="edge22"
+       class="edge"><title
+         id="title473">c0-&gt;c11</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1145.82,-316.385 c 9.02,22.645 25.02,62.792 35.62,89.376"
+         id="path475" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1185.21,-217.549 1177.44,-225.219 1185.57,-228.459 "
+         id="polygon477" /></g><!-- c12 --><g
+       id="node29"
+       class="node"><title
+         id="title480">c12</title><polygon
+         fill="#ffe6e6"
+         stroke="#000000"
+         points="1032,-181.5 1032,-217.5 1140,-217.5 1140,-181.5 "
+         id="polygon482" /><text
+         text-anchor="middle"
+         x="1086"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text484">valancing vocals</text></g><!-- c0&#45;&gt;c12 --><g
+       id="edge23"
+       class="edge"><title
+         id="title487">c0-&gt;c12</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1132.18,-316.385 c -9.02,22.645 -25.02,62.792 -35.62,89.376"
+         id="path489" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1092.79,-217.549 1092.43,-228.459 1100.56,-225.219 "
+         id="polygon491" /></g><!-- c13 --><g
+       id="node30"
+       class="node"><title
+         id="title494">c13</title><polygon
+         fill="#ffe6e6"
+         stroke="#000000"
+         points="799.5,-181.5 799.5,-217.5 912.5,-217.5 912.5,-181.5 "
+         id="polygon496" /><text
+         text-anchor="middle"
+         x="856"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text498">mirror reflections</text></g><!-- c0&#45;&gt;c13 --><g
+       id="edge24"
+       class="edge"><title
+         id="title501">c0-&gt;c13</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1096.09,-328.063 c -46.08,7.361 -120.072,23.689 -175.09,57.563 -18.534,11.411 -35.148,29.52 -46.94,44.46"
+         id="path503" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="867.697,-217.684 870.275,-228.291 877.236,-222.989 "
+         id="polygon505" /></g><!-- c14 --><g
+       id="node31"
+       class="node"><title
+         id="title508">c14</title><polygon
+         fill="#ffe6e6"
+         stroke="#000000"
+         points="689,-181.5 689,-217.5 781,-217.5 781,-181.5 "
+         id="polygon510" /><text
+         text-anchor="middle"
+         x="735"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text512">misc ubiquity</text></g><!-- c0&#45;&gt;c14 --><g
+       id="edge25"
+       class="edge"><title
+         id="title515">c0-&gt;c14</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 1096.19,-329.592 c -81.43,8.049 -255.084,28.339 -306.19,59.092 -17.437,10.493 -31.487,28.71 -41.021,43.93"
+         id="path517" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="743.636,-217.577 744.982,-228.408 752.505,-223.939 "
+         id="polygon519" /></g><!-- c1 --><g
+       id="node18"
+       class="node"><title
+         id="title522">c1</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="930.5,-181.5 930.5,-217.5 1013.5,-217.5 1013.5,-181.5 "
+         id="polygon524" /><text
+         text-anchor="middle"
+         x="972"
+         y="-195.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text526">conspiritors</text></g><!-- c1&#45;&gt;c0 --><g
+       id="edge13"
+       class="edge"><title
+         id="title529">c1-&gt;c0</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 981.542,-217.716 c 9.122,-15.295 24.038,-37.527 41.458,-52.784 19.31,-16.912 43.92,-31.085 65.51,-41.678"
+         id="path531" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="1097.55,-316.496 1090.41,-308.238 1086.64,-316.134 "
+         id="polygon533" /></g><!-- c2 --><g
+       id="node19"
+       class="node"
+       transform="translate(-1.1135331,5.1964876)"><title
+         id="title536">c2</title><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="916.5,-75 1027.5,-75 1027.5,-39 916.5,-39 "
+         id="polygon538" /><text
+         text-anchor="middle"
+         x="972"
+         y="-53.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         fill="#ffffff"
+         id="text540">baffle'crimminals</text></g><!-- c1&#45;&gt;c2 --><g
+       id="edge11"
+       class="edge"><title
+         id="title543">c1-&gt;c2</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 972,-181.272 c 0,23.911 0,67.415 0,95.8258"
+         id="path545" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="972,-75.369 967.625,-85.369 976.375,-85.3689 "
+         id="polygon547" /></g><!-- co --><g
+       id="node32"
+       class="node"><title
+         id="title550">co</title><polygon
+         fill="#d3d3d3"
+         stroke="#000000"
+         points="0,-39 0,-75 54,-75 54,-39 "
+         id="polygon552" /><text
+         text-anchor="middle"
+         x="27"
+         y="-53.299999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text554">co</text></g><!-- c1&#45;&gt;co --><g
+       id="edge12"
+       class="edge"><title
+         id="title557">c1-&gt;co</title><path
+         fill="none"
+         stroke="#f18305"
+         stroke-width="5"
+         d="m 959.377,-181.281 c -9.246,11.12 -22.853,24.699 -38.377,31.281 -88.359,37.46 -781.355,-14.446 -863,36 -10.7482,6.641 -18.064,18.4288 -22.8761,29.482"
+         id="path559" /><polygon
+         fill="#f18305"
+         stroke="#f18305"
+         stroke-width="5"
+         points="31.5162,-75.1416 31.0241,-86.0457 39.1904,-82.9035 "
+         id="polygon561" /></g><!-- co&#45;&gt;e11 --><g
+       id="graph0-6"
+       class="graph"
+       transform="rotate(17.467203,268.92417,2981.1642)"><title
+         id="title2832">fdp_example</title><!-- D --><g
+         id="node1-6"
+         class="node"><title
+           id="title2836">D</title><circle
+           fill="#add8e6"
+           stroke="#000000"
+           cx="22.303499"
+           cy="-18.3242"
+           id="ellipse2838"
+           r="18"
+           style="stroke:#f18305;stroke-opacity:1" /><text
+           text-anchor="middle"
+           x="22.303499"
+           y="-14.6242"
+           font-family="'Times New Roman', serif"
+           font-size="14px"
+           id="text2840">B</text></g><!-- A --><g
+         id="node2-7"
+         class="node"><title
+           id="title2843">A</title><circle
+           fill="#add8e6"
+           stroke="#000000"
+           cx="17.5355"
+           cy="-68.653297"
+           id="ellipse2845"
+           r="18"
+           style="stroke:#f18305;stroke-opacity:1" /><text
+           text-anchor="middle"
+           x="50.665638"
+           y="-46.242893"
+           font-family="'Times New Roman', serif"
+           font-size="14px"
+           id="text2847"
+           transform="rotate(-30.702873)">A</text></g><!-- D&#45;&#45;A --><g
+         id="edge4"
+         class="edge"><title
+           id="title2850">D--A</title><path
+           fill="none"
+           stroke="#000000"
+           d="m 20.5821,-36.4942 c -0.4375,-4.6176 -0.9073,-9.5766 -1.3438,-14.1845"
+           id="path2852"
+           style="stroke:#f18305;stroke-opacity:1" /></g><!-- B --><g
+         id="node3-1"
+         class="node"><title
+           id="title2855">B</title><circle
+           fill="#add8e6"
+           stroke="#000000"
+           cx="90.230499"
+           cy="-40.792999"
+           id="ellipse2857"
+           r="18"
+           style="stroke:#f18305;stroke-opacity:1" /><text
+           text-anchor="middle"
+           x="90.230499"
+           y="-37.092999"
+           font-family="'Times New Roman', serif"
+           font-size="14px"
+           id="text2859">B</text></g><!-- A&#45;&#45;B --><g
+         id="edge1"
+         class="edge"><title
+           id="title2862">A--B</title><path
+           fill="none"
+           stroke="#000000"
+           d="m 34.3959,-62.1916 c 11.6601,4.4688 27.119,10.3934 38.8138,14.8754"
+           id="path2864"
+           style="stroke:#f18305;stroke-opacity:1" /></g><!-- C --><g
+         id="node4-4"
+         class="node"><title
+           id="title2867">C</title><circle
+           fill="#add8e6"
+           stroke="#000000"
+           cx="64.361099"
+           cy="-86.0952"
+           id="ellipse2869"
+           r="18"
+           style="stroke:#f18305;stroke-opacity:1" /><text
+           text-anchor="middle"
+           x="93.526917"
+           y="-49.850868"
+           font-family="'Times New Roman', serif"
+           font-size="14px"
+           id="text2871"
+           transform="rotate(-23.290767)">C</text></g><!-- A&#45;&#45;C --><g
+         id="edge5"
+         class="edge"><title
+           id="title2874">A--C</title><path
+           fill="none"
+           stroke="#000000"
+           d="m 34.4406,-74.9502 c 4.1915,-1.5613 8.6852,-3.2351 12.8829,-4.7987"
+           id="path2876"
+           style="stroke:#f18305;stroke-opacity:1" /></g><!-- B&#45;&#45;C --><g
+         id="edge2"
+         class="edge"><title
+           id="title2879">B--C</title><path
+           fill="none"
+           stroke="#000000"
+           d="m 81.1826,-56.6375 c -2.5061,-4.3887 -5.2267,-9.1531 -7.735,-13.5456"
+           id="path2881"
+           style="stroke:#f18305;stroke-opacity:1" /></g><!-- C&#45;&#45;D --><g
+         id="edge3"
+         class="edge"
+         style="fill:#f18305;fill-opacity:1"><title
+           id="title2884"
+           style="fill:url(#linearGradient3912);fill-opacity:1">C--D</title><path
+           fill="none"
+           stroke="#000000"
+           d="m 54.8176,-70.7169 c -3.652298,5.885224 -7.971367,12.844868 -12.248295,19.736625 -3.78323,6.096221 -7.533486,12.139324 -10.760105,17.338675"
+           id="path2886"
+           style="fill:#f18305;fill-opacity:1;stroke:#f18305;stroke-opacity:1" /></g></g><image
+       width="126"
+       height="27"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,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 "
+       id="image2384"
+       x="3397.6052"
+       y="71.924271" /><text
+       x="4.3275495"
+       y="-366.85272"
+       fill="#6c94d5"
+       opacity="0.39"
+       font-size="258.604px"
+       font-family="Arial"
+       id="text2248"
+       style="fill:#6c94e2;fill-opacity:1;stroke-width:1.20841;stroke-linecap:butt;stroke-linejoin:round"
+       transform="matrix(1.1955821,-0.00274015,0.00291651,0.83640598,0,0)"><tspan
+         style="fill:#6c94e2;fill-opacity:1;stroke-width:1.20841"
+         id="tspan2246">Con0910©fide-©1009 axd</tspan></text></g><g
+     id="layer1"
+     transform="translate(10.143027,11.790277)" /><metadata
+     id="metadata6350"><rdf:RDF><cc:Work
+         rdf:about=""><dc:title>bludarkness_2214</dc:title></cc:Work></rdf:RDF></metadata></svg>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script src="svg-pan-zoom.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+</script>
+
+
+
+<script>
+function toggleFooter() {
+const footer = document.getElementById('audioFooter');
+const btn = document.getElementById('toggleFooterBtn');
+if (footer.style.display === 'none') {
+footer.style.display = 'flex';
+btn.textContent = 'Hide Audio Panel';
+} else {
+footer.style.display = 'none';
+btn.textContent = 'Show Audio Panel';
+}
+}
+</script>
+
+<script>
+function toggleAudio(playerId) {
+const audio = document.getElementById(playerId);
+if (audio.paused) {
+  audio.play();
+} else {
+  audio.pause();
+}
+}
+</script>
+
+
+<div id="audioFooter">
+<div id="audioPanel">
+<span>🔊 Transmission: node153</span>
+<audio id="audioPlayer" src="node153.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer')">Play / Pause</button>
+</div>
+
+<div id="audioPanel">
+<span>🔊 Transmission: node1154</span>
+<audio id="audioPlayer2" src="node1154.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer2')">Play / Pause</button>
+</div>
+
+<div id="audioPanel">
+<span>🔊 Transmission: node155</span>
+<audio id="audioPlayer3" src="node155.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer3')">Play / Pause</button>
+</div>
+</div>
+
+
+</body>
+
+
+ </Script>
+
+<script>
+function toggleFooter() {
+const footer = document.getElementById('audioFooter');
+const btn = document.getElementById('toggleFooterBtn');
+if (footer.style.display === 'none') {
+footer.style.display = 'flex';
+btn.textContent = 'Hide Audio Panel';
+} else {
+footer.style.display = 'none';
+btn.textContent = 'Show Audio Panel';
+}
+}
+</script>
+
+<script>
+function toggleAudio(playerId) {
+const audio = document.getElementById(playerId);
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+</script>
+
+<script>
+let viewCounts = new Map();
+let currentContainer = null;
+
+function toggledataPanel() {
+  const panel = document.getElementById("container_meta_panel");
+  panel.style.display = panel.style.display === "none" ? "block" : "none";
+}
+
+function openPanel(el, pagePath) {
+  currentContainer = el;
+  const panel = document.getElementById("expansion_panel");
+  const iframe = document.getElementById("panel_iframe");
+
+  iframe.src = pagePath;
+  panel.style.display = "block";
+
+  if (!el.dataset.id) {
+    el.dataset.id = 'container_' + Math.random().toString(36).substr(2, 9);
+  }
+
+  const id = el.dataset.id;
+  viewCounts.set(id, (viewCounts.get(id) || 0) + 1);
+}
+
+function closePanel() {
+  const panel = document.getElementById("expansion_panel");
+  panel.style.display = "none";
+
+  if (!currentContainer) return;
+
+  const id = currentContainer.dataset.id;
+  const count = viewCounts.get(id);
+
+  if (count === 1) {
+    currentContainer.style.backgroundImage = "url('icon_bw.png')"; // grayscale
+  } else if (count === 2) {
+    currentContainer.style.backgroundImage = "url('icon_green.png')";
+  } else if (count === 3) {
+    currentContainer.style.backgroundImage = "url('icon_orange.png')";
+  } else if (count >= 4) {
+    currentContainer.style.backgroundImage = "url('icon_red.png')";
+  }
+
+  currentContainer = null;
+}
+</script>
+
+<script>
+// Apply only to panels
+document.addEventListener("DOMContentLoaded", function () {
+  makeDraggable(document.getElementById("buttonPanel"));
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+
+window.addEventListener("DOMContentLoaded", function () {
+svgPanZoom(document.querySelector("svg"), {
+zoomEnabled: true,
+controlIconsEnabled: true,
+fit: true,
+center: true,
+minZoom: 0.1,
+maxZoom: 10
+});
+});
+
+
+
+function toggleAudio() {
+const audio = document.getElementById("audioPlayer2","audioPlayer3","audioPlayer");
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+
+function makeDraggable(el) {
+  el.onmousedown = function (e) {
+    e.preventDefault();
+    const rect = el.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+
+    function onMouseMove(e) {
+      el.style.left = `${e.clientX - offsetX}px`;
+      el.style.top = `${e.clientY - offsetY}px`;
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', function stopDrag() {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', stopDrag);
+    });
+  };
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  makeDraggable(document.getElementById("expansion_panel"));
+  makeDraggable(document.getElementById("container_meta1_panel"));
+  makeDraggable(document.getElementById("container_meta_panel"));
+
+});
+</script>
+
+<script>
+function togglecontainer_meta1_panel() {
+  const container_meta1_panel = document.getElementById('container_meta1_panel');
+  const isHidden = container_meta1_panel.style.display === 'none';
+  container_meta1_panel.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
+</script>
+
+<script>
+  let isDragging = false, offsetX, offsetY;
+  let panZoomInstance;
+  let metadata = [];
+
+function toggleDock() {
+  const sidebar = document.getElementById('sidebar');
+  const isDocked = sidebar.style.position === 'absolute';
+  sidebar.style.position = isDocked ? 'fixed' : 'absolute';
+}
+
+function startDrag(e) {
+  const sidebar = document.getElementById('sidebar');
+  isDragging = true;
+  offsetX = e.clientX - sidebar.offsetLeft;
+  offsetY = e.clientY - sidebar.offsetTop;
+  document.onmousemove = dragSidebar;
+  document.onmouseup = stopDrag;
+}
+
+function dragSidebar(e) {
+  if (isDragging) {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.style.left = `${e.clientX - offsetX}px`;
+    sidebar.style.top = `${e.clientY - offsetY}px`;
+
+    // If dragged off left edge, reset margin
+    if (parseInt(sidebar.style.left) > 50) {
+      document.querySelector('.main').style.marginLeft = '0';
+    }
+  }
+}
+
+function stopDrag() {
+  isDragging = false;
+  document.onmousemove = null;
+  document.onmouseup = null;
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const isHidden = sidebar.style.display === 'none';
+  sidebar.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
+function playNodeAudio(nodeId) {
+  const audio = document.getElementById(`${nodeId}_audio`);
+  
+  if (audio) audio.play();
+}
+  
+
+function showPlayCue(nodeId) {
+  const cue = document.getElementById(`${nodeId}_cue`);
+  if (cue) {
+    cue.setAttribute('visibility', 'visible');
+    setTimeout(() => cue.setAttribute('visibility', 'hidden'), 3000);
+  }
+}
+
+function populateSidebar(data) {
+  const nodeList = document.getElementById('nodeList');
+  nodeList.innerHTML = '';
+
+  data.forEach(entry => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#';
+    a.textContent = entry.title;
+    a.onclick = () => {
+      playNodeAudio(entry.node_id);
+      showPlayCue(entry.node_id);
+    };
+    li.appendChild(a);
+
+    if (entry.tags && entry.tags.length > 0) {
+      const tagSpan = document.createElement('span');
+      tagSpan.textContent = ` [${entry.tags.join(', ')}]`;
+      tagSpan.style.fontSize = '12px';
+      tagSpan.style.color = '#666';
+      li.appendChild(tagSpan);
+    }
+
+    nodeList.appendChild(li);
+  });
+}
+
+function filterNodes() {
+    const input = document.getElementById('searchBox').value.toLowerCase();
+    const filtered = metadata.filter(entry => {
+    const title = typeof entry.title === 'string' ? entry.title.toLowerCase() : '';
+    const tagMatch = entry.tags?.some(tag =>
+      typeof tag === 'string' && tag.toLowerCase().includes(input)
+    );
+    return title.includes(input) || tagMatch;
+  });
+
+  populateSidebar(filtered);
+}
+
+async function loadMetadata() {
+  try {
+    const response = await fetch('node_metadata.json');
+    metadata = await response.json();
+
+    metadata.forEach(entry => {
+      if (entry.node_id.endsWith('_audio')) {
+        entry.node_id = entry.node_id.replace('_audio', '');
+      }
+  });
+
+    populateSidebar(metadata);
+  } catch (err) {
+    console.error("Failed to load metadata:", err);
+  }
+}
+   function toggleFingerprintPanel() {
+   const panel = document.getElementById("fingerprint_panel");
+   if (!panel) return;
+
+   if (panel.style.display === "none") {
+      panel.style.display = "block";
+      logDiagnostic("✅ Fingerprint panel shown");
+   } else {
+      panel.style.display = "none";
+      logDiagnostic("🔕 Fingerprint panel hidden");
+   }
+   }
+
+async function loadFingerprintManifest() {
+  try {
+    const response = await fetch("fingerprint_manifest.json");
+    const manifest = await response.json();
+
+    const panel = document.getElementById("fingerprint_panel");
+    panel.innerHTML = "<b>🧬 Fingerprint Manifest</b><br><br>";
+
+    Object.entries(manifest).forEach(([filename, nodes]) => {
+      const section = document.createElement("div");
+      section.style.marginBottom = "10px";
+
+      const header = document.createElement("div");
+      header.textContent = filename;
+      header.style.fontWeight = "bold";
+      header.style.cursor = "pointer";
+      header.style.color = "#0ff";
+
+      const list = document.createElement("div");
+      list.style.display = "none";
+      list.style.marginLeft = "10px";
+
+      header.onclick = () => {
+        list.style.display = list.style.display === "none" ? "block" : "none";
+      };
+
+      Object.entries(nodes).forEach(([nodeId, fingerprints]) => {
+        const nodeBlock = document.createElement("div");
+        nodeBlock.innerHTML = `<b>${nodeId}</b>`;
+        nodeBlock.style.marginBottom = "5px";
+
+        const fpArray = Array.isArray(fingerprints) ? fingerprints : [fingerprints];
+        fpArray.forEach(fp => {
+          const fpItem = document.createElement("div");
+          fpItem.textContent = `→ ${fp}`;
+          fpItem.style.marginLeft = "10px";
+
+          // Color coding
+          const motifColors = {
+            refusal: "#f33", echo: "#3cf", drip: "#9f3",
+            inverse: "#f33", society: "#3cf", acoustics: "#f33",
+            ultrasonics: "#3cf", ultrasonic: "#9f3", cruelty: "#f0f",
+            Rings: "#fc0", Lexicon: "#0f0", Soda: "#0ff",
+            frequency: "#ff0", "Time Zones": "#ccc",
+            indexer: "#ff6f00" // 🧬 sumpindex motif
+          };
+
+          for (const motif in motifColors) {
+            if (fp.includes(motif)) {
+              fpItem.style.color = motifColors[motif];
+              break;
+            }
+          }
+
+          nodeBlock.appendChild(fpItem);
+        });
+
+        list.appendChild(nodeBlock);
+      });
+
+      section.appendChild(header);
+      section.appendChild(list);
+      panel.appendChild(section);
+    });
+
+    logDiagnostic("✅ Fingerprint manifest loaded");
+  } catch (err) {
+    console.error("Failed to load fingerprint manifest:", err);
+    logDiagnostic("⚠️ Failed to load fingerprint manifest: " + err.message, true);
+  }
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("triggerButton");
+    const container = document.getElementById("node5_image_container");
+    const svg = document.getElementById("mainSVG");
+
+  if (svg) {
+    setTimeout(initPanZoom, 500);
+  } else {
+    console.warn("SVG not found at DOMContentLoaded");
+  }
+
+  if (button && container) {
+    button.addEventListener("click", function () {
+      const isHidden = container.getAttribute("visibility") === "hidden";
+      container.setAttribute("visibility", isHidden ? "visible" : "hidden");
+    });
+  }
+
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.addEventListener('input', filterNodes);
+  }
+
+  loadMetadata();
+
+});
+
+
+  
+  function showNodeImage(id) {
+    const imageContainer = document.getElementById(`${id}_image_container`);
+    if (imageContainer) {
+      imageContainer.style.display = "block";
+  }
+}
+
+  function initPanZoom() {
+    if (panZoomInstance) panZoomInstance.destroy();
+    panZoomInstance = svgPanZoom('#mainSVG', {
+      zoomEnabled: true,
+      controlIconsEnabled: true,
+      fit: true,
+      center: true
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(initPanZoom, 500);
+});
+
+</script>
+
+<Script>function initPanZoom() {
+   const mainSvg = document.getElementById("mainSVG");
+   const containerSvg = document.getElementById("containerSVG");
+ 
+   if (mainSvg) {
+     try {
+       svgPanZoom(mainSvg, {
+         zoomEnabled: true,
+         controlIconsEnabled: true,
+         fit: true,
+         center: true
+       });
+       logDiagnostic("✅ Pan-zoom initialized on #mainSVG");
+     } catch (err) {
+       logDiagnostic("⚠️ Pan-zoom failed on #mainSVG: " + err.message, true);
+     }
+   } else {
+     logDiagnostic("❌ #mainSVG not found", true);
+   }
+ 
+   if (containerSvg) {
+     try {
+       svgPanZoom(containerSvg, {
+         zoomEnabled: true,
+         controlIconsEnabled: false,
+         fit: true,
+         center: true
+       });
+       logDiagnostic("✅ Pan-zoom initialized on #containerSVG");
+     } catch (err) {
+       logDiagnostic("⚠️ Pan-zoom failed on #containerSVG: " + err.message, true);
+     }
+   } else {
+     logDiagnostic("❌ #containerSVG not found", true);
+   }
+ }
+ </Script>
+
+
+<script>
+  function openNodeImageInNewTab(id) {
+    const imageElement = document.getElementById(`${id}_image`);
+    if (imageElement && imageElement.src.startsWith("data:image")) {
+      window.open(imageElement.src, '_blank', 'width=800,height=600');
+    } else {
+      console.warn("Image element not found or not a valid data URI");
+    }
+  }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+buttonPanel.onmousedown = function (e) {
+e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+};
+
+  document.onmouseup = function () {
+  document.onmousemove = null;
+};
+};
+});
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+  document.addEventListener("DOMContentLoaded", () => {
+populateMetaPanel();
+loadFingerprintManifest();
+initPanZoom();
+});
+
+buttonPanel.onmousedown = function (e) {
+  e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+  document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+  };
+
+  document.onmouseup = function () {
+  document.onmousemove = null;
+  };
+};
+});
+
+const isOnline = location.href.startsWith("https://axda.github.io");
+const basePath = isOnline ? "https://axda.github.io/Blu/" : ".";
+
+async function populateMetaPanel() {
+  const response = await fetch(`${basePath}/panel_data.json`);
+  const data = await response.json();
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  grid.style.display = 'grid';
+  grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(60px, 1fr))';
+  grid.style.gap = '10px';
+  grid.style.padding = '10px';
+
+  data.forEach(entry => {
+    const container = document.createElement('div');
+    container.className = 'data_container';
+    container.dataset.page = isOnline ? entry.page : `./${entry.page}`;
+    container.title = entry.title;
+    container.ondblclick = () => openPanel(container, container.dataset.page);
+
+    // ✅ Embed tags if present
+    if (entry.tags?.length) {
+      const tagSpan = document.createElement('span');
+      tagSpan.textContent = entry.tags.join(', ');
+      tagSpan.style.position = 'absolute';
+      tagSpan.style.top = '2px';
+      tagSpan.style.right = '2px';
+      tagSpan.style.fontSize = '8px';
+      tagSpan.style.background = '#222';
+      tagSpan.style.color = '#fff';
+      tagSpan.style.padding = '2px 4px';
+      tagSpan.style.pointerEvents = 'none';
+      container.appendChild(tagSpan);
+    }
+
+    grid.appendChild(container);
+  });
+
+  const panel = document.getElementById('container_meta_panel');
+  panel.innerHTML = '';
+  panel.appendChild(grid);
+
+  console.log("Loaded entries:", data);
+}
+
+</script>
+
+<script>function updateIconState(container, count) {
+   const iconMap = {
+     1: 'icon_bw.png',
+     2: 'icon_green.png',
+     3: 'icon_orange.png',
+     4: 'icon_red.png'
+   };
+   const icon = iconMap[Math.min(count, 4)];
+   container.style.backgroundImage = `url('${icon}')`;
+   container.style.backgroundSize = 'cover';
+   container.style.backgroundPosition = 'center';
+ }
+ 
+ function openPanel(container, pagePath) {
+   currentContainer = container;
+   const panel = document.getElementById("expansion_panel");
+   const iframe = document.getElementById("panel_iframe");
+   iframe.src = pagePath;
+   panel.style.display = "block";
+ 
+   if (!container.dataset.id) {
+     container.dataset.id = 'container_' + Math.random().toString(36).substr(2, 9);
+   }
+ 
+   const id = container.dataset.id;
+   const count = viewCounts.get(id) || 0;
+   viewCounts.set(id, count + 1);
+ }
+ 
+ function closePanel() {
+   const panel = document.getElementById("expansion_panel");
+   panel.style.display = "none";
+ 
+   if (!currentContainer) return;
+ 
+   const id = currentContainer.dataset.id;
+   const count = viewCounts.get(id);
+   updateIconState(currentContainer, count);
+ 
+   // Optional: motif-linked overlay
+   const overlay = document.createElement('div');
+   overlay.className = 'motif_overlay';
+   overlay.textContent = `Viewed ${count}x • ${new Date().toLocaleTimeString()}`;
+   overlay.style.position = 'absolute';
+   overlay.style.bottom = '0';
+   overlay.style.left = '0';
+   overlay.style.fontSize = '10px';
+   overlay.style.background = 'rgba(0,0,0,0.6)';
+   overlay.style.color = '#fff';
+   overlay.style.padding = '2px 4px';
+   overlay.style.pointerEvents = 'none';
+ 
+   currentContainer.appendChild(overlay);
+   setTimeout(() => overlay.remove(), 3000);
+ 
+   currentContainer = null;
+ }</script>
+<script>document.addEventListenergrid1
+setTimeout(initPanZoom, 500); // crude but effective</script>
+
+<script>document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("Toggle_StalagBtn").style.display = "inline-block";
+});
+
+document.getElementById("Toggle_StalagBtn").addEventListener("click", async () => {
+  const userInput = prompt("Enter the ceremonial glyph:");
+
+try {
+  const response = await fetch("toggle_trog.json");
+  const data = await response.json();
+
+  const lastNode = data[data.length - 1];
+  const tags = lastNode.tags;
+
+  console.log("Full JSON archive:", data);
+  console.log("Last node:", lastNode);
+  console.log("Tags array:", tags);
+
+  if (tags.length >= 3) {
+    const expectedPassword = tags[2];
+    console.log("Expected password (3rd tag):", expectedPassword);
+
+    if (userInput === expectedPassword) {
+      document.getElementById("secretContainer").style.display = "block";
+    } else {
+      alert("Access denied. The glyph does not match the archive’s final breath.");
+    }
+  } else {
+    alert("Tag structure incomplete. Ritual cannot proceed.");
+  }
+} catch (error) {
+  console.error("Error loading toggle_trog.json:", error);
+  alert("Archive retrieval failed. The testimony remains sealed.");
+}
+});</script>
+</body>
+</html>
