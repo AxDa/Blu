@@ -1884,6 +1884,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node162_audio",
+"title_id": "title2365",
+"title": "Tajikistan",
+"tags": ["Bleakperambulatorst", "horn", "2316"],
+"audio_files": [
+  "node162.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
