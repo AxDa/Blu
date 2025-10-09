@@ -1832,6 +1832,32 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node158_audio",
+"title_id": "title2316",
+"title": "Afghanistan (UTC+4:30)",
+"tags": ["Bleakperambulatorst", "1534", "1539", "exhaust", "1541", "horn", "1544", "1554", "1600", "aire", "1605"],
+"audio_files": [
+  "node158.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node159_audio",
+"title_id": "title2330",
+"title": "Pakistan",
+"tags": ["Bleakst", "aire", "1604", "1605"],
+"audio_files": [
+  "node159.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
