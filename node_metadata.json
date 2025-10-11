@@ -1923,7 +1923,71 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node167_audio",
+"title_id": "title2239",
+"title": "Iran (UTC+3:30)",
+"tags": ["Bleakst", "0522", "0523"],
+"audio_files": [
+  "node167.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
-
+},
+{
+"node_id": "node170_audio",
+"title_id": "title2463",
+"title": "Bangladesh",
+"tags": ["Bleakst", "Fireworks", "2138"],
+"audio_files": [
+  "node170.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node171_audio",
+"title_id": "title2470",
+"title": "Bhutan",
+"tags": ["Bleaksirenst", "horn", "1616"],
+"audio_files": [
+  "node171.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node172_audio",
+"title_id": "title2484",
+"title": "Kazakhstan (East)",
+"tags": ["Bleakperambulatorst", "horn", "0433"],
+"audio_files": [
+  "node172.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node173_audio",
+"title_id": "title2498",
+"title": "Kyrgyzstan",
+"tags": ["Bleakst", "k9", "1901", "1906"],
+"audio_files": [
+  "node173.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
 
 ]
