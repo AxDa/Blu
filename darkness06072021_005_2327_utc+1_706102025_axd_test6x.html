@@ -404,7 +404,7 @@
 </div>
 
 <!-- Secondary Dialog for Testing -->
-<div id="glyphDialogTest" style="display:none;">
+<div id="glyphDialogTest" style="cursor:pointer; color:#bee3f0;">
   <label for="glyphInputTest">Test glyph input:</label>
   <input type="password" id="glyphInputTest" />
   <label>
@@ -841,7 +841,7 @@
    </button>
 
    <button 
-   onclick="LatrineSurveillanceArchive_1619_utc+1_27092025.html', '_blank')" 
+   onclick="window.open('LatrineSurveillanceArchive_1619_utc+1_27092025.html', '_blank')" 
    aria-label="Latrine Surveillance Archive 1619"
    data-node-id="Latrine_Surveillance_Archive_1619">
    Open: Latrine Surveillance Archive 1619
@@ -897,7 +897,7 @@
    </button>
 
     <button 
-   onclick="spectacleprotocol_0649_utc+1_04102025_axd.html', '_blank')" 
+   onclick="window.open('spectacleprotocol_0649_utc+1_04102025_axd.html', '_blank')" 
    aria-label="spectacleprotocol 0649"
    data-node-id="spectacleprotocol_0649">
    Open: spectacleprotocol 0649
@@ -12877,14 +12877,13 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
   const glyphDialog = document.getElementById("glyphDialog");
   const glyphDialogTest = document.getElementById("glyphDialogTest");
 
-  enterBtn.style.display = "inline-block";
-
+  // Show both dialogs when Enter is clicked
   enterBtn.addEventListener("click", () => {
     glyphDialog.style.display = "block";
     glyphDialogTest.style.display = "block";
   });
 
-  // Visibility toggles
+  // Toggle visibility for both inputs
   document.getElementById("toggleVisibility").addEventListener("change", (e) => {
     document.getElementById("glyphInput").type = e.target.checked ? "text" : "password";
   });
@@ -12893,7 +12892,7 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
     document.getElementById("glyphInputTest").type = e.target.checked ? "text" : "password";
   });
 
-  // Submit logic with dual-path fetch
+  // Submit logic for primary dialog
   document.getElementById("submitGlyph").addEventListener("click", async () => {
     const userInput = document.getElementById("glyphInput").value;
     let expectedPassword;
@@ -12922,11 +12921,13 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
     }
   });
 
-  // Optional test box logic
+  // Submit logic for test dialog
   document.getElementById("submitGlyphTest").addEventListener("click", () => {
     const testInput = document.getElementById("glyphInputTest").value;
     alert("Test glyph entered: " + testInput);
   });
-});</script>
+  });
+});
+</script>
 </body>
 </html>
