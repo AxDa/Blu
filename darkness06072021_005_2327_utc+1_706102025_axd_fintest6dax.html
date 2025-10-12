@@ -12835,7 +12835,20 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
         glyphInput.type = e.target.checked ? "text" : "password";
         console.log(`👁️ Glyph visibility: ${glyphInput.type}`);
       });
-    
+
+      enterBtn.addEventListener("click", () => {
+        const isVisible = glyphDialog.style.display === "block";
+      
+        if (isVisible) {
+          glyphDialog.style.display = "none";
+          console.log("🔒 Dialog hidden. Glyph chamber sealed.");
+        } else {
+          glyphDialog.style.display = "block";
+          console.log("🔓 Dialog revealed. Glyph chamber open.");
+        }
+      });
+
+      
       // Submit glyph logic
       submitGlyph.addEventListener("click", async () => {
         const userInput = glyphInput.value;
@@ -12886,5 +12899,6 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
     </script>
 </body>
 </html>
+
 
 
