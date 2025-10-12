@@ -12880,17 +12880,20 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("🔓 Enter button clicked. Secondary glyph dialog revealed.");
   });
 
-  // Submit secondary glyph
-  submitGlyphTest.addEventListener("click", () => {
-    const testInput = glyphInputTest.value;
-    alert("Test glyph entered: " + testInput);
-    console.log("🧪 Secondary glyph submitted:", testInput);
-  });
+  // Submit secondary glyph revo
+submitGlyphTest.addEventListener("click", () => {
+  const testInput = document.getElementById("glyphInputTest").value;
+  const reversed = testInput.split("").reverse().join("");
+  alert("Test glyph entered (reversed): " + reversed);
+  console.log("🧪 Reversed glyph submitted:", reversed);
+});
+
 });
 </script>
 
 </body>
 </html>
+
 
 
 
