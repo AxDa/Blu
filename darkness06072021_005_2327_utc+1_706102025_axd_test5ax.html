@@ -356,13 +356,10 @@
 }
 
 #glyphDialog {
-  position: absolute;
-  top: 120px;
-  left: 680px;
+  margin-top: 20px;
   padding: 15px;
-  background-color: rgb(226, 202, 202);
+  background-color: #eee;
   border: 2px solid #ccc;
-  text-align: center;
 }
 
 #secretContainer {
@@ -12866,9 +12863,14 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
     let expectedPassword;
 
     try {
-      const response = await fetch("{ url_for('get_expected_password') }");
-      if (!response.ok) throw new Error("Network failure");
-      const data = await response.json();
+    const response = await fetch("toggle_trog.json");
+    const data = await response.json();
+
+    const lastNode = data[data.length - 1];
+    const tags = lastNode.tags;
+
+    if (tags.length >= 3) {
+      const expectedPassword = tags[2]; // Third element
       expectedPassword = data.expectedPassword;
     } catch (error) {
       expectedPassword = "{ fallback_password }"; // Local fallback
@@ -12904,10 +12906,6 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
       const response = await fetch("toggle_trog.json");
       if (!response.ok) throw new Error("Fetch failed");
       const data = await response.json();
-
-      const lastNode = data[data.length - 1];
-      const tags = lastNode.tags;
-
       if (tags.length >= 3) {
       const expectedPassword = tags[2]; // Third element
       } else {
@@ -12919,7 +12917,9 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
       } else {
         alert("Access denied. The glyph does not match the archive’s final breath.");
       }
- 
+      else {
+      alert("Tag structure incomplete. Ritual cannot proceed.");
+    }
       } catch (error) {
       expectedPassword = "fallbackGlyph"; // Replace with your embedded fallback
       document.getElementById("fallbackNotice").style.display = "block";
@@ -12929,7 +12929,7 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
       document.getElementById("secretContainer").style.display = "block";
       } else {
       alert("Incorrect glyph. The mask remains.");
-    }
+    };
     });
 
 </script>
