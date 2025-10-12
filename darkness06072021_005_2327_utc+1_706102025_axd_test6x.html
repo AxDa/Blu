@@ -12828,19 +12828,25 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
   });
 
   // Button click to show dialog
-  document.getElementById("Toggle_StalagBtn").addEventListener("click", () => {
-    document.getElementById("glyphDialog").style.display = "block";
-    
-  let data;
-
+  document.getElementById("Toggle_StalagBtn").addEventListener("click", async () => {
   try {
     const response = await fetch("toggle_trog.json");
-    if (!response.ok) throw new Error("Network or file error");
-    data = await response.json();
+    const data = await response.json();
     console.log("Fetched JSON archive:", data);
+
+    // Show dialog after successful fetch
+    document.getElementById("glyphDialog").style.display = "block";
+    document.getElementById("glyphDialogTest").style.display = "block";
   } catch (error) {
     console.warn("Fetch failed. Falling back to embedded archive.");
     document.getElementById("fallbackNotice").style.display = "block";
+
+    // Show dialog even if offline
+    document.getElementById("glyphDialog").style.display = "block";
+    document.getElementById("glyphDialogTest").style.display = "block";
+  }
+    
+  let data;
 
       // data example
     data = [
@@ -12869,7 +12875,7 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
         "coordinates": { "x": 11.2, "y": 1783.208 }
       }
     ];
-  }
+
   });
   
   document.addEventListener("DOMContentLoaded", () => {
