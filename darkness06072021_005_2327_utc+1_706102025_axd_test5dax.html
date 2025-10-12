@@ -12809,179 +12809,81 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
 
 </script>
 
-<script>document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("Toggle_StalagBtn").style.display = "inline-block";
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🧭 DOM loaded. Ritual begins.");
 
-  // Toggle visibility
-  document.getElementById("toggleVisibility").addEventListener("change", (e) => {
-    const input = document.getElementById("glyphInput");
-    input.type = e.target.checked ? "text" : "password";
-  });
+  const enterBtn = document.getElementById("Toggle_StalagBtn");
+  const glyphDialog = document.getElementById("glyphDialog");
+  const glyphInput = document.getElementById("glyphInput");
+  const toggleVisibility = document.getElementById("toggleVisibility");
+  const submitGlyph = document.getElementById("submitGlyph");
+  const secretContainer = document.getElementById("secretContainer");
+  const fallbackNotice = document.getElementById("fallbackNotice");
 
-  // Button click to show dialog
-  document.getElementById("Toggle_StalagBtn").addEventListener("click", () => {
-    document.getElementById("glyphDialog").style.display = "block";
-    
-  let data;
+  // Ensure Enter button is visible
+  enterBtn.style.display = "inline-block";
 
-  try {
-    const response = await fetch("toggle_trog.json");
-    if (!response.ok) throw new Error("Network or file error");
-    data = await response.json();
-    console.log("Fetched JSON archive:", data);
-  } catch (error) {
-    console.warn("Fetch failed. Falling back to embedded archive.");
-    document.getElementById("fallbackNotice").style.display = "block";
-
-      // data example
-    data = [
-      {
-        "node_id": "node1image",
-        "title_id": "title16",
-        "title": "Moon (Standard Time)",
-        "tags": ["black", "Plato", "2335"],
-        "imagefiles": ["node1.png"],
-        "coordinates": { "x": 11.2, "y": 1783.208 }
-      },
-      {
-        "node_id": "node2image",
-        "title_id": "title28",
-        "title": "Jupiter (Permanent)",
-        "tags": ["white", "0102"],
-        "imagefiles": ["node2.png"],
-        "coordinates": { "x": 11.2, "y": 1783.208 }
-      },
-      {
-        "node_id": "node137_audio",
-        "title_id": "title20",
-        "title": "Uranus",
-        "tags": ["alpha", "delta", "charlie", "2325", "0022", "0110", "0128", "0152", "0157"],
-        "imagefiles": ["node3.png"],
-        "coordinates": { "x": 11.2, "y": 1783.208 }
-      }
-    ];
-  }
-  });
-
-  // Submit logic with dual-path fetch
-  document.getElementById("submitGlyph").addEventListener("click", async () => {
-    const userInput = document.getElementById("glyphInput").value;
-    let expectedPassword;
-
-    try {
-      const response = await fetch("{ url_for('get_expected_password') }");
-      if (!response.ok) throw new Error("Network failure");
-      const data = await response.json();
-      expectedPassword = data.expectedPassword;
-    } catch (error) {
-      expectedPassword = "{ fallback_password }"; // Local fallback
-      document.getElementById("fallbackNotice").style.display = "block";
-    }
-
-    if (userInput === expectedPassword) {
-      document.getElementById("secretContainer").style.display = "block";
-    } else {
-      alert("Incorrect glyph. The mask remains.");
-    }
-  });
-});</script>
-
-<script>document.addEventListener("DOMContentLoaded", () => {
-  // Show dialog when button is clicked
-  document.getElementById("Toggle_StalagBtn").addEventListener("click", () => {
-    document.getElementById("glyphDialog").style.display = "block";
+  // Show dialog when Enter is clicked
+  enterBtn.addEventListener("click", () => {
+    glyphDialog.style.display = "block";
   });
 
   // Toggle password visibility
-  document.getElementById("toggleVisibility").addEventListener("change", (e) => {
-    const input = document.getElementById("glyphInput");
-    input.type = e.target.checked ? "text" : "password";
+  toggleVisibility.addEventListener("change", (e) => {
+    glyphInput.type = e.target.checked ? "text" : "password";
+    console.log(`👁️ Glyph visibility: ${glyphInput.type}`);
   });
 
-  // Submit logic
-  document.getElementById("submitGlyph").addEventListener("click", async () => {
-    const userInput = document.getElementById("glyphInput").value;
+  // Submit glyph logic
+  submitGlyph.addEventListener("click", async () => {
+    const userInput = glyphInput.value;
     let expectedPassword;
 
     try {
       const response = await fetch("toggle_trog.json");
       if (!response.ok) throw new Error("Fetch failed");
       const data = await response.json();
+      console.log("📜 Fetched JSON:", data);
 
       const lastNode = data[data.length - 1];
       const tags = lastNode.tags;
 
-      if (tags.length >= 3) {
-        const expectedPassword = tags[2]; // Third element
-       if (userInput === expectedPassword) {
-            document.getElementById("secretContainer").style.display = "block";
-        } else {
-            alert("Access denied. The glyph does not match the archive’s final breath.");
-        }
-        } else {
-            alert("Tag structure incomplete. Ritual cannot proceed.");
-        }
-      if (userInput === expectedPassword) {
-        document.getElementById("secretContainer").style.display = "block";
-      expectedPassword = data.expectedPassword;
-      } catch (error) {
-      expectedPassword = "fallbackGlyph"; // Replace with your embedded fallback
-      document.getElementById("fallbackNotice").style.display = "block";
-      }
-
-      if (userInput === expectedPassword) {
-      document.getElementById("secretContainer").style.display = "block";
+      if (tags && tags.length >= 3) {
+        expectedPassword = tags[2];
+        console.log("✅ Expected password:", expectedPassword);
       } else {
+        throw new Error("Tag structure incomplete");
+      }
+    } catch (error) {
+      console.warn("⚠️ Fetch failed. Using embedded archive.");
+      fallbackNotice.style.display = "block";
+
+      // Embedded fallback data
+      const data = [
+        {
+          node_id: "node137_audio",
+          title_id: "title20",
+          title: "Uranus",
+          tags: ["alpha", "delta", "charlie", "2325", "0022", "0110"]
+        }
+      ];
+      const lastNode = data[data.length - 1];
+      const tags = lastNode.tags;
+      expectedPassword = tags[2]; // "charlie"
+    }
+
+    if (userInput === expectedPassword) {
+      console.log("🎯 Glyph matched. Access granted.");
+      secretContainer.style.display = "block";
+    } else {
+      console.warn("❌ Glyph mismatch.");
       alert("Incorrect glyph. The mask remains.");
     }
-});
-});
-</script>
-
-<!-- First script: fetch JSON for setup or Panzoom -->
-</script>
-
-<!-- First script: fetch JSON for setup or Panzoom -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    fetch("toggle_trog.json")
-      .then(response => response.json())
-      .then(data => {
-        console.log('Setup toggle_trog.JSON loaded:', data);
-        // Use data for initial setup, overlays, etc.
-      })
   });
-  </script>
-<!-- Second script: toggle button logic -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("Toggle_StalagBtn").style.display = "inline-block";
 });
+</script>
 
-document.getElementById("Toggle_StalagBtn").addEventListener("click", async () => {
-  const userInput = prompt("Enter the ceremonial glyph:");
-
-  try {
-    const response = await fetch("toggle_trog.json");
-    const data = await response.json();
-
-    const lastNode = data[data.length - 1];
-    const tags = lastNode.tags;
-
-    if (tags.length >= 3) {
-      const expectedPassword = tags[2]; // Third element
-      if (userInput === expectedPassword) {
-        document.getElementById("secretContainer").style.display = "block";
-      } else {
-        alert("Access denied. The glyph does not match the archive’s final breath.");
-      }
-    } else {
-      alert("Tag structure incomplete. Ritual cannot proceed.");
-    }
-  } catch (error) {
-    console.error("Error loading toggle_trog.json:", error);
-    alert("Archive retrieval failed. The testimony remains sealed.");
-  }
-});</script>
 </body>
 </html>
+
