@@ -390,36 +390,43 @@
     
   </style>
 </head>
-<button id="Toggle_StalagBtn" style="cursor:pointer; color:#00BFFF;">Enter</button>
-
-<!-- Dialog Container -->
-<div id="glyphDialog" style="display:none; cursor:pointer; color:#dd785ad8;">
-    <label for="glyphInput">Enter the ceremonial glyph:</label>
-    <input type="password" id="glyphInput" />
-    <label>
-      <input type="checkbox" id="toggleVisibility" />
-      Show glyph
-    </label>
-    <button id="submitGlyph">Submit</button>
-  </div>
-
-<div id="secretContainer" style="display:none;">
-  <h2>Welcome to the hidden realm</h2>
-  <p>
-    <!-- This is your protected page content. -->
-    thera_whispers_above_cauldera_fin_axd.html
-    <button onclick="window.open('thera_whispers_above_cauldera_fin_axd.html')" style="cursor:pointer; color:#00BFFF;">
-      🔍 View_mare_Large
-    </button>
-    <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
-        🔍 View_mare_Medium,<b>dog’s utterance_31st_July_2024</b>
-      </button>
-  </p> 
+<!-- Ceremonial Glyph Dialog (Always Visible) -->
+<div id="glyphDialog" style="display:block; cursor:pointer; color:#dd785ad8;">
+  <label for="glyphInput">Enter the ceremonial glyph:</label>
+  <input type="password" id="glyphInput" />
+  <label>
+    <input type="checkbox" id="toggleVisibility" />
+    Show glyph
+  </label>
+  <button id="submitGlyph">Submit</button>
 </div>
 
+<!-- Enter Button -->
+<button id="Toggle_StalagBtn">Enter</button>
+
+<!-- Secondary Glyph Dialog (Hidden by Default) -->
+<div id="glyphDialogTest" style="display:none; cursor:pointer; color:#dd785ad8;">
+  <label for="glyphInputTest">Enter secondary glyph:</label>
+  <input type="password" id="glyphInputTest" />
+  <button id="submitGlyphTest">Submit</button>
+</div>
+
+<!-- Fallback Notice -->
 <div id="fallbackNotice" style="display:none;" class="fallback-banner">
-    <p>Offline archive invoked. Glyphs retrieved from embedded memory.</p>
-  </div>
+  <p>Offline archive invoked. Glyphs retrieved from embedded memory.</p>
+</div>
+
+<!-- Secret Container -->
+<div id="secretContainer" style="display:none; cursor:pointer; color:#dd785ad8;">
+  <h2>Welcome to the hidden realm</h2>
+  <button onclick="window.open('thera_whispers_above_cauldera_fin_axd.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_Large
+  </button>
+  <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_Medium,<b>dog’s utterance_31st_July_2024</b>
+  </button>
+</div>
+
 
 <body>
   <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
@@ -12810,95 +12817,81 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
 </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      console.log("🧭 DOM loaded. Ritual begins.");
-    
-      const enterBtn = document.getElementById("Toggle_StalagBtn");
-      const glyphDialog = document.getElementById("glyphDialog");
-      const glyphInput = document.getElementById("glyphInput");
-      const toggleVisibility = document.getElementById("toggleVisibility");
-      const submitGlyph = document.getElementById("submitGlyph");
-      const secretContainer = document.getElementById("secretContainer");
-      const fallbackNotice = document.getElementById("fallbackNotice");
-    
-      // Ensure Enter button is visible
-      enterBtn.style.display = "inline-block";
-    
-      // Show dialog when Enter is clicked
-      enterBtn.addEventListener("click", () => {
-        console.log("🔓 Enter button clicked. Revealing glyph dialog.");
-        glyphDialog.style.display = "block";
-      });
-    
-      // Toggle password visibility
-      toggleVisibility.addEventListener("change", (e) => {
-        glyphInput.type = e.target.checked ? "text" : "password";
-        console.log(`👁️ Glyph visibility: ${glyphInput.type}`);
-      });
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🧭 DOM loaded. Ritual begins.");
 
-      enterBtn.addEventListener("click", () => {
-        const isVisible = glyphDialog.style.display === "block";
-      
-        if (isVisible) {
-          glyphDialog.style.display = "none";
-          console.log("🔒 Dialog hidden. Glyph chamber sealed.");
-        } else {
-          glyphDialog.style.display = "block";
-          console.log("🔓 Dialog revealed. Glyph chamber open.");
-        }
-      });
+  // Ceremonial Glyph Dialog Elements
+  const glyphInput = document.getElementById("glyphInput");
+  const toggleVisibility = document.getElementById("toggleVisibility");
+  const submitGlyph = document.getElementById("submitGlyph");
 
-      
-      // Submit glyph logic
-      submitGlyph.addEventListener("click", async () => {
-        const userInput = glyphInput.value;
-        let expectedPassword;
-    
-        try {
-          const response = await fetch("toggle_trog.json");
-          if (!response.ok) throw new Error("Fetch failed");
-          const data = await response.json();
-          console.log("📜 Fetched JSON:", data);
-    
-          const lastNode = data[data.length - 1];
-          const tags = lastNode.tags;
-    
-          if (tags && tags.length >= 3) {
-            expectedPassword = tags[2];
-            console.log("✅ Expected password:", expectedPassword);
-          } else {
-            throw new Error("Tag structure incomplete");
-          }
-        } catch (error) {
-          console.warn("⚠️ Fetch failed. Using embedded archive.");
-          fallbackNotice.style.display = "block";
-    
-          // Embedded fallback data
-          const data = [
-            {
-              node_id: "node137_audio",
-              title_id: "title20",
-              title: "Uranus",
-              tags: ["alpha", "delta", "charlie", "2325", "0022", "0110"]
-            }
-          ];
-          const lastNode = data[data.length - 1];
-          const tags = lastNode.tags;
-          expectedPassword = tags[2]; // "charlie"
+  // Secondary Glyph Dialog Elements
+  const enterBtn = document.getElementById("Toggle_StalagBtn");
+  const glyphDialogTest = document.getElementById("glyphDialogTest");
+  const glyphInputTest = document.getElementById("glyphInputTest");
+  const submitGlyphTest = document.getElementById("submitGlyphTest");
+
+  // Shared Elements
+  const secretContainer = document.getElementById("secretContainer");
+  const fallbackNotice = document.getElementById("fallbackNotice");
+
+  // Toggle visibility for ceremonial glyph
+  toggleVisibility.addEventListener("change", (e) => {
+    glyphInput.type = e.target.checked ? "text" : "password";
+    console.log(`👁️ Ceremonial glyph visibility: ${glyphInput.type}`);
+  });
+
+  // Submit ceremonial glyph
+  submitGlyph.addEventListener("click", async () => {
+    const userInput = glyphInput.value;
+    let expectedPassword;
+
+    try {
+      const response = await fetch("toggle_trog.json");
+      if (!response.ok) throw new Error("Fetch failed");
+      const data = await response.json();
+      const lastNode = data[data.length - 1];
+      const tags = lastNode.tags;
+      expectedPassword = tags[2];
+    } catch (error) {
+      fallbackNotice.style.display = "block";
+      const data = [
+        {
+          node_id: "node137_audio",
+          title_id: "title20",
+          title: "Uranus",
+          tags: ["alpha", "delta", "charlie", "2325", "0022", "0110"]
         }
-    
-        if (userInput === expectedPassword) {
-          console.log("🎯 Glyph matched. Access granted.");
-          secretContainer.style.display = "block";
-        } else {
-          console.warn("❌ Glyph mismatch.");
-          alert("Incorrect glyph. The mask remains.");
-        }
-      });
-    });
-    </script>
+      ];
+      expectedPassword = data[data.length - 1].tags[2];
+    }
+
+    if (userInput === expectedPassword) {
+      secretContainer.style.display = "block";
+      console.log("🎯 Ceremonial glyph matched. Access granted.");
+    } else {
+      alert("Incorrect glyph. The mask remains.");
+    }
+  });
+
+  // Reveal secondary dialog when Enter is clicked
+  enterBtn.addEventListener("click", () => {
+    glyphDialogTest.style.display = "block";
+    console.log("🔓 Enter button clicked. Secondary glyph dialog revealed.");
+  });
+
+  // Submit secondary glyph
+  submitGlyphTest.addEventListener("click", () => {
+    const testInput = glyphInputTest.value;
+    alert("Test glyph entered: " + testInput);
+    console.log("🧪 Secondary glyph submitted:", testInput);
+  });
+});
+</script>
+
 </body>
 </html>
+
 
 
 
