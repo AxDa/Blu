@@ -12816,124 +12816,114 @@ async function populateMetaPanel() {
 <script>document.addEventListenergrid1
 setTimeout(initPanZoom, 500); // crude but effective</script>
 
-</script>
 
-<script>document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("Toggle_StalagBtn").style.display = "inline-block";
 
-  // Toggle visibility
-  document.getElementById("toggleVisibility").addEventListener("change", (e) => {
-    const input = document.getElementById("glyphInput");
-    input.type = e.target.checked ? "text" : "password";
-  });
-
-  // Button click to show dialog
-  document.getElementById("Toggle_StalagBtn").addEventListener("click", async () => {
-  try {
-    const response = await fetch("toggle_trog.json");
-    const data = await response.json();
-    console.log("Fetched JSON archive:", data);
-
-    // Show dialog after successful fetch
-    document.getElementById("glyphDialog").style.display = "block";
-    document.getElementById("glyphDialogTest").style.display = "block";
-  } catch (error) {
-    console.warn("Fetch failed. Falling back to embedded archive.");
-    document.getElementById("fallbackNotice").style.display = "block";
-
-    // Show dialog even if offline
-    document.getElementById("glyphDialog").style.display = "block";
-    document.getElementById("glyphDialogTest").style.display = "block";
-  }
-    
-  let data;
-
-      // data example
-    data = [
-      {
-        "node_id": "node1image",
-        "title_id": "title16",
-        "title": "Moon (Standard Time)",
-        "tags": ["black", "Plato", "2335"],
-        "imagefiles": ["node1.png"],
-        "coordinates": { "x": 11.2, "y": 1783.208 }
-      },
-      {
-        "node_id": "node2image",
-        "title_id": "title28",
-        "title": "Jupiter (Permanent)",
-        "tags": ["white", "0102"],
-        "imagefiles": ["node2.png"],
-        "coordinates": { "x": 11.2, "y": 1783.208 }
-      },
-      {
-        "node_id": "node137_audio",
-        "title_id": "title20",
-        "title": "Uranus",
-        "tags": ["alpha", "delta", "charlie", "2325", "0022", "0110", "0128", "0152", "0157"],
-        "imagefiles": ["node3.png"],
-        "coordinates": { "x": 11.2, "y": 1783.208 }
-      }
-    ];
-
-  });
-  
+<script>
   document.addEventListener("DOMContentLoaded", () => {
-  const enterBtn = document.getElementById("Toggle_StalagBtn");
-  const glyphDialog = document.getElementById("glyphDialog");
-  const glyphDialogTest = document.getElementById("glyphDialogTest");
+    console.log("🧭 DOM fully loaded. Ritual begins.");
+  
+    const enterBtn = document.getElementById("Toggle_StalagBtn");
+    const glyphDialog = document.getElementById("glyphDialog");
+    const glyphDialogTest = document.getElementById("glyphDialogTest");
+    const fallbackNotice = document.getElementById("fallbackNotice");
+    const secretContainer = document.getElementById("secretContainer");
+  
+    // Show both dialogs when Enter is clicked
+    enterBtn.addEventListener("click", () => {
+      console.log("🔓 Enter button clicked. Revealing glyph dialogs.");
+      glyphDialog.style.display = "block";
+      glyphDialogTest.style.display = "block";
+    });
+  
+    // Toggle visibility for primary glyph input
+    document.getElementById("toggleVisibility").addEventListener("change", (e) => {
+      const input = document.getElementById("glyphInput");
+      input.type = e.target.checked ? "text" : "password";
+      console.log(`👁️ Glyph visibility toggled: ${input.type}`);
+    });
+  
+    // Toggle visibility for test glyph input
+    document.getElementById("toggleVisibilityTest").addEventListener("change", (e) => {
+      const input = document.getElementById("glyphInputTest");
+      input.type = e.target.checked ? "text" : "password";
+      console.log(`👁️ Test glyph visibility toggled: ${input.type}`);
+    });
+  
+    // Submit logic for primary glyph
+    document.getElementById("submitGlyph").addEventListener("click", async () => {
+      const userInput = document.getElementById("glyphInput").value;
+      let expectedPassword;
+  
+      console.log("🔐 Submitting primary glyph...");
+  
+      let expectedPassword;
 
-  // Show both dialogs when Enter is clicked
-  enterBtn.addEventListener("click", () => {
-    glyphDialog.style.display = "block";
-    glyphDialogTest.style.display = "block";
-  });
+      try {
+        const response = await fetch("toggle_trog.json");
+        if (!response.ok) throw new Error("Fetch failed");
+        const data = await response.json();
 
-  // Toggle visibility for both inputs
-  document.getElementById("toggleVisibility").addEventListener("change", (e) => {
-    document.getElementById("glyphInput").type = e.target.checked ? "text" : "password";
-  });
+        const lastNode = data[data.length - 1];
+        const tags = lastNode.tags;
 
-  document.getElementById("toggleVisibilityTest").addEventListener("change", (e) => {
-    document.getElementById("glyphInputTest").type = e.target.checked ? "text" : "password";
-  });
+        if (tags && tags.length >= 3) {
+          expectedPassword = tags[2];
+        } else {
+          throw new Error("Tag structure incomplete");
+        }
+      } catch (error) {
+        console.warn("Fetch failed. Using embedded archive.");
+        document.getElementById("fallbackNotice").style.display = "block";
 
-  // Submit logic for primary dialog
-  document.getElementById("submitGlyph").addEventListener("click", async () => {
-    const userInput = document.getElementById("glyphInput").value;
-    let expectedPassword;
+        // 🔽 Embedded fallback data goes here
+        const data = [
+          {
+              "node_id": "node1image",
+              "title_id": "title16",
+              "title": "Moon (Standard Time)",
+              "tags": ["black", "Plato", "2335"],
+              "imagefiles": ["node1.png"],
+              "coordinates": { "x": 11.2, "y": 1783.208 }
+            },
+            {
+              "node_id": "node2image",
+              "title_id": "title28",
+              "title": "Jupiter (Permanent)",
+              "tags": ["white", "0102"],
+              "imagefiles": ["node2.png"],
+              "coordinates": { "x": 11.2, "y": 1783.208 }
+            },
+            {
+              "node_id": "node137_audio",
+              "title_id": "title20",
+              "title": "Uranus",
+              "tags": ["alpha", "delta", "charlie", "2325", "0022", "0110", "0128", "0152", "0157"],
+              "imagefiles": ["node3.png"],
+              "coordinates": { "x": 11.2, "y": 1783.208 }
+            }
+          ];;
 
-    try {
-      const response = await fetch("toggle_trog.json");
-      if (!response.ok) throw new Error("Fetch failed");
-      const data = await response.json();
-      const lastNode = data[data.length - 1];
-      const tags = lastNode.tags;
-
-      if (tags.length >= 3) {
-        expectedPassword = tags[2];
-      } else {
-        throw new Error("Tag structure incomplete");
+        const lastNode = data[data.length - 1];
+        const tags = lastNode.tags;
+        expectedPassword = tags[2]; 
       }
-    } catch (error) {
-      expectedPassword = "fallbackGlyph";
-      document.getElementById("fallbackNotice").style.display = "block";
-    }
-
-    if (userInput === expectedPassword) {
-      document.getElementById("secretContainer").style.display = "block";
-    } else {
-      alert("Incorrect glyph. The mask remains.");
-    }
+  
+      if (userInput === expectedPassword) {
+        console.log("🎯 Glyph matched. Access granted.");
+        secretContainer.style.display = "block";
+      } else {
+        console.warn("❌ Glyph mismatch. Access denied.");
+        alert("Incorrect glyph. The mask remains.");
+      }
+    });
+  
+    // Submit logic for test glyph
+    document.getElementById("submitGlyphTest").addEventListener("click", () => {
+      const testInput = document.getElementById("glyphInputTest").value;
+      console.log("🧪 Test glyph submitted:", testInput);
+      alert("Test glyph entered: " + testInput);
+    });
   });
-
-  // Submit logic for test dialog
-  document.getElementById("submitGlyphTest").addEventListener("click", () => {
-    const testInput = document.getElementById("glyphInputTest").value;
-    alert("Test glyph entered: " + testInput);
-  });
-  });
-});
-</script>
+  </script>
 </body>
 </html>
