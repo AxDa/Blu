@@ -355,8 +355,9 @@
   font-weight: bold;
 }
 
-#glyphDialog {
-  margin-top: 20px;
+#glyphDialog, #glyphDialogTest {
+  position: absolute;
+  top: 120px;
   left: 680px;
   padding: 15px;
   background-color: rgb(226, 202, 202);
@@ -370,6 +371,7 @@
   background-color: #f9f9f9;
   border: 2px solid #ccc;
 }
+
 .fallback-banner {
   background-color: #222;
   color: #ffcc00;
@@ -390,32 +392,43 @@
 </head>
 <button id="Toggle_StalagBtn" style="cursor:pointer; color:#00BFFF;">Enter</button>
 
-<!-- Dialog Container -->
-<div id="glyphDialog" style="display: background #0077cc;">
-    <label for="glyphInput">Enter the ceremonial glyph_axd:</label>
-    <input type="password" id="glyphInput" />
-    <label>
-      <input type="checkbox" id="toggleVisibility" />
-      Show glyph_axd
-    </label>
-    <button id="submitGlyph">Submit</button>
-  </div>
+<!-- Primary Dialog -->
+<div id="glyphDialog" style="display:none;">
+  <label for="glyphInput">Enter the ceremonial glyph_axd:</label>
+  <input type="password" id="glyphInput" />
+  <label>
+    <input type="checkbox" id="toggleVisibility" />
+    Show glyph_axd
+  </label>
+  <button id="submitGlyph">Submit</button>
+</div>
+
+<!-- Secondary Dialog for Testing -->
+<div id="glyphDialogTest" style="display:none;">
+  <label for="glyphInputTest">Test glyph input:</label>
+  <input type="password" id="glyphInputTest" />
+  <label>
+    <input type="checkbox" id="toggleVisibilityTest" />
+    Show test glyph
+  </label>
+  <button id="submitGlyphTest">Submit Test</button>
+</div>
 
 <div id="secretContainer" style="display:none;">
   <h2>Welcome to the hidden realm</h2>
-  <p>thera_whispers_above_cauldera_fin_axd.html
+  <p>
     <button onclick="window.open('thera_whispers_above_cauldera_fin_axd.html')" style="cursor:pointer; color:#00BFFF;">
       🔍 View_mare_Large
     </button>
-    <button onclick="window.open('{ url_for("static", filename="dog’s utterance_31st_July_2024_ThreatEcho.html") }')" style="cursor:pointer; color:#00BFFF;">
-        🔍 View_mare_Medium,<b>dog’s utterance_31st_July_2024</b>
-      </button>
-  </p> <!-- This is your protected page content. -->
+    <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
+      🔍 View_mare_Medium, <b>dog’s utterance_31st_July_2024</b>
+    </button>
+  </p>
 </div>
 
 <div id="fallbackNotice" style="display:none;" class="fallback-banner">
-    <p>Offline archive invoked. Glyphs retrieved from embedded memory.</p>
-  </div>
+  <p>Offline archive invoked. Glyphs retrieved from embedded memory.</p>
+</div>
 
 <body>
   <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
@@ -12858,43 +12871,29 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
     ];
   }
   });
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const enterBtn = document.getElementById("Toggle_StalagBtn");
+  const glyphDialog = document.getElementById("glyphDialog");
+  const glyphDialogTest = document.getElementById("glyphDialogTest");
+
+  enterBtn.style.display = "inline-block";
+
+  enterBtn.addEventListener("click", () => {
+    glyphDialog.style.display = "block";
+    glyphDialogTest.style.display = "block";
+  });
+
+  // Visibility toggles
+  document.getElementById("toggleVisibility").addEventListener("change", (e) => {
+    document.getElementById("glyphInput").type = e.target.checked ? "text" : "password";
+  });
+
+  document.getElementById("toggleVisibilityTest").addEventListener("change", (e) => {
+    document.getElementById("glyphInputTest").type = e.target.checked ? "text" : "password";
+  });
 
   // Submit logic with dual-path fetch
-  document.getElementById("submitGlyph").addEventListener("click", async () => {
-    const userInput = document.getElementById("glyphInput").value;
-    let expectedPassword;
-
-    try {
-      const response = await fetch("{ url_for('get_expected_password') }");
-      if (!response.ok) throw new Error("Network failure");
-      const data = await response.json();
-      expectedPassword = data.expectedPassword;
-    } catch (error) {
-      expectedPassword = "{ fallback_password }"; // Local fallback
-      document.getElementById("fallbackNotice").style.display = "block";
-    }
-
-    if (userInput === expectedPassword) {
-      document.getElementById("secretContainer").style.display = "block";
-    } else {
-      alert("Incorrect glyph. The mask remains.");
-    }
-  });
-});</script>
-
-<script>document.addEventListener("DOMContentLoaded", () => {
-  // Show dialog when button is clicked
-  document.getElementById("Toggle_StalagBtn").addEventListener("click", () => {
-    document.getElementById("glyphDialog").style.display = "block";
-  });
-
-  // Toggle password visibility
-  document.getElementById("toggleVisibility").addEventListener("change", (e) => {
-    const input = document.getElementById("glyphInput");
-    input.type = e.target.checked ? "text" : "password";
-  });
-
-  // Submit logic
   document.getElementById("submitGlyph").addEventListener("click", async () => {
     const userInput = document.getElementById("glyphInput").value;
     let expectedPassword;
@@ -12903,19 +12902,18 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
       const response = await fetch("toggle_trog.json");
       if (!response.ok) throw new Error("Fetch failed");
       const data = await response.json();
-      expectedPassword = data.expectedPassword;
+      const lastNode = data[data.length - 1];
+      const tags = lastNode.tags;
+
+      if (tags.length >= 3) {
+        expectedPassword = tags[2];
+      } else {
+        throw new Error("Tag structure incomplete");
+      }
     } catch (error) {
-      expectedPassword = "fallbackGlyph"; // Replace with your embedded fallback
+      expectedPassword = "fallbackGlyph";
       document.getElementById("fallbackNotice").style.display = "block";
     }
-    const lastNode = data[data.length - 1];
-    const tags = lastNode.tags;
-
-    if (tags.length >= 3) {
-      const expectedPassword = tags[2]; // Third element
-      if (userInput === expectedPassword) {
-        document.getElementById("secretContainer").style.display = "block";
-    } 
 
     if (userInput === expectedPassword) {
       document.getElementById("secretContainer").style.display = "block";
@@ -12923,51 +12921,12 @@ setTimeout(initPanZoom, 500); // crude but effective</script>
       alert("Incorrect glyph. The mask remains.");
     }
   });
-});</script>
 
-<!-- First script: fetch JSON for setup or Panzoom -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    fetch('toggle_trog.json')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Setup JSON loaded:', data);
-        // Use data for initial setup, overlays, etc.
-      })
-      .catch(error => console.error('Setup JSON error:', error));
+  // Optional test box logic
+  document.getElementById("submitGlyphTest").addEventListener("click", () => {
+    const testInput = document.getElementById("glyphInputTest").value;
+    alert("Test glyph entered: " + testInput);
   });
-  </script>
-<!-- Second script: toggle button logic -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("Toggle_StalagBtn").style.display = "inline-block";
-});
-
-document.getElementById("Toggle_StalagBtn").addEventListener("click", async () => {
-  const userInput = prompt("Enter the ceremonial glyph:");
-  
-
-  try {
-    const response = await fetch("toggle_trog.json");
-    const data = await response.json();
-
-    const lastNode = data[data.length - 1];
-    const tags = lastNode.tags;
-
-    if (tags.length >= 3) {
-      const expectedPassword = tags[2]; // Third element
-      if (userInput === expectedPassword) {
-        document.getElementById("secretContainer").style.display = "block";
-      } else {
-        alert("Access denied. The glyph does not match the archive’s final breath.");
-      }
-    } else {
-      alert("Tag structure incomplete. Ritual cannot proceed.");
-    }
-  } catch (error) {
-    console.error("Error loading toggle_trog.json:", error);
-    alert("Archive retrieval failed. The testimony remains sealed.");
-  }
 });</script>
 </body>
 </html>
