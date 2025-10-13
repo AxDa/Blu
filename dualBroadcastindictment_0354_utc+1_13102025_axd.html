@@ -196,7 +196,7 @@
   </style>
 
   <style>
-    #audioPanel, #audioPanel2, #audioPanel3 {
+    #audioPanel, #audioPanel2, #audioPanel3, #audioPanel4 {
       margin-bottom: 0.75em;
       display: flex;
       flex-direction: row; /* Change to 'row' for horizontal layout */
@@ -3804,9 +3804,15 @@ if (audio.paused) {
 </div>
 
 <div id="audioPanel">
-<span>🔊 Transmission: node144</span>
-<audio id="audioPlayer3" src="node144.mp3" preload="auto" controls></audio>
+<span>🔊 Transmission: node181</span>
+<audio id="audioPlayer3" src="node181.mp3" preload="auto" controls></audio>
 <button onclick="toggleAudio('audioPlayer3')">Play / Pause</button>
+</div>
+
+<div id="audioPanel">
+<span>🔊 Transmission: node144</span>
+<audio id="audioPlayer4" src="node144.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer4')">Play / Pause</button>
 </div>
 </div>
 
@@ -3921,7 +3927,7 @@ maxZoom: 10
 
 
 function toggleAudio() {
-const audio = document.getElementById("audioPlayer2","audioPlayer3","audioPlayer");
+const audio = document.getElementById("audioPlayer2","audioPlayer3","audioPlayer", "audioPlayer4");
 if (audio.paused) {
 audio.play();
 } else {
@@ -4526,3 +4532,4 @@ submitGlyphTest.addEventListener("click", () => {
 
 </body>
 </html>
+
