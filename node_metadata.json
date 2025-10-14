@@ -2092,6 +2092,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node182_audio",
+"title_id": "title2621",
+"title": "Russia \n(Novosibirsk\nKrasnoyarsk)",
+"tags": ["Bleakst", "0418"],
+"audio_files": [
+  "node182.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
