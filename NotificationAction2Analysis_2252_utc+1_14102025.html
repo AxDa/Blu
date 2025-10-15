@@ -226,19 +226,19 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 65px;
+      height: 80px;
       background-color: #dfcbda;
       border-top: 1px solid #ccc;
-      padding: 0.4em 0.6em;
+      padding: 0.3em 0.5em;
       display: flex;
       flex-direction: row; /* or 'row' if you want horizontal layout */
-      gap: 0.6em;
+      gap: 0.5em;
       z-index: 900; /* ensures it sits above the SVG */
     }
   
     #audioFooter audio {
       width: 100%;
-      height: 50px; /* or whatever fits your layout */
+      height: 70px; /* or whatever fits your layout */
     }
   
     #audioFooter button {
@@ -2496,27 +2496,27 @@ if (audio.paused) {
 </div>  
 </div>
   <!-- Dialogue Box -->
-  <div id="plutoDialog" style="display:none; border:1px solid #ccc; padding:10px; margin-top:10px;">
-    <strong>Pluto:</strong> What would you like to ask?
-    <input type="text" id="plutoInput2" placeholder="Enter your question..." style="width:100%; margin-top:5px;">
-    <button onclick="submitPluto()">Submit</button>
-  </div>
+<div id="plutoDialog" style="display:none; border:1px solid #ccc; padding:10px;">
+  <strong>Pluto:</strong> What would you like to ask?
+  <button onclick="submitPluto()" style="margin-bottom:5px;">Submit</button>
+  <input type="text" id="plutoInput" placeholder="Enter your question..." style="width:100%;">
+</div>
 
 <div id="audioPanel">
 <span>🔊 Transmission: node181</span>
-<audio id="audioPlayer3" src="node181.mp3" preload="auto" controls controlsList="nodownload"></audio>
+<audio id="audioPlayer3" src="node181.mp3" preload="auto" controls comtrolsList="nodownload"></audio>
 <button onclick="toggleAudio('audioPlayer3')">Play / Pause</button>
   <!-- Ask Pluto Dialogue Trigger -->
-  <div id="askPlutoContainer3" style="display:none; margin-top:10px;">
+  <div id="askPlutoContainer2" style="display:none; margin-top:2px;">
     <button onclick="openPlutoDialog()">Ask Pluto</button>
 </div> 
 </div>
   <!-- Dialogue Box -->
-  <div id="plutoDialog" style="display:none; border:1px solid #ccc; padding:10px; margin-top:10px;">
-    <strong>Pluto:</strong> What would you like to ask?
-    <input type="text" id="plutoInput3" placeholder="Enter your question..." style="width:100%; margin-top:5px;">
-    <button onclick="submitPluto()">Submit</button>
-  </div>
+<div id="plutoDialog" style="display:none; border:1px solid #ccc; padding:10px;">
+  <strong>Pluto:</strong> What would you like to ask?
+  <button onclick="submitPluto()" style="margin-bottom:5px;">Submit</button>
+  <input type="text" id="plutoInput" placeholder="Enter your question..." style="width:100%;">
+</div>
 
 <div id="audioPanel">
 <span>🔊 Transmission: node145</span>
@@ -3238,13 +3238,14 @@ submitGlyphTest.addEventListener("click", () => {
 
 });
 </script>
+
 <script>
   // Ritual check for download suppression
   window.onload = function() {
     const audio = document.getElementById("audioPlayer2", "audioPlayer3");
     const controlsList = audio.getAttribute("controlsList");
     if (controlsList && controlsList.includes("nodownload")) {
-      document.getElementById("askPlutoContainer2", "askPlutoContainer3").style.display = "block";
+      document.getElementById("askPlutoContainer2").style.display = "block";
     }
   };
 
@@ -3253,7 +3254,7 @@ submitGlyphTest.addEventListener("click", () => {
   }
 
   function submitPluto() {
-    const question = document.getElementById("plutoInput", "plutoInput2", "plutoInput3").value;
+    const question = document.getElementById("plutoInput").value;
     alert("Pluto received your question: " + question);
     // Optionally log or archive this as a ceremonial node
   }
