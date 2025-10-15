@@ -480,7 +480,7 @@
 {
   "title":  "Ongoing_Investigation_Report_Matrix_Index_Vector_shed_1125_utc+1_20092025_axd",
   "page":  "Ongoing_Investigation_Report_Matrix_Index_Vector_shed_1125_utc+1_20092025_axd.html",  
-  "tags": ["Time Zones"]
+  "tags": ["Time Zones", "Testimony", "2025"]
 },
 {
   "title":  "ThermocoupleBoilerSystem_1241_20092025",
@@ -490,32 +490,39 @@
 {
   "title":  "Jeffersonian_sanitized_Thermocouple_Hollowed2246",
   "page":  "Jeffersonian_sanitized_Thermocouple_Hollowed2246.html", 
-  "tags": ["Time Zones"]
+  "tags": ["Time Zones", "Testimony", "2025"]
 },
 {
   "title":  "JeffersonianThermocoupleReciterScale_1451_utc+1_23092025",
   "page":  "JeffersonianThermocoupleReciterScale_1451_utc+1_23092025.html",
-  "tags": ["Time Zones"]
+  "tags": ["Time Zones". "Testimony", "2025"]
 },
 {
   "title":  "glyphofsystemicindictment_1831_utc+1_23092025",
   "page":  "glyphofsystemicindictment_1831_utc+1_23092025.html",
-  "tags": ["Time Zones"]
+  "tags": ["Time Zones", "Testimony", "2025"]
 },
 {
   "title":  "glyphRingsOfSystemicControlofsystemicindictment_2200_utc+1_23092025",
   "page":  "glyphRingsOfSystemicControlofsystemicindictment_2200_utc+1_23092025.html",
-  "tags": ["Time Zones"]
+  "tags": ["Time Zones", "Testimony"]
 },
 {
   "title":  "Untitled_18_document_wk37,38,39",
-  "page":  "https://docs.google.com/document/d/1SGDw1KAGC-zO7UEH3h35jLPjPtCnRlhzcCfX_VO2A2Y/edit?tab=t.0",
-  "tags": ["Doc"]
+  "page":  "https://docs.google.com/document/d/1SGDw1KAGC-zO7UEH3h35jLPjPtCnRlhzcCfX_VO2A2Y/edit?usp=sharing,
+  "tags": ["Doc", "Testimony", "2025"]
+  "description": "Week 37 document outlining motif-linked indictment nodes",
+  "access": "public",
+  "added_on": "2025-10-15T04:26:00Z"
 },
 {
   "title":  "untitled_19_document_wk40,41,42",
-  "page":  "https://docs.google.com/document/d/1yCmaW5vIJa0I4LVWu3Q8cD40-jideGT4Lg7UkEfvgi4/edit?tab=t.0,
-  "tags": ["Doc"]
+  "page":  "https://docs.google.com/document/d/1yCmaW5vIJa0I4LVWu3Q8cD40-jideGT4Lg7UkEfvgi4/edit?usp=sharing,
+  "tags": ["Doc", "Testimony", "2025"]
+    "description": "Week 40 document outlining motif-linked indictment nodes",
+  "access": "public",
+  "added_on": "2025-10-15T04:26:00Z"
 }  
 
 ]
+
