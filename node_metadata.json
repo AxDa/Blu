@@ -2105,6 +2105,45 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node183_audio",
+"title_id": "title2639",
+"title": "Mongolia \n(Western Region)",
+"tags": ["Bleakst", "sound", "siren", "1618"],
+"audio_files": [
+  "node183.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node184_audio",
+"title_id": "title2655",
+"title": "China (Mainland)",
+"tags": ["Bleakst", "Fireworks", "1658", "1659"],
+"audio_files": [
+  "node184.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node185_audio",
+"title_id": "title2662",
+"title": "Hong Kong",
+"tags": ["Bleakst", "Fireworks", "1944"],
+"audio_files": [
+  "node185.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
