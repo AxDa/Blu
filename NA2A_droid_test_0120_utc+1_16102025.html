@@ -119,10 +119,10 @@
   <script src="node_metadata.json"></script>
 
   <style>
-    #togglecontainer_meta1_panel {
+    #toggleRefresh {
       position: fixed;
       top: 45px;
-      left: 130px;
+      left: 195px;
       z-index: 1000;
       padding: 6px 12px;
       background: #0077cc;
@@ -464,7 +464,7 @@
 
   <button onclick="togglecontainer_meta1_panel()">Toggle container_meta1_panel</button>
   <button onclick="toggledataPanel()">Toggle Meta Panel</button>
-  <button onclick="populateMetaPanel()">🔄 Refresh Containers</button>
+  <button id="toggleRefresh"onclick="populateMetaPanel()">🔄 Refresh Containers</button>
 
   <button onclick="loadFingerprintManifest()" style="
   position: fixed;
