@@ -2144,6 +2144,45 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node186_audio",
+"title_id": "title2676",
+"title": "Macau",
+"tags": ["Bleakst", "0015", "BBCreau", "0021"],
+"audio_files": [
+  "node186.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node187_audio",
+"title_id": "title2690",
+"title": "Taiwan",
+"tags": ["Bleaksirenst", "1715", "1719", "circa"],
+"audio_files": [
+  "node187.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node188_audio",
+"title_id": "title2704",
+"title": "Malaysia",
+"tags": ["Bleaksirenst", "1722", "circa","1719"],
+"audio_files": [
+  "node188.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
