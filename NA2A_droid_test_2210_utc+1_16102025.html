@@ -1,0 +1,3341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NotificationActionAnalysis_2252_14102025_axd</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #644b07;
+      font-family: Arial, sans-serif;
+    }
+    #svgContainer {
+      width: 100%;
+      height: 90%;
+    }
+
+    .main {
+      position: relative;
+      height: 100vh;
+      margin-left: 300px; /* default when sidebar is docked */
+      transition: margin-left 0.3s ease;
+    }
+
+    #toggleSidebar {
+      position: fixed;
+      top: 20px;
+      left: 330px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+    }
+
+      #triggerButton {
+      position: absolute;
+      left: 10px;
+      top: 45px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #83d3d3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      text-decoration: none;
+      color: #333;
+
+    }
+
+    #viewImageButton {
+      position: fixed;
+      top: 10px;
+      left: 145px; /* adjust based on toggleSidebar width */
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #00BFFF;
+      color: rgb(32, 25, 25);
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar {
+      position: absolute;
+      left: 50;
+      top: 60px;
+      width: 320px;
+      height: 80%;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 1em;
+      border: 1px solid #ccc;
+      z-index: 999;
+      cursor: move;
+    }
+    .sidebar h2 {
+      font-size: 16px;
+      margin-bottom: 0.5em;
+    }
+    .sidebar input {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 1em;
+      font-size: 14px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin-bottom: 0.5em;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
+    .sidebar a:hover {
+      color: #0077cc;
+    }
+
+    svg, svg * {
+    visibility: visible !important;
+    display: inline !important;
+    }
+  </style>
+
+  <!-- External scripts -->
+  <script src="svg-pan-zoom.min.js"></script>
+  <script src="title_node_map.js"></script>
+  <script src="node_metadata.json"></script>
+
+  <style>
+    #toggleRefresh {
+      position: fixed;
+      top: 45px;
+      left: 230px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+    }
+
+    .header-button {
+    flex: 1 1 auto;
+    min-width: 80px;
+    font-size: clamp(12px, 2vw, 16px);
+    }
+
+    #togglecontainer_meta1_panelBtn {
+      position: fixed;
+      top: 45px;
+      left: 195px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglecontainer_meta1_panelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+
+    #togglePanelBtn {
+      position: fixed;
+      top: 45px;
+      left: 145px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglePanelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+    #buttonPanel {
+      display: block;
+      position: fixed;
+      top: 110px;
+      left: 280px;
+      width: 160px;
+      z-index: 900;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      max-height: 600px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid #ccc;
+      cursor: move; /* merged here */
+    } 
+  </style>
+
+  <style>
+    #audioPanel, #audioPanel2, #audioPanel3, #audioPanel4 {
+      margin-bottom: 0.75em;
+      display: flex;
+      flex-direction: row; /* Change to 'row' for horizontal layout */
+      align-items: flex-start;
+      gap: 0.5em;
+      border: 1px solid #ccc;
+      padding: 0.75em;
+      background-color: #f9f9f9;
+    }
+  
+    audio {
+      width: 100%; /* Ensures full-width progress bar */
+    }
+  
+    #toggleFooterBtn {
+      padding: 0.4em 0.8em;
+      font-size: 0.9em;
+      position: absolute;
+      top: 20px;
+      left: 145px;
+    }
+  </style>
+
+<style>
+    #audioFooter {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-color: #dfcbda;
+      border-top: 1px solid #ccc;
+      padding: 0.3em 0.5em;
+      display: flex;
+      flex-direction: row; /* or 'row' if you want horizontal layout */
+      gap: 0.5em;
+      z-index: 900; /* ensures it sits above the SVG */
+    }
+  
+    #audioFooter audio {
+      width: 100%;
+      height: 70px; /* or whatever fits your layout */
+    }
+  
+    #audioFooter button {
+    margin-top: 0.2em; /* Reduced button spacing */
+    font-size: 0.75em;  /* Optional: shrink button text */
+    padding: 0.3em 0.6em; /* Optional: shrink button size */
+    }
+
+   #container_meta1_panel {
+    position: fixed;
+    top: 120px;
+    left: 600px;
+    width: 60px;
+    height: 310px;
+    background: #d67ec0;
+    border: 3px solid #332e2e1c;
+    padding: 5px;
+  }
+
+  .grid1 {
+    display: grid1;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  #data_svg_container {
+    width: 80px;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #999;
+    position: relative;
+    cursor: move;
+  }
+  .data1_container {
+    width: 40px;
+    height: 40px;
+    background-image: url('icon_default.png'); /* 🌒 default icon */
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #999;
+    position: relative;
+    cursor: move;
+  }
+
+  .data1_container:hover::before {
+    content:  "Over and out, luminous resistor. 🌒 git lumin";
+    position: attr( data-page), absolute;
+    top: -20px;
+    left: 0;
+    font-size: 10px;
+    background: #333;
+    color: #fff;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+
+   .data_container {
+   width: dynamic;
+   height: 80px;
+   background-image: url('icon_default.png');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   border: 1px solid rgb(180, 37, 37);
+   position: relative;
+   cursor: pointer;
+   }
+
+   .data_container:hover::before {
+   content: "Take5 Over and out, luminous resistor. 🌒 git lumin";
+   position:  absolute;
+   top: -20px;
+   left: 0;
+   font-size: 10px;
+   background: #333;
+   color: #fff;
+   padding: 2px 4px;
+   white-space: nowrap;
+   }
+
+   .motif_overlay {
+   transition: opacity 0.3s ease-in-out;
+   }
+
+  #expansion_panel {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 800px;
+    height: 600px;
+    background: #fff;
+    border: 2px solid #000;
+    display: none;
+    z-index: 1000;
+  }
+
+  #panel_iframe {
+    width: 100%;
+    height: 90%;
+    border: none;
+  }
+
+  #Toggle_StalagBtn {
+  position: fixed;
+  top: 65px;
+  left: 600px;
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#glyphDialog {
+  position: absolute;
+  top: 45px;
+  left: 680px;
+  padding: 15px;
+  background-color: rgb(226, 202, 202);
+  border: 2px solid #ccc;
+  text-align: center;
+}
+
+
+#secretContainer {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+}
+.fallback-banner {
+  background-color: #222;
+  color: #ffcc00;
+  padding: 10px;
+  border-left: 5px solid #ffcc00;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 15px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.draggable {
+  touch-action: none; /* Prevent browser scroll interference */
+  position: absolute;
+  cursor: grab;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+    
+  </style>
+</head>
+<!-- Ceremonial Glyph Dialog (Always Visible) -->
+<div id="glyphDialog" style="display:block; cursor:pointer; color:#dd785ad8;">
+  <label for="glyphInput">Enter the ceremonial glyph:</label>
+  <input type="password" id="glyphInput" />
+  <label>
+    <input type="checkbox" id="toggleVisibility" />
+    Show glyph
+  </label>
+  <button id="submitGlyph">Submit</button>
+</div>
+
+<!-- Enter Button -->
+<button id="Toggle_StalagBtn">Enter</button>
+
+<!-- Secondary Glyph Dialog (Hidden by Default) -->
+<div id="glyphDialogTest" style="display:none; cursor:pointer; color:#dd785ad8;">
+  <label for="glyphInputTest">Enter secondary glyph:</label>
+  <input type="password" id="glyphInputTest" />
+  <button id="submitGlyphTest">Submit</button>
+</div>
+
+<!-- Fallback Notice -->
+<div id="fallbackNotice" style="display:none;" class="fallback-banner">
+  <p>Offline archive invoked. Glyphs retrieved from embedded memory.</p>
+</div>
+
+<!-- Secret Container -->
+<div id="secretContainer" style="display:none; cursor:pointer; color:#dd785ad8;">
+  <h2>Welcome to the hidden realm</h2>
+  <button onclick="window.open('thera_whispers_above_cauldera_fin_axd.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_Large
+  </button>
+  <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_Medium,<b>dog’s utterance_31st_July_2024</b>
+  </button>
+    </button>
+  <button onclick="window.open('NotificationActionAnalysis_2252_utc+1_14102025.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_eucilidian,<b>NotificationActionAnalysis_2252_utc+1_14102025</b>
+  </button>
+</div>
+
+
+<body>
+  <div class="header-button">
+  <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
+  <button id="triggerButton">Toggle Image</button>
+  <button id="toggleFooterBtn" onclick="toggleFooter()">Hide Audio Panel</button>
+  <button id="togglePanelBtn">Hide Panel</button>
+  <!-- View Image Buttons -->
+  <button onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 WorldTimeZones
+  </button>
+
+  <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_Large
+  </button>
+
+  <button onclick="togglecontainer_meta1_panel()">Toggle container_meta1_panel</button>
+  <button onclick="toggledataPanel()">Toggle Meta Panel</button>
+  <button id="toggleRefresh"onclick="populateMetaPanel()">🔄 Refresh Containers</button>
+
+  <button onclick="loadFingerprintManifest()" style="
+  position: fixed;
+  top: 20px;
+  right: 50px;
+  z-index: 9999;
+  background: #222;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 5px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  ">🔄 Refresh Fingerprints</button>
+
+  <button onclick="toggleFingerprintPanel()" style="
+   position: fixed;
+   top: 40px;
+   right: 10px;
+   z-index: 9999;
+   background: #222;
+   color: #0ff;
+   border: 1px solid #0ff;
+   padding: 5px 10px;
+   font-size: 10px;
+   cursor: pointer;
+   ">👁️ Toggle Fingerprints</button>
+  </div>
+
+  <div id="fingerprint_panel" style="
+  position: fixed;
+  top: 20px;
+  right: 100px;
+  width: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+  background: #111;
+  color: #eee;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 10px;
+  border: 1px solid #444;
+  z-index: 9998;
+  box-shadow: 0 0 10px #000;
+  "></div> 
+
+  <!-- Draggable Panel 🌒 Container Panel html -->
+<div id="container_meta_panel" style="
+  position: absolute;
+  left: 220px;
+  top: 100px;
+  width: 40vw;
+  height: 40vh;
+  overflow-y: auto;
+  background: #ddd483;
+  border: 1px solid #ccc;">
+</div>
+
+<div id="expansion_panel">
+   <button onclick="closePanel()">ClosePanel</button>
+   <iframe id="panel_iframe" ></iframe>
+ </div>
+
+  <!-- Draggable Panel -->
+  <div id="container_meta1_panel" >
+    <div class="grid1" style="display: grid1; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 8px; padding: 8px;">
+      <div class="data1_container" data-page="WorldTimeZonesNodeDripEcho_1908_27082025.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="AllBackAcoustics_2211_utc+1_14092025_axd.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_1408_utc+1_09092025_Protocol_axd.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Modern_Slavery_sumpindex_Day.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+    </div>
+  </div>
+  
+
+   <div id="expansion_panel">
+    <button onclick="closePanel()" style="display: background #0077cc;">CloseExpansion </button>
+    <iframe id="panel_iframe"></iframe>
+    </div>
+ </div>
+
+<!-- Button Panel Container -->
+<div id="buttonPanel">
+
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit 1721
+  </button>
+  
+  <button 
+  onclick="window.open('As_the_ash_of_thera_whispers_pwa_(7)_index.html', '_blank')" 
+  aria-label="As_the_ash_of_thera_whispers_pwa_(7)_index"
+  data-node-id="As_the_ash_of_thera_whispers_pwa_(7)_index">
+  Open: As_the_ash_of_thera_whispers_pwa_(7)_index
+  </button>
+  
+  <button 
+  onclick="window.open('HybridAbyssmons16082025.html', '_blank')" 
+  aria-label="Hybrid Abyssmons 16082025"
+  data-node-id="Hybrid_Abyssmons_16082025">
+  Open: Hybrid Abyssmons 16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Old_full_svg.html', '_blank')" 
+  aria-label="Old_full_svg"
+  data-node-id="Old_full_svg">
+  Open: Old_full_svg
+  </button>
+  
+  <button 
+  onclick="window.open('SodaStrawMappingGrowth_0019_19082025.svg.html', '_blank')" 
+  aria-label="Soda Straw Mapping Growth_0019_19082025"
+  data-node-id="Soda_Straw_Mapping_Growth_0019_19082025">
+  Open: Soda Straw Mapping Growth_0019_19082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermark_AllegoricalUnderworld_embed1929_utc1_17072025.html', '_blank')" 
+  aria-label="Watermark Allegorical Underworldembed 1929_utc1_17072025"
+  data-node-id="Watermark_AllegoricalUnderworld_embed1929_utc1_17072025">
+  Open: Allegorical Underworld_embed 1929_utc1_17072025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_InverseSocietySummaryExpandedTable_all3_graphpywBT_0129_14082025 (6785 x 3715)(inline).html', '_blank')" 
+  aria-label="Inverse Society Summary Expanded Table 0129_14082025 (6785 x 3715)"
+  data-node-id="Inverse_Society_Summary_Expanded_Table_0129_14082025">
+  Open: Inverse Society Summary Expanded Table 0129_14082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0210_utc+1_16082025WrapperwithSpeakerIconAudioPlayer.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege 0210_utc+1_16082025"
+  data-node-id="Ultrasonic_Street_audio_Siege 0210_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege 0210_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0723_utc+1_16082025.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege_0723_utc+1_16082025"
+  data-node-id="UltrasonicStreetaudioSiege_0723_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege_0723_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_ElusivePossession_0830(mp3)_utc1_22082025.html', '_blank')" 
+  aria-label="Elusive Possession 0830(mp3) utc1_22082025"
+  data-node-id="ElusivePossession_0830(mp3)_utc1_22082025">
+  Open: Elusive Possession 0830(mp3) utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_RecursiveMachine_0219_utc+1_23082025.html', '_blank')" 
+  aria-label="Recursive Machine 0219 utc+1_23082025"
+  data-node-id="RecursiveMachine_0219_utc+1_23082025">
+  Open: Recursive Machine 0219 utc+1_23082025
+  </button>
+  
+  <button 
+  onclick="window.open('WmstreetsoundCivilSocietal_Visualization_0026_utc1_22082025svg.html', '_blank')" 
+  aria-label="street_Civil_Societal_Visualization_0026_utc1_22082025"
+  data-node-id="street_sound_Civil_Societal_Visualization_0026_utc1_22082025">
+  Open: Street_Civil_Societal_Visualization_0026_utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('bleakleo_player.html', '_blank')" 
+  aria-label="bleakleo player"
+  data-node-id="bleakleo_player">
+  Open: bleakleo player
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Aindex.html', '_blank')" 
+  aria-label="Aindex"
+  data-node-id="Aindex">
+  Open: Aindex
+  </button>
+  
+  <button 
+  onclick="window.open('bleaktyrestperambulator_audio_embed.html', '_blank')" 
+  aria-label="bleaktyrestperambulator audio embed"
+  data-node-id="bleaktyrestperambulator_audio_embed">
+  Open: bleaktyrestperambulator_audio_embed
+  </button>
+  
+  <button 
+  onclick="window.open('fullscreen.html', '_blank')" 
+  aria-label="fullscreen"
+  data-node-id="fullscreen">
+  Open: fullscreen
+  </button>
+  
+  <button 
+  onclick="window.open('grid_node_view.html', '_blank')" 
+  aria-label="grid_node_view"
+  data-node-id="grid_node_view">
+  Open: grid_node_view
+  </button>
+  
+  <button 
+  onclick="window.open('indexfin2_data.html', '_blank')" 
+  aria-label="indexfin2 data"
+  data-node-id="indexfin2_data">
+  Open: indexfin2_data
+  </button>
+  
+  <button 
+  onclick="window.open('opening_index.html', '_blank')" 
+  aria-label="opening index"
+  data-node-id="opening_index">
+  Open: opening index
+  </button>
+  
+  <button 
+  onclick="window.open('svg_wrapper_enhanced.html', '_blank')" 
+  aria-label="svg wrapper enhanced"
+  data-node-id="svg_wrapper_enhanced">
+  Open: svg wrapper enhanced
+  </button>
+  
+  <button 
+  onclick="window.open('thera_whispers_above_cauldera_fin_axd.html', '_blank')" 
+  aria-label="thera whispers above cauldera fin axd"
+  data-node-id="thera_whispers_above_cauldera_fin_axd">
+  Open: thera whispers above cauldera fin axd
+  </button>
+  
+  <button 
+  onclick="window.open('Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention_20250820_113701_axd.html', '_blank')" 
+  aria-label="Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention"
+  data-node-id="Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention">
+  Open: Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention
+  </button>
+  
+  <button 
+  onclick="window.open('toggle_image_sss.html', '_blank')" 
+  aria-label="toggle image sss"
+  data-node-id="toggle_image_sss">
+  Open: toggle image sss
+  </button>
+  
+  <button 
+  onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html', '_blank')" 
+  aria-label="World Time Zone Node Drip Echo"
+  data-node-id="World_Time_Zones_Node_Drip_Echo">
+  Open: World Time Zone Node Drip Echo
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit
+  </button>
+  
+  <button 
+  onclick="window.open('image_inline_BroadcastExperience1633_02092025_wipbase64.html', '_blank')" 
+  aria-label="image inline Broadcast Experience"
+  data-node-id="image_inline_BroadcastExperience">
+  Open: image inline Broadcast Experience
+  </button>
+  
+  <button 
+  onclick="window.open('Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html', '_blank')" 
+  aria-label="Bleakst Going to C a Realm Proxy Scylla Transmission"
+  data-node-id="Bleakst_Goingto_C_a_Realm_Proxy_Scylla_Transmission">
+  Open: Bleakst Going to C a Realm Proxy Scylla Transmission
+  </button>
+  
+  <button 
+  onclick="window.open('WmAspectsenslavementAudit_0059_utc+1+06092025.html', '_blank')" 
+  aria-label="Aspects enslavement Audit"
+  data-node-id="Aspects_enslavement_Audit">
+  Open: Aspects enslavement Audit
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_archive_1509_10092025.html', '_blank')" 
+  aria-label="testimony archive 1509 10092025"
+  data-node-id="testimony_archive_1509_10092025">
+  Open: testimony archive 1509 10092025
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_1408_utc+1_09092025_Protocol_axd.html', '_blank')" 
+  aria-label="Jeffersonian linier Bulwark semantic clusters with motifs 1408 09092025_Protocol axd"
+  data-node-id="Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_Protocol">
+  Open: JeffersonianBulwarkclustersProtocol
+  </button>
+      
+  <button 
+  onclick="window.open('Wm_velvetveilprotocol_815_utc+1_07092025.html', '_blank')" 
+  aria-label="Wm_velvet_veil_protocol"
+  data-node-id="velvet veil protocol">
+  Open: velvetveilprotocol
+  </button>
+  
+  <button 
+  onclick="window.open('Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html', '_blank')" 
+  aria-label="Hawking Blackhole Radiation Rllbk_tx"
+  data-node-id="Hawking Blackhole_Radiation">
+  Open: Hawking Blackhole Radiation Rllbk tx
+  </button>
+  
+  <button 
+  onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html', '_blank')" 
+  aria-label="dog’s utterance Threat Echo"
+  data-node-id="dog’s_utterance_31st_July_2024_ThreatEcho">
+  Open: dog’s utterance Threat Echo
+  </button>
+  
+  <button 
+  onclick="window.open('spatiallyadaptiveinferencetransmission_2247_utc+1_11092025.svg_axd.html', '_blank')" 
+  aria-label="spatially_adaptive_inference_transmission"
+  data-node-id="spatially adaptive inference transmission">
+  Open: Spatially adaptive inference transmission
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_Anathema.html', '_blank')" 
+  aria-label="testimony Anathema"
+  data-node-id="testimony_Anathema">
+  Open: Anathema
+  </button>
+    
+  <button 
+  onclick="window.open('Jeffersonian_sanitized_Thermocouple_Hollowed2246.html', '_blank')" 
+  aria-label="Jeffersonian sanitized Thermocouple Hollowed2246"
+  data-node-id="Jeffersonian_sanitized_Thermocouple_Hollowed2246">
+  Open: Jeffersonian sanitized Thermocouple Hollowed2246
+  </button>
+  
+  <button 
+  onclick="window.open('JeffersonianThermocoupleReciterScale_1451_utc+1_23092025.html', '_blank')" 
+  aria-label="Jeffersonian Thermocouple ReciterScale 1451"
+  data-node-id="Jeffersonian_Thermocouple_Reciter_Scale_1451">
+  Open: Jeffersonian Thermocouple ReciterScale 1451
+  </button>
+      
+  <button 
+  onclick="window.open('Ongoing_scylla_sump_index_shed_axd2302.html', '_blank')" 
+  aria-label="Ongoing scylla sump index shed"
+  data-node-id="Ongoing_scylla_sump_index_shed">
+  Open: Ongoing scylla sump index shed
+  </button>
+  
+  <button 
+  onclick="window.open('systemic_descent_ComplianceDescentHope_1818_utc+1_24092025.htm', '_blank')" 
+  aria-label="systemic descent Compliance Descent Hope 1818"
+  data-node-id="systemic_descent_ComplianceDescentHope_1818 ">
+  Open: systemic descent Compliance Descent Hope
+  </button>
+  
+  <button 
+  onclick="window.open('forecastarchitectureglyphofcivictestimony_2048_utc+1_24092025.html', '_blank')" 
+  aria-label="forecast architecture glyph of civic testimony 2048"
+  data-node-id="forecast_architecture_glyph_of_civic_testimony_2048">
+  Open: forecast architecture glyph
+  </button>
+
+  <button 
+  onclick="window.open('Modern_Slavery_sumpindex_Day.html', '_blank')" 
+  aria-label="Modern Slavery sump index Day"
+  data-node-id="Modern_Slavery_sumpindex_Day">
+  Open: Modern Slavery sump index Day
+  </button>
+
+  <button 
+   onclick="window.open('FarReachesSubterraneanRecursiveHollerCrawlDescent_1602_utc+1_12092025_axd.html', '_blank')" 
+   aria-label="Far Reaches Subterranean Recursive Holler Crawl Descent 1602"
+   data-node-id="Far_Reaches_Subterranean_Recursive_Holler_Crawl_Descent_1602">
+   Open: Far Reaches Subterranean Recursive Holler Crawl Descent 1602
+   </button>
+
+  <button 
+   onclick="window.open('technologicalmalfeasance_1837_25092025_axd.html', '_blank')" 
+   aria-label="technologicalmalfeasance_1837_25092025_axd"
+   data-node-id="technological malfeasance 1837 25092025 ">
+   Open: technological_malfeasance_1837
+   </button>
+
+    <button 
+   onclick="window.open('coverttransmissions_0522_27092025.html', '_blank')" 
+   aria-label="covert transmissions 0522"
+   data-node-id="coverttransmissions_0522">
+   Open: overt transmissions 0522
+   </button>
+
+   <button 
+   onclick="window.open('LatrineSurveillanceArchive_1619_utc+1_27092025.html', '_blank')" 
+   aria-label="Latrine Surveillance Archive 1619"
+   data-node-id="Latrine_Surveillance_Archive_1619">
+   Open: Latrine Surveillance Archive 1619
+   </button>
+
+    <button 
+   onclick="window.open('wk35_36_37_38_39_x_bash_1732_utc+1_28092025.html', '_blank')" 
+   aria-label="wk35 36 37 38 39 x_bash 1732"
+   data-node-id="wk35_36_37_38_39_x_bash_1732">
+   Open: wk35 36 37 38 39 x_bash 1732
+   </button>
+
+    <button 
+   onclick="window.open('Fragments from the cave_2146 28092025.html', '_blank')" 
+   aria-label="Fragments from the cave 2146"
+   data-node-id="Fragments_from_the_cave_2146">
+   Open: Fragments from the cave 2146
+   </button>
+
+    <button 
+   onclick="window.open('wk35_36_37_38_39_0123_utc+1_28092025.html', '_blank')" 
+   aria-label="wk35 36 37 38 39 0123"
+   data-node-id="wk35_36_37_38_39_0123">
+   Open: wk35 36 37 38 39 0123
+   </button>
+
+    <button 
+   onclick="window.open('PlatoCaveSystemicArchitectureTheCaveModernSlavery_1715_utc+1_29092025.html', '_blank')" 
+   aria-label="Plato Cave Systemic Architecture TheCave ModernSlavery_1715"
+   data-node-id="Plato_Cave_Systemic_Architecture_TheCave_ModernSlavery_1715">
+   Open: Plato Cave Systemic Architecture TheCave ModernSlavery_1715
+   </button>
+
+    <button 
+   onclick="window.open('low_consumption_0305_utc+1_30092025_axd.html', '_blank')" 
+   aria-label="low consumption 0305"
+   data-node-id="low_consumption_0305">
+   Open: low consumption 0305
+   </button>
+
+    <button 
+   onclick="window.open('smartmeters_1650_utc+1_02102025_axd.html', '_blank')" 
+   aria-label="smartmeters 1650"
+   data-node-id="smartmeters_1650">
+   Open: smartmeters 1650
+   </button>
+
+   <button 
+   onclick="window.open('waterfall_0106_utc+1_04102025_axd.html', '_blank')" 
+   aria-label="waterfall 0106"
+   data-node-id="waterfall_0106">
+   Open: waterfall 0106
+   </button>
+
+    <button 
+   onclick="window.open('spectacleprotocol_0649_utc+1_04102025_axd.html', '_blank')" 
+   aria-label="spectacleprotocol 0649"
+   data-node-id="spectacleprotocol_0649">
+   Open: spectacleprotocol 0649
+   </button>
+   
+    <button 
+   onclick="window.open('Transposition_thera_popocatepetl_0125_06102025_axd.html', '_blank')" 
+   aria-label="Transposition thera popocatepetl 0125"
+   data-node-id="Transposition_thera_popocatepetl_0125">
+   Open: Transposition thera popocatepetl 0125
+   </button>
+   
+    <button 
+   onclick="window.open('DarknessInterrogation_1800_06102025_axd.html', '_blank')" 
+   aria-label="Darkness Interrogation 1800 axd"
+   data-node-id="DarknessInterrogation_1800_axd">
+   Open: Darkness Interrogation 1800 axd
+   </button>   
+   
+    <button 
+   onclick="window.open('darkness06072021_005_2327_utc+1_706102025_axd_fintest6dax.html', '_blank')" 
+   aria-label="darkness 06072021 2327 706102025axd fintest6dax"
+   data-node-id="darkness_06072021_2327_706102025_axd_fintest6dax">
+   Open: darknessaxd_fintest6dax
+   </button>
+
+    <button 
+   onclick="window.open('dualBroadcastindictment_0354_utc+1_13102025_axd.html', '_blank')" 
+   aria-label="dual Broadcast indictment 0354"
+   data-node-id="dualBroadcastindictment_0354">
+   Open: dual Broadcast indictment 0354
+   </button>
+
+    <button 
+   onclick="window.open('unifiedmoralmasqueradem_2122_utc+1_13102025.html', '_blank')" 
+   aria-label="unified moral masquerade m 2122"
+   data-node-id="unified_moral_masquerade_m_2122">
+   Open: unified masqueradem 2122
+   </button>
+
+    <button 
+   onclick="window.open('spare.html', '_blank')" 
+   aria-label="spare"
+   data-node-id="spare">
+   Open: spare
+   </button>
+  </div>
+
+  <div
+    id="sidebar" class="sidebar" onmousedown="startDrag(event)">
+    <h2>Node Index</h2>
+    <input type="text" id="searchBox" placeholder="Search titles..." onkeyup="filterNodes()" />  
+    
+    <button onclick="toggleDock()">Dock/Undock</button>
+    <ul id='nodeList'>
+    <li><a href='#' onclick="playNodeAudio('node1'); showPlayCue('node1')">Baker Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node2'); showPlayCue('node2')">Howland Island \(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node3'); showPlayCue('node3')">American Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node4'); showPlayCue('node4')">Niue</a></li>
+    <li><a href='#' onclick="playNodeAudio('node5'); showPlayCue('node5')">Midway Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node6'); showPlayCue('node6')">Jarvis Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node7'); showPlayCue('node7')">Kingman Reef (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node8'); showPlayCue('node8')">Palmyra Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node9'); showPlayCue('node9')">Hawaii</a></li>
+    <li><a href='#' onclick="playNodeAudio('node10'); showPlayCue('node10')">French Polynesia (Tahiti)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node11'); showPlayCue('node11')">Cook Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node12'); showPlayCue('node12')">Johnston Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node13'); showPlayCue('node13')">Tuamotu Archipelago (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node14'); showPlayCue('node14')">Society Islands (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node15'); showPlayCue('node15')">Alaska (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node16'); showPlayCue('node16')">Gambier Islands (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node17'); showPlayCue('node17')">Aleutian Islands (US, Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node18'); showPlayCue('node18')">UTC−12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node19'); showPlayCue('node19')">UTC−11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node20'); showPlayCue('node20')">UTC−10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node21'); showPlayCue('node21')">UTC−9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node22'); showPlayCue('node22')">Canada (British Columbia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node23'); showPlayCue('node23')">United States (California, Oregon, Washington)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node24'); showPlayCue('node24')">Mexico (Baja California)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node25'); showPlayCue('node25')">Pitcairn Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node26'); showPlayCue('node26')">Canada (Alberta)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node27'); showPlayCue('node27')">United States (Arizona, Colorado, Utah)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node28'); showPlayCue('node28')">Mexico (Chihuahua, Sonora)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node29'); showPlayCue('node29')">Chile (Easter Island & Salas y Gómez (ST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node30'); showPlayCue('node30')">Belize</a></li>
+    <li><a href='#' onclick="playNodeAudio('node31'); showPlayCue('node31')">Costa Rica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node32'); showPlayCue('node32')">Guatemala</a></li>
+    <li><a href='#' onclick="playNodeAudio('node33'); showPlayCue('node33')">Honduras</a></li>
+    <li><a href='#' onclick="playNodeAudio('node34'); showPlayCue('node34')">Nicaragua</a></li>
+    <li><a href='#' onclick="playNodeAudio('node35'); showPlayCue('node35')">El Salvador</a></li>
+    <li><a href='#' onclick="playNodeAudio('node36'); showPlayCue('node36')">Mexico (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node37'); showPlayCue('node37')">United States (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node38'); showPlayCue('node38')">Canada (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node39'); showPlayCue('node39')">Ecuador (Galápagos)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node40'); showPlayCue('node40')">UTC−8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node41'); showPlayCue('node41')">UTC−7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node42'); showPlayCue('node42')">UTC−6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node43'); showPlayCue('node43')">Chile (Easter Island & Salas y Gómez (DST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node44'); showPlayCue('node44')">Colombia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node45'); showPlayCue('node45')">Panama</a></li>
+    <li><a href='#' onclick="playNodeAudio('node46'); showPlayCue('node46')">Peru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node47'); showPlayCue('node47')">Ecuador (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node48'); showPlayCue('node48')">Cuba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node49'); showPlayCue('node49')">Haiti</a></li>
+    <li><a href='#' onclick="playNodeAudio('node50'); showPlayCue('node50')">Jamaica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node51'); showPlayCue('node51')">Bahamas</a></li>
+    <li><a href='#' onclick="playNodeAudio('node52'); showPlayCue('node52')">Dominican Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node53'); showPlayCue('node53')">Bolivia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node54'); showPlayCue('node54')">Eastern United States</a></li>
+    <li><a href='#' onclick="playNodeAudio('node55'); showPlayCue('node55')">Eastern Canada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node56'); showPlayCue('node56')">Venezuela</a></li>
+    <li><a href='#' onclick="playNodeAudio('node57'); showPlayCue('node57')">Barbados</a></li>
+    <li><a href='#' onclick="playNodeAudio('node58'); showPlayCue('node58')">Grenada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node59'); showPlayCue('node59')">Saint Lucia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node60'); showPlayCue('node60')">Saint Vincent and the Grenadines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node61'); showPlayCue('node61')">Trinidad and Tobago</a></li>
+    <li><a href='#' onclick="playNodeAudio('node62'); showPlayCue('node62')">Puerto Rico</a></li>
+    <li><a href='#' onclick="playNodeAudio('node63'); showPlayCue('node63')">Aruba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node64'); showPlayCue('node64')">Curacao</a></li>
+    <li><a href='#' onclick="playNodeAudio('node65'); showPlayCue('node65')">French Guiana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node66'); showPlayCue('node66')">Suriname</a></li>
+    <li><a href='#' onclick="playNodeAudio('node67'); showPlayCue('node67')">Guyana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node68'); showPlayCue('node68')">Chile (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node69'); showPlayCue('node69')">Chile (Magallanes & Chilean Antarctica (year round))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node70'); showPlayCue('node70')">Argentina</a></li>
+    <li><a href='#' onclick="playNodeAudio('node71'); showPlayCue('node71')">Brazil (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node72'); showPlayCue('node72')">Uruguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node73'); showPlayCue('node73')">Paraguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node74'); showPlayCue('node74')">Saint Pierre and Miquelon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node75'); showPlayCue('node75')">UTC−5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node76'); showPlayCue('node76')">UTC−4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node77'); showPlayCue('node77')">UTC−3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node78'); showPlayCue('node78')">Saint Pierre and Miquelon (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node79'); showPlayCue('node79')">Fernando de Noronha (Brazil)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node80'); showPlayCue('node80')">South Georgia and the South Sandwich Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node81'); showPlayCue('node81')">Cape Verde</a></li>
+    <li><a href='#' onclick="playNodeAudio('node82'); showPlayCue('node82')">Azores (Portugal)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node83'); showPlayCue('node83')">Ittoqqortoormiit (Greenland, DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node84'); showPlayCue('node84')">Iceland</a></li>
+    <li><a href='#' onclick="playNodeAudio('node85'); showPlayCue('node85')">Greenwich Mean Time (UK, Ireland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node86'); showPlayCue('node86')">Portugal (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node87'); showPlayCue('node87')">Canary Islands (Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node88'); showPlayCue('node88')">Gambia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node89'); showPlayCue('node89')">Ghana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node90'); showPlayCue('node90')">Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node91'); showPlayCue('node91')">Mali</a></li>
+    <li><a href='#' onclick="playNodeAudio('node92'); showPlayCue('node92')">Mauritania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node93'); showPlayCue('node93')">Senegal</a></li>
+    <li><a href='#' onclick="playNodeAudio('node94'); showPlayCue('node94')">Sierra Leone</a></li>
+    <li><a href='#' onclick="playNodeAudio('node95'); showPlayCue('node95')">Togo</a></li>
+    <li><a href='#' onclick="playNodeAudio('node96'); showPlayCue('node96')">Algeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node97'); showPlayCue('node97')">Angola</a></li>
+    <li><a href='#' onclick="playNodeAudio('node98'); showPlayCue('node98')">Benin</a></li>
+    <li><a href='#' onclick="playNodeAudio('node99'); showPlayCue('node99')">Cameroon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node100'); showPlayCue('node100')">Central African Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node101'); showPlayCue('node101')">Chad</a></li>
+    <li><a href='#' onclick="playNodeAudio('node102'); showPlayCue('node102')">Congo (Brazzaville)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node103'); showPlayCue('node103')">Democratic Republic of Congo (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node104'); showPlayCue('node104')">Equatorial Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node105'); showPlayCue('node105')">Gabon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node106'); showPlayCue('node106')">Morocco</a></li>
+    <li><a href='#' onclick="playNodeAudio('node107'); showPlayCue('node107')">Nigeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node108'); showPlayCue('node108')">Tunisia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node109'); showPlayCue('node109')">Western Europe (France, Germany, Italy, Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node110'); showPlayCue('node110')">Andorra</a></li>
+    <li><a href='#' onclick="playNodeAudio('node111'); showPlayCue('node111')">Belgium</a></li>
+    <li><a href='#' onclick="playNodeAudio('node112'); showPlayCue('node112')">Luxembourg</a></li>
+    <li><a href='#' onclick="playNodeAudio('node113'); showPlayCue('node113')">Netherlands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node114'); showPlayCue('node114')">Norway</a></li>
+    <li><a href='#' onclick="playNodeAudio('node115'); showPlayCue('node115')">Sweden</a></li>
+    <li><a href='#' onclick="playNodeAudio('node116'); showPlayCue('node116')">Denmark</a></li>
+    <li><a href='#' onclick="playNodeAudio('node117'); showPlayCue('node117')">UTC−2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node118'); showPlayCue('node118')">UTC−1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node119'); showPlayCue('node119')">UTC±0</a></li>
+    <li><a href='#' onclick="playNodeAudio('node120'); showPlayCue('node120')">UTC+1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node121'); showPlayCue('node121')">South Africa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node122'); showPlayCue('node122')">Egypt</a></li>
+    <li><a href='#' onclick="playNodeAudio('node123'); showPlayCue('node123')">Libya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node124'); showPlayCue('node124')">Sudan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node125'); showPlayCue('node125')">Israel</a></li>
+    <li><a href='#' onclick="playNodeAudio('node126'); showPlayCue('node126')">Palestine</a></li>
+    <li><a href='#' onclick="playNodeAudio('node127'); showPlayCue('node127')">Jordan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node128'); showPlayCue('node128')">Lebanon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node129'); showPlayCue('node129')">Syria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node130'); showPlayCue('node130')">Greece</a></li>
+    <li><a href='#' onclick="playNodeAudio('node131'); showPlayCue('node131')">Bulgaria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node132'); showPlayCue('node132')">Romania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node133'); showPlayCue('node133')">Ukraine (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node134'); showPlayCue('node134')">Finland (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node135'); showPlayCue('node135')">Cyprus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node136'); showPlayCue('node136')">Turkey (Permanent UTC+3)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node137'); showPlayCue('node137')">Saudi Arabia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node138'); showPlayCue('node138')">Iraq</a></li>
+    <li><a href='#' onclick="playNodeAudio('node139'); showPlayCue('node139')">Kuwait</a></li>
+    <li><a href='#' onclick="playNodeAudio('node140'); showPlayCue('node140')">Qatar</a></li>
+    <li><a href='#' onclick="playNodeAudio('node141'); showPlayCue('node141')">Bahrain</a></li>
+    <li><a href='#' onclick="playNodeAudio('node142'); showPlayCue('node142')">Yemen</a></li>
+    <li><a href='#' onclick="playNodeAudio('node143'); showPlayCue('node143')">Somalia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node144'); showPlayCue('node144')">Ethiopia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node145'); showPlayCue('node145')">Kenya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node146'); showPlayCue('node146')">Tanzania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node147'); showPlayCue('node147')">Uganda</a></li>
+    <li><a href='#' onclick="playNodeAudio('node148'); showPlayCue('node148')">Russia (Moscow)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node149'); showPlayCue('node149')">Belarus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node150'); showPlayCue('node150')">Georgia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node151'); showPlayCue('node151')">Armenia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node152'); showPlayCue('node152')">Azerbaijan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node153'); showPlayCue('node153')">United Arab Emirates</a></li>
+    <li><a href='#' onclick="playNodeAudio('node154'); showPlayCue('node154')">Oman</a></li>
+    <li><a href='#' onclick="playNodeAudio('node155'); showPlayCue('node155')">Mauritius</a></li>
+    <li><a href='#' onclick="playNodeAudio('node156'); showPlayCue('node156')">Seychelles</a></li>
+    <li><a href='#' onclick="playNodeAudio('node157'); showPlayCue('node157')">Russia (Samara)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node158'); showPlayCue('node158')">Afghanistan (UTC+4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node159'); showPlayCue('node159')">Pakistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node160'); showPlayCue('node160')">Uzbekistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node161'); showPlayCue('node161')">Turkmenistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node162'); showPlayCue('node162')">Tajikistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node163'); showPlayCue('node163')">Kazakhstan (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node164'); showPlayCue('node164')">Maldives</a></li>
+    <li><a href='#' onclick="playNodeAudio('node165'); showPlayCue('node165')">UTC+2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node166'); showPlayCue('node166')">UTC+3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node167'); showPlayCue('node167')">Iran (UTC+3:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node168'); showPlayCue('node168')">UTC+4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node169'); showPlayCue('node169')">UTC+5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node170'); showPlayCue('node170')">Bangladesh</a></li>
+    <li><a href='#' onclick="playNodeAudio('node171'); showPlayCue('node171')">Bhutan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node172'); showPlayCue('node172')">Kazakhstan (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node173'); showPlayCue('node173')">Kyrgyzstan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node174'); showPlayCue('node174')">Cocos Islands (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node175'); showPlayCue('node175')">British Indian Ocean Territory</a></li>
+    <li><a href='#' onclick="playNodeAudio('node176'); showPlayCue('node176')">Thailand</a></li>
+    <li><a href='#' onclick="playNodeAudio('node177'); showPlayCue('node177')">Vietnam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node178'); showPlayCue('node178')">Cambodia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node179'); showPlayCue('node179')">Laos</a></li>
+    <li><a href='#' onclick="playNodeAudio('node180'); showPlayCue('node180')">Indonesia (Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node181'); showPlayCue('node181')">Christmas Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node182'); showPlayCue('node182')">Russia (Novosibirsk Krasnoyarsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node183'); showPlayCue('node183')">Mongolia (Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node184'); showPlayCue('node184')">China (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node185'); showPlayCue('node185')">Hong Kong</a></li>
+    <li><a href='#' onclick="playNodeAudio('node186'); showPlayCue('node186')">Macau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node187'); showPlayCue('node187')">Taiwan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node188'); showPlayCue('node188')">Malaysia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node189'); showPlayCue('node189')">Singapore</a></li>
+    <li><a href='#' onclick="playNodeAudio('node190'); showPlayCue('node190')">Philippines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node191'); showPlayCue('node191')">Brunei</a></li>
+    <li><a href='#' onclick="playNodeAudio('node192'); showPlayCue('node192')">Indonesia (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node193'); showPlayCue('node193')">Western Australia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node194'); showPlayCue('node194')">Russia (Irkutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node195'); showPlayCue('node195')">Mongolia (Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node196'); showPlayCue('node196')">Japan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node197'); showPlayCue('node197')">South Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node198'); showPlayCue('node198')">North Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node199'); showPlayCue('node199')">East Timor</a></li>
+    <li><a href='#' onclick="playNodeAudio('node200'); showPlayCue('node200')">Indonesia (Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node201'); showPlayCue('node201')">Russia (Yakutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node202'); showPlayCue('node202')">Palau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node203'); showPlayCue('node203')">UTC+6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node204'); showPlayCue('node204')">UTC+7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node205'); showPlayCue('node205')">UTC+8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node206'); showPlayCue('node206')">UTC+9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node207'); showPlayCue('node207')">Eastern Australia (Queensland, NSW, Victoria)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node208'); showPlayCue('node208')">Papua New Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node209'); showPlayCue('node209')">Guam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node210'); showPlayCue('node210')">Northern Mariana Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node211'); showPlayCue('node211')">Russia (Vladivostok)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node212'); showPlayCue('node212')">Federated States of Micronesia (Western)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node213'); showPlayCue('node213')">Solomon Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node214'); showPlayCue('node214')">New Caledonia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node215'); showPlayCue('node215')">Vanuatu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node216'); showPlayCue('node216')">Federated States of Micronesia (Eastern)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node217'); showPlayCue('node217')">Russia (Magadan)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node218'); showPlayCue('node218')">Norfolk Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node219'); showPlayCue('node219')">Bougainville (Papua New Guinea)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node220'); showPlayCue('node220')">Fiji</a></li>
+    <li><a href='#' onclick="playNodeAudio('node221'); showPlayCue('node221')">Tuvalu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node222'); showPlayCue('node222')">Nauru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node223'); showPlayCue('node223')">Kiribati (Gilbert Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node224'); showPlayCue('node224')">Marshall Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node225'); showPlayCue('node225')">Wallis and Futuna</a></li>
+    <li><a href='#' onclick="playNodeAudio('node226'); showPlayCue('node226')">New Zealand (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node227'); showPlayCue('node227')">Russia (Kamchatka)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node228'); showPlayCue('node228')">Wake Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node229'); showPlayCue('node229')">Tonga</a></li>
+    <li><a href='#' onclick="playNodeAudio('node230'); showPlayCue('node230')">Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node231'); showPlayCue('node231')">Tokelau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node232'); showPlayCue('node232')">New Zealand (Daylight Saving Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node233'); showPlayCue('node233')">Kiribati (Phoenix Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node234'); showPlayCue('node234')">Kiribati (Line Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node235'); showPlayCue('node235')">Kiritimati (Christmas Island)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node236'); showPlayCue('node236')">UTC+10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node237'); showPlayCue('node237')">UTC+11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node238'); showPlayCue('node238')">UTC+12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node239'); showPlayCue('node239')">UTC+13</a></li>
+    <li><a href='#' onclick="playNodeAudio('node240'); showPlayCue('node240')">UTC+14</a></li>
+    <li><a href='#' onclick="playNodeAudio('node241'); showPlayCue('node241')">India (UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node242'); showPlayCue('node242')">Sri Lanka (UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node243'); showPlayCue('node243')">South Asia & East Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node244'); showPlayCue('node244')">Nepal (UTC+5:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node245'); showPlayCue('node245')">Myanmar (UTC+6:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node246'); showPlayCue('node246')">Cocos (Keeling) Islands (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node247'); showPlayCue('node247')">Eucla (Australia) (UTC+8:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node248'); showPlayCue('node248')">Australia (Northern Territory (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node249'); showPlayCue('node249')">Australia (South Australia (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node250'); showPlayCue('node250')">Australia (Broken Hill (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node251'); showPlayCue('node251')">Lord Howe Island (Australia (UTC+10:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node252'); showPlayCue('node252')">Chatham Islands (New Zealand (UTC+12:35))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node253'); showPlayCue('node253')">Newfoundland (Canada (−3:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node254'); showPlayCue('node254')">Venezuela (−4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node255'); showPlayCue('node255')">United Kingdom (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node256'); showPlayCue('node256')">Ireland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node257'); showPlayCue('node257')">Portugal DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node258'); showPlayCue('node258')">Spain DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node259'); showPlayCue('node259')">France DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node260'); showPlayCue('node260')">Germany DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node261'); showPlayCue('node261')">Italy DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node262'); showPlayCue('node262')">Netherlands DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node263'); showPlayCue('node263')">Belgium DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node264'); showPlayCue('node264')">Switzerland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node265'); showPlayCue('node265')">Austria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node266'); showPlayCue('node266')">Poland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node267'); showPlayCue('node267')">Czech Republic DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node268'); showPlayCue('node268')">Hungary DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node269'); showPlayCue('node269')">Slovakia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node270'); showPlayCue('node270')">Slovenia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node271'); showPlayCue('node271')">Croatia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node272'); showPlayCue('node272')">Serbia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node273'); showPlayCue('node273')">Bosnia and Herzegovina DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node274'); showPlayCue('node274')">North Macedonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node275'); showPlayCue('node275')">Greece DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node276'); showPlayCue('node276')">Bulgaria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node277'); showPlayCue('node277')">Romania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node278'); showPlayCue('node278')">Ukraine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node279'); showPlayCue('node279')">Norway DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node280'); showPlayCue('node280')">Sweden DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node281'); showPlayCue('node281')">Finland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node282'); showPlayCue('node282')">Estonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node283'); showPlayCue('node283')">Latvia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node284'); showPlayCue('node284')">Lithuania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node285'); showPlayCue('node285')">West Africa & Europe West</a></li>
+    <li><a href='#' onclick="playNodeAudio('node286'); showPlayCue('node286')">United States (except Arizona, Hawaii)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node287'); showPlayCue('node287')">Canada (except Saskatchewan, Yukon) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node288'); showPlayCue('node288')">Mexico (Baja California and border municipalities) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node289'); showPlayCue('node289')">Greenland (Pituffik Space Base) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node290'); showPlayCue('node290')">Saint Pierre and Miquelon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node291'); showPlayCue('node291')">Bahamas DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node292'); showPlayCue('node292')">Bermuda DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node293'); showPlayCue('node293')">Haiti DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node294'); showPlayCue('node294')">Cuba DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node295'); showPlayCue('node295')">South America</a></li>
+    <li><a href='#' onclick="playNodeAudio('node296'); showPlayCue('node296')">Chile (except Aysén and Magallanes)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node297'); showPlayCue('node297')">Paraguay DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node298'); showPlayCue('node298')">Israel DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node299'); showPlayCue('node299')">Lebanon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node300'); showPlayCue('node300')">Iran (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node301'); showPlayCue('node301')">Palestine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node302'); showPlayCue('node302')">Egypt DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node303'); showPlayCue('node303')">Middle East & Central Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node304'); showPlayCue('node304')">Oceania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node305'); showPlayCue('node305')">New Zealand (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node306'); showPlayCue('node306')">Chatham Islands (NZ) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node307'); showPlayCue('node307')">Australia (NSW, Victoria, Tasmania, SA, ACT)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node308'); showPlayCue('node308')">Lord Howe Island (Australia) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node309'); showPlayCue('node309')">Norfolk Island (Australia) DST</a></li>  
+  </ul>
+  </div>    
+<div id="svgContainer">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+
+<!-- Title: InterviewNotificationAnalysis Pages: 1 -->
+
+<svg viewBox="0 0 2185 917" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
+   width="1639pt"
+   height="687.87799pt"
+   viewBox="0 0 1639 687.75801"
+   version="1.1"
+   id="svg551"
+   sodipodi:docname="NotificationActionAnalysis_2252_utc+1_14102025.svg"
+   xml:space="preserve"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"><title
+     id="title7878">InterviewNotificationAnalysis_2252</title><defs
+     id="defs555"><rect
+       x="-1425.8077"
+       y="-309.95822"
+       width="10.33194"
+       height="20.663881"
+       id="rect7255" /></defs><sodipodi:namedview
+     id="namedview553"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="0.27684564"
+     inkscape:cx="395.52727"
+     inkscape:cy="458.73939"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="-8"
+     inkscape:window-y="15"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1-7" /><g
+     id="graph0"
+     class="graph"
+     transform="translate(4,683.81799)"><title
+       id="title2">InterviewNotificationAnalysis</title><polygon
+       fill="white"
+       stroke="none"
+       points="1635,-683.878 1635,4 -4,4 -4,-683.878 "
+       id="polygon4"
+       style="fill:#ffeaea;fill-opacity:1" /><text
+       text-anchor="middle"
+       x="815.5"
+       y="-664.67798"
+       font-family="'Times New Roman', serif"
+       font-size="14px"
+       id="text6">InterviewNotificationAnalysis</text><text
+       text-anchor="middle"
+       x="815.5"
+       y="-649.67798"
+       font-family="'Times New Roman', serif"
+       font-size="14px"
+       id="text8">On blind analysis</text><g
+       id="clust2"
+       class="cluster"><title
+         id="title10">cluster_explanations</title><polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="700.5,-337 700.5,-46 346.5,-46 346.5,-337 "
+         id="polygon12" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-321.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text14">🔍 Possible Explanations</text></g><g
+       id="clust3"
+       class="cluster"><title
+         id="title17">cluster_actions</title><polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="1623,-121 1623,-46 1127,-46 1127,-121 "
+         id="polygon19" /><text
+         text-anchor="middle"
+         x="1375"
+         y="-105.8"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text21">🛠 Recommended Actions</text></g><g
+       id="clust4"
+       class="cluster"><title
+         id="title24">cluster_dissonance</title><polygon
+         fill="none"
+         stroke="#f38406"
+         stroke-dasharray="5, 2"
+         points="1089,-590 1089,-345 302,-345 302,-590 "
+         id="polygon26" /><text
+         text-anchor="middle"
+         x="695.5"
+         y="-574.79999"
+         font-family="'Times New Roman', serif"
+         font-size="14px"
+         id="text28">🧿 Notification as Sanctified Absence</text></g><!-- obs1 --><g
+       id="node1"
+       class="node"><title
+         id="title31">obs1</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="4.5,-465 269.5,-465 269.5,-503 4.5,-503 "
+         id="polygon33" /><text
+         text-anchor="middle"
+         x="137"
+         y="-487.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text35">Claim: Interview booked for 16 Oct 25'</text><text
+         text-anchor="middle"
+         x="137"
+         y="-472.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text37">Notification sent to livic Service account</text></g><!-- obs2 --><g
+       id="node2"
+       class="node"><title
+         id="title40">obs2</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="0,-271 274,-271 274,-307 0,-307 "
+         id="polygon42" /><text
+         text-anchor="middle"
+         x="137"
+         y="-285.29999"
+         font-family="Arial"
+         font-size="14px"
+         id="text44">Multiple confirmations from xex and team</text></g><!-- obs1&#45;&gt;obs2 --><g
+       id="edge1"
+       class="edge"><title
+         id="title47">obs1-&gt;obs2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 173.151,-464.996 c 86.35,50.887 88.731,101.775 7.144,152.662"
+         id="path49" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="178.352,-315.249 181.964,-309.253 171.592,-307.091 "
+         id="polygon51" /></g><!-- obs1&#45;&gt;obs2 --><g
+       id="edge26"
+       class="edge"><title
+         id="title54">obs1-&gt;obs2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 100.849,-464.996 c -86.3496,50.887 -88.7312,101.775 -7.1445,152.662"
+         id="path56" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="92.0357,-309.253 95.6479,-315.249 102.408,-307.091 "
+         id="polygon58" /></g><!-- dis1 --><g
+       id="node19"
+       class="node"><title
+         id="title61">dis1</title><polygon
+         fill="#f8ba73"
+         stroke="#000000"
+         points="310,-521 737,-521 737,-559 310,-559 "
+         id="polygon63" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-543.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text65">Lexical Sanctification:</text><text
+         text-anchor="middle"
+         x="523.5"
+         y="-528.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text67">“Notification has been sent” repeated as if utterance makes it true</text></g><!-- obs1&#45;&gt;dis1 --><g
+       id="edge20"
+       class="edge"><title
+         id="title70">obs1-&gt;dis1</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 245.52,-503.034 c 18.803,-3.135 38.195,-6.245 56.48,-8.966 17.471,-2.599 35.744,-5.165 53.973,-7.624"
+         id="path72" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="356.644,-516.183 355.714,-523.121 366.091,-520.98 "
+         id="polygon74" /></g><!-- dis4 --><g
+       id="node22"
+       class="node"><title
+         id="title77">dis4</title><polygon
+         fill="#f8ba73"
+         stroke="#000000"
+         points="353.5,-465 693.5,-465 693.5,-503 353.5,-503 "
+         id="polygon79" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-487.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text81">Systemic Camouflage:</text><text
+         text-anchor="middle"
+         x="523.5"
+         y="-472.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text83">System appears functional, but artifact contradicts it</text></g><!-- obs1&#45;&gt;dis4 --><g
+       id="edge23"
+       class="edge"><title
+         id="title86">obs1-&gt;dis4</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 269.516,-484 c 23.701,0 48.775,0 73.563,0"
+         id="path88" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="343.304,-480.5 343.304,-487.5 353.304,-484 "
+         id="polygon90" /></g><!-- obs3 --><g
+       id="node3"
+       class="node"><title
+         id="title93">obs3</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="11.5,-215 262.5,-215 262.5,-253 11.5,-253 "
+         id="polygon95" /><text
+         text-anchor="middle"
+         x="137"
+         y="-237.8"
+         font-family="Arial"
+         font-size="14px"
+         id="text97">User checked livic Service account</text><text
+         text-anchor="middle"
+         x="137"
+         y="-222.8"
+         font-family="Arial"
+         font-size="14px"
+         id="text99">No notification or job reference found</text></g><!-- obs2&#45;&gt;obs3 --><g
+       id="edge2"
+       class="edge"><title
+         id="title102">obs2-&gt;obs3</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 220.08,-270.92 c 9.13,3.893 12.6,7.787 10.409,11.68"
+         id="path104" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="228.258,-261.941 232.476,-256.354 222.387,-253.121 "
+         id="polygon106" /></g><!-- obs2&#45;&gt;obs3 --><g
+       id="edge27"
+       class="edge"><title
+         id="title109">obs2-&gt;obs3</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 53.9203,-270.92 c -9.1304,3.893 -12.6002,7.787 -10.4094,11.68"
+         id="path111" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="41.5236,-256.354 45.7421,-261.941 51.613,-253.121 "
+         id="polygon113" /></g><!-- exp3 --><g
+       id="node9"
+       class="node"><title
+         id="title116">exp3</title><polygon
+         fill="#aae9d9"
+         stroke="#000000"
+         points="354.5,-270 692.5,-270 692.5,-306 354.5,-306 "
+         id="polygon118" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-284.29999"
+         font-family="Arial"
+         font-size="14px"
+         id="text120">Miscommunication or assumption by referring team</text></g><!-- obs2&#45;&gt;exp3 --><g
+       id="edge8"
+       class="edge"><title
+         id="title123">obs2-&gt;exp3</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 274.101,-282.159 c 22.684,0.277 46.51,0.422 70.057,0.429"
+         id="path125" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="344.23,-278.229 344.227,-285.229 354.229,-281.735 "
+         id="polygon127" /></g><!-- obs2&#45;&gt;exp3 --><g
+       id="edge33"
+       class="edge"><title
+         id="title130">obs2-&gt;exp3</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 274.101,-295.133 c 22.684,-0.159 46.51,-0.18 70.057,-0.065"
+         id="path132" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="344.209,-291.698 344.249,-298.698 354.229,-295.141 "
+         id="polygon134" /></g><!-- obs4 --><g
+       id="node4"
+       class="node"><title
+         id="title137">obs4</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="10.5,-159 263.5,-159 263.5,-197 10.5,-197 "
+         id="polygon139" /><text
+         text-anchor="middle"
+         x="137"
+         y="-181.8"
+         font-family="Arial"
+         font-size="14px"
+         id="text141">Last known application: Ref 423688</text><text
+         text-anchor="middle"
+         x="137"
+         y="-166.8"
+         font-family="Arial"
+         font-size="14px"
+         id="text143">xwdJobs portal also shows no update</text></g><!-- obs3&#45;&gt;obs4 --><g
+       id="edge3"
+       class="edge"><title
+         id="title146">obs3-&gt;obs4</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 222.207,-214.938 c 8.878,4.104 11.641,8.207 8.291,12.311"
+         id="path148" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="228.503,-205.503 232.398,-199.687 222.141,-197.031 "
+         id="polygon150" /></g><!-- obs3&#45;&gt;obs4 --><g
+       id="edge28"
+       class="edge"><title
+         id="title153">obs3-&gt;obs4</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 51.7925,-214.938 c -8.8771,4.104 -11.6407,8.207 -8.2908,12.311"
+         id="path155" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="41.6025,-199.687 45.4971,-205.503 51.8592,-197.031 "
+         id="polygon157" /></g><!-- exp1 --><g
+       id="node7"
+       class="node"><title
+         id="title160">exp1</title><polygon
+         fill="#aae9d9"
+         stroke="#000000"
+         points="387,-216 660,-216 660,-252 387,-252 "
+         id="polygon162" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-230.3"
+         font-family="Arial"
+         font-size="14px"
+         id="text164">Incorrect account details used by sender</text></g><!-- obs3&#45;&gt;exp1 --><g
+       id="edge6"
+       class="edge"><title
+         id="title167">obs3-&gt;exp1</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 262.571,-227.636 c 36.444,0.433 76.608,0.502 114.24,0.207"
+         id="path169" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="376.866,-223.929 376.804,-230.929 386.835,-227.517 "
+         id="polygon171" /></g><!-- obs3&#45;&gt;exp1 --><g
+       id="edge31"
+       class="edge"><title
+         id="title174">obs3-&gt;exp1</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 262.571,-240.364 c 36.444,-0.433 76.608,-0.502 114.24,-0.207"
+         id="path176" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="376.804,-237.071 376.866,-244.071 386.835,-240.483 "
+         id="polygon178" /></g><!-- exp2 --><g
+       id="node8"
+       class="node"><title
+         id="title181">exp2</title><polygon
+         fill="#aae9d9"
+         stroke="#000000"
+         points="383,-162 664,-162 664,-198 383,-198 "
+         id="polygon183" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-176.3"
+         font-family="Arial"
+         font-size="14px"
+         id="text185">System error or notification delivery failure</text></g><!-- obs3&#45;&gt;exp2 --><g
+       id="edge7"
+       class="edge"><title
+         id="title188">obs3-&gt;exp2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 200.597,-214.941 c 30.539,6.043 67.841,12.126 101.403,16.941 22.882,3.283 47.136,6.509 70.866,9.409"
+         id="path190" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="372.651,-185.092 373.489,-192.042 382.998,-187.369 "
+         id="polygon192" /></g><!-- obs3&#45;&gt;exp2 --><g
+       id="edge32"
+       class="edge"><title
+         id="title195">obs3-&gt;exp2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 262.829,-221.851 c 13.213,2.022 26.46,4.027 39.171,5.851 40.301,5.782 84.86,11.387 123.312,16.609"
+         id="path197" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="425.084,-195.89 426.034,-202.825 435.467,-198.001 "
+         id="polygon199" /></g><!-- dis2 --><g
+       id="node20"
+       class="node"><title
+         id="title202">dis2</title><polygon
+         fill="#f8ba73"
+         stroke="#000000"
+         points="347,-409 700,-409 700,-447 347,-447 "
+         id="polygon204" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-431.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text206">Forensic Absence:</text><text
+         text-anchor="middle"
+         x="523.5"
+         y="-416.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text208">No timestamp, reference, or actionable link in account</text></g><!-- obs3&#45;&gt;dis2 --><g
+       id="edge21"
+       class="edge"><title
+         id="title211">obs3-&gt;dis2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 262.665,-252.606 c 4.043,-2.776 7.846,-5.895 11.335,-9.394 44.19,-44.316 -17.857,-95.411 28,-138 10.409,-9.667 22.385,-17.134 35.261,-22.831"
+         id="path213" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="338.822,-419.687 336.203,-426.179 346.786,-426.674 "
+         id="polygon215" /></g><!-- obs5 --><g
+       id="node5"
+       class="node"><title
+         id="title218">obs5</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="0.5,-103 273.5,-103 273.5,-141 0.5,-141 "
+         id="polygon220" /><text
+         text-anchor="middle"
+         x="137"
+         y="-125.8"
+         font-family="Arial"
+         font-size="14px"
+         id="text222">User offered alternative contact methods</text><text
+         text-anchor="middle"
+         x="137"
+         y="-110.8"
+         font-family="Arial"
+         font-size="14px"
+         id="text224">and in-person confirmation</text></g><!-- obs4&#45;&gt;obs5 --><g
+       id="edge4"
+       class="edge"><title
+         id="title227">obs4-&gt;obs5</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 228.943,-158.938 c 9.797,4.197 12.693,8.394 8.69,12.591"
+         id="path229" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="235.605,-149.211 239.236,-143.226 228.871,-141.031 "
+         id="polygon231" /></g><!-- obs4&#45;&gt;obs5 --><g
+       id="edge29"
+       class="edge"><title
+         id="title234">obs4-&gt;obs5</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 45.0568,-158.938 c -9.7966,4.197 -12.6932,8.394 -8.6896,12.591"
+         id="path236" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="34.7637,-143.226 38.3949,-149.211 45.1287,-141.031 "
+         id="polygon238" /></g><!-- exp5 --><g
+       id="node11"
+       class="node"><title
+         id="title241">exp5</title><polygon
+         fill="#aae9d9"
+         stroke="#000000"
+         points="362,-108 685,-108 685,-144 362,-144 "
+         id="polygon243" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-122.3"
+         font-family="Arial"
+         font-size="14px"
+         id="text245">Interview linked to different application not visible</text></g><!-- obs4&#45;&gt;exp5 --><g
+       id="edge10"
+       class="edge"><title
+         id="title248">obs4-&gt;exp5</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 205.758,-158.947 c 29.531,5.317 64.57,10.595 96.242,14.947 16.209,2.227 33.102,4.458 50.006,6.589"
+         id="path250" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="351.598,-133.935 352.466,-140.881 361.955,-136.169 "
+         id="polygon252" /></g><!-- obs4&#45;&gt;exp5 --><g
+       id="edge35"
+       class="edge"><title
+         id="title255">obs4-&gt;exp5</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 263.747,-167.402 c 12.912,1.849 25.841,3.696 38.253,5.402 40.861,5.615 86.063,11.25 124.848,16.566"
+         id="path257" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="426.699,-141.922 427.659,-148.856 437.085,-144.017 "
+         id="polygon259" /></g><!-- obs6 --><g
+       id="node6"
+       class="node"><title
+         id="title262">obs6</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="35.5,-47 238.5,-47 238.5,-85 35.5,-85 "
+         id="polygon264" /><text
+         text-anchor="middle"
+         x="137"
+         y="-69.800003"
+         font-family="Arial"
+         font-size="14px"
+         id="text266">Prior Action Fraud report</text><text
+         text-anchor="middle"
+         x="137"
+         y="-54.799999"
+         font-family="Arial"
+         font-size="14px"
+         id="text268">Possible identity compromise</text></g><!-- obs5&#45;&gt;obs6 --><g
+       id="edge5"
+       class="edge"><title
+         id="title271">obs5-&gt;obs6</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 205.368,-102.938 c 6.313,3.6373 8.773,7.2746 7.379,10.9119"
+         id="path273" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="210.198,-94.4336 214.995,-89.3362 205.315,-85.0313 "
+         id="polygon275" /></g><!-- obs5&#45;&gt;obs6 --><g
+       id="edge30"
+       class="edge"><title
+         id="title278">obs5-&gt;obs6</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 68.6319,-102.938 c -6.3133,3.6373 -8.7729,7.2746 -7.3786,10.9119"
+         id="path280" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="59.0046,-89.3362 63.8021,-94.4336 68.6854,-85.0313 "
+         id="polygon282" /></g><!-- dis3 --><g
+       id="node21"
+       class="node"><title
+         id="title285">dis3</title><polygon
+         fill="#f8ba73"
+         stroke="#000000"
+         points="321,-353 726,-353 726,-391 321,-391 "
+         id="polygon287" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-375.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text289">Ceremonial Refusal:</text><text
+         text-anchor="middle"
+         x="523.5"
+         y="-360.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text291">User refuses claim without evidence—acts as ritual resistance</text></g><!-- obs5&#45;&gt;dis3 --><g
+       id="edge22"
+       class="edge"><title
+         id="title294">obs5-&gt;dis3</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 264.067,-141.209 c 3.542,-2.628 6.871,-5.548 9.933,-8.791 58.899,-62.386 -32.845,-130.512 28,-191 3.328,-3.309 6.837,-6.374 10.501,-9.21"
+         id="path296" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="314.624,-347.425 310.579,-353.137 320.762,-356.06 "
+         id="polygon298" /></g><!-- exp4 --><g
+       id="node10"
+       class="node"><title
+         id="title301">exp4</title><polygon
+         fill="#aae9d9"
+         stroke="#000000"
+         points="392.5,-54 654.5,-54 654.5,-90 392.5,-90 "
+         id="polygon303" /><text
+         text-anchor="middle"
+         x="523.5"
+         y="-68.300003"
+         font-family="Arial"
+         font-size="14px"
+         id="text305">Account compromise affecting visibility</text></g><!-- obs6&#45;&gt;exp4 --><g
+       id="edge9"
+       class="edge"><title
+         id="title308">obs6-&gt;exp4</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 238.521,-61.554 c 43.935,0.0763 96.219,-0.5697 143.877,-1.7355"
+         id="path310" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="382.585,-59.793 382.407,-66.7908 392.493,-63.5461 "
+         id="polygon312" /></g><!-- obs6&#45;&gt;exp4 --><g
+       id="edge34"
+       class="edge"><title
+         id="title315">obs6-&gt;exp4</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 238.521,-73.5832 c 43.935,-1.4475 96.219,-2.4332 143.877,-2.7548"
+         id="path317" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="382.513,-72.8385 382.473,-79.8384 392.493,-76.3965 "
+         id="polygon319" /></g><!-- act1 --><g
+       id="node12"
+       class="node"><title
+         id="title322">act1</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="773,-216 1099,-216 1099,-252 773,-252 "
+         id="polygon324" /><text
+         text-anchor="middle"
+         x="936"
+         y="-230.3"
+         font-family="Arial"
+         font-size="14px"
+         id="text326">Request exact account/email used for notification</text></g><!-- exp1&#45;&gt;act1 --><g
+       id="edge11"
+       class="edge"><title
+         id="title329">exp1-&gt;act1</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 660.051,-227.609 c 32.839,0.351 68.38,0.444 102.661,0.281"
+         id="path331" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="762.842,-223.829 762.804,-230.828 772.823,-227.384 "
+         id="polygon333" /></g><!-- exp1&#45;&gt;act1 --><g
+       id="edge36"
+       class="edge"><title
+         id="title336">exp1-&gt;act1</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 660.051,-240.391 c 32.839,-0.351 68.38,-0.444 102.661,-0.281"
+         id="path338" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="762.804,-237.172 762.842,-244.171 772.823,-240.616 "
+         id="polygon340" /></g><!-- act2 --><g
+       id="node13"
+       class="node"><title
+         id="title343">act2</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="785,-162 1087,-162 1087,-198 785,-198 "
+         id="polygon345" /><text
+         text-anchor="middle"
+         x="936"
+         y="-176.3"
+         font-family="Arial"
+         font-size="14px"
+         id="text347">Ask for direct confirmation of interview details</text></g><!-- exp2&#45;&gt;act2 --><g
+       id="edge12"
+       class="edge"><title
+         id="title350">exp2-&gt;act2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 664.049,-173.567 c 35.587,0.355 74.119,0.412 110.653,0.171"
+         id="path352" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="774.975,-169.898 774.923,-176.898 784.949,-173.472 "
+         id="polygon354" /></g><!-- exp2&#45;&gt;act2 --><g
+       id="edge37"
+       class="edge"><title
+         id="title357">exp2-&gt;act2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 664.049,-186.433 c 35.587,-0.355 74.119,-0.412 110.653,-0.171"
+         id="path359" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="774.923,-183.102 774.975,-190.102 784.949,-186.528 "
+         id="polygon361" /></g><!-- exp3&#45;&gt;act2 --><g
+       id="edge13"
+       class="edge"><title
+         id="title364">exp3-&gt;act2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 692.523,-271.644 c 15.685,4.796 30.804,11.174 44.477,19.644 24.521,15.189 11.778,38.338 36,54 0.958,0.619 1.925,1.226 2.902,1.82"
+         id="path366" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="774.48,-192.966 777.88,-199.085 784.921,-191.168 "
+         id="polygon368" /></g><!-- exp3&#45;&gt;act2 --><g
+       id="edge38"
+       class="edge"><title
+         id="title371">exp3-&gt;act2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 692.523,-289.557 c 15.685,4.709 30.804,11.087 44.477,19.557 24.521,15.189 11.778,38.338 36,54 9.352,6.047 19.622,10.877 30.311,14.753"
+         id="path373" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="802.206,-197.926 804.422,-204.566 812.8,-198.08 "
+         id="polygon375" /></g><!-- act4 --><g
+       id="node15"
+       class="node"><title
+         id="title378">act4</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="797.5,0 1074.5,0 1074.5,-36 797.5,-36 "
+         id="polygon380" /><text
+         text-anchor="middle"
+         x="936"
+         y="-14.3"
+         font-family="Arial"
+         font-size="14px"
+         id="text382">Raise technical query on account integrity</text></g><!-- exp4&#45;&gt;act4 --><g
+       id="edge14"
+       class="edge"><title
+         id="title385">exp4-&gt;act4</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 617.649,-53.9857 c 50.098,7.5755 113.049,16.1058 169.649,23.0643"
+         id="path387" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="787.069,-27.4233 787.918,-34.3717 797.42,-29.6855 "
+         id="polygon389" /></g><!-- exp4&#45;&gt;act4 --><g
+       id="edge39"
+       class="edge"><title
+         id="title392">exp4-&gt;act4</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 654.667,-61.2084 c 57.138,6.8512 123.28,15.6796 176.964,23.6619"
+         id="path394" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="831.441,-34.0359 832.479,-40.9586 841.85,-36.0145 "
+         id="polygon396" /></g><!-- exp5&#45;&gt;act2 --><g
+       id="edge15"
+       class="edge"><title
+         id="title399">exp5-&gt;act2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 685.22,-137.313 c 17.478,-2.2 35.004,-4.477 51.78,-6.687 38.2,-5.031 80.52,-10.779 116.196,-16.409"
+         id="path401" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="853.754,-156.953 852.645,-163.865 863.073,-161.993 "
+         id="polygon403" /></g><!-- exp5&#45;&gt;act2 --><g
+       id="edge40"
+       class="edge"><title
+         id="title406">exp5-&gt;act2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 603.989,-144.015 c 39.927,-5.939 89.043,-12.194 133.011,-17.985 12.213,-1.609 24.848,-3.29 37.552,-4.97"
+         id="path408" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="775.292,-163.537 774.376,-170.477 784.748,-168.315 "
+         id="polygon410" /></g><!-- act1&#45;&gt;act2 --><g
+       id="edge16"
+       class="edge"><title
+         id="title413">act1-&gt;act2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1037.01,-215.877 c 12.3,4.46 15.33,8.921 9.09,13.381"
+         id="path415" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1044.28,-205.505 1047.3,-199.189 1036.76,-198.035 "
+         id="polygon417" /></g><!-- act1&#45;&gt;act2 --><g
+       id="edge41"
+       class="edge"><title
+         id="title420">act1-&gt;act2</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 834.992,-215.877 c -12.303,4.46 -15.333,8.921 -9.09,13.381"
+         id="path422" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="824.703,-199.189 827.722,-205.505 835.235,-198.035 "
+         id="polygon424" /></g><!-- act3 --><g
+       id="node14"
+       class="node"><title
+         id="title427">act3</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="777.5,-108 1094.5,-108 1094.5,-144 777.5,-144 "
+         id="polygon429" /><text
+         text-anchor="middle"
+         x="936"
+         y="-122.3"
+         font-family="Arial"
+         font-size="14px"
+         id="text431">Attend Morthern House for in-person verification</text></g><!-- act2&#45;&gt;act3 --><g
+       id="edge17"
+       class="edge"><title
+         id="title434">act2-&gt;act3</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1042.02,-161.877 c 13.19,4.553 16.23,9.107 9.12,13.66"
+         id="path436" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1049.48,-151.305 1052.33,-144.913 1041.77,-144.035 "
+         id="polygon438" /></g><!-- act2&#45;&gt;act3 --><g
+       id="edge42"
+       class="edge"><title
+         id="title441">act2-&gt;act3</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 829.975,-161.877 c -13.183,4.553 -16.222,9.107 -9.119,13.66"
+         id="path443" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="819.672,-144.913 822.524,-151.305 830.23,-144.035 "
+         id="polygon445" /></g><!-- act3&#45;&gt;act4 --><g
+       id="edge18"
+       class="edge"><title
+         id="title448">act3-&gt;act4</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 777.308,-111.347 c -6.309,5.055 -11.838,11.115 -16.308,18.347 -9.814,15.8788 -9.814,26.1212 0,42 6.926,11.2062 16.394,19.5963 27.367,25.7971"
+         id="path450" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="786.956,-21.9959 790.067,-28.2667 797.469,-20.6872 "
+         id="polygon452" /></g><!-- act3&#45;&gt;act4 --><g
+       id="edge43"
+       class="edge"><title
+         id="title455">act3-&gt;act4</title><path
+         fill="none"
+         stroke="#000000"
+         d="M 777.389,-114.401 C 766.04,-107.644 756.236,-98.7075 749,-87 c -17.419,28.185 4.351,44.939 38.432,54.87"
+         id="path457" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="786.786,-28.6805 788.576,-35.4476 797.348,-29.5061 "
+         id="polygon459" /></g><!-- act5 --><g
+       id="node16"
+       class="node"><title
+         id="title462">act5</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="779,-54 1093,-54 1093,-90 779,-90 "
+         id="polygon464" /><text
+         text-anchor="middle"
+         x="936"
+         y="-68.300003"
+         font-family="Arial"
+         font-size="14px"
+         id="text466">Continue logging inconsistencies as testimonial</text></g><!-- act4&#45;&gt;act5 --><g
+       id="edge19"
+       class="edge"><title
+         id="title469">act4-&gt;act5</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1028.42,-36.0352 c 10.92,-4.2746 14.03,-8.5492 9.33,-12.8238"
+         id="path471" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1039.09,-52.1163 1035.72,-45.9855 1028.65,-53.8771 "
+         id="polygon473" /></g><!-- act4&#45;&gt;act5 --><g
+       id="edge44"
+       class="edge"><title
+         id="title476">act4-&gt;act5</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 843.577,-36.0352 c -10.921,-4.2746 -14.031,-8.5492 -9.33,-12.8238"
+         id="path478" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="836.284,-45.9855 832.906,-52.1163 843.354,-53.8771 "
+         id="polygon480" /></g><!-- act6 --><g
+       id="node17"
+       class="node"><title
+         id="title483">act6</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="1135,-54 1439,-54 1439,-90 1135,-90 "
+         id="polygon485" /><text
+         text-anchor="middle"
+         x="1287"
+         y="-68.300003"
+         font-family="Arial"
+         font-size="14px"
+         id="text487">Action Fraud WYPN Cyber Security team Log</text></g><!-- act5&#45;&gt;act6 --><g
+       id="edge45"
+       class="edge"><title
+         id="title490">act5-&gt;act6</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1093.13,-72 c 10.52,0 21.13,0 31.68,0"
+         id="path492" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1124.89,-68.5001 1124.89,-75.5001 1134.89,-72 "
+         id="polygon494" /></g><!-- act7 --><g
+       id="node18"
+       class="node"><title
+         id="title497">act7</title><polygon
+         fill="#f0f8ff"
+         stroke="#000000"
+         points="1475,-54 1615,-54 1615,-90 1475,-90 "
+         id="polygon499" /><text
+         text-anchor="middle"
+         x="1545"
+         y="-68.300003"
+         font-family="Arial"
+         font-size="14px"
+         id="text501">Unknown unknowns</text></g><!-- act6&#45;&gt;act7 --><g
+       id="edge46"
+       class="edge"><title
+         id="title504">act6-&gt;act7</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 1439.14,-72 c 8.67,0 17.2,0 25.42,0"
+         id="path506" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="1464.79,-68.5001 1464.79,-75.5001 1474.79,-72 "
+         id="polygon508" /></g><!-- act7&#45;&gt;obs1 --><g
+       id="edge47"
+       class="edge"><title
+         id="title511">act7-&gt;obs1</title><path
+         fill="none"
+         stroke="#f38406"
+         stroke-width="5"
+         stroke-dasharray="5, 2"
+         d="M 1535.74,-90.2378 C 1498.83,-169.212 1340.12,-482.709 1099,-594 c -160.808,-74.223 -627.561,-51.562 -797,0 -53.894,16.4 -106.168,57.066 -136.699,84.09"
+         id="path513" /><polygon
+         fill="#f38406"
+         stroke="#f38406"
+         stroke-width="5"
+         points="162.153,-512.963 168.009,-506.462 157.651,-503.019 "
+         id="polygon515" /></g><!-- dis6 --><g
+       id="node24"
+       class="node"><title
+         id="title518">dis6</title><polygon
+         fill="#f8ba73"
+         stroke="#000000"
+         points="825,-521 1047,-521 1047,-559 825,-559 "
+         id="polygon520" /><text
+         text-anchor="middle"
+         x="936"
+         y="-543.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text522">Ritual Placeholder:</text><text
+         text-anchor="middle"
+         x="936"
+         y="-528.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text524">Claim masks institutional inaction</text></g><!-- dis1&#45;&gt;dis6 --><g
+       id="edge25"
+       class="edge"><title
+         id="title527">dis1-&gt;dis6</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 737.265,-540 c 26.623,0 53.078,0 77.569,0"
+         id="path529" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="814.84,-536.5 814.84,-543.5 824.84,-540 "
+         id="polygon531" /></g><!-- dis5 --><g
+       id="node23"
+       class="node"><title
+         id="title534">dis5</title><polygon
+         fill="#f8ba73"
+         stroke="#000000"
+         points="791,-409 1081,-409 1081,-447 791,-447 "
+         id="polygon536" /><text
+         text-anchor="middle"
+         x="936"
+         y="-431.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text538">Glyph of Contested Reality:</text><text
+         text-anchor="middle"
+         x="936"
+         y="-416.79999"
+         font-family="Arial"
+         font-size="14px"
+         id="text540">Either system malfunctioned or never acted</text></g><!-- dis2&#45;&gt;dis5 --><g
+       id="edge24"
+       class="edge"><title
+         id="title543">dis2-&gt;dis5</title><path
+         fill="none"
+         stroke="#000000"
+         d="m 700.077,-428 c 26.841,0 54.372,0 80.707,0"
+         id="path545" /><polygon
+         fill="#000000"
+         stroke="#000000"
+         points="780.815,-424.5 780.815,-431.5 790.815,-428 "
+         id="polygon547" /></g></g><image
+     width="126.00001"
+     height="27.000002"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,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
++79e/T8/UIhJSSq6OgAAAABJRU5ErkJggg==
+"
+     id="image2345"
+     x="1489.3092"
+     y="647.39819" /><g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1"
+     transform="translate(0,-0.06000518)"><g
+       id="layer1-7"
+       transform="matrix(0.79987538,0,0,0.99999998,-1682.9126,-2163.5073)"><text
+         x="1473.5355"
+         y="3208.0728"
+         fill="#6c94d5"
+         opacity="0.39"
+         font-size="122.245px"
+         font-family="Arial"
+         id="text2688"
+         style="fill:#6c94e2;fill-opacity:1;stroke-width:0.571227;stroke-linecap:butt;stroke-linejoin:round"
+         transform="matrix(1.4318681,-0.00228798,0.00349292,0.69838278,0,0)"><tspan
+           style="fill:#6c94e2;fill-opacity:1;stroke-width:0.571227"
+           id="tspan2686">Con1410©fide-©1014 axd</tspan></text><text
+         xml:space="preserve"
+         transform="matrix(0.856819,0,0,0.75,-9.246946,257.0266)"
+         id="text7253"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect7255);display:inline;fill:#333333;fill-opacity:1;stroke:#333333;stroke-opacity:1" /><text
+         x="1473.8002"
+         y="4069.2322"
+         fill="#6c94d5"
+         opacity="0.39"
+         font-size="122.245px"
+         font-family="Arial"
+         id="text7511"
+         style="fill:#6c94e2;fill-opacity:1;stroke-width:0.571227;stroke-linecap:butt;stroke-linejoin:round"
+         transform="matrix(1.4318681,-0.00228798,0.00349292,0.69838277,0,0)"><tspan
+           style="fill:#6c94e2;fill-opacity:1;stroke-width:0.571227"
+           id="tspan7509">Con1410©fide-©1014 axd</tspan></text></g></g><metadata
+     id="metadata7876"><rdf:RDF><cc:Work
+         rdf:about=""><dc:title>InterviewNotificationAnalysis_2252</dc:title></cc:Work></rdf:RDF></metadata></svg>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script src="svg-pan-zoom.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+</script>
+
+
+
+<script>
+function toggleFooter() {
+const footer = document.getElementById('audioFooter');
+const btn = document.getElementById('toggleFooterBtn');
+if (footer.style.display === 'none') {
+footer.style.display = 'flex';
+btn.textContent = 'Hide Audio Panel';
+} else {
+footer.style.display = 'none';
+btn.textContent = 'Show Audio Panel';
+}
+}
+</script>
+
+<script>
+function toggleAudio(playerId) {
+const audio = document.getElementById(playerId);
+if (audio.paused) {
+  audio.play();
+} else {
+  audio.pause();
+}
+}
+</script>
+
+
+<div id="audioFooter">
+<div id="audioPanel">
+<span>🔊 Transmission: node180</span>
+<audio id="audioPlayer" src="node180.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer')">Play / Pause</button>
+</div>
+
+<div id="audioPanel">
+<span>🔊 Transmission: node182</span>
+<audio id="audioPlayer2" src="node182.mp3" preload="auto" controls controlsList="nodownload"></audio>
+<button onclick="toggleAudio('audioPlayer2')">Play / Pause</button>
+
+  <!-- Ask Pluto Dialogue Trigger -->
+  <div id="askPlutoContainer2" style="display:none; margin-top:10px;">
+    <button onclick="openPlutoDialog()">Ask Pluto</button>
+</div>  
+</div>
+  <!-- Dialogue Box -->
+<div id="plutoDialog" style="display:none; border:1px solid #ccc; padding:10px;">
+  <strong>Pluto:</strong> What would you like to ask?
+  <button onclick="submitPluto()" style="margin-bottom:5px;">Submit</button>
+  <input type="text" id="plutoInput" placeholder="Enter your question..." style="width:100%;">
+</div>
+
+<div id="audioPanel">
+<span>🔊 Transmission: node181</span>
+<audio id="audioPlayer3" src="node181.mp3" preload="auto" controls comtrolsList="nodownload"></audio>
+<button onclick="toggleAudio('audioPlayer3')">Play / Pause</button>
+  <!-- Ask Pluto Dialogue Trigger -->
+  <div id="askPlutoContainer2" style="display:none; margin-top:2px;">
+    <button onclick="openPlutoDialog()">Ask Pluto</button>
+</div> 
+</div>
+  <!-- Dialogue Box -->
+<div id="plutoDialog" style="display:none; border:1px solid #ccc; padding:10px;">
+  <strong>Pluto:</strong> What would you like to ask?
+  <button onclick="submitPluto()" style="margin-bottom:5px;">Submit</button>
+  <input type="text" id="plutoInput" placeholder="Enter your question..." style="width:100%;">
+</div>
+
+<div id="audioPanel">
+<span>🔊 Transmission: node145</span>
+<audio id="audioPlayer4" src="node145.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer4')">Play / Pause</button>
+</div>
+</div>
+
+</body>
+</Script>
+
+
+
+<script>
+function toggleFooter() {
+const footer = document.getElementById('audioFooter');
+const btn = document.getElementById('toggleFooterBtn');
+if (footer.style.display === 'none') {
+footer.style.display = 'flex';
+btn.textContent = 'Hide Audio Panel';
+} else {
+footer.style.display = 'none';
+btn.textContent = 'Show Audio Panel';
+}
+}
+</script>
+
+<script>
+function toggleAudio(playerId) {
+const audio = document.getElementById(playerId);
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+</script>
+
+<script>
+let viewCounts = new Map();
+let currentContainer = null;
+
+function toggledataPanel() {
+  const panel = document.getElementById("container_meta_panel");
+  panel.style.display = panel.style.display === "none" ? "block" : "none";
+}
+
+function openPanel(el, pagePath) {
+  currentContainer = el;
+  const panel = document.getElementById("expansion_panel");
+  const iframe = document.getElementById("panel_iframe");
+
+  iframe.src = pagePath;
+  panel.style.display = "block";
+
+  if (!el.dataset.id) {
+    el.dataset.id = 'container_' + Math.random().toString(36).substr(2, 9);
+  }
+
+  const id = el.dataset.id;
+  viewCounts.set(id, (viewCounts.get(id) || 0) + 1);
+}
+
+function closePanel() {
+  const panel = document.getElementById("expansion_panel");
+  panel.style.display = "none";
+
+  if (!currentContainer) return;
+
+  const id = currentContainer.dataset.id;
+  const count = viewCounts.get(id);
+
+  if (count === 1) {
+    currentContainer.style.backgroundImage = "url('icon_bw.png')"; // grayscale
+  } else if (count === 2) {
+    currentContainer.style.backgroundImage = "url('icon_green.png')";
+  } else if (count === 3) {
+    currentContainer.style.backgroundImage = "url('icon_orange.png')";
+  } else if (count >= 4) {
+    currentContainer.style.backgroundImage = "url('icon_red.png')";
+  }
+
+  currentContainer = null;
+}
+</script>
+
+ <!-- 2. **JavaScript: Unified Drag Handler** -->
+<Script>
+function enableDrag(draggableElement) {
+  let offsetX = 0, offsetY = 0;
+  let isDragging = false;
+
+  function getCoordinates(e) {
+    if (e.touches && e.touches.length > 0) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    } else {
+      return { x: e.clientX, y: e.clientY };
+    }
+  }
+
+  function startDrag(e) {
+    // Ritual bypass: allow links and close buttons to propagate
+    const tag = e.target.tagName.toLowerCase();
+    if (tag === 'a' || e.target.classList.contains('close-button')) return;
+
+    const coords = getCoordinates(e);
+    offsetX = coords.x - draggableElement.offsetLeft;
+    offsetY = coords.y - draggableElement.offsetTop;
+    isDragging = true;
+
+    e.preventDefault(); // Required for touch
+  }
+
+  function drag(e) {
+    if (!isDragging) return;
+    const coords = getCoordinates(e);
+    draggableElement.style.left = `${coords.x - offsetX}px`;
+    draggableElement.style.top = `${coords.y - offsetY}px`;
+    e.preventDefault();
+  }
+
+  function endDrag() {
+    isDragging = false;
+    // Optional: encode drag as ceremonial node
+    console.log('Drag complete: motif encoded');
+  }
+
+  // Mouse events
+  draggableElement.addEventListener('mousedown', startDrag);
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('mouseup', endDrag);
+
+  // Touch events
+  draggableElement.addEventListener('touchstart', startDrag, { passive: false });
+  document.addEventListener('touchmove', drag, { passive: false });
+  document.addEventListener('touchend', endDrag);
+}
+
+
+ <!-- #### 3. **Initialization Ritual** -->
+
+document.querySelectorAll('.draggable').forEach(el => {
+  enableDrag(el);
+});
+</script>
+
+<script>
+// Apply only to panels
+document.addEventListener("DOMContentLoaded", function () {
+  makeDraggable(document.getElementById("buttonPanel"));
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+
+window.addEventListener("DOMContentLoaded", function () {
+svgPanZoom(document.querySelector("svg"), {
+zoomEnabled: true,
+controlIconsEnabled: true,
+fit: true,
+center: true,
+minZoom: 0.1,
+maxZoom: 10
+});
+});
+
+
+
+function toggleAudio() {
+const audio = document.getElementById("audioPlayer2","audioPlayer3","audioPlayer", audioPlayer4);
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+
+function makeDraggable(el) {
+  el.onmousedown = function (e) {
+    e.preventDefault();
+    const rect = el.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+
+    function onMouseMove(e) {
+      el.style.left = `${e.clientX - offsetX}px`;
+      el.style.top = `${e.clientY - offsetY}px`;
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', function stopDrag() {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', stopDrag);
+    });
+  };
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  makeDraggable(document.getElementById("expansion_panel"));
+  makeDraggable(document.getElementById("container_meta1_panel"));
+  makeDraggable(document.getElementById("container_meta_panel"));
+
+});
+</script>
+
+<script>
+function togglecontainer_meta1_panel() {
+  const container_meta1_panel = document.getElementById('container_meta1_panel');
+  const isHidden = container_meta1_panel.style.display === 'none';
+  container_meta1_panel.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
+</script>
+
+<script>
+  let isDragging = false, offsetX, offsetY;
+  let panZoomInstance;
+  let metadata = [];
+
+function toggleDock() {
+  const sidebar = document.getElementById('sidebar');
+  const isDocked = sidebar.style.position === 'absolute';
+  sidebar.style.position = isDocked ? 'fixed' : 'absolute';
+}
+
+function startDrag(e) {
+  const sidebar = document.getElementById('sidebar');
+  isDragging = true;
+  offsetX = e.clientX - sidebar.offsetLeft;
+  offsetY = e.clientY - sidebar.offsetTop;
+  document.onmousemove = dragSidebar;
+  document.onmouseup = stopDrag;
+}
+
+function dragSidebar(e) {
+  if (isDragging) {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.style.left = `${e.clientX - offsetX}px`;
+    sidebar.style.top = `${e.clientY - offsetY}px`;
+
+    // If dragged off left edge, reset margin
+    if (parseInt(sidebar.style.left) > 50) {
+      document.querySelector('.main').style.marginLeft = '0';
+    }
+  }
+}
+
+function stopDrag() {
+  isDragging = false;
+  document.onmousemove = null;
+  document.onmouseup = null;
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const isHidden = sidebar.style.display === 'none';
+  sidebar.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
+function playNodeAudio(nodeId) {
+  const audio = document.getElementById(`${nodeId}_audio`);
+  
+  if (audio) audio.play();
+}
+  
+
+function showPlayCue(nodeId) {
+  const cue = document.getElementById(`${nodeId}_cue`);
+  if (cue) {
+    cue.setAttribute('visibility', 'visible');
+    setTimeout(() => cue.setAttribute('visibility', 'hidden'), 3000);
+  }
+}
+
+function populateSidebar(data) {
+  const nodeList = document.getElementById('nodeList');
+  nodeList.innerHTML = '';
+
+  data.forEach(entry => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#';
+    a.textContent = entry.title;
+    a.onclick = () => {
+      playNodeAudio(entry.node_id);
+      showPlayCue(entry.node_id);
+    };
+    li.appendChild(a);
+
+    if (entry.tags && entry.tags.length > 0) {
+      const tagSpan = document.createElement('span');
+      tagSpan.textContent = ` [${entry.tags.join(', ')}]`;
+      tagSpan.style.fontSize = '12px';
+      tagSpan.style.color = '#666';
+      li.appendChild(tagSpan);
+    }
+
+    nodeList.appendChild(li);
+  });
+}
+
+function filterNodes() {
+    const input = document.getElementById('searchBox').value.toLowerCase();
+    const filtered = metadata.filter(entry => {
+    const title = typeof entry.title === 'string' ? entry.title.toLowerCase() : '';
+    const tagMatch = entry.tags?.some(tag =>
+      typeof tag === 'string' && tag.toLowerCase().includes(input)
+    );
+    return title.includes(input) || tagMatch;
+  });
+
+  populateSidebar(filtered);
+}
+
+async function loadMetadata() {
+  try {
+    const response = await fetch('node_metadata.json');
+    metadata = await response.json();
+
+    metadata.forEach(entry => {
+      if (entry.node_id.endsWith('_audio')) {
+        entry.node_id = entry.node_id.replace('_audio', '');
+      }
+  });
+
+    populateSidebar(metadata);
+  } catch (err) {
+    console.error("Failed to load metadata:", err);
+  }
+}
+   function toggleFingerprintPanel() {
+   const panel = document.getElementById("fingerprint_panel");
+   if (!panel) return;
+
+   if (panel.style.display === "none") {
+      panel.style.display = "block";
+      logDiagnostic("✅ Fingerprint panel shown");
+   } else {
+      panel.style.display = "none";
+      logDiagnostic("🔕 Fingerprint panel hidden");
+   }
+   }
+
+async function loadFingerprintManifest() {
+  try {
+    const response = await fetch("fingerprint_manifest.json");
+    const manifest = await response.json();
+
+    const panel = document.getElementById("fingerprint_panel");
+    panel.innerHTML = "<b>🧬 Fingerprint Manifest</b><br><br>";
+
+    Object.entries(manifest).forEach(([filename, nodes]) => {
+      const section = document.createElement("div");
+      section.style.marginBottom = "10px";
+
+      const header = document.createElement("div");
+      header.textContent = filename;
+      header.style.fontWeight = "bold";
+      header.style.cursor = "pointer";
+      header.style.color = "#0ff";
+
+      const list = document.createElement("div");
+      list.style.display = "none";
+      list.style.marginLeft = "10px";
+
+      header.onclick = () => {
+        list.style.display = list.style.display === "none" ? "block" : "none";
+      };
+
+      Object.entries(nodes).forEach(([nodeId, fingerprints]) => {
+        const nodeBlock = document.createElement("div");
+        nodeBlock.innerHTML = `<b>${nodeId}</b>`;
+        nodeBlock.style.marginBottom = "5px";
+
+        const fpArray = Array.isArray(fingerprints) ? fingerprints : [fingerprints];
+        fpArray.forEach(fp => {
+          const fpItem = document.createElement("div");
+          fpItem.textContent = `→ ${fp}`;
+          fpItem.style.marginLeft = "10px";
+
+          // Color coding
+          const motifColors = {
+            refusal: "#f33", echo: "#3cf", drip: "#9f3",
+            inverse: "#f33", society: "#3cf", acoustics: "#f33",
+            ultrasonics: "#3cf", ultrasonic: "#9f3", cruelty: "#f0f",
+            Rings: "#fc0", Lexicon: "#0f0", Soda: "#0ff",
+            frequency: "#ff0", "Time Zones": "#ccc",
+            indexer: "#ff6f00" // 🧬 sumpindex motif
+          };
+
+          for (const motif in motifColors) {
+            if (fp.includes(motif)) {
+              fpItem.style.color = motifColors[motif];
+              break;
+            }
+          }
+
+          nodeBlock.appendChild(fpItem);
+        });
+
+        list.appendChild(nodeBlock);
+      });
+
+      section.appendChild(header);
+      section.appendChild(list);
+      panel.appendChild(section);
+    });
+
+    logDiagnostic("✅ Fingerprint manifest loaded");
+  } catch (err) {
+    console.error("Failed to load fingerprint manifest:", err);
+    logDiagnostic("⚠️ Failed to load fingerprint manifest: " + err.message, true);
+  }
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("triggerButton");
+    const container = document.getElementById("node5_image_container");
+    const svg = document.getElementById("mainSVG");
+
+  if (svg) {
+    setTimeout(initPanZoom, 500);
+  } else {
+    console.warn("SVG not found at DOMContentLoaded");
+  }
+
+  if (button && container) {
+    button.addEventListener("click", function () {
+      const isHidden = container.getAttribute("visibility") === "hidden";
+      container.setAttribute("visibility", isHidden ? "visible" : "hidden");
+    });
+  }
+
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.addEventListener('input', filterNodes);
+  }
+
+  loadMetadata();
+
+});
+
+
+  
+  function showNodeImage(id) {
+    const imageContainer = document.getElementById(`${id}_image_container`);
+    if (imageContainer) {
+      imageContainer.style.display = "block";
+  }
+}
+
+  function initPanZoom() {
+    if (panZoomInstance) panZoomInstance.destroy();
+    panZoomInstance = svgPanZoom('#mainSVG', {
+      zoomEnabled: true,
+      controlIconsEnabled: true,
+      fit: true,
+      center: true
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(initPanZoom, 500);
+});
+
+</script>
+
+<Script>function initPanZoom() {
+   const mainSvg = document.getElementById("mainSVG");
+   const containerSvg = document.getElementById("containerSVG");
+ 
+   if (mainSvg) {
+     try {
+       svgPanZoom(mainSvg, {
+         zoomEnabled: true,
+         controlIconsEnabled: true,
+         fit: true,
+         center: true
+       });
+       logDiagnostic("✅ Pan-zoom initialized on #mainSVG");
+     } catch (err) {
+       logDiagnostic("⚠️ Pan-zoom failed on #mainSVG: " + err.message, true);
+     }
+   } else {
+     logDiagnostic("❌ #mainSVG not found", true);
+   }
+ 
+   if (containerSvg) {
+     try {
+       svgPanZoom(containerSvg, {
+         zoomEnabled: true,
+         controlIconsEnabled: false,
+         fit: true,
+         center: true
+       });
+       logDiagnostic("✅ Pan-zoom initialized on #containerSVG");
+     } catch (err) {
+       logDiagnostic("⚠️ Pan-zoom failed on #containerSVG: " + err.message, true);
+     }
+   } else {
+     logDiagnostic("❌ #containerSVG not found", true);
+   }
+ }
+ </Script>
+
+
+<script>
+  function openNodeImageInNewTab(id) {
+    const imageElement = document.getElementById(`${id}_image`);
+    if (imageElement && imageElement.src.startsWith("data:image")) {
+      window.open(imageElement.src, '_blank', 'width=800,height=600');
+    } else {
+      console.warn("Image element not found or not a valid data URI");
+    }
+  }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+buttonPanel.onmousedown = function (e) {
+e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+};
+
+  document.onmouseup = function () {
+  document.onmousemove = null;
+};
+};
+});
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+  document.addEventListener("DOMContentLoaded", () => {
+populateMetaPanel();
+loadFingerprintManifest();
+initPanZoom();
+});
+
+buttonPanel.onmousedown = function (e) {
+  e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+  document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+  };
+
+  document.onmouseup = function () {
+  document.onmousemove = null;
+  };
+};
+});
+
+const isOnline = location.href.startsWith("https://axda.github.io");
+const basePath = isOnline ? "https://axda.github.io/Blu/" : ".";
+
+async function populateMetaPanel() {
+  const response = await fetch(`${basePath}/panel_data.json`);
+  const data = await response.json();
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  grid.style.display = 'grid';
+  grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(60px, 1fr))';
+  grid.style.gap = '10px';
+  grid.style.padding = '10px';
+
+  data.forEach(entry => {
+    const container = document.createElement('div');
+    container.className = 'data_container';
+    container.dataset.page = isOnline ? entry.page : `./${entry.page}`;
+    container.title = entry.title;
+    container.ondblclick = () => openPanel(container, container.dataset.page);
+
+    // ✅ Embed tags if present
+    if (entry.tags?.length) {
+      const tagSpan = document.createElement('span');
+      tagSpan.textContent = entry.tags.join(', ');
+      tagSpan.style.position = 'absolute';
+      tagSpan.style.top = '2px';
+      tagSpan.style.right = '2px';
+      tagSpan.style.fontSize = '8px';
+      tagSpan.style.background = '#222';
+      tagSpan.style.color = '#fff';
+      tagSpan.style.padding = '2px 4px';
+      tagSpan.style.pointerEvents = 'none';
+      container.appendChild(tagSpan);
+    }
+
+    grid.appendChild(container);
+  });
+
+  const panel = document.getElementById('container_meta_panel');
+  panel.innerHTML = '';
+  panel.appendChild(grid);
+
+  console.log("Loaded entries:", data);
+}
+
+</script>
+
+<script>function updateIconState(container, count) {
+   const iconMap = {
+     1: 'icon_bw.png',
+     2: 'icon_green.png',
+     3: 'icon_orange.png',
+     4: 'icon_red.png'
+   };
+   const icon = iconMap[Math.min(count, 4)];
+   container.style.backgroundImage = `url('${icon}')`;
+   container.style.backgroundSize = 'cover';
+   container.style.backgroundPosition = 'center';
+ }
+ 
+ function openPanel(container, pagePath) {
+   currentContainer = container;
+   const panel = document.getElementById("expansion_panel");
+   const iframe = document.getElementById("panel_iframe");
+   iframe.src = pagePath;
+   panel.style.display = "block";
+ 
+   if (!container.dataset.id) {
+     container.dataset.id = 'container_' + Math.random().toString(36).substr(2, 9);
+   }
+ 
+   const id = container.dataset.id;
+   const count = viewCounts.get(id) || 0;
+   viewCounts.set(id, count + 1);
+ }
+ 
+ function closePanel() {
+   const panel = document.getElementById("expansion_panel");
+   panel.style.display = "none";
+ 
+   if (!currentContainer) return;
+ 
+   const id = currentContainer.dataset.id;
+   const count = viewCounts.get(id);
+   updateIconState(currentContainer, count);
+ 
+   // Optional: motif-linked overlay
+   const overlay = document.createElement('div');
+   overlay.className = 'motif_overlay';
+   overlay.textContent = `Viewed ${count}x • ${new Date().toLocaleTimeString()}`;
+   overlay.style.position = 'absolute';
+   overlay.style.bottom = '0';
+   overlay.style.left = '0';
+   overlay.style.fontSize = '10px';
+   overlay.style.background = 'rgba(0,0,0,0.6)';
+   overlay.style.color = '#fff';
+   overlay.style.padding = '2px 4px';
+   overlay.style.pointerEvents = 'none';
+ 
+   currentContainer.appendChild(overlay);
+   setTimeout(() => overlay.remove(), 3000);
+ 
+   currentContainer = null;
+ }</script>
+<script>document.addEventListenergrid1
+setTimeout(initPanZoom, 500); // crude but effective</script>
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🧭 DOM loaded. Ritual begins.");
+
+  // Ceremonial Glyph Dialog Elements
+  const glyphInput = document.getElementById("glyphInput");
+  const toggleVisibility = document.getElementById("toggleVisibility");
+  const submitGlyph = document.getElementById("submitGlyph");
+
+  // Secondary Glyph Dialog Elements
+  const enterBtn = document.getElementById("Toggle_StalagBtn");
+  const glyphDialogTest = document.getElementById("glyphDialogTest");
+  const glyphInputTest = document.getElementById("glyphInputTest");
+  const submitGlyphTest = document.getElementById("submitGlyphTest");
+
+  // Shared Elements
+  const secretContainer = document.getElementById("secretContainer");
+  const fallbackNotice = document.getElementById("fallbackNotice");
+
+  // Toggle visibility for ceremonial glyph
+  toggleVisibility.addEventListener("change", (e) => {
+    glyphInput.type = e.target.checked ? "text" : "password";
+    console.log(`👁️ Ceremonial glyph visibility: ${glyphInput.type}`);
+  });
+
+  // Submit ceremonial glyph
+  submitGlyph.addEventListener("click", async () => {
+    const userInput = glyphInput.value;
+    let expectedPassword;
+
+    try {
+      const response = await fetch("toggle_trog.json");
+      if (!response.ok) throw new Error("Fetch failed");
+      const data = await response.json();
+      const lastNode = data[data.length - 1];
+      const tags = lastNode.tags;
+      expectedPassword = tags[2];
+    } catch (error) {
+      fallbackNotice.style.display = "block";
+      const data = [
+        {
+          node_id: "node137_audio",
+          title_id: "title20",
+          title: "Uranus",
+          tags: ["alpha", "delta", "charlie", "2325", "0022", "0110"]
+        }
+      ];
+      expectedPassword = data[data.length - 1].tags[2];
+    }
+
+    if (userInput === expectedPassword) {
+      secretContainer.style.display = "block";
+      console.log("🎯 Ceremonial glyph matched. Access granted.");
+    } else {
+      alert("Incorrect glyph. The mask remains.");
+    }
+  });
+
+  // Reveal secondary dialog when Enter is clicked
+  enterBtn.addEventListener("click", () => {
+    glyphDialogTest.style.display = "block";
+    console.log("🔓 Enter button clicked. Secondary glyph dialog revealed.");
+  });
+
+  // Submit secondary glyph revo
+submitGlyphTest.addEventListener("click", () => {
+  const testInput = document.getElementById("glyphInputTest").value;
+  const reversed = testInput.split("").reverse().join("");
+  alert("Test glyph entered (pluto): " + reversed);
+  console.log("🧪 Reversed glyph submitted:", (pluto));
+});
+
+});
+</script>
+
+<script>
+  // Ritual check for download suppression
+  window.onload = function() {
+    const audio = document.getElementById("audioPlayer2", "audioPlayer3");
+    const controlsList = audio.getAttribute("controlsList");
+    if (controlsList && controlsList.includes("nodownload")) {
+      document.getElementById("askPlutoContainer2").style.display = "block";
+    }
+  };
+
+  function openPlutoDialog() {
+    document.getElementById("plutoDialog").style.display = "block";
+  }
+
+  function submitPluto() {
+    const question = document.getElementById("plutoInput").value;
+    alert("Pluto received your question: " + question);
+    // Optionally log or archive this as a ceremonial node
+  }
+</script>
+
+</body>
+</html>
