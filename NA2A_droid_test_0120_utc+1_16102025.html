@@ -448,7 +448,7 @@
 
 
 <body>
-  <div class="header-buttons">
+  <div class="header-button">
   <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
   <button id="triggerButton">Toggle Image</button>
   <button id="toggleFooterBtn" onclick="toggleFooter()">Hide Audio Panel</button>
@@ -461,7 +461,7 @@
   <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
     🔍 View_mare_Large
   </button>
-  
+
   <button onclick="togglecontainer_meta1_panel()">Toggle container_meta1_panel</button>
   <button onclick="toggledataPanel()">Toggle Meta Panel</button>
   <button onclick="populateMetaPanel()">🔄 Refresh Containers</button>
@@ -2620,7 +2620,7 @@ function closePanel() {
 }
 </script>
 
-#### 2. **JavaScript: Unified Drag Handler**
+ <!-- 2. **JavaScript: Unified Drag Handler** -->
 <Script>
 function enableDrag(draggableElement) {
   let offsetX = 0, offsetY = 0;
@@ -2673,12 +2673,13 @@ function enableDrag(draggableElement) {
 }
 
 
-#### 3. **Initialization Ritual**
+ <!-- #### 3. **Initialization Ritual** -->
 
 document.querySelectorAll('.draggable').forEach(el => {
   enableDrag(el);
 });
 </script>
+
 <script>
 // Apply only to panels
 document.addEventListener("DOMContentLoaded", function () {
