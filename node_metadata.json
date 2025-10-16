@@ -2196,6 +2196,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node190_audio",
+"title_id": "title2732",
+"title": "Philippines",
+"tags": ["Bleakperambulatorst", "exhaust", "2015"],
+"audio_files": [
+  "node190.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
