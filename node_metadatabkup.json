@@ -1988,6 +1988,370 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node174_audio",
+"title_id": "title2512",
+"title": "Cocos Islands (Australia)",
+"tags": ["Bleakperambulatorst", "0615", "0621", "horn", "0623"],
+"audio_files": [
+  "node174.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node175_audio",
+"title_id": "title2526",
+"title": "British Indian \nOcean Territory",
+"tags": ["Bleakst", "neigh", "1438", "tyre", "1456", "1458"],
+"audio_files": [
+  "node175.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node176_audio",
+"title_id": "title2542",
+"title": "Thailand",
+"tags": ["Bleaksirenst", "blue", "1623", "1636"],
+"audio_files": [
+  "node176.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node177_audio",
+"title_id": "title2549",
+"title": "Vietnam",
+"tags": ["Bleakperambulatorst", "horn", "1803", "1804", "siren", "1812"],
+"audio_files": [
+  "node177.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node178_audio",
+"title_id": "title2563",
+"title": "Cambodia",
+"tags": ["Bleakst", "Fireworks", "1845"],
+"audio_files": [
+  "node178.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node179_audio",
+"title_id": "title2577",
+"title": "Laos",
+"tags": ["Bleakst", "agency", "BBCreau", "2246"],
+"audio_files": [
+  "node179.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node180_audio",
+"title_id": "title2591",
+"title": "Indonesia \n(Western Region)",
+"tags": ["Bleakst", "BBCreau", "0037"],
+"audio_files": [
+  "node180.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node181_audio",
+"title_id": "title2607",
+"title": "Christmas Island (Australia)",
+"tags": ["Bleakst", "0603", "#", "k9", "0604"],
+"audio_files": [
+  "node181.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node182_audio",
+"title_id": "title2621",
+"title": "Russia \n(Novosibirsk\nKrasnoyarsk)",
+"tags": ["Bleakst", "0418"],
+"audio_files": [
+  "node182.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node183_audio",
+"title_id": "title2639",
+"title": "Mongolia \n(Western Region)",
+"tags": ["Bleakst", "sound", "siren", "1618"],
+"audio_files": [
+  "node183.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node184_audio",
+"title_id": "title2655",
+"title": "China (Mainland)",
+"tags": ["Bleakst", "Fireworks", "1658", "1659"],
+"audio_files": [
+  "node184.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node185_audio",
+"title_id": "title2662",
+"title": "Hong Kong",
+"tags": ["Bleakst", "Fireworks", "1944"],
+"audio_files": [
+  "node185.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node186_audio",
+"title_id": "title2676",
+"title": "Macau",
+"tags": ["Bleakst", "0015", "BBCreau", "0021"],
+"audio_files": [
+  "node186.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node187_audio",
+"title_id": "title2690",
+"title": "Taiwan",
+"tags": ["Bleaksirenst", "1715", "1719", "circa"],
+"audio_files": [
+  "node187.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node188_audio",
+"title_id": "title2704",
+"title": "Malaysia",
+"tags": ["Bleaksirenst", "1722", "circa","1719"],
+"audio_files": [
+  "node188.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node189_audio",
+"title_id": "title2718",
+"title": "Singapore",
+"tags": ["Bleakst", "garden", "neigh","class", "1820"],
+"audio_files": [
+  "node189.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node190_audio",
+"title_id": "title2732",
+"title": "Philippines",
+"tags": ["Bleakperambulatorst", "exhaust", "2015"],
+"audio_files": [
+  "node190.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node191_audio",
+"title_id": "title2746",
+"title": "Brunei",
+"tags": ["2126", "Bleaksirenst"],
+"audio_files": [
+  "node191.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node192_audio",
+"title_id": "title2760",
+"title": "Indonesia \n(Central Region)",
+"tags": ["Bleakst", "0310"],
+"audio_files": [
+  "node192.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node193_audio",
+"title_id": "title2776",
+"title": "Western Australia",
+"tags": ["Bleakperambulatorst", "exhaust", "0504", "0505"],
+"audio_files": [
+  "node193.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node194_audio",
+"title_id": "title2790",
+"title": "Russia (Irkutsk)",
+"tags": ["Bleakst", "neigh", "1641", "siren"],
+"audio_files": [
+  "node194.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node195_audio",
+"title_id": "title2804",
+"title": "Mongolia \n(Eastern Region)",
+"tags": ["Bleakst","firework", "1646", "exhaust", "1647"],
+"audio_files": [
+  "node195.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node196_audio",
+"title_id": "title2820",
+"title": "Japan",
+"tags": ["Bleakst", "aire", "1649"],
+"audio_files": [
+  "node196.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node197_audio",
+"title_id": "title2827",
+"title": "South Korea",
+"tags": ["Bleaksirenst", "blue", "1654"],
+"audio_files": [
+  "node197.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node198_audio",
+"title_id": "title2841",
+"title": "North Korea",
+"tags": ["Bleakst", "circus", "BBCreau", "agency", "1707", "1711", "1714"],
+"audio_files": [
+  "node198.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node199_audio",
+"title_id": "title2855",
+"title": "East Timor",
+"tags": ["Bleakst", "circus", "BBCreau", "agency", "1714", "1717"],
+"audio_files": [
+  "node199.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node200_audio",
+"title_id": "title2869",
+"title": "Indonesia \n(Eastern Region)",
+"tags": ["Bleakst", "circus", "BBCreau", "agency", "1717", "1720"],
+"audio_files": [
+  "node200.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node201_audio",
+"title_id": "title2885",
+"title": "Russia (Yakutsk)",
+"tags": ["Bleakst", "circus", "BBCreau", "agency", "1720", "1728"],
+"audio_files": [
+  "node201.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
