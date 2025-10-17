@@ -2209,6 +2209,45 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node191_audio",
+"title_id": "title2746",
+"title": "Brunei",
+"tags": ["2126", "Bleaksirenst"],
+"audio_files": [
+  "node191.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node192_audio",
+"title_id": "title2760",
+"title": "Indonesia \n(Central Region)",
+"tags": ["Bleakst", "0310"],
+"audio_files": [
+  "node192.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node193_audio",
+"title_id": "title2760",
+"title": "Western Australia",
+"tags": ["Bleakperambulatorst", "exhaust", "0504", "0505"],
+"audio_files": [
+  "node193.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
