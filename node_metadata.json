@@ -2443,6 +2443,59 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node213_audio",
+"title_id": "title3050",
+"title": "Solomon Islands",
+"tags": ["Bleakst", "fireworks", "2220"],
+"audio_files": [
+  "node213.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
+},
+{
+"node_id": "node214_audio",
+"title_id": "title3064",
+"title": "New Caledonia",
+"tags": ["Bleakst", "sound", "2225", "neigh", "horn", "2235", "neigh", "2235", "2313", "neigh", "2314"],
+"audio_files": [
+  "node214.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node215_audio",
+"title_id": "title3071",
+"title": "Vanuatu",
+"tags": ["Bleakperambulatorst", "2319", "horn", "2320", "2335"],
+"audio_files": [
+  "node215.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node216_audio",
+"title_id": "title3085",
+"title": "Federated States of \nMicronesia (Eastern)",
+"tags": ["_"],
+"audio_files": [
+  "node216.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
+
 
 ]
