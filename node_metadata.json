@@ -2326,6 +2326,45 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node200_audio",
+"title_id": "title2869",
+"title": "Indonesia \n(Eastern Region)",
+"tags": ["Bleakst", "circus", "BBCreau", "agency", "1717", "1720"],
+"audio_files": [
+  "node200.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node201_audio",
+"title_id": "title2885",
+"title": "Russia (Yakutsk)",
+"tags": ["Bleakst", "circus", "BBCreau", "agency", "1720", "1728"],
+"audio_files": [
+  "node201.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node202_audio",
+"title_id": "title2899",
+"title": "Palau",
+"tags": ["Bleakperambulatorst", "1901", "horn", "1902", "1903", "1905"],
+"audio_files": [
+  "node202.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
