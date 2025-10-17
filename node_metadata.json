@@ -2378,7 +2378,19 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node208_audio",
+"title_id": "title2978",
+"title": "Papua New Guinea",
+"tags": ["Bleakperambulatorst", "2006", "exhaust", "2008"],
+"audio_files": [
+  "node208.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
-
+}
 
 ]
