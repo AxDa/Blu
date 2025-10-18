@@ -2500,7 +2500,7 @@
 "node_id": "node217_audio",
 "title_id": "title3101",
 "title": "Russia (Magadan)",
-"tags": ["_"],
+"tags": ["Bleakst", "aire", "0545"],
 "audio_files": [
   "node217.mp3"
 ],
@@ -2508,7 +2508,21 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node218_audio",
+"title_id": "title3115",
+"title": "Norfolk Island (Australia)",
+"tags": ["_"],
+"audio_files": [
+  "node218.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
+}
+
 
 
 ]
