@@ -2513,9 +2513,22 @@
 "node_id": "node218_audio",
 "title_id": "title3115",
 "title": "Norfolk Island (Australia)",
-"tags": ["_"],
+"tags": ["Bleakst", "neigh", "neighbour", "36LS97BB", "2045", "Agency", "BBCreau", "Business", "2105"],
 "audio_files": [
   "node218.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node219_audio",
+"title_id": "title3129",
+"title": "Bougainville",
+"tags": ["_"],
+"audio_files": [
+  "node219.mp3"
 ],
 "coordinates": {
   "x": 11.2,
