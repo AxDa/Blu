@@ -2614,12 +2614,25 @@
 }
 },
 {
-"node_id": "node26_audio",
+"node_id": "node226_audio",
 "title_id": "title3224",
 "title": "New Zealand (Standard Time)",
-"tags": ["_"],
+"tags": ["Bleakst", "aire", "1051", "1054"],
 "audio_files": [
   "node226.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node227_audio",
+"title_id": "title3238",
+"title": "Russia (Kamchatka)",
+"tags": ["_"],
+"audio_files": [
+  "node227.mp3"
 ],
 "coordinates": {
   "x": 11.2,
