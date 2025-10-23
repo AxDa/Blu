@@ -2266,7 +2266,7 @@
 "node_id": "node195_audio",
 "title_id": "title2804",
 "title": "Mongolia \n(Eastern Region)",
-"tags": ["Bleakst","firework", "1646", "exhaust", "1647"],
+"tags": ["Bleakst", "firework", "1646", "exhaust", "1647"],
 "audio_files": [
   "node195.mp3"
 ],
@@ -2352,6 +2352,358 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node202_audio",
+"title_id": "title2899",
+"title": "Palau",
+"tags": ["Bleakperambulatorst", "1901", "horn", "1902", "1903", "1905"],
+"audio_files": [
+  "node202.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
+},
+{
+"node_id": "node207_audio",
+"title_id": "title2969",
+"title": "Eastern Australia \n(Queensland, NSW, Victoria)",
+"tags": ["Bleakst", "BBCreau", "1932"],
+"audio_files": [
+  "node207.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node208_audio",
+"title_id": "title2978",
+"title": "Papua New Guinea",
+"tags": ["Bleakperambulatorst", "2006", "exhaust", "2008"],
+"audio_files": [
+  "node208.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node209_audio",
+"title_id": "title2992",
+"title": "Guam",
+"tags": ["Bleakperambulatorst", "horn", "2033", "2043"],
+"audio_files": [
+  "node209.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node210_audio",
+"title_id": "title3006",
+"title": "Northern Mariana Islands",
+"tags": ["Bleakst", "circus", "2110"],
+"audio_files": [
+  "node210.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node211_audio",
+"title_id": "title3020",
+"title": "Russia (Vladivostok)",
+"tags": ["Bleakperambulatorst", "exhaust", "2115", "2116"],
+"audio_files": [
+  "node211.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node212_audio",
+"title_id": "title3034",
+"title": "Federated States of \nMicronesia (Western)",
+"tags": ["Bleakst", "circus", "2151"],
+"audio_files": [
+  "node212.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node213_audio",
+"title_id": "title3050",
+"title": "Solomon Islands",
+"tags": ["Bleakst", "fireworks", "2220"],
+"audio_files": [
+  "node213.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node214_audio",
+"title_id": "title3064",
+"title": "New Caledonia",
+"tags": ["Bleakst", "sound", "2225", "neigh", "horn", "2235", "neigh", "2235", "2313", "neigh", "2314"],
+"audio_files": [
+  "node214.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node215_audio",
+"title_id": "title3071",
+"title": "Vanuatu",
+"tags": ["Bleakperambulatorst", "2319", "horn", "2320", "2335"],
+"audio_files": [
+  "node215.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node216_audio",
+"title_id": "title3085",
+"title": "Federated States of \nMicronesia (Eastern)",
+"tags": ["clockwork", "Bleakst", "0113", "BBCreau", "sounds", "0114", "regular"],
+"audio_files": [
+  "node216.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node217_audio",
+"title_id": "title3101",
+"title": "Russia (Magadan)",
+"tags": ["Bleakst", "aire", "0545"],
+"audio_files": [
+  "node217.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node218_audio",
+"title_id": "title3115",
+"title": "Norfolk Island (Australia)",
+"tags": ["Bleakst", "neigh", "neighbour", "36LS97BB", "2045", "Agency", "BBCreau", "Business", "2105"],
+"audio_files": [
+  "node218.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node219_audio",
+"title_id": "title3129",
+"title": "Bougainville",
+"tags": ["Bleakst", "2330", "BBCreau", "Agency", "0137", "Part1of2"],
+"audio_files": [
+  "node219.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node220_audio",
+"title_id": "title3145",
+"title": "Fiji",
+"tags": ["Bleakst", "2330", "BBCreau", "Agency", "0137", "Part2of2"],
+"audio_files": [
+  "node220.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node221_audio",
+"title_id": "title3152",
+"title": "Tuvalu",
+"tags": ["Bleakst", "0000", "neighbour", "0033", "Part1of2"],
+"audio_files": [
+  "node221.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node222_audio",
+"title_id": "title3166",
+"title": "Nauru",
+"tags": ["Bleakst", "0000", "neighbour", "0033", "Part2of2"],
+"audio_files": [
+  "node222.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node223_audio",
+"title_id": "title3180",
+"title": "Kiribati",
+"tags": ["Bleakst", "0205", "circus", "0206"],
+"audio_files": [
+  "node223.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node224_audio",
+"title_id": "title3196",
+"title": "Marshall Islands",
+"tags": ["Bleakst", "circus", "0446"],
+"audio_files": [
+  "node224.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node225_audio",
+"title_id": "title3210",
+"title": "Wallis and Futuna",
+"tags": ["Bleakst", "Barrages", "hrs", "firework", "2323"],
+"audio_files": [
+  "node225.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node226_audio",
+"title_id": "title3224",
+"title": "New Zealand (Standard Time)",
+"tags": ["Bleakst", "aire", "1051", "1054"],
+"audio_files": [
+  "node226.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node227_audio",
+"title_id": "title3238",
+"title": "Russia (Kamchatka)",
+"tags": ["Bleakst", "LS", "Speakers", "2049"],
+"audio_files": [
+  "node227.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node228_audio",
+"title_id": "title3252",
+"title": "Wake Island",
+"tags": ["Bleakst", "BBCreau", "neighbour", "firework", "2005", "2007"],
+"audio_files": [
+  "node228.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node229_audio",
+"title_id": "title3266",
+"title": "Tonga",
+"tags": ["Bleakst", "fireworks", "2126", "2127"],
+"audio_files": [
+  "node229.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node230_audio",
+"title_id": "title3273",
+"title": "Samoa",
+"tags": ["Bleaksirenst", "blue", "2250"],
+"audio_files": [
+  "node230.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node231_audio",
+"title_id": "title3287",
+"title": "Tokelau",
+"tags": ["Bleakst", "#", "k9", "2223"],
+"audio_files": [
+  "node231.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node232_audio",
+"title_id": "title3301",
+"title": "New Zealand \n(Daylight Saving Time)",
+"tags": ["_"],
+"audio_files": [
+  "node232.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
+
 
 ]
