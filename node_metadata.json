@@ -2526,7 +2526,7 @@
 "node_id": "node219_audio",
 "title_id": "title3129",
 "title": "Bougainville",
-"tags": ["_"],
+"tags": ["Bleakst", "2330", "BBCreau", "Agency", "0137", "Part1of2"],
 "audio_files": [
   "node219.mp3"
 ],
@@ -2534,8 +2534,98 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node220_audio",
+"title_id": "title3145",
+"title": "Fiji",
+"tags": ["Bleakst", "2330", "BBCreau", "Agency", "0137", "Part2of2"],
+"audio_files": [
+  "node220.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
 }
-
+},
+{
+"node_id": "node221_audio",
+"title_id": "title3152",
+"title": "Tuvalu",
+"tags": ["Bleakst", "0000", "neighbour", "0033", "Part1of2"],
+"audio_files": [
+  "node221.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node222_audio",
+"title_id": "title3166",
+"title": "Nauru",
+"tags": ["Bleakst", "0000", "neighbour", "0033", "Part2of2"],
+"audio_files": [
+  "node222.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node223_audio",
+"title_id": "title3180",
+"title": "Kiribati",
+"tags": ["Bleakst", "0205", "circus", "0206"],
+"audio_files": [
+  "node223.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node224_audio",
+"title_id": "title3196",
+"title": "Marshall Islands",
+"tags": ["Bleakst", "circus", "0446"],
+"audio_files": [
+  "node224.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node225_audio",
+"title_id": "title3210",
+"title": "Wallis and Futuna",
+"tags": ["Bleakst", "Barrages", "hrs", "firework", "2323"],
+"audio_files": [
+  "node225.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node26_audio",
+"title_id": "title3224",
+"title": "New Zealand (Standard Time)",
+"tags": ["_"],
+"audio_files": [
+  "node226.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+}
 
 
 ]
