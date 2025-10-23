@@ -2630,9 +2630,48 @@
 "node_id": "node227_audio",
 "title_id": "title3238",
 "title": "Russia (Kamchatka)",
-"tags": ["_"],
+"tags": ["Bleakst", "LS", "Speakers", "2049"],
 "audio_files": [
   "node227.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node228_audio",
+"title_id": "title3252",
+"title": "Wake Island",
+"tags": ["Bleakst", "BBCreau", "neighbour", "firework", "2005", "2007"],
+"audio_files": [
+  "node228.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node229_audio",
+"title_id": "title3266",
+"title": "Tonga",
+"tags": ["Bleakst", "fireworks", "2126", "2127"],
+"audio_files": [
+  "node229.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node230_audio",
+"title_id": "title3273",
+"title": "Samoa",
+"tags": ["_"],
+"audio_files": [
+  "node230.mp3"
 ],
 "coordinates": {
   "x": 11.2,
