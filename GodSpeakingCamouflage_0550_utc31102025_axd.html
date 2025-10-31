@@ -86898,6 +86898,9 @@ async function loadFingerprintManifest() {
     });
 
     logDiagnostic("✅ Fingerprint manifest loaded");
+    function logDiagnostic(message) {
+      console.log("Diagnostic:", message);
+    }
   } catch (err) {
     console.error("Failed to load fingerprint manifest:", err);
     logDiagnostic("⚠️ Failed to load fingerprint manifest: " + err.message, true);
