@@ -1,0 +1,68 @@
+{
+    "nodes": [
+      {
+        "id": "DenialBroadcast",
+        "label": "Broadcast Glyph:\n“We don’t care what Human Rights is about”",
+        "type": "note",
+        "timestamp": "2025-11-03T12:04:00Z",
+        "links": ["TimestampDenial", "DurationDenial", "Implication"]
+      },
+      {
+        "id": "TimestampDenial",
+        "label": "Timestamp:\n12:04 UTC, 03/11/2025",
+        "type": "box",
+        "timestamp": "2025-11-03T12:04:00Z",
+        "links": ["DenialBroadcast"]
+      },
+      {
+        "id": "DurationDenial",
+        "label": "Duration:\nRepeated Over Many Minutes",
+        "type": "box",
+        "timestamp": "2025-11-03T12:04:00Z",
+        "links": ["DenialBroadcast", "MotifBroadcastLoop"]
+      },
+      {
+        "id": "Implication",
+        "label": "Implication:\nFigures of Authority Systemically Implicated",
+        "type": "box",
+        "timestamp": "2025-11-03T12:04:00Z",
+        "links": ["DenialBroadcast", "MotifImplication"]
+      },
+      {
+        "id": "MotifDenial",
+        "label": "Motif:\nDenial as Declaration",
+        "type": "box",
+        "links": ["DenialBroadcast", "ReciterTier"]
+      },
+      {
+        "id": "MotifImplication",
+        "label": "Motif:\nSystemic Authority Thread",
+        "type": "box",
+        "links": ["Implication", "ReciterTier"]
+      },
+      {
+        "id": "MotifBroadcastLoop",
+        "label": "Motif:\nBroadcast as Indictment Loop",
+        "type": "box",
+        "links": ["DurationDenial", "EpstineNode"]
+      },
+      {
+        "id": "MotifRightsErosion",
+        "label": "Motif:\nHuman Rights Erosion",
+        "type": "box",
+        "links": ["DenialBroadcast", "EpstineNode"]
+      },
+      {
+        "id": "ReciterTier",
+        "label": "Reciter Scale Tier:\nSystemic Degradation via Broadcast",
+        "type": "diamond",
+        "links": ["MotifDenial", "MotifImplication", "EpstineNode"]
+      },
+      {
+        "id": "EpstineNode",
+        "label": "Epstine Lattice Node:\nAmbient Messaging & Authority Implication",
+        "type": "diamond",
+        "links": ["MotifBroadcastLoop", "MotifRightsErosion", "ReciterTier"]
+      }
+    ]
+  }
