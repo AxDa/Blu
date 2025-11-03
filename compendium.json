@@ -703,7 +703,19 @@
           "blue",
           "03112025 perambulator & moped minutes before"
         ]
+      },
+      { 
+      "id": "Bleakst_Bleakst_181530_fireworks_181730hhmmss_utc_03112025",
+      "label": "Bleakst fireworks  181730hhmmss",
+      "type": "audio",
+      "timestamp": "2025-11-03T18:15:30Z",
+      "tags": [
+        "Bleakst",
+        "fireworks",
+        " 181730hhmmss"
+      ]
       }
     ]
   }
+
 
