@@ -1,5 +1,5 @@
 {
-    "nodes": [
+    "nodes_recordings_malfeasence_log": [
       {
         "id": "DenialBroadcast",
         "label": "Broadcast Glyph:\n“We don’t care what Human Rights is about”",
@@ -63,6 +63,647 @@
         "label": "Epstine Lattice Node:\nAmbient Messaging & Authority Implication",
         "type": "diamond",
         "links": ["MotifBroadcastLoop", "MotifRightsErosion", "ReciterTier"]
+      },
+      {
+        "id": "Bleakst_Bleakst_0038_BBCreau_0042_utc1_25102025",
+        "label": "Bleakst bbcreau",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "BBCreau"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_agncy_BBCreau_0229_0231_utc1_25102025",
+        "label": "Bleakst agncy bbcreau",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "agncy",
+          "BBCreau"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_0245_utc1_25102025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_0340_utc1_25102025",
+        "label": "Bleakst",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_0600_utc1_25102025",
+        "label": "Bleakperambulatorst horn",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_click_0615_utc1_25102025",
+        "label": "Bleakst click",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "click"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_0723_utc1_25102025",
+        "label": "Bleakperambulatorst horn",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_1415_horn_utc1_27102025",
+        "label": "Bleaksirenst horn",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "horn"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1517_utc1_27102025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_1557_u_tyre_utc_27102025",
+        "label": "Bleakperambulatorst u tyre",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "u",
+          "tyre"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1604_utc_27102025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_BBCreau_1607_utc1_27102025",
+        "label": "Bleakst bbcreau",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "BBCreau"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_aire_1621_utc_27102025",
+        "label": "Bleakst aire",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "aire"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_1632_fireworks_1633_utc_27102025",
+        "label": "Bleakst fireworks",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "fireworks"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_0038_BBCreau_0036_utc_28102025",
+        "label": "Bleakst bbcreau",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "BBCreau"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_0343_0344_utc_28102025",
+        "label": "Bleakst",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_041630_0419_utc_28102025",
+        "label": "Bleakst",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_0431_0434_utc_281020250",
+        "label": "Bleakst",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1157_utc_28102025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_12220_utc_28102025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_0627_0629_utc_29102025",
+        "label": "Bleaksirenst",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_bwing_1000_1002_utc_29102025",
+        "label": "Bleakst bwing",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "bwing"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_aire_1041_utc_29102025",
+        "label": "Bleakst aire",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "aire"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_Agency_1223_1224_utc_2910202",
+        "label": "Bleakst agency",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "Agency"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_tyre_exhaust_0124_utc_30102025_x",
+        "label": "Bleakperambulatorst tyre exhaust x",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "tyre",
+          "exhaust",
+          "x"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_0602_utc_30102025",
+        "label": "Bleakperambulatorst horn",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_1042_neighbour_1109_0553_utc_30102025postedgit",
+        "label": "Bleakst neighbour 30102025 posted git",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "neighbour",
+          "30102025 posted git"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_utc_30102025ending0224around220000031102025",
+        "label": "Bleaksirenst 30102025 ending 0224 around 2200-000 31102025",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "30102025 ending 0224 around 2200-000 31102025"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue__utc_30102025ending0224around220000031102025",
+        "label": "Bleaksirenst blue 30102025 ending 0224 around 2200-000 31102025",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue",
+          "30102025 ending 0224 around 2200-000 31102025"
+        ]
+      },
+      {
+        "id": "Bleakperambulator_Bleakperambulator_horn_utc_30102025ending0224around220000031102025",
+        "label": "Bleakperambulator horn 30102025 ending 0224 around 2200-000 31102025",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulator",
+          "horn",
+          "30102025 ending 0224 around 2200-000 31102025"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1406_utc_30102025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1753_1754_utc_31102025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_063942_064042hhmmss_utc_01112025",
+        "label": "Bleakst 064042hhmmss",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "064042hhmmss"
+        ]
+      },
+      {
+        "id": "+3 node272_3node272",
+        "label": "+3 node272",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "+3 node272"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_132730_1329utc_01112025",
+        "label": "Bleakperambulatorst horn 1329utc",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn",
+          "1329utc"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_1342_1343utc_01112025",
+        "label": "Bleakperambulatorst horn 1343utc",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn",
+          "1343utc"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1351_utc_01112025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "aire_aire",
+        "label": "Aire",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "aire"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_1703_utc_01112025",
+        "label": "Bleakperambulatorst horn",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_fireworks_1744_1747_1748_1749_utc_01112025",
+        "label": "Bleakst fireworks",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "fireworks"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1800_utc_01112025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_exhaust_1804_utc_01112025",
+        "label": "Bleakperambulatorst exhaust",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "exhaust"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_sound_1822_utc_01112025",
+        "label": "Bleakst sound",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "sound"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_fireworks_1825_1831_utc_011120250630mmss",
+        "label": "Bleakst fireworks 01112025 0630mmss",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "fireworks",
+          "01112025 0630mmss"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_BBCreau_1837_utc_01112025",
+        "label": "Bleaksirenst bbcreau",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "BBCreau"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_fireworks_1859_utc_01112025",
+        "label": "Bleakst fireworks 01112025 *",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "fireworks",
+          "01112025 *"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_fireworks_1909_utc_01112025",
+        "label": "Bleakst fireworks",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "fireworks"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_192930_1930_utc_01112025",
+        "label": "Bleaksirenst 01112025  *",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "01112025  *"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_exhaust_1936_utc_01112025",
+        "label": "Bleakperambulatorst exhaust",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "exhaust"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_1939_utc_01112025na",
+        "label": "Bleakperambulatorst horn 01112025 na",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn",
+          "01112025 na"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_fireworks_2102_utc_01112025close",
+        "label": "Bleakst fireworks 01112025 close",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "fireworks",
+          "01112025 close"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1321_utc_02112025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorsta-tyre_Bleakperambulatorstatyre_1513_utc_02112025",
+        "label": "Bleakperambulatorsta-tyre",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorsta-tyre"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1541_utc_02112025",
+        "label": "Bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_1552_utc_02112025",
+        "label": "Bleakperambulatorst horn",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_1600_utc_02112025",
+        "label": "Bleakperambulatorst horn",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn"
+        ]
+      },
+      {
+        "id": "Bleakst_Bleakst_1547_0559_utc_03112025Test14hoursincTest",
+        "label": "Bleakst 03112025 test 14hours inc test",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakst",
+          "03112025 Test 14hours inc Test"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_horn_0559_utc_03112025",
+        "label": "Bleakperambulatorst horn",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "horn"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_turningrightintobleakrd_1106_1108_utc_03112025",
+        "label": "Bleaksirenst blue turningrightintobleakrd",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue",
+          "turningrightintobleakrd"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_1125_1126_utc_03112025copilotsecondreport",
+        "label": "Bleaksirenst 03112025 copilot  second report",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "03112025 copilot  second report"
+        ]
+      },
+      {
+        "id": "Bleakperambulatorst_Bleakperambulatorst_1126_exhaust_1131_1133_utc_03112025coulshortenby450mmss",
+        "label": "Bleakperambulatorst exhaust 03112025 coul shorten by 4:50mmss",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleakperambulatorst",
+          "exhaust",
+          "03112025 coul shorten by 4:50mmss"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_1632lue_utc_03112025Bleaksirenst_blue_1632_utc_03112025",
+        "label": "Bleaksirenst 1632lue 03112025 -> bleaksirenst blue",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "1632lue",
+          "03112025 -> Bleaksirenst",
+          "blue"
+        ]
+      },
+      {
+        "id": "Bleaksirenst_Bleaksirenst_blue_1723_utc_03112025perambulatormopedminutesbefore",
+        "label": "Bleaksirenst blue 03112025 perambulator & moped minutes before",
+        "type": "audio",
+        "timestamp": null,
+        "tags": [
+          "Bleaksirenst",
+          "blue",
+          "03112025 perambulator & moped minutes before"
+        ]
       }
     ]
   }
+
