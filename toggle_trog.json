@@ -1988,6 +1988,97 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node174_audio",
+"title_id": "title2512",
+"title": "Cocos Islands (Australia)",
+"tags": ["Bleakperambulatorst", "0615", "0621", "horn", "0623"],
+"audio_files": [
+  "node174.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node175_audio",
+"title_id": "title2526",
+"title": "British Indian \nOcean Territory",
+"tags": ["Bleakst", "neigh", "1438", "tyre", "1456", "1458"],
+"audio_files": [
+  "node175.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node176_audio",
+"title_id": "title2542",
+"title": "Thailand",
+"tags": ["Bleaksirenst", "blue", "1623", "1636"],
+"audio_files": [
+  "node176.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node177_audio",
+"title_id": "title2549",
+"title": "Vietnam",
+"tags": ["Bleakperambulatorst", "horn", "1803", "1804", "siren", "1812"],
+"audio_files": [
+  "node177.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node178_audio",
+"title_id": "title2563",
+"title": "Cambodia",
+"tags": ["Bleakst", "Fireworks", "1845"],
+"audio_files": [
+  "node178.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node179_audio",
+"title_id": "title2577",
+"title": "Laos",
+"tags": ["Bleakst", "agency", "BBCreau", "2246"],
+"audio_files": [
+  "node179.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node180_audio",
+"title_id": "title2591",
+"title": "Indonesia \n(Western Region)",
+"tags": ["Bleakst", "BBCreau", "0037"],
+"audio_files": [
+  "node180.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 
 ]
