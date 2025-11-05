@@ -3652,5 +3652,18 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node19_audio",
+"title_id": "title339",
+"title": "UTC+11",
+"tags": ["Bleakst", "Bleakstperambulator", "horn", "0805"],
+"audio_files": [
+  "node19.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 ]

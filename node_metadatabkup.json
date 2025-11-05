@@ -3641,6 +3641,19 @@
 }
 },
 {
+"node_id": "node18_audio",
+"title_id": "title325",
+"title": "UTC+12",
+"tags": ["Bleakst", "BBCreau", "063444", "0637", "05112025", "KB", "SM", "JH", "RS", "v0.1m", "UNHR", "Borialis", "Avatar", "Privit"],
+"audio_files": [
+  "node18.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
 "node_id": "node19_audio",
 "title_id": "title339",
 "title": "UTC+11",
