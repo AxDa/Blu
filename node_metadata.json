@@ -3691,5 +3691,31 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node40_audio",
+"title_id": "title695",
+"title": "UTC+8",
+"tags": ["Bleakst", "1609", "BBCreau", "broadcast", "1610"],
+"audio_files": [
+  "node40.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node41_audio",
+"title_id": "title709",
+"title": "UTC+7",
+"tags": ["Bleaksirenst", "blue", "1712"],
+"audio_files": [
+  "node41.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 ]
