@@ -3665,5 +3665,31 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node20_audio",
+"title_id": "title353",
+"title": "UTC+10",
+"tags": ["Bleakst", "Bleakstperambulator", "horn", "0448", "blasts", "series", "further"],
+"audio_files": [
+  "node20.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node21_audio",
+"title_id": "title367",
+"title": "UTC+9",
+"tags": ["Bleakst", "072540", "birds", "0727"],
+"audio_files": [
+  "node21.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 ]
