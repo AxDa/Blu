@@ -277,7 +277,7 @@
 "node_id": "node14_audio",
 "title_id": "title265",
 "title": "Society Islands (French Polynesia)",
-"tags": ["siren", "blue", "10:42" ],
+"tags": ["siren", "blue", "1042" ],
 "audio_files": [
   "node14.mp3"
 ],
@@ -342,7 +342,7 @@
 "node_id": "node32_audio",
 "title_id": "title527",
 "title": "Guatemala",
-"tags": ["siren", "blue", "05:27" ],
+"tags": ["siren", "blue", "0527" ],
 "audio_files": [
   "node32.mp3"
 ],
@@ -355,7 +355,7 @@
 "node_id": "node33_audio",
 "title_id": "title548",
 "title": "Honduras",
-"tags": ["parambulator", "exhaust", "09:14", "important"],
+"tags": ["parambulator", "exhaust", "0914", "important"],
 "audio_files": [
   "node33.mp3"
 ],
@@ -368,7 +368,7 @@
 "node_id": "node34_audio",
 "title_id": "title569",
 "title": "Nicaragua",
-"tags": ["parambulator", "exhaust", "09:21", "important" ],
+"tags": ["parambulator", "exhaust", "0921", "important" ],
 "audio_files": [
   "node34.mp3"
 ],
@@ -381,7 +381,7 @@
 "node_id": "node35_audio",
 "title_id": "title590",
 "title": "El Salvador",
-"tags": ["parambulator", "exhaust", "09:42" ],
+"tags": ["parambulator", "exhaust", "0942" ],
 "audio_files": [
   "node35.mp3"
 ],
@@ -394,7 +394,7 @@
 "node_id": "node36_audio",
 "title_id": "title611",
 "title": "Mexico (Central Region)",
-"tags": ["parambulator", "exhaust", "11:31" ],
+"tags": ["parambulator", "exhaust", "1131" ],
 "audio_files": [
   "node36.mp3"
 ],
@@ -407,7 +407,7 @@
 "node_id": "node37_audio",
 "title_id": "title632",
 "title": "United States (Central Region)",
-"tags": [ "11:55" ],
+"tags": [ "1155" ],
 "audio_files": [
   "node37.mp3"
 ],
@@ -420,7 +420,7 @@
 "node_id": "node38_audio",
 "title_id": "title653",
 "title": "Canada (Central Region)",
-"tags": ["parambulator", "exhaust", "12:00" ],
+"tags": ["parambulator", "exhaust", "1200" ],
 "audio_files": [
   "node38.mp3"
 ],
@@ -433,7 +433,7 @@
 "node_id": "node39_audio",
 "title_id": "title674",
 "title": "Ecuador (Galápagos)",
-"tags": ["12:11" ],
+"tags": ["1211" ],
 "audio_files": [
   "node39.mp3"
 ],
@@ -446,7 +446,7 @@
 "node_id": "node43_audio",
 "title_id": "title744",
 "title": "Chile (Easter Island &\n Salas y Gómez (DST))",
-"tags": ["Important", "12:42" ],
+"tags": ["Important", "1242" ],
 "audio_files": [
   "node43.mp3"
 ],
@@ -459,7 +459,7 @@
 "node_id": "node44_audio",
 "title_id": "title753",
 "title": "Colombia",
-"tags": ["Important", "aire", "16:18" ],
+"tags": ["Important", "aire", "1618" ],
 "audio_files": [
   "node44.mp3"
 ],
@@ -472,7 +472,7 @@
 "node_id": "node45_audio",
 "title_id": "title767",
 "title": "Panama",
-"tags": ["Important", "16:43" ],
+"tags": ["Important", "1643" ],
 "audio_files": [
   "node45.mp3"
 ],
@@ -485,7 +485,7 @@
 "node_id": "node46_audio",
 "title_id": "title781",
 "title": "Peru",
-"tags": ["Important", "siren", "blue", "12:58" ],
+"tags": ["Important", "siren", "blue", "1258" ],
 "audio_files": [
   "node46.mp3"
 ],
@@ -498,7 +498,7 @@
 "node_id": "node47_audio",
 "title_id": "title795",
 "title": "Ecuador (Mainland)",
-"tags": ["Important", "siren", "blue", "14:01" ],
+"tags": ["Important", "siren", "blue", "1401" ],
 "audio_files": [
   "node47.mp3"
 ],
@@ -511,7 +511,7 @@
 "node_id": "node48_audio",
 "title_id": "title809",
 "title": "Cuba",
-"tags": ["parambulator", "horn", "15:57" ],
+"tags": ["parambulator", "horn", "1557" ],
 "audio_files": [
   "node48.mp3"
 ],
@@ -524,7 +524,7 @@
 "node_id": "node49_audio",
 "title_id": "title823",
 "title": "Haiti",
-"tags": ["parambulator", "exhaust", "18:52" ],
+"tags": ["parambulator", "exhaust", "1852" ],
 "audio_files": [
   "node49.mp3"
 ],
@@ -537,7 +537,7 @@
 "node_id": "node50_audio",
 "title_id": "title837",
 "title": "Jamaica",
-"tags": ["firework", "crackle", "19:32" ],
+"tags": ["firework", "crackle", "1932" ],
 "audio_files": [
   "node50.mp3"
 ],
@@ -550,7 +550,7 @@
 "node_id": "node51_audio",
 "title_id": "title851",
 "title": "Bahamas",
-"tags": ["k9", "Bleakst", "20:53" ],
+"tags": ["k9", "Bleakst", "2053" ],
 "audio_files": [
   "node51.mp3"
 ],
@@ -563,7 +563,7 @@
 "node_id": "node52_audio",
 "title_id": "title865",
 "title": "Dominican Republic",
-"tags": ["siren", "blue", "20:55" ],
+"tags": ["siren", "blue", "2055" ],
 "audio_files": [
   "node52.mp3"
 ],
@@ -576,7 +576,7 @@
 "node_id": "node53_audio",
 "title_id": "title879",
 "title": "Bolivia",
-"tags": ["siren", "exhaust", "gang_groups", "blue", "k9", "10:23", "thru", "11:12", "ice", "hollow", "soda", "malt", "perambulator" ],
+"tags": ["siren", "exhaust", "gang_groups", "blue", "k9", "1023", "thru", "1112", "ice", "hollow", "soda", "malt", "perambulator" ],
 "audio_files": [
   "node53.mp3"
 ],
@@ -589,7 +589,7 @@
 "node_id": "node54_audio",
 "title_id": "title893",
 "title": "Eastern United States",
-"tags": ["gang_groups", "13:02", "ice", "hollow", "aire"],
+"tags": ["gang_groups", "1302", "ice", "hollow", "aire"],
 "audio_files": [
   "node54.mp3"
 ],
@@ -602,7 +602,7 @@
 "node_id": "node55_audio",
 "title_id": "title907",
 "title": "Eastern Canada",
-"tags": ["gang_groups", "13:50", "siren", "hollow", "blue"],
+"tags": ["gang_groups", "1350", "siren", "hollow", "blue"],
 "audio_files": [
   "node55.mp3"
 ],
@@ -615,7 +615,7 @@
 "node_id": "node56_audio",
 "title_id": "title921",
 "title": "Venezuela",
-"tags": ["gang_groups", "18:48", "thru", "18:50",  "single 2\" shell", "fireworks", "hollow", "plus", "18:55"],
+"tags": ["gang_groups", "1848", "thru", "1850",  "single 2\" shell", "fireworks", "hollow", "plus", "1855"],
 "audio_files": [
   "node56.mp3"
 ],
@@ -628,7 +628,7 @@
 "node_id": "node57_audio",
 "title_id": "title928",
 "title": "Barbados",
-"tags": ["aire", "18:28", "gang_groups", "ice"],
+"tags": ["aire", "1828", "gang_groups", "ice"],
 "audio_files": [
   "node57.mp3"
 ],
@@ -641,7 +641,7 @@
 "node_id": "node58_audio",
 "title_id": "title942",
 "title": "Grenada",
-"tags": ["aire", "18:28", "gang_groups", "ice"],
+"tags": ["aire", "1828", "gang_groups", "ice"],
 "audio_files": [
   "node58.mp3"
 ],
@@ -654,7 +654,7 @@
 "node_id": "node59_audio",
 "title_id": "title956",
 "title": "Saint Lucia",
-"tags": ["aire", "16:24" ],
+"tags": ["aire", "1624" ],
 "audio_files": [
   "node59.mp3"
 ],
@@ -680,7 +680,7 @@
 "node_id": "node61_audio",
 "title_id": "title986",
 "title": "Trinidad and Tobago",
-"tags": ["Bleak", "siren", "blue", "20:05" ],
+"tags": ["Bleak", "siren", "blue", "2005" ],
 "audio_files": [
   "node61.mp3"
 ],
@@ -693,7 +693,7 @@
 "node_id": "node62_audio",
 "title_id": "title100",
 "title": "Puerto Rico",
-"tags": ["Bleak", "perambulator", "horn", "20:30" ],
+"tags": ["Bleak", "perambulator", "horn", "2030" ],
 "audio_files": [
   "node62.mp3"
 ],
@@ -706,7 +706,7 @@
 "node_id": "node63_audio",
 "title_id": "title1014",
 "title": "Aruba",
-"tags": ["Bleak", "siren", "blue", "20:41" ],
+"tags": ["Bleak", "siren", "blue", "2041" ],
 "audio_files": [
   "node63.mp3"
 ],
@@ -719,7 +719,7 @@
 "node_id": "node64_audio",
 "title_id": "title1028",
 "title": "Curacao",
-"tags": ["Bleak", "agency", "22:21" ],
+"tags": ["Bleak", "agency", "2221" ],
 "audio_files": [
   "node64.mp3"
 ],
@@ -732,7 +732,7 @@
 "node_id": "node65_audio",
 "title_id": "title1042",
 "title": "French Guiana",
-"tags": ["Bass", "Speaker", "agency", "18:04", "leo"  ],
+"tags": ["Bass", "Speaker", "agency", "1804", "leo"  ],
 "audio_files": [
   "node65.mp3"
 ],
@@ -745,7 +745,7 @@
 "node_id": "node66_audio",
 "title_id": "title1049",
 "title": "Suriname",
-"tags": ["Bleak", "16:20" ],
+"tags": ["Bleak", "1620" ],
 "audio_files": [
   "node66.mp3"
 ],
@@ -758,7 +758,7 @@
 "node_id": "node67_audio",
 "title_id": "title1063",
 "title": "Guyana",
-"tags": ["k9", "16:20" ],
+"tags": ["k9", "1620" ],
 "audio_files": [
   "node67.mp3"
 ],
@@ -2876,7 +2876,7 @@
 {
 "node_id": "node251_audio",
 "title_id": "title3559",
-"title": "Lord Howe Island \n(Australia (UTC+10:30))",
+"title": "Lord Howe Island \n(Australia (UTC+1030))",
 "tags": ["Bleakst", "0038", "BBCreau", "0036"],
 "audio_files": [
   "node251.mp3"
@@ -2889,7 +2889,7 @@
 {
 "node_id": "node252_audio",
 "title_id": "title3575",
-"title": "Chatham Islands \n(New Zealand (UTC+12:35))",
+"title": "Chatham Islands \n(New Zealand (UTC+1235))",
 "tags": ["Bleakst", "0343", "0344"],
 "audio_files": [
   "node252.mp3"
@@ -3712,6 +3712,19 @@
 "tags": ["Bleaksirenst", "blue", "1712"],
 "audio_files": [
   "node41.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node42_audio",
+"title_id": "title723",
+"title": "UTC+6",
+"tags": ["Bleakst", "074630", "k9", "0749"],
+"audio_files": [
+  "node42.mp3"
 ],
 "coordinates": {
   "x": 11.2,
