@@ -3730,5 +3730,31 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node75_audio",
+"title_id": "title1177",
+"title": "UTC+5",
+"tags": ["Bleakst", "aire", "1126", "1127"],
+"audio_files": [
+  "node75.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node76_audio",
+"title_id": "title1191",
+"title": "UTC+4",
+"tags": ["Bleakst", "2004", "fireworks", "2005"],
+"audio_files": [
+  "node76.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 ]
