@@ -3756,5 +3756,18 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node77_audio",
+"title_id": "title1205",
+"title": "UTC+3",
+"tags": ["Bleaksirenst", "blue", "2040", "fireworks", "2041"],
+"audio_files": [
+  "node77.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 ]
