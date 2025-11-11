@@ -3769,5 +3769,31 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node117_audio",
+"title_id": "title1749",
+"title": "UTC+2",
+"tags": ["Bleakst", "The_Guardian", "clip", "Why", "11112025", "media"],
+"audio_files": [
+  "node117.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node118_audio",
+"title_id": "title1763",
+"title": "UTC+1",
+"tags": ["Bleakst", "The_Guardian", "clip", "Why", "11112025", "media"],
+"audio_files": [
+  "node118.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 ]
