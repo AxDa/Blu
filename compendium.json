@@ -1157,143 +1157,168 @@
         "Bleakst",
         "k9"
       ]
-    },
-   {
+      }
+    ],
     "title": "Donald Trump – January 6, 2021 Speech Overlay",
     "clusters": [
-      {
+    {
         "name": "Ceremonial Magnification",
         "time": "00:00–05:00",
         "motifs": ["Invocation", "Magnification"],
         "nodes": [
-          {
+        {
             "label": "Opening Gratitude",
             "timestamp": "00:01:00",
             "motif": "Invocation",
             "text": "Thank you very much. Thank you."
-          }
+        }
         ]
-      },
-      {
+    },
+    {
         "name": "Electoral Disintegration",
         "time": "05:00–20:00",
         "motifs": ["Siege", "Collapse"],
         "nodes": [
-          {
+        {
             "label": "Dead Voters Claim",
             "timestamp": "00:06:30",
             "motif": "Siege",
             "text": "Dead people voted. It’s a disgrace."
-          },
-          {
+        },
+        {
             "label": "Dominion Machines",
             "timestamp": "00:08:45",
             "motif": "Siege",
             "text": "The machines were switching votes."
-          },
-          {
+        },
+        {
             "label": "Statistical Anomalies",
             "timestamp": "00:12:10",
             "motif": "Collapse",
             "text": "We had massive dumps of votes."
-          }
+        }
         ]
-      },
-      {
+    },
+    {
         "name": "Institutional Abdication",
         "time": "20:00–35:00",
         "motifs": ["Camouflage", "Betrayal"],
         "nodes": [
-          {
+        {
             "label": "Pence Betrayal",
             "timestamp": "00:21:00",
             "motif": "Betrayal",
             "text": "Mike Pence didn’t have the courage."
-          },
-          {
+        },
+        {
             "label": "SCOTUS Silence",
             "timestamp": "00:24:30",
             "motif": "Void",
             "text": "The Supreme Court didn’t want to hear the case."
-          },
-          {
+        },
+        {
             "label": "GOP Weakness",
             "timestamp": "00:28:00",
             "motif": "Camouflage",
             "text": "Republicans are afraid of the media."
-          }
+        }
         ]
-      },
-      {
+    },
+    {
         "name": "Mobilization Imperative",
         "time": "35:00–50:00",
         "motifs": ["Ignition", "Indictment"],
         "nodes": [
-          {
+        {
             "label": "Fight Like Hell",
             "timestamp": "00:36:45",
             "motif": "Ignition",
             "text": "If you don’t fight like hell, you’re not going to have a country anymore."
-          },
-          {
+        },
+        {
             "label": "March to Capitol",
             "timestamp": "00:39:00",
             "motif": "Indictment",
             "text": "We’re going to walk down to the Capitol."
-          },
-          {
+        },
+        {
             "label": "Take Back Country",
             "timestamp": "00:42:15",
             "motif": "Indictment",
             "text": "We will take back our country."
-          }
+        }
         ]
-      },
-      {
+        },
+        {
         "name": "Semantic Escalation",
         "time": "50:00–End",
         "motifs": ["Refusal", "Amplification"],
         "nodes": [
-          {
+        {
             "label": "Repetition of Claims",
             "timestamp": "00:51:00",
             "motif": "Amplification",
             "text": "We won this election, and we won it by a landslide."
-          },
-          {
+        },
+        {
             "label": "Urgency and Refusal",
             "timestamp": "00:55:30",
             "motif": "Refusal",
             "text": "We will never give up. We will never concede."
-          }
-        ]
-      }
-      ],
-    "broadcast_overlays": [
-      {
-        "source": "Fox News",
-        "motif": "Amplification",
-        "linked_nodes": ["Fight Like Hell", "Take Back Country"],
-        "url": "https://www.foxnews.com/media/bbc-director-general-uk-news-chief-both-resign-over-trump-speech-editing-scandal"
-      },
-      {
-        "source": "OANN",
-        "motif": "Distortion",
-        "linked_nodes": ["March to Capitol"],
-        "url": "https://www.standard.co.uk/news/uk/bbc-donald-trump-speech-us-election-panorama-b1257366.html"
-      },
-      {
-        "source": "Newsmax",
-        "motif": "Exposure",
-        "linked_nodes": ["Take Back Country"],
-        "url": "https://uk.news.yahoo.com/bbc-accused-doctoring-trump-january-133813080.html"
-      }
+        }
     ]
-  }
-  ]
+},
+{
+    "broadcast_overlays": [
+    {
+      "source": "Fox News",
+      "motif": "Amplification",
+      "linked_nodes": ["Fight Like Hell", "Take Back Country"],
+      "url": "https://www.foxnews.com/media/bbc-director-general-uk-news-chief-both-resign-over-trump-speech-editing-scandal"
+    },
+    {
+      "source": "OANN",
+      "motif": "Distortion",
+      "linked_nodes": ["March to Capitol"],
+      "url": "https://www.standard.co.uk/news/uk/bbc-donald-trump-speech-us-election-panorama-b1257366.html"
+    },
+    {
+      "source": "Newsmax",
+      "motif": "Exposure",
+      "linked_nodes": ["Take Back Country"],
+      "url": "https://uk.news.yahoo.com/bbc-accused-doctoring-trump-january-133813080.html"
+    }
+    ]
+},
+{
+    "schema_sidecar": [
+    {
+      "incident_id": "2025-11-13-1429",
+      "date_time_utc": "2025-11-13T14:29:00Z",
+      "merchant": "Gainsborough Direct",
+      "merchant_reference": "PAYPAL *AQUALISAPRO",
+      "amount": 103.99,
+      "currency": "GBP",
+      "device": "Android phone",
+      "network_context": "VPN suspected",
+      "authentication": {
+        "method": "SMS OTP (Mastercard 3-D Secure)",
+        "status": "Code submitted and verified"
+      },
+      "bank_view": "Authentication attempt seen, no settlement request",
+      "anomaly_type": "GatewayFailure",
+      "outcome": "Manual order completed via phone",
+      "actions_taken": [
+        "Called Gainsborough",
+        "Called bank (Fraud Dept)",
+        "Confirmed no funds sent",
+        "Logged incident for archive"
+      ],
+      "notes": "Bank confirmed transaction attempt but no debit. Possible gateway timeout or fraud flag."
+    }
+   ]
+}
+]
 }
 
-  
-
- 
-
+    
