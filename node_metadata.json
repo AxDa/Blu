@@ -3795,5 +3795,31 @@
   "x": 11.2,
   "y": 1783.208
 }
+},
+{
+"node_id": "node119_audio",
+"title_id": "title1777",
+"title": "UTC+1",
+"tags": ["Bleakst", "The_Guardian", "Hongqi_Bridge", "Sichuan", "to", "Tibet", "A_H", "12112025", "media"],
+"audio_files": [
+  "node119.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
+},
+{
+"node_id": "node121_audio",
+"title_id": "title1805",
+"title": "South Africa",
+"tags": ["Bleaksirenst", "1743", "1211202", "sound", "Bleakst", "2158", "k9"],
+"audio_files": [
+  "node121.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 ]
