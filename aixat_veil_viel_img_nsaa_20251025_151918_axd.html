@@ -1,0 +1,2902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rat_veil_viel_triel_trooge_IMG_nsaa_20251025_151918_axd</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #644b07;
+      font-family: Arial, sans-serif;
+    }
+    #svgContainer {
+      width: 100%;
+      height: 90%;
+    }
+
+    .main {
+      position: relative;
+      height: 100vh;
+      margin-left: 300px; /* default when sidebar is docked */
+      transition: margin-left 0.3s ease;
+    }
+
+    #toggleSidebar {
+      position: fixed;
+      top: 20px;
+      left: 330px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+    }
+
+      #triggerButton {
+      position: absolute;
+      left: 10px;
+      top: 45px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #83d3d3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      text-decoration: none;
+      color: #333;
+
+    }
+
+    #viewImageButton {
+      position: fixed;
+      top: 10px;
+      left: 145px; /* adjust based on toggleSidebar width */
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #00BFFF;
+      color: rgb(32, 25, 25);
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar {
+      position: absolute;
+      left: 50;
+      top: 60px;
+      width: 320px;
+      height: 80%;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 1em;
+      border: 1px solid #ccc;
+      z-index: 999;
+      cursor: move;
+    }
+    .sidebar h2 {
+      font-size: 16px;
+      margin-bottom: 0.5em;
+    }
+    .sidebar input {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 1em;
+      font-size: 14px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin-bottom: 0.5em;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
+    .sidebar a:hover {
+      color: #0077cc;
+    }
+
+    svg, svg * {
+    visibility: visible !important;
+    display: inline !important;
+    }
+  </style>
+
+  <!-- External scripts -->
+  <script src="svg-pan-zoom.min.js"></script>
+  <script src="title_node_map.js"></script>
+  <script src="node_metadata.json"></script>
+
+  <style>
+    #toggleRefresh {
+      position: fixed;
+      top: 45px;
+      left: 230px;
+      z-index: 1000;
+      padding: 6px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+    }
+
+    .header-button {
+    flex: 1 1 auto;
+    min-width: 80px;
+    font-size: clamp(12px, 2vw, 16px);
+    }
+
+    #togglecontainer_meta1_panelBtn {
+      position: fixed;
+      top: 45px;
+      left: 195px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglecontainer_meta1_panelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+
+    #togglePanelBtn {
+      position: fixed;
+      top: 45px;
+      left: 145px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #togglePanelBtn:hover {
+      background: #005fa3;
+      transform: scale(1.05);
+    }
+
+    #buttonPanel {
+      display: block;
+      position: fixed;
+      top: 110px;
+      left: 280px;
+      width: 160px;
+      z-index: 900;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      max-height: 600px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid #ccc;
+      cursor: move; /* merged here */
+    } 
+  </style>
+
+  <style>
+    #audioPanel, #audioPanel2, #audioPanel3, #audioPanel4 {
+      margin-bottom: 0.75em;
+      display: flex;
+      flex-direction: row; /* Change to 'row' for horizontal layout */
+      align-items: flex-start;
+      gap: 0.5em;
+      border: 1px solid #ccc;
+      padding: 0.75em;
+      background-color: #f9f9f9;
+    }
+  
+    audio {
+      width: 100%; /* Ensures full-width progress bar */
+    }
+  
+    #toggleFooterBtn {
+      padding: 0.4em 0.8em;
+      font-size: 0.9em;
+      position: absolute;
+      top: 20px;
+      left: 145px;
+    }
+  </style>
+
+<style>
+    #audioFooter {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-color: #dfcbda;
+      border-top: 1px solid #ccc;
+      padding: 0.3em 0.5em;
+      display: flex;
+      flex-direction: row; /* or 'row' if you want horizontal layout */
+      gap: 0.5em;
+      z-index: 900; /* ensures it sits above the SVG */
+    }
+  
+    #audioFooter audio {
+      width: 100%;
+      height: 70px; /* or whatever fits your layout */
+    }
+  
+    #audioFooter button {
+    margin-top: 0.2em; /* Reduced button spacing */
+    font-size: 0.75em;  /* Optional: shrink button text */
+    padding: 0.3em 0.6em; /* Optional: shrink button size */
+    }
+
+   #container_meta1_panel {
+    position: fixed;
+    top: 120px;
+    left: 600px;
+    width: 60px;
+    height: 310px;
+    background: #d67ec0;
+    border: 3px solid #332e2e1c;
+    padding: 5px;
+  }
+
+  .grid1 {
+    display: grid1;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  #data_svg_container {
+    width: 80px;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #999;
+    position: relative;
+    cursor: move;
+  }
+  .data1_container {
+    width: 40px;
+    height: 40px;
+    background-image: url('icon_default.png'); /* 🌒 default icon */
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #999;
+    position: relative;
+    cursor: move;
+  }
+
+  .data1_container:hover::before {
+    content:  "Over and out, luminous resistor. 🌒 git lumin";
+    position: attr( data-page), absolute;
+    top: -20px;
+    left: 0;
+    font-size: 10px;
+    background: #333;
+    color: #fff;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+
+   .data_container {
+   width: dynamic;
+   height: 80px;
+   background-image: url('icon_default.png');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   border: 1px solid rgb(180, 37, 37);
+   position: relative;
+   cursor: pointer;
+   }
+
+   .data_container:hover::before {
+   content: "Take5 Over and out, luminous resistor. 🌒 git lumin";
+   position:  absolute;
+   top: -20px;
+   left: 0;
+   font-size: 10px;
+   background: #333;
+   color: #fff;
+   padding: 2px 4px;
+   white-space: nowrap;
+   }
+
+   .motif_overlay {
+   transition: opacity 0.3s ease-in-out;
+   }
+
+  #expansion_panel {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 800px;
+    height: 600px;
+    background: #fff;
+    border: 2px solid #000;
+    display: none;
+    z-index: 1000;
+  }
+
+  #panel_iframe {
+    width: 100%;
+    height: 90%;
+    border: none;
+  }
+
+  #Toggle_StalagBtn {
+  position: fixed;
+  top: 65px;
+  left: 600px;
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#glyphDialog {
+  position: absolute;
+  top: 12px;
+  left: 620px;
+  padding: 15px;
+  background-color: rgb(226, 202, 202);
+  border: 2px solid #ccc;
+  text-align: center;
+}
+
+
+#secretContainer {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+}
+.fallback-banner {
+  background-color: #222;
+  color: #ffcc00;
+  padding: 10px;
+  border-left: 5px solid #ffcc00;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 15px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.draggable {
+  touch-action: none; /* Prevent browser scroll interference */
+  position: absolute;
+  cursor: grab;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+    
+  </style>
+
+<style>
+  .containercompendium {
+    position: fixed;
+    top: 10px;
+    right: 150px;
+    width: 400px;
+    max-height: 500px;
+    overflow: auto;
+    background: #111;
+    color: #eee;
+    font-family: monospace;
+    font-size: 11px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    z-index: 9998;
+    box-shadow: 0 0 10px #000;
+    cursor: move; /* for dragging */
+  }
+
+  .buttoncompendium {
+    padding: 5px 80px;
+    top: 10px;
+    right: 100px;
+     /* margin: 10px; */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .toggle-btncompendium {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .refresh-btncompendium {
+    background-color: #2196F3;
+    color: white;
+  }
+
+  .hiddencompendium {
+    display: none;
+  }
+
+  .content-boxcompendium {
+    top: 30px;
+    right: 50px;
+    /* margin-top: 20px; */
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+    #jsonOutput {
+    resize: both;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    background-color: #f0f0f0;
+    color:#111; /* or #000 for full contrast */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 300px;
+    max-width: 100%;
+  }
+  </style>  
+</head>
+<!-- Ceremonial Glyph Dialog (Always Visible) -->
+<div id="glyphDialog" style="display:block; cursor:pointer; color:#dd785ad8;">
+  <label for="glyphInput">Enter the ceremonial glyph:</label>
+  <input type="password" id="glyphInput" />
+  <label>
+    <input type="checkbox" id="toggleVisibility" />
+    Show glyph
+  </label>
+  <button id="submitGlyph">Submit</button>
+</div>
+
+<!-- Enter Button -->
+<button id="Toggle_StalagBtn">Enter</button>
+
+<!-- Secondary Glyph Dialog (Hidden by Default) -->
+<div id="glyphDialogTest" style="display:none; cursor:pointer; color:#dd785ad8;">
+  <label for="glyphInputTest">Enter secondary glyph:</label>
+  <input type="password" id="glyphInputTest" />
+  <button id="submitGlyphTest">Submit</button>
+</div>
+
+<!-- Fallback Notice -->
+<div id="fallbackNotice" style="display:none;" class="fallback-banner">
+  <p>Offline archive invoked. Glyphs retrieved from embedded memory.</p>
+</div>
+
+<!-- Secret Container -->
+<div id="secretContainer" style="display:none; cursor:pointer; color:#dd785ad8;">
+  <h2>Welcome to the hidden realm</h2>
+  <button onclick="window.open('thera_whispers_above_cauldera_fin_axd.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_Large
+  </button>
+  <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_Medium,<b>dog’s utterance_31st_July_2024</b>
+  </button>
+    </button>
+  <button onclick="window.open('NotificationActionAnalysis_2252_utc+1_14102025.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_eucilidian,<b>NotificationActionAnalysis_2252_utc+1_14102025</b>
+  </button>
+</div>
+
+
+<body>
+  <div class="header-button">
+  <button id="toggleSidebar" onclick="toggleSidebar()">☰ Toggle Sidebar </button> 
+  <button id="triggerButton">Toggle Image</button>
+  <button id="toggleFooterBtn" onclick="toggleFooter()">Hide Audio Panel</button>
+  <button id="togglePanelBtn">Hide Panel</button>
+  <!-- View Image Buttons -->
+  <button onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 WorldTimeZones
+  </button>
+
+  <button onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html')" style="cursor:pointer; color:#00BFFF;">
+    🔍 View_mare_Large
+  </button>
+
+  <button onclick="togglecontainer_meta1_panel()">Toggle container_meta1_panel</button>
+  <button onclick="toggledataPanel()">Toggle Meta Panel</button>
+  <button id="toggleRefresh"onclick="populateMetaPanel()">🔄 Refresh Containers</button>
+
+  <button onclick="loadFingerprintManifest()" style="
+  position: fixed;
+  top: 15px;
+  right: 50px;
+  z-index: 9999;
+  background: #222;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 5px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  ">🔄 Refresh Fingerprints</button>
+
+  <button onclick="toggleFingerprintPanel()" style="
+   position: fixed;
+   top: 40px;
+   right: 10px;
+   z-index: 9999;
+   background: #222;
+   color: #0ff;
+   border: 1px solid #0ff;
+   padding: 5px 10px;
+   font-size: 10px;
+   cursor: pointer;
+   ">👁️ Toggle Fingerprints</button>
+  </div>
+
+  <div id="fingerprint_panel" style="
+  position: fixed;
+  top: 20px;
+  right: 100px;
+  width: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+  background: #111;
+  color: #eee;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 10px;
+  border: 1px solid #444;
+  z-index: 9998;
+  box-shadow: 0 0 10px #000;
+  "></div> 
+
+  <!-- Draggable Panel 🌒 Container Panel html -->
+<div id="container_meta_panel" style="
+  position: absolute;
+  left: 220px;
+  top: 100px;
+  width: 40vw;
+  height: 40vh;
+  overflow-y: auto;
+  background: #ddd483;
+  border: 1px solid #ccc;">
+</div>
+
+<div id="expansion_panel">
+   <button onclick="closePanel()">ClosePanel</button>
+   <iframe id="panel_iframe" ></iframe>
+ </div>
+
+  <!-- Draggable Panel -->
+  <div id="container_meta1_panel" >
+    <div class="grid1" style="display: grid1; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 8px; padding: 8px;">
+      <div class="data1_container" data-page="WorldTimeZonesNodeDripEcho_1908_27082025.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="AllBackAcoustics_2211_utc+1_14092025_axd.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_1408_utc+1_09092025_Protocol_axd.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+      <div class="data1_container" data-page="Modern_Slavery_sumpindex_Day.html" ondblclick="openPanel(this, this.dataset.page)"></div>
+    </div>
+  </div>
+  
+
+   <div id="expansion_panel">
+    <button onclick="closePanel()" style="display: background #0077cc;">CloseExpansion </button>
+    <iframe id="panel_iframe"></iframe>
+    </div>
+ </div>
+
+<div class="containercompendium">
+  <h2>Control Panel</h2>
+  <button class="buttoncompendium toggle-btncompendium" onclick="toggleContent()">Toggle Content</button>
+  <button class="buttoncompendium refresh-btncompendium" onclick="refreshContent()">Refresh</button>
+
+  <div id="contentBoxcompendium" class="content-boxcompendium">
+    <pre id="jsonOutput"></pre>
+  </div>
+</div>
+
+<!-- Button Panel Container -->
+<div id="buttonPanel">
+
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit 1721
+  </button>
+  
+  <button 
+  onclick="window.open('As_the_ash_of_thera_whispers_pwa_(7)_index.html', '_blank')" 
+  aria-label="As_the_ash_of_thera_whispers_pwa_(7)_index"
+  data-node-id="As_the_ash_of_thera_whispers_pwa_(7)_index">
+  Open: As_the_ash_of_thera_whispers_pwa_(7)_index
+  </button>
+  
+  <button 
+  onclick="window.open('HybridAbyssmons16082025.html', '_blank')" 
+  aria-label="Hybrid Abyssmons 16082025"
+  data-node-id="Hybrid_Abyssmons_16082025">
+  Open: Hybrid Abyssmons 16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Old_full_svg.html', '_blank')" 
+  aria-label="Old_full_svg"
+  data-node-id="Old_full_svg">
+  Open: Old_full_svg
+  </button>
+  
+  <button 
+  onclick="window.open('SodaStrawMappingGrowth_0019_19082025.svg.html', '_blank')" 
+  aria-label="Soda Straw Mapping Growth_0019_19082025"
+  data-node-id="Soda_Straw_Mapping_Growth_0019_19082025">
+  Open: Soda Straw Mapping Growth_0019_19082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermark_AllegoricalUnderworld_embed1929_utc1_17072025.html', '_blank')" 
+  aria-label="Watermark Allegorical Underworldembed 1929_utc1_17072025"
+  data-node-id="Watermark_AllegoricalUnderworld_embed1929_utc1_17072025">
+  Open: Allegorical Underworld_embed 1929_utc1_17072025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_InverseSocietySummaryExpandedTable_all3_graphpywBT_0129_14082025 (6785 x 3715)(inline).html', '_blank')" 
+  aria-label="Inverse Society Summary Expanded Table 0129_14082025 (6785 x 3715)"
+  data-node-id="Inverse_Society_Summary_Expanded_Table_0129_14082025">
+  Open: Inverse Society Summary Expanded Table 0129_14082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0210_utc+1_16082025WrapperwithSpeakerIconAudioPlayer.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege 0210_utc+1_16082025"
+  data-node-id="Ultrasonic_Street_audio_Siege 0210_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege 0210_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Watermarked_2025_UltrasonicStreetaudioSiege_0723_utc+1_16082025.html', '_blank')" 
+  aria-label="Ultrasonic Street audio Siege_0723_utc+1_16082025"
+  data-node-id="UltrasonicStreetaudioSiege_0723_utc+1_16082025">
+  Open: Ultrasonic Street audio Siege_0723_utc+1_16082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_ElusivePossession_0830(mp3)_utc1_22082025.html', '_blank')" 
+  aria-label="Elusive Possession 0830(mp3) utc1_22082025"
+  data-node-id="ElusivePossession_0830(mp3)_utc1_22082025">
+  Open: Elusive Possession 0830(mp3) utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_2025_RecursiveMachine_0219_utc+1_23082025.html', '_blank')" 
+  aria-label="Recursive Machine 0219 utc+1_23082025"
+  data-node-id="RecursiveMachine_0219_utc+1_23082025">
+  Open: Recursive Machine 0219 utc+1_23082025
+  </button>
+  
+  <button 
+  onclick="window.open('WmstreetsoundCivilSocietal_Visualization_0026_utc1_22082025svg.html', '_blank')" 
+  aria-label="street_Civil_Societal_Visualization_0026_utc1_22082025"
+  data-node-id="street_sound_Civil_Societal_Visualization_0026_utc1_22082025">
+  Open: Street_Civil_Societal_Visualization_0026_utc1_22082025
+  </button>
+  
+  <button 
+  onclick="window.open('bleakleo_player.html', '_blank')" 
+  aria-label="bleakleo player"
+  data-node-id="bleakleo_player">
+  Open: bleakleo player
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Aindex.html', '_blank')" 
+  aria-label="Aindex"
+  data-node-id="Aindex">
+  Open: Aindex
+  </button>
+  
+  <button 
+  onclick="window.open('bleaktyrestperambulator_audio_embed.html', '_blank')" 
+  aria-label="bleaktyrestperambulator audio embed"
+  data-node-id="bleaktyrestperambulator_audio_embed">
+  Open: bleaktyrestperambulator_audio_embed
+  </button>
+  
+  <button 
+  onclick="window.open('fullscreen.html', '_blank')" 
+  aria-label="fullscreen"
+  data-node-id="fullscreen">
+  Open: fullscreen
+  </button>
+  
+  <button 
+  onclick="window.open('grid_node_view.html', '_blank')" 
+  aria-label="grid_node_view"
+  data-node-id="grid_node_view">
+  Open: grid_node_view
+  </button>
+  
+  <button 
+  onclick="window.open('indexfin2_data.html', '_blank')" 
+  aria-label="indexfin2 data"
+  data-node-id="indexfin2_data">
+  Open: indexfin2_data
+  </button>
+  
+  <button 
+  onclick="window.open('opening_index.html', '_blank')" 
+  aria-label="opening index"
+  data-node-id="opening_index">
+  Open: opening index
+  </button>
+  
+  <button 
+  onclick="window.open('svg_wrapper_enhanced.html', '_blank')" 
+  aria-label="svg wrapper enhanced"
+  data-node-id="svg_wrapper_enhanced">
+  Open: svg wrapper enhanced
+  </button>
+  
+  <button 
+  onclick="window.open('thera_whispers_above_cauldera_fin_axd.html', '_blank')" 
+  aria-label="thera whispers above cauldera fin axd"
+  data-node-id="thera_whispers_above_cauldera_fin_axd">
+  Open: thera whispers above cauldera fin axd
+  </button>
+  
+  <button 
+  onclick="window.open('Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention_20250820_113701_axd.html', '_blank')" 
+  aria-label="Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention"
+  data-node-id="Button_Panel_five conceptual domainst_cruelty → broadcasts_Clusters Prevention">
+  Open: Button Panel five conceptual domainst_cruelty → broadcasts Clusters Prevention
+  </button>
+  
+  <button 
+  onclick="window.open('toggle_image_sss.html', '_blank')" 
+  aria-label="toggle image sss"
+  data-node-id="toggle_image_sss">
+  Open: toggle image sss
+  </button>
+  
+  <button 
+  onclick="window.open('WorldTimeZonesNodeDripEcho_1908_27082025.html', '_blank')" 
+  aria-label="World Time Zone Node Drip Echo"
+  data-node-id="World_Time_Zones_Node_Drip_Echo">
+  Open: World Time Zone Node Drip Echo
+  </button>
+  
+  <button 
+  onclick="window.open('Wm_corporationaudit_1721_utc+1_05092025.svg.html', '_blank')" 
+  aria-label="corporation audit"
+  data-node-id="corporation_audit">
+  Open: corporation audit
+  </button>
+  
+  <button 
+  onclick="window.open('image_inline_BroadcastExperience1633_02092025_wipbase64.html', '_blank')" 
+  aria-label="image inline Broadcast Experience"
+  data-node-id="image_inline_BroadcastExperience">
+  Open: image inline Broadcast Experience
+  </button>
+  
+  <button 
+  onclick="window.open('Bleakst_Goingto_0823_utc+1_03092025_C aRealm_Proxy_Scylla_Transmission.html', '_blank')" 
+  aria-label="Bleakst Going to C a Realm Proxy Scylla Transmission"
+  data-node-id="Bleakst_Goingto_C_a_Realm_Proxy_Scylla_Transmission">
+  Open: Bleakst Going to C a Realm Proxy Scylla Transmission
+  </button>
+  
+  <button 
+  onclick="window.open('WmAspectsenslavementAudit_0059_utc+1+06092025.html', '_blank')" 
+  aria-label="Aspects enslavement Audit"
+  data-node-id="Aspects_enslavement_Audit">
+  Open: Aspects enslavement Audit
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_archive_1509_10092025.html', '_blank')" 
+  aria-label="testimony archive 1509 10092025"
+  data-node-id="testimony_archive_1509_10092025">
+  Open: testimony archive 1509 10092025
+  </button>
+  
+  
+  <button 
+  onclick="window.open('Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_1408_utc+1_09092025_Protocol_axd.html', '_blank')" 
+  aria-label="Jeffersonian linier Bulwark semantic clusters with motifs 1408 09092025_Protocol axd"
+  data-node-id="Jeffersonian_linier_Bulwark_semantic_clusters_with_motifs_Protocol">
+  Open: JeffersonianBulwarkclustersProtocol
+  </button>
+      
+  <button 
+  onclick="window.open('Wm_velvetveilprotocol_815_utc+1_07092025.html', '_blank')" 
+  aria-label="Wm_velvet_veil_protocol"
+  data-node-id="velvet veil protocol">
+  Open: velvetveilprotocol
+  </button>
+  
+  <button 
+  onclick="window.open('Hawking Blackhole_Radiation_1357_ut-c+1 05092025 Rllbk_tx.html', '_blank')" 
+  aria-label="Hawking Blackhole Radiation Rllbk_tx"
+  data-node-id="Hawking Blackhole_Radiation">
+  Open: Hawking Blackhole Radiation Rllbk tx
+  </button>
+  
+  <button 
+  onclick="window.open('dog’s utterance_31st_July_2024_ThreatEcho.html', '_blank')" 
+  aria-label="dog’s utterance Threat Echo"
+  data-node-id="dog’s_utterance_31st_July_2024_ThreatEcho">
+  Open: dog’s utterance Threat Echo
+  </button>
+  
+  <button 
+  onclick="window.open('spatiallyadaptiveinferencetransmission_2247_utc+1_11092025.svg_axd.html', '_blank')" 
+  aria-label="spatially_adaptive_inference_transmission"
+  data-node-id="spatially adaptive inference transmission">
+  Open: Spatially adaptive inference transmission
+  </button>
+  
+  <button 
+  onclick="window.open('testimony_Anathema.html', '_blank')" 
+  aria-label="testimony Anathema"
+  data-node-id="testimony_Anathema">
+  Open: Anathema
+  </button>
+    
+  <button 
+  onclick="window.open('Jeffersonian_sanitized_Thermocouple_Hollowed2246.html', '_blank')" 
+  aria-label="Jeffersonian sanitized Thermocouple Hollowed2246"
+  data-node-id="Jeffersonian_sanitized_Thermocouple_Hollowed2246">
+  Open: Jeffersonian sanitized Thermocouple Hollowed2246
+  </button>
+  
+  <button 
+  onclick="window.open('JeffersonianThermocoupleReciterScale_1451_utc+1_23092025.html', '_blank')" 
+  aria-label="Jeffersonian Thermocouple ReciterScale 1451"
+  data-node-id="Jeffersonian_Thermocouple_Reciter_Scale_1451">
+  Open: Jeffersonian Thermocouple ReciterScale 1451
+  </button>
+      
+  <button 
+  onclick="window.open('Ongoing_scylla_sump_index_shed_axd2302.html', '_blank')" 
+  aria-label="Ongoing scylla sump index shed"
+  data-node-id="Ongoing_scylla_sump_index_shed">
+  Open: Ongoing scylla sump index shed
+  </button>
+  
+  <button 
+  onclick="window.open('systemic_descent_ComplianceDescentHope_1818_utc+1_24092025.htm', '_blank')" 
+  aria-label="systemic descent Compliance Descent Hope 1818"
+  data-node-id="systemic_descent_ComplianceDescentHope_1818 ">
+  Open: systemic descent Compliance Descent Hope
+  </button>
+  
+  <button 
+  onclick="window.open('forecastarchitectureglyphofcivictestimony_2048_utc+1_24092025.html', '_blank')" 
+  aria-label="forecast architecture glyph of civic testimony 2048"
+  data-node-id="forecast_architecture_glyph_of_civic_testimony_2048">
+  Open: forecast architecture glyph
+  </button>
+
+  <button 
+  onclick="window.open('Modern_Slavery_sumpindex_Day.html', '_blank')" 
+  aria-label="Modern Slavery sump index Day"
+  data-node-id="Modern_Slavery_sumpindex_Day">
+  Open: Modern Slavery sump index Day
+  </button>
+
+  <button 
+   onclick="window.open('FarReachesSubterraneanRecursiveHollerCrawlDescent_1602_utc+1_12092025_axd.html', '_blank')" 
+   aria-label="Far Reaches Subterranean Recursive Holler Crawl Descent 1602"
+   data-node-id="Far_Reaches_Subterranean_Recursive_Holler_Crawl_Descent_1602">
+   Open: Far Reaches Subterranean Recursive Holler Crawl Descent 1602
+   </button>
+
+  <button 
+   onclick="window.open('technologicalmalfeasance_1837_25092025_axd.html', '_blank')" 
+   aria-label="technologicalmalfeasance_1837_25092025_axd"
+   data-node-id="technological malfeasance 1837 25092025 ">
+   Open: technological_malfeasance_1837
+   </button>
+
+    <button 
+   onclick="window.open('coverttransmissions_0522_27092025.html', '_blank')" 
+   aria-label="covert transmissions 0522"
+   data-node-id="coverttransmissions_0522">
+   Open: overt transmissions 0522
+   </button>
+
+   <button 
+   onclick="window.open('LatrineSurveillanceArchive_1619_utc+1_27092025.html', '_blank')" 
+   aria-label="Latrine Surveillance Archive 1619"
+   data-node-id="Latrine_Surveillance_Archive_1619">
+   Open: Latrine Surveillance Archive 1619
+   </button>
+
+    <button 
+   onclick="window.open('wk35_36_37_38_39_x_bash_1732_utc+1_28092025.html', '_blank')" 
+   aria-label="wk35 36 37 38 39 x_bash 1732"
+   data-node-id="wk35_36_37_38_39_x_bash_1732">
+   Open: wk35 36 37 38 39 x_bash 1732
+   </button>
+
+    <button 
+   onclick="window.open('Fragments from the cave_2146 28092025.html', '_blank')" 
+   aria-label="Fragments from the cave 2146"
+   data-node-id="Fragments_from_the_cave_2146">
+   Open: Fragments from the cave 2146
+   </button>
+
+    <button 
+   onclick="window.open('wk35_36_37_38_39_0123_utc+1_28092025.html', '_blank')" 
+   aria-label="wk35 36 37 38 39 0123"
+   data-node-id="wk35_36_37_38_39_0123">
+   Open: wk35 36 37 38 39 0123
+   </button>
+
+    <button 
+   onclick="window.open('PlatoCaveSystemicArchitectureTheCaveModernSlavery_1715_utc+1_29092025.html', '_blank')" 
+   aria-label="Plato Cave Systemic Architecture TheCave ModernSlavery_1715"
+   data-node-id="Plato_Cave_Systemic_Architecture_TheCave_ModernSlavery_1715">
+   Open: Plato Cave Systemic Architecture TheCave ModernSlavery_1715
+   </button>
+
+    <button 
+   onclick="window.open('low_consumption_0305_utc+1_30092025_axd.html', '_blank')" 
+   aria-label="low consumption 0305"
+   data-node-id="low_consumption_0305">
+   Open: low consumption 0305
+   </button>
+
+    <button 
+   onclick="window.open('smartmeters_1650_utc+1_02102025_axd.html', '_blank')" 
+   aria-label="smartmeters 1650"
+   data-node-id="smartmeters_1650">
+   Open: smartmeters 1650
+   </button>
+
+   <button 
+   onclick="window.open('waterfall_0106_utc+1_04102025_axd.html', '_blank')" 
+   aria-label="waterfall 0106"
+   data-node-id="waterfall_0106">
+   Open: waterfall 0106
+   </button>
+
+    <button 
+   onclick="window.open('spectacleprotocol_0649_utc+1_04102025_axd.html', '_blank')" 
+   aria-label="spectacleprotocol 0649"
+   data-node-id="spectacleprotocol_0649">
+   Open: spectacleprotocol 0649
+   </button>
+   
+    <button 
+   onclick="window.open('Transposition_thera_popocatepetl_0125_06102025_axd.html', '_blank')" 
+   aria-label="Transposition thera popocatepetl 0125"
+   data-node-id="Transposition_thera_popocatepetl_0125">
+   Open: Transposition thera popocatepetl 0125
+   </button>
+   
+    <button 
+   onclick="window.open('DarknessInterrogation_1800_06102025_axd.html', '_blank')" 
+   aria-label="Darkness Interrogation 1800 axd"
+   data-node-id="DarknessInterrogation_1800_axd">
+   Open: Darkness Interrogation 1800 axd
+   </button>   
+   
+    <button 
+   onclick="window.open('darkness06072021_005_2327_utc+1_706102025_axd_fintest6dax.html', '_blank')" 
+   aria-label="darkness 06072021 2327 706102025axd fintest6dax"
+   data-node-id="darkness_06072021_2327_706102025_axd_fintest6dax">
+   Open: darknessaxd_fintest6dax
+   </button>
+
+    <button 
+   onclick="window.open('dualBroadcastindictment_0354_utc+1_13102025_axd.html', '_blank')" 
+   aria-label="dual Broadcast indictment 0354"
+   data-node-id="dualBroadcastindictment_0354">
+   Open: dual Broadcast indictment 0354
+   </button>
+
+    <button 
+   onclick="window.open('unifiedmoralmasqueradem_2122_utc+1_13102025.html', '_blank')" 
+   aria-label="unified moral masquerade m 2122"
+   data-node-id="unified_moral_masquerade_m_2122">
+   Open: unified masqueradem 2122
+   </button>
+
+    <button 
+   onclick="window.open('NA2A_droid_test_2210_utc+1_16102025.html', '_blank')" 
+   aria-label="NA2A droid test 2210"
+   data-node-id="NA2A_droid_test_2210">
+   Open: ecta NA2A droid test 2210
+   </button>
+
+    <button 
+   onclick="window.open('internationalbusinessrelationsconjecture_0730_utc+1_23102025.html', '_blank')" 
+   aria-label="international business relations conjecture 0730"
+   data-node-id="international_business_relations_conjecture_0730">
+   Open: international business relations conjecture
+   </button>
+   
+   <button 
+   onclick="window.open('frameworkofintegrity===weightingthegarden_0430_utc+1_18102025.html', '_blank')" 
+   aria-label="framework of integrity === weighting the garden 0430"
+   data-node-id="framework_of_integrity_===_weighting_the_garden_0430">
+   Open: framework of integrity === weighting
+   </button>
+
+    <button 
+   onclick="window.open('interviewbreakdown_0505_utc+1_24102025.html', '_blank')" 
+   aria-label="interview breakdown 0505"
+   data-node-id="interview_breakdown_0505">
+   Open: interview_breakdown_0505
+   </button>
+
+    <button 
+   onclick="window.open('morphic_the_potential_to_feel_0737_27102025_axd.html', '_blank')" 
+   aria-label=morphic the potential to feel 0737"
+   data-node-id="morphic_the_potential_to_feel_0737">
+   Open: morphic the potential to feel 0737
+   </button>
+
+    <button 
+   onclick="window.open('morphicpulsesession_0237_utc_27102025.html.html', '_blank')" 
+   aria-label="morphic pulse session 0237"
+   data-node-id="morphicpulsesession_0237">
+   Open: morphicpulsesession_0237
+   </button>
+
+    <button 
+   onclick="window.open('AmbientSurveillanceBleakstKnownKnownsOverlay0704_utc_28102025_axd.html', '_blank')" 
+   aria-label="Ambient Surveillance Bleakst Known Knowns Overlay 0704"
+   data-node-id="Ambient_Surveillance_Bleakst_Known_Knowns_Overlay_0704">
+   Open: AmbientSurveillanceBleakstKnownKnownsOverlay0704
+   </button>
+
+    <button 
+   onclick="window.open('EpistemicLattice_1837_utc_28102025_axd.html', '_blank')" 
+   aria-label="Epistemic Lattice 1837"
+   data-node-id="Epistemic_Lattice_1837">
+   Open: Epistemic Lattice 1837
+   </button>
+
+    <button 
+   onclick="window.open('ButtonholeSanctum_0523_29102025_axd.html', '_blank')" 
+   aria-label="Buttonhole Sanctum 0523"
+   data-node-id="Buttonhole_Sanctum_0523">
+   Open: Buttonhole Sanctum 0523
+   </button>
+
+    <button 
+   onclick="window.open('ButtonholeSanctum_RoyalHousesAmericanGlobalDynastiesIndictmentLatticefromSaxa-CoburgandGothaEst1917_1019_30102025_axd.html', '_blank')" 
+   aria-label="Button hole Sanctum Royal Houses American Global Dynasties Indictment Lattice from Saxa-Coburg and Gotha Est 1917 1019"
+   data-node-id="Button_hole_Sanctum_Royal_Houses_American_Global_Dynasties_Indictment_Lattice_from_Saxa-Coburg_and_Gotha_Est_1917 1019">
+   Open: Button hole Sanctum Royal Houses American Global Dynasties Indictment Lattice from Saxa-Coburg and Gotha Est 1917 1019
+   </button>
+
+    <button 
+   onclick="window.open('SystemicSaxe-CoburgandGothaWindsorMonarchyUbiquityRingsOfPowerLattice2025_1418_30102025_axd.html', '_blank')" 
+   aria-label="Systemic Saxe-Coburg and Gotha Windsor Monarchy Ubiquity Rings Of Power Lattice 2025"
+   data-node-id="Systemic_Saxe-Coburg_and_Gotha_Windsor_Monarchy_Ubiquity_Rings_Of_Power_Lattice_2025">
+   Open: Systemic Saxe-Coburg and Gotha Windsor Monarchy Ubiquity Rings Of Power Lattice 2025
+   </button>
+
+     <button 
+   onclick="window.open('BroadcastIntrusionSoundLevelGlyphLattice0345_utc_31102025_axd.html', '_blank')" 
+   aria-label="Broadcast Intrusion Sound Level Glyph Lattice 0345"
+   data-node-id="Broadcast_Intrusion_Sound_Level_Glyph_Lattice_0345">
+   Open: Broadcast_Intrusion_Sound_Level_Glyph_Lattice_0345
+   </button>
+
+    <button 
+   onclick="window.open('GodSpeakingCamouflage_1140_utc31102025_axd.html', '_blank')" 
+   aria-label="God Speaking Camouflage 1140"
+   data-node-id="God_Speaking_Camouflage_1140">
+   Open: God Speaking Camouflage 1140
+   </button>
+
+     <button 
+   onclick="window.open('glyph_map_GodSpeakingCamouflage_0534_utc_01112025_axd.html', '_blank')" 
+   aria-label="glyph map God Speaking Camouflage 0534"
+   data-node-id="glyph_map_God_Speaking_Camouflage_0534">
+   Open: glyph map God Speaking Camouflage 0534
+   </button>
+   
+    <button 
+   onclick="window.open('compendium1a_1640_utc_01112025_axd.html.html', '_blank')" 
+   aria-label="compendium1a 1640"
+   data-node-id="compendium1a_1640">
+   Open: compendium1a_1640
+   </button>
+
+     <button 
+   onclick="window.open('compendium_clusters_1333_utc_02112025_axd_v1b.html', '_blank')" 
+   aria-label="compendium clusters 1333"
+   data-node-id="compendium_clusters_1333">
+   Open: compendium clusters 1333"
+   </button>
+
+     <button 
+   onclick="window.open('TestimonialSession03112025md_axd_tc.html', '_blank')" 
+   aria-label="Testimonial Session 03112025 md"
+   data-node-id="Testimonial_Session_03112025_md">
+   Open: Testimonial Session 03112025 md
+   </button>
+
+    <button 
+   onclick="window.open('MasterCompendiumUpdate_md_1307_03112025.html', '_blank')" 
+   aria-label="Master Compendium Update md 1307"
+   data-node-id="Master_Compendium_Update_md_1307">
+   Open: MasterCompendiumUpdate_md_1307
+   </button>
+
+    <button 
+   onclick="window.open('MasterRelaySonicIntrusion_0730UTC_04112025.html', '_blank')" 
+   aria-label="Master Relay Sonic Intrusion 0730"
+   data-node-id="Master_Relay_Sonic_Intrusion_0730">
+   Open: MasterRelaySonicIntrusion_0730
+   </button>
+      <button 
+   onclick="window.open('HumanRightsViolationmdc_1414_utc_04112025_axd.html', '_blank')" 
+   aria-label="Human Rights Violation mdc 1414"
+   data-node-id="Human_Rights_Violation_mdc_1414">
+   Open: Human Rights Violation mdc 1414
+   </button>
+     <button 
+   onclick="window.open('TolkienArticleInterrogationmd_1958_05112025_axd.html', '_blank')" 
+   aria-label="Tolkien Article Interrogationmd 1958"
+   data-node-id="Tolkien_Article_Interrogationmd_1958">
+   Open: Tolkien Article Interrogationmd 1958
+   </button>
+       <button 
+   onclick="window.open('timeslot_graph_0915_07112025_axd.html', '_blank')" 
+   aria-label="timeslot graph 0915"
+   data-node-id="timeslot_graph_0915">
+   Open: timeslot_graph_0915
+   </button>
+      <button 
+   onclick="window.open('Anemone_Daughter_of_the_Wind_2127_07112025_axd.html', '_blank')" 
+   aria-label="Anemone Daughter of the Wind 2127"
+   data-node-id="Anemone_Daughter_of_the_Wind_2127">
+   Open: Anemone_Daughter_of_the_Wind_2127
+   </button>
+       <button 
+   onclick="window.open('Anemone_Daughter_of_the_Wind1218_07112025_axd.html', '_blank')" 
+   aria-label="Anemone Daughter of the Wind 1218"
+   data-node-id="Anemone_Daughter_of_the_Wind_1218">
+   Open: Anemone Daughter of the Wind 1218
+   </button>
+      <button 
+   onclick="window.open('Anemone_Daughter_of_the_Wind_master_lattice_1430_08112025_axd.html', '_blank')" 
+   aria-label="Anemone Daughter of the Wind master lattice 1430"
+   data-node-id="Anemone_Daughter_of_the_Wind_master_lattice_1430">
+   Open: Anemone Daughter of the Wind master lattice 1430
+   </button>
+      <button 
+   onclick="window.open('RitualTerrain_Anemone_1848_utc_08112025_axd.html', '_blank')" 
+   aria-label="Ritual Terrain Anemone 1848"
+   data-node-id="Ritual_Terrain_Anemone_1848">
+   Open: Ritual Terrain Anemone 1848
+   </button>
+      <button 
+   onclick="window.open('Ritual_Modern_Day_SlaveryandVice_as_Infrastructurel_Terrain_1627_utc_09112025_axd.html', '_blank')" 
+   aria-label="Ritual Modern Day SlaveryandVice as Infrastructurel Terrain 1627"
+   data-node-id="Ritual_Modern_Day_SlaveryandVice_as_Infrastructurel_Terrain_1627">
+   Open: Ritual Modern Day SlaveryandVice as Infrastructurel Terrain 1627
+   </button>
+      <button 
+   onclick="window.open('RecursiveSovereignty_md_1929_utc_09112025_axd.html', '_blank')" 
+   aria-label="Recursive Sovereignty md 1929"
+   data-node-id="RecursiveSovereignty_md_1929">
+   Open: Recursive Sovereignty md 1929
+   </button>
+    <button 
+   onclick="window.open('InterrogationGlyphsHumanity_2228_utc_09112025_axd.html', '_blank')" 
+   aria-label="Interrogation Glyphs Humanity 2228"
+   data-node-id="Interrogation_Glyphs_Humanity_2228">
+   Open: InterrogationGlyphsHumanity 2228
+   </button>
+     <button 
+   onclick="window.open('InterrogationGlyphsHumanity_graph_1812_utc_10112025_axd.html', '_blank')" 
+   aria-label="Interrogation Glyphs Humanity graph 1812"
+   data-node-id="Interrogation_Glyphs_Humanity_graph_1812">
+   Open: Interrogation Glyphs Humanity graph 1812
+   </button>
+    <button 
+   onclick="window.open('RituaModern-DaySlaveryandViceasInfrastructurelTerrain_v2C78_0123_utc_11112025_axd.html', '_blank')" 
+   aria-label="RituaModern-DaySlaveryandVice as Infrastructurel Terrain v2C78 0123"
+   data-node-id=" RituaModern-DaySlaveryandVice_as_Infrastructurel_Terrain_v2C78_0123">
+   Open: RitualModern-DaySlaveryandViceasInfrastructurelTerrain_v2C78_0123
+   </button>
+    <button 
+   onclick="window.open('20210106_dt_ellipse_nr_wh_speechoverlay_2106_utc_11112025_axd.html', '_blank')" 
+   aria-label="20210106 dt ellipse nr wh speechoverlay 2106"
+   data-node-id="20210106_dt_ellipse_nr_wh_speechoverlay_2106">
+   Open: 20210106 dt ellipse nr wh speechoverlay 2106
+   </button>
+    <button 
+   onclick="window.open('GulbenkianOverlay_Grip_axe_0121_utc_14112025_axd.html', '_blank')" 
+   aria-label="Gulbenkian Overlay Grip axe 0121"
+   data-node-id="Gulbenkian_Overlay_Grip_axe_0121">
+   Open: spare
+   </button>
+   <button 
+   onclick="window.open(' spare.html', '_blank')" 
+   aria-label=" spare"
+   data-node-id=" spare">
+   Open: spare
+   </button>
+     <button 
+   onclick="window.open(' spare.html', '_blank')" 
+   aria-label=" spare"
+   data-node-id=" spare">
+   Open: spare
+   </button>
+
+  </div>
+
+  <div
+    id="sidebar" class="sidebar" onmousedown="startDrag(event)">
+    <h2>Node Index</h2>
+    <input type="text" id="searchBox" placeholder="Search titles..." onkeyup="filterNodes()" />  
+    
+    <button onclick="toggleDock()">Dock/Undock</button>
+    <ul id='nodeList'>
+    <li><a href='#' onclick="playNodeAudio('node1'); showPlayCue('node1')">Baker Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node2'); showPlayCue('node2')">Howland Island \(US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node3'); showPlayCue('node3')">American Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node4'); showPlayCue('node4')">Niue</a></li>
+    <li><a href='#' onclick="playNodeAudio('node5'); showPlayCue('node5')">Midway Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node6'); showPlayCue('node6')">Jarvis Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node7'); showPlayCue('node7')">Kingman Reef (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node8'); showPlayCue('node8')">Palmyra Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node9'); showPlayCue('node9')">Hawaii</a></li>
+    <li><a href='#' onclick="playNodeAudio('node10'); showPlayCue('node10')">French Polynesia (Tahiti)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node11'); showPlayCue('node11')">Cook Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node12'); showPlayCue('node12')">Johnston Atoll (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node13'); showPlayCue('node13')">Tuamotu Archipelago (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node14'); showPlayCue('node14')">Society Islands (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node15'); showPlayCue('node15')">Alaska (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node16'); showPlayCue('node16')">Gambier Islands (French Polynesia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node17'); showPlayCue('node17')">Aleutian Islands (US, Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node18'); showPlayCue('node18')">UTC−12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node19'); showPlayCue('node19')">UTC−11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node20'); showPlayCue('node20')">UTC−10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node21'); showPlayCue('node21')">UTC−9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node22'); showPlayCue('node22')">Canada (British Columbia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node23'); showPlayCue('node23')">United States (California, Oregon, Washington)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node24'); showPlayCue('node24')">Mexico (Baja California)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node25'); showPlayCue('node25')">Pitcairn Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node26'); showPlayCue('node26')">Canada (Alberta)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node27'); showPlayCue('node27')">United States (Arizona, Colorado, Utah)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node28'); showPlayCue('node28')">Mexico (Chihuahua, Sonora)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node29'); showPlayCue('node29')">Chile (Easter Island & Salas y Gómez (ST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node30'); showPlayCue('node30')">Belize</a></li>
+    <li><a href='#' onclick="playNodeAudio('node31'); showPlayCue('node31')">Costa Rica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node32'); showPlayCue('node32')">Guatemala</a></li>
+    <li><a href='#' onclick="playNodeAudio('node33'); showPlayCue('node33')">Honduras</a></li>
+    <li><a href='#' onclick="playNodeAudio('node34'); showPlayCue('node34')">Nicaragua</a></li>
+    <li><a href='#' onclick="playNodeAudio('node35'); showPlayCue('node35')">El Salvador</a></li>
+    <li><a href='#' onclick="playNodeAudio('node36'); showPlayCue('node36')">Mexico (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node37'); showPlayCue('node37')">United States (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node38'); showPlayCue('node38')">Canada (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node39'); showPlayCue('node39')">Ecuador (Galápagos)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node40'); showPlayCue('node40')">UTC−8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node41'); showPlayCue('node41')">UTC−7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node42'); showPlayCue('node42')">UTC−6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node43'); showPlayCue('node43')">Chile (Easter Island & Salas y Gómez (DST))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node44'); showPlayCue('node44')">Colombia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node45'); showPlayCue('node45')">Panama</a></li>
+    <li><a href='#' onclick="playNodeAudio('node46'); showPlayCue('node46')">Peru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node47'); showPlayCue('node47')">Ecuador (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node48'); showPlayCue('node48')">Cuba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node49'); showPlayCue('node49')">Haiti</a></li>
+    <li><a href='#' onclick="playNodeAudio('node50'); showPlayCue('node50')">Jamaica</a></li>
+    <li><a href='#' onclick="playNodeAudio('node51'); showPlayCue('node51')">Bahamas</a></li>
+    <li><a href='#' onclick="playNodeAudio('node52'); showPlayCue('node52')">Dominican Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node53'); showPlayCue('node53')">Bolivia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node54'); showPlayCue('node54')">Eastern United States</a></li>
+    <li><a href='#' onclick="playNodeAudio('node55'); showPlayCue('node55')">Eastern Canada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node56'); showPlayCue('node56')">Venezuela</a></li>
+    <li><a href='#' onclick="playNodeAudio('node57'); showPlayCue('node57')">Barbados</a></li>
+    <li><a href='#' onclick="playNodeAudio('node58'); showPlayCue('node58')">Grenada</a></li>
+    <li><a href='#' onclick="playNodeAudio('node59'); showPlayCue('node59')">Saint Lucia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node60'); showPlayCue('node60')">Saint Vincent and the Grenadines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node61'); showPlayCue('node61')">Trinidad and Tobago</a></li>
+    <li><a href='#' onclick="playNodeAudio('node62'); showPlayCue('node62')">Puerto Rico</a></li>
+    <li><a href='#' onclick="playNodeAudio('node63'); showPlayCue('node63')">Aruba</a></li>
+    <li><a href='#' onclick="playNodeAudio('node64'); showPlayCue('node64')">Curacao</a></li>
+    <li><a href='#' onclick="playNodeAudio('node65'); showPlayCue('node65')">French Guiana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node66'); showPlayCue('node66')">Suriname</a></li>
+    <li><a href='#' onclick="playNodeAudio('node67'); showPlayCue('node67')">Guyana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node68'); showPlayCue('node68')">Chile (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node69'); showPlayCue('node69')">Chile (Magallanes & Chilean Antarctica (year round))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node70'); showPlayCue('node70')">Argentina</a></li>
+    <li><a href='#' onclick="playNodeAudio('node71'); showPlayCue('node71')">Brazil (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node72'); showPlayCue('node72')">Uruguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node73'); showPlayCue('node73')">Paraguay</a></li>
+    <li><a href='#' onclick="playNodeAudio('node74'); showPlayCue('node74')">Saint Pierre and Miquelon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node75'); showPlayCue('node75')">UTC−5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node76'); showPlayCue('node76')">UTC−4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node77'); showPlayCue('node77')">UTC−3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node78'); showPlayCue('node78')">Saint Pierre and Miquelon (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node79'); showPlayCue('node79')">Fernando de Noronha (Brazil)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node80'); showPlayCue('node80')">South Georgia and the South Sandwich Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node81'); showPlayCue('node81')">Cape Verde</a></li>
+    <li><a href='#' onclick="playNodeAudio('node82'); showPlayCue('node82')">Azores (Portugal)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node83'); showPlayCue('node83')">Ittoqqortoormiit (Greenland, DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node84'); showPlayCue('node84')">Iceland</a></li>
+    <li><a href='#' onclick="playNodeAudio('node85'); showPlayCue('node85')">Greenwich Mean Time (UK, Ireland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node86'); showPlayCue('node86')">Portugal (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node87'); showPlayCue('node87')">Canary Islands (Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node88'); showPlayCue('node88')">Gambia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node89'); showPlayCue('node89')">Ghana</a></li>
+    <li><a href='#' onclick="playNodeAudio('node90'); showPlayCue('node90')">Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node91'); showPlayCue('node91')">Mali</a></li>
+    <li><a href='#' onclick="playNodeAudio('node92'); showPlayCue('node92')">Mauritania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node93'); showPlayCue('node93')">Senegal</a></li>
+    <li><a href='#' onclick="playNodeAudio('node94'); showPlayCue('node94')">Sierra Leone</a></li>
+    <li><a href='#' onclick="playNodeAudio('node95'); showPlayCue('node95')">Togo</a></li>
+    <li><a href='#' onclick="playNodeAudio('node96'); showPlayCue('node96')">Algeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node97'); showPlayCue('node97')">Angola</a></li>
+    <li><a href='#' onclick="playNodeAudio('node98'); showPlayCue('node98')">Benin</a></li>
+    <li><a href='#' onclick="playNodeAudio('node99'); showPlayCue('node99')">Cameroon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node100'); showPlayCue('node100')">Central African Republic</a></li>
+    <li><a href='#' onclick="playNodeAudio('node101'); showPlayCue('node101')">Chad</a></li>
+    <li><a href='#' onclick="playNodeAudio('node102'); showPlayCue('node102')">Congo (Brazzaville)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node103'); showPlayCue('node103')">Democratic Republic of Congo (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node104'); showPlayCue('node104')">Equatorial Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node105'); showPlayCue('node105')">Gabon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node106'); showPlayCue('node106')">Morocco</a></li>
+    <li><a href='#' onclick="playNodeAudio('node107'); showPlayCue('node107')">Nigeria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node108'); showPlayCue('node108')">Tunisia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node109'); showPlayCue('node109')">Western Europe (France, Germany, Italy, Spain)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node110'); showPlayCue('node110')">Andorra</a></li>
+    <li><a href='#' onclick="playNodeAudio('node111'); showPlayCue('node111')">Belgium</a></li>
+    <li><a href='#' onclick="playNodeAudio('node112'); showPlayCue('node112')">Luxembourg</a></li>
+    <li><a href='#' onclick="playNodeAudio('node113'); showPlayCue('node113')">Netherlands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node114'); showPlayCue('node114')">Norway</a></li>
+    <li><a href='#' onclick="playNodeAudio('node115'); showPlayCue('node115')">Sweden</a></li>
+    <li><a href='#' onclick="playNodeAudio('node116'); showPlayCue('node116')">Denmark</a></li>
+    <li><a href='#' onclick="playNodeAudio('node117'); showPlayCue('node117')">UTC−2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node118'); showPlayCue('node118')">UTC−1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node119'); showPlayCue('node119')">UTC±0</a></li>
+    <li><a href='#' onclick="playNodeAudio('node120'); showPlayCue('node120')">UTC+1</a></li>
+    <li><a href='#' onclick="playNodeAudio('node121'); showPlayCue('node121')">South Africa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node122'); showPlayCue('node122')">Egypt</a></li>
+    <li><a href='#' onclick="playNodeAudio('node123'); showPlayCue('node123')">Libya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node124'); showPlayCue('node124')">Sudan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node125'); showPlayCue('node125')">Israel</a></li>
+    <li><a href='#' onclick="playNodeAudio('node126'); showPlayCue('node126')">Palestine</a></li>
+    <li><a href='#' onclick="playNodeAudio('node127'); showPlayCue('node127')">Jordan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node128'); showPlayCue('node128')">Lebanon</a></li>
+    <li><a href='#' onclick="playNodeAudio('node129'); showPlayCue('node129')">Syria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node130'); showPlayCue('node130')">Greece</a></li>
+    <li><a href='#' onclick="playNodeAudio('node131'); showPlayCue('node131')">Bulgaria</a></li>
+    <li><a href='#' onclick="playNodeAudio('node132'); showPlayCue('node132')">Romania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node133'); showPlayCue('node133')">Ukraine (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node134'); showPlayCue('node134')">Finland (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node135'); showPlayCue('node135')">Cyprus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node136'); showPlayCue('node136')">Turkey (Permanent UTC+3)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node137'); showPlayCue('node137')">Saudi Arabia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node138'); showPlayCue('node138')">Iraq</a></li>
+    <li><a href='#' onclick="playNodeAudio('node139'); showPlayCue('node139')">Kuwait</a></li>
+    <li><a href='#' onclick="playNodeAudio('node140'); showPlayCue('node140')">Qatar</a></li>
+    <li><a href='#' onclick="playNodeAudio('node141'); showPlayCue('node141')">Bahrain</a></li>
+    <li><a href='#' onclick="playNodeAudio('node142'); showPlayCue('node142')">Yemen</a></li>
+    <li><a href='#' onclick="playNodeAudio('node143'); showPlayCue('node143')">Somalia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node144'); showPlayCue('node144')">Ethiopia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node145'); showPlayCue('node145')">Kenya</a></li>
+    <li><a href='#' onclick="playNodeAudio('node146'); showPlayCue('node146')">Tanzania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node147'); showPlayCue('node147')">Uganda</a></li>
+    <li><a href='#' onclick="playNodeAudio('node148'); showPlayCue('node148')">Russia (Moscow)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node149'); showPlayCue('node149')">Belarus</a></li>
+    <li><a href='#' onclick="playNodeAudio('node150'); showPlayCue('node150')">Georgia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node151'); showPlayCue('node151')">Armenia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node152'); showPlayCue('node152')">Azerbaijan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node153'); showPlayCue('node153')">United Arab Emirates</a></li>
+    <li><a href='#' onclick="playNodeAudio('node154'); showPlayCue('node154')">Oman</a></li>
+    <li><a href='#' onclick="playNodeAudio('node155'); showPlayCue('node155')">Mauritius</a></li>
+    <li><a href='#' onclick="playNodeAudio('node156'); showPlayCue('node156')">Seychelles</a></li>
+    <li><a href='#' onclick="playNodeAudio('node157'); showPlayCue('node157')">Russia (Samara)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node158'); showPlayCue('node158')">Afghanistan (UTC+4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node159'); showPlayCue('node159')">Pakistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node160'); showPlayCue('node160')">Uzbekistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node161'); showPlayCue('node161')">Turkmenistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node162'); showPlayCue('node162')">Tajikistan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node163'); showPlayCue('node163')">Kazakhstan (West)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node164'); showPlayCue('node164')">Maldives</a></li>
+    <li><a href='#' onclick="playNodeAudio('node165'); showPlayCue('node165')">UTC+2</a></li>
+    <li><a href='#' onclick="playNodeAudio('node166'); showPlayCue('node166')">UTC+3</a></li>
+    <li><a href='#' onclick="playNodeAudio('node167'); showPlayCue('node167')">Iran (UTC+3:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node168'); showPlayCue('node168')">UTC+4</a></li>
+    <li><a href='#' onclick="playNodeAudio('node169'); showPlayCue('node169')">UTC+5</a></li>
+    <li><a href='#' onclick="playNodeAudio('node170'); showPlayCue('node170')">Bangladesh</a></li>
+    <li><a href='#' onclick="playNodeAudio('node171'); showPlayCue('node171')">Bhutan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node172'); showPlayCue('node172')">Kazakhstan (East)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node173'); showPlayCue('node173')">Kyrgyzstan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node174'); showPlayCue('node174')">Cocos Islands (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node175'); showPlayCue('node175')">British Indian Ocean Territory</a></li>
+    <li><a href='#' onclick="playNodeAudio('node176'); showPlayCue('node176')">Thailand</a></li>
+    <li><a href='#' onclick="playNodeAudio('node177'); showPlayCue('node177')">Vietnam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node178'); showPlayCue('node178')">Cambodia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node179'); showPlayCue('node179')">Laos</a></li>
+    <li><a href='#' onclick="playNodeAudio('node180'); showPlayCue('node180')">Indonesia (Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node181'); showPlayCue('node181')">Christmas Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node182'); showPlayCue('node182')">Russia (Novosibirsk Krasnoyarsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node183'); showPlayCue('node183')">Mongolia (Western Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node184'); showPlayCue('node184')">China (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node185'); showPlayCue('node185')">Hong Kong</a></li>
+    <li><a href='#' onclick="playNodeAudio('node186'); showPlayCue('node186')">Macau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node187'); showPlayCue('node187')">Taiwan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node188'); showPlayCue('node188')">Malaysia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node189'); showPlayCue('node189')">Singapore</a></li>
+    <li><a href='#' onclick="playNodeAudio('node190'); showPlayCue('node190')">Philippines</a></li>
+    <li><a href='#' onclick="playNodeAudio('node191'); showPlayCue('node191')">Brunei</a></li>
+    <li><a href='#' onclick="playNodeAudio('node192'); showPlayCue('node192')">Indonesia (Central Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node193'); showPlayCue('node193')">Western Australia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node194'); showPlayCue('node194')">Russia (Irkutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node195'); showPlayCue('node195')">Mongolia (Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node196'); showPlayCue('node196')">Japan</a></li>
+    <li><a href='#' onclick="playNodeAudio('node197'); showPlayCue('node197')">South Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node198'); showPlayCue('node198')">North Korea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node199'); showPlayCue('node199')">East Timor</a></li>
+    <li><a href='#' onclick="playNodeAudio('node200'); showPlayCue('node200')">Indonesia (Eastern Region)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node201'); showPlayCue('node201')">Russia (Yakutsk)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node202'); showPlayCue('node202')">Palau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node203'); showPlayCue('node203')">UTC+6</a></li>
+    <li><a href='#' onclick="playNodeAudio('node204'); showPlayCue('node204')">UTC+7</a></li>
+    <li><a href='#' onclick="playNodeAudio('node205'); showPlayCue('node205')">UTC+8</a></li>
+    <li><a href='#' onclick="playNodeAudio('node206'); showPlayCue('node206')">UTC+9</a></li>
+    <li><a href='#' onclick="playNodeAudio('node207'); showPlayCue('node207')">Eastern Australia (Queensland, NSW, Victoria)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node208'); showPlayCue('node208')">Papua New Guinea</a></li>
+    <li><a href='#' onclick="playNodeAudio('node209'); showPlayCue('node209')">Guam</a></li>
+    <li><a href='#' onclick="playNodeAudio('node210'); showPlayCue('node210')">Northern Mariana Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node211'); showPlayCue('node211')">Russia (Vladivostok)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node212'); showPlayCue('node212')">Federated States of Micronesia (Western)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node213'); showPlayCue('node213')">Solomon Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node214'); showPlayCue('node214')">New Caledonia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node215'); showPlayCue('node215')">Vanuatu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node216'); showPlayCue('node216')">Federated States of Micronesia (Eastern)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node217'); showPlayCue('node217')">Russia (Magadan)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node218'); showPlayCue('node218')">Norfolk Island (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node219'); showPlayCue('node219')">Bougainville (Papua New Guinea)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node220'); showPlayCue('node220')">Fiji</a></li>
+    <li><a href='#' onclick="playNodeAudio('node221'); showPlayCue('node221')">Tuvalu</a></li>
+    <li><a href='#' onclick="playNodeAudio('node222'); showPlayCue('node222')">Nauru</a></li>
+    <li><a href='#' onclick="playNodeAudio('node223'); showPlayCue('node223')">Kiribati (Gilbert Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node224'); showPlayCue('node224')">Marshall Islands</a></li>
+    <li><a href='#' onclick="playNodeAudio('node225'); showPlayCue('node225')">Wallis and Futuna</a></li>
+    <li><a href='#' onclick="playNodeAudio('node226'); showPlayCue('node226')">New Zealand (Standard Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node227'); showPlayCue('node227')">Russia (Kamchatka)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node228'); showPlayCue('node228')">Wake Island (US)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node229'); showPlayCue('node229')">Tonga</a></li>
+    <li><a href='#' onclick="playNodeAudio('node230'); showPlayCue('node230')">Samoa</a></li>
+    <li><a href='#' onclick="playNodeAudio('node231'); showPlayCue('node231')">Tokelau</a></li>
+    <li><a href='#' onclick="playNodeAudio('node232'); showPlayCue('node232')">New Zealand (Daylight Saving Time)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node233'); showPlayCue('node233')">Kiribati (Phoenix Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node234'); showPlayCue('node234')">Kiribati (Line Islands)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node235'); showPlayCue('node235')">Kiritimati (Christmas Island)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node236'); showPlayCue('node236')">UTC+10</a></li>
+    <li><a href='#' onclick="playNodeAudio('node237'); showPlayCue('node237')">UTC+11</a></li>
+    <li><a href='#' onclick="playNodeAudio('node238'); showPlayCue('node238')">UTC+12</a></li>
+    <li><a href='#' onclick="playNodeAudio('node239'); showPlayCue('node239')">UTC+13</a></li>
+    <li><a href='#' onclick="playNodeAudio('node240'); showPlayCue('node240')">UTC+14</a></li>
+    <li><a href='#' onclick="playNodeAudio('node241'); showPlayCue('node241')">India (UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node242'); showPlayCue('node242')">Sri Lanka (UTC+5:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node243'); showPlayCue('node243')">South Asia & East Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node244'); showPlayCue('node244')">Nepal (UTC+5:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node245'); showPlayCue('node245')">Myanmar (UTC+6:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node246'); showPlayCue('node246')">Cocos (Keeling) Islands (Australia)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node247'); showPlayCue('node247')">Eucla (Australia) (UTC+8:45)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node248'); showPlayCue('node248')">Australia (Northern Territory (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node249'); showPlayCue('node249')">Australia (South Australia (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node250'); showPlayCue('node250')">Australia (Broken Hill (UTC+9:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node251'); showPlayCue('node251')">Lord Howe Island (Australia (UTC+10:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node252'); showPlayCue('node252')">Chatham Islands (New Zealand (UTC+12:35))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node253'); showPlayCue('node253')">Newfoundland (Canada (−3:30))</a></li>
+    <li><a href='#' onclick="playNodeAudio('node254'); showPlayCue('node254')">Venezuela (−4:30)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node255'); showPlayCue('node255')">United Kingdom (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node256'); showPlayCue('node256')">Ireland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node257'); showPlayCue('node257')">Portugal DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node258'); showPlayCue('node258')">Spain DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node259'); showPlayCue('node259')">France DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node260'); showPlayCue('node260')">Germany DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node261'); showPlayCue('node261')">Italy DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node262'); showPlayCue('node262')">Netherlands DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node263'); showPlayCue('node263')">Belgium DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node264'); showPlayCue('node264')">Switzerland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node265'); showPlayCue('node265')">Austria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node266'); showPlayCue('node266')">Poland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node267'); showPlayCue('node267')">Czech Republic DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node268'); showPlayCue('node268')">Hungary DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node269'); showPlayCue('node269')">Slovakia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node270'); showPlayCue('node270')">Slovenia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node271'); showPlayCue('node271')">Croatia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node272'); showPlayCue('node272')">Serbia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node273'); showPlayCue('node273')">Bosnia and Herzegovina DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node274'); showPlayCue('node274')">North Macedonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node275'); showPlayCue('node275')">Greece DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node276'); showPlayCue('node276')">Bulgaria DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node277'); showPlayCue('node277')">Romania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node278'); showPlayCue('node278')">Ukraine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node279'); showPlayCue('node279')">Norway DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node280'); showPlayCue('node280')">Sweden DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node281'); showPlayCue('node281')">Finland DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node282'); showPlayCue('node282')">Estonia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node283'); showPlayCue('node283')">Latvia DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node284'); showPlayCue('node284')">Lithuania DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node285'); showPlayCue('node285')">West Africa & Europe West</a></li>
+    <li><a href='#' onclick="playNodeAudio('node286'); showPlayCue('node286')">United States (except Arizona, Hawaii)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node287'); showPlayCue('node287')">Canada (except Saskatchewan, Yukon) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node288'); showPlayCue('node288')">Mexico (Baja California and border municipalities) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node289'); showPlayCue('node289')">Greenland (Pituffik Space Base) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node290'); showPlayCue('node290')">Saint Pierre and Miquelon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node291'); showPlayCue('node291')">Bahamas DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node292'); showPlayCue('node292')">Bermuda DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node293'); showPlayCue('node293')">Haiti DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node294'); showPlayCue('node294')">Cuba DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node295'); showPlayCue('node295')">South America</a></li>
+    <li><a href='#' onclick="playNodeAudio('node296'); showPlayCue('node296')">Chile (except Aysén and Magallanes)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node297'); showPlayCue('node297')">Paraguay DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node298'); showPlayCue('node298')">Israel DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node299'); showPlayCue('node299')">Lebanon DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node300'); showPlayCue('node300')">Iran (DST)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node301'); showPlayCue('node301')">Palestine DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node302'); showPlayCue('node302')">Egypt DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node303'); showPlayCue('node303')">Middle East & Central Asia</a></li>
+    <li><a href='#' onclick="playNodeAudio('node304'); showPlayCue('node304')">Oceania</a></li>
+    <li><a href='#' onclick="playNodeAudio('node305'); showPlayCue('node305')">New Zealand (Mainland)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node306'); showPlayCue('node306')">Chatham Islands (NZ) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node307'); showPlayCue('node307')">Australia (NSW, Victoria, Tasmania, SA, ACT)</a></li>
+    <li><a href='#' onclick="playNodeAudio('node308'); showPlayCue('node308')">Lord Howe Island (Australia) DST</a></li>
+    <li><a href='#' onclick="playNodeAudio('node309'); showPlayCue('node309')">Norfolk Island (Australia) DST</a></li>  
+  </ul>
+  </div>    
+<div id="svgContainer">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg viewBox="0 0 998.000 465.000" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
+   version="1.1"
+   id="svg2"
+   width="998"
+   height="465"
+   viewBox="0 0 998 465"
+   sodipodi:docname="Rat_veil_viel_triel_trooge_IMG_nsaa_20251025_151918.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title801">Rat_veil_viel_triel_trooge_IMG_nsaa_20251025_151918.svg</title>
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.2124248"
+     inkscape:cx="605.39835"
+     inkscape:cy="232.59174"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="-8"
+     inkscape:window-y="15"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g8" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g8">
+    <image
+       width="998"
+       height="465"
+       preserveAspectRatio="none"
+       xlink:href="data:image/jpeg;base64,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
+C0S1uM0AECxXDAGBkYMcMLLqA0CHFohSyWp0+iUqloOrgC0KNCpFrnVyT7vpaewtjztfYidhLFaS
+xiukqdz+Jay0eF1lzrpKx7yhvLZ0yz7jDcrJuIbjZvLPuJuM9hNRWwmoW0Nf2WH1CyJGhpCyHiQx
+zhgQwQGIDDFg+kKZpvUpR9QqsppUZT5pZq+aeaRzTSoLzR86QlPmpmrTRppGU0qZXmjyoSqZqZqu
+bVIllWJk0EIKZGCEExmjBkCC0wIwBiQwQglABipOAQKc5w+GAC0xbCi0p6VNQtA1KmoFLTUtTUJQ
+o0KmoSkp6Ss105LU9KaS0y6QlJabVJaK6wuiU1pbWW5CaT1T2p6oOFtJaNpLQcdanqmtJpElpKbR
+KUXSej6T1Si1PR7U9NREpKal0UTSdPpPVMRNVHdV1Ud1uMpaqWqfVS1WozUt1HdU3Ud10jnUt1Dd
+W1UN1uMVLdZ91bVQ3W4xUd1n6LbrP0bjnUdI7V0juukc6jtDa26htuMVLaOldJabjnUdpaV2jp0j
+nQCu9c3GQ8AfQ9LFESj6GREoll1Laa0hAWhaJaWQtLRpSnUBpQAoUaFSBznJPvGlpi152vrwthbD
+UGa6QngaPSac+m4huIbjRtHbDcZtxDcatRDcTpGbUT1Gi5JrKbjLrJfGjWS/KKcyPiny7xKk8d4a
+QfEi+OGx3gAOc4gRjoPiFdD5LIfMLJsqQuYaIGikLIfMWsjBgyDIgaHz/ZcxTMWs1TCsSypEzTwQ
+grWREIKjNGDAgxtnBGAMQGCEErAAxSscAgljnf8ATnemJ1LRtLaRgWg6hamo6lH0tTUC0tNS1Nwt
+LRpajgaJTaJWa3yXSWlNJarLrCaTtNqp2s10jtUlrtUlodIGqnobU9Vloui2jqktBx3pNV1pNUoL
+SWutLaUGqnqjqpapQ2p6o2p6rUTrSWutJaUGqnqjqp6pgpdVHdPqo7rcZJqo7p9VHVajNT1Ut0+6
+jqukc6TdQ3Vd1n3W4xU91n3Vd1DdbjFS3UOlV1f1DpW451LVQ3VdI6dI51LaG1do7rcZqWktH3U9
+VuOVS2jpXaOnSOdcFBzcZrgcX0sUzvS+iGTD6T0SyNpRpCBoV3oFkKFGuKJQNQALQN47xIvjjeOS
+fdoVTti8+ms/+qm891MuV9bm7NChRoViukC/0lpS0mmOm4jtPUW1E7GMdIhqJby0aieosbjNck1G
+jUS1lY6M9geLXJflFPwPFPAoRPA8M62BF8CwbQqBQG0PSD5Eso+oU0PlOU+aWVMnhM08SsUyfJMn
+ymDwSymiFPlTKeVMpmnyrlLKmUyeCEFYyIgKjNGDAgxsCICgMEI70p1AfQScA+gS4tH0LVAFoWup
+a0nWltdQRjvXA5NR1JTFtTZaWjS2ohSU1JpityE0lqqaqWmXSRLVTp9J6orrzC6pLR1SWh0kLqk1
+TWp6rNbhNUlptVO0F2qnqjaTVLJdUlrtFpRdVPVNaSlBanqm1U9VqItpLXWltKDVT1R1SapgpdVH
+dU0jutxlLVR1VdVHdajNS1UtU+6lqukc6TdZ91XdR3XSMVHdQ3Vt1DbcYqGr+pbV2jut8xzqOkd1
+XVR3XSOdR3UN1bSG2oxUtJ6PtPVbjnUtpaV2jp0jnQ9BwetxmuL6PpSxREopkfRKMQG0hqUs1zq4
+CHOc4gKHhgADx3gj4kXxxnJPvr/m8L0z94n/ANp//Y857bL/AMn/AIs6W6xfnX/8r530/Pev7cft
++r8H55z/AF6eZSVXry3zv/3zZ/qNfMssuV++WX/sD0K4trNdeQ0nTWkox0LqJ6ithbBhiNhPFrCe
+LG5UtRPUXuSayMaQsJYtqJ2IksJVKnpmooWhaXVSDVCVPWgmkF5R+kZp30gtNKZrNNHzoprxVc6Z
+saUzpCtMppUs38NKXOqymlTlNKmVs1XKGarmpiq5UyllXKYp4MCDEzTQxYYwOEIJDnOGIOEHIOCu
+rqiFc4PUQCu9CmFwVwWlBS0bS2oxzvQ9D1NwbSWutJamnWktdaW1GQfS6oehqiunJNVLVNqpaodY
+XdR3VNVHdZdIWk0NpNUOkLpO02qnay0Gqlqn1UtUILS2hqktaiHVT1R1U9Up1pbQtLaQXVS1Taqe
+q0i2ltdaS0gNVO0dVOmAbUt0+qjutxlPaOqpuo6rUZqW6ltTdR3XSOdS2juq7qG66xip7R0rqo6r
+cjFS3/2z9Ft1Do3HPpHSO1dI7bjlUtIbW0jtqMVLSOqrqo6bjFT2lVNVKtxzoUtGlrTFLaIX+xaZ
+ouBxBhKPpZG0no0EHOc5Muc5yDnOgpB4MjjSJF8cfxyT+gDnOc2Q1/8Ajf8A9PB7/wD53/8AbnPw
+fd+o/b8f7qVLXOfMfS5JSucm3FrnBolK5yagUmnOFaS0nXORJpLbnM0pVPf/AG5wSOixzkqaDHOI
+GKZc5BbCuXOSWyfLnNOdNDRzkyrhXP8AbnJirZ/6Uy5yYp4Mc5M00M5yZdBc4pwxzky51c5AAc5E
+KFc5EKDnIhS1zmiWkrnIuLXOTULSac5NwtLXORL/ANhpzhXSI6S05wdInpLTnM11iek9OcHSJaJp
+zmSnpLTnBJ6LXOaRNE05xSdLXOIT0npzmknSVziE9J1zjBS6R3/25zcZR0lpzmoxUNpbc50jFR2h
+pznWMVHaWnOdIxUNodHObjnUNI7c5qOVR2jtzmoxUdI6c5uMVHadc5uOdKFc5qMUtdHObjNFznEO
+dXOQrnOcma5znJl0FzkHOjnJCaOckLnOSf/Z
+"
+       id="image10" />
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';fill:#b0c4de;stroke:#ff0000"
+       x="584.7785"
+       y="275.48099"
+       id="text293"><tspan
+         sodipodi:role="line"
+         id="tspan291"
+         x="584.7785"
+         y="275.48099">Hawking Radiat</tspan><tspan
+         sodipodi:role="line"
+         x="584.7785"
+         y="335.48099"
+         id="tspan399">ion of Systemi</tspan><tspan
+         sodipodi:role="line"
+         x="584.7785"
+         y="395.48099"
+         id="tspan401">c Black Hole D</tspan><tspan
+         sodipodi:role="line"
+         x="584.7785"
+         y="455.48099"
+         id="tspan403">ata Loss</tspan></text>
+    <image
+       width="167.99998"
+       height="36"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,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 "
+       id="image8786-9"
+       x="820.79834"
+       y="423.26447" />
+  </g>
+  <metadata
+     id="metadata799">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Rat_veil_viel_triel_trooge_IMG_nsaa_20251025_151918.svg</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script src="svg-pan-zoom.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+</script>
+
+
+
+<script>
+function toggleFooter() {
+const footer = document.getElementById('audioFooter');
+const btn = document.getElementById('toggleFooterBtn');
+if (footer.style.display === 'none') {
+footer.style.display = 'flex';
+btn.textContent = 'Hide Audio Panel';
+} else {
+footer.style.display = 'none';
+btn.textContent = 'Show Audio Panel';
+}
+}
+</script>
+
+<script>
+function toggleAudio(playerId) {
+const audio = document.getElementById(playerId);
+if (audio.paused) {
+  audio.play();
+} else {
+  audio.pause();
+}
+}
+</script>
+
+
+<div id="audioFooter">
+<div id="audioPanel">
+<span>🔊 Transmission: node121</span>
+<audio id="audioPlayer" src="node121.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer')">Play / Pause</button>
+</div>
+
+<div id="audioPanel">
+<span>🔊 Transmission: node118</span>
+<audio id="audioPlayer2" src="node118.mp3" preload="auto" controls controlsList="nodownload"></audio>
+<button onclick="toggleAudio('audioPlayer2')">Play / Pause</button>
+
+  <!-- Ask Pluto Dialogue Trigger -->
+  <div id="askPlutoContainer2" style="display:none; margin-top:10px;">
+    <button onclick="openPlutoDialog()">Ask Pluto</button>
+</div>  
+</div>
+  <!-- Dialogue Box -->
+<div id="plutoDialog" style="display:none; border:1px solid #ccc; padding:10px;">
+  <strong>Pluto:</strong> What would you like to ask?
+  <button onclick="submitPluto()" style="margin-bottom:5px;">Submit</button>
+  <input type="text" id="plutoInput" placeholder="Enter your question..." style="width:100%;">
+</div>
+
+<div id="audioPanel">
+<span>🔊 Transmission: node120</span>
+<audio id="audioPlayer3" src="node120.mp3" preload="auto" controls comtrolsList="nodownload"></audio>
+<button onclick="toggleAudio('audioPlayer3')">Play / Pause</button>
+  <!-- Ask Pluto Dialogue Trigger -->
+  <div id="askPlutoContainer2" style="display:none; margin-top:2px;">
+    <button onclick="openPlutoDialog()">Ask Pluto</button>
+</div> 
+</div>
+  <!-- Dialogue Box -->
+<div id="plutoDialog" style="display:none; border:1px solid #ccc; padding:10px;">
+  <strong>Pluto:</strong> What would you like to ask?
+  <button onclick="submitPluto()" style="margin-bottom:5px;">Submit</button>
+  <input type="text" id="plutoInput" placeholder="Enter your question..." style="width:100%;">
+</div>
+
+<div id="audioPanel">
+<span>🔊 Transmission: node119</span>
+<audio id="audioPlayer4" src="node119.mp3" preload="auto" controls></audio>
+<button onclick="toggleAudio('audioPlayer4')">Play / Pause</button>
+</div>
+</div>
+
+</body>
+</Script>
+
+<script>
+  function toggleContent() {
+    const box = document.getElementById("contentBoxcompendium");
+    box.classList.toggle("hiddencompendium");
+  }
+
+  function refreshContent() {
+    fetch('compendium.json')
+      .then(response => response.json())
+      .then(data => {
+        const output = document.getElementById("jsonOutput");
+        output.textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        console.error("Error loading JSON:", error);
+      });
+  }
+</script>
+
+<script>
+  const panel = document.querySelector(".containercompendium");
+
+  panel.onmousedown = function (e) {
+    let shiftX = e.clientX - panel.getBoundingClientRect().left;
+    let shiftY = e.clientY - panel.getBoundingClientRect().top;
+
+    function moveAt(pageX, pageY) {
+      panel.style.left = pageX - shiftX + 'px';
+      panel.style.top = pageY - shiftY + 'px';
+    }
+
+    function onMouseMove(e) {
+      moveAt(e.pageX, e.pageY);
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+
+    panel.onmouseup = function () {
+      document.removeEventListener('mousemove', onMouseMove);
+      panel.onmouseup = null;
+    };
+  };
+
+  panel.ondragstart = function () {
+    return false;
+  };
+</script>
+
+
+<script>
+function toggleFooter() {
+const footer = document.getElementById('audioFooter');
+const btn = document.getElementById('toggleFooterBtn');
+if (footer.style.display === 'none') {
+footer.style.display = 'flex';
+btn.textContent = 'Hide Audio Panel';
+} else {
+footer.style.display = 'none';
+btn.textContent = 'Show Audio Panel';
+}
+}
+</script>
+
+<script>
+function toggleAudio(playerId) {
+const audio = document.getElementById(playerId);
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+</script>
+
+<script>
+let viewCounts = new Map();
+let currentContainer = null;
+
+function toggledataPanel() {
+  const panel = document.getElementById("container_meta_panel");
+  panel.style.display = panel.style.display === "none" ? "block" : "none";
+}
+
+function openPanel(el, pagePath) {
+  currentContainer = el;
+  const panel = document.getElementById("expansion_panel");
+  const iframe = document.getElementById("panel_iframe");
+
+  iframe.src = pagePath;
+  panel.style.display = "block";
+
+  if (!el.dataset.id) {
+    el.dataset.id = 'container_' + Math.random().toString(36).substr(2, 9);
+  }
+
+  const id = el.dataset.id;
+  viewCounts.set(id, (viewCounts.get(id) || 0) + 1);
+}
+
+function closePanel() {
+  const panel = document.getElementById("expansion_panel");
+  panel.style.display = "none";
+
+  if (!currentContainer) return;
+
+  const id = currentContainer.dataset.id;
+  const count = viewCounts.get(id);
+
+  if (count === 1) {
+    currentContainer.style.backgroundImage = "url('icon_bw.png')"; // grayscale
+  } else if (count === 2) {
+    currentContainer.style.backgroundImage = "url('icon_green.png')";
+  } else if (count === 3) {
+    currentContainer.style.backgroundImage = "url('icon_orange.png')";
+  } else if (count >= 4) {
+    currentContainer.style.backgroundImage = "url('icon_red.png')";
+  }
+
+  currentContainer = null;
+}
+</script>
+
+ <!-- 2. **JavaScript: Unified Drag Handler** -->
+<Script>
+function enableDrag(draggableElement) {
+  let offsetX = 0, offsetY = 0;
+  let isDragging = false;
+
+  function getCoordinates(e) {
+    if (e.touches && e.touches.length > 0) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    } else {
+      return { x: e.clientX, y: e.clientY };
+    }
+  }
+
+  function startDrag(e) {
+    // Ritual bypass: allow links and close buttons to propagate
+    const tag = e.target.tagName.toLowerCase();
+    if (tag === 'a' || e.target.classList.contains('close-button')) return;
+
+    const coords = getCoordinates(e);
+    offsetX = coords.x - draggableElement.offsetLeft;
+    offsetY = coords.y - draggableElement.offsetTop;
+    isDragging = true;
+
+    e.preventDefault(); // Required for touch
+  }
+
+  function drag(e) {
+    if (!isDragging) return;
+    const coords = getCoordinates(e);
+    draggableElement.style.left = `${coords.x - offsetX}px`;
+    draggableElement.style.top = `${coords.y - offsetY}px`;
+    e.preventDefault();
+  }
+
+  function endDrag() {
+    isDragging = false;
+    // Optional: encode drag as ceremonial node
+    console.log('Drag complete: motif encoded');
+  }
+
+  // Mouse events
+  draggableElement.addEventListener('mousedown', startDrag);
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('mouseup', endDrag);
+
+  // Touch events
+  draggableElement.addEventListener('touchstart', startDrag, { passive: false });
+  document.addEventListener('touchmove', drag, { passive: false });
+  document.addEventListener('touchend', endDrag);
+}
+
+
+ <!-- #### 3. **Initialization Ritual** -->
+
+document.querySelectorAll('.draggable').forEach(el => {
+  enableDrag(el);
+});
+</script>
+
+<script>
+// Apply only to panels
+document.addEventListener("DOMContentLoaded", function () {
+  makeDraggable(document.getElementById("buttonPanel"));
+const toggleBtn = document.getElementById("togglePanelBtn");
+const panel = document.getElementById("buttonPanel");
+
+toggleBtn.onclick = function () {
+if (panel.style.display === "none") {
+  panel.style.display = "block";
+  toggleBtn.textContent = "Hide Panel";
+} else {
+  panel.style.display = "none";
+  toggleBtn.textContent = "Show Panel";
+}
+};
+});
+
+window.addEventListener("DOMContentLoaded", function () {
+svgPanZoom(document.querySelector("svg"), {
+zoomEnabled: true,
+controlIconsEnabled: true,
+fit: true,
+center: true,
+minZoom: 0.1,
+maxZoom: 10
+});
+});
+
+
+
+function toggleAudio() {
+const audio = document.getElementById("audioPlayer2","audioPlayer3","audioPlayer", audioPlayer4);
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+
+function makeDraggable(el) {
+  el.onmousedown = function (e) {
+    e.preventDefault();
+    const rect = el.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+
+    function onMouseMove(e) {
+      el.style.left = `${e.clientX - offsetX}px`;
+      el.style.top = `${e.clientY - offsetY}px`;
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', function stopDrag() {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', stopDrag);
+    });
+  };
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  makeDraggable(document.getElementById("expansion_panel"));
+  makeDraggable(document.getElementById("container_meta1_panel"));
+  makeDraggable(document.getElementById("container_meta_panel"));
+
+});
+</script>
+
+<script>
+function togglecontainer_meta1_panel() {
+  const container_meta1_panel = document.getElementById('container_meta1_panel');
+  const isHidden = container_meta1_panel.style.display === 'none';
+  container_meta1_panel.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
+</script>
+
+<script>
+  let isDragging = false, offsetX, offsetY;
+  let panZoomInstance;
+  let metadata = [];
+
+function toggleDock() {
+  const sidebar = document.getElementById('sidebar');
+  const isDocked = sidebar.style.position === 'absolute';
+  sidebar.style.position = isDocked ? 'fixed' : 'absolute';
+}
+
+function startDrag(e) {
+  const sidebar = document.getElementById('sidebar');
+  isDragging = true;
+  offsetX = e.clientX - sidebar.offsetLeft;
+  offsetY = e.clientY - sidebar.offsetTop;
+  document.onmousemove = dragSidebar;
+  document.onmouseup = stopDrag;
+}
+
+function dragSidebar(e) {
+  if (isDragging) {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.style.left = `${e.clientX - offsetX}px`;
+    sidebar.style.top = `${e.clientY - offsetY}px`;
+
+    // If dragged off left edge, reset margin
+    if (parseInt(sidebar.style.left) > 50) {
+      document.querySelector('.main').style.marginLeft = '0';
+    }
+  }
+}
+
+function stopDrag() {
+  isDragging = false;
+  document.onmousemove = null;
+  document.onmouseup = null;
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const isHidden = sidebar.style.display === 'none';
+  sidebar.style.display = isHidden ? 'block' : 'none';
+  document.querySelector('.main').style.marginLeft = isHidden ? '300px' : '0';
+}
+
+function playNodeAudio(nodeId) {
+  const audio = document.getElementById(`${nodeId}_audio`);
+  
+  if (audio) audio.play();
+}
+  
+
+function showPlayCue(nodeId) {
+  const cue = document.getElementById(`${nodeId}_cue`);
+  if (cue) {
+    cue.setAttribute('visibility', 'visible');
+    setTimeout(() => cue.setAttribute('visibility', 'hidden'), 3000);
+  }
+}
+
+function populateSidebar(data) {
+  const nodeList = document.getElementById('nodeList');
+  nodeList.innerHTML = '';
+
+  data.forEach(entry => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#';
+    a.textContent = entry.title;
+    a.onclick = () => {
+      playNodeAudio(entry.node_id);
+      showPlayCue(entry.node_id);
+    };
+    li.appendChild(a);
+
+    if (entry.tags && entry.tags.length > 0) {
+      const tagSpan = document.createElement('span');
+      tagSpan.textContent = ` [${entry.tags.join(', ')}]`;
+      tagSpan.style.fontSize = '12px';
+      tagSpan.style.color = '#666';
+      li.appendChild(tagSpan);
+    }
+
+    nodeList.appendChild(li);
+  });
+}
+
+function filterNodes() {
+    const input = document.getElementById('searchBox').value.toLowerCase();
+    const filtered = metadata.filter(entry => {
+    const title = typeof entry.title === 'string' ? entry.title.toLowerCase() : '';
+    const tagMatch = entry.tags?.some(tag =>
+      typeof tag === 'string' && tag.toLowerCase().includes(input)
+    );
+    return title.includes(input) || tagMatch;
+  });
+
+  populateSidebar(filtered);
+}
+
+async function loadMetadata() {
+  try {
+    const response = await fetch('node_metadata.json');
+    metadata = await response.json();
+
+    metadata.forEach(entry => {
+      if (entry.node_id.endsWith('_audio')) {
+        entry.node_id = entry.node_id.replace('_audio', '');
+      }
+  });
+
+    populateSidebar(metadata);
+  } catch (err) {
+    console.error("Failed to load metadata:", err);
+  }
+}
+   function toggleFingerprintPanel() {
+   const panel = document.getElementById("fingerprint_panel");
+   if (!panel) return;
+
+   if (panel.style.display === "none") {
+      panel.style.display = "block";
+      logDiagnostic("✅ Fingerprint panel shown");
+   } else {
+      panel.style.display = "none";
+      logDiagnostic("🔕 Fingerprint panel hidden");
+   }
+   }
+
+async function loadFingerprintManifest() {
+  try {
+    const response = await fetch("fingerprint_manifest.json");
+    const manifest = await response.json();
+
+    const panel = document.getElementById("fingerprint_panel");
+    panel.innerHTML = "<b>🧬 Fingerprint Manifest</b><br><br>";
+
+    Object.entries(manifest).forEach(([filename, nodes]) => {
+      const section = document.createElement("div");
+      section.style.marginBottom = "10px";
+
+      const header = document.createElement("div");
+      header.textContent = filename;
+      header.style.fontWeight = "bold";
+      header.style.cursor = "pointer";
+      header.style.color = "#0ff";
+
+      const list = document.createElement("div");
+      list.style.display = "none";
+      list.style.marginLeft = "10px";
+
+      header.onclick = () => {
+        list.style.display = list.style.display === "none" ? "block" : "none";
+      };
+
+      Object.entries(nodes).forEach(([nodeId, fingerprints]) => {
+        const nodeBlock = document.createElement("div");
+        nodeBlock.innerHTML = `<b>${nodeId}</b>`;
+        nodeBlock.style.marginBottom = "5px";
+
+        const fpArray = Array.isArray(fingerprints) ? fingerprints : [fingerprints];
+        fpArray.forEach(fp => {
+          const fpItem = document.createElement("div");
+          fpItem.textContent = `→ ${fp}`;
+          fpItem.style.marginLeft = "10px";
+
+          // Color coding
+          const motifColors = {
+            refusal: "#f33", echo: "#3cf", drip: "#9f3",
+            inverse: "#f33", society: "#3cf", acoustics: "#f33",
+            ultrasonics: "#3cf", ultrasonic: "#9f3", cruelty: "#f0f",
+            Rings: "#fc0", Lexicon: "#0f0", Soda: "#0ff",
+            frequency: "#ff0", "Time Zones": "#ccc",
+            indexer: "#ff6f00" // 🧬 sumpindex motif
+          };
+
+          for (const motif in motifColors) {
+            if (fp.includes(motif)) {
+              fpItem.style.color = motifColors[motif];
+              break;
+            }
+          }
+
+          nodeBlock.appendChild(fpItem);
+        });
+
+        list.appendChild(nodeBlock);
+      });
+
+      section.appendChild(header);
+      section.appendChild(list);
+      panel.appendChild(section);
+    });
+
+    logDiagnostic("✅ Fingerprint manifest loaded");
+    function logDiagnostic(message) {
+      console.log("Diagnostic:", message);
+    }
+  } catch (err) {
+    console.error("Failed to load fingerprint manifest:", err);
+    logDiagnostic("⚠️ Failed to load fingerprint manifest: " + err.message, true);
+  }
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("triggerButton");
+    const container = document.getElementById("node5_image_container");
+    const svg = document.getElementById("mainSVG");
+
+  if (svg) {
+    setTimeout(initPanZoom, 500);
+  } else {
+    console.warn("SVG not found at DOMContentLoaded");
+  }
+
+  if (button && container) {
+    button.addEventListener("click", function () {
+      const isHidden = container.getAttribute("visibility") === "hidden";
+      container.setAttribute("visibility", isHidden ? "visible" : "hidden");
+    });
+  }
+
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.addEventListener('input', filterNodes);
+  }
+
+  loadMetadata();
+
+});
+
+
+  
+  function showNodeImage(id) {
+    const imageContainer = document.getElementById(`${id}_image_container`);
+    if (imageContainer) {
+      imageContainer.style.display = "block";
+  }
+}
+
+  function initPanZoom() {
+    if (panZoomInstance) panZoomInstance.destroy();
+    panZoomInstance = svgPanZoom('#mainSVG', {
+      zoomEnabled: true,
+      controlIconsEnabled: true,
+      fit: true,
+      center: true
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(initPanZoom, 500);
+});
+
+</script>
+
+<Script>function initPanZoom() {
+   const mainSvg = document.getElementById("mainSVG");
+   const containerSvg = document.getElementById("containerSVG");
+ 
+   if (mainSvg) {
+     try {
+       svgPanZoom(mainSvg, {
+         zoomEnabled: true,
+         controlIconsEnabled: true,
+         fit: true,
+         center: true
+       });
+       logDiagnostic("✅ Pan-zoom initialized on #mainSVG");
+     } catch (err) {
+       logDiagnostic("⚠️ Pan-zoom failed on #mainSVG: " + err.message, true);
+     }
+   } else {
+     logDiagnostic("❌ #mainSVG not found", true);
+   }
+ 
+   if (containerSvg) {
+     try {
+       svgPanZoom(containerSvg, {
+         zoomEnabled: true,
+         controlIconsEnabled: false,
+         fit: true,
+         center: true
+       });
+       logDiagnostic("✅ Pan-zoom initialized on #containerSVG");
+     } catch (err) {
+       logDiagnostic("⚠️ Pan-zoom failed on #containerSVG: " + err.message, true);
+     }
+   } else {
+     logDiagnostic("❌ #containerSVG not found", true);
+   }
+ }
+ </Script>
+
+
+<script>
+  function openNodeImageInNewTab(id) {
+    const imageElement = document.getElementById(`${id}_image`);
+    if (imageElement && imageElement.src.startsWith("data:image")) {
+      window.open(imageElement.src, '_blank', 'width=800,height=600');
+    } else {
+      console.warn("Image element not found or not a valid data URI");
+    }
+  }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+buttonPanel.onmousedown = function (e) {
+e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+};
+
+  document.onmouseup = function () {
+  document.onmousemove = null;
+};
+};
+});
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonPanel = document.getElementById("buttonPanel");
+  document.addEventListener("DOMContentLoaded", () => {
+populateMetaPanel();
+loadFingerprintManifest();
+initPanZoom();
+});
+
+buttonPanel.onmousedown = function (e) {
+  e.preventDefault(); // Prevent text selection
+  const panelRect = buttonPanel.getBoundingClientRect();
+  const offsetX = e.clientX - panelRect.left;
+  const offsetY = e.clientY - panelRect.top;
+
+  document.onmousemove = function (e) {
+  let newLeft = e.clientX - offsetX;
+  let newTop = e.clientY - offsetY;
+
+  // Constrain within viewport
+  const maxLeft = window.innerWidth - panelRect.width;
+  const maxTop = window.innerHeight - panelRect.height;
+
+  newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+  newTop = Math.max(0, Math.min(newTop, maxTop));
+
+  buttonPanel.style.left = newLeft + "px";
+  buttonPanel.style.top = newTop + "px";
+  };
+
+  document.onmouseup = function () {
+  document.onmousemove = null;
+  };
+};
+});
+
+const isOnline = location.href.startsWith("https://axda.github.io");
+const basePath = isOnline ? "https://axda.github.io/Blu/" : ".";
+
+async function populateMetaPanel() {
+  const response = await fetch(`${basePath}/panel_data.json`);
+  const data = await response.json();
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  grid.style.display = 'grid';
+  grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(60px, 1fr))';
+  grid.style.gap = '10px';
+  grid.style.padding = '10px';
+
+  data.forEach(entry => {
+    const container = document.createElement('div');
+    container.className = 'data_container';
+    container.dataset.page = isOnline ? entry.page : `./${entry.page}`;
+    container.title = entry.title;
+    container.ondblclick = () => openPanel(container, container.dataset.page);
+
+    // ✅ Embed tags if present
+    if (entry.tags?.length) {
+      const tagSpan = document.createElement('span');
+      tagSpan.textContent = entry.tags.join(', ');
+      tagSpan.style.position = 'absolute';
+      tagSpan.style.top = '2px';
+      tagSpan.style.right = '2px';
+      tagSpan.style.fontSize = '8px';
+      tagSpan.style.background = '#222';
+      tagSpan.style.color = '#fff';
+      tagSpan.style.padding = '2px 4px';
+      tagSpan.style.pointerEvents = 'none';
+      container.appendChild(tagSpan);
+    }
+
+    grid.appendChild(container);
+  });
+
+  const panel = document.getElementById('container_meta_panel');
+  panel.innerHTML = '';
+  panel.appendChild(grid);
+
+  console.log("Loaded entries:", data);
+}
+
+</script>
+
+<script>function updateIconState(container, count) {
+   const iconMap = {
+     1: 'icon_bw.png',
+     2: 'icon_green.png',
+     3: 'icon_orange.png',
+     4: 'icon_red.png'
+   };
+   const icon = iconMap[Math.min(count, 4)];
+   container.style.backgroundImage = `url('${icon}')`;
+   container.style.backgroundSize = 'cover';
+   container.style.backgroundPosition = 'center';
+ }
+ 
+ function openPanel(container, pagePath) {
+   currentContainer = container;
+   const panel = document.getElementById("expansion_panel");
+   const iframe = document.getElementById("panel_iframe");
+   iframe.src = pagePath;
+   panel.style.display = "block";
+ 
+   if (!container.dataset.id) {
+     container.dataset.id = 'container_' + Math.random().toString(36).substr(2, 9);
+   }
+ 
+   const id = container.dataset.id;
+   const count = viewCounts.get(id) || 0;
+   viewCounts.set(id, count + 1);
+ }
+ 
+ function closePanel() {
+   const panel = document.getElementById("expansion_panel");
+   panel.style.display = "none";
+ 
+   if (!currentContainer) return;
+ 
+   const id = currentContainer.dataset.id;
+   const count = viewCounts.get(id);
+   updateIconState(currentContainer, count);
+ 
+   // Optional: motif-linked overlay
+   const overlay = document.createElement('div');
+   overlay.className = 'motif_overlay';
+   overlay.textContent = `Viewed ${count}x • ${new Date().toLocaleTimeString()}`;
+   overlay.style.position = 'absolute';
+   overlay.style.bottom = '0';
+   overlay.style.left = '0';
+   overlay.style.fontSize = '10px';
+   overlay.style.background = 'rgba(0,0,0,0.6)';
+   overlay.style.color = '#fff';
+   overlay.style.padding = '2px 4px';
+   overlay.style.pointerEvents = 'none';
+ 
+   currentContainer.appendChild(overlay);
+   setTimeout(() => overlay.remove(), 3000);
+ 
+   currentContainer = null;
+ }</script>
+<script>document.addEventListenergrid1
+setTimeout(initPanZoom, 500); // crude but effective</script>
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🧭 DOM loaded. Ritual begins.");
+
+  // Ceremonial Glyph Dialog Elements
+  const glyphInput = document.getElementById("glyphInput");
+  const toggleVisibility = document.getElementById("toggleVisibility");
+  const submitGlyph = document.getElementById("submitGlyph");
+
+  // Secondary Glyph Dialog Elements
+  const enterBtn = document.getElementById("Toggle_StalagBtn");
+  const glyphDialogTest = document.getElementById("glyphDialogTest");
+  const glyphInputTest = document.getElementById("glyphInputTest");
+  const submitGlyphTest = document.getElementById("submitGlyphTest");
+
+  // Shared Elements
+  const secretContainer = document.getElementById("secretContainer");
+  const fallbackNotice = document.getElementById("fallbackNotice");
+
+  // Toggle visibility for ceremonial glyph
+  toggleVisibility.addEventListener("change", (e) => {
+    glyphInput.type = e.target.checked ? "text" : "password";
+    console.log(`👁️ Ceremonial glyph visibility: ${glyphInput.type}`);
+  });
+
+  // Submit ceremonial glyph
+  submitGlyph.addEventListener("click", async () => {
+    const userInput = glyphInput.value;
+    let expectedPassword;
+
+    try {
+      const response = await fetch("toggle_trog.json");
+      if (!response.ok) throw new Error("Fetch failed");
+      const data = await response.json();
+      const lastNode = data[data.length - 1];
+      const tags = lastNode.tags;
+      expectedPassword = tags[2];
+    } catch (error) {
+      fallbackNotice.style.display = "block";
+      const data = [
+        {
+          node_id: "node137_audio",
+          title_id: "title20",
+          title: "Uranus",
+          tags: ["alpha", "delta", "charlie", "2325", "0022", "0110"]
+        }
+      ];
+      expectedPassword = data[data.length - 1].tags[2];
+    }
+
+    if (userInput === expectedPassword) {
+      secretContainer.style.display = "block";
+      console.log("🎯 Ceremonial glyph matched. Access granted.");
+    } else {
+      alert("Incorrect glyph. The mask remains.");
+    }
+  });
+
+  // Reveal secondary dialog when Enter is clicked
+  enterBtn.addEventListener("click", () => {
+    glyphDialogTest.style.display = "block";
+    console.log("🔓 Enter button clicked. Secondary glyph dialog revealed.");
+  });
+
+  // Submit secondary glyph revo
+submitGlyphTest.addEventListener("click", () => {
+  const testInput = document.getElementById("glyphInputTest").value;
+  const reversed = testInput.split("").reverse().join("");
+  alert("Test glyph entered (pluto): " + reversed);
+  console.log("🧪 Reversed glyph submitted:", (pluto));
+});
+
+});
+</script>
+
+<script>
+  // Ritual check for download suppression
+  window.onload = function() {
+    const audio = document.getElementById("audioPlayer2", "audioPlayer3");
+    const controlsList = audio.getAttribute("controlsList");
+    if (controlsList && controlsList.includes("nodownload")) {
+      document.getElementById("askPlutoContainer2").style.display = "block";
+    }
+  };
+
+  function openPlutoDialog() {
+    document.getElementById("plutoDialog").style.display = "block";
+  }
+
+  function submitPluto() {
+    const question = document.getElementById("plutoInput").value;
+    alert("Pluto received your question: " + question);
+    // Optionally log or archive this as a ceremonial node
+  }
+</script>
+
+</body>
+</html>
