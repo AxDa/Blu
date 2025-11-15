@@ -3886,5 +3886,18 @@
     "x": 11.2,
     "y": 1783.208
   }
+},
+{
+  "node_id": "node203_audio",
+  "title_id": "title2913",
+  "title": "UTC+6",
+  "tags": ["{Absolute", "Radio", "{Absolute_Radio by the heart of the day_1705}" ],
+  "audio_files": [
+    "node203.mp3"
+  ],
+  "coordinates": {
+    "x": 11.2,
+    "y": 1783.208
+  }
 }
 ]
