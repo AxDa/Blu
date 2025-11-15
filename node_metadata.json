@@ -3899,5 +3899,18 @@
     "x": 11.2,
     "y": 1783.208
   }
-}
+  },
+  {
+    "node_id": "node204_audio",
+    "title_id": "title2927",
+    "title": "UTC+7",
+    "tags": ["{Absolute", "Radio", "Trk1", "Absolute_Radio", "u7JL", "1736" ],
+    "audio_files": [
+      "node204.mp3"
+    ],
+    "coordinates": {
+      "x": 11.2,
+      "y": 1783.208
+    }
+  }
 ]
