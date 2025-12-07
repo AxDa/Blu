@@ -3966,16 +3966,29 @@
   }
   },
   {
-    "node_id": "node238_audio",
-    "title_id": "title3382",
-    "title": "UTC+12",
-    "tags": ["{Absolute", "Radio", "Absolute_Radio", "Trk2", "Now", "Like a Heart", "1736" ],
-    "audio_files": [
-      "node238.mp3"
-    ],
-    "coordinates": {
-      "x": 11.2,
-      "y": 1783.208
-    }
+  "node_id": "node238_audio",
+  "title_id": "title3382",
+  "title": "UTC+12",
+  "tags": ["{Absolute", "Radio", "Absolute_Radio", "Trk2", "Now", "Like a Heart", "1736" ],
+  "audio_files": [
+    "node238.mp3"
+  ],
+  "coordinates": {
+    "x": 11.2,
+    "y": 1783.208
+  }
+},
+{
+"node_id": "node239_audio",
+"title_id": "title3396",
+"title": "UTC+13",
+"tags": ["{Trk1", "Cat Power", "Stay", "v0.11a", "axd" ], 
+"audio_files": [
+  "node239.mp3"
+],
+"coordinates": {
+  "x": 11.2,
+  "y": 1783.208
+}
 }
 ]
