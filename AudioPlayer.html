@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Enhanced Audio Player</title>
+</head>
+<body style="background:#111; color:white; font-family:Helvetica; padding:20px;">
+<h2>Enhanced Audio Player</h2>
+
+<label for="trackSelect">Choose audio:</label>
+<select id="trackSelect" style="margin-left:10px;">
+  <option value="Igor_Tudor_Michael_Carrick_Martin_ONeil.mp3">
+    Igor Tudor / Michael Carrick / Martin O'Neil
+  </option>
+  <option value="https://axda.github.io/Blu/about%20Michael%20Sheen%20Port%20Talbort_Times_01032026.mp3">
+    Michael Sheen – Port Talbot
+  </option>
+  <option value="https://axda.github.io/Blu/Tara_Kangarlu_Times News_Iran_Deeply_RF_1600_utc_01032026.mp3">
+    Tara_Kangarlu_Times News_Iran_Deeply_RF_1600_utc_01032026.mp3
+  </option>
+  <option value="Spare">
+    Spare
+  </option>
+  <option value="https://axda.github.io/Blu/Mick_Mulvaney_Times Ayesha_Hazarika_01032026_v0.1.mp3">
+    Mick_Mulvaney_Times Ayesha_Hazarika_01032026
+  </option>
+  <option value="https://axda.github.io/Blu/Igor_Tudor_Michael_Carrick_Martin_O'Neil_1930_utc_R5L_News_01032026_v0.2.mp3">
+   President_Iran_Times_News_1800_utc_01032026
+  </option>
+  <option value="https://axda.github.io/Blu/about%20Michael%20Sheen%20Port%20Talbort_Times_01032026.mp3">
+    Spurs_Igor_Tudor_Man_Utd_Michael_Carrick_Celtic_606Caller_Martin_O'Neil_1930_utc_R5L_News_01032026_v0.2.mp3
+  </option>
+</select>
+  <option value="https://axda.github.io/Blu/Prime_Minister_Sir_Kier_Starmer_Stephen_Nolan_R5L_2110_utc01032026_v0.2.mp3">
+    Prime_Minister_Sir_Kier_Starmer_Stephen_Nolan_R5L_2110_utc01032026
+  </option>
+  <option value="Spare">
+    Spare
+  </option>
+  <option value="Spare">
+    Spare
+  </option>
+  <option value="Spare">
+    Spare
+  </option>
+
+<br><br>
+
+<audio id="player" controls style="width:100%;">
+  <source src="Igor_Tudor_Michael_Carrick_Martin_ONeil.mp3" type="audio/mpeg">
+</audio>
+
+<br><br>
+
+<button onclick="reversePlay()">Reverse</button>
+<button onclick="player.playbackRate = 0.5">0.5×</button>
+<button onclick="player.playbackRate = 1">1×</button>
+<button onclick="player.playbackRate = 1.5">1.5×</button>
+
+<script>
+const player = document.getElementById('player');
+const trackSelect = document.getElementById('trackSelect');
+
+// Change track when dropdown changes
+trackSelect.addEventListener('change', () => {
+  player.src = trackSelect.value;
+  player.playbackRate = 1;
+  player.load();
+});
+
+// Reverse playback
+function reversePlay() {
+  const ctx = new AudioContext();
+  fetch(player.src)
+    .then(r => r.arrayBuffer())
+    .then(b => ctx.decodeAudioData(b))
+    .then(buf => {
+      const reversed = new Float32Array(buf.length);
+      reversed.set(buf.getChannelData(0).reverse());
+      const newBuf = ctx.createBuffer(1, reversed.length, buf.sampleRate);
+      newBuf.copyToChannel(reversed, 0);
+      const src = ctx.createBufferSource();
+      src.buffer = newBuf;
+      src.connect(ctx.destination);
+      src.start();
+    });
+}
+</script>
+
+</body>
+</html>
