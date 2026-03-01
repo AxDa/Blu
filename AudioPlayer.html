@@ -42,7 +42,11 @@
 
 <br><br>
 
-<audio id="player" controls style="width:100%;">
+<audio id="player"
+       controls
+       controlsList="nodownload"
+       oncontextmenu="return false"
+       style="width:100%;">
   <source src="Igor_Tudor_Michael_Carrick_Martin_ONeil.mp3" type="audio/mpeg">
 </audio>
 
@@ -85,3 +89,4 @@ function reversePlay() {
 
 </body>
 </html>
+
