@@ -17,11 +17,25 @@
     .legend { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
     .legend-item { display: flex; align-items: center; gap: 5px; }
     .legend-color { width: 16px; height: 16px; border-radius: 3px; }
+
+    /* File-type dropdown styling */
+    #fileTypeFilter {
+      padding: 6px 10px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    #fileTypeFilter:hover {
+      border-color: #0077cc;
+    }
   </style>
 </head>
 <body>
   <h1>Archive Index</h1>
   <div class="legend" id="legend"></div>
+
   <div class="controls">
     <input type="text" id="search" placeholder="Search by title or tag...">
     <select id="tagFilter"></select>
@@ -29,6 +43,12 @@
       <option value="desc">Newest first</option>
       <option value="asc">Oldest first</option>
     </select>
+
+    <!-- NEW: dynamic file-type filter -->
+    <select id="fileTypeFilter">
+      <option value="">All file types</option>
+    </select>
+
     <button id="toggleView">Compact View</button>
   </div>
 
@@ -38,41 +58,61 @@
     async function loadIndex() {
       const res = await fetch('axd_index_datefixed.json');
       const data = await res.json();
+
       const container = document.getElementById('index');
       const searchBox = document.getElementById('search');
       const tagFilter = document.getElementById('tagFilter');
       const sortOrder = document.getElementById('sortOrder');
+      const fileTypeFilter = document.getElementById('fileTypeFilter');
       const legend = document.getElementById('legend');
       const toggleView = document.getElementById('toggleView');
       let compactMode = false;
-  
+
       const motifColors = {
         "civic decay": "#2b6cb0",
         "moral inquiry": "#38a169",
         "rhetorical indictment": "#d69e2e",
         "technical audit": "#805ad5"
       };
-  
+
+      /* ---------------------------
+         Populate motif dropdown + legend
+      ---------------------------- */
       const motifs = [...new Set(data.map(item => item.motif))];
       tagFilter.innerHTML = `<option value="">All motifs</option>` +
         motifs.map(m => `<option value="${m}">${m}</option>`).join('');
+
       legend.innerHTML = motifs.map(m =>
         `<div class="legend-item">
           <div class="legend-color" style="background:${motifColors[m] || '#999'}"></div>
           <span>${m}</span>
         </div>`
       ).join('');
-  
+
+      /* ---------------------------
+         NEW: Dynamic file-type dropdown
+      ---------------------------- */
+      const fileTypes = [...new Set(
+        data.map(item => item.type?.toLowerCase() || item.title.split('.').pop().toLowerCase())
+      )].sort();
+
+      fileTypes.forEach(ft => {
+        fileTypeFilter.innerHTML += `<option value="${ft}">${ft.toUpperCase()}</option>`;
+      });
+
+      /* ---------------------------
+         Render items
+      ---------------------------- */
       function render(items) {
         container.innerHTML = '';
         const grid = document.createElement('div');
         grid.className = compactMode ? 'index-grid compact' : 'index-grid';
-  
+
         items.forEach(item => {
           const motifClass = `motif-${item.motif.replace(/\s+/g, '-')}`;
           const div = document.createElement('div');
           div.className = `item ${motifClass}`;
-  
+
           const img = document.createElement('img');
           img.src = item.thumbnail;
           img.alt = item.title;
@@ -81,9 +121,9 @@
             img.src = '';
             img.alt = 'No thumbnail available';
           };
-  
+
           if (!compactMode) div.appendChild(img);
-  
+
           div.innerHTML += `
             <a href="${item.url}" target="_blank">${item.title}</a>
             <p>${item.date}</p>
@@ -91,47 +131,59 @@
               ? `<span style="color:${motifColors[item.motif]};">${item.motif}</span>`
               : `<p>${item.cluster}</p>`}
           `;
-  
+
           grid.appendChild(div);
         });
-  
+
         container.appendChild(grid);
       }
-  
+
+      /* ---------------------------
+         Filtering logic
+      ---------------------------- */
       function filterAndRender() {
         const q = searchBox.value.toLowerCase();
         const motif = tagFilter.value.toLowerCase();
-  
-        let filtered = data.filter(item =>
-          (item.title.toLowerCase().includes(q) ||
-           item.tags.some(tag => tag.toLowerCase().includes(q))) &&
-          (motif === '' || item.motif.toLowerCase() === motif)
-        );
-  
-        // Sort by date (chronological)
+        const fileType = fileTypeFilter.value.toLowerCase();
+
+        let filtered = data.filter(item => {
+          const titleMatch = item.title.toLowerCase().includes(q);
+          const tagMatch = item.tags.some(tag => tag.toLowerCase().includes(q));
+          const motifMatch = motif === '' || item.motif.toLowerCase() === motif;
+
+          const type = item.type?.toLowerCase() || item.title.split('.').pop().toLowerCase();
+          const typeMatch = fileType === '' || type === fileType;
+
+          return (titleMatch || tagMatch) && motifMatch && typeMatch;
+        });
+
         filtered.sort((a, b) => {
           const da = new Date(a.date);
           const db = new Date(b.date);
           return sortOrder.value === 'asc' ? da - db : db - da;
         });
-  
+
         render(filtered);
       }
-  
+
+      /* ---------------------------
+         Event listeners
+      ---------------------------- */
       toggleView.addEventListener('click', () => {
         compactMode = !compactMode;
         toggleView.textContent = compactMode ? 'Full View' : 'Compact View';
         filterAndRender();
       });
-  
+
       searchBox.addEventListener('input', filterAndRender);
       tagFilter.addEventListener('change', filterAndRender);
       sortOrder.addEventListener('change', filterAndRender);
-  
-      // IMPORTANT: start with sorted view
+      fileTypeFilter.addEventListener('change', filterAndRender);
+
+      /* Start sorted */
       filterAndRender();
     }
-  
+
     loadIndex();
   </script>
 </body>
