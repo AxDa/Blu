@@ -75,21 +75,6 @@
     "type": "html"
   },
   {
-    "title": "toggle_trog.json",
-    "url": "https://axda.github.io/Blu/toggle_trog.json",
-    "thumbnail": "thumbs/toggle_trog.jpg",
-    "tags": [
-      "json",
-      "data",
-      "mapping"
-    ],
-    "date": "2025-06-01",
-    "motif": "technical audit",
-    "cluster": "data",
-    "size": null,
-    "type": "json"
-  },
-  {
     "title": "unifiedmoralmaskeradeum_v0.1a",
     "url": "https://axda.github.io/Blu/unifiedmoralmaskeradeum_v0.1a.mp3",
     "thumbnail": "waveform_thumbnails/unifiedmoralmaskeradeum_v0.1a.png",
@@ -361,7 +346,7 @@
     "url": "https://axda.github.io/Blu/A%20Mouse%20on%20Holiday_R5L_Chris%20Sutton_John_Murray_2048)utc_24052026.mp3?ref=master",
     "thumbnail": "waveform_thumbnails/A Mouse on Holiday_R5L_Chris Sutton_John_Murray_2048)utc_24052026.mp3.png",
     "tags": [],
-    "date": "2026-05-24",
+    "date": "2026-02-24",
     "motif": "civic decay",
     "cluster": "testimony",
     "size": 256911,
@@ -812,7 +797,7 @@
     "url": "https://axda.github.io/Blu/Baroness%20Ros%20Altman_Times_Radio_Moral_e_Measure.mp3?ref=master",
     "thumbnail": "waveform_thumbnails/Baroness Ros Altman_Times_Radio_Moral_e_Measure.mp3.png",
     "tags": [],
-    "date": "2026-04-30",
+    "date": "2026-01-30",
     "motif": "civic decay",
     "cluster": "testimony",
     "size": 522269,
@@ -7066,19 +7051,7 @@
     "size": 87801,
     "type": "file"
   },
-  {
-    "title": "compendium.json",
-    "url": "https://axda.github.io/Blu/compendium.json?ref=master",
-    "thumbnail": "thumbnails/generic_placeholder.png",
-    "tags": [      "json",
-      "data",
-      "mapping"],
-    "date": "2026-04-30",
-    "motif": "civic decay",
-    "cluster": "testimony",
-    "size": 34892,
-    "type": "file"
-  },
+
   {
     "title": "compendium1a_1640_utc_01112025_axd.html",
     "url": "https://axda.github.io/Blu/compendium1a_1640_utc_01112025_axd.html?ref=master",
@@ -7398,19 +7371,7 @@
     "size": 28212,
     "type": "file"
   },
-  {
-    "title": "fingerprint_manifest.json",
-    "url": "https://axda.github.io/Blu/fingerprint_manifest.json?ref=master",
-    "thumbnail": "thumbnails/generic_placeholder.png",
-    "tags": [      "json",
-      "data",
-      "mapping"],
-    "date": "2026-04-30",
-    "motif": "civic decay",
-    "cluster": "testimony",
-    "size": 2159139,
-    "type": "file"
-  },
+
   {
     "title": "forecastarchitectureglyphofcivictestimony_2048_utc+1_24092025.html",
     "url": "https://axda.github.io/Blu/forecastarchitectureglyphofcivictestimony_2048_utc%2B1_24092025.html?ref=master",
@@ -7700,30 +7661,6 @@
     "type": "file"
   },
   {
-    "title": "node_metadata.json",
-    "url": "https://axda.github.io/Blu/node_metadata.json?ref=master",
-    "thumbnail": "thumbnails/generic_placeholder.png",
-    "tags": [ "json",
-      "data",
-      "mapping"],
-    "date": "2026-04-30",
-    "motif": "civic decay",
-    "cluster": "testimony",
-    "size": 73214,
-    "type": "file"
-  },
-  {
-    "title": "node_metadatabkup.json",
-    "url": "https://axda.github.io/Blu/node_metadatabkup.json?ref=master",
-    "thumbnail": "thumbnails/generic_placeholder.png",
-    "tags": [],
-    "date": "2026-04-30",
-    "motif": "civic decay",
-    "cluster": "testimony",
-    "size": 67065,
-    "type": "file"
-  },
-  {
     "title": "opening_index.html",
     "url": "https://axda.github.io/Blu/opening_index.html?ref=master",
     "thumbnail": "thumbnails/html_placeholder.png",
@@ -7754,19 +7691,6 @@
     "motif": "civic decay",
     "cluster": "testimony",
     "size": 6211343,
-    "type": "file"
-  },
-  {
-    "title": "panel_data.json",
-    "url": "https://axda.github.io/Blu/panel_data.json?ref=master",
-    "thumbnail": "thumbnails/generic_placeholder.png",
-    "tags": [      "json",
-      "data",
-      "mapping"],
-    "date": "2026-04-30",
-    "motif": "civic decay",
-    "cluster": "testimony",
-    "size": 18374,
     "type": "file"
   },
   {
@@ -7880,17 +7804,6 @@
     "type": "file"
   },
   {
-    "title": "svg-pan-zoom.min.js",
-    "url": "https://axda.github.io/Blu/svg-pan-zoom.min.js?ref=master",
-    "thumbnail": "thumbnails/generic_placeholder.png",
-    "tags": [],
-    "date": "2025-09-25",
-    "motif": "civic decay",
-    "cluster": "testimony",
-    "size": 29770,
-    "type": "file"
-  },
-  {
     "title": "svg_with_audio_embeddedv3.svg",
     "url": "https://axda.github.io/Blu/svg_with_audio_embeddedv3.svg?ref=master",
     "thumbnail": "thumbnails/generic_placeholder.png",
@@ -8001,17 +7914,6 @@
     "type": "file"
   },
   {
-    "title": "title_node_map.js",
-    "url": "https://axda.github.io/Blu/title_node_map.js?ref=master",
-    "thumbnail": "thumbnails/generic_placeholder.png",
-    "tags": [],
-    "date": "2026-04-30",
-    "motif": "civic decay",
-    "cluster": "testimony",
-    "size": 8202,
-    "type": "file"
-  },
-  {
     "title": "toggle_image.html",
     "url": "https://axda.github.io/Blu/toggle_image.html?ref=master",
     "thumbnail": "thumbnails/html_placeholder.png",
@@ -8031,19 +7933,6 @@
     "motif": "civic decay",
     "cluster": "testimony",
     "size": 1422,
-    "type": "file"
-  },
-  {
-    "title": "toggle_trog.json",
-    "url": "https://axda.github.io/Blu/toggle_trog.json?ref=master",
-    "thumbnail": "thumbnails/generic_placeholder.png",
-    "tags": [      "json",
-      "data",
-      "mapping"],
-    "date": "2026-04-30",
-    "motif": "civic decay",
-    "cluster": "testimony",
-    "size": 37930,
     "type": "file"
   },
   {
