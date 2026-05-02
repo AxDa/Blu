@@ -141,19 +141,6 @@
         }
         return rawType;
       }
-      // Helper: derive file type from title + type field
-      function getFileType(item) {
-        const rawType = (item.type || '').toLowerCase();
-        const ext = item.title.includes('.')
-          ? item.title.split('.').pop().toLowerCase()
-          : '';
-  
-        // If type is a generic "file", prefer extension
-        if (!rawType || rawType === 'file') {
-          return ext;
-        }
-        return rawType;
-      }
   
       // Motif dropdown + legend
       const motifs = [...new Set(data.map(item => item.motif))];
