@@ -127,6 +127,20 @@
       return isNaN(parsed) ? 0 : parsed;
     }
 
+    function getFileType(item) {
+        const rawType = (item.type || '').toLowerCase();
+      
+        // Prefer URL for extension
+        const source = item.url || item.title || '';
+        const ext = source.includes('.')
+          ? source.split('.').pop().toLowerCase()
+          : '';
+      
+        if (!rawType || rawType === 'file') {
+          return ext;
+        }
+        return rawType;
+      }
       // Helper: derive file type from title + type field
       function getFileType(item) {
         const rawType = (item.type || '').toLowerCase();
