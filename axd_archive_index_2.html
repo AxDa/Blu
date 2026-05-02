@@ -236,6 +236,8 @@ async function loadIndex() {
             img.loading = "lazy";
         } else {
             img.style.background = motifColors[item.motif] || "#ccc";
+            img.style.width = "160px";
+            img.style.height = "96px";
         }
             img.alt = item.title;
             img.onerror = () => {
