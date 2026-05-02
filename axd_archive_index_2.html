@@ -231,7 +231,12 @@ async function loadIndex() {
             div.className = `item ${motifClass}`;
 
             const img = document.createElement('img');
-            img.src = item.thumbnail || "";
+            if (item.thumbnail && item.thumbnail.trim() !== "") {
+            img.src = item.thumbnail;
+            img.loading = "lazy";
+        } else {
+            img.style.background = motifColors[item.motif] || "#ccc";
+        }
             img.alt = item.title;
             img.onerror = () => {
                 img.style.background = motifColors[item.motif] || '#ccc';
