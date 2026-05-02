@@ -1,0 +1,372 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Archive Index</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8f8f8; margin: 20px; }
+    .controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+    .index-grid { display: flex; flex-wrap: wrap; gap: 15px; }
+.item {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  width: 180px;
+  padding: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.item img {
+  width: 160px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.item a {
+  display: block;
+  margin-top: 8px;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+
+  /* Prevent long-title overflow */
+  font-size: 13px;
+  line-height: 1.2;
+  max-height: 2.4em; /* two lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+}
+    .item a:hover { text-decoration: underline; }
+.compact .item {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.compact .item img {
+  display: none;
+}
+    .compact .item a { margin: 0; font-weight: normal; }
+    .legend { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 5px; }
+    .legend-color { width: 16px; height: 16px; border-radius: 3px; }
+
+    /* File-type dropdown styling */
+    #fileTypeFilter {
+      padding: 6px 10px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    #fileTypeFilter:hover {
+      border-color: #0077cc;
+    }
+.info-banner {
+  background: #fff;
+  border: 2px solid #2b6cb0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.info-banner h2 {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+}
+
+.info-banner p {
+  margin: 4px 0;
+}
+.audio-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#audioToggle {
+  padding: 6px 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#audioToggle:hover {
+  border-color: #0077cc;
+}
+
+#audioTitle {
+  font-size: 14px;
+  cursor: pointer;
+  color: #0077cc;
+}
+</style>
+</head>
+<body>
+  <h1>Archive Index</h1>
+  <div class="info-banner">
+  <h2>Current Context: King Charles in Bermuda</h2>
+  <p><strong>King Charles is currently on a high‑profile visit to Bermuda, where multiple reputable news outlets report he is carrying out a three‑day royal tour following his U.S. state visit.</strong></p>
+  <p>His Bermuda trip marks his first visit to a British Overseas Territory as monarch, and the first time in 400 years that a reigning king has visited the islands. Reports describe a full ceremonial welcome, key engagements in defence and space science, cultural and historical events, and a warm public reception across the island.</p>
+</div>
+<div class="controls">
+    <input type="text" id="search" placeholder="Search by title or tag...">
+    <select id="tagFilter"></select>
+    <select id="sortOrder">
+      <option value="desc">Newest first</option>
+      <option value="asc">Oldest first</option>
+    </select>
+
+    <select id="fileTypeFilter">
+      <option value="">All file types</option>
+    </select>
+
+    <select id="sortBy">
+      <option value="date">Sort by Date</option>
+      <option value="title">Sort by Title</option>
+    </select>
+
+    <button id="toggleView">Compact View</button>
+
+    <button id="openIndexFin2" onclick="window.open('indexfin2_data.html?ref=master', '_blank')">
+      Open IndexFin2 Data
+    </button>
+
+    <button id="openEnhancedAudioPlayer" onclick="window.open('AudioPlayer.html', '_blank')">
+      Enhanced Audio Player
+    </button>
+
+    <!-- AUDIO BOX INSIDE CONTROLS -->
+    <div class="audio-box">
+      <button id="audioToggle">Audio: OFF</button>
+      <span id="audioTitle">David Lowe & Matt Chorley – R5L (24/04/2026)</span>
+    </div>
+
+    <audio id="hoverAudio"
+           src="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3?ref=master">
+    </audio>
+</div>
+<!-- INDEX GRID BELOW CONTROLS -->
+<div id="index"></div>
+<script>
+async function loadIndex() {
+  const res = await fetch('axd_index_datefixed.json');
+  const data = await res.json();
+  const container = document.getElementById('index');
+  const searchBox = document.getElementById('search');
+  const tagFilter = document.getElementById('tagFilter');
+  const sortOrder = document.getElementById('sortOrder');
+  const sortBy = document.getElementById('sortBy');
+  const fileTypeFilter = document.getElementById('fileTypeFilter');
+  const legend = document.getElementById('legend');
+  const toggleView = document.getElementById('toggleView');
+  let compactMode = false;
+
+  const motifColors = {
+    "civic decay": "#2b6cb0",
+    "moral inquiry": "#38a169",
+    "rhetorical indictment": "#d69e2e",
+    "technical audit": "#805ad5"
+  };
+
+  /* -----------------------------
+     FIXED: Safe date parser
+  ----------------------------- */
+  function safeDate(d) {
+    const parsed = new Date(d);
+    return isNaN(parsed) ? 0 : parsed;
+  }
+
+  /* ---------------------------------------------------
+     FIXED: Correct file-type detection (URL first)
+  --------------------------------------------------- */
+  function getFileType(item) {
+    const rawType = (item.type || '').toLowerCase();
+
+    // Prefer URL extension
+    const source = item.url || item.title || '';
+    const ext = source.includes('.')
+      ? source.split('.').pop().toLowerCase()
+      : '';
+
+    if (!rawType || rawType === 'file') {
+      return ext;
+    }
+    return rawType;
+  }
+
+  /* -----------------------------
+     Motif dropdown + legend
+  ----------------------------- */
+  const motifs = [...new Set(data.map(item => item.motif))];
+  tagFilter.innerHTML = `<option value="">All motifs</option>` +
+    motifs.map(m => `<option value="${m}">${m}</option>`).join('');
+
+  legend.innerHTML = motifs.map(m =>
+    `<div class="legend-item">
+      <div class="legend-color" style="background:${motifColors[m] || '#999'}"></div>
+      <span>${m}</span>
+    </div>`
+  ).join('');
+
+  /* -----------------------------
+     Dynamic file-type dropdown
+  ----------------------------- */
+  const fileTypes = [...new Set(
+    data.map(getFileType).filter(ft => ft)
+  )].sort();
+
+  fileTypes.forEach(ft => {
+    fileTypeFilter.innerHTML += `<option value="${ft}">${ft.toUpperCase()}</option>`;
+  });
+
+  /* -----------------------------
+     Render items
+  ----------------------------- */
+  function render(items) {
+    container.innerHTML = '';
+    const grid = document.createElement('div');
+    grid.className = compactMode ? 'index-grid compact' : 'index-grid';
+
+    items.forEach(item => {
+      const motifClass = `motif-${item.motif.replace(/\s+/g, '-')}`;
+      const div = document.createElement('div');
+      div.className = `item ${motifClass}`;
+
+      const img = document.createElement('img');
+      img.src = item.thumbnail;
+      img.alt = item.title;
+      img.onerror = () => {
+        img.style.background = motifColors[item.motif] || '#ccc';
+        img.src = '';
+        img.alt = 'No thumbnail available';
+      };
+
+      if (!compactMode) div.appendChild(img);
+
+      div.innerHTML += `
+        <a href="${item.url}" target="_blank">${item.title}</a>
+        <p>${item.date}</p>
+        ${compactMode
+          ? `<span style="color:${motifColors[item.motif]};">${item.motif}</span>`
+          : `<p>${item.cluster}</p>`}
+      `;
+
+      grid.appendChild(div);
+    });
+
+    container.appendChild(grid);
+  }
+
+  /* -----------------------------
+     Filtering + Sorting
+  ----------------------------- */
+  function filterAndRender() {
+    const q = searchBox.value.toLowerCase();
+    const motif = tagFilter.value.toLowerCase();
+    const fileType = fileTypeFilter.value.toLowerCase();
+
+    let filtered = data.filter(item => {
+      const titleMatch = item.title.toLowerCase().includes(q);
+      const tagMatch = item.tags.some(tag => tag.toLowerCase().includes(q));
+      const motifMatch = motif === '' || item.motif.toLowerCase() === motif;
+
+      const type = getFileType(item);
+      const typeMatch = fileType === '' || type === fileType;
+
+      return (titleMatch || tagMatch) && motifMatch && typeMatch;
+    });
+
+    filtered.sort((a, b) => {
+      if (sortBy.value === 'title') {
+        return sortOrder.value === 'asc'
+          ? a.title.localeCompare(b.title)
+          : b.title.localeCompare(a.title);
+      } else {
+        const da = safeDate(a.date);
+        const db = safeDate(b.date);
+        return sortOrder.value === 'asc' ? da - db : db - da;
+      }
+    });
+
+    render(filtered);
+  }
+
+  /* -----------------------------
+     Event listeners
+  ----------------------------- */
+  toggleView.addEventListener('click', () => {
+    compactMode = !compactMode;
+    toggleView.textContent = compactMode ? 'Full View' : 'Compact View';
+    filterAndRender();
+  });
+
+    searchBox.addEventListener('input', filterAndRender);
+    tagFilter.addEventListener('change', filterAndRender);
+    sortOrder.addEventListener('change', filterAndRender);
+    sortBy.addEventListener('change', filterAndRender);
+    fileTypeFilter.addEventListener('change', filterAndRender);
+
+    filterAndRender();
+    }
+
+    loadIndex();
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("hoverAudio");
+    const toggle = document.getElementById("audioToggle");
+    const title = document.getElementById("audioTitle");
+
+    let audioEnabled = false;
+
+    // Set default volume to half
+    audio.volume = 0.5;
+
+    // Toggle ON/OFF button
+    toggle.addEventListener("click", () => {
+        audioEnabled = !audioEnabled;
+        toggle.textContent = audioEnabled ? "Audio: ON" : "Audio: OFF";
+
+        if (!audioEnabled) {
+        audio.pause();
+        audio.currentTime = 0;
+        }
+    });
+
+    // Hover to play (only when audioEnabled = true)
+    title.addEventListener("mouseenter", () => {
+        if (audioEnabled) {
+        audio.play().catch(() => {});
+        }
+    });
+
+    title.addEventListener("mouseleave", () => {
+        if (audioEnabled) {
+        audio.pause();
+        audio.currentTime = 0;
+        }
+    });
+    });
+    </script>
+
+</body>
+</html>
+
+
+
+
