@@ -166,174 +166,140 @@
 <div id="index"></div>
 <script>
 async function loadIndex() {
-  const res = await fetch('axd_index_datefixed.json');
-  const data = await res.json();
-  const container = document.getElementById('index');
-  const searchBox = document.getElementById('search');
-  const tagFilter = document.getElementById('tagFilter');
-  const sortOrder = document.getElementById('sortOrder');
-  const sortBy = document.getElementById('sortBy');
-  const fileTypeFilter = document.getElementById('fileTypeFilter');
-  const legend = document.getElementById('legend');
-  const toggleView = document.getElementById('toggleView');
-  let compactMode = false;
+    const res = await fetch('axd_index_datefixed.json');
+    const data = await res.json();
 
-  const motifColors = {
-    "civic decay": "#2b6cb0",
-    "moral inquiry": "#38a169",
-    "rhetorical indictment": "#d69e2e",
-    "technical audit": "#805ad5"
-  };
+    const container = document.getElementById('index');
+    const searchBox = document.getElementById('search');
+    const tagFilter = document.getElementById('tagFilter');
+    const sortOrder = document.getElementById('sortOrder');
+    const sortBy = document.getElementById('sortBy');
+    const fileTypeFilter = document.getElementById('fileTypeFilter');
+    const legend = document.getElementById('legend');
+    const toggleView = document.getElementById('toggleView');
 
-  /* -----------------------------
-     FIXED: Safe date parser
-  ----------------------------- */
-  function safeDate(d) {
-    const parsed = new Date(d);
-    return isNaN(parsed) ? 0 : parsed;
-  }
+    let compactMode = false;
 
-  /* ---------------------------------------------------
-     FIXED: Correct file-type detection (URL first)
-  --------------------------------------------------- */
-  function getFileType(item) {
-    const rawType = (item.type || '').toLowerCase();
-
-    // Prefer URL extension
-    const source = item.url || item.title || '';
-    const ext = source.includes('.')
-      ? source.split('.').pop().toLowerCase()
-      : '';
-
-    if (!rawType || rawType === 'file') {
-      return ext;
-    }
-    return rawType;
-  }
-
-  /* -----------------------------
-     Motif dropdown + legend
-  ----------------------------- */
-  const motifs = [...new Set(data.map(item => item.motif))];
-  tagFilter.innerHTML = `<option value="">All motifs</option>` +
-    motifs.map(m => `<option value="${m}">${m}</option>`).join('');
-
-  legend.innerHTML = motifs.map(m =>
-    `<div class="legend-item">
-      <div class="legend-color" style="background:${motifColors[m] || '#999'}"></div>
-      <span>${m}</span>
-    </div>`
-  ).join('');
-
-  /* -----------------------------
-     Dynamic file-type dropdown
-  ----------------------------- */
-  const fileTypes = [...new Set(
-    data.map(getFileType).filter(ft => ft)
-  )].sort();
-
-  fileTypes.forEach(ft => {
-    fileTypeFilter.innerHTML += `<option value="${ft}">${ft.toUpperCase()}</option>`;
-  });
-
-  /* -----------------------------
-     Render items
-  ----------------------------- */
-  function render(items) {
-    container.innerHTML = '';
-    const grid = document.createElement('div');
-    grid.className = compactMode ? 'index-grid compact' : 'index-grid';
-
-items.forEach(item => {
-    const motifClass = `motif-${item.motif.replace(/\s+/g, '-')}`;
-    const div = document.createElement('div');
-    div.className = `item ${motifClass}`;
-
-    const img = document.createElement('img');
-    img.src = item.thumbnail;
-    img.alt = item.title;
-    img.onerror = () => {
-        img.style.background = motifColors[item.motif] || '#ccc';
-        img.src = '';
-        img.alt = 'No thumbnail available';
+    const motifColors = {
+        "civic decay": "#2b6cb0",
+        "moral inquiry": "#38a169",
+        "rhetorical indictment": "#d69e2e",
+        "technical audit": "#805ad5"
     };
 
-    if (!compactMode) {
-        div.appendChild(img);
+    function safeDate(d) {
+        const parsed = new Date(d);
+        return isNaN(parsed) ? 0 : parsed;
     }
 
-    const link = document.createElement('a');
-    link.href = item.url;
-    link.target = "_blank";
-    link.textContent = item.title;
-
-    const date = document.createElement('p');
-    date.textContent = item.date;
-
-    let extra;
-    if (compactMode) {
-        extra = document.createElement('span');
-        extra.style.color = motifColors[item.motif] || '#999';
-        extra.textContent = item.motif;
-    } else {
-        extra = document.createElement('p');
-        extra.textContent = item.cluster;
+    function getFileType(item) {
+        const rawType = (item.type || '').toLowerCase();
+        const source = item.url || item.title || '';
+        const ext = source.includes('.') ? source.split('.').pop().toLowerCase() : '';
+        if (!rawType || rawType === 'file') return ext;
+        return rawType;
     }
 
-    div.append(link, date, extra);
-    grid.appendChild(div);
-});
+    /* --- FIXED: legend null check --- */
+    if (legend) {
+        const motifs = [...new Set(data.map(item => item.motif))];
+        tagFilter.innerHTML =
+            `<option value="">All motifs</option>` +
+            motifs.map(m => `<option value="${m}">${m}</option>`).join('');
 
-  /* -----------------------------
-     Filtering + Sorting
-  ----------------------------- */
-  function filterAndRender() {
-    const q = searchBox.value.toLowerCase();
-    const motif = tagFilter.value.toLowerCase();
-    const fileType = fileTypeFilter.value.toLowerCase();
+        legend.innerHTML = motifs.map(m => `
+            <div class="legend-item">
+                <div class="legend-color" style="background:${motifColors[m] || '#999'}"></div>
+                <span>${m}</span>
+            </div>
+        `).join('');
+    }
 
-    let filtered = data.filter(item => {
-      const titleMatch = item.title.toLowerCase().includes(q);
-      const tagMatch = item.tags.some(tag => tag.toLowerCase().includes(q));
-      const motifMatch = motif === '' || item.motif.toLowerCase() === motif;
-
-      const type = getFileType(item);
-      const typeMatch = fileType === '' || type === fileType;
-
-      return (titleMatch || tagMatch) && motifMatch && typeMatch;
+    const fileTypes = [...new Set(data.map(getFileType).filter(ft => ft))].sort();
+    fileTypes.forEach(ft => {
+        fileTypeFilter.innerHTML += `<option value="${ft}">${ft.toUpperCase()}</option>`;
     });
 
-    filtered.sort((a, b) => {
-      if (sortBy.value === 'title') {
-        return sortOrder.value === 'asc'
-          ? a.title.localeCompare(b.title)
-          : b.title.localeCompare(a.title);
-      } else {
-        const da = safeDate(a.date);
-        const db = safeDate(b.date);
-        return sortOrder.value === 'asc' ? da - db : db - da;
-      }
+    function render(items) {
+        container.innerHTML = '';
+        const grid = document.createElement('div');
+        grid.className = compactMode ? 'index-grid compact' : 'index-grid';
+
+        items.forEach(item => {
+            const motifClass = `motif-${item.motif.replace(/\s+/g, '-')}`;
+            const div = document.createElement('div');
+            div.className = `item ${motifClass}`;
+
+            const img = document.createElement('img');
+            img.src = item.thumbnail || "";
+            img.alt = item.title;
+            img.onerror = () => {
+                img.style.background = motifColors[item.motif] || '#ccc';
+                img.src = '';
+                img.alt = 'No thumbnail available';
+            };
+
+            if (!compactMode) div.appendChild(img);
+
+            div.innerHTML += `
+                <a href="${item.url}" target="_blank">${item.title}</a>
+                <p>${item.date}</p>
+                ${compactMode
+                    ? `<span style="color:${motifColors[item.motif]};">${item.motif}</span>`
+                    : `<p>${item.cluster}</p>`}
+            `;
+
+            grid.appendChild(div);
+        });
+
+        container.appendChild(grid);
+    }
+
+    function filterAndRender() {
+        const q = searchBox.value.toLowerCase();
+        const motif = tagFilter.value.toLowerCase();
+        const fileType = fileTypeFilter.value.toLowerCase();
+
+        let filtered = data.filter(item => {
+            const titleMatch = item.title.toLowerCase().includes(q);
+            const tagMatch = (item.tags || []).some(tag =>
+                tag.toLowerCase().includes(q)
+            );
+            const motifMatch = motif === '' || item.motif.toLowerCase() === motif;
+            const type = getFileType(item);
+            const typeMatch = fileType === '' || type === fileType;
+
+            return (titleMatch || tagMatch) && motifMatch && typeMatch;
+        });
+
+        filtered.sort((a, b) => {
+            if (sortBy.value === 'title') {
+                return sortOrder.value === 'asc'
+                    ? a.title.localeCompare(b.title)
+                    : b.title.localeCompare(a.title);
+            } else {
+                const da = safeDate(a.date);
+                const db = safeDate(b.date);
+                return sortOrder.value === 'asc' ? da - db : db - da;
+            }
+        });
+
+        render(filtered);
+    }
+
+    toggleView.addEventListener('click', () => {
+        compactMode = !compactMode;
+        toggleView.textContent = compactMode ? 'Full View' : 'Compact View';
+        filterAndRender();
     });
 
-    render(filtered);
-  }
+    searchBox.addEventListener('input', filterAndRender);
+    tagFilter.addEventListener('change', filterAndRender);
+    sortOrder.addEventListener('change', filterAndRender);
+    sortBy.addEventListener('change', filterAndRender);
+    fileTypeFilter.addEventListener('change', filterAndRender);
 
-  /* -----------------------------
-     Event listeners
-  ----------------------------- */
-  toggleView.addEventListener('click', () => {
-    compactMode = !compactMode;
-    toggleView.textContent = compactMode ? 'Full View' : 'Compact View';
     filterAndRender();
-  });
-
-  searchBox.addEventListener('input', filterAndRender);
-  tagFilter.addEventListener('change', filterAndRender);
-  sortOrder.addEventListener('change', filterAndRender);
-  sortBy.addEventListener('change', filterAndRender);
-  fileTypeFilter.addEventListener('change', filterAndRender);
-
-  filterAndRender();
 }
 
 loadIndex();
