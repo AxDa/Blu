@@ -126,9 +126,7 @@
   <p>His Bermuda trip marks his first visit to a British Overseas Territory as monarch, and the first time in 400 years that a reigning king has visited the islands. Reports describe a full ceremonial welcome, key engagements in defence and space science, cultural and historical events, and a warm public reception across the island.</p>
 </div>
 
-  <div class="legend" id="legend"></div>
-
-  <div class="controls">
+<div class="controls">
     <input type="text" id="search" placeholder="Search by title or tag...">
     <select id="tagFilter"></select>
     <select id="sortOrder">
@@ -136,34 +134,39 @@
       <option value="asc">Oldest first</option>
     </select>
 
-    <!-- NEW: dynamic file-type filter -->
     <select id="fileTypeFilter">
       <option value="">All file types</option>
     </select>
+
     <select id="sortBy">
       <option value="date">Sort by Date</option>
       <option value="title">Sort by Title</option>
     </select>
 
-
     <button id="toggleView">Compact View</button>
+
     <button id="openIndexFin2" onclick="window.open('indexfin2_data.html?ref=master', '_blank')">
-  Open IndexFin2 Data
+      Open IndexFin2 Data
+    </button>
+
     <button id="openEnhancedAudioPlayer" onclick="window.open('AudioPlayer.html', '_blank')">
-  Enhanced Audio Player
-</button>
- 
-</button>
+      Enhanced Audio Player
+    </button>
+
+    <!-- ✅ MOVE AUDIO BOX HERE -->
+    <div class="audio-box">
+      <button id="audioToggle">Audio: OFF</button>
+      <span id="audioTitle">David Lowe & Matt Chorley – R5L (24/04/2026)</span>
+    </div>
+
+    <audio id="hoverAudio"
+           src="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3?ref=master">
+    </audio>
+</div>
+
+<!-- The index grid should come AFTER controls -->
 <div id="index"></div>
-  <div class="audio-box">
-    <button id="audioToggle">Audio: OFF</button>
-    <span id="audioTitle">David Lowe & Matt Chorley – R5L (24/04/2026)</span>
-  </div>
-  
-  <audio id="hoverAudio"
-         src="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3?ref=master">
-  </audio>
-  </div>
+
 
 
 <script>
