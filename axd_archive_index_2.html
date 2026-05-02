@@ -89,7 +89,34 @@
 .info-banner p {
   margin: 4px 0;
 }
-  </style>
+.audio-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#audioToggle {
+  padding: 6px 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#audioToggle:hover {
+  border-color: #0077cc;
+}
+
+#audioTitle {
+  font-size: 14px;
+  cursor: pointer;
+  color: #0077cc;
+}
+</style>
+
 </head>
 <body>
   <h1>Archive Index</h1>
@@ -128,8 +155,15 @@
  
 </button>
   </div>
+<div id="index"></div>
+<div class="audio-box">
+  <button id="audioToggle">Audio: OFF</button>
+  <span id="audioTitle">David Lowe & Matt Chorley – R5L (24/04/2026)</span>
+</div>
 
-  <div id="index"></div>
+<audio id="hoverAudio"
+       src="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3?ref=master">
+</audio>
 
 <script>
 async function loadIndex() {
@@ -296,5 +330,43 @@ async function loadIndex() {
 
 loadIndex();
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("hoverAudio");
+  const toggle = document.getElementById("audioToggle");
+  const title = document.getElementById("audioTitle");
+
+  let audioEnabled = false;
+
+  // Set default volume to half
+  audio.volume = 0.5;
+
+  // Toggle ON/OFF button
+  toggle.addEventListener("click", () => {
+    audioEnabled = !audioEnabled;
+    toggle.textContent = audioEnabled ? "Audio: ON" : "Audio: OFF";
+
+    if (!audioEnabled) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
+
+  // Hover to play (only when audioEnabled = true)
+  title.addEventListener("mouseenter", () => {
+    if (audioEnabled) {
+      audio.play().catch(() => {});
+    }
+  });
+
+  title.addEventListener("mouseleave", () => {
+    if (audioEnabled) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
+});
+</script>
+
 </body>
 </html>
