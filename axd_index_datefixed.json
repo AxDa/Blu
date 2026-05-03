@@ -8224,11 +8224,7 @@
   "title": "Russion_Deserter_WS_News_03052026_v0.1",
   "url": "https://axda.github.io/Blu/Russion_Deserter_WS_News_03052026_v0.1.mp3",
   "thumbnail": "waveform_thumbnails/Russion_Deserter_WS_News_03052026_v0.1.png",
-  "tags": [
-    "audio",
-    "archive",
-    "news"
-  ],
+  "tags": ["audio", "archive", "news"],
   "date": "2026-05-03",
   "motif": "civil testimony",
   "cluster": "conflict",
@@ -8239,11 +8235,7 @@
   "title": "Rusian_Contracts_James_Beardsworth_WS_03052026_v0.1",
   "url": "https://axda.github.io/Blu/Rusian_Contracts_James_Beardsworth_WS_03052026_v0.1.mp3",
   "thumbnail": "waveform_thumbnails/Rusian_Contracts_James_Beardsworth_WS_03052026_v0.1.png",
-  "tags": [
-    "audio",
-    "archive",
-    "news"
-  ],
+  "tags": ["audio", "archive", "news"],
   "date": "2026-05-03",
   "motif": "geopolitical analysis",
   "cluster": "contracts",
@@ -8254,11 +8246,7 @@
   "title": "Philadelphia_Eagles_NFL_Uar_Bernard_WS_03052026_v0.1",
   "url": "https://axda.github.io/Blu/Philadelphia_Eagles_NFL_Uar_Bernard_WS_03052026_v0.1.mp3",
   "thumbnail": "waveform_thumbnails/Philadelphia_Eagles_NFL_Uar_Bernard_WS_03052026_v0.1.png",
-  "tags": [
-    "audio",
-    "archive",
-    "sports"
-  ],
+  "tags": ["audio", "archive", "sports"],
   "date": "2026-05-03",
   "motif": "cultural commentary",
   "cluster": "sport",
@@ -8266,14 +8254,10 @@
   "type": "file"
 },
 {
-  "title": "Media_Sound_biteTimes_1330_utc_1_03052026_v0.1.mp3",
+  "title": "Media_Sound_biteTimes_1330_utc_1_03052026_v0.1",
   "url": "https://axda.github.io/Blu/Media_Sound_biteTimes_1330_utc_1_03052026_v0.1.mp3",
   "thumbnail": "waveform_thumbnails/Media_Sound_biteTimes_1330_utc_1_03052026_v0.1.png",
-  "tags": [
-    "audio",
-    "archive",
-    "news"
-  ],
+  "tags": ["audio", "archive", "news"],
   "date": "2026-05-03",
   "motif": "cultural commentary",
   "cluster": "testimony",
@@ -8284,12 +8268,7 @@
   "title": "2013_Karen_Weston_Dialogue_Map_axd_03052026",
   "url": "https://axda.github.io/Blu/2013_Karen_Weston_Dialogue_Map_axd_03052026.png",
   "thumbnail": "https://axda.github.io/Blu/2013_Karen_Weston_Dialogue_Map_axd_03052026.png",
-  "tags": [
-    "image",
-    "archive",
-    "film",
-    "diagram"
-  ],
+  "tags": ["image", "archive", "film", "diagram"],
   "date": "2026-05-03",
   "motif": "moral inquiry",
   "cluster": "film_analysis",
@@ -8300,12 +8279,7 @@
   "title": "2013_Karen_Weston_YT_AOC_03052026_v0.1",
   "url": "https://axda.github.io/Blu/2013_Karen_Weston_YT_AOC_03052026_v0.1.mp3",
   "thumbnail": "waveform_thumbnails/2013_Karen_Weston_YT_AOC_03052026_v0.1.png",
-  "tags": [
-    "audio",
-    "archive",
-    "film",
-    "dialogue"
-  ],
+  "tags": ["audio", "archive", "film", "dialogue"],
   "date": "2026-05-03",
   "motif": "moral inquiry",
   "cluster": "film_analysis",
@@ -8316,13 +8290,7 @@
   "title": "2014KellyCalAutobioChron_axd_03052026",
   "url": "https://axda.github.io/Blu/2014KellyCalAutobioChron_axd_03052026.png",
   "thumbnail": "https://axda.github.io/Blu/2014KellyCalAutobioChron_axd_03052026.png",
-  "tags": [
-    "image",
-    "archive",
-    "film",
-    "diagram",
-    "graphviz"
-  ],
+  "tags": ["image", "archive", "film", "diagram", "graphviz"],
   "date": "2026-05-03",
   "motif": "autobiographical resonance",
   "cluster": "personal_chronology",
@@ -8330,8 +8298,8 @@
   "type": "png"
 },
 {
-  "title": "2008-2010WhipIt_Production_Chronology_axd_03052026",
-  "url": "https://axda.github.io/Blu/2008-2010_WhipItProduction_axd_03052026.png",
+  "title": "2008-2010_WhipIt_Production_Chronology_axd_03052026",
+  "url": "https://axda.github.io/Blu/2008-2010_WhipIt_Production_Chronology_axd_03052026.png",
   "thumbnail": "https://axda.github.io/Blu/WhipIt_Production_Chronology_axd_03052026.png",
   "tags": ["image", "archive", "film", "diagram", "graphviz"],
   "date": "2026-05-03",
@@ -8352,8 +8320,3 @@
   "type": "mp3"
 }
 ]
-
-
-
-
-
