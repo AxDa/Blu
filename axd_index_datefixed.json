@@ -8311,6 +8311,23 @@
   "cluster": "film_analysis",
   "size": 143600,
   "type": "file"
+},
+{
+  "title": "2014KellyCalAutobioChron_axd_03052026",
+  "url": "https://axda.github.io/Blu/2014KellyCalAutobioChron_axd_03052026.png",
+  "thumbnail": "https://axda.github.io/Blu/2014KellyCalAutobioChron_axd_03052026.png",
+  "tags": [
+    "image",
+    "archive",
+    "film",
+    "diagram",
+    "graphviz"
+  ],
+  "date": "2026-05-03",
+  "motif": "autobiographical resonance",
+  "cluster": "personal_chronology",
+  "size": 0,
+  "type": "png"
 }
 ]
 
