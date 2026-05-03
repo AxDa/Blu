@@ -227,7 +227,7 @@ async function loadIndex() {
         grid.className = compactMode ? 'index-grid compact' : 'index-grid';
 
         items.forEach(item => {
-            const motifClass = `motif-${item.motif.replace(/\s+/g, '-')}`;
+            const motifClass = `motif-${(item.motif || "unknown").replace(/\s+/g, '-')}`;
             const div = document.createElement('div');
             div.className = `item ${motifClass}`;
 
@@ -240,9 +240,10 @@ async function loadIndex() {
             img.style.width = "160px";
             img.style.height = "96px";
         }
-            img.alt = item.title;
+            img.alt = item.title || "Untitled";
             img.onerror = () => {
-                img.style.background = motifColors[item.motif] || '#ccc';
+                img.style.background = motifColors[item.motif] || motifColors["unknown"] || "#ccc";
+
                 img.src = '';
                 img.alt = 'No thumbnail available';
             };
