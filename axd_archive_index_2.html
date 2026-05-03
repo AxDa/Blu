@@ -270,7 +270,7 @@ async function loadIndex() {
         const fileType = fileTypeFilter.value.toLowerCase();
 
         let filtered = data.filter(item => {
-            const titleMatch = item.title.toLowerCase().includes(q);
+            const titleMatch = (item.title || "").toLowerCase().includes(q);
             const tagMatch = (item.tags || []).some(tag =>
                 tag.toLowerCase().includes(q)
             );
