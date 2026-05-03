@@ -8340,6 +8340,16 @@
   "cluster": "washington",
   "size": 143600,
   "type": "file"
+},
+{
+  "title": "Celtic_Manager_Martin_ONeil_R5L_2330_utc+1_03052026_v0.2",
+  "url": "https://axda.github.io/Blu/Celtic_Manager_Martin_O'Neil_R5L_2330_utc+1_03052026_v0.2.mp3",
+  "thumbnail": "waveform_thumbnails/Celtic_Manager_Martin_ONeil_R5L_2330_utc+1_03052026_v0.2.png",
+  "tags": ["audio", "archive", "sports", "interview"],
+  "date": "2026-05-03",
+  "motif": "sporting testimony",
+  "cluster": "football",
+  "size": 143600,
+  "type": "file"
 }
-
 ]
