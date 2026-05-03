@@ -8295,6 +8295,22 @@
   "cluster": "film_analysis",
   "size": 0,
   "type": "png"
+},
+{
+  "title": "2013_Karen_Weston_YT_AOC_03052026_v0.1",
+  "url": "https://axda.github.io/Blu/2013_Karen_Weston_YT_AOC_03052026_v0.1.mp3",
+  "thumbnail": "waveform_thumbnails/2013_Karen_Weston_YT_AOC_03052026_v0.1.png",
+  "tags": [
+    "audio",
+    "archive",
+    "film",
+    "dialogue"
+  ],
+  "date": "2026-05-03",
+  "motif": "moral inquiry",
+  "cluster": "film_analysis",
+  "size": 143600,
+  "type": "file"
 }
 ]
 
