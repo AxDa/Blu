@@ -8279,8 +8279,25 @@
   "cluster": "testimony",
   "size": 143600,
   "type": "file"
+},
+{
+  "title": "2013_Karen_Weston_Dialogue_Map_axd_03052026",
+  "url": "https://axda.github.io/Blu/2013_Karen_Weston_Dialogue_Map_axd_03052026.png",
+  "thumbnail": "https://axda.github.io/Blu/2013_Karen_Weston_Dialogue_Map_axd_03052026.png",
+  "tags": [
+    "image",
+    "archive",
+    "film",
+    "diagram"
+  ],
+  "date": "2026-05-03",
+  "motif": "moral inquiry",
+  "cluster": "film_analysis",
+  "size": 0,
+  "type": "png"
 }
 ]
+
 
 
 
