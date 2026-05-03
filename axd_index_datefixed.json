@@ -3642,11 +3642,11 @@
     "type": "file"
   },
   {
-    "title": "Newcastle 3v2 (9-3 agg)Quarabag_R5L_Chris Sutton_John_Murray_2110_utc_24052026.mp3",
+    "title": "Newcastle 3v2 (9-3 agg)Quarabag_R5L_Chris Sutton_John_Murray_2110_utc_24022026.mp3",
     "url": "https://axda.github.io/Blu/Newcastle%203v2%20(9-3%20agg)Quarabag_R5L_Chris%20Sutton_John_Murray_2110_utc_24052026.mp3?ref=master",
     "thumbnail": "waveform_thumbnails/Newcastle 3v2 (9-3 agg)Quarabag_R5L_Chris Sutton_John_Murray_2110_utc_24052026.mp3.png",
     "tags": [],
-    "date": "2026-05-24",
+    "date": "2026-02-24",
     "motif": "civic decay",
     "cluster": "testimony",
     "size": 759224,
@@ -3689,9 +3689,7 @@
     "title": "Nigel_phillips_Jonathan_St_Helena_Governor_Crypto_Scam_R4_1800_utc+1_News_02042026_v0.2.mp3",
     "url": "https://axda.github.io/Blu/Nigel_phillips_Jonathan_St_Helena_Governor_Crypto_Scam_R4_1800_utc%2B1_News_02042026_v0.2.mp3?ref=master",
     "thumbnail": "waveform_thumbnails/Nigel_phillips_Jonathan_St_Helena_Governor_Crypto_Scam_R4_1800_utc+1_News_02042026_v0.2.mp3.png",
-    "tags": [],
-    "date": "2026-04-02",
-    "motif": "civic decay",
+    "tags": ["Crypto"],
     "cluster": "testimony",
     "size": 1658578,
     "type": "file"
