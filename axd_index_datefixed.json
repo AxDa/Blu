@@ -8339,8 +8339,21 @@
   "cluster": "film_chronology",
   "size": 0,
   "type": "png"
+},
+[
+{
+  "title": "DrewBarrymore_Jennifer_CNNOnline_17092023_axd_v2ba",
+  "url": "https://drive.google.com/file/d/14dz8PAivf8I2GCbVn4iRR3-C8G2nkeKB/view?usp=sharing",
+  "thumbnail": "waveform_thumbnails/DrewBarrymore_Jennifer_CNNOnline_17092023_axd_v2ba.png",
+  "tags": ["audio", "archive", "media", "interview"],
+  "date": "2023-09-17",
+  "motif": "media_reference",
+  "cluster": "audio_archive",
+  "size": 0,
+  "type": "mp3"
 }
 ]
+
 
 
 
