@@ -8329,5 +8329,17 @@
   "cluster": "theatre_film_chronology",
   "size": 0,
   "type": "png"
+},
+{
+  "title": "Donald_Trump_Sarah_Smith_Washington_BBC_03052026_v0.1",
+  "url": "https://axda.github.io/Blu/Donald_Trump+Sarah_Smith_Washington_BBC_03052026_v0.1.mp3",
+  "thumbnail": "waveform_thumbnails/Donald_Trump_Sarah_Smith_Washington_BBC_03052026_v0.1.png",
+  "tags": ["audio", "archive", "news", "politics"],
+  "date": "2026-05-03",
+  "motif": "political testimony",
+  "cluster": "washington",
+  "size": 143600,
+  "type": "file"
 }
+
 ]
