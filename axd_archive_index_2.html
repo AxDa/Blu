@@ -153,14 +153,15 @@
     </button>
 
     <!-- AUDIO BOX INSIDE CONTROLS -->
-    <div class="audio-box">
-      <button id="audioToggle">Audio: OFF</button>
-      <span id="audioTitle">David Lowe & Matt Chorley – R5L (24/04/2026)</span>
-    </div>
+<div class="audio-box">
+  <button id="audioToggle">Audio: OFF</button>
+  <button id="audioPlay">▶ Play</button>
+  <span id="audioTitle">Audio Clip</span>
+</div>
 
-    <audio id="hoverAudio"
-           src="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3?ref=master">
-    </audio>
+<audio id="hoverAudio"
+       src="YOUR_AUDIO_FILE.mp3">
+</audio>
 </div>
 <!-- INDEX GRID BELOW CONTROLS -->
 <div id="index"></div>
@@ -315,14 +316,16 @@ loadIndex();
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("hoverAudio");
   const toggle = document.getElementById("audioToggle");
+  const playBtn = document.getElementById("audioPlay");
   const title = document.getElementById("audioTitle");
 
   let audioEnabled = false;
+  let isPlaying = false;
 
-  // Set default volume to half
+  // Default volume
   audio.volume = 0.5;
 
-  // Toggle ON/OFF button
+  // Toggle ON/OFF
   toggle.addEventListener("click", () => {
     audioEnabled = !audioEnabled;
     toggle.textContent = audioEnabled ? "Audio: ON" : "Audio: OFF";
@@ -330,18 +333,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!audioEnabled) {
       audio.pause();
       audio.currentTime = 0;
+      isPlaying = false;
+      playBtn.textContent = "▶ Play";
     }
   });
 
-  // Hover to play (only when audioEnabled = true)
+  // Play button
+  playBtn.addEventListener("click", () => {
+    if (!audioEnabled) return;
+
+    if (!isPlaying) {
+      audio.play().catch(() => {});
+      playBtn.textContent = "⏸ Pause";
+      isPlaying = true;
+    } else {
+      audio.pause();
+      playBtn.textContent = "▶ Play";
+      isPlaying = false;
+    }
+  });
+
+  // Hover play
   title.addEventListener("mouseenter", () => {
-    if (audioEnabled) {
+    if (audioEnabled && !isPlaying) {
       audio.play().catch(() => {});
     }
   });
 
   title.addEventListener("mouseleave", () => {
-    if (audioEnabled) {
+    if (audioEnabled && !isPlaying) {
       audio.pause();
       audio.currentTime = 0;
     }
