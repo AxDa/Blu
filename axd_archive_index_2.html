@@ -274,7 +274,7 @@ async function loadIndex() {
             const tagMatch = (item.tags || []).some(tag =>
                 tag.toLowerCase().includes(q)
             );
-            const motifMatch = motif === '' || item.motif.toLowerCase() === motif;
+            const motifMatch = motif === '' || (item.motif || "").toLowerCase() === motif;
             const type = getFileType(item);
             const typeMatch = fileType === '' || type === fileType;
 
