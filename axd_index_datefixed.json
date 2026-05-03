@@ -8318,5 +8318,16 @@
   "cluster": "audio_archive",
   "size": 0,
   "type": "mp3"
+},
+{
+  "title": "Shepard_FoolForLove_Timeline_axd_03052026",
+  "url": "https://axda.github.io/Blu/Shepard_FoolForLove_Timeline_axd_03052026.png",
+  "thumbnail": "https://axda.github.io/Blu/Shepard_FoolForLove_Timeline_axd_03052026.png",
+  "tags": ["image", "archive", "theatre", "film", "timeline", "graphviz"],
+  "date": "2026-05-03",
+  "motif": "creative lineage",
+  "cluster": "theatre_film_chronology",
+  "size": 0,
+  "type": "png"
 }
 ]
