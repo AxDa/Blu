@@ -8362,6 +8362,18 @@
   "cluster": "foreign_affairs",
   "size": 143600,
   "type": "file"
+},
+{
+  "title": "President_Trump_WHL_Independent_20260504-125437_v0.1",
+  "url": "https://axda.github.io/Blu/President_Trump_WHL_Independent20260504-125437__v0.1.mp3",
+  "thumbnail": "waveform_thumbnails/President_Trump_WHL_Independent_20260504-125437_v0.1.png",
+  "tags": ["audio", "archive", "news", "politics", "independent"],
+  "date": "2026-05-04",
+  "motif": "executive testimony",
+  "cluster": "washington",
+  "size": 143600,
+  "type": "file"
 }
+
 
 ]
