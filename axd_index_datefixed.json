@@ -8373,7 +8373,16 @@
   "cluster": "washington",
   "size": 143600,
   "type": "file"
+},
+{
+  "title": "Life_Magazine_Monroe_100_Marolyn_Times_1440_utc+1_04052026_v0.1a",
+  "url": "https://axda.github.io/Blu/Life_Magazine_Monroe_100_Marolyn_Times_1440_utc+1_04052026_v0.1a.mp3",
+  "thumbnail": "waveform_thumbnails/Life_Magazine_Monroe_100_Marolyn_Times_1440_utc+1_04052026_v0.1a.png",
+  "tags": ["audio", "archive", "media", "culture", "Marilyn Monroe"],
+  "date": "2026-05-04",
+  "motif": "cultural reflection",
+  "cluster": "media_history",
+  "size": 143600,
+  "type": "file"
 }
-
-
 ]
