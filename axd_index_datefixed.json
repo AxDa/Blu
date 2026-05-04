@@ -8351,5 +8351,17 @@
   "cluster": "football",
   "size": 143600,
   "type": "file"
+},
+{
+  "title": "Prime_Minister_Keir_Starmer_Armenia_Times_1000_utc+1_News_04052026_v0.1",
+  "url": "https://axda.github.io/Blu/Prime_Mnister_Kier_Starmer_Armenia_Times_1000_utc+1_News_04052026_v0.1.mp3",
+  "thumbnail": "waveform_thumbnails/Prime_Minister_Keir_Starmer_Armenia_Times_1000_utc+1_News_04052026_v0.1.png",
+  "tags": ["audio", "archive", "news", "politics", "Armenia", "West Asia"],
+  "date": "2026-05-04",
+  "motif": "diplomatic testimony",
+  "cluster": "foreign_affairs",
+  "size": 143600,
+  "type": "file"
 }
+
 ]
