@@ -293,7 +293,7 @@ function render(items) {
             img.src = item.thumbnail;
             img.loading = "lazy";
         } else {
-            img.style.background = motifColors[item.motif] || "#ccc";
+            img.style.background =  motifColors[(item.motif || "").toLowerCase().trim()] || "#ccc";
             img.style.width = "160px";
             img.style.height = "96px";
         }
