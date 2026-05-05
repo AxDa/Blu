@@ -300,7 +300,11 @@ function filterAndRender() {
 
     render(filtered);
 
-    // 🔥 NEW: update count after rendering
+    // 🔥 Call the counter here
+    updateCount();
+}
+
+// ✅ This must be OUTSIDE filterAndRender()
 function updateCount() {
     const displayed = document.querySelectorAll('.item').length;
     const total = window.fullIndexCount || 0;
@@ -308,20 +312,22 @@ function updateCount() {
     if (counter) counter.textContent = `Items displayed: ${displayed} / ${total}`;
 }
 
-
-    toggleView.addEventListener('click', () => {
-        compactMode = !compactMode;
-        toggleView.textContent = compactMode ? 'Full View' : 'Compact View';
-        filterAndRender();
-    });
-
-    searchBox.addEventListener('input', filterAndRender);
-    tagFilter.addEventListener('change', filterAndRender);
-    sortOrder.addEventListener('change', filterAndRender);
-    sortBy.addEventListener('change', filterAndRender);
-    fileTypeFilter.addEventListener('change', filterAndRender);
-
+// ✅ Event listeners must be OUTSIDE filterAndRender()
+toggleView.addEventListener('click', () => {
+    compactMode = !compactMode;
+    toggleView.textContent = compactMode ? 'Full View' : 'Compact View';
     filterAndRender();
+});
+
+searchBox.addEventListener('input', filterAndRender);
+tagFilter.addEventListener('change', filterAndRender);
+sortOrder.addEventListener('change', filterAndRender);
+sortBy.addEventListener('change', filterAndRender);
+fileTypeFilter.addEventListener('change', filterAndRender);
+
+// Initial render
+filterAndRender();
+
 }
 
 loadIndex();
