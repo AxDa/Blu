@@ -142,6 +142,9 @@
       <option value="title">Sort by Title</option>
     </select>
 
+<div id="itemCount" style="margin-top:10px; font-weight:bold;"></div>
+
+  
     <button id="toggleView">Compact View</button>
 
     <button id="openIndexFin2" onclick="window.open('indexfin2_data.html?ref=master', '_blank')">
@@ -169,7 +172,9 @@
 async function loadIndex() {
     const res = await fetch('axd_index_datefixed.json');
     const data = await res.json();
-
+  
+    window.fullIndexCount = data.length;
+  
     const container = document.getElementById('index');
     const searchBox = document.getElementById('search');
     const tagFilter = document.getElementById('tagFilter');
@@ -264,37 +269,45 @@ async function loadIndex() {
         container.appendChild(grid);
     }
 
-    function filterAndRender() {
-        const q = searchBox.value.toLowerCase();
-        const motif = tagFilter.value.toLowerCase();
-        const fileType = fileTypeFilter.value.toLowerCase();
+function filterAndRender() {
+    const q = searchBox.value.toLowerCase();
+    const motif = tagFilter.value.toLowerCase();
+    const fileType = fileTypeFilter.value.toLowerCase();
 
-        let filtered = data.filter(item => {
-            const titleMatch = (item.title || "").toLowerCase().includes(q);
-            const tagMatch = (item.tags || []).some(tag =>
-                tag.toLowerCase().includes(q)
-            );
-            const motifMatch = motif === '' || (item.motif || "").toLowerCase() === motif;
-            const type = getFileType(item);
-            const typeMatch = fileType === '' || type === fileType;
+    let filtered = data.filter(item => {
+        const titleMatch = (item.title || "").toLowerCase().includes(q);
+        const tagMatch = (item.tags || []).some(tag =>
+            tag.toLowerCase().includes(q)
+        );
+        const motifMatch = motif === '' || (item.motif || "").toLowerCase() === motif;
+        const type = getFileType(item);
+        const typeMatch = fileType === '' || type === fileType;
 
-            return (titleMatch || tagMatch) && motifMatch && typeMatch;
-        });
+        return (titleMatch || tagMatch) && motifMatch && typeMatch;
+    });
 
-        filtered.sort((a, b) => {
-            if (sortBy.value === 'title') {
-                return sortOrder.value === 'asc'
-                    ? a.title.localeCompare(b.title)
-                    : b.title.localeCompare(a.title);
-            } else {
-                const da = safeDate(a.date);
-                const db = safeDate(b.date);
-                return sortOrder.value === 'asc' ? da - db : db - da;
-            }
-        });
+    filtered.sort((a, b) => {
+        if (sortBy.value === 'title') {
+            return sortOrder.value === 'asc'
+                ? a.title.localeCompare(b.title)
+                : b.title.localeCompare(a.title);
+        } else {
+            const da = safeDate(a.date);
+            const db = safeDate(b.date);
+            return sortOrder.value === 'asc' ? da - db : db - da;
+        }
+    });
 
-        render(filtered);
-    }
+    render(filtered);
+
+    // 🔥 NEW: update count after rendering
+function updateCount() {
+    const displayed = document.querySelectorAll('.item').length;
+    const total = window.fullIndexCount || 0;
+    const counter = document.getElementById('itemCount');
+    if (counter) counter.textContent = `Items displayed: ${displayed} / ${total}`;
+}
+
 
     toggleView.addEventListener('click', () => {
         compactMode = !compactMode;
