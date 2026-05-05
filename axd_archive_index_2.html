@@ -2,6 +2,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Archive Index</title>
+<style>
+.file-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: middle;
+  background-size: cover;
+  background-position: center;
+}
+
+.icon-doc  { background-image: url('icons/doc.png'); }
+.icon-mp3  { background-image: url('icons/mp3.png'); }
+.icon-png  { background-image: url('icons/png.png'); }
+</style>
+  
   <style>
     body { font-family: Arial, sans-serif; background: #f8f8f8; margin: 20px; }
     .controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
@@ -198,13 +214,33 @@ async function loadIndex() {
         return isNaN(parsed) ? 0 : parsed;
     }
 
-    function getFileType(item) {
-        const rawType = (item.type || '').toLowerCase();
-        const source = item.url || item.title || '';
-        const ext = source.includes('.') ? source.split('.').pop().toLowerCase() : '';
-        if (!rawType || rawType === 'file') return ext;
-        return rawType;
-    }
+function getFileType(item) {
+    const raw = (item.type || '').toLowerCase();
+
+    // If type is explicitly set, trust it
+    if (raw && raw !== "file") return raw;
+
+    const url = item.url || '';
+
+    // Detect Google Docs
+    if (url.includes("docs.google.com/document")) return "doc";
+
+    // Detect MP3 even with ?ref=master
+    if (url.toLowerCase().includes(".mp3")) return "mp3";
+
+    // Detect PNG
+    if (url.toLowerCase().includes(".png")) return "png";
+
+    // Detect JPG/JPEG
+    if (url.toLowerCase().includes(".jpg") || url.toLowerCase().includes(".jpeg")) return "jpg";
+
+    // Detect GIF
+    if (url.toLowerCase().includes(".gif")) return "gif";
+
+    // Fallback
+    return "file";
+}
+
 
     /* --- FIXED: legend null check --- */
     if (legend) {
@@ -221,11 +257,18 @@ async function loadIndex() {
         `).join('');
     }
 
-    const fileTypes = [...new Set(data.map(getFileType).filter(ft => ft))].sort();
-    fileTypes.forEach(ft => {
-        fileTypeFilter.innerHTML += `<option value="${ft}">${ft.toUpperCase()}</option>`;
-    });
-
+        const fileTypes = [...new Set(data.map(getFileType).filter(ft => ft))].sort();
+        fileTypes.forEach(ft => {
+            fileTypeFilter.innerHTML += `<option value="${ft}">${ft.toUpperCase()}</option>`;
+        });
+    function getFileIcon(type) {
+        switch (type) {
+            case "doc": return "icon-doc";
+            case "mp3": return "icon-mp3";
+            case "png": return "icon-png";
+            default: return "";
+        }
+    }
     function render(items) {
         container.innerHTML = '';
         const grid = document.createElement('div');
@@ -255,8 +298,20 @@ async function loadIndex() {
 
             if (!compactMode) div.appendChild(img);
 
+        div.innerHTML += `const fileType = getFileType(item);
+            const iconClass = getFileIcon(fileType);
+            
             div.innerHTML += `
-                <a href="${item.url}" target="_blank">${item.title}</a>
+                <a href="${item.url}" target="_blank">
+                    ${iconClass ? `<span class="file-icon ${iconClass}"></span>` : ""}
+                    ${item.title}
+                </a>
+                <p>${item.date}</p>
+                ${compactMode
+                    ? `<span style="color:${motifColors[item.motif]};">${item.motif}</span>`
+                    : `<p>${item.cluster}</p>`}
+            `;
+
                 <p>${item.date}</p>
                 ${compactMode
                     ? `<span style="color:${motifColors[item.motif]};">${item.motif}</span>`
