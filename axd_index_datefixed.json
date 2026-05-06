@@ -9050,5 +9050,17 @@
     "cluster": "documents",
     "size": null,
     "type": "doc"
-  }
+  },
+  {
+  "title": "MV_Hondius_Cruise_Ship_Jake_Rosmarin_Blogger_Times_1200_utc+1_06052026_v0.2.mp3",
+  "url": "https://axda.github.io/Blu/MV%20Hondius%20Cruise%20Ship_Jake_Rosmarin_Blogger_Times_1200_utc%2B1_06052026_v0.2.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "blogger", "cruise", "times"],
+  "date": "2026-05-06",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 127800,
+  "type": "mp3"
+}
+
 ]
