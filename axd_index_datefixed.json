@@ -9093,5 +9093,18 @@
    "cluster": "testimony",
    "size": 444400,
    "type": "mp3"
+},
+{
+  "title": "Caves Poetry — AI John Pinaer Times 07052026",
+  "date": "2026-05-07",
+  "file": "Caves_Poetry_ai_John_Pinaer_Times_07052026_v0.1.mp3",
+  "url": "https://axda.github.io/Blu/audio/Caves_Poetry_ai_John_Pinaer_Times_07052026_v0.1.mp3",
+  "thumbnail": "thumbnails/Caves_Poetry_ai_John_Pinaer_Times_07052026_v0.1.png",
+  "type": "audio",
+  "motif": "civic_decay",
+  "cluster": "moral_inquiry",
+  "tags": ["poetry", "ai_voice", "cultural_commentary"],
+  "size": 27900,
+  "id": "caves_poetry_ai_john_pinaer_times_07052026_v0.1"
 }
 ]
