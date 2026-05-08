@@ -9118,5 +9118,23 @@
   "notes": "Times Radio segment featuring Nigel Farage at 19:30; political commentary and reaction framing.",
   "size": "44700",
   "type": "mp3"
+},
+{
+  "id": "2026-05-08_kier_starmer_times_1930",
+  "title": "Kier Starmer – Times, 19:30",
+  "cluster": "politics_uk",
+  "motif": "kier_starmer_times",
+  "type": "audio",
+  "ext": "mp3",
+  "url": "https://axda.github.io/Blu/Kier_Starmer_Times_1930_utc+1_08052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "date": "2026-05-08",
+  "date_utc": "2026-05-08",
+  "date_local": "2026-05-08",
+  "time_utc": "18:30",
+  "time_local": "19:30",
+  "timezone_local": "UTC+1",
+  "version": "0.1",
+  "container": "Blu"
 }
 ]
