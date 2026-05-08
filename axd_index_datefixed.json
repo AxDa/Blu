@@ -9059,7 +9059,7 @@
   "date": "2026-05-06",
   "motif": "civic decay",
   "cluster": "testimony",
-  "size": 127800,
+  "size": "127800",
   "type": "mp3"
 },
 {
@@ -9070,7 +9070,7 @@
   "date": "2026-05-06",
   "motif": "civic decay",
   "cluster": "testimony",
-  "size": 91600,
+  "size": "91600",
   "type": "mp3"
 },
 {
@@ -9091,7 +9091,7 @@
    "date": "2026-05-06",
    "motif": "civic decay",
    "cluster": "testimony",
-   "size": 444400,
+   "size": "444400",
    "type": "mp3"
 },
 {
@@ -9104,7 +9104,19 @@
   "motif": "civic_decay",
   "cluster": "moral_inquiry",
   "tags": ["poetry", "ai_voice", "cultural_commentary"],
-  "size": 27900,
+  "size": "27900",
   "id": "caves_poetry_ai_john_pinaer_times_07052026_v0.1"
+},
+{
+  "title": "Nigel Farage – Times Radio 19:30 (08 May 2026)",
+  "url": "https://axda.github.io/Blu/Nigel_Farage_Times_1930_utc+1_08052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "politics", "interview"],
+  "date": "2026-05-08",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "notes": "Times Radio segment featuring Nigel Farage at 19:30; political commentary and reaction framing.",
+  "size": "44700"l,
+  "type": "mp3"
 }
 ]
