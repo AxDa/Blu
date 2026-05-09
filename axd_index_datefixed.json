@@ -9136,5 +9136,17 @@
   "timezone_local": "UTC+1",
   "version": "0.1",
   "container": "Blu"
+},
+{
+  "title": "Lara Spirit – Times News (09 May 2026)",
+  "url": "https://axda.github.io/Blu/News_Times_Lara_Spirit_09052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "news", "politics", "political editor"],
+  "date": "2026-05-09",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "notes": "Times News segment featuring Lara Spirit; political editor framing and analysis.",
+  "size": "87900",
+  "type": "mp3"
 }
 ]
