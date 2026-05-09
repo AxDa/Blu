@@ -9148,5 +9148,31 @@
   "notes": "Times News segment featuring Lara Spirit; political editor framing and analysis.",
   "size": "87900",
   "type": "mp3"
+},
+{
+  "title": "Rod Liddle – Times Commentary (09 May 2026)",
+  "url": "https://axda.github.io/Blu/Times_Rod_Liddle_09052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "commentary", "politics", "rod liddle"],
+  "date": "2026-05-09",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "notes": "Times segment featuring Rod Liddle; political commentary and analysis.",
+  "size": "24500",
+  "type": "mp3"
+},
+{
+  "title": "Lara Spirit & Rod Liddle – Times News (09 May 2026)",
+  "url": "https://axda.github.io/Blu/Lara_Spirit_Times_Times_News_Rod_Liddle_09052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "news", "politics", "lara spirit", "rod liddle"],
+  "date": "2026-05-09",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "notes": "Times News segment featuring Lara Spirit with commentary from Rod Liddle.",
+  "size": "23200",
+  "type": "mp3"
 }
+
+
 ]
