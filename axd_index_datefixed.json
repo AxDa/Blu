@@ -9172,7 +9172,17 @@
   "notes": "Times News segment featuring Lara Spirit with commentary from Rod Liddle.",
   "size": "23200",
   "type": "mp3"
+},
+{
+  "title": "Times – 19:30 Segment (1m20s, 08 May 2026)",
+  "url": "https://axda.github.io/Blu/1m20s_Times_1930_utc+1_08052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "news", "politics"],
+  "date": "2026-05-08",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "notes": "Short Times segment (1 minute 20 seconds) from the 19:30 bulletin.",
+  "size": "33100",
+  "type": "mp3"
 }
-
-
 ]
