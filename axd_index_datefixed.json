@@ -9184,5 +9184,27 @@
   "notes": "Short Times segment (1 minute 20 seconds) from the 19:30 bulletin.",
   "size": "33100",
   "type": "mp3"
+},
+{
+  "title": "Lord David Blunkett – R4 / Times (Mason, Bolton, O'Connell) – 10 May 2026",
+  "url": "https://axda.github.io/Blu/Lord_David_Blunket_R4_Times_Mason_Bolton_O'Connell_10052026_v0.11a.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": [
+    "audio",
+    "times",
+    "r4",
+    "politics",
+    "lord david blunkett",
+    "mason",
+    "bolton",
+    "o'connell"
+  ],
+  "date": "2026-05-10",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "notes": "R4/Times political segment featuring Lord David Blunkett with Mason, Bolton and O'Connell.",
+  "size": "436900",
+  "type": "mp3"
 }
+
 ]
