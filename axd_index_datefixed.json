@@ -9205,6 +9205,23 @@
   "notes": "R4/Times political segment featuring Lord David Blunkett with Mason, Bolton and O'Connell.",
   "size": "436900",
   "type": "mp3"
+},
+{
+  "title": "Steve Swinford – Times Political Editor (10 May 2026)",
+  "url": "https://axda.github.io/Blu/Steve_Swinford_Editor_Times_10052026_clip_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": [
+    "audio",
+    "times",
+    "politics",
+    "political editor",
+    "steve swinford"
+  ],
+  "date": "2026-05-10",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "notes": "Clip featuring Steve Swinford, Times Political Editor.",
+  "size": "16600",
+  "type": "mp3"
 }
-
 ]
