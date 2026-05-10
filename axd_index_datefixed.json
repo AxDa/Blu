@@ -9223,5 +9223,26 @@
   "notes": "Clip featuring Steve Swinford, Times Political Editor.",
   "size": "16600",
   "type": "mp3"
+},
+{
+  "title": "Monica García – Spain Health Minister, Times News (19:00, 10 May 2026)",
+  "url": "https://axda.github.io/Blu/Monica_Garcia_Health_Minister_Spain_1900_Times+News_utc+1_10052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": [
+    "audio",
+    "times",
+    "news",
+    "politics",
+    "spain",
+    "health minister",
+    "monica garcía"
+  ],
+  "date": "2026-05-10",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "notes": "Times News segment featuring Spain's Health Minister Monica García at 19:00 (UTC+1).",
+  "size": 19900,
+  "type": "mp3"
 }
+
 ]
