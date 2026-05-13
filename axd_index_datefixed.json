@@ -9243,6 +9243,34 @@
   "notes": "Times News segment featuring Spain's Health Minister Monica García at 19:00 (UTC+1).",
   "size": 19900,
   "type": "mp3"
+},
+{
+  "id": "yellow_stickers_90_30_edwina_curry_stig_abel_kate_mccann_times_radio_v0_1",
+  "file_name": "Yellow_Stickers_£90_£30_Edwina_Curry+Stig_Abel_Kate_McCann_Times_Radio_v0.1.mp3",
+  "url": "https://axda.github.io/Blu/Yellow_Stickers_£90_£30_Edwina_Curry+Stig_Abel_Kate_McCann_Times_Radio_v0.1.mp3",
+  "display_name": "Yellow Stickers – £90/£30 – Edwina Curry, Stig Abel, Kate McCann (Times Radio)",
+  "type": "audio",
+  "format": "mp3",
+  "size": 105700,
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "date": "2026-05-13",
+  "source": "Times Radio",
+  "people": [
+    "Edwina Curry",
+    "Stig Abel",
+    "Kate McCann"
+  ],
+  "tags": [
+    "audio",
+    "times_radio",
+    "yellow_stickers",
+    "supermarket_pricing",
+    "discussion"
+  ],
+  "motif": "civic_decay",
+  "cluster": "testimony",
+  "version": "0.1",
+  "status": "raw",
+  "notes": ""
 }
-
 ]
