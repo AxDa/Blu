@@ -9331,6 +9331,27 @@
     }
   },
   "notes": ""
+},
+{
+  "title": "President_X-_Trump_China_US_R4_1800_utc+1_14052026_v0.1.mp3",
+  "url": "https://axda.github.io/Blu/President_X-_Trump_China_US_R4_1800_utc+1_14052026_v0.1.mp3?ref=master",
+  "thumbnail": "thumbnails/audio_placeholder.png",
+  "tags": ["summit"],
+  "date": "2026-05-14",
+  "motif": "civic decay",
+  "cluster": "geopolitics",
+  "size": 194400,
+  "type": "mp3"
+},
+{
+  "title": "Nigel_Farrage_Times_News_14052026_v0.1.mp3",
+  "url": "https://axda.github.io/Blu/Nigel_Farrage_Times_News_14052026_v0.1.mp3?ref=master",
+  "thumbnail": "thumbnails/audio_placeholder.png",
+  "tags": ["gifts"],
+  "date": "2026-05-14",
+  "motif": "civic decay",
+  "cluster": "broadcast",
+  "size": 25000,
+  "type": "mp3"
 }
-
 ]
