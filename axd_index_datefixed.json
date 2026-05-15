@@ -9353,5 +9353,16 @@
   "cluster": "broadcast",
   "size": 25000,
   "type": "mp3"
+},
+{
+  "title": "starmer_factions_15052026.png",
+  "url": "https://axda.github.io/Blu/starmer_factions_15052026.png?ref=master",
+  "thumbnail": "thumbnails/png_placeholder.png",
+  "tags": [],
+  "date": "2026-05-15",
+  "motif": "civic decay",
+  "cluster": "factional dynamics",
+  "size": 1200,
+  "type": "png"
 }
 ]
