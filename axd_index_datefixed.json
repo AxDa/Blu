@@ -9427,6 +9427,20 @@
   "size": "89300" ,
   "type": "png",
   "notes": "Rolling adjusted debits 2020–2026 with multi‑window smoothing."
+},
+{
+  "title": "combinedx7",
+  "url": "https://axda.github.io/Blu/combinedx7.png",
+  "thumbnail": "https://axda.github.io/Blu/combinedx7.png",
+  "tags": [
+    "image",
+    "archive",
+    "chart"
+  ],
+  "date": "2026-05-16",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": "7100",
+  "type": "image"
 }
-
 ]
