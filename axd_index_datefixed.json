@@ -9364,5 +9364,21 @@
   "cluster": "factional dynamics",
   "size": 1200,
   "type": "png"
+},
+{
+  "title": "starmer_corbyn_compare_axd_16052026_v0.1.svg",
+  "url": "https://axda.github.io/Blu/starmer_corbyn_compare_axd.svg",
+  "thumbnail": "thumbnails/svg_placeholder.png",
+  "tags": [
+    "svg",
+    "archive",
+    "politics"
+  ],
+  "date": "2026-05-16",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 1500,
+  "type": "file"
 }
+
 ]
