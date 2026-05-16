@@ -9394,5 +9394,21 @@
   "cluster": "football",
   "size": 97500,
   "type": "file"
+},
+{
+  "title": "combinedx1_financial_diagnostic",
+  "url": "https://axda.github.io/Blu/combinedx1.png",
+  "thumbnail": "https://axda.github.io/Blu/combinedx1.png",
+  "tags": [
+    "analysis",
+    "financial",
+    "diagnostic",
+    "svg"
+  ],
+  "date": "2026-05-16",
+  "motif": "civic_decay",
+  "cluster": "testimony",
+  "size": "400",
+  "type": "png"
 }
 ]
