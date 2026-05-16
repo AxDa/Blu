@@ -9410,5 +9410,23 @@
   "cluster": "testimony",
   "size": "400",
   "type": "png"
+},
+{
+  "title": "debit_adj_rolling_2020_2026_axd",
+  "url": "https://axda.github.io/Blu/debit_adj_rolling_2020_2026_axd.png",
+  "thumbnail": "https://axda.github.io/Blu/debit_adj_rolling_2020_2026_axd.png",
+  "tags": [
+    "analysis",
+    "financial",
+    "rolling-average",
+    "diagnostic"
+  ],
+  "date": "2026-05-16",
+  "motif": "civic_decay",
+  "cluster": "testimony",
+  "size": "89300" ,
+  "type": "png",
+  "notes": "Rolling adjusted debits 2020–2026 with multi‑window smoothing."
 }
+
 ]
