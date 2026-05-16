@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <style>
+    .cluster-title { font: bold 15px "Segoe UI", sans-serif; }
+    .item-text    { font: 12px "Segoe UI", sans-serif; }
+    .label-text   { font: bold 18px "Segoe UI", sans-serif; }
+    .sub-label    { font: italic 13px "Segoe UI", sans-serif; }
+    .center-text  { text-anchor: middle; }
+    .box          { stroke: #000; stroke-width: 1; }
+  </style>
+
+  <rect x="0" y="0" width="1600" height="900" fill="#ffffff"/>
+
+  <!-- Titles -->
+  <text x="400"  y="40" class="label-text center-text">Keir Starmer – Current Criticisms</text>
+  <text x="1200" y="40" class="label-text center-text">Jeremy Corbyn – 2016 Coup Experience</text>
+
+  <!-- Subtitles -->
+  <text x="400"  y="60" class="sub-label center-text">Pressures on a sitting Prime Minister</text>
+  <text x="1200" y="60" class="sub-label center-text">Pressures on an opposition leader</text>
+
+  <!-- ========================= -->
+  <!-- LEFT PANEL: STARMER       -->
+  <!-- originX = 50              -->
+  <!-- ========================= -->
+
+  <!-- Row 1, Col 1: Leadership & Listening -->
+  <g>
+    <rect x="50" y="90" width="300" height="200" fill="none" stroke="#ff9999" stroke-width="2"/>
+    <rect x="50" y="90" width="300" height="28" fill="#ff9999"/>
+    <text x="200" y="110" class="cluster-title center-text">Leadership &amp; Listening</text>
+
+    <rect x="60" y="125" width="280" height="22" fill="#ffcccc" class="box"/>
+    <text x="70" y="141" class="item-text">Accused of not listening to MPs</text>
+
+    <rect x="60" y="151" width="280" height="22" fill="#ffcccc" class="box"/>
+    <text x="70" y="167" class="item-text">Seen as remote from grassroots</text>
+
+    <rect x="60" y="177" width="280" height="22" fill="#ffcccc" class="box"/>
+    <text x="70" y="193" class="item-text">Centralised decision‑making in No.10</text>
+
+    <rect x="60" y="203" width="280" height="22" fill="#ffcccc" class="box"/>
+    <text x="70" y="219" class="item-text">Critics say he governs by command</text>
+
+    <rect x="60" y="229" width="280" height="22" fill="#ffcccc" class="box"/>
+    <text x="70" y="245" class="item-text">Accused of ignoring growing discontent</text>
+  </g>
+
+  <!-- Row 1, Col 2: Direction & Authenticity -->
+  <g>
+    <rect x="370" y="90" width="300" height="200" fill="none" stroke="#ffcc66" stroke-width="2"/>
+    <rect x="370" y="90" width="300" height="28" fill="#ffcc66"/>
+    <text x="520" y="110" class="cluster-title center-text">Direction &amp; Authenticity</text>
+
+    <rect x="380" y="125" width="280" height="22" fill="#fff2cc" class="box"/>
+    <text x="390" y="141" class="item-text">Frequent shifts in policy positions</text>
+
+    <rect x="380" y="151" width="280" height="22" fill="#fff2cc" class="box"/>
+    <text x="390" y="167" class="item-text">Accusations of broken promises</text>
+
+    <rect x="380" y="177" width="280" height="22" fill="#fff2cc" class="box"/>
+    <text x="390" y="193" class="item-text">Critics say he lacks clear project</text>
+
+    <rect x="380" y="203" width="280" height="22" fill="#fff2cc" class="box"/>
+    <text x="390" y="219" class="item-text">Seen as drifting, not leading</text>
+
+    <rect x="380" y="229" width="280" height="22" fill="#fff2cc" class="box"/>
+    <text x="390" y="245" class="item-text">Questions over long‑term mandate</text>
+  </g>
+
+  <!-- Row 1, Col 3: Crises & Management -->
+  <g>
+    <rect x="50" y="310" width="300" height="200" fill="none" stroke="#6d9eeb" stroke-width="2"/>
+    <rect x="50" y="310" width="300" height="28" fill="#6d9eeb"/>
+    <text x="200" y="330" class="cluster-title center-text">Crises &amp; Management</text>
+
+    <rect x="60" y="345" width="280" height="22" fill="#cfe2f3" class="box"/>
+    <text x="70" y="361" class="item-text">Seen as slow to act in crises</text>
+
+    <rect x="60" y="371" width="280" height="22" fill="#cfe2f3" class="box"/>
+    <text x="70" y="387" class="item-text">Accused of letting problems fester</text>
+
+    <rect x="60" y="397" width="280" height="22" fill="#cfe2f3" class="box"/>
+    <text x="70" y="413" class="item-text">Focus on political management</text>
+
+    <rect x="60" y="423" width="280" height="22" fill="#cfe2f3" class="box"/>
+    <text x="70" y="439" class="item-text">Critics say he is paralysed by caution</text>
+
+    <rect x="60" y="449" width="280" height="22" fill="#cfe2f3" class="box"/>
+    <text x="70" y="465" class="item-text">Firefighting rather than governing</text>
+  </g>
+
+  <!-- Row 1, Col 4: Authority & Confidence -->
+  <g>
+    <rect x="370" y="310" width="300" height="200" fill="none" stroke="#e06666" stroke-width="2"/>
+    <rect x="370" y="310" width="300" height="28" fill="#e06666"/>
+    <text x="520" y="330" class="cluster-title center-text">Authority &amp; Confidence</text>
+
+    <rect x="380" y="345" width="280" height="22" fill="#f4cccc" class="box"/>
+    <text x="390" y="361" class="item-text">Reports of collapsing authority</text>
+
+    <rect x="380" y="371" width="280" height="22" fill="#f4cccc" class="box"/>
+    <text x="390" y="387" class="item-text">Colleagues openly discuss succession</text>
+
+    <rect x="380" y="397" width="280" height="22" fill="#f4cccc" class="box"/>
+    <text x="390" y="413" class="item-text">Critics question his political touch</text>
+
+    <rect x="380" y="423" width="280" height="22" fill="#f4cccc" class="box"/>
+    <text x="390" y="439" class="item-text">Low‑profile response seen as weakness</text>
+
+    <rect x="380" y="449" width="280" height="22" fill="#f4cccc" class="box"/>
+    <text x="390" y="465" class="item-text">Speculation about orderly transition</text>
+  </g>
+
+  <!-- Row 2, Col 1: Personal Impact -->
+  <g>
+    <rect x="50" y="530" width="300" height="200" fill="none" stroke="#93c47d" stroke-width="2"/>
+    <rect x="50" y="530" width="300" height="28" fill="#93c47d"/>
+    <text x="200" y="550" class="cluster-title center-text">Personal Impact</text>
+
+    <rect x="60" y="565" width="280" height="22" fill="#d9ead3" class="box"/>
+    <text x="70" y="581" class="item-text">Described as “devastating” to lose trust</text>
+
+    <rect x="60" y="591" width="280" height="22" fill="#d9ead3" class="box"/>
+    <text x="70" y="607" class="item-text">Relies on close family support</text>
+
+    <rect x="60" y="617" width="280" height="22" fill="#d9ead3" class="box"/>
+    <text x="70" y="633" class="item-text">Keeps emotions largely private</text>
+
+    <rect x="60" y="643" width="280" height="22" fill="#d9ead3" class="box"/>
+    <text x="70" y="659" class="item-text">
