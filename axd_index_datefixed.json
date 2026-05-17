@@ -9442,5 +9442,17 @@
   "cluster": "testimony",
   "size": "7100",
   "type": "image"
+},
+{
+  "title": "Lord_Peter_Cruddas_FT+Bloomberg_Stephanie_Flaunders_Adam_Bolton_1130_utc+1_Times_News_v0.1.mp3",
+  "url": "https://axda.github.io/Blu/Lord_Peter_Cruddas_FT+Bloomberg_Stephanie_Flaunders_Adam_Bolton_1130_utc+1_Times_News_v0.1.mp3",
+  "thumbnail": "waveform_thumbnails/Lord_Peter_Cruddas_FT+Bloomberg_Stephanie_Flaunders_Adam_Bolton_1130_utc+1_Times_News_v0.1.png",
+  "tags": [ "audio", "archive", "news", "interview" ],
+  "date": "2026-05-17",
+  "motif": "civic decay",
+  "cluster": "news",
+  "size": "116600",
+  "type": "file"
 }
+
 ]
