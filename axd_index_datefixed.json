@@ -9455,19 +9455,20 @@
   "type": "file"
 },
 {
-  "title": "testimony_archive_placeholder_v0.1a.mp3",
-  "url": "https://axda.github.io/Blu/placeholder_entry.mp3",
-  "thumbnail": "waveform_thumbnails/placeholder_entry.png",
+  "title": "Israel_US_Communique_Times_News_1400_utc+1_17052026_v0.2.mp3",
+  "url": "https://axda.github.io/Blu/Israel_US_Communique_Times_News_1400_utc+1_17052026_v0.2.mp3",
+  "thumbnail": "waveform_thumbnails/Israel_US_Communique_Times_News_1400_utc+1_17052026_v0.2.png",
   "tags": [
     "audio",
-    "archive",
-    "testimony",
-    "Isreal"
+    "times",
+    "news",
+    "international"
   ],
   "date": "2026-05-17",
   "motif": "civic decay",
   "cluster": "testimony",
   "size": "16000",
-  "type": "file"
+  "type": "mp3"
 }
+
 ]
