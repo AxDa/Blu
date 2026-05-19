@@ -9480,7 +9480,17 @@
   "cluster": "testimony",
   "size": "131700",
   "type": "mp3"
+},
+{
+  "title": "Political Turmoil in the UK – Times (19 May 2026)",
+  "url": "https://axda.github.io/Blu/Political_Turmoil%20in%20the%20UK_Times_19052026.svg",
+  "thumbnail": "thumbnails/doc_placeholder.png",
+  "tags": ["svg", "diagram", "times", "politics", "analysis"],
+  "date": "2026-05-19",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "notes": "Graphviz-style SVG diagram mapping political dynamics: Labour losses, emerging narrative of Starmer vulnerability, media framing, Reform UK pressure.",
+  "size": "1800",
+  "type": "svg"
 }
-
-
 ]
