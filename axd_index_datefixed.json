@@ -9469,6 +9469,18 @@
   "cluster": "testimony",
   "size": "16000",
   "type": "mp3"
+},
+{
+  "title": "Borderline Corrupt Class – Times Radio – Stig Abel, Kate McCann, William Hague",
+  "url": "https://axda.github.io/Blu/Borderline_Corrupt_Class_Times%20Radio_Stig_Abel_Kate_McCann_William_Hague_19052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "radio", "politics", "commentary", "corrupt", "class"],
+  "date": "2026-05-19",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": "131700",
+  "type": "mp3"
 }
+
 
 ]
