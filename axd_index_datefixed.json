@@ -9492,5 +9492,17 @@
   "notes": "Graphviz-style SVG diagram mapping political dynamics: Labour losses, emerging narrative of Starmer vulnerability, media framing, Reform UK pressure.",
   "size": "1800",
   "type": "svg"
+},
+{
+  "title": "President Donald Trump – Hugo Rifkind – 12:50 (UTC+1) – 19 May 2026",
+  "url": "https://axda.github.io/Blu/President_Donald_Trump_Hugo_Rifkin_1250_utc+1_19052026_v0.2.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "politics", "commentary"],
+  "date": "2026-05-19",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": "39200",
+  "type": "mp3"
 }
+
 ]
