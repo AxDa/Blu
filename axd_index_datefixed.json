@@ -9503,6 +9503,18 @@
   "cluster": "testimony",
   "size": "39200",
   "type": "mp3"
+},
+{
+  "title": "JD_Vance_Times_John_Pinaer_19052026_v0.1",
+  "url": "https://axda.github.io/Blu/JD_Vance_Times_John_Pinaer_19052026_v0.1.mp3",
+  "thumbnail": "waveform_thumbnails/JD_Vance_Times_John_Pinaer_19052026_v0.1.png",
+  "tags": [ "audio", "archive", "interview", "Karoline_Levitt_Press_Stand-in" ],
+  "date": "2026-05-19",
+  "motif": "politics",
+  "cluster": "interview",
+  "size": "86500",
+  "type": "file"
 }
+
 
 ]
