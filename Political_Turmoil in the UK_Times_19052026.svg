@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="944pt" height="686pt" viewBox="0.00 0.00 944.00 686.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 682.49)">
+<title>UK_Politics_Climate</title>
+<polygon fill="#1a1a1a" stroke="none" points="-4,4 -4,-682.49 940,-682.49 940,4 -4,4"/>
+<text xml:space="preserve" text-anchor="middle" x="468" y="-656.49" font-family="Helvetica,sans-Serif" font-size="20.00" fill="white">Political dynamics implied in newsletter excerpt</text>
+<g id="clust1" class="cluster">
+<title>cluster_politicians</title>
+<polygon fill="#1a1a1a" stroke="#555555" stroke-dasharray="5,2" points="8,-8 8,-480.49 378,-480.49 378,-8 8,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="193" y="-458.49" font-family="Helvetica,sans-Serif" font-size="20.00" fill="white">Political actors</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_media</title>
+<polygon fill="#1a1a1a" stroke="#555555" stroke-dasharray="5,2" points="386,-223.05 386,-638.49 928,-638.49 928,-223.05 386,-223.05"/>
+<text xml:space="preserve" text-anchor="middle" x="657" y="-616.49" font-family="Helvetica,sans-Serif" font-size="20.00" fill="white">Media &amp; framing</text>
+</g>
+<!-- Labour -->
+<g id="node1" class="node">
+<title>Labour</title>
+<ellipse fill="#1f3b70" stroke="#444444" cx="289" cy="-140.83" rx="66.33" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="289" y="-136.63" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Labour Party</text>
+</g>
+<!-- Starmer -->
+<g id="node2" class="node">
+<title>Starmer</title>
+<ellipse fill="#1f3b70" stroke="#444444" cx="289" cy="-45.42" rx="81.16" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="289" y="-49.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Keir Starmer</text>
+<text xml:space="preserve" text-anchor="middle" x="289" y="-32.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">(Prime Minister)</text>
+</g>
+<!-- Labour&#45;&gt;Starmer -->
+<g id="edge1" class="edge">
+<title>Labour-&gt;Starmer</title>
+<path fill="none" stroke="#bbbbbb" d="M289,-122.7C289,-112.53 289,-99.2 289,-86.53"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="292.5,-86.7 289,-76.7 285.5,-86.7 292.5,-86.7"/>
+<text xml:space="preserve" text-anchor="middle" x="302.34" y="-95.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">led by</text>
+</g>
+<!-- LocalElections -->
+<g id="node3" class="node">
+<title>LocalElections</title>
+<ellipse fill="#355c9c" stroke="#444444" cx="261" cy="-260.25" rx="108.71" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="261" y="-264.45" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Local elections</text>
+<text xml:space="preserve" text-anchor="middle" x="261" y="-247.65" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">(heavy Labour losses)</text>
+</g>
+<!-- LocalElections&#45;&gt;Labour -->
+<g id="edge2" class="edge">
+<title>LocalElections-&gt;Labour</title>
+<path fill="none" stroke="#bbbbbb" d="M267.85,-230.52C272.23,-212.15 277.89,-188.41 282.26,-170.12"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="285.64,-171 284.56,-160.46 278.83,-169.38 285.64,-171"/>
+<text xml:space="preserve" text-anchor="middle" x="313.57" y="-197.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">losses damage</text>
+<text xml:space="preserve" text-anchor="middle" x="313.57" y="-185.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">standing</text>
+</g>
+<!-- Narrative -->
+<g id="node11" class="node">
+<title>Narrative</title>
+<path fill="#cc7a00" stroke="#444444" d="M588.62,-289.45C588.62,-289.45 473.38,-289.45 473.38,-289.45 467.38,-289.45 461.38,-283.45 461.38,-277.45 461.38,-277.45 461.38,-243.05 461.38,-243.05 461.38,-237.05 467.38,-231.05 473.38,-231.05 473.38,-231.05 588.62,-231.05 588.62,-231.05 594.62,-231.05 600.62,-237.05 600.62,-243.05 600.62,-243.05 600.62,-277.45 600.62,-277.45 600.62,-283.45 594.62,-289.45 588.62,-289.45"/>
+<text xml:space="preserve" text-anchor="middle" x="531" y="-272.85" font-family="Helvetica,sans-Serif" font-size="14.00">Emerging narrative:</text>
+<text xml:space="preserve" text-anchor="middle" x="531" y="-256.05" font-family="Helvetica,sans-Serif" font-size="14.00">"Labour in trouble,</text>
+<text xml:space="preserve" text-anchor="middle" x="531" y="-239.25" font-family="Helvetica,sans-Serif" font-size="14.00">Starmer vulnerable"</text>
+</g>
+<!-- LocalElections&#45;&gt;Narrative -->
+<g id="edge4" class="edge">
+<title>LocalElections-&gt;Narrative</title>
+<path fill="none" stroke="#bbbbbb" d="M370.04,-260.25C396.69,-260.25 424.75,-260.25 449.84,-260.25"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="449.63,-263.75 459.63,-260.25 449.63,-256.75 449.63,-263.75"/>
+<text xml:space="preserve" text-anchor="middle" x="415.54" y="-278.25" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">feeds perception</text>
+<text xml:space="preserve" text-anchor="middle" x="415.54" y="-266.25" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">of crisis</text>
+</g>
+<!-- Voters -->
+<g id="node4" class="node">
+<title>Voters</title>
+<ellipse fill="#355c9c" stroke="#444444" cx="306" cy="-379.08" rx="63.57" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="306" y="-383.28" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Voters</text>
+<text xml:space="preserve" text-anchor="middle" x="306" y="-366.48" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">(across UK)</text>
+</g>
+<!-- Voters&#45;&gt;LocalElections -->
+<g id="edge3" class="edge">
+<title>Voters-&gt;LocalElections</title>
+<path fill="none" stroke="#bbbbbb" d="M294.04,-350.19C291.51,-344.1 288.89,-337.69 286.54,-331.66 282.61,-321.61 278.55,-310.68 274.85,-300.49"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="278.19,-299.45 271.51,-291.23 271.61,-301.82 278.19,-299.45"/>
+<text xml:space="preserve" text-anchor="middle" x="301.27" y="-316.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">vote in</text>
+</g>
+<!-- ReformUK -->
+<g id="node5" class="node">
+<title>ReformUK</title>
+<ellipse fill="#4a7ac7" stroke="#444444" cx="75" cy="-260.25" rx="58.79" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="75" y="-256.05" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Reform UK</text>
+</g>
+<!-- ReformUK&#45;&gt;Narrative -->
+<g id="edge12" class="edge">
+<title>ReformUK-&gt;Narrative</title>
+<path fill="none" stroke="#bbbbbb" d="M107.73,-275.64C164.46,-300.37 284.73,-344.11 386.19,-323.06 413.66,-317.36 442.31,-306.17 466.82,-294.8"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="468.16,-298.04 475.68,-290.58 465.15,-291.72 468.16,-298.04"/>
+<text xml:space="preserve" text-anchor="middle" x="353" y="-322.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">alternative on</text>
+<text xml:space="preserve" text-anchor="middle" x="353" y="-310.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">Starmer's flank</text>
+</g>
+<!-- Staffordshire -->
+<g id="node6" class="node">
+<title>Staffordshire</title>
+<ellipse fill="#4a7ac7" stroke="#444444" cx="157" cy="-379.08" rx="67.44" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="157" y="-383.28" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Staffordshire</text>
+<text xml:space="preserve" text-anchor="middle" x="157" y="-366.48" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">(case study)</text>
+</g>
+<!-- Staffordshire&#45;&gt;ReformUK -->
+<g id="edge11" class="edge">
+<title>Staffordshire-&gt;ReformUK</title>
+<path fill="none" stroke="#bbbbbb" d="M137.77,-350.69C124.39,-331.62 106.65,-306.34 93.44,-287.52"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="96.47,-285.75 87.86,-279.57 90.74,-289.77 96.47,-285.75"/>
+<text xml:space="preserve" text-anchor="middle" x="147.52" y="-322.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">voters shift</text>
+<text xml:space="preserve" text-anchor="middle" x="147.52" y="-310.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">towards</text>
+</g>
+<!-- Media -->
+<g id="node7" class="node">
+<title>Media</title>
+<ellipse fill="#8a5a00" stroke="#444444" cx="620" cy="-548.49" rx="94.23" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="620" y="-544.29" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Media / Newspaper</text>
+</g>
+<!-- Maguire -->
+<g id="node8" class="node">
+<title>Maguire</title>
+<ellipse fill="#b36b00" stroke="#444444" cx="840" cy="-379.08" rx="80.08" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="840" y="-383.28" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Patrick Maguire</text>
+<text xml:space="preserve" text-anchor="middle" x="840" y="-366.48" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">(columnist)</text>
+</g>
+<!-- Media&#45;&gt;Maguire -->
+<g id="edge5" class="edge">
+<title>Media-&gt;Maguire</title>
+<path fill="none" stroke="#bbbbbb" d="M655.77,-531.53C668.29,-525.75 682.37,-519.04 695,-512.49 720.45,-499.31 728.75,-498.57 751,-480.49 773.89,-461.89 795.91,-437.13 812.32,-416.85"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="815.02,-419.08 818.5,-409.07 809.54,-414.72 815.02,-419.08"/>
+<text xml:space="preserve" text-anchor="middle" x="767.67" y="-503.49" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">platform for</text>
+<text xml:space="preserve" text-anchor="middle" x="767.67" y="-491.49" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">commentary</text>
+</g>
+<!-- Syed -->
+<g id="node9" class="node">
+<title>Syed</title>
+<ellipse fill="#b36b00" stroke="#444444" cx="668" cy="-379.08" rx="74.04" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="668" y="-383.28" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Matthew Syed</text>
+<text xml:space="preserve" text-anchor="middle" x="668" y="-366.48" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">(reporter)</text>
+</g>
+<!-- Media&#45;&gt;Syed -->
+<g id="edge6" class="edge">
+<title>Media-&gt;Syed</title>
+<path fill="none" stroke="#bbbbbb" d="M627.43,-530.21C629.69,-524.61 632.09,-518.34 634,-512.49 644.02,-481.84 652.98,-446.42 659.19,-419.93"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="662.58,-420.8 661.41,-410.27 655.76,-419.23 662.58,-420.8"/>
+<text xml:space="preserve" text-anchor="middle" x="665.9" y="-503.49" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">platform for</text>
+<text xml:space="preserve" text-anchor="middle" x="665.9" y="-491.49" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">reporting</text>
+</g>
+<!-- Ella -->
+<g id="node10" class="node">
+<title>Ella</title>
+<ellipse fill="#8a5a00" stroke="#444444" cx="485" cy="-379.08" rx="90.54" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="485" y="-383.28" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">Ella</text>
+<text xml:space="preserve" text-anchor="middle" x="485" y="-366.48" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">(newsletter editor)</text>
+</g>
+<!-- Media&#45;&gt;Ella -->
+<g id="edge7" class="edge">
+<title>Media-&gt;Ella</title>
+<path fill="none" stroke="#bbbbbb" d="M548.03,-536.55C533.88,-531.34 520.36,-523.7 510.42,-512.49 488.24,-487.48 482.89,-449.17 482.5,-420.17"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="486,-420.32 482.58,-410.29 479,-420.26 486,-420.32"/>
+<text xml:space="preserve" text-anchor="middle" x="533.21" y="-503.49" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">newsletter</text>
+<text xml:space="preserve" text-anchor="middle" x="533.21" y="-491.49" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">curation</text>
+</g>
+<!-- Maguire&#45;&gt;Starmer -->
+<g id="edge8" class="edge">
+<title>Maguire-&gt;Starmer</title>
+<path fill="none" stroke="#ff4444" d="M827.05,-349.76C820.11,-336.23 810.77,-320.28 800,-307.66 714.66,-207.63 686.19,-182.45 569,-122.83 507.32,-91.45 431.23,-71.75 373.94,-60.22"/>
+<polygon fill="#ff4444" stroke="#ff4444" points="374.72,-56.81 364.23,-58.32 373.37,-63.68 374.72,-56.81"/>
+<text xml:space="preserve" text-anchor="middle" x="741.88" y="-203.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#ff6666">"hapless,</text>
+<text xml:space="preserve" text-anchor="middle" x="741.88" y="-191.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#ff6666">delusional,</text>
+<text xml:space="preserve" text-anchor="middle" x="741.88" y="-179.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#ff6666">losing dignity"</text>
+</g>
+<!-- Maguire&#45;&gt;Narrative -->
+<g id="edge9" class="edge">
+<title>Maguire-&gt;Narrative</title>
+<path fill="none" stroke="#ff4444" d="M781.93,-358.41C758.61,-350.35 731.53,-340.78 707.16,-331.66 675.57,-319.84 641.06,-306.2 611.02,-294.1"/>
+<polygon fill="#ff4444" stroke="#ff4444" points="612.58,-290.95 602,-290.45 609.96,-297.44 612.58,-290.95"/>
+<text xml:space="preserve" text-anchor="middle" x="753.58" y="-322.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">sharp critique</text>
+<text xml:space="preserve" text-anchor="middle" x="753.58" y="-310.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">shapes leader image</text>
+</g>
+<!-- Syed&#45;&gt;Staffordshire -->
+<g id="edge10" class="edge">
+<title>Syed-&gt;Staffordshire</title>
+<path fill="none" stroke="#bbbbbb" d="M652.21,-407.97C637.98,-430.71 614.74,-460.73 585,-474.26 513.8,-506.64 303.49,-508.18 233,-474.26 208.49,-462.46 189.42,-438.49 176.52,-417.56"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="179.7,-416.06 171.62,-409.21 173.66,-419.6 179.7,-416.06"/>
+<text xml:space="preserve" text-anchor="middle" x="352" y="-497.49" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">reports from</text>
+</g>
+<!-- Ella&#45;&gt;Media -->
+<g id="edge14" class="edge">
+<title>Ella-&gt;Media</title>
+<path fill="none" stroke="#bbbbbb" d="M501.84,-408.26C519.2,-436.19 547.95,-479.47 578.3,-512.49 581.7,-516.2 585.49,-519.87 589.36,-523.37"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="586.83,-525.81 596.68,-529.7 591.41,-520.51 586.83,-525.81"/>
+<text xml:space="preserve" text-anchor="middle" x="604.15" y="-503.49" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">represents</text>
+<text xml:space="preserve" text-anchor="middle" x="604.15" y="-491.49" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">brand voice</text>
+</g>
+<!-- Ella&#45;&gt;Narrative -->
+<g id="edge13" class="edge">
+<title>Ella-&gt;Narrative</title>
+<path fill="none" stroke="#bbbbbb" d="M496.25,-349.5C502.04,-334.79 509.19,-316.63 515.5,-300.61"/>
+<polygon fill="#bbbbbb" stroke="#bbbbbb" points="518.74,-301.93 519.15,-291.35 512.23,-299.37 518.74,-301.93"/>
+<text xml:space="preserve" text-anchor="middle" x="546.86" y="-322.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">curates pieces</text>
+<text xml:space="preserve" text-anchor="middle" x="546.86" y="-310.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">into single story</text>
+</g>
+<!-- Narrative&#45;&gt;Labour -->
+<g id="edge16" class="edge">
+<title>Narrative-&gt;Labour</title>
+<path fill="none" stroke="#888888" stroke-dasharray="5,2" d="M467.78,-230.63C455.22,-224.82 442.15,-218.69 429.97,-212.83 395.71,-196.34 357.17,-176.86 329.05,-162.49"/>
+<polygon fill="#888888" stroke="#888888" points="330.66,-159.38 320.17,-157.93 327.47,-165.61 330.66,-159.38"/>
+<text xml:space="preserve" text-anchor="middle" x="464.99" y="-197.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">pressure on</text>
+<text xml:space="preserve" text-anchor="middle" x="464.99" y="-185.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">party &amp; strategy</text>
+</g>
+<!-- Narrative&#45;&gt;Starmer -->
+<g id="edge17" class="edge">
+<title>Narrative-&gt;Starmer</title>
+<path fill="none" stroke="#888888" stroke-dasharray="5,2" d="M525.15,-230.55C520.54,-213.51 512.72,-192.3 500,-176.83 460.83,-129.22 399.47,-94.07 353,-72.34"/>
+<polygon fill="#888888" stroke="#888888" points="354.66,-69.25 344.11,-68.27 351.74,-75.61 354.66,-69.25"/>
+<text xml:space="preserve" text-anchor="middle" x="523.6" y="-143.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">questions about</text>
+<text xml:space="preserve" text-anchor="middle" x="523.6" y="-131.83" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">leadership stability</text>
+</g>
+<!-- Narrative&#45;&gt;Voters -->
+<g id="edge15" class="edge">
+<title>Narrative-&gt;Voters</title>
+<path fill="none" stroke="#888888" stroke-dasharray="5,2" d="M461.12,-286.94C447.13,-293.05 432.8,-300.04 419.95,-307.66 405.28,-316.37 404.17,-322.17 390,-331.66 379.83,-338.48 368.57,-345.21 357.69,-351.33"/>
+<polygon fill="#888888" stroke="#888888" points="356.23,-348.14 349.17,-356.05 359.62,-354.27 356.23,-348.14"/>
+<text xml:space="preserve" text-anchor="middle" x="459.98" y="-322.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">may influence</text>
+<text xml:space="preserve" text-anchor="middle" x="459.98" y="-310.66" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#dddddd">future perceptions</text>
+</g>
+</g>
+</svg>
