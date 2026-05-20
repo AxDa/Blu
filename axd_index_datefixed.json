@@ -9514,7 +9514,19 @@
   "cluster": "interview",
   "size": "86500",
   "type": "file"
+},
+{
+  "title": "Harry Rednap – South Hamptons with Nicky Campbell (09:50)",
+  "url": "https://axda.github.io/Blu/Harry_Rednap_South_Hamptons_Nicky_Campbell_0950_utc+1_20052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "interview", "sport"],
+  "date": "2026-05-20",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": "30400",
+  "type": "mp3"
 }
+
 
 
 ]
