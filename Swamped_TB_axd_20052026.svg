@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="924pt" height="936pt" viewBox="0.00 0.00 923.97 936.20">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 932.2)">
+<title>AcousticEscalation</title>
+<polygon fill="#101018" stroke="transparent" points="-4,4 -4,-932.2 919.9706,-932.2 919.9706,4 -4,4"/>
+<text text-anchor="middle" x="457.9853" y="-913.4" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#eceff4">Acoustic Territoriality: Escalation Pathways</text>
+<g id="clust1" class="cluster">
+<title>cluster_event</title>
+<path fill="#101018" stroke="#4c3faf" d="M90,-428.2C90,-428.2 296,-428.2 296,-428.2 302,-428.2 308,-434.2 308,-440.2 308,-440.2 308,-885.8 308,-885.8 308,-891.8 302,-897.8 296,-897.8 296,-897.8 90,-897.8 90,-897.8 84,-897.8 78,-891.8 78,-885.8 78,-885.8 78,-440.2 78,-440.2 78,-434.2 84,-428.2 90,-428.2"/>
+<text text-anchor="middle" x="193" y="-883" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#eceff4">Event Layer</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_social</title>
+<path fill="#101018" stroke="#00897b" d="M87,-8C87,-8 301,-8 301,-8 307,-8 313,-14 313,-20 313,-20 313,-378.6 313,-378.6 313,-384.6 307,-390.6 301,-390.6 301,-390.6 87,-390.6 87,-390.6 81,-390.6 75,-384.6 75,-378.6 75,-378.6 75,-20 75,-20 75,-14 81,-8 87,-8"/>
+<text text-anchor="middle" x="194" y="-375.8" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#eceff4">Social Processing</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_civic</title>
+<path fill="#101018" stroke="#ef6c00" d="M608,-313.4C608,-313.4 764,-313.4 764,-313.4 770,-313.4 776,-319.4 776,-325.4 776,-325.4 776,-792.4 776,-792.4 776,-798.4 770,-804.4 764,-804.4 764,-804.4 608,-804.4 608,-804.4 602,-804.4 596,-798.4 596,-792.4 596,-792.4 596,-325.4 596,-325.4 596,-319.4 602,-313.4 608,-313.4"/>
+<text text-anchor="middle" x="686" y="-789.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#eceff4">Civic / Institutional</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_damage</title>
+<path fill="#101018" stroke="#c62828" d="M333,-234.8C333,-234.8 517,-234.8 517,-234.8 523,-234.8 529,-240.8 529,-246.8 529,-246.8 529,-666.4 529,-666.4 529,-672.4 523,-678.4 517,-678.4 517,-678.4 333,-678.4 333,-678.4 327,-678.4 321,-672.4 321,-666.4 321,-666.4 321,-246.8 321,-246.8 321,-240.8 327,-234.8 333,-234.8"/>
+<text text-anchor="middle" x="425" y="-663.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#eceff4">Damage / Erosion</text>
+</g>
+<!-- EV1 -->
+<g id="node1" class="node">
+<title>EV1</title>
+<path fill="#3b2f7a" stroke="#2e3440" d="M250.7225,-867.4C250.7225,-867.4 135.2775,-867.4 135.2775,-867.4 129.2775,-867.4 123.2775,-861.4 123.2775,-855.4 123.2775,-855.4 123.2775,-843.4 123.2775,-843.4 123.2775,-837.4 129.2775,-831.4 135.2775,-831.4 135.2775,-831.4 250.7225,-831.4 250.7225,-831.4 256.7225,-831.4 262.7225,-837.4 262.7225,-843.4 262.7225,-843.4 262.7225,-855.4 262.7225,-855.4 262.7225,-861.4 256.7225,-867.4 250.7225,-867.4"/>
+<text text-anchor="middle" x="193" y="-845.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Isolated Loud Event</text>
+</g>
+<!-- EV2 -->
+<g id="node2" class="node">
+<title>EV2</title>
+<path fill="#4a3a99" stroke="#2e3440" d="M288.3719,-647.8019C288.3719,-647.8019 97.6281,-647.8019 97.6281,-647.8019 91.6281,-647.8019 85.6281,-641.8019 85.6281,-635.8019 85.6281,-635.8019 85.6281,-618.5981 85.6281,-618.5981 85.6281,-612.5981 91.6281,-606.5981 97.6281,-606.5981 97.6281,-606.5981 288.3719,-606.5981 288.3719,-606.5981 294.3719,-606.5981 300.3719,-612.5981 300.3719,-618.5981 300.3719,-618.5981 300.3719,-635.8019 300.3719,-635.8019 300.3719,-641.8019 294.3719,-647.8019 288.3719,-647.8019"/>
+<text text-anchor="middle" x="193" y="-631.4" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Repeated Sound Events</text>
+<text text-anchor="middle" x="193" y="-614.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">(Engines, Bass, Static Vehicles)</text>
+</g>
+<!-- EV1&#45;&gt;EV2 -->
+<g id="edge1" class="edge">
+<title>EV1-&gt;EV2</title>
+<path fill="none" stroke="#757575" d="M193,-831.2164C193,-793.234 193,-705.11 193,-658.0777"/>
+<polygon fill="#757575" stroke="#757575" points="196.5001,-657.878 193,-647.8781 189.5001,-657.8781 196.5001,-657.878"/>
+<text text-anchor="middle" x="219.8261" y="-751.8" font-family="Times,serif" font-size="14.00" fill="#b0bec5">repetition</text>
+</g>
+<!-- EV3 -->
+<g id="node3" class="node">
+<title>EV3</title>
+<path fill="#5a46b8" stroke="#2e3440" d="M260.0392,-472.2C260.0392,-472.2 99.9608,-472.2 99.9608,-472.2 93.9608,-472.2 87.9608,-466.2 87.9608,-460.2 87.9608,-460.2 87.9608,-448.2 87.9608,-448.2 87.9608,-442.2 93.9608,-436.2 99.9608,-436.2 99.9608,-436.2 260.0392,-436.2 260.0392,-436.2 266.0392,-436.2 272.0392,-442.2 272.0392,-448.2 272.0392,-448.2 272.0392,-460.2 272.0392,-460.2 272.0392,-466.2 266.0392,-472.2 260.0392,-472.2"/>
+<text text-anchor="middle" x="180" y="-450" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Persistent Acoustic Pattern</text>
+</g>
+<!-- EV2&#45;&gt;EV3 -->
+<g id="edge2" class="edge">
+<title>EV2-&gt;EV3</title>
+<path fill="none" stroke="#757575" d="M191.4319,-606.3322C189.1102,-575.436 184.7521,-517.4393 182.1391,-482.6667"/>
+<polygon fill="#757575" stroke="#757575" points="185.5965,-481.9664 181.3569,-472.2568 178.6161,-482.491 185.5965,-481.9664"/>
+<text text-anchor="middle" x="216.3808" y="-544.4" font-family="Times,serif" font-size="14.00" fill="#b0bec5">patterning</text>
+</g>
+<!-- SP1 -->
+<g id="node4" class="node">
+<title>SP1</title>
+<path fill="#00695c" stroke="#2e3440" d="M265.1234,-360.2C265.1234,-360.2 94.8766,-360.2 94.8766,-360.2 88.8766,-360.2 82.8766,-354.2 82.8766,-348.2 82.8766,-348.2 82.8766,-336.2 82.8766,-336.2 82.8766,-330.2 88.8766,-324.2 94.8766,-324.2 94.8766,-324.2 265.1234,-324.2 265.1234,-324.2 271.1234,-324.2 277.1234,-330.2 277.1234,-336.2 277.1234,-336.2 277.1234,-348.2 277.1234,-348.2 277.1234,-354.2 271.1234,-360.2 265.1234,-360.2"/>
+<text text-anchor="middle" x="180" y="-338" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Irritation / Complaint Impulse</text>
+</g>
+<!-- EV3&#45;&gt;SP1 -->
+<g id="edge3" class="edge">
+<title>EV3-&gt;SP1</title>
+<path fill="none" stroke="#78909c" d="M180,-435.7055C180,-417.9282 180,-390.8184 180,-370.3587"/>
+<polygon fill="#78909c" stroke="#78909c" points="183.5001,-370.3503 180,-360.3504 176.5001,-370.3504 183.5001,-370.3503"/>
+<text text-anchor="middle" x="230.3447" y="-402.8" font-family="Times,serif" font-size="14.00" fill="#b0bec5">constant exposure</text>
+</g>
+<!-- SP2 -->
+<g id="node5" class="node">
+<title>SP2</title>
+<path fill="#00796b" stroke="#2e3440" d="M279.9862,-189.8019C279.9862,-189.8019 108.0138,-189.8019 108.0138,-189.8019 102.0138,-189.8019 96.0138,-183.8019 96.0138,-177.8019 96.0138,-177.8019 96.0138,-160.5981 96.0138,-160.5981 96.0138,-154.5981 102.0138,-148.5981 108.0138,-148.5981 108.0138,-148.5981 279.9862,-148.5981 279.9862,-148.5981 285.9862,-148.5981 291.9862,-154.5981 291.9862,-160.5981 291.9862,-160.5981 291.9862,-177.8019 291.9862,-177.8019 291.9862,-183.8019 285.9862,-189.8019 279.9862,-189.8019"/>
+<text text-anchor="middle" x="194" y="-173.4" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Resignation</text>
+<text text-anchor="middle" x="194" y="-156.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">("That's Just How It Is Here")</text>
+</g>
+<!-- SP1&#45;&gt;SP2 -->
+<g id="edge4" class="edge">
+<title>SP1-&gt;SP2</title>
+<path fill="none" stroke="#78909c" d="M179.1321,-323.9825C178.634,-312.6061 178.059,-297.653 177.8078,-284.4 177.39,-262.3595 175.147,-256.6833 177.8078,-234.8 179.2134,-223.2397 181.9639,-210.7804 184.8047,-199.8578"/>
+<polygon fill="#78909c" stroke="#78909c" points="188.2561,-200.5048 187.5152,-189.936 181.5036,-198.6601 188.2561,-200.5048"/>
+<text text-anchor="middle" x="246.5961" y="-259.4" font-family="Times,serif" font-size="14.00" fill="#b0bec5">complaints feel pointless</text>
+</g>
+<!-- SP3 -->
+<g id="node6" class="node">
+<title>SP3</title>
+<path fill="#00897b" stroke="#2e3440" d="M292.8705,-57.4019C292.8705,-57.4019 95.1295,-57.4019 95.1295,-57.4019 89.1295,-57.4019 83.1295,-51.4019 83.1295,-45.4019 83.1295,-45.4019 83.1295,-28.1981 83.1295,-28.1981 83.1295,-22.1981 89.1295,-16.1981 95.1295,-16.1981 95.1295,-16.1981 292.8705,-16.1981 292.8705,-16.1981 298.8705,-16.1981 304.8705,-22.1981 304.8705,-28.1981 304.8705,-28.1981 304.8705,-45.4019 304.8705,-45.4019 304.8705,-51.4019 298.8705,-57.4019 292.8705,-57.4019"/>
+<text text-anchor="middle" x="194" y="-41" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Normalisation</text>
+<text text-anchor="middle" x="194" y="-24.2" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">(Noise as Background Condition)</text>
+</g>
+<!-- SP2&#45;&gt;SP3 -->
+<g id="edge5" class="edge">
+<title>SP2-&gt;SP3</title>
+<path fill="none" stroke="#78909c" d="M194,-148.5125C194,-126.8755 194,-92.6662 194,-67.8001"/>
+<polygon fill="#78909c" stroke="#78909c" points="197.5001,-67.7791 194,-57.7792 190.5001,-67.7792 197.5001,-67.7791"/>
+<text text-anchor="middle" x="223.1578" y="-98.8" font-family="Times,serif" font-size="14.00" fill="#b0bec5">adaptation</text>
+</g>
+<!-- SP3&#45;&gt;EV3 -->
+<g id="edge12" class="edge">
+<title>SP3-&gt;EV3</title>
+<path fill="none" stroke="#546e7a" stroke-dasharray="5,2" d="M83.1177,-56.0918C39.661,-66.8988 0,-82.4037 0,-103 0,-342.2 0,-342.2 0,-342.2 0,-388.6738 43.7908,-416.5501 88.174,-432.8685"/>
+<polygon fill="#546e7a" stroke="#546e7a" points="87.0435,-436.181 97.6383,-436.1778 89.354,-429.5733 87.0435,-436.181"/>
+<text text-anchor="middle" x="80.0583" y="-212.2" font-family="Times,serif" font-size="14.00" fill="#b0bec5">acceptance feeds persistence</text>
+</g>
+<!-- CI1 -->
+<g id="node7" class="node">
+<title>CI1</title>
+<path fill="#e65100" stroke="#2e3440" d="M755.528,-774C755.528,-774 616.472,-774 616.472,-774 610.472,-774 604.472,-768 604.472,-762 604.472,-762 604.472,-750 604.472,-750 604.472,-744 610.472,-738 616.472,-738 616.472,-738 755.528,-738 755.528,-738 761.528,-738 767.528,-744 767.528,-750 767.528,-750 767.528,-762 767.528,-762 767.528,-768 761.528,-774 755.528,-774"/>
+<text text-anchor="middle" x="686" y="-751.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Low or No Enforcement</text>
+</g>
+<!-- SP3&#45;&gt;CI1 -->
+<g id="edge6" class="edge">
+<title>SP3-&gt;CI1</title>
+<path fill="none" stroke="#ffb74d" d="M304.8201,-43.3196C480.6855,-54.4134 804,-78.1831 804,-103 804,-627.2 804,-627.2 804,-627.2 804,-673.2733 762.4421,-710.0235 728.6515,-732.2899"/>
+<polygon fill="#ffb74d" stroke="#ffb74d" points="726.3751,-729.5896 719.8141,-737.9085 730.1308,-735.4968 726.3751,-729.5896"/>
+<text text-anchor="middle" x="859.9853" y="-338" font-family="Times,serif" font-size="14.00" fill="#ffe0b2">no visible challenge</text>
+</g>
+<!-- CI1&#45;&gt;EV2 -->
+<g id="edge13" class="edge">
+<title>CI1-&gt;EV2</title>
+<path fill="none" stroke="#546e7a" stroke-dasharray="5,2" d="M604.2852,-743.2711C528.7754,-730.4648 413.954,-708.3307 317,-678.4 293.4464,-671.1288 268.1738,-661.1185 246.6293,-651.8768"/>
+<polygon fill="#546e7a" stroke="#546e7a" points="247.8939,-648.6102 237.3274,-647.8359 245.1047,-655.0306 247.8939,-648.6102"/>
+<text text-anchor="middle" x="537.0579" y="-707.4" font-family="Times,serif" font-size="14.00" fill="#b0bec5">lack of enforcement</text>
+<text text-anchor="middle" x="537.0579" y="-690.6" font-family="Times,serif" font-size="14.00" fill="#b0bec5">encourages repetition</text>
+</g>
+<!-- CI2 -->
+<g id="node8" class="node">
+<title>CI2</title>
+<path fill="#f57c00" stroke="#2e3440" d="M720.0618,-569.2019C720.0618,-569.2019 621.9382,-569.2019 621.9382,-569.2019 615.9382,-569.2019 609.9382,-563.2019 609.9382,-557.2019 609.9382,-557.2019 609.9382,-539.9981 609.9382,-539.9981 609.9382,-533.9981 615.9382,-527.9981 621.9382,-527.9981 621.9382,-527.9981 720.0618,-527.9981 720.0618,-527.9981 726.0618,-527.9981 732.0618,-533.9981 732.0618,-539.9981 732.0618,-539.9981 732.0618,-557.2019 732.0618,-557.2019 732.0618,-563.2019 726.0618,-569.2019 720.0618,-569.2019"/>
+<text text-anchor="middle" x="671" y="-552.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Perceived Futility</text>
+<text text-anchor="middle" x="671" y="-536" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">of Reporting</text>
+</g>
+<!-- CI1&#45;&gt;CI2 -->
+<g id="edge7" class="edge">
+<title>CI1-&gt;CI2</title>
+<path fill="none" stroke="#ffb74d" d="M684.6951,-737.9574C682.1336,-702.5405 676.421,-623.5537 673.2426,-579.6081"/>
+<polygon fill="#ffb74d" stroke="#ffb74d" points="676.7237,-579.218 672.5113,-569.4966 669.7419,-579.7231 676.7237,-579.218"/>
+<text text-anchor="middle" x="722.5684" y="-623" font-family="Times,serif" font-size="14.00" fill="#ffe0b2">reports ignored</text>
+</g>
+<!-- CI3 -->
+<g id="node9" class="node">
+<title>CI3</title>
+<path fill="#fb8c00" stroke="#2e3440" d="M755.8205,-362.8019C755.8205,-362.8019 616.1795,-362.8019 616.1795,-362.8019 610.1795,-362.8019 604.1795,-356.8019 604.1795,-350.8019 604.1795,-350.8019 604.1795,-333.5981 604.1795,-333.5981 604.1795,-327.5981 610.1795,-321.5981 616.1795,-321.5981 616.1795,-321.5981 755.8205,-321.5981 755.8205,-321.5981 761.8205,-321.5981 767.8205,-327.5981 767.8205,-333.5981 767.8205,-333.5981 767.8205,-350.8019 767.8205,-350.8019 767.8205,-356.8019 761.8205,-362.8019 755.8205,-362.8019"/>
+<text text-anchor="middle" x="686" y="-346.4" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Institutional Indifference</text>
+<text text-anchor="middle" x="686" y="-329.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">(De Facto Tolerance)</text>
+</g>
+<!-- CI2&#45;&gt;CI3 -->
+<g id="edge8" class="edge">
+<title>CI2-&gt;CI3</title>
+<path fill="none" stroke="#ffb74d" d="M672.5208,-527.6734C675.1781,-491.1099 680.6768,-415.4469 683.7669,-372.9272"/>
+<polygon fill="#ffb74d" stroke="#ffb74d" points="687.2633,-373.1025 684.4974,-362.8751 680.2817,-372.5951 687.2633,-373.1025"/>
+<text text-anchor="middle" x="732.8335" y="-450" font-family="Times,serif" font-size="14.00" fill="#ffe0b2">structural tolerance</text>
+</g>
+<!-- DE1 -->
+<g id="node10" class="node">
+<title>DE1</title>
+<path fill="#b71c1c" stroke="#2e3440" d="M506.2855,-647.8019C506.2855,-647.8019 359.7145,-647.8019 359.7145,-647.8019 353.7145,-647.8019 347.7145,-641.8019 347.7145,-635.8019 347.7145,-635.8019 347.7145,-618.5981 347.7145,-618.5981 347.7145,-612.5981 353.7145,-606.5981 359.7145,-606.5981 359.7145,-606.5981 506.2855,-606.5981 506.2855,-606.5981 512.2855,-606.5981 518.2855,-612.5981 518.2855,-618.5981 518.2855,-618.5981 518.2855,-635.8019 518.2855,-635.8019 518.2855,-641.8019 512.2855,-647.8019 506.2855,-647.8019"/>
+<text text-anchor="middle" x="433" y="-631.4" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Civic Erosion</text>
+<text text-anchor="middle" x="433" y="-614.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">(Shared Norms Weaken)</text>
+</g>
+<!-- CI3&#45;&gt;DE1 -->
+<g id="edge9" class="edge">
+<title>CI3-&gt;DE1</title>
+<path fill="none" stroke="#ef5350" d="M665.4249,-362.8374C638.3438,-390.7153 590.285,-442.7232 557.0112,-493 536.08,-524.627 544.018,-540.8959 519,-569.4 508.3895,-581.489 494.6996,-592.1844 481.3758,-600.985"/>
+<polygon fill="#ef5350" stroke="#ef5350" points="479.2735,-598.1739 472.7091,-606.4901 483.0268,-604.0826 479.2735,-598.1739"/>
+<text text-anchor="middle" x="612.9944" y="-497.2" font-family="Times,serif" font-size="14.00" fill="#ffcdd2">norms hollowed out</text>
+</g>
+<!-- DE2 -->
+<g id="node11" class="node">
+<title>DE2</title>
+<path fill="#c62828" stroke="#2e3440" d="M509.1146,-474.8019C509.1146,-474.8019 340.8854,-474.8019 340.8854,-474.8019 334.8854,-474.8019 328.8854,-468.8019 328.8854,-462.8019 328.8854,-462.8019 328.8854,-445.5981 328.8854,-445.5981 328.8854,-439.5981 334.8854,-433.5981 340.8854,-433.5981 340.8854,-433.5981 509.1146,-433.5981 509.1146,-433.5981 515.1146,-433.5981 521.1146,-439.5981 521.1146,-445.5981 521.1146,-445.5981 521.1146,-462.8019 521.1146,-462.8019 521.1146,-468.8019 515.1146,-474.8019 509.1146,-474.8019"/>
+<text text-anchor="middle" x="425" y="-458.4" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Neighbourhood Identity Shift</text>
+<text text-anchor="middle" x="425" y="-441.6" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">("No-Go" / Hostile)</text>
+</g>
+<!-- DE1&#45;&gt;DE2 -->
+<g id="edge10" class="edge">
+<title>DE1-&gt;DE2</title>
+<path fill="none" stroke="#ef5350" d="M432.035,-606.3322C430.6378,-576.1166 428.0419,-519.9816 426.4242,-484.9983"/>
+<polygon fill="#ef5350" stroke="#ef5350" points="429.9142,-484.7002 425.956,-474.8726 422.9217,-485.0236 429.9142,-484.7002"/>
+<text text-anchor="middle" x="472.574" y="-544.4" font-family="Times,serif" font-size="14.00" fill="#ffcdd2">reputation shift</text>
+</g>
+<!-- DE3 -->
+<g id="node12" class="node">
+<title>DE3</title>
+<path fill="#d32f2f" stroke="#2e3440" d="M491.1763,-284.2019C491.1763,-284.2019 340.8237,-284.2019 340.8237,-284.2019 334.8237,-284.2019 328.8237,-278.2019 328.8237,-272.2019 328.8237,-272.2019 328.8237,-254.9981 328.8237,-254.9981 328.8237,-248.9981 334.8237,-242.9981 340.8237,-242.9981 340.8237,-242.9981 491.1763,-242.9981 491.1763,-242.9981 497.1763,-242.9981 503.1763,-248.9981 503.1763,-254.9981 503.1763,-254.9981 503.1763,-272.2019 503.1763,-272.2019 503.1763,-278.2019 497.1763,-284.2019 491.1763,-284.2019"/>
+<text text-anchor="middle" x="416" y="-267.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">Psychological Withdrawal</text>
+<text text-anchor="middle" x="416" y="-251" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#eceff4">&amp; Reduced Participation</text>
+</g>
+<!-- DE2&#45;&gt;DE3 -->
+<g id="edge11" class="edge">
+<title>DE2-&gt;DE3</title>
+<path fill="none" stroke="#ef5350" d="M424.0197,-433.4396C422.4339,-399.8552 419.2976,-333.4355 417.452,-294.3497"/>
+<polygon fill="#ef5350" stroke="#ef5350" points="420.9469,-294.1585 416.9791,-284.3348 413.9547,-294.4888 420.9469,-294.1585"/>
+<text text-anchor="middle" x="484.5551" y="-338" font-family="Times,serif" font-size="14.00" fill="#ffcdd2">retreat from public life</text>
+</g>
+<!-- DE3&#45;&gt;SP2 -->
+<g id="edge14" class="edge">
+<title>DE3-&gt;SP2</title>
+<path fill="none" stroke="#546e7a" stroke-dasharray="5,2" d="M367.2812,-242.8835C333.3032,-228.4352 287.8135,-209.0919 251.9685,-193.8497"/>
+<polygon fill="#546e7a" stroke="#546e7a" points="253.1774,-190.5605 242.6052,-189.8682 250.4381,-197.0023 253.1774,-190.5605"/>
+<text text-anchor="middle" x="406.6347" y="-212.2" font-family="Times,serif" font-size="14.00" fill="#b0bec5">withdrawal deepens resignation</text>
+</g>
+</g>
+</svg>
