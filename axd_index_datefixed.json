@@ -9569,6 +9569,16 @@
   "cluster": "testimony",
   "size": "5000",
   "type": "file"
+},
+{
+  "title": "Times News – PMQs & Shadow Leader (14:30)",
+  "url": "https://axda.github.io/Blu/Times_News_1430+utc+1_20052026_v0.1.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "news", "politics", "pmqs"],
+  "date": "2026-05-20",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": "13800",
+  "type": "mp3"
 }
-
 ]
