@@ -9551,5 +9551,24 @@
   "cluster": "civic erosion",
   "size": "1900",
   "type": "file"
+},
+{
+  "title": "Jane_Garvey_Fi_Glover_Times_1400_utc+1_20052026",
+  "url": "https://axda.github.io/Blu/Jane_Garvey_Fi_Glover_Times_1400_urc+1_20052026.mp3",
+  "thumbnail": "waveform_thumbnails/Jane_Garvey_Fi_Glover_Times_1400_utc+1_20052026.png",
+  "tags": [
+    "audio",
+    "broadcast",
+    "commentary",
+    "premier league",
+    "arsenal",
+    "testimony"
+  ],
+  "date": "2026-05-20",
+  "motif": "civic mood",
+  "cluster": "testimony",
+  "size": "5000",
+  "type": "file"
 }
+
 ]
