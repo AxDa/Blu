@@ -12,7 +12,7 @@
     "motif": "civic decay",
     "cluster": "testimony",
     "size": null,
-    "type": "file"
+    "type": "mp3"
   },
   {
     "title": "thera_whispers_above_cauldron_v0.1a",
@@ -27,7 +27,7 @@
     "motif": "moral inquiry",
     "cluster": "allegory",
     "size": null,
-    "type": "file"
+    "type": "mp3"
   },
   {
     "title": "timeslot_graph_0915_07112025_v0.1a",
@@ -102,7 +102,7 @@
     "motif": "technical audit",
     "cluster": "signal",
     "size": null,
-    "type": "file"
+    "type": "mp3"
   },
   {
     "title": "whiteBackGroundGlass2009_v0.1a.png",
@@ -117,7 +117,7 @@
     "motif": "moral inquiry",
     "cluster": "dialogue",
     "size": null,
-    "type": "file"
+    "type": "png"
   },
   {
     "title": "wk35_36_37_38_39_0123_utc+1_v0.1a",
@@ -132,7 +132,7 @@
     "motif": "civic decay",
     "cluster": "testimony",
     "size": null,
-    "type": "file"
+    "type": "mp3"
   },
   {
     "title": "wk35_36_37_38_39_x_bash1_v0.1a",
@@ -174,7 +174,7 @@
     "motif": "civic decay",
     "cluster": "testimony",
     "size": 523705,
-    "type": "file"
+    "type": "mp3"
   },
   {
     "title": "20210106_dt_ellipse_nr_wh_speechoverlay_2106_utc_11112025_axd.html",
@@ -9624,5 +9624,21 @@
   "cluster": "testimony",
   "size": 20000,
   "type": "mp3"
+},
+{
+  "title": "ReversedSpeechPerception_axd_22052026",
+  "url": "https://axda.github.io/Blu/ReversedSpeechPerception_axd_22052026.svg",
+  "thumbnail": "thumbnails/ReversedSpeechPerception_axd_22052026.png",
+  "tags": [
+    "diagram",
+    "archive",
+    "reversed_speech"
+  ],
+  "date": "2026-05-22",
+  "motif": "cognitive perception",
+  "cluster": "testimony",
+  "size": 3800,
+  "type": "mp3"
 }
+
 ]
