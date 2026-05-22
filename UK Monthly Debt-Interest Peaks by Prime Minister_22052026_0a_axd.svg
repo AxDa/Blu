@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="744pt" height="1020pt" viewBox="0.00 0.00 744.00 1020.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1016)">
+<title>RPI_Normalised_DebtInterest_By_PM</title>
+<polygon fill="#05060a" stroke="none" points="-4,4 -4,-1016 739.9,-1016 739.9,4 -4,4"/>
+<text xml:space="preserve" text-anchor="middle" x="367.95" y="-990" font-family="Times,serif" font-size="20.00" fill="white">RPI‑Normalised Peak Monthly UK Debt‑Interest by Prime Minister (to 2026 £, approx)</text>
+<g id="clust1" class="cluster">
+<title>cluster_major</title>
+<polygon fill="#05060a" stroke="#222222" points="92.45,-876.4 92.45,-972 312.45,-972 312.45,-876.4 92.45,-876.4"/>
+<text xml:space="preserve" text-anchor="middle" x="202.45" y="-950" font-family="Times,serif" font-size="20.00" fill="white">John Major (1990–1997)</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_blair</title>
+<polygon fill="#05060a" stroke="#222222" points="92.45,-772.8 92.45,-868.4 308.45,-868.4 308.45,-772.8 92.45,-772.8"/>
+<text xml:space="preserve" text-anchor="middle" x="200.45" y="-846.4" font-family="Times,serif" font-size="20.00" fill="white">Tony Blair (1997–2007)</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_brown</title>
+<polygon fill="#05060a" stroke="#222222" points="92.45,-669.2 92.45,-764.8 341.45,-764.8 341.45,-669.2 92.45,-669.2"/>
+<text xml:space="preserve" text-anchor="middle" x="216.95" y="-742.8" font-family="Times,serif" font-size="20.00" fill="white">Gordon Brown (2007–2010)</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_cameron</title>
+<polygon fill="#05060a" stroke="#222222" points="93.45,-565.6 93.45,-661.2 349.45,-661.2 349.45,-565.6 93.45,-565.6"/>
+<text xml:space="preserve" text-anchor="middle" x="221.45" y="-639.2" font-family="Times,serif" font-size="20.00" fill="white">David Cameron (2010–2016)</text>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_may</title>
+<polygon fill="#05060a" stroke="#222222" points="92.45,-462 92.45,-557.6 326.45,-557.6 326.45,-462 92.45,-462"/>
+<text xml:space="preserve" text-anchor="middle" x="209.45" y="-535.6" font-family="Times,serif" font-size="20.00" fill="white">Theresa May (2016–2019)</text>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_johnson</title>
+<polygon fill="#05060a" stroke="#222222" points="84.45,-345.2 84.45,-454 327.45,-454 327.45,-345.2 84.45,-345.2"/>
+<text xml:space="preserve" text-anchor="middle" x="205.95" y="-432" font-family="Times,serif" font-size="20.00" fill="white">Boris Johnson (2019–2022)</text>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_truss</title>
+<polygon fill="#05060a" stroke="#222222" points="92.45,-241.6 92.45,-337.2 272.45,-337.2 272.45,-241.6 92.45,-241.6"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-315.2" font-family="Times,serif" font-size="20.00" fill="white">Liz Truss (2022)</text>
+</g>
+<g id="clust8" class="cluster">
+<title>cluster_sunak</title>
+<polygon fill="#05060a" stroke="#222222" points="69.45,-124.8 69.45,-233.6 295.45,-233.6 295.45,-124.8 69.45,-124.8"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-211.6" font-family="Times,serif" font-size="20.00" fill="white">Rishi Sunak (2022–2024)</text>
+</g>
+<g id="clust9" class="cluster">
+<title>cluster_starmer</title>
+<polygon fill="#05060a" stroke="#222222" points="83.45,-8 83.45,-116.8 281.45,-116.8 281.45,-8 83.45,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-94.8" font-family="Times,serif" font-size="20.00" fill="white">Keir Starmer (2024– )</text>
+</g>
+<g id="clust10" class="cluster">
+<title>cluster_legend</title>
+<polygon fill="#05060a" stroke="#222222" points="357.45,-20.4 357.45,-966.2 666.45,-966.2 666.45,-20.4 357.45,-20.4"/>
+<text xml:space="preserve" text-anchor="middle" x="511.95" y="-944.2" font-family="Times,serif" font-size="20.00" fill="white">Legend (RPI‑normalised to 2026 £)</text>
+</g>
+<!-- major_peak -->
+<g id="node1" class="node">
+<title>major_peak</title>
+<path fill="#3b82f6" stroke="black" stroke-width="1.2" d="M244.3,-932C244.3,-932 120.6,-932 120.6,-932 114.6,-932 108.6,-926 108.6,-920 108.6,-920 108.6,-896.4 108.6,-896.4 108.6,-890.4 114.6,-884.4 120.6,-884.4 120.6,-884.4 244.3,-884.4 244.3,-884.4 250.3,-884.4 256.3,-890.4 256.3,-896.4 256.3,-896.4 256.3,-920 256.3,-920 256.3,-926 250.3,-932 244.3,-932"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-918.1" font-family="Times,serif" font-size="11.00" fill="white">Major</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-904.9" font-family="Times,serif" font-size="11.00" fill="white">Nominal peak: ~£2bn</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-891.7" font-family="Times,serif" font-size="11.00" fill="white">RPI ×3.0 → ≈£6.0bn (2026 £)</text>
+</g>
+<!-- blair_peak -->
+<g id="node2" class="node">
+<title>blair_peak</title>
+<path fill="#22c55e" stroke="black" stroke-width="1.2" d="M244.3,-828.4C244.3,-828.4 120.6,-828.4 120.6,-828.4 114.6,-828.4 108.6,-822.4 108.6,-816.4 108.6,-816.4 108.6,-792.8 108.6,-792.8 108.6,-786.8 114.6,-780.8 120.6,-780.8 120.6,-780.8 244.3,-780.8 244.3,-780.8 250.3,-780.8 256.3,-786.8 256.3,-792.8 256.3,-792.8 256.3,-816.4 256.3,-816.4 256.3,-822.4 250.3,-828.4 244.3,-828.4"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-814.5" font-family="Times,serif" font-size="11.00" fill="white">Blair</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-801.3" font-family="Times,serif" font-size="11.00" fill="white">Nominal peak: ~£2bn</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-788.1" font-family="Times,serif" font-size="11.00" fill="white">RPI ×2.4 → ≈£4.8bn (2026 £)</text>
+</g>
+<!-- major_peak&#45;&gt;blair_peak -->
+<g id="edge1" class="edge">
+<title>major_peak-&gt;blair_peak</title>
+<path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M182.45,-883.89C182.45,-869.95 182.45,-852.06 182.45,-836.9"/>
+<polygon fill="#555555" stroke="#555555" points="184.9,-837.31 182.45,-830.31 180,-837.31 184.9,-837.31"/>
+</g>
+<!-- brown_peak -->
+<g id="node3" class="node">
+<title>brown_peak</title>
+<path fill="#eab308" stroke="black" stroke-width="1.2" d="M244.3,-724.8C244.3,-724.8 120.6,-724.8 120.6,-724.8 114.6,-724.8 108.6,-718.8 108.6,-712.8 108.6,-712.8 108.6,-689.2 108.6,-689.2 108.6,-683.2 114.6,-677.2 120.6,-677.2 120.6,-677.2 244.3,-677.2 244.3,-677.2 250.3,-677.2 256.3,-683.2 256.3,-689.2 256.3,-689.2 256.3,-712.8 256.3,-712.8 256.3,-718.8 250.3,-724.8 244.3,-724.8"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-710.9" font-family="Times,serif" font-size="11.00" fill="white">Brown</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-697.7" font-family="Times,serif" font-size="11.00" fill="white">Nominal peak: ~£3bn</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-684.5" font-family="Times,serif" font-size="11.00" fill="white">RPI ×2.0 → ≈£6.0bn (2026 £)</text>
+</g>
+<!-- blair_peak&#45;&gt;brown_peak -->
+<g id="edge2" class="edge">
+<title>blair_peak-&gt;brown_peak</title>
+<path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M182.45,-780.29C182.45,-766.35 182.45,-748.46 182.45,-733.3"/>
+<polygon fill="#555555" stroke="#555555" points="184.9,-733.71 182.45,-726.71 180,-733.71 184.9,-733.71"/>
+</g>
+<!-- cameron_peak -->
+<g id="node4" class="node">
+<title>cameron_peak</title>
+<path fill="#f97316" stroke="black" stroke-width="1.2" d="M244.3,-621.2C244.3,-621.2 120.6,-621.2 120.6,-621.2 114.6,-621.2 108.6,-615.2 108.6,-609.2 108.6,-609.2 108.6,-585.6 108.6,-585.6 108.6,-579.6 114.6,-573.6 120.6,-573.6 120.6,-573.6 244.3,-573.6 244.3,-573.6 250.3,-573.6 256.3,-579.6 256.3,-585.6 256.3,-585.6 256.3,-609.2 256.3,-609.2 256.3,-615.2 250.3,-621.2 244.3,-621.2"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-607.3" font-family="Times,serif" font-size="11.00" fill="white">Cameron</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-594.1" font-family="Times,serif" font-size="11.00" fill="white">Nominal peak: ~£4bn</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-580.9" font-family="Times,serif" font-size="11.00" fill="white">RPI ×1.6 → ≈£6.4bn (2026 £)</text>
+</g>
+<!-- brown_peak&#45;&gt;cameron_peak -->
+<g id="edge3" class="edge">
+<title>brown_peak-&gt;cameron_peak</title>
+<path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M182.45,-676.69C182.45,-662.75 182.45,-644.86 182.45,-629.7"/>
+<polygon fill="#555555" stroke="#555555" points="184.9,-630.11 182.45,-623.11 180,-630.11 184.9,-630.11"/>
+</g>
+<!-- may_peak -->
+<g id="node5" class="node">
+<title>may_peak</title>
+<path fill="#ec4899" stroke="black" stroke-width="1.2" d="M244.3,-517.6C244.3,-517.6 120.6,-517.6 120.6,-517.6 114.6,-517.6 108.6,-511.6 108.6,-505.6 108.6,-505.6 108.6,-482 108.6,-482 108.6,-476 114.6,-470 120.6,-470 120.6,-470 244.3,-470 244.3,-470 250.3,-470 256.3,-476 256.3,-482 256.3,-482 256.3,-505.6 256.3,-505.6 256.3,-511.6 250.3,-517.6 244.3,-517.6"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-503.7" font-family="Times,serif" font-size="11.00" fill="white">May</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-490.5" font-family="Times,serif" font-size="11.00" fill="white">Nominal peak: ~£5bn</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-477.3" font-family="Times,serif" font-size="11.00" fill="white">RPI ×1.3 → ≈£6.5bn (2026 £)</text>
+</g>
+<!-- cameron_peak&#45;&gt;may_peak -->
+<g id="edge4" class="edge">
+<title>cameron_peak-&gt;may_peak</title>
+<path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M182.45,-573.09C182.45,-559.15 182.45,-541.26 182.45,-526.1"/>
+<polygon fill="#555555" stroke="#555555" points="184.9,-526.51 182.45,-519.51 180,-526.51 184.9,-526.51"/>
+</g>
+<!-- johnson_peak -->
+<g id="node6" class="node">
+<title>johnson_peak</title>
+<path fill="#ef4444" stroke="#ffffff" stroke-width="2" d="M260.79,-414C260.79,-414 104.11,-414 104.11,-414 98.11,-414 92.11,-408 92.11,-402 92.11,-402 92.11,-365.2 92.11,-365.2 92.11,-359.2 98.11,-353.2 104.11,-353.2 104.11,-353.2 260.79,-353.2 260.79,-353.2 266.79,-353.2 272.79,-359.2 272.79,-365.2 272.79,-365.2 272.79,-402 272.79,-402 272.79,-408 266.79,-414 260.79,-414"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-400.1" font-family="Times,serif" font-size="11.00" fill="white">Johnson</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-386.9" font-family="Times,serif" font-size="11.00" fill="white">Nominal peak: £20.149bn (Jun 2022)</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-373.7" font-family="Times,serif" font-size="11.00" fill="white">RPI ×1.15 → ≈£23.1bn (2026 £)</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-360.5" font-family="Times,serif" font-size="11.00" fill="white">ALL‑TIME RECORD</text>
+</g>
+<!-- may_peak&#45;&gt;johnson_peak -->
+<g id="edge5" class="edge">
+<title>may_peak-&gt;johnson_peak</title>
+<path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M182.45,-469.59C182.45,-456.07 182.45,-438.68 182.45,-423.16"/>
+<polygon fill="#555555" stroke="#555555" points="184.9,-423.28 182.45,-416.28 180,-423.28 184.9,-423.28"/>
+</g>
+<!-- truss_peak -->
+<g id="node7" class="node">
+<title>truss_peak</title>
+<path fill="#facc15" stroke="black" stroke-width="1.2" d="M252.45,-297.2C252.45,-297.2 112.45,-297.2 112.45,-297.2 106.45,-297.2 100.45,-291.2 100.45,-285.2 100.45,-285.2 100.45,-261.6 100.45,-261.6 100.45,-255.6 106.45,-249.6 112.45,-249.6 112.45,-249.6 252.45,-249.6 252.45,-249.6 258.45,-249.6 264.45,-255.6 264.45,-261.6 264.45,-261.6 264.45,-285.2 264.45,-285.2 264.45,-291.2 258.45,-297.2 252.45,-297.2"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-283.3" font-family="Times,serif" font-size="11.00" fill="white">Truss</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-270.1" font-family="Times,serif" font-size="11.00" fill="white">Nominal elevated month: ~£10bn</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-256.9" font-family="Times,serif" font-size="11.00" fill="white">RPI ×1.12 → ≈£11.2bn (2026 £)</text>
+</g>
+<!-- johnson_peak&#45;&gt;truss_peak -->
+<g id="edge6" class="edge">
+<title>johnson_peak-&gt;truss_peak</title>
+<path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M182.45,-352.46C182.45,-337.93 182.45,-320.51 182.45,-305.81"/>
+<polygon fill="#555555" stroke="#555555" points="184.9,-306.03 182.45,-299.03 180,-306.03 184.9,-306.03"/>
+</g>
+<!-- sunak_peak -->
+<g id="node8" class="node">
+<title>sunak_peak</title>
+<path fill="#22c55e" stroke="black" stroke-width="1.2" d="M260.8,-193.6C260.8,-193.6 104.1,-193.6 104.1,-193.6 98.1,-193.6 92.1,-187.6 92.1,-181.6 92.1,-181.6 92.1,-144.8 92.1,-144.8 92.1,-138.8 98.1,-132.8 104.1,-132.8 104.1,-132.8 260.8,-132.8 260.8,-132.8 266.8,-132.8 272.8,-138.8 272.8,-144.8 272.8,-144.8 272.8,-181.6 272.8,-181.6 272.8,-187.6 266.8,-193.6 260.8,-193.6"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-179.7" font-family="Times,serif" font-size="11.00" fill="white">Sunak</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-166.5" font-family="Times,serif" font-size="11.00" fill="white">Nominal typical: ~£9–11bn</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-153.3" font-family="Times,serif" font-size="11.00" fill="white">RPI ×1.05 → ≈£9.5–11.5bn (2026 £)</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-140.1" font-family="Times,serif" font-size="11.00" fill="white">(no new record)</text>
+</g>
+<!-- truss_peak&#45;&gt;sunak_peak -->
+<g id="edge7" class="edge">
+<title>truss_peak-&gt;sunak_peak</title>
+<path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M182.45,-249.19C182.45,-235.57 182.45,-218.01 182.45,-202.4"/>
+<polygon fill="#555555" stroke="#555555" points="184.9,-202.48 182.45,-195.48 180,-202.48 184.9,-202.48"/>
+</g>
+<!-- starmer_peak -->
+<g id="node9" class="node">
+<title>starmer_peak</title>
+<path fill="#0ea5e9" stroke="black" stroke-width="1.2" d="M256.2,-76.8C256.2,-76.8 108.7,-76.8 108.7,-76.8 102.7,-76.8 96.7,-70.8 96.7,-64.8 96.7,-64.8 96.7,-28 96.7,-28 96.7,-22 102.7,-16 108.7,-16 108.7,-16 256.2,-16 256.2,-16 262.2,-16 268.2,-22 268.2,-28 268.2,-28 268.2,-64.8 268.2,-64.8 268.2,-70.8 262.2,-76.8 256.2,-76.8"/>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-62.9" font-family="Times,serif" font-size="11.00" fill="white">Starmer</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-49.7" font-family="Times,serif" font-size="11.00" fill="white">Nominal peak: £10.3bn (Apr 2026)</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-36.5" font-family="Times,serif" font-size="11.00" fill="white">RPI ×1.0 → £10.3bn (2026 £)</text>
+<text xml:space="preserve" text-anchor="middle" x="182.45" y="-23.3" font-family="Times,serif" font-size="11.00" fill="white">Highest April on record</text>
+</g>
+<!-- sunak_peak&#45;&gt;starmer_peak -->
+<g id="edge8" class="edge">
+<title>sunak_peak-&gt;starmer_peak</title>
+<path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M182.45,-132.34C182.45,-117.99 182.45,-100.63 182.45,-85.35"/>
+<polygon fill="#555555" stroke="#555555" points="184.9,-85.63 182.45,-78.63 180,-85.63 184.9,-85.63"/>
+</g>
+<!-- leg_major -->
+<g id="node10" class="node">
+<title>leg_major</title>
+<path fill="#3b82f6" stroke="black" stroke-width="1.2" d="M543.05,-926.2C543.05,-926.2 479.86,-926.2 479.86,-926.2 473.86,-926.2 467.86,-920.2 467.86,-914.2 467.86,-914.2 467.86,-902.2 467.86,-902.2 467.86,-896.2 473.86,-890.2 479.86,-890.2 479.86,-890.2 543.05,-890.2 543.05,-890.2 549.05,-890.2 555.05,-896.2 555.05,-902.2 555.05,-902.2 555.05,-914.2 555.05,-914.2 555.05,-920.2 549.05,-926.2 543.05,-926.2"/>
+<text xml:space="preserve" text-anchor="middle" x="511.45" y="-904.9" font-family="Times,serif" font-size="11.00" fill="white">Major: ≈£6.0bn</text>
+</g>
+<!-- leg_blair -->
+<g id="node11" class="node">
+<title>leg_blair</title>
+<path fill="#22c55e" stroke="black" stroke-width="1.2" d="M540.6,-822.6C540.6,-822.6 482.3,-822.6 482.3,-822.6 476.3,-822.6 470.3,-816.6 470.3,-810.6 470.3,-810.6 470.3,-798.6 470.3,-798.6 470.3,-792.6 476.3,-786.6 482.3,-786.6 482.3,-786.6 540.6,-786.6 540.6,-786.6 546.6,-786.6 552.6,-792.6 552.6,-798.6 552.6,-798.6 552.6,-810.6 552.6,-810.6 552.6,-816.6 546.6,-822.6 540.6,-822.6"/>
+<text xml:space="preserve" text-anchor="middle" x="511.45" y="-801.3" font-family="Times,serif" font-size="11.00" fill="white">Blair: ≈£4.8bn</text>
+</g>
+<!-- leg_major&#45;&gt;leg_blair -->
+<!-- leg_brown -->
+<g id="node12" class="node">
+<title>leg_brown</title>
+<path fill="#eab308" stroke="black" stroke-width="1.2" d="M544.58,-719C544.58,-719 478.33,-719 478.33,-719 472.33,-719 466.33,-713 466.33,-707 466.33,-707 466.33,-695 466.33,-695 466.33,-689 472.33,-683 478.33,-683 478.33,-683 544.58,-683 544.58,-683 550.58,-683 556.58,-689 556.58,-695 556.58,-695 556.58,-707 556.58,-707 556.58,-713 550.58,-719 544.58,-719"/>
+<text xml:space="preserve" text-anchor="middle" x="511.45" y="-697.7" font-family="Times,serif" font-size="11.00" fill="white">Brown: ≈£6.0bn</text>
+</g>
+<!-- leg_blair&#45;&gt;leg_brown -->
+<!-- leg_cameron -->
+<g id="node13" class="node">
+<title>leg_cameron</title>
+<path fill="#f97316" stroke="black" stroke-width="1.2" d="M549.76,-615.4C549.76,-615.4 473.14,-615.4 473.14,-615.4 467.14,-615.4 461.14,-609.4 461.14,-603.4 461.14,-603.4 461.14,-591.4 461.14,-591.4 461.14,-585.4 467.14,-579.4 473.14,-579.4 473.14,-579.4 549.76,-579.4 549.76,-579.4 555.76,-579.4 561.76,-585.4 561.76,-591.4 561.76,-591.4 561.76,-603.4 561.76,-603.4 561.76,-609.4 555.76,-615.4 549.76,-615.4"/>
+<text xml:space="preserve" text-anchor="middle" x="511.45" y="-594.1" font-family="Times,serif" font-size="11.00" fill="white">Cameron: ≈£6.4bn</text>
+</g>
+<!-- leg_brown&#45;&gt;leg_cameron -->
+<!-- leg_may -->
+<g id="node14" class="node">
+<title>leg_may</title>
+<path fill="#ec4899" stroke="black" stroke-width="1.2" d="M539.69,-511.8C539.69,-511.8 483.22,-511.8 483.22,-511.8 477.22,-511.8 471.22,-505.8 471.22,-499.8 471.22,-499.8 471.22,-487.8 471.22,-487.8 471.22,-481.8 477.22,-475.8 483.22,-475.8 483.22,-475.8 539.69,-475.8 539.69,-475.8 545.69,-475.8 551.69,-481.8 551.69,-487.8 551.69,-487.8 551.69,-499.8 551.69,-499.8 551.69,-505.8 545.69,-511.8 539.69,-511.8"/>
+<text xml:space="preserve" text-anchor="middle" x="511.45" y="-490.5" font-family="Times,serif" font-size="11.00" fill="white">May: ≈£6.5bn</text>
+</g>
+<!-- leg_cameron&#45;&gt;leg_may -->
+<!-- leg_johnson -->
+<g id="node15" class="node">
+<title>leg_johnson</title>
+<path fill="#ef4444" stroke="black" stroke-width="1.2" d="M569.47,-401.6C569.47,-401.6 453.43,-401.6 453.43,-401.6 447.43,-401.6 441.43,-395.6 441.43,-389.6 441.43,-389.6 441.43,-377.6 441.43,-377.6 441.43,-371.6 447.43,-365.6 453.43,-365.6 453.43,-365.6 569.47,-365.6 569.47,-365.6 575.47,-365.6 581.47,-371.6 581.47,-377.6 581.47,-377.6 581.47,-389.6 581.47,-389.6 581.47,-395.6 575.47,-401.6 569.47,-401.6"/>
+<text xml:space="preserve" text-anchor="middle" x="511.45" y="-380.3" font-family="Times,serif" font-size="11.00" fill="white">Johnson: ≈£23.1bn (record)</text>
+</g>
+<!-- leg_may&#45;&gt;leg_johnson -->
+<!-- leg_truss -->
+<g id="node16" class="node">
+<title>leg_truss</title>
+<path fill="#facc15" stroke="black" stroke-width="1.2" d="M544.58,-291.4C544.58,-291.4 478.33,-291.4 478.33,-291.4 472.33,-291.4 466.33,-285.4 466.33,-279.4 466.33,-279.4 466.33,-267.4 466.33,-267.4 466.33,-261.4 472.33,-255.4 478.33,-255.4 478.33,-255.4 544.58,-255.4 544.58,-255.4 550.58,-255.4 556.58,-261.4 556.58,-267.4 556.58,-267.4 556.58,-279.4 556.58,-279.4 556.58,-285.4 550.58,-291.4 544.58,-291.4"/>
+<text xml:space="preserve" text-anchor="middle" x="511.45" y="-270.1" font-family="Times,serif" font-size="11.00" fill="white">Truss: ≈£11.2bn</text>
+</g>
+<!-- leg_johnson&#45;&gt;leg_truss -->
+<!-- leg_sunak -->
+<g id="node17" class="node">
+<title>leg_sunak</title>
+<path fill="#22c55e" stroke="black" stroke-width="1.2" d="M557.1,-181.2C557.1,-181.2 465.8,-181.2 465.8,-181.2 459.8,-181.2 453.8,-175.2 453.8,-169.2 453.8,-169.2 453.8,-157.2 453.8,-157.2 453.8,-151.2 459.8,-145.2 465.8,-145.2 465.8,-145.2 557.1,-145.2 557.1,-145.2 563.1,-145.2 569.1,-151.2 569.1,-157.2 569.1,-157.2 569.1,-169.2 569.1,-169.2 569.1,-175.2 563.1,-181.2 557.1,-181.2"/>
+<text xml:space="preserve" text-anchor="middle" x="511.45" y="-159.9" font-family="Times,serif" font-size="11.00" fill="white">Sunak: ≈£9.5–11.5bn</text>
+</g>
+<!-- leg_truss&#45;&gt;leg_sunak -->
+<!-- leg_starmer -->
+<g id="node18" class="node">
+<title>leg_starmer</title>
+<path fill="#0ea5e9" stroke="black" stroke-width="1.2" d="M545.64,-64.4C545.64,-64.4 477.26,-64.4 477.26,-64.4 471.26,-64.4 465.26,-58.4 465.26,-52.4 465.26,-52.4 465.26,-40.4 465.26,-40.4 465.26,-34.4 471.26,-28.4 477.26,-28.4 477.26,-28.4 545.64,-28.4 545.64,-28.4 551.64,-28.4 557.64,-34.4 557.64,-40.4 557.64,-40.4 557.64,-52.4 557.64,-52.4 557.64,-58.4 551.64,-64.4 545.64,-64.4"/>
+<text xml:space="preserve" text-anchor="middle" x="511.45" y="-43.1" font-family="Times,serif" font-size="11.00" fill="white">Starmer: £10.3bn</text>
+</g>
+<!-- leg_sunak&#45;&gt;leg_starmer -->
+</g>
+</svg>
