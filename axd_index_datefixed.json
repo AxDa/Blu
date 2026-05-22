@@ -9654,6 +9654,24 @@
   "cluster": "documents",
   "size": 3800,
   "type": "file"
+},
+{
+  "date": "2026-04-01",
+  "title": "UK Debt Interest £10.3bn April 2026",
+  "src": "https://axda.github.io/Blu/UK_Debt_Interest_April_2026_axd.svg",
+  "thumb": "https://axda.github.io/Blu/UK_Debt_Interest_April_2026_axd.png",
+  "type": "svg",
+  "motif": "civic-economics",
+  "cluster": "systemic-erosion",
+  "size": 2700,
+  "tags": [
+    "uk",
+    "debt",
+    "interest",
+    "public-finance",
+    "economic-pressure",
+    "diagram",
+    "axd"
+  ]
 }
-
 ]
