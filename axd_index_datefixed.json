@@ -9600,30 +9600,29 @@
   "date": "2026-05-20",
   "motif": "civic decay",
   "cluster": "testimony",
-  "size": "110700",
+  "size": 110700,
   "type": "mp3"
 },
 {
-  "title": "Mathew Syad & Muriel Zagha – Times with Stig Abel & Kate McCann (08:40)",
+  "title": "Matthew Syed & Muriel Zagha – Times with Stig Abel & Kate McCann (08:40)",
   "url": "https://axda.github.io/Blu/Mathew%20Syad%20Muriel%20Zagha_Times_21052026_Times_0840_utc+1_Stig_Abel_Kate_McCann_21052026_v0.1a.mp3",
   "thumbnail": "thumbnails/mp3_placeholder.png",
-  "tags": ["audio", "times", "interview", "culture", "duplicitious", "weasley"],
+  "tags": ["audio", "times", "interview", "culture", "duplicitous", "weasley"],
   "date": "2026-05-21",
-  "motif": "civic decay",
+  "motif": "civic_decay",
   "cluster": "testimony",
-  "size": "76400",
+  "size": 76400,
   "type": "mp3"
 },
 {
-  "title": "Reversed Media Pack ("Andrew Davison Has No Children") – POTUS Donald Trump, NBC White House",
+  "title": "Reversed Media Pack (\"Andrew Davison Has No Children\") – POTUS Donald Trump, NBC White House",
   "url": "https://axda.github.io/Blu/Reversed%20Media%20Pack%20(Andrew%20Davison%20Has%20No%20Children)_too_POTUS_Donald_Trump_NBC_White_House_22052026_v0.1.mp3",
   "thumbnail": "thumbnails/mp3_placeholder.png",
-  "tags": ["audio", "news", "white_house", "nbc", "media_Pack"],
+  "tags": ["audio", "news", "white_house", "nbc", "media_pack"],
   "date": "2026-05-22",
-  "motif": "civic decay",
+  "motif": "civic_decay",
   "cluster": "testimony",
-  "size": "20000",
+  "size": 20000,
   "type": "mp3"
 }
-
 ]
