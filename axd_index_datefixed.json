@@ -9674,5 +9674,23 @@
     "diagram",
     "axd"
   ]
+},
+{
+  "title": "UK_Monthly_Debt_Interest_Peaks_by_Prime_Minister_22052026_0a_axd",
+  "url": "https://axda.github.io/Blu/UK%20Monthly%20Debt-Interest%20Peaks%20by%20Prime%20Minister_22052026_0a_axd.svg",
+  "thumbnail": "thumbnails/svg_placeholder.png",
+  "tags": [
+    "svg",
+    "diagram",
+    "uk",
+    "government_debt",
+    "interest_payments",
+    "rpi_normalised"
+  ],
+  "date": "2026-05-22",
+  "motif": "economic_pressure",
+  "cluster": "debt_interest_peaks",
+  "size": 3200,
+  "type": "svg"
 }
 ]
