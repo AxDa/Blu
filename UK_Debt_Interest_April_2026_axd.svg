@@ -1,0 +1,411 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="755pt" height="1216pt" viewBox="0.00 0.00 755.00 1216.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1211.6)">
+<title>UK_Debt_Interest_April_2026</title>
+<polygon fill="#111111" stroke="none" points="-4,4 -4,-1211.6 751.05,-1211.6 751.05,4 -4,4"/>
+<text xml:space="preserve" text-anchor="middle" x="373.52" y="-1185.6" font-family="Times,serif" font-size="20.00" fill="#eeeeee">UK Debt Interest – April 2026 (£10.3 billion) + Lived Economy Correlation</text>
+<!-- Core -->
+<g id="node1" class="node">
+<title>Core</title>
+<polygon fill="#333333" stroke="#555555" stroke-width="1.2" points="166.86,-794 0,-794 0,-735.6 166.86,-735.6 166.86,-794"/>
+<text xml:space="preserve" text-anchor="middle" x="83.43" y="-777.4" font-family="Times,serif" font-size="14.00" fill="#eeeeee">£10.3 billion</text>
+<text xml:space="preserve" text-anchor="middle" x="83.43" y="-760.6" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Debt interest in April 2026</text>
+<text xml:space="preserve" text-anchor="middle" x="83.43" y="-743.8" font-family="Times,serif" font-size="14.00" fill="#eeeeee">(UK Government)</text>
+</g>
+<!-- What -->
+<g id="node2" class="node">
+<title>What</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="322.67,-1082.8 202.86,-1082.8 202.86,-1046.8 322.67,-1046.8 322.67,-1082.8"/>
+<text xml:space="preserve" text-anchor="middle" x="262.77" y="-1060.6" font-family="Times,serif" font-size="14.00" fill="#eeeeee">What this figure is</text>
+</g>
+<!-- Core&#45;&gt;What -->
+<g id="edge1" class="edge">
+<title>Core-&gt;What</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M101.92,-794.39C136.14,-852.28 211.53,-979.82 245.09,-1036.59"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="241.9,-1038.07 250,-1044.9 247.93,-1034.51 241.9,-1038.07"/>
+</g>
+<!-- Why -->
+<g id="node6" class="node">
+<title>Why</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="318.6,-902.8 206.93,-902.8 206.93,-866.8 318.6,-866.8 318.6,-902.8"/>
+<text xml:space="preserve" text-anchor="middle" x="262.77" y="-880.6" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Why it is so high</text>
+</g>
+<!-- Core&#45;&gt;Why -->
+<g id="edge2" class="edge">
+<title>Core-&gt;Why</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M128.27,-794.46C157.99,-814.58 196.84,-840.87 224.96,-859.9"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="222.81,-862.66 233.05,-865.37 226.73,-856.86 222.81,-862.66"/>
+</g>
+<!-- Context -->
+<g id="node10" class="node">
+<title>Context</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="315.87,-782.8 209.67,-782.8 209.67,-746.8 315.87,-746.8 315.87,-782.8"/>
+<text xml:space="preserve" text-anchor="middle" x="262.77" y="-760.6" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Context &amp; scale</text>
+</g>
+<!-- Core&#45;&gt;Context -->
+<g id="edge3" class="edge">
+<title>Core-&gt;Context</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M167.39,-764.8C177.62,-764.8 187.96,-764.8 197.86,-764.8"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="197.57,-768.3 207.57,-764.8 197.57,-761.3 197.57,-768.3"/>
+</g>
+<!-- Reporting -->
+<g id="node13" class="node">
+<title>Reporting</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="317.61,-692.8 207.92,-692.8 207.92,-656.8 317.61,-656.8 317.61,-692.8"/>
+<text xml:space="preserve" text-anchor="middle" x="262.77" y="-670.6" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Recent reporting</text>
+</g>
+<!-- Core&#45;&gt;Reporting -->
+<g id="edge4" class="edge">
+<title>Core-&gt;Reporting</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M142.99,-735.08C166.42,-723.19 193.03,-709.69 215.11,-698.48"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="216.42,-701.74 223.75,-694.09 213.25,-695.5 216.42,-701.74"/>
+</g>
+<!-- Lived -->
+<g id="node16" class="node">
+<title>Lived</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="315.67,-461.6 209.86,-461.6 209.86,-420 315.67,-420 315.67,-461.6"/>
+<text xml:space="preserve" text-anchor="middle" x="262.77" y="-445" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Lived Economy</text>
+<text xml:space="preserve" text-anchor="middle" x="262.77" y="-428.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">(2024–2026)</text>
+</g>
+<!-- Core&#45;&gt;Lived -->
+<g id="edge5" class="edge">
+<title>Core-&gt;Lived</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M100.64,-735.19C134.1,-674.05 210.55,-534.38 244.72,-471.95"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="247.68,-473.83 249.41,-463.38 241.54,-470.47 247.68,-473.83"/>
+</g>
+<!-- MonthOnly -->
+<g id="node3" class="node">
+<title>MonthOnly</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="523.2,-1175.6 383.94,-1175.6 383.94,-1134 523.2,-1134 523.2,-1175.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-1159" font-family="Times,serif" font-size="14.00" fill="#eeeeee">One month’s interest</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-1142.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">(not annual)</text>
+</g>
+<!-- What&#45;&gt;MonthOnly -->
+<g id="edge6" class="edge">
+<title>What-&gt;MonthOnly</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M288.94,-1083.21C307.5,-1096.16 333.76,-1113.18 358.67,-1124.8 363.25,-1126.93 368.01,-1128.97 372.86,-1130.91"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="371.44,-1134.11 382.03,-1134.4 373.93,-1127.57 371.44,-1134.11"/>
+</g>
+<!-- RecordApril -->
+<g id="node4" class="node">
+<title>RecordApril</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="521.64,-1115.6 385.51,-1115.6 385.51,-1074 521.64,-1074 521.64,-1115.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-1099" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Highest April</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-1082.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">interest bill on record</text>
+</g>
+<!-- What&#45;&gt;RecordApril -->
+<g id="edge7" class="edge">
+<title>What-&gt;RecordApril</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M323.25,-1074.25C339.38,-1076.82 357.11,-1079.63 374.12,-1082.33"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="373.1,-1085.72 383.53,-1083.83 374.2,-1078.8 373.1,-1085.72"/>
+</g>
+<!-- ONS -->
+<g id="node5" class="node">
+<title>ONS</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="512.3,-1055.6 394.84,-1055.6 394.84,-1014 512.3,-1014 512.3,-1055.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-1039" font-family="Times,serif" font-size="14.00" fill="#eeeeee">From ONS data</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-1022.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">(official statistics)</text>
+</g>
+<!-- What&#45;&gt;ONS -->
+<g id="edge8" class="edge">
+<title>What-&gt;ONS</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M323.25,-1055.35C342.22,-1052.33 363.39,-1048.97 383.01,-1045.85"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="383.39,-1049.34 392.72,-1044.31 382.29,-1042.42 383.39,-1049.34"/>
+</g>
+<!-- Yields -->
+<g id="node7" class="node">
+<title>Yields</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="548.47,-995.6 358.67,-995.6 358.67,-954 548.47,-954 548.47,-995.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-979" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Higher gilt yields</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-962.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">→ higher interest on borrowing</text>
+</g>
+<!-- Why&#45;&gt;Yields -->
+<g id="edge9" class="edge">
+<title>Why-&gt;Yields</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M288.94,-903.21C307.5,-916.16 333.76,-933.18 358.67,-944.8 362.01,-946.36 365.44,-947.86 368.94,-949.32"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="367.45,-952.49 378.03,-952.9 370.02,-945.98 367.45,-952.49"/>
+</g>
+<!-- InflationLink -->
+<g id="node8" class="node">
+<title>InflationLink</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="514.45,-935.6 392.7,-935.6 392.7,-894 514.45,-894 514.45,-935.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-919" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Index‑linked gilts</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-902.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">reset with inflation</text>
+</g>
+<!-- Why&#45;&gt;InflationLink -->
+<g id="edge10" class="edge">
+<title>Why-&gt;InflationLink</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M319.14,-893.6C338.42,-896.66 360.34,-900.14 380.76,-903.39"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="380.18,-906.84 390.61,-904.95 381.28,-899.93 380.18,-906.84"/>
+</g>
+<!-- Exceptional -->
+<g id="node9" class="node">
+<title>Exceptional</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="528.64,-875.6 378.5,-875.6 378.5,-834 528.64,-834 528.64,-875.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-859" font-family="Times,serif" font-size="14.00" fill="#eeeeee">April is usually high,</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-842.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">this spike is exceptional</text>
+</g>
+<!-- Why&#45;&gt;Exceptional -->
+<g id="edge11" class="edge">
+<title>Why-&gt;Exceptional</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M319.14,-876C334.08,-873.63 350.6,-871 366.79,-868.43"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="366.94,-871.95 376.27,-866.92 365.84,-865.04 366.94,-871.95"/>
+</g>
+<!-- Annualised -->
+<g id="node11" class="node">
+<title>Annualised</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="535.72,-815.6 371.42,-815.6 371.42,-774 535.72,-774 535.72,-815.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-799" font-family="Times,serif" font-size="14.00" fill="#eeeeee">If annualised,</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-782.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">~major department budget</text>
+</g>
+<!-- Context&#45;&gt;Annualised -->
+<g id="edge12" class="edge">
+<title>Context-&gt;Annualised</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M316.36,-773.16C329.84,-775.3 344.74,-777.67 359.59,-780.03"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="358.85,-783.45 369.28,-781.56 359.95,-776.54 358.85,-783.45"/>
+</g>
+<!-- CompareSpend -->
+<g id="node12" class="node">
+<title>CompareSpend</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="536.08,-755.6 371.06,-755.6 371.06,-714 536.08,-714 536.08,-755.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-739" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Debt interest now</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-722.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">&gt; some major departments</text>
+</g>
+<!-- Context&#45;&gt;CompareSpend -->
+<g id="edge13" class="edge">
+<title>Context-&gt;CompareSpend</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M316.36,-756.44C329.75,-754.32 344.55,-751.96 359.31,-749.62"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="359.59,-753.12 368.92,-748.09 358.49,-746.2 359.59,-753.12"/>
+</g>
+<!-- Radio -->
+<g id="node14" class="node">
+<title>Radio</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="519.68,-695.6 387.46,-695.6 387.46,-654 519.68,-654 519.68,-695.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-679" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Radio/current affairs</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-662.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">last 24 hours</text>
+</g>
+<!-- Reporting&#45;&gt;Radio -->
+<g id="edge14" class="edge">
+<title>Reporting-&gt;Radio</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M318.12,-674.8C335.98,-674.8 356.18,-674.8 375.4,-674.8"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="375.22,-678.3 385.22,-674.8 375.22,-671.3 375.22,-678.3"/>
+</g>
+<!-- Aligns -->
+<g id="node15" class="node">
+<title>Aligns</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="519.5,-635.6 387.64,-635.6 387.64,-594 519.5,-594 519.5,-635.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-619" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Matches major news</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-602.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">and ONS release</text>
+</g>
+<!-- Reporting&#45;&gt;Aligns -->
+<g id="edge15" class="edge">
+<title>Reporting-&gt;Aligns</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M318.12,-657.53C336.24,-651.77 356.77,-645.24 376.24,-639.06"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="377.17,-642.43 385.64,-636.07 375.05,-635.76 377.17,-642.43"/>
+</g>
+<!-- Grocery -->
+<g id="node17" class="node">
+<title>Grocery</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="512.3,-575.6 394.84,-575.6 394.84,-534 512.3,-534 512.3,-575.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-559" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Grocery Inflation:</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-542.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">£30 → £90 basket</text>
+</g>
+<!-- Lived&#45;&gt;Grocery -->
+<g id="edge16" class="edge">
+<title>Lived-&gt;Grocery</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M298.84,-461.98C329.47,-480.47 374.13,-507.44 407.43,-527.54"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="405.57,-530.51 415.94,-532.68 409.19,-524.52 405.57,-530.51"/>
+</g>
+<!-- HighStreet -->
+<g id="node21" class="node">
+<title>HighStreet</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="519.9,-458.8 387.25,-458.8 387.25,-422.8 519.9,-422.8 519.9,-458.8"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-436.6" font-family="Times,serif" font-size="14.00" fill="#eeeeee">High Street Collapse</text>
+</g>
+<!-- Lived&#45;&gt;HighStreet -->
+<g id="edge17" class="edge">
+<title>Lived-&gt;HighStreet</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M316.11,-440.8C334.45,-440.8 355.44,-440.8 375.38,-440.8"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="375.31,-444.3 385.31,-440.8 375.31,-437.3 375.31,-444.3"/>
+</g>
+<!-- UC -->
+<g id="node25" class="node">
+<title>UC</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="508.03,-311.6 399.11,-311.6 399.11,-270 508.03,-270 508.03,-311.6"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-295" font-family="Times,serif" font-size="14.00" fill="#eeeeee">£400/month</text>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-278.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Universal Credit</text>
+</g>
+<!-- Lived&#45;&gt;UC -->
+<g id="edge18" class="edge">
+<title>Lived-&gt;UC</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M290.42,-419.63C323.5,-393.35 380.03,-348.43 416.84,-319.18"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="418.8,-322.1 424.45,-313.14 414.44,-316.62 418.8,-322.1"/>
+</g>
+<!-- Disconnect -->
+<g id="node29" class="node">
+<title>Disconnect</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="535.44,-128.8 371.71,-128.8 371.71,-92.8 535.44,-92.8 535.44,-128.8"/>
+<text xml:space="preserve" text-anchor="middle" x="453.57" y="-106.6" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Macro–Micro Disconnect</text>
+</g>
+<!-- Lived&#45;&gt;Disconnect -->
+<g id="edge19" class="edge">
+<title>Lived-&gt;Disconnect</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M274.37,-419.46C291.4,-385.48 326.25,-317.14 358.67,-260.8 383.62,-217.45 414.82,-168.57 434.22,-138.73"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="437.12,-140.69 439.65,-130.4 431.26,-136.86 437.12,-140.69"/>
+</g>
+<!-- FoodInflation -->
+<g id="node18" class="node">
+<title>FoodInflation</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="725.14,-695.6 606.37,-695.6 606.37,-654 725.14,-654 725.14,-695.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-679" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Food prices +37%</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-662.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">since 2020</text>
+</g>
+<!-- Grocery&#45;&gt;FoodInflation -->
+<g id="edge20" class="edge">
+<title>Grocery-&gt;FoodInflation</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M512.45,-566.12C525.2,-570.49 538.01,-576.51 548.47,-584.8 572.85,-604.11 560.56,-624.91 584.47,-644.8 587.97,-647.71 591.79,-650.36 595.79,-652.76"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="594.1,-655.83 604.57,-657.45 597.4,-649.66 594.1,-655.83"/>
+</g>
+<!-- YellowSticker -->
+<g id="node19" class="node">
+<title>YellowSticker</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="747.05,-635.6 584.47,-635.6 584.47,-594 747.05,-594 747.05,-635.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-619" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Even with yellow‑sticker</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-602.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">savings, costs tripled</text>
+</g>
+<!-- Grocery&#45;&gt;YellowSticker -->
+<g id="edge21" class="edge">
+<title>Grocery-&gt;YellowSticker</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M512.84,-571.43C533.21,-577.25 556.53,-583.91 578.69,-590.23"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="577.62,-593.56 588.19,-592.94 579.54,-586.83 577.62,-593.56"/>
+</g>
+<!-- MinisterShock -->
+<g id="node20" class="node">
+<title>MinisterShock</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="724.48,-575.6 607.03,-575.6 607.03,-534 724.48,-534 724.48,-575.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-559" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Former minister:</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-542.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">'shocked at prices'</text>
+</g>
+<!-- Grocery&#45;&gt;MinisterShock -->
+<g id="edge22" class="edge">
+<title>Grocery-&gt;MinisterShock</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M512.84,-554.8C538.35,-554.8 568.48,-554.8 595.15,-554.8"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="595.07,-558.3 605.07,-554.8 595.07,-551.3 595.07,-558.3"/>
+</g>
+<!-- Closures -->
+<g id="node22" class="node">
+<title>Closures</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="736.27,-515.8 595.25,-515.8 595.25,-479.8 736.27,-479.8 736.27,-515.8"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-493.6" font-family="Times,serif" font-size="14.00" fill="#eeeeee">~38 shops closing/day</text>
+</g>
+<!-- HighStreet&#45;&gt;Closures -->
+<g id="edge23" class="edge">
+<title>HighStreet-&gt;Closures</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M520.21,-458.6C540.83,-464.19 563.81,-470.43 585.28,-476.25"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="584.18,-479.57 594.74,-478.81 586.01,-472.82 584.18,-479.57"/>
+</g>
+<!-- Footfall -->
+<g id="node23" class="node">
+<title>Footfall</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="735.01,-461.6 596.51,-461.6 596.51,-420 735.01,-420 735.01,-461.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-445" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Footfall still 15–20%</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-428.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">below pre‑pandemic</text>
+</g>
+<!-- HighStreet&#45;&gt;Footfall -->
+<g id="edge24" class="edge">
+<title>HighStreet-&gt;Footfall</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M520.21,-440.8C540.54,-440.8 563.17,-440.8 584.37,-440.8"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="584.32,-444.3 594.32,-440.8 584.32,-437.3 584.32,-444.3"/>
+</g>
+<!-- Graveyard -->
+<g id="node24" class="node">
+<title>Graveyard</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="714.57,-401.6 616.94,-401.6 616.94,-360 714.57,-360 714.57,-401.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-385" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Described as a</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-368.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">'graveyard'</text>
+</g>
+<!-- HighStreet&#45;&gt;Graveyard -->
+<g id="edge25" class="edge">
+<title>HighStreet-&gt;Graveyard</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M519.64,-422.23C546.96,-414.43 578.53,-405.42 605.23,-397.79"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="606.09,-401.19 614.75,-395.08 604.17,-394.46 606.09,-401.19"/>
+</g>
+<!-- NotSurvival -->
+<g id="node26" class="node">
+<title>NotSurvival</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="735.77,-341.6 595.75,-341.6 595.75,-300 735.77,-300 735.77,-341.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-325" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Not a survival income</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-308.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">in 2026 prices</text>
+</g>
+<!-- UC&#45;&gt;NotSurvival -->
+<g id="edge26" class="edge">
+<title>UC-&gt;NotSurvival</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M508.43,-298.49C531.32,-301.75 558.5,-305.63 583.72,-309.23"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="583.11,-312.68 593.51,-310.63 584.1,-305.75 583.11,-312.68"/>
+</g>
+<!-- InflationHit -->
+<g id="node27" class="node">
+<title>InflationHit</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="732.08,-281.6 599.44,-281.6 599.44,-240 732.08,-240 732.08,-281.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-265" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Food inflation hits</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-248.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">low‑income hardest</text>
+</g>
+<!-- UC&#45;&gt;InflationHit -->
+<g id="edge27" class="edge">
+<title>UC-&gt;InflationHit</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M508.43,-283.11C532.48,-279.68 561.27,-275.57 587.55,-271.82"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="587.98,-275.29 597.38,-270.42 586.99,-268.36 587.98,-275.29"/>
+</g>
+<!-- NoSupport -->
+<g id="node28" class="node">
+<title>NoSupport</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="742.01,-221.6 589.5,-221.6 589.5,-180 742.01,-180 742.01,-221.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-205" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Cost‑of‑living support</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-188.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">ended</text>
+</g>
+<!-- UC&#45;&gt;NoSupport -->
+<g id="edge28" class="edge">
+<title>UC-&gt;NoSupport</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M498.69,-269.42C523.66,-257.57 555.58,-242.85 584.47,-230.8 588.08,-229.29 591.8,-227.78 595.56,-226.28"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="596.66,-229.61 604.68,-222.69 594.1,-223.09 596.66,-229.61"/>
+</g>
+<!-- BondCalm -->
+<g id="node30" class="node">
+<title>BondCalm</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="714.78,-161.6 616.74,-161.6 616.74,-120 714.78,-120 714.78,-161.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-145" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Bond markets:</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-128.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">'orderly'</text>
+</g>
+<!-- Disconnect&#45;&gt;BondCalm -->
+<g id="edge29" class="edge">
+<title>Disconnect-&gt;BondCalm</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M535.83,-122.4C558.85,-125.68 583.47,-129.2 604.96,-132.27"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="604.18,-135.69 614.57,-133.64 605.17,-128.76 604.18,-135.69"/>
+</g>
+<!-- HouseholdCrisis -->
+<g id="node31" class="node">
+<title>HouseholdCrisis</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="719.45,-101.6 612.07,-101.6 612.07,-60 719.45,-60 719.45,-101.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-85" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Households:</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-68.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">crisis conditions</text>
+</g>
+<!-- Disconnect&#45;&gt;HouseholdCrisis -->
+<g id="edge30" class="edge">
+<title>Disconnect-&gt;HouseholdCrisis</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M535.83,-99.2C557.18,-96.15 579.91,-92.91 600.24,-90.01"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="600.53,-93.5 609.94,-88.62 599.54,-86.57 600.53,-93.5"/>
+</g>
+<!-- Betrayal -->
+<g id="node32" class="node">
+<title>Betrayal</title>
+<polygon fill="#222222" stroke="#555555" stroke-width="1.2" points="733.43,-41.6 598.09,-41.6 598.09,0 733.43,0 733.43,-41.6"/>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-25" font-family="Times,serif" font-size="14.00" fill="#eeeeee">Public sentiment:</text>
+<text xml:space="preserve" text-anchor="middle" x="665.76" y="-8.2" font-family="Times,serif" font-size="14.00" fill="#eeeeee">'betrayal of promises'</text>
+</g>
+<!-- Disconnect&#45;&gt;Betrayal -->
+<g id="edge31" class="edge">
+<title>Disconnect-&gt;Betrayal</title>
+<path fill="none" stroke="#888888" stroke-width="1.1" d="M492.6,-92.32C518.32,-80.04 553.17,-63.85 584.47,-50.8 588.08,-49.29 591.8,-47.78 595.56,-46.28"/>
+<polygon fill="#888888" stroke="#888888" stroke-width="1.1" points="596.66,-49.61 604.68,-42.69 594.1,-43.09 596.66,-49.61"/>
+</g>
+</g>
+</svg>
