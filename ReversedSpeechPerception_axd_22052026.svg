@@ -1,0 +1,540 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="580pt" height="1950pt" viewBox="0.00 0.00 580.00 1950.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1946.4)">
+<title>ReversedSpeechPerception</title>
+<polygon fill="black" stroke="none" points="-4,4 -4,-1946.4 576.15,-1946.4 576.15,4 -4,4"/>
+<text xml:space="preserve" text-anchor="middle" x="286.07" y="-1920.4" font-family="Times,serif" font-size="20.00" fill="white">Reversed Speech, Illusory Words, and Research Landscape</text>
+<g id="clust1" class="cluster">
+<title>cluster_acoustic</title>
+<polygon fill="black" stroke="#4b0082" points="212.05,-1679 212.05,-1866 557.98,-1866 557.98,-1679 212.05,-1679"/>
+<text xml:space="preserve" text-anchor="middle" x="385.02" y="-1849.4" font-family="Times,serif" font-size="14.00" fill="white">1. Real Acoustic Structure</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_phonemes</title>
+<polygon fill="black" stroke="#006400" points="212.89,-1108 212.89,-1379 564.15,-1379 564.15,-1108 212.89,-1108"/>
+<text xml:space="preserve" text-anchor="middle" x="388.52" y="-1362.4" font-family="Times,serif" font-size="14.00" fill="white">2. Real Reversed Phonemes</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_syllables</title>
+<polygon fill="black" stroke="#8b0000" points="207.72,-613 207.72,-910 545.33,-910 545.33,-613 207.72,-613"/>
+<text xml:space="preserve" text-anchor="middle" x="376.52" y="-893.4" font-family="Times,serif" font-size="14.00" fill="white">3. Real Syllabic Illusions</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_mechanisms</title>
+<polygon fill="black" stroke="#ff8c00" points="208.89,-1387 208.89,-1671 551.82,-1671 551.82,-1387 208.89,-1387"/>
+<text xml:space="preserve" text-anchor="middle" x="380.35" y="-1654.4" font-family="Times,serif" font-size="14.00" fill="white">4. Cognitive &amp; Perceptual Mechanisms</text>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_research</title>
+<polygon fill="black" stroke="#1e90ff" points="205.22,-8 205.22,-543 563.15,-543 563.15,-8 205.22,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="384.18" y="-526.4" font-family="Times,serif" font-size="14.00" fill="white">5. Research Landscape</text>
+</g>
+<!-- Phenomenon -->
+<g id="node1" class="node">
+<title>Phenomenon</title>
+<polygon fill="#4b0082" stroke="black" points="101.97,-959.4 0,-959.4 0,-922.6 101.97,-922.6 101.97,-959.4"/>
+<text xml:space="preserve" text-anchor="middle" x="50.99" y="-944.6" font-family="Times,serif" font-size="12.00" fill="white">Hearing Words in</text>
+<text xml:space="preserve" text-anchor="middle" x="50.99" y="-930.2" font-family="Times,serif" font-size="12.00" fill="white">Reversed Speech</text>
+</g>
+<!-- AS -->
+<g id="node2" class="node">
+<title>AS</title>
+<polygon fill="#191970" stroke="black" points="313.7,-1751.4 220.05,-1751.4 220.05,-1714.6 313.7,-1714.6 313.7,-1751.4"/>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-1736.6" font-family="Times,serif" font-size="12.00" fill="white">Reversed Audio</text>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-1722.2" font-family="Times,serif" font-size="12.00" fill="white">Still Structured</text>
+</g>
+<!-- Phenomenon&#45;&gt;AS -->
+<g id="edge4" class="edge">
+<title>Phenomenon-&gt;AS</title>
+<path fill="none" stroke="#7b68ee" d="M51.59,-959.62C50.52,-1047.07 55.22,-1423.42 205.22,-1675 212.21,-1686.71 222.19,-1697.61 232.05,-1706.73"/>
+<polygon fill="#7b68ee" stroke="#7b68ee" points="229.64,-1709.27 239.46,-1713.26 234.27,-1704.02 229.64,-1709.27"/>
+<text xml:space="preserve" text-anchor="middle" x="157.6" y="-1660.64" font-family="Times,serif" font-size="10.00" fill="white">acoustic basis</text>
+</g>
+<!-- RP -->
+<g id="node6" class="node">
+<title>RP</title>
+<polygon fill="#013220" stroke="black" points="312.86,-1229.4 220.89,-1229.4 220.89,-1192.6 312.86,-1192.6 312.86,-1229.4"/>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-1214.6" font-family="Times,serif" font-size="12.00" fill="white">Phoneme-Level</text>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-1200.2" font-family="Times,serif" font-size="12.00" fill="white">Inversion</text>
+</g>
+<!-- Phenomenon&#45;&gt;RP -->
+<g id="edge9" class="edge">
+<title>Phenomenon-&gt;RP</title>
+<path fill="none" stroke="#32cd32" d="M66.69,-959.56C103.63,-1006.19 200.47,-1128.44 244.06,-1183.46"/>
+<polygon fill="#32cd32" stroke="#32cd32" points="241.18,-1185.46 250.13,-1191.13 246.67,-1181.11 241.18,-1185.46"/>
+<text xml:space="preserve" text-anchor="middle" x="157.6" y="-1118.96" font-family="Times,serif" font-size="10.00" fill="white">phoneme-like cues</text>
+</g>
+<!-- SI -->
+<g id="node11" class="node">
+<title>SI</title>
+<polygon fill="#8b0000" stroke="black" points="318.03,-849.4 215.72,-849.4 215.72,-812.6 318.03,-812.6 318.03,-849.4"/>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-834.6" font-family="Times,serif" font-size="12.00" fill="white">Brain Imposes</text>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-820.2" font-family="Times,serif" font-size="12.00" fill="white">Syllabic Structure</text>
+</g>
+<!-- Phenomenon&#45;&gt;SI -->
+<g id="edge15" class="edge">
+<title>Phenomenon-&gt;SI</title>
+<path fill="none" stroke="#ff6347" d="M88.27,-922.34C124.38,-903.77 179.93,-875.2 219.28,-854.96"/>
+<polygon fill="#ff6347" stroke="#ff6347" points="220.78,-858.13 228.07,-850.44 217.58,-851.9 220.78,-858.13"/>
+<text xml:space="preserve" text-anchor="middle" x="157.6" y="-908.42" font-family="Times,serif" font-size="10.00" fill="white">illusory syllables</text>
+</g>
+<!-- CM -->
+<g id="node17" class="node">
+<title>CM</title>
+<polygon fill="#ff8c00" stroke="black" points="316.87,-1528.4 216.89,-1528.4 216.89,-1491.6 316.87,-1491.6 316.87,-1528.4"/>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-1513.6" font-family="Times,serif" font-size="12.00" fill="white">Pattern-Matching</text>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-1499.2" font-family="Times,serif" font-size="12.00" fill="white">Brain</text>
+</g>
+<!-- Phenomenon&#45;&gt;CM -->
+<g id="edge20" class="edge">
+<title>Phenomenon-&gt;CM</title>
+<path fill="none" stroke="#ffa500" d="M57.68,-959.8C76.48,-1021.38 139.2,-1222.22 205.22,-1383 219.35,-1417.41 238.13,-1455.81 251.03,-1481.29"/>
+<polygon fill="#ffa500" stroke="#ffa500" points="247.82,-1482.69 255.48,-1490.01 254.05,-1479.52 247.82,-1482.69"/>
+<text xml:space="preserve" text-anchor="middle" x="157.6" y="-1350.83" font-family="Times,serif" font-size="10.00" fill="white">interpretation</text>
+</g>
+<!-- RL -->
+<g id="node22" class="node">
+<title>RL</title>
+<polygon fill="#00008b" stroke="black" points="320.53,-304.4 213.22,-304.4 213.22,-267.6 320.53,-267.6 320.53,-304.4"/>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-289.6" font-family="Times,serif" font-size="12.00" fill="white">Scientific Work on</text>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-275.2" font-family="Times,serif" font-size="12.00" fill="white">Reversed Speech</text>
+</g>
+<!-- Phenomenon&#45;&gt;RL -->
+<g id="edge31" class="edge">
+<title>Phenomenon-&gt;RL</title>
+<path fill="none" stroke="#00bfff" d="M53.1,-922.28C56.95,-865.29 72.18,-689.51 119.97,-553 152.49,-460.14 214.92,-361.07 246.53,-313.98"/>
+<polygon fill="#00bfff" stroke="#00bfff" points="249.23,-316.24 251.93,-305.99 243.43,-312.31 249.23,-316.24"/>
+<text xml:space="preserve" text-anchor="middle" x="157.6" y="-556" font-family="Times,serif" font-size="10.00" fill="white">studied as</text>
+</g>
+<!-- Effect_Illusory -->
+<g id="node34" class="node">
+<title>Effect_Illusory</title>
+<polygon fill="#4b0082" stroke="black" points="532.98,-602.6 434.68,-602.6 434.68,-551.4 532.98,-551.4 532.98,-602.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-587.8" font-family="Times,serif" font-size="12.00" fill="white">Perceived Words</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-573.4" font-family="Times,serif" font-size="12.00" fill="white">&amp; Phrases in</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-559" font-family="Times,serif" font-size="12.00" fill="white">Reversed Speech</text>
+</g>
+<!-- Phenomenon&#45;&gt;Effect_Illusory -->
+<g id="edge40" class="edge">
+<title>Phenomenon-&gt;Effect_Illusory</title>
+<path fill="none" stroke="white" stroke-dasharray="1,5" d="M53.35,-922.36C58.93,-861.22 85.82,-666.09 205.22,-585 269.49,-541.36 362.82,-549.48 423.18,-561.5"/>
+<polygon fill="white" stroke="white" points="422.43,-564.92 432.94,-563.54 423.87,-558.07 422.43,-564.92"/>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-600" font-family="Times,serif" font-size="10.00" fill="white">subjective</text>
+<text xml:space="preserve" text-anchor="middle" x="266.88" y="-588" font-family="Times,serif" font-size="10.00" fill="white">experience</text>
+</g>
+<!-- AS_Spectral -->
+<g id="node3" class="node">
+<title>AS_Spectral</title>
+<polygon fill="#00008b" stroke="black" points="547.16,-1723.4 420.5,-1723.4 420.5,-1686.6 547.16,-1686.6 547.16,-1723.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1708.6" font-family="Times,serif" font-size="12.00" fill="white">Preserved Spectral</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1694.2" font-family="Times,serif" font-size="12.00" fill="white">Envelopes &amp; Formants</text>
+</g>
+<!-- AS&#45;&gt;AS_Spectral -->
+<g id="edge1" class="edge">
+<title>AS-&gt;AS_Spectral</title>
+<path fill="none" stroke="#cccccc" d="M313.99,-1726.99C341.57,-1723.4 377.25,-1718.75 408.7,-1714.66"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="409.11,-1718.13 418.57,-1713.37 408.21,-1711.19 409.11,-1718.13"/>
+</g>
+<!-- AS_Temporal -->
+<g id="node4" class="node">
+<title>AS_Temporal</title>
+<polygon fill="#00008b" stroke="black" points="549.98,-1778.4 417.68,-1778.4 417.68,-1741.6 549.98,-1741.6 549.98,-1778.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1763.6" font-family="Times,serif" font-size="12.00" fill="white">Temporal Order</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1749.2" font-family="Times,serif" font-size="12.00" fill="white">Inverted, Not Destroyed</text>
+</g>
+<!-- AS&#45;&gt;AS_Temporal -->
+<g id="edge2" class="edge">
+<title>AS-&gt;AS_Temporal</title>
+<path fill="none" stroke="#cccccc" d="M313.99,-1738.79C340.8,-1742.16 375.26,-1746.49 406.06,-1750.36"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="405.36,-1753.8 415.72,-1751.57 406.23,-1746.85 405.36,-1753.8"/>
+</g>
+<!-- AS_NonNoise -->
+<g id="node5" class="node">
+<title>AS_NonNoise</title>
+<polygon fill="#00008b" stroke="black" points="538.16,-1833.4 429.5,-1833.4 429.5,-1796.6 538.16,-1796.6 538.16,-1833.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1818.6" font-family="Times,serif" font-size="12.00" fill="white">Sounds Structured,</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1804.2" font-family="Times,serif" font-size="12.00" fill="white">Not Random Noise</text>
+</g>
+<!-- AS&#45;&gt;AS_NonNoise -->
+<g id="edge3" class="edge">
+<title>AS-&gt;AS_NonNoise</title>
+<path fill="none" stroke="#cccccc" d="M313.99,-1750.59C345.85,-1762.75 388.53,-1779.03 423.01,-1792.18"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="421.42,-1795.32 432.01,-1795.61 423.92,-1788.78 421.42,-1795.32"/>
+</g>
+<!-- CM_Templates -->
+<g id="node19" class="node">
+<title>CM_Templates</title>
+<polygon fill="#ff7f50" stroke="black" points="543.82,-1500.6 423.84,-1500.6 423.84,-1449.4 543.82,-1449.4 543.82,-1500.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1485.8" font-family="Times,serif" font-size="12.00" fill="white">Forward-Speech</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1471.4" font-family="Times,serif" font-size="12.00" fill="white">Templates Applied to</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1457" font-family="Times,serif" font-size="12.00" fill="white">Backward Input</text>
+</g>
+<!-- AS&#45;&gt;CM_Templates -->
+<g id="edge21" class="edge">
+<title>AS-&gt;CM_Templates</title>
+<path fill="none" stroke="#ffd700" d="M287.13,-1714.12C297.67,-1703.22 310.58,-1688.95 320.53,-1675 369.36,-1606.49 350.36,-1566.79 411.51,-1509 412.55,-1508.02 413.62,-1507.06 414.72,-1506.13"/>
+<polygon fill="#ffd700" stroke="#ffd700" points="416.54,-1509.14 422.44,-1500.33 412.34,-1503.54 416.54,-1509.14"/>
+<text xml:space="preserve" text-anchor="middle" x="366.02" y="-1659.14" font-family="Times,serif" font-size="10.00" fill="white">provides</text>
+<text xml:space="preserve" text-anchor="middle" x="366.02" y="-1647.14" font-family="Times,serif" font-size="10.00" fill="white">raw structure</text>
+</g>
+<!-- Cause_Acoustic -->
+<g id="node30" class="node">
+<title>Cause_Acoustic</title>
+<polygon fill="#191970" stroke="black" points="538.31,-1910.4 429.34,-1910.4 429.34,-1873.6 538.31,-1873.6 538.31,-1910.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1895.6" font-family="Times,serif" font-size="12.00" fill="white">Preserved Acoustic</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1881.2" font-family="Times,serif" font-size="12.00" fill="white">Structure</text>
+</g>
+<!-- AS&#45;&gt;Cause_Acoustic -->
+<g id="edge36" class="edge">
+<title>AS-&gt;Cause_Acoustic</title>
+<path fill="none" stroke="#b3b3b3" stroke-dasharray="5,2" d="M282.59,-1751.8C306.54,-1781.18 356.82,-1837.92 411.51,-1870 413.82,-1871.36 416.22,-1872.64 418.69,-1873.84"/>
+<polygon fill="#b3b3b3" stroke="#b3b3b3" points="417.14,-1876.99 427.71,-1877.8 419.96,-1870.58 417.14,-1876.99"/>
+</g>
+<!-- RP_Consonants -->
+<g id="node7" class="node">
+<title>RP_Consonants</title>
+<polygon fill="#006400" stroke="black" points="530.5,-1167.6 437.16,-1167.6 437.16,-1116.4 530.5,-1116.4 530.5,-1167.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1152.8" font-family="Times,serif" font-size="12.00" fill="white">Consonants:</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1138.4" font-family="Times,serif" font-size="12.00" fill="white">Bursts/Frication</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1124" font-family="Times,serif" font-size="12.00" fill="white">Reversed</text>
+</g>
+<!-- RP&#45;&gt;RP_Consonants -->
+<g id="edge5" class="edge">
+<title>RP-&gt;RP_Consonants</title>
+<path fill="none" stroke="#cccccc" d="M313.2,-1196.45C346.13,-1185.88 390.92,-1171.5 426.21,-1160.18"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="426.93,-1163.62 435.39,-1157.23 424.79,-1156.95 426.93,-1163.62"/>
+</g>
+<!-- RP_Vowels -->
+<g id="node8" class="node">
+<title>RP_Vowels</title>
+<polygon fill="#006400" stroke="black" points="535.99,-1236.6 431.67,-1236.6 431.67,-1185.4 535.99,-1185.4 535.99,-1236.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1221.8" font-family="Times,serif" font-size="12.00" fill="white">Vowels:</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1207.4" font-family="Times,serif" font-size="12.00" fill="white">Steady-State,</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1193" font-family="Times,serif" font-size="12.00" fill="white">Still Recognizable</text>
+</g>
+<!-- RP&#45;&gt;RP_Vowels -->
+<g id="edge6" class="edge">
+<title>RP-&gt;RP_Vowels</title>
+<path fill="none" stroke="#cccccc" d="M313.2,-1211C344.3,-1211 385.97,-1211 420.23,-1211"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="420.02,-1214.5 430.02,-1211 420.02,-1207.5 420.02,-1214.5"/>
+</g>
+<!-- RP_Transitions -->
+<g id="node9" class="node">
+<title>RP_Transitions</title>
+<polygon fill="#006400" stroke="black" points="540.66,-1291.4 427,-1291.4 427,-1254.6 540.66,-1254.6 540.66,-1291.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1276.6" font-family="Times,serif" font-size="12.00" fill="white">Formant Transitions</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1262.2" font-family="Times,serif" font-size="12.00" fill="white">Run Backwards</text>
+</g>
+<!-- RP&#45;&gt;RP_Transitions -->
+<g id="edge7" class="edge">
+<title>RP-&gt;RP_Transitions</title>
+<path fill="none" stroke="#cccccc" d="M313.2,-1224.07C342.97,-1232.66 382.43,-1244.04 415.8,-1253.67"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="414.83,-1257.03 425.41,-1256.44 416.77,-1250.3 414.83,-1257.03"/>
+</g>
+<!-- RP_Mismatch -->
+<g id="node10" class="node">
+<title>RP_Mismatch</title>
+<polygon fill="#006400" stroke="black" points="556.15,-1346.4 411.51,-1346.4 411.51,-1309.6 556.15,-1309.6 556.15,-1346.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1331.6" font-family="Times,serif" font-size="12.00" fill="white">No Longer Match</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1317.2" font-family="Times,serif" font-size="12.00" fill="white">Valid Phoneme Categories</text>
+</g>
+<!-- RP&#45;&gt;RP_Mismatch -->
+<g id="edge8" class="edge">
+<title>RP-&gt;RP_Mismatch</title>
+<path fill="none" stroke="#cccccc" d="M294.83,-1229.75C323.07,-1248.91 369.15,-1278.78 411.51,-1300 414.72,-1301.61 418.05,-1303.19 421.43,-1304.73"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="419.74,-1307.81 430.3,-1308.61 422.54,-1301.4 419.74,-1307.81"/>
+</g>
+<!-- RP&#45;&gt;CM_Templates -->
+<g id="edge22" class="edge">
+<title>RP-&gt;CM_Templates</title>
+<path fill="none" stroke="#ffd700" d="M273.4,-1229.69C288.72,-1281.34 331.11,-1422.66 338.53,-1430 358.27,-1449.55 386.37,-1460.63 412.53,-1466.89"/>
+<polygon fill="#ffd700" stroke="#ffd700" points="411.6,-1470.27 422.11,-1468.97 413.08,-1463.43 411.6,-1470.27"/>
+<text xml:space="preserve" text-anchor="middle" x="366.02" y="-1475.57" font-family="Times,serif" font-size="10.00" fill="white">phoneme-like</text>
+<text xml:space="preserve" text-anchor="middle" x="366.02" y="-1463.57" font-family="Times,serif" font-size="10.00" fill="white">cues</text>
+</g>
+<!-- Cause_Phoneme -->
+<g id="node31" class="node">
+<title>Cause_Phoneme</title>
+<polygon fill="#013220" stroke="black" points="541.65,-1098.4 426,-1098.4 426,-1061.6 541.65,-1061.6 541.65,-1098.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1083.6" font-family="Times,serif" font-size="12.00" fill="white">Reversed</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1069.2" font-family="Times,serif" font-size="12.00" fill="white">Phoneme-Like Units</text>
+</g>
+<!-- RP&#45;&gt;Cause_Phoneme -->
+<g id="edge37" class="edge">
+<title>RP-&gt;Cause_Phoneme</title>
+<path fill="none" stroke="#b3b3b3" stroke-dasharray="5,2" d="M288.35,-1192.42C315.01,-1169.05 363.86,-1128.96 411.51,-1104 412.78,-1103.34 414.07,-1102.68 415.38,-1102.04"/>
+<polygon fill="#b3b3b3" stroke="#b3b3b3" points="416.64,-1105.32 424.32,-1098.02 413.76,-1098.93 416.64,-1105.32"/>
+</g>
+<!-- SI_Boundaries -->
+<g id="node12" class="node">
+<title>SI_Boundaries</title>
+<polygon fill="#b22222" stroke="black" points="531.66,-657.4 436,-657.4 436,-620.6 531.66,-620.6 531.66,-657.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-642.6" font-family="Times,serif" font-size="12.00" fill="white">Illusory Syllable</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-628.2" font-family="Times,serif" font-size="12.00" fill="white">Boundaries</text>
+</g>
+<!-- SI&#45;&gt;SI_Boundaries -->
+<g id="edge10" class="edge">
+<title>SI-&gt;SI_Boundaries</title>
+<path fill="none" stroke="#cccccc" d="M277.01,-812.23C288.97,-788.89 311.61,-748.62 338.53,-720 365.99,-690.8 376.35,-686.26 411.51,-667 415.89,-664.6 420.53,-662.3 425.24,-660.12"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="426.5,-663.4 434.25,-656.17 423.68,-656.99 426.5,-663.4"/>
+</g>
+<!-- SI_Stress -->
+<g id="node13" class="node">
+<title>SI_Stress</title>
+<polygon fill="#b22222" stroke="black" points="528.33,-712.4 439.33,-712.4 439.33,-675.6 528.33,-675.6 528.33,-712.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-697.6" font-family="Times,serif" font-size="12.00" fill="white">Imposed Stress</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-683.2" font-family="Times,serif" font-size="12.00" fill="white">&amp; Rhythm</text>
+</g>
+<!-- SI&#45;&gt;SI_Stress -->
+<g id="edge11" class="edge">
+<title>SI-&gt;SI_Stress</title>
+<path fill="none" stroke="#cccccc" d="M281.16,-812.16C294.15,-794.87 315.3,-769.52 338.53,-753 365.62,-733.74 399.92,-719.38 428.29,-709.65"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="429.02,-713.1 437.41,-706.62 426.81,-706.45 429.02,-713.1"/>
+</g>
+<!-- SI_Prosody -->
+<g id="node14" class="node">
+<title>SI_Prosody</title>
+<polygon fill="#b22222" stroke="black" points="537.33,-767.4 430.33,-767.4 430.33,-730.6 537.33,-730.6 537.33,-767.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-752.6" font-family="Times,serif" font-size="12.00" fill="white">Prosodic Grouping</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-738.2" font-family="Times,serif" font-size="12.00" fill="white">on Nonsense Input</text>
+</g>
+<!-- SI&#45;&gt;SI_Prosody -->
+<g id="edge12" class="edge">
+<title>SI-&gt;SI_Prosody</title>
+<path fill="none" stroke="#cccccc" d="M285.22,-812.28C298.52,-799.14 318.01,-782.31 338.53,-773 363.51,-761.66 393.1,-755.62 418.96,-752.42"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="419.11,-755.93 428.67,-751.35 418.34,-748.97 419.11,-755.93"/>
+</g>
+<!-- SI_PhonIll -->
+<g id="node15" class="node">
+<title>SI_PhonIll</title>
+<polygon fill="#cd5c5c" stroke="black" points="523.49,-822.4 444.17,-822.4 444.17,-785.6 523.49,-785.6 523.49,-822.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-807.6" font-family="Times,serif" font-size="12.00" fill="white">Phonological</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-793.2" font-family="Times,serif" font-size="12.00" fill="white">Illusions</text>
+</g>
+<!-- SI&#45;&gt;SI_PhonIll -->
+<g id="edge13" class="edge">
+<title>SI-&gt;SI_PhonIll</title>
+<path fill="none" stroke="#cccccc" d="M318.27,-824.67C352.72,-820.34 398.19,-814.63 432.61,-810.31"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="432.83,-813.81 442.32,-809.09 431.96,-806.86 432.83,-813.81"/>
+</g>
+<!-- SI_Restoration -->
+<g id="node16" class="node">
+<title>SI_Restoration</title>
+<polygon fill="#cd5c5c" stroke="black" points="519.49,-877.4 448.17,-877.4 448.17,-840.6 519.49,-840.6 519.49,-877.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-862.6" font-family="Times,serif" font-size="12.00" fill="white">Perceptual</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-848.2" font-family="Times,serif" font-size="12.00" fill="white">Restoration</text>
+</g>
+<!-- SI&#45;&gt;SI_Restoration -->
+<g id="edge14" class="edge">
+<title>SI-&gt;SI_Restoration</title>
+<path fill="none" stroke="#cccccc" d="M318.27,-837.56C354.06,-842.23 401.74,-848.44 436.56,-852.97"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="435.97,-856.43 446.34,-854.25 436.88,-849.48 435.97,-856.43"/>
+</g>
+<!-- CM_TopDown -->
+<g id="node18" class="node">
+<title>CM_TopDown</title>
+<polygon fill="#ff7f50" stroke="black" points="522.82,-1431.4 444.84,-1431.4 444.84,-1394.6 522.82,-1394.6 522.82,-1431.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1416.6" font-family="Times,serif" font-size="12.00" fill="white">Top-Down</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1402.2" font-family="Times,serif" font-size="12.00" fill="white">Expectations</text>
+</g>
+<!-- SI&#45;&gt;CM_TopDown -->
+<g id="edge23" class="edge">
+<title>SI-&gt;CM_TopDown</title>
+<path fill="none" stroke="#ffd700" d="M271.7,-849.61C290.61,-941.12 374.81,-1340.61 411.51,-1383 417.64,-1390.08 425.71,-1395.52 434.22,-1399.7"/>
+<polygon fill="#ffd700" stroke="#ffd700" points="432.75,-1402.88 443.32,-1403.6 435.5,-1396.44 432.75,-1402.88"/>
+<text xml:space="preserve" text-anchor="middle" x="366.02" y="-1353.69" font-family="Times,serif" font-size="10.00" fill="white">driven by</text>
+<text xml:space="preserve" text-anchor="middle" x="366.02" y="-1341.69" font-family="Times,serif" font-size="10.00" fill="white">expectations</text>
+</g>
+<!-- Cause_Syllable -->
+<g id="node32" class="node">
+<title>Cause_Syllable</title>
+<polygon fill="#8b0000" stroke="black" points="535.99,-1026.4 431.67,-1026.4 431.67,-989.6 535.99,-989.6 535.99,-1026.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1011.6" font-family="Times,serif" font-size="12.00" fill="white">Imposed Syllables</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-997.2" font-family="Times,serif" font-size="12.00" fill="white">&amp; Prosody</text>
+</g>
+<!-- SI&#45;&gt;Cause_Syllable -->
+<g id="edge38" class="edge">
+<title>SI-&gt;Cause_Syllable</title>
+<path fill="none" stroke="#b3b3b3" stroke-dasharray="5,2" d="M285.98,-849.64C312.32,-876.31 363.36,-926.17 411.51,-963 420.67,-970.01 430.94,-976.96 440.77,-983.23"/>
+<polygon fill="#b3b3b3" stroke="#b3b3b3" points="438.79,-986.12 449.12,-988.45 442.5,-980.18 438.79,-986.12"/>
+</g>
+<!-- CM&#45;&gt;CM_TopDown -->
+<g id="edge16" class="edge">
+<title>CM-&gt;CM_TopDown</title>
+<path fill="none" stroke="#cccccc" d="M317.17,-1509.53C349.73,-1508.77 387.48,-1506.84 393.51,-1502 415.9,-1484.05 392.04,-1461.08 411.51,-1440 417.64,-1433.37 425.56,-1428.35 433.89,-1424.56"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="435.11,-1427.85 443.14,-1420.94 432.56,-1421.33 435.11,-1427.85"/>
+</g>
+<!-- CM&#45;&gt;CM_Templates -->
+<g id="edge17" class="edge">
+<title>CM-&gt;CM_Templates</title>
+<path fill="none" stroke="#cccccc" d="M317.19,-1513.62C340.52,-1514.32 368.64,-1513.68 393.51,-1509 399.88,-1507.8 406.39,-1506.18 412.85,-1504.28"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="413.7,-1507.68 422.18,-1501.33 411.59,-1501.01 413.7,-1507.68"/>
+</g>
+<!-- CM_Pareidolia -->
+<g id="node20" class="node">
+<title>CM_Pareidolia</title>
+<polygon fill="#ff7f50" stroke="black" points="540.99,-1569.6 426.67,-1569.6 426.67,-1518.4 540.99,-1518.4 540.99,-1569.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1554.8" font-family="Times,serif" font-size="12.00" fill="white">Auditory Pareidolia:</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1540.4" font-family="Times,serif" font-size="12.00" fill="white">Pattern Seeking in</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1526" font-family="Times,serif" font-size="12.00" fill="white">Ambiguous Audio</text>
+</g>
+<!-- CM&#45;&gt;CM_Pareidolia -->
+<g id="edge18" class="edge">
+<title>CM-&gt;CM_Pareidolia</title>
+<path fill="none" stroke="#cccccc" d="M317.19,-1517.8C346.35,-1522.41 383.69,-1528.32 415.53,-1533.35"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="414.62,-1536.75 425.04,-1534.86 415.71,-1529.84 414.62,-1536.75"/>
+</g>
+<!-- CM_Other -->
+<g id="node21" class="node">
+<title>CM_Other</title>
+<polygon fill="#ff7f50" stroke="black" points="536.49,-1638.6 431.17,-1638.6 431.17,-1587.4 536.49,-1587.4 536.49,-1638.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1623.8" font-family="Times,serif" font-size="12.00" fill="white">Similar to Hearing</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1609.4" font-family="Times,serif" font-size="12.00" fill="white">Words in Static,</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-1595" font-family="Times,serif" font-size="12.00" fill="white">EVP, Babble</text>
+</g>
+<!-- CM&#45;&gt;CM_Other -->
+<g id="edge19" class="edge">
+<title>CM-&gt;CM_Other</title>
+<path fill="none" stroke="#cccccc" d="M306.88,-1528.77C335.76,-1542.67 376.08,-1562.04 411.51,-1579 414.57,-1580.46 417.7,-1581.96 420.86,-1583.47"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="419.12,-1586.52 429.65,-1587.67 422.13,-1580.2 419.12,-1586.52"/>
+</g>
+<!-- Cause_TopDown -->
+<g id="node33" class="node">
+<title>Cause_TopDown</title>
+<polygon fill="#ff8c00" stroke="black" points="538.66,-954.4 429,-954.4 429,-917.6 538.66,-917.6 538.66,-954.4"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-939.6" font-family="Times,serif" font-size="12.00" fill="white">Top-Down</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-925.2" font-family="Times,serif" font-size="12.00" fill="white">Pattern Completion</text>
+</g>
+<!-- CM&#45;&gt;Cause_TopDown -->
+<g id="edge39" class="edge">
+<title>CM-&gt;Cause_TopDown</title>
+<path fill="none" stroke="#b3b3b3" stroke-dasharray="5,2" d="M317.15,-1503.17C348.04,-1497.79 383.79,-1489.15 393.51,-1477 427.98,-1433.95 384.01,-1028.8 411.51,-981 415.93,-973.33 422.23,-966.77 429.29,-961.22"/>
+<polygon fill="#b3b3b3" stroke="#b3b3b3" points="431.13,-964.21 437.32,-955.61 427.12,-958.48 431.13,-964.21"/>
+</g>
+<!-- RL_TimeRev -->
+<g id="node23" class="node">
+<title>RL_TimeRev</title>
+<polygon fill="#1e90ff" stroke="black" points="548.64,-67.6 419.02,-67.6 419.02,-16.4 548.64,-16.4 548.64,-67.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-52.8" font-family="Times,serif" font-size="12.00" fill="white">Locally Time-Reversed</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-38.4" font-family="Times,serif" font-size="12.00" fill="white">Speech Intelligibility</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-24" font-family="Times,serif" font-size="12.00" fill="white">(Saberi &amp; Perrott, etc.)</text>
+</g>
+<!-- RL&#45;&gt;RL_TimeRev -->
+<g id="edge24" class="edge">
+<title>RL-&gt;RL_TimeRev</title>
+<path fill="none" stroke="#cccccc" d="M275.59,-267.22C293.35,-226.31 341.07,-128.57 411.51,-76 412.33,-75.39 413.16,-74.79 414,-74.19"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="415.65,-77.29 422.12,-68.89 411.83,-71.43 415.65,-77.29"/>
+</g>
+<!-- RL_PhonIll -->
+<g id="node24" class="node">
+<title>RL_PhonIll</title>
+<polygon fill="#1e90ff" stroke="black" points="545.66,-136.6 422,-136.6 422,-85.4 545.66,-85.4 545.66,-136.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-121.8" font-family="Times,serif" font-size="12.00" fill="white">Phonological Illusions</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-107.4" font-family="Times,serif" font-size="12.00" fill="white">&amp; Perceptual</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-93" font-family="Times,serif" font-size="12.00" fill="white">Restoration</text>
+</g>
+<!-- RL&#45;&gt;RL_PhonIll -->
+<g id="edge25" class="edge">
+<title>RL-&gt;RL_PhonIll</title>
+<path fill="none" stroke="#cccccc" d="M283.07,-267.56C307.68,-238.57 358.83,-181.86 411.51,-145 412.52,-144.29 413.55,-143.59 414.59,-142.9"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="416.35,-145.93 423.02,-137.7 412.67,-139.97 416.35,-145.93"/>
+</g>
+<!-- RL_BackwardNeuro -->
+<g id="node25" class="node">
+<title>RL_BackwardNeuro</title>
+<polygon fill="#1e90ff" stroke="black" points="534.98,-205.6 432.68,-205.6 432.68,-154.4 534.98,-154.4 534.98,-205.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-190.8" font-family="Times,serif" font-size="12.00" fill="white">Backward Speech</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-176.4" font-family="Times,serif" font-size="12.00" fill="white">Neuroimaging</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-162" font-family="Times,serif" font-size="12.00" fill="white">(EEG/fMRI)</text>
+</g>
+<!-- RL&#45;&gt;RL_BackwardNeuro -->
+<g id="edge26" class="edge">
+<title>RL-&gt;RL_BackwardNeuro</title>
+<path fill="none" stroke="#cccccc" d="M304.98,-267.15C333.92,-252.51 375.18,-231.77 411.51,-214 415.01,-212.29 418.6,-210.54 422.23,-208.79"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="423.65,-211.99 431.14,-204.49 420.61,-205.68 423.65,-211.99"/>
+</g>
+<!-- RL_Pattern -->
+<g id="node26" class="node">
+<title>RL_Pattern</title>
+<polygon fill="#1e90ff" stroke="black" points="533.98,-274.6 433.68,-274.6 433.68,-223.4 533.98,-223.4 533.98,-274.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-259.8" font-family="Times,serif" font-size="12.00" fill="white">General Auditory</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-245.4" font-family="Times,serif" font-size="12.00" fill="white">Pattern-Matching</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-231" font-family="Times,serif" font-size="12.00" fill="white">&amp; Pareidolia</text>
+</g>
+<!-- RL&#45;&gt;RL_Pattern -->
+<g id="edge27" class="edge">
+<title>RL-&gt;RL_Pattern</title>
+<path fill="none" stroke="#cccccc" d="M321.01,-276.85C351.71,-271.57 390.42,-264.91 422.29,-259.42"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="422.5,-262.94 431.76,-257.79 421.31,-256.04 422.5,-262.94"/>
+</g>
+<!-- RL_Limited -->
+<g id="node27" class="node">
+<title>RL_Limited</title>
+<polygon fill="#4169e1" stroke="black" points="535.15,-357.8 432.51,-357.8 432.51,-292.2 535.15,-292.2 535.15,-357.8"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-343" font-family="Times,serif" font-size="12.00" fill="white">Very Little Direct</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-328.6" font-family="Times,serif" font-size="12.00" fill="white">Work on Hearing</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-314.2" font-family="Times,serif" font-size="12.00" fill="white">Specific Words in</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-299.8" font-family="Times,serif" font-size="12.00" fill="white">Backward Audio</text>
+</g>
+<!-- RL&#45;&gt;RL_Limited -->
+<g id="edge28" class="edge">
+<title>RL-&gt;RL_Limited</title>
+<path fill="none" stroke="#cccccc" d="M321.01,-295.64C351.24,-301.12 389.25,-308.02 420.83,-313.75"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="420.2,-317.19 430.67,-315.54 421.45,-310.31 420.2,-317.19"/>
+</g>
+<!-- RL_Focus -->
+<g id="node28" class="node">
+<title>RL_Focus</title>
+<polygon fill="#4169e1" stroke="black" points="547.49,-426.6 420.17,-426.6 420.17,-375.4 547.49,-375.4 547.49,-426.6"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-411.8" font-family="Times,serif" font-size="12.00" fill="white">Focus: How Much</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-397.4" font-family="Times,serif" font-size="12.00" fill="white">Intelligibility Survives,</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-383" font-family="Times,serif" font-size="12.00" fill="white">Not Hidden Messages</text>
+</g>
+<!-- RL&#45;&gt;RL_Focus -->
+<g id="edge29" class="edge">
+<title>RL-&gt;RL_Focus</title>
+<path fill="none" stroke="#cccccc" d="M299.76,-304.81C328.64,-321.65 372.52,-346.74 411.51,-367 413.43,-368 415.38,-369 417.35,-370"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="415.5,-372.99 426,-374.34 418.63,-366.73 415.5,-372.99"/>
+</g>
+<!-- RL_Consensus -->
+<g id="node29" class="node">
+<title>RL_Consensus</title>
+<polygon fill="#00bfff" stroke="black" points="555.15,-509.8 412.51,-509.8 412.51,-444.2 555.15,-444.2 555.15,-509.8"/>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-495" font-family="Times,serif" font-size="12.00" fill="white">Consensus:</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-480.6" font-family="Times,serif" font-size="12.00" fill="white">Illusory Words Are</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-466.2" font-family="Times,serif" font-size="12.00" fill="white">Normal Pattern-Matching,</text>
+<text xml:space="preserve" text-anchor="middle" x="483.83" y="-451.8" font-family="Times,serif" font-size="12.00" fill="white">Not Hidden Content</text>
+</g>
+<!-- RL&#45;&gt;RL_Consensus -->
+<g id="edge30" class="edge">
+<title>RL-&gt;RL_Consensus</title>
+<path fill="none" stroke="#cccccc" d="M282.78,-304.72C307.37,-334.85 359,-394.87 411.51,-436 411.93,-436.33 412.36,-436.66 412.78,-436.99"/>
+<polygon fill="#cccccc" stroke="#cccccc" points="410.73,-439.82 420.88,-442.85 414.83,-434.15 410.73,-439.82"/>
+</g>
+<!-- Cause_Acoustic&#45;&gt;Cause_Phoneme -->
+<g id="edge32" class="edge">
+<title>Cause_Acoustic-&gt;Cause_Phoneme</title>
+<path fill="none" stroke="#adff2f" d="M428.89,-1891.59C405.71,-1888.33 380.74,-1880.09 366.02,-1861 315.28,-1795.18 315.8,-1179.22 366.02,-1113 377.72,-1097.58 396.01,-1088.96 414.72,-1084.24"/>
+<polygon fill="#adff2f" stroke="#adff2f" points="415.21,-1087.72 424.26,-1082.21 413.75,-1080.87 415.21,-1087.72"/>
+</g>
+<!-- Cause_Phoneme&#45;&gt;Cause_Syllable -->
+<g id="edge33" class="edge">
+<title>Cause_Phoneme-&gt;Cause_Syllable</title>
+<path fill="none" stroke="#ff4500" d="M483.83,-1061.31C483.83,-1053.59 483.83,-1045.87 483.83,-1038.15"/>
+<polygon fill="#ff4500" stroke="#ff4500" points="487.33,-1038.36 483.83,-1028.36 480.33,-1038.36 487.33,-1038.36"/>
+</g>
+<!-- Cause_Syllable&#45;&gt;Cause_TopDown -->
+<g id="edge34" class="edge">
+<title>Cause_Syllable-&gt;Cause_TopDown</title>
+<path fill="none" stroke="#ffa500" d="M483.83,-989.31C483.83,-981.59 483.83,-973.87 483.83,-966.15"/>
+<polygon fill="#ffa500" stroke="#ffa500" points="487.33,-966.36 483.83,-956.36 480.33,-966.36 487.33,-966.36"/>
+</g>
+<!-- Cause_TopDown&#45;&gt;Effect_Illusory -->
+<g id="edge35" class="edge">
+<title>Cause_TopDown-&gt;Effect_Illusory</title>
+<path fill="none" stroke="#00fa9a" d="M428.8,-925.18C422.48,-922.29 416.52,-918.63 411.51,-914 364.5,-870.57 358.86,-840.47 367.11,-777 377.06,-700.41 361.39,-667.75 411.51,-609 415.26,-604.61 419.72,-600.8 424.57,-597.49"/>
+<polygon fill="#00fa9a" stroke="#00fa9a" points="426.16,-600.62 432.98,-592.51 422.59,-594.6 426.16,-600.62"/>
+<text xml:space="preserve" text-anchor="middle" x="366.02" y="-792" font-family="Times,serif" font-size="10.00" fill="white">illusory</text>
+<text xml:space="preserve" text-anchor="middle" x="366.02" y="-780" font-family="Times,serif" font-size="10.00" fill="white">meaning</text>
+</g>
+</g>
+</svg>
