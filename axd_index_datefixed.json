@@ -9692,5 +9692,17 @@
   "cluster": "debt_interest_peaks",
   "size": 3200,
   "type": "svg"
+},
+{
+  "title": "TauntForfeitureRoute_23052026_axd.svg",
+  "url": "https://axda.github.io/Blu/TauntForfeitureRoute_23052026_axd.svg",
+  "thumbnail": "https://api.github.com/repos/AxDa/Blu/contents/TauntForfeitureRoute_23052026_axd.svg?ref=master",
+  "tags": ["route_logic", "yellow_line_rules", "taunt_forfeiture", "urban_constraints"],
+  "date": "2026-05-23",
+  "motif": "civic_decay",
+  "cluster": "testimony",
+  "size": 4600,
+  "type": "svg"
 }
+
 ]
