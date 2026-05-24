@@ -9785,11 +9785,22 @@
   "title": "Russia_Correspondent_R5L_News_2000_utc+1_24052026_v0.2.mp3",
   "url": "https://axda.github.io/Blu/Russia_Correspondent_R5L_News_2000_utc+1_24052026_v0.2.mp3",
   "thumbnail": "https://api.github.com/repos/AxDa/Blu/contents/Russia_Correspondent_R5L_News_2000_utc+1_24052026_v0.2.mp3?ref=master",
-  "tags": ["audio", "Russia", "news"],
+  "tags": ["audio", "russia", "news"],
   "date": "2026-05-24",
   "motif": "civic_decay",
   "cluster": "testimony",
   "size": 80300,
+  "type": "mp3"
+},
+{
+  "title": "Russia_Strikes Kyiv_Oreshnik_Missile_The_Guardian_24052026_v0.2.mp3",
+  "url": "https://axda.github.io/Blu/Russia_Strikes%20Kyiv_Oreshnik_Missile_The_Guardian_24052026_v0.2.mp3",
+  "thumbnail": "https://api.github.com/repos/AxDa/Blu/contents/Russia_Strikes%20Kyiv_Oreshnik_Missile_The_Guardian_24052026_v0.2.mp3?ref=master",
+  "tags": ["audio", ""russia, "guardian", "news"],
+  "date": "2026-05-24",
+  "motif": "civic_decay",
+  "cluster": "testimony",
+  "size": 487400,
   "type": "mp3"
 }
 ]
