@@ -9835,5 +9835,17 @@
   "cluster": "testimony",
   "size": 44300,
   "type": "mp3"
+},
+{
+  "title": "America's Cup Liniage_25052026.svg",
+  "url": "https://axda.github.io/Blu/America's%20Cup%20Liniage_25052026.svg",
+  "thumbnail": "https://api.github.com/repos/AxDa/Blu/contents/America's%20Cup%20Liniage_25052026.svg?ref=master",
+  "tags": ["americas_cup", "lineage", "history", "axd_diagram"],
+  "date": "2026-05-25",
+  "motif": "civic_decay",
+  "cluster": "testimony",
+  "size": 6200,
+  "type": "svg"
 }
+
 ]
