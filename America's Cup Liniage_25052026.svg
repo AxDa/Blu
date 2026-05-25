@@ -1,0 +1,279 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="349pt" height="1872pt" viewBox="0.00 0.00 349.00 1872.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1868.19)">
+<title>AmericasCupLineage</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1868.19 344.69,-1868.19 344.69,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_1851_1983</title>
+<polygon fill="#cce0ff" stroke="#cce0ff" points="76.34,-1280 76.34,-1773.6 264.34,-1773.6 264.34,-1280 76.34,-1280"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1757" font-family="Arial" font-size="14.00">NYYC Era (1851–1983)</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_1983_2000</title>
+<polygon fill="#d9f2d9" stroke="#d9f2d9" points="60.34,-795.2 60.34,-1272 307.34,-1272 307.34,-795.2 60.34,-795.2"/>
+<text xml:space="preserve" text-anchor="middle" x="183.84" y="-1255.4" font-family="Arial" font-size="14.00">Post‑NYYC Transition (1983–2000)</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_2003_2010</title>
+<polygon fill="#fff2cc" stroke="#fff2cc" points="78.34,-465.6 78.34,-787.2 294.34,-787.2 294.34,-465.6 78.34,-465.6"/>
+<text xml:space="preserve" text-anchor="middle" x="186.34" y="-770.6" font-family="Arial" font-size="14.00">Alinghi &amp; Valencia (2003–2010)</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_2013_present</title>
+<polygon fill="#f2d9ff" stroke="#f2d9ff" points="81.34,-8 81.34,-457.6 268.34,-457.6 268.34,-8 81.34,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="174.84" y="-441" font-family="Arial" font-size="14.00">Foiling Era (2013–Present)</text>
+</g>
+<!-- ac1851 -->
+<g id="node1" class="node">
+<title>ac1851</title>
+<polygon fill="#e6f2ff" stroke="black" points="229.3,-1740.8 111.39,-1740.8 111.39,-1665.6 229.3,-1665.6 229.3,-1740.8"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1724.2" font-family="Arial" font-size="14.00">1851</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1707.4" font-family="Arial" font-size="14.00">'America' wins</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1690.6" font-family="Arial" font-size="14.00">Isle of Wight</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1673.8" font-family="Arial" font-size="14.00">Trophy → NYYC</text>
+</g>
+<!-- ac1870_1937 -->
+<g id="node2" class="node">
+<title>ac1870_1937</title>
+<polygon fill="#e6f2ff" stroke="black" points="256.15,-1629.6 84.54,-1629.6 84.54,-1571.2 256.15,-1571.2 256.15,-1629.6"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1613" font-family="Arial" font-size="14.00">1870–1937</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1596.2" font-family="Arial" font-size="14.00">Series of defences</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1579.4" font-family="Arial" font-size="14.00">NYYC vs UK challengers</text>
+</g>
+<!-- ac1851&#45;&gt;ac1870_1937 -->
+<g id="edge1" class="edge">
+<title>ac1851-&gt;ac1870_1937</title>
+<path fill="none" stroke="black" d="M170.34,-1665.24C170.34,-1657.39 170.34,-1649.06 170.34,-1641.11"/>
+<polygon fill="black" stroke="black" points="173.84,-1641.34 170.34,-1631.34 166.84,-1641.34 173.84,-1641.34"/>
+</g>
+<!-- ac1958_1970 -->
+<g id="node3" class="node">
+<title>ac1958_1970</title>
+<polygon fill="#e6f2ff" stroke="black" points="228.13,-1535.2 112.55,-1535.2 112.55,-1476.8 228.13,-1476.8 228.13,-1535.2"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1518.6" font-family="Arial" font-size="14.00">1958–1970</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1501.8" font-family="Arial" font-size="14.00">12-metre class</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1485" font-family="Arial" font-size="14.00">Post-war revival</text>
+</g>
+<!-- ac1870_1937&#45;&gt;ac1958_1970 -->
+<g id="edge2" class="edge">
+<title>ac1870_1937-&gt;ac1958_1970</title>
+<path fill="none" stroke="black" d="M170.34,-1570.92C170.34,-1563.37 170.34,-1555.07 170.34,-1547.03"/>
+<polygon fill="black" stroke="black" points="173.84,-1547.06 170.34,-1537.06 166.84,-1547.06 173.84,-1547.06"/>
+</g>
+<!-- ac1974_1980 -->
+<g id="node4" class="node">
+<title>ac1974_1980</title>
+<polygon fill="#e6f2ff" stroke="black" points="250.33,-1440.8 90.36,-1440.8 90.36,-1382.4 250.33,-1382.4 250.33,-1440.8"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1424.2" font-family="Arial" font-size="14.00">1974–1980</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1407.4" font-family="Arial" font-size="14.00">Courageous / Freedom</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1390.6" font-family="Arial" font-size="14.00">NYYC dominance</text>
+</g>
+<!-- ac1958_1970&#45;&gt;ac1974_1980 -->
+<g id="edge3" class="edge">
+<title>ac1958_1970-&gt;ac1974_1980</title>
+<path fill="none" stroke="black" d="M170.34,-1476.52C170.34,-1468.97 170.34,-1460.67 170.34,-1452.63"/>
+<polygon fill="black" stroke="black" points="173.84,-1452.66 170.34,-1442.66 166.84,-1452.66 173.84,-1452.66"/>
+</g>
+<!-- ac1983 -->
+<g id="node5" class="node">
+<title>ac1983</title>
+<polygon fill="#e6f2ff" stroke="black" points="244.88,-1346.4 95.81,-1346.4 95.81,-1288 244.88,-1288 244.88,-1346.4"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1329.8" font-family="Arial" font-size="14.00">1983</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1313" font-family="Arial" font-size="14.00">Australia II (AUS)</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1296.2" font-family="Arial" font-size="14.00">Ends 132-year streak</text>
+</g>
+<!-- ac1974_1980&#45;&gt;ac1983 -->
+<g id="edge4" class="edge">
+<title>ac1974_1980-&gt;ac1983</title>
+<path fill="none" stroke="black" d="M170.34,-1382.12C170.34,-1374.57 170.34,-1366.27 170.34,-1358.23"/>
+<polygon fill="black" stroke="black" points="173.84,-1358.26 170.34,-1348.26 166.84,-1358.26 173.84,-1358.26"/>
+</g>
+<!-- ac1987 -->
+<g id="node6" class="node">
+<title>ac1987</title>
+<polygon fill="#e6f2ff" stroke="black" points="243.31,-1239.2 97.37,-1239.2 97.37,-1180.8 243.31,-1180.8 243.31,-1239.2"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1222.6" font-family="Arial" font-size="14.00">1987</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1205.8" font-family="Arial" font-size="14.00">Kookaburra III (AUS)</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1189" font-family="Arial" font-size="14.00">Fremantle defence</text>
+</g>
+<!-- ac1983&#45;&gt;ac1987 -->
+<g id="edge5" class="edge">
+<title>ac1983-&gt;ac1987</title>
+<path fill="none" stroke="black" d="M170.34,-1287.73C170.34,-1276.39 170.34,-1263.13 170.34,-1250.86"/>
+<polygon fill="black" stroke="black" points="173.84,-1251 170.34,-1241 166.84,-1251 173.84,-1251"/>
+</g>
+<!-- ac1988 -->
+<g id="node7" class="node">
+<title>ac1988</title>
+<polygon fill="#e6f2ff" stroke="black" points="246.03,-1144.8 94.66,-1144.8 94.66,-1069.6 246.03,-1069.6 246.03,-1144.8"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1128.2" font-family="Arial" font-size="14.00">1988</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1111.4" font-family="Arial" font-size="14.00">Big Boat Match</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1094.6" font-family="Arial" font-size="14.00">Stars &amp; Stripes (USA)</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1077.8" font-family="Arial" font-size="14.00">San Diego YC</text>
+</g>
+<!-- ac1987&#45;&gt;ac1988 -->
+<g id="edge6" class="edge">
+<title>ac1987-&gt;ac1988</title>
+<path fill="none" stroke="black" d="M170.34,-1180.38C170.34,-1172.95 170.34,-1164.73 170.34,-1156.58"/>
+<polygon fill="black" stroke="black" points="173.84,-1156.7 170.34,-1146.7 166.84,-1156.7 173.84,-1156.7"/>
+</g>
+<!-- ac1992 -->
+<g id="node8" class="node">
+<title>ac1992</title>
+<polygon fill="#e6f2ff" stroke="black" points="235.53,-1033.6 105.15,-1033.6 105.15,-975.2 235.53,-975.2 235.53,-1033.6"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1017" font-family="Arial" font-size="14.00">1992</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1000.2" font-family="Arial" font-size="14.00">IACC class begins</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-983.4" font-family="Arial" font-size="14.00">America³ (USA)</text>
+</g>
+<!-- ac1988&#45;&gt;ac1992 -->
+<g id="edge7" class="edge">
+<title>ac1988-&gt;ac1992</title>
+<path fill="none" stroke="black" d="M170.34,-1069.24C170.34,-1061.39 170.34,-1053.06 170.34,-1045.11"/>
+<polygon fill="black" stroke="black" points="173.84,-1045.34 170.34,-1035.34 166.84,-1045.34 173.84,-1045.34"/>
+</g>
+<!-- ac1995 -->
+<g id="node9" class="node">
+<title>ac1995</title>
+<polygon fill="#e6f2ff" stroke="black" points="259.26,-939.2 81.43,-939.2 81.43,-880.8 259.26,-880.8 259.26,-939.2"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-922.6" font-family="Arial" font-size="14.00">1995</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-905.8" font-family="Arial" font-size="14.00">Team New Zealand (NZL)</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-889" font-family="Arial" font-size="14.00">Black Magic</text>
+</g>
+<!-- ac1992&#45;&gt;ac1995 -->
+<g id="edge8" class="edge">
+<title>ac1992-&gt;ac1995</title>
+<path fill="none" stroke="black" d="M170.34,-974.92C170.34,-967.37 170.34,-959.07 170.34,-951.03"/>
+<polygon fill="black" stroke="black" points="173.84,-951.06 170.34,-941.06 166.84,-951.06 173.84,-951.06"/>
+</g>
+<!-- ac2000 -->
+<g id="node10" class="node">
+<title>ac2000</title>
+<polygon fill="#e6f2ff" stroke="black" points="256.94,-844.8 83.75,-844.8 83.75,-803.2 256.94,-803.2 256.94,-844.8"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-828.2" font-family="Arial" font-size="14.00">2000</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-811.4" font-family="Arial" font-size="14.00">TNZ defends in Auckland</text>
+</g>
+<!-- ac1995&#45;&gt;ac2000 -->
+<g id="edge9" class="edge">
+<title>ac1995-&gt;ac2000</title>
+<path fill="none" stroke="black" d="M170.34,-880.56C170.34,-872.85 170.34,-864.45 170.34,-856.58"/>
+<polygon fill="black" stroke="black" points="173.84,-856.7 170.34,-846.7 166.84,-856.7 173.84,-856.7"/>
+</g>
+<!-- ac2003 -->
+<g id="node11" class="node">
+<title>ac2003</title>
+<polygon fill="#e6f2ff" stroke="black" points="223.48,-754.4 117.2,-754.4 117.2,-679.2 223.48,-679.2 223.48,-754.4"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-737.8" font-family="Arial" font-size="14.00">2003</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-721" font-family="Arial" font-size="14.00">Alinghi (SUI)</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-704.2" font-family="Arial" font-size="14.00">Beats TNZ</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-687.4" font-family="Arial" font-size="14.00">Cup to Europe</text>
+</g>
+<!-- ac2000&#45;&gt;ac2003 -->
+<g id="edge10" class="edge">
+<title>ac2000-&gt;ac2003</title>
+<path fill="none" stroke="black" d="M170.34,-802.72C170.34,-792.19 170.34,-778.84 170.34,-765.86"/>
+<polygon fill="black" stroke="black" points="173.84,-766.14 170.34,-756.14 166.84,-766.14 173.84,-766.14"/>
+</g>
+<!-- ac2007 -->
+<g id="node12" class="node">
+<title>ac2007</title>
+<polygon fill="#e6f2ff" stroke="black" points="226.99,-643.2 113.7,-643.2 113.7,-584.8 226.99,-584.8 226.99,-643.2"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-626.6" font-family="Arial" font-size="14.00">2007</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-609.8" font-family="Arial" font-size="14.00">Valencia, Spain</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-593" font-family="Arial" font-size="14.00">Alinghi defends</text>
+</g>
+<!-- ac2003&#45;&gt;ac2007 -->
+<g id="edge11" class="edge">
+<title>ac2003-&gt;ac2007</title>
+<path fill="none" stroke="black" d="M170.34,-678.84C170.34,-670.99 170.34,-662.66 170.34,-654.71"/>
+<polygon fill="black" stroke="black" points="173.84,-654.94 170.34,-644.94 166.84,-654.94 173.84,-654.94"/>
+</g>
+<!-- ac2010 -->
+<g id="node13" class="node">
+<title>ac2010</title>
+<polygon fill="#e6f2ff" stroke="black" points="249.92,-548.8 90.77,-548.8 90.77,-473.6 249.92,-473.6 249.92,-548.8"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-532.2" font-family="Arial" font-size="14.00">2010</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-515.4" font-family="Arial" font-size="14.00">Deed of Gift match</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-498.6" font-family="Arial" font-size="14.00">Alinghi vs BMW Oracle</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-481.8" font-family="Arial" font-size="14.00">Multihulls</text>
+</g>
+<!-- ac2007&#45;&gt;ac2010 -->
+<g id="edge12" class="edge">
+<title>ac2007-&gt;ac2010</title>
+<path fill="none" stroke="black" d="M170.34,-584.38C170.34,-576.95 170.34,-568.73 170.34,-560.58"/>
+<polygon fill="black" stroke="black" points="173.84,-560.7 170.34,-550.7 166.84,-560.7 173.84,-560.7"/>
+</g>
+<!-- ac2013 -->
+<g id="node14" class="node">
+<title>ac2013</title>
+<polygon fill="#e6f2ff" stroke="black" points="235.14,-424.8 105.55,-424.8 105.55,-349.6 235.14,-349.6 235.14,-424.8"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-408.2" font-family="Arial" font-size="14.00">2013</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-391.4" font-family="Arial" font-size="14.00">San Francisco</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-374.6" font-family="Arial" font-size="14.00">Oracle Team USA</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-357.8" font-family="Arial" font-size="14.00">Foiling AC72s</text>
+</g>
+<!-- ac2010&#45;&gt;ac2013 -->
+<g id="edge13" class="edge">
+<title>ac2010-&gt;ac2013</title>
+<path fill="none" stroke="black" d="M170.34,-473.26C170.34,-461.68 170.34,-448.71 170.34,-436.46"/>
+<polygon fill="black" stroke="black" points="173.84,-436.52 170.34,-426.52 166.84,-436.52 173.84,-436.52"/>
+</g>
+<!-- ac2017 -->
+<g id="node15" class="node">
+<title>ac2017</title>
+<polygon fill="#e6f2ff" stroke="black" points="237.07,-313.6 103.61,-313.6 103.61,-238.4 237.07,-238.4 237.07,-313.6"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-297" font-family="Arial" font-size="14.00">2017</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-280.2" font-family="Arial" font-size="14.00">Bermuda</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-263.4" font-family="Arial" font-size="14.00">Emirates Team NZ</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-246.6" font-family="Arial" font-size="14.00">Foiling AC50s</text>
+</g>
+<!-- ac2013&#45;&gt;ac2017 -->
+<g id="edge14" class="edge">
+<title>ac2013-&gt;ac2017</title>
+<path fill="none" stroke="black" d="M170.34,-349.23C170.34,-341.58 170.34,-333.41 170.34,-325.43"/>
+<polygon fill="black" stroke="black" points="173.84,-325.45 170.34,-315.45 166.84,-325.45 173.84,-325.45"/>
+</g>
+<!-- ac2021 -->
+<g id="node16" class="node">
+<title>ac2021</title>
+<polygon fill="#e6f2ff" stroke="black" points="223.47,-202.4 117.21,-202.4 117.21,-127.2 223.47,-127.2 223.47,-202.4"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-185.8" font-family="Arial" font-size="14.00">2021</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-169" font-family="Arial" font-size="14.00">Auckland</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-152.2" font-family="Arial" font-size="14.00">ETNZ defends</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-135.4" font-family="Arial" font-size="14.00">AC75 foilers</text>
+</g>
+<!-- ac2017&#45;&gt;ac2021 -->
+<g id="edge15" class="edge">
+<title>ac2017-&gt;ac2021</title>
+<path fill="none" stroke="black" d="M170.34,-238.03C170.34,-230.38 170.34,-222.21 170.34,-214.23"/>
+<polygon fill="black" stroke="black" points="173.84,-214.25 170.34,-204.25 166.84,-214.25 173.84,-214.25"/>
+</g>
+<!-- ac2024 -->
+<g id="node17" class="node">
+<title>ac2024</title>
+<polygon fill="#e6f2ff" stroke="black" points="243.71,-91.2 96.98,-91.2 96.98,-16 243.71,-16 243.71,-91.2"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-74.6" font-family="Arial" font-size="14.00">2024/25</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-57.8" font-family="Arial" font-size="14.00">Barcelona</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-41" font-family="Arial" font-size="14.00">37th America’s Cup</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-24.2" font-family="Arial" font-size="14.00">AC75s</text>
+</g>
+<!-- ac2021&#45;&gt;ac2024 -->
+<g id="edge16" class="edge">
+<title>ac2021-&gt;ac2024</title>
+<path fill="none" stroke="black" d="M170.34,-126.83C170.34,-119.18 170.34,-111.01 170.34,-103.03"/>
+<polygon fill="black" stroke="black" points="173.84,-103.05 170.34,-93.05 166.84,-103.05 173.84,-103.05"/>
+</g>
+<!-- title -->
+<g id="node18" class="node">
+<title>title</title>
+<ellipse fill="#ffffff" stroke="black" cx="170.34" cy="-1822.9" rx="170.34" ry="41.3"/>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1835.5" font-family="Arial" font-size="14.00">America's Cup Lineage</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1818.7" font-family="Arial" font-size="14.00">1851 → Present</text>
+<text xml:space="preserve" text-anchor="middle" x="170.34" y="-1801.9" font-family="Arial" font-size="14.00">Oldest International Sporting Trophy</text>
+</g>
+<!-- title&#45;&gt;ac1851 -->
+<g id="edge17" class="edge">
+<title>title-&gt;ac1851</title>
+<path fill="none" stroke="#999999" stroke-dasharray="5,2" d="M170.34,-1781.39C170.34,-1772.13 170.34,-1762.19 170.34,-1752.63"/>
+<polygon fill="#999999" stroke="#999999" points="173.84,-1752.74 170.34,-1742.74 166.84,-1752.74 173.84,-1752.74"/>
+</g>
+</g>
+</svg>
