@@ -9934,5 +9934,22 @@
   "cluster": "testimony",
   "size": 484200,
   "type": "mp3"
+},
+{
+  "title": "Marco_Rubio_Sec_State_Times_1900_utc+1_26052026_v0.2",
+  "url": "https://axda.github.io/Blu/Marco_Rubio_Sec_State_Times_1900_utc+1_26052026_v0.2.mp3",
+  "thumbnail": "waveform_thumbnails/Marco_Rubio_Sec_State_Times_1900_utc+1_26052026_v0.2.png",
+  "tags": [
+    "audio",
+    "archive",
+    "times",
+    "politics"
+  ],
+  "date": "2026-05-26",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 29200,
+  "type": "mp3"
 }
+
 ]
