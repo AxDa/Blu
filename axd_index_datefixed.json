@@ -9868,5 +9868,17 @@
   "cluster": "moral_inquiry",
   "size": 666300,
   "type": "mp3"
+},
+{
+  "title": "Magnifica_Humanitas_et_Systemic Hollowing_26052026_axd1 - C1.svg",
+  "url": "https://axda.github.io/Blu/Magnifica_Humanitas_et_Systemic%20Hollowing_26052026_axd1%20-%20C1.svg",
+  "thumbnail": "https://api.github.com/repos/AxDa/Blu/contents/Magnifica_Humanitas_et_Systemic%20Hollowing_26052026_axd1%20-%20C1.svg?ref=master",
+  "tags": ["svg", "diagram", "magnifica_humanitas", "systemic_hollowing", "thought_for_the_day"],
+  "date": "2026-05-26",
+  "motif": "civic_decay",
+  "cluster": "moral_inquiry",
+  "size": 10700,
+  "type": "svg"
 }
+
 ]
