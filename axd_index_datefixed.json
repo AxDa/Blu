@@ -9902,5 +9902,22 @@
   "cluster": "moral_inquiry",
   "size": 1600,
   "type": "svg"
+},
+{
+  "title": "Lemniscate_Map_axd_26052026.svg",
+  "url": "https://axda.github.io/Blu/Lemniscate_Map_axd_26052026.svg",
+  "thumbnail": "thumbnails/Lemniscate_Map_axd_26052026.png",
+  "tags": [
+    "svg",
+    "diagram",
+    "lemniscate",
+    "conceptual_mapping"
+  ],
+  "date": "2026-05-26",
+  "motif": "civic decay",
+  "cluster": "systemic_mapping",
+  "size": 1500,
+  "type": "svg"
 }
+
 ]
