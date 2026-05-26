@@ -9879,6 +9879,19 @@
   "cluster": "moral_inquiry",
   "size": 10700,
   "type": "svg"
+},
+{
+  "title": "Magnifica Humanitas – Integrated Table",
+  "url": "https://axda.github.io/Blu/Magnifica%20Humanitas%20_Integrated%20Table_26052026_axd.png",
+  "thumbnail": "thumbnails/Magnifica_Humanitas_Integrated_Table_26052026_axd.png",
+  "tags": ["table", "integrated", "diagram", "humanitas"],
+  "date": "2026-05-26",
+  "motif": "civic_decay",
+  "cluster": "moral_inquiry",
+  "size": 30100,
+  "type": "image",
+  "filename": "Magnifica Humanitas _Integrated Table_26052026_axd.png"
 }
+
 
 ]
