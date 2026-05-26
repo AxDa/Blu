@@ -9918,6 +9918,21 @@
   "cluster": "systemic_mapping",
   "size": 1500,
   "type": "svg"
+},
+{
+  "title": "Bleakst_Neighbour_hood_1840_utc+1_26052026_v0.0",
+  "url": "https://axda.github.io/Blu/Bleakst_Neighbour_hood_1840_utc+1_26052026_v0.0.mp3",
+  "thumbnail": "waveform_thumbnails/Bleakst_Neighbour_hood_1840_utc+1_26052026_v0.0.png",
+  "tags": [
+    "audio",
+    "archive",
+    "neighbourhood",
+    "bleakst"
+  ],
+  "date": "2026-05-26",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 484200,
+  "type": "mp3"
 }
-
 ]
