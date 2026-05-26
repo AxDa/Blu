@@ -9891,7 +9891,16 @@
   "size": 30100,
   "type": "image",
   "filename": "Magnifica Humanitas _Integrated Table_26052026_axd.png"
+},
+{
+  "title": "Origins_and_Conceptual_Lineage_of_Hope_26052026_axd.svg",
+  "url": "https://axda.github.io/Blu/Origins%20and%20Conceptual%20Lineage%20of%20'Hope'_26052026_axd.svg",
+  "thumbnail": "https://api.github.com/repos/AxDa/Blu/contents/Origins%20and%20Conceptual%20Lineage%20of%20'Hope'_26052026_axd.svg?ref=master",
+  "tags": ["svg", "diagram", "conceptual_lineage", "hope", "etymology"],
+  "date": "2026-05-26",
+  "motif": null,
+  "cluster": "moral_inquiry",
+  "size": 1600,
+  "type": "svg"
 }
-
-
 ]
