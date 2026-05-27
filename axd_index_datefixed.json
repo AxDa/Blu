@@ -10010,12 +10010,24 @@
   "title": "Times – Russia News, 16:00",
   "url": "https://axda.github.io/Blu/Times_News_Russia_1600_utc+1_27052026_v0.2.mp3",
   "thumbnail": "thumbnails/mp3_placeholder.png",
-  "tags": ["audio", "times", "news", "russia", "threats"],
+  "tags": ["audio", "times", "news", "russia", "threats", "tony blair"],
   "date": "2026-05-27",
   "motif": "civic decay",
   "cluster": "testimony",
   "size": 58300,
   "type": "mp3"
+},
+{
+  "title": "Former PM Rishi Sunak – Times News, 16:00",
+  "url": "https://axda.github.io/Blu/Former PM Rishi Sunak_Times News 1600_utc+1_27052026_v0.1a.mp3",
+  "thumbnail": "thumbnails/mp3_placeholder.png",
+  "tags": ["audio", "times", "news", "rishi sunak"],
+  "date": "2026-05-27",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 34200,
+  "type": "mp3"
 }
+
 
 ]
