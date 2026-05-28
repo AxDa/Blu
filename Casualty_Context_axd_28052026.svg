@@ -1,0 +1,501 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3462pt" height="882pt" viewBox="0.00 0.00 3462.00 882.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 877.63)">
+<title>Casualty_Context</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-877.63 3458,-877.63 3458,4 -4,4"/>
+<text xml:space="preserve" text-anchor="middle" x="1727" y="-851.63" font-family="Helvetica,sans-Serif" font-size="20.00">Historical and Contemporary Russian Casualties, Western Memory, and Perception</text>
+<g id="clust1" class="cluster">
+<title>cluster_WWII</title>
+<polygon fill="none" stroke="black" points="8,-349 8,-755.8 940,-755.8 940,-349 8,-349"/>
+<text xml:space="preserve" text-anchor="middle" x="474" y="-735.6" font-family="Helvetica,sans-Serif" font-size="18.00">1. USSR in the Second World War</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_RU_UA</title>
+<polygon fill="none" stroke="black" points="2466,-496.2 2466,-755.8 3314,-755.8 3314,-496.2 2466,-496.2"/>
+<text xml:space="preserve" text-anchor="middle" x="2890" y="-735.6" font-family="Helvetica,sans-Serif" font-size="18.00">2. Russia–Ukraine War Casualty Figures</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_Why_Jarring</title>
+<polygon fill="none" stroke="black" points="1577,-153.8 1577,-617 2427,-617 2427,-153.8 1577,-153.8"/>
+<text xml:space="preserve" text-anchor="middle" x="2002" y="-596.8" font-family="Helvetica,sans-Serif" font-size="18.00">3. Why the Comparison Feels So Jarring</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_Meaning_Today</title>
+<polygon fill="none" stroke="black" points="948,-120.2 948,-444.6 1569,-444.6 1569,-120.2 948,-120.2"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.5" y="-424.4" font-family="Helvetica,sans-Serif" font-size="18.00">4. What the Numbers Mean Today</text>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_Human_Reality</title>
+<polygon fill="none" stroke="black" points="2435,-8 2435,-255 3446,-255 3446,-8 2435,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="2940.5" y="-234.8" font-family="Helvetica,sans-Serif" font-size="18.00">5. The Human Reality</text>
+</g>
+<!-- Root -->
+<g id="node1" class="node">
+<title>Root</title>
+<ellipse fill="none" stroke="black" stroke-width="2" cx="1984" cy="-812.22" rx="180.23" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-816.42" font-family="Helvetica,sans-Serif" font-size="14.00">Russian Losses &amp; Western Perception</text>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-799.62" font-family="Helvetica,sans-Serif" font-size="14.00">(WWII → Russia–Ukraine War)</text>
+</g>
+<!-- WW2_Core -->
+<g id="node2" class="node">
+<title>WW2_Core</title>
+<path fill="none" stroke="black" d="M615.01,-718.2C615.01,-718.2 482.99,-718.2 482.99,-718.2 476.99,-718.2 470.99,-712.2 470.99,-706.2 470.99,-706.2 470.99,-688.6 470.99,-688.6 470.99,-682.6 476.99,-676.6 482.99,-676.6 482.99,-676.6 615.01,-676.6 615.01,-676.6 621.01,-676.6 627.01,-682.6 627.01,-688.6 627.01,-688.6 627.01,-706.2 627.01,-706.2 627.01,-712.2 621.01,-718.2 615.01,-718.2"/>
+<text xml:space="preserve" text-anchor="middle" x="549" y="-701.6" font-family="Helvetica,sans-Serif" font-size="14.00">USSR Losses in WWII</text>
+<text xml:space="preserve" text-anchor="middle" x="549" y="-684.8" font-family="Helvetica,sans-Serif" font-size="14.00">"Great Patriotic War"</text>
+</g>
+<!-- Root&#45;&gt;WW2_Core -->
+<g id="edge27" class="edge">
+<title>Root-&gt;WW2_Core</title>
+<path fill="none" stroke="black" d="M1823.22,-798.58C1520.65,-774.79 875.76,-724.09 638.77,-705.46"/>
+<polygon fill="black" stroke="black" points="639.22,-701.98 628.97,-704.69 638.67,-708.96 639.22,-701.98"/>
+</g>
+<!-- RUUA_Core -->
+<g id="node10" class="node">
+<title>RUUA_Core</title>
+<path fill="none" stroke="black" d="M2664.13,-718.2C2664.13,-718.2 2539.87,-718.2 2539.87,-718.2 2533.87,-718.2 2527.87,-712.2 2527.87,-706.2 2527.87,-706.2 2527.87,-688.6 2527.87,-688.6 2527.87,-682.6 2533.87,-676.6 2539.87,-676.6 2539.87,-676.6 2664.13,-676.6 2664.13,-676.6 2670.13,-676.6 2676.13,-682.6 2676.13,-688.6 2676.13,-688.6 2676.13,-706.2 2676.13,-706.2 2676.13,-712.2 2670.13,-718.2 2664.13,-718.2"/>
+<text xml:space="preserve" text-anchor="middle" x="2602" y="-701.6" font-family="Helvetica,sans-Serif" font-size="14.00">Russia–Ukraine War</text>
+<text xml:space="preserve" text-anchor="middle" x="2602" y="-684.8" font-family="Helvetica,sans-Serif" font-size="14.00">Casualty Estimates</text>
+</g>
+<!-- Root&#45;&gt;RUUA_Core -->
+<g id="edge28" class="edge">
+<title>Root-&gt;RUUA_Core</title>
+<path fill="none" stroke="black" d="M2162.92,-808.12C2253.31,-802.96 2363.9,-791.12 2460,-764.8 2494.1,-755.46 2530.15,-738.5 2557.4,-724.06"/>
+<polygon fill="black" stroke="black" points="2558.92,-727.22 2566.06,-719.39 2555.6,-721.06 2558.92,-727.22"/>
+</g>
+<!-- Jarring_Core -->
+<g id="node15" class="node">
+<title>Jarring_Core</title>
+<path fill="none" stroke="black" d="M2090.5,-579.4C2090.5,-579.4 1877.5,-579.4 1877.5,-579.4 1871.5,-579.4 1865.5,-573.4 1865.5,-567.4 1865.5,-567.4 1865.5,-533 1865.5,-533 1865.5,-527 1871.5,-521 1877.5,-521 1877.5,-521 2090.5,-521 2090.5,-521 2096.5,-521 2102.5,-527 2102.5,-533 2102.5,-533 2102.5,-567.4 2102.5,-567.4 2102.5,-573.4 2096.5,-579.4 2090.5,-579.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-562.8" font-family="Helvetica,sans-Serif" font-size="14.00">Perceptual Gap:</text>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-546" font-family="Helvetica,sans-Serif" font-size="14.00">Why WWII vs Russia–Ukraine</text>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-529.2" font-family="Helvetica,sans-Serif" font-size="14.00">casualty comparison shocks people</text>
+</g>
+<!-- Root&#45;&gt;Jarring_Core -->
+<g id="edge29" class="edge">
+<title>Root-&gt;Jarring_Core</title>
+<path fill="none" stroke="black" d="M1984,-782.4C1984,-735.81 1984,-643.85 1984,-591.03"/>
+<polygon fill="black" stroke="black" points="1987.5,-591.27 1984,-581.27 1980.5,-591.27 1987.5,-591.27"/>
+</g>
+<!-- Meaning_Core -->
+<g id="node22" class="node">
+<title>Meaning_Core</title>
+<path fill="none" stroke="black" d="M1497.37,-407C1497.37,-407 1346.63,-407 1346.63,-407 1340.63,-407 1334.63,-401 1334.63,-395 1334.63,-395 1334.63,-377.4 1334.63,-377.4 1334.63,-371.4 1340.63,-365.4 1346.63,-365.4 1346.63,-365.4 1497.37,-365.4 1497.37,-365.4 1503.37,-365.4 1509.37,-371.4 1509.37,-377.4 1509.37,-377.4 1509.37,-395 1509.37,-395 1509.37,-401 1503.37,-407 1497.37,-407"/>
+<text xml:space="preserve" text-anchor="middle" x="1422" y="-390.4" font-family="Helvetica,sans-Serif" font-size="14.00">Interpretation of Numbers</text>
+<text xml:space="preserve" text-anchor="middle" x="1422" y="-373.6" font-family="Helvetica,sans-Serif" font-size="14.00">(History → Present)</text>
+</g>
+<!-- Root&#45;&gt;Meaning_Core -->
+<g id="edge30" class="edge">
+<title>Root-&gt;Meaning_Core</title>
+<path fill="none" stroke="black" d="M1897.9,-785.95C1808.88,-756.53 1669.65,-700.99 1573,-617 1506.64,-559.33 1457.62,-465.72 1435.32,-417.71"/>
+<polygon fill="black" stroke="black" points="1438.57,-416.39 1431.23,-408.74 1432.2,-419.29 1438.57,-416.39"/>
+</g>
+<!-- Human_Core -->
+<g id="node25" class="node">
+<title>Human_Core</title>
+<path fill="none" stroke="black" d="M2928.16,-217.4C2928.16,-217.4 2733.84,-217.4 2733.84,-217.4 2727.84,-217.4 2721.84,-211.4 2721.84,-205.4 2721.84,-205.4 2721.84,-193.4 2721.84,-193.4 2721.84,-187.4 2727.84,-181.4 2733.84,-181.4 2733.84,-181.4 2928.16,-181.4 2928.16,-181.4 2934.16,-181.4 2940.16,-187.4 2940.16,-193.4 2940.16,-193.4 2940.16,-205.4 2940.16,-205.4 2940.16,-211.4 2934.16,-217.4 2928.16,-217.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2831" y="-195.2" font-family="Helvetica,sans-Serif" font-size="14.00">Human Cost Beyond Geopolitics</text>
+</g>
+<!-- Root&#45;&gt;Human_Core -->
+<g id="edge31" class="edge">
+<title>Root-&gt;Human_Core</title>
+<path fill="none" stroke="black" d="M2103.06,-789.79C2204.68,-765.31 2347.28,-715.19 2431,-617 2466.96,-574.82 2431.94,-542.77 2462,-496.2 2546.47,-365.31 2708.42,-265.96 2786.6,-223.29"/>
+<polygon fill="black" stroke="black" points="2788.14,-226.44 2795.28,-218.61 2784.82,-220.28 2788.14,-226.44"/>
+</g>
+<!-- WW2_SovMil -->
+<g id="node3" class="node">
+<title>WW2_SovMil</title>
+<path fill="none" stroke="black" d="M454.53,-571C454.53,-571 329.47,-571 329.47,-571 323.47,-571 317.47,-565 317.47,-559 317.47,-559 317.47,-541.4 317.47,-541.4 317.47,-535.4 323.47,-529.4 329.47,-529.4 329.47,-529.4 454.53,-529.4 454.53,-529.4 460.53,-529.4 466.53,-535.4 466.53,-541.4 466.53,-541.4 466.53,-559 466.53,-559 466.53,-565 460.53,-571 454.53,-571"/>
+<text xml:space="preserve" text-anchor="middle" x="392" y="-554.4" font-family="Helvetica,sans-Serif" font-size="14.00">Soviet military deaths</text>
+<text xml:space="preserve" text-anchor="middle" x="392" y="-537.6" font-family="Helvetica,sans-Serif" font-size="14.00">≈ 8.6 million</text>
+</g>
+<!-- WW2_Core&#45;&gt;WW2_SovMil -->
+<g id="edge1" class="edge">
+<title>WW2_Core-&gt;WW2_SovMil</title>
+<path fill="none" stroke="black" d="M527.17,-676.21C499.83,-650.92 452.85,-607.48 422.11,-579.05"/>
+<polygon fill="black" stroke="black" points="424.73,-576.7 415.01,-572.48 419.97,-581.84 424.73,-576.7"/>
+</g>
+<!-- WW2_SovTotal -->
+<g id="node4" class="node">
+<title>WW2_SovTotal</title>
+<path fill="none" stroke="black" d="M287.92,-579.4C287.92,-579.4 176.08,-579.4 176.08,-579.4 170.08,-579.4 164.08,-573.4 164.08,-567.4 164.08,-567.4 164.08,-533 164.08,-533 164.08,-527 170.08,-521 176.08,-521 176.08,-521 287.92,-521 287.92,-521 293.92,-521 299.92,-527 299.92,-533 299.92,-533 299.92,-567.4 299.92,-567.4 299.92,-573.4 293.92,-579.4 287.92,-579.4"/>
+<text xml:space="preserve" text-anchor="middle" x="232" y="-562.8" font-family="Helvetica,sans-Serif" font-size="14.00">Total Soviet deaths</text>
+<text xml:space="preserve" text-anchor="middle" x="232" y="-546" font-family="Helvetica,sans-Serif" font-size="14.00">(military + civilian)</text>
+<text xml:space="preserve" text-anchor="middle" x="232" y="-529.2" font-family="Helvetica,sans-Serif" font-size="14.00">≈ 24–27 million</text>
+</g>
+<!-- WW2_Core&#45;&gt;WW2_SovTotal -->
+<g id="edge2" class="edge">
+<title>WW2_Core-&gt;WW2_SovTotal</title>
+<path fill="none" stroke="black" d="M470.58,-678.97C421.78,-666.13 358.87,-645.85 308,-617 293.83,-608.96 279.89,-598.04 267.89,-587.4"/>
+<polygon fill="black" stroke="black" points="270.39,-584.94 260.65,-580.77 265.66,-590.1 270.39,-584.94"/>
+</g>
+<!-- WW2_UKMil -->
+<g id="node5" class="node">
+<title>WW2_UKMil</title>
+<path fill="none" stroke="black" d="M601.8,-571C601.8,-571 496.2,-571 496.2,-571 490.2,-571 484.2,-565 484.2,-559 484.2,-559 484.2,-541.4 484.2,-541.4 484.2,-535.4 490.2,-529.4 496.2,-529.4 496.2,-529.4 601.8,-529.4 601.8,-529.4 607.8,-529.4 613.8,-535.4 613.8,-541.4 613.8,-541.4 613.8,-559 613.8,-559 613.8,-565 607.8,-571 601.8,-571"/>
+<text xml:space="preserve" text-anchor="middle" x="549" y="-554.4" font-family="Helvetica,sans-Serif" font-size="14.00">UK military deaths</text>
+<text xml:space="preserve" text-anchor="middle" x="549" y="-537.6" font-family="Helvetica,sans-Serif" font-size="14.00">≈ 383,000</text>
+</g>
+<!-- WW2_Core&#45;&gt;WW2_UKMil -->
+<g id="edge3" class="edge">
+<title>WW2_Core-&gt;WW2_UKMil</title>
+<path fill="none" stroke="black" d="M549,-676.21C549,-651.94 549,-610.93 549,-582.53"/>
+<polygon fill="black" stroke="black" points="552.5,-582.73 549,-572.73 545.5,-582.73 552.5,-582.73"/>
+</g>
+<!-- WW2_USMil -->
+<g id="node6" class="node">
+<title>WW2_USMil</title>
+<path fill="none" stroke="black" d="M133.8,-571C133.8,-571 28.2,-571 28.2,-571 22.2,-571 16.2,-565 16.2,-559 16.2,-559 16.2,-541.4 16.2,-541.4 16.2,-535.4 22.2,-529.4 28.2,-529.4 28.2,-529.4 133.8,-529.4 133.8,-529.4 139.8,-529.4 145.8,-535.4 145.8,-541.4 145.8,-541.4 145.8,-559 145.8,-559 145.8,-565 139.8,-571 133.8,-571"/>
+<text xml:space="preserve" text-anchor="middle" x="81" y="-554.4" font-family="Helvetica,sans-Serif" font-size="14.00">US military deaths</text>
+<text xml:space="preserve" text-anchor="middle" x="81" y="-537.6" font-family="Helvetica,sans-Serif" font-size="14.00">≈ 416,000</text>
+</g>
+<!-- WW2_Core&#45;&gt;WW2_USMil -->
+<g id="edge4" class="edge">
+<title>WW2_Core-&gt;WW2_USMil</title>
+<path fill="none" stroke="black" d="M470.62,-693.59C387.82,-687.75 255.6,-670.07 155,-617 136.87,-607.43 119.57,-592.5 106.27,-579.28"/>
+<polygon fill="black" stroke="black" points="109.07,-577.14 99.58,-572.41 104.05,-582.02 109.07,-577.14"/>
+</g>
+<!-- WW2_Trauma -->
+<g id="node8" class="node">
+<title>WW2_Trauma</title>
+<path fill="none" stroke="black" d="M920,-579.4C920,-579.4 644,-579.4 644,-579.4 638,-579.4 632,-573.4 632,-567.4 632,-567.4 632,-533 632,-533 632,-527 638,-521 644,-521 644,-521 920,-521 920,-521 926,-521 932,-527 932,-533 932,-533 932,-567.4 932,-567.4 932,-573.4 926,-579.4 920,-579.4"/>
+<text xml:space="preserve" text-anchor="middle" x="782" y="-562.8" font-family="Helvetica,sans-Serif" font-size="14.00">National trauma &amp; identity:</text>
+<text xml:space="preserve" text-anchor="middle" x="782" y="-546" font-family="Helvetica,sans-Serif" font-size="14.00">• WWII remembered as Great Patriotic War</text>
+<text xml:space="preserve" text-anchor="middle" x="782" y="-529.2" font-family="Helvetica,sans-Serif" font-size="14.00">• Loss woven into Russian historical memory</text>
+</g>
+<!-- WW2_Core&#45;&gt;WW2_Trauma -->
+<g id="edge8" class="edge">
+<title>WW2_Core-&gt;WW2_Trauma</title>
+<path fill="none" stroke="black" d="M581.4,-676.21C618.91,-652.83 681.33,-613.94 726.59,-585.73"/>
+<polygon fill="black" stroke="black" points="728.34,-588.76 734.98,-580.5 724.64,-582.82 728.34,-588.76"/>
+</g>
+<!-- WW2_Core&#45;&gt;Jarring_Core -->
+<g id="edge32" class="edge">
+<title>WW2_Core-&gt;Jarring_Core</title>
+<path fill="none" stroke="black" d="M627.43,-688.46C862.36,-664.69 1562.12,-593.89 1853.94,-564.36"/>
+<polygon fill="black" stroke="black" points="1853.9,-567.88 1863.49,-563.39 1853.19,-560.92 1853.9,-567.88"/>
+<text xml:space="preserve" text-anchor="middle" x="1269.38" y="-646" font-family="Helvetica,sans-Serif" font-size="14.00">historical scale</text>
+<text xml:space="preserve" text-anchor="middle" x="1269.38" y="-629.2" font-family="Helvetica,sans-Serif" font-size="14.00">vs memory</text>
+</g>
+<!-- WW2_Ratio -->
+<g id="node7" class="node">
+<title>WW2_Ratio</title>
+<polygon fill="none" stroke="black" points="526.04,-415.4 249.96,-415.4 249.96,-357 532.04,-357 532.04,-409.4 526.04,-415.4"/>
+<polyline fill="none" stroke="black" points="526.04,-415.4 526.04,-409.4"/>
+<polyline fill="none" stroke="black" points="532.04,-409.4 526.04,-409.4"/>
+<text xml:space="preserve" text-anchor="middle" x="391" y="-398.8" font-family="Helvetica,sans-Serif" font-size="14.00">Ratio:</text>
+<text xml:space="preserve" text-anchor="middle" x="391" y="-382" font-family="Helvetica,sans-Serif" font-size="14.00">For every British or American soldier killed,</text>
+<text xml:space="preserve" text-anchor="middle" x="391" y="-365.2" font-family="Helvetica,sans-Serif" font-size="14.00">≈ 20 Soviet soldiers died</text>
+</g>
+<!-- WW2_SovMil&#45;&gt;WW2_Ratio -->
+<g id="edge5" class="edge">
+<title>WW2_SovMil-&gt;WW2_Ratio</title>
+<path fill="none" stroke="black" d="M391.88,-529.01C391.72,-503.63 391.45,-459.47 391.25,-427.16"/>
+<polygon fill="black" stroke="black" points="394.75,-427.34 391.19,-417.36 387.75,-427.38 394.75,-427.34"/>
+</g>
+<!-- WW2_UKMil&#45;&gt;WW2_Ratio -->
+<g id="edge6" class="edge">
+<title>WW2_UKMil-&gt;WW2_Ratio</title>
+<path fill="none" stroke="black" d="M529.31,-529.01C503.68,-502.74 458.44,-456.35 426.7,-423.8"/>
+<polygon fill="black" stroke="black" points="429.48,-421.65 420,-416.93 424.47,-426.53 429.48,-421.65"/>
+</g>
+<!-- WW2_USMil&#45;&gt;WW2_Ratio -->
+<g id="edge7" class="edge">
+<title>WW2_USMil-&gt;WW2_Ratio</title>
+<path fill="none" stroke="black" d="M106.56,-529.07C120.46,-518.59 138.2,-505.98 155,-496.2 204.68,-467.28 263.34,-440.16 309.75,-420.2"/>
+<polygon fill="black" stroke="black" points="310.85,-423.54 318.67,-416.39 308.1,-417.1 310.85,-423.54"/>
+</g>
+<!-- WW2_WestMemory -->
+<g id="node9" class="node">
+<title>WW2_WestMemory</title>
+<path fill="none" stroke="black" d="M920.26,-415.4C920.26,-415.4 561.74,-415.4 561.74,-415.4 555.74,-415.4 549.74,-409.4 549.74,-403.4 549.74,-403.4 549.74,-369 549.74,-369 549.74,-363 555.74,-357 561.74,-357 561.74,-357 920.26,-357 920.26,-357 926.26,-357 932.26,-363 932.26,-369 932.26,-369 932.26,-403.4 932.26,-403.4 932.26,-409.4 926.26,-415.4 920.26,-415.4"/>
+<text xml:space="preserve" text-anchor="middle" x="741" y="-398.8" font-family="Helvetica,sans-Serif" font-size="14.00">Western (esp. UK/US) memory:</text>
+<text xml:space="preserve" text-anchor="middle" x="741" y="-382" font-family="Helvetica,sans-Serif" font-size="14.00">• Limited grasp of Soviet scale of loss</text>
+<text xml:space="preserve" text-anchor="middle" x="741" y="-365.2" font-family="Helvetica,sans-Serif" font-size="14.00">• Eastern Front underemphasised in public consciousness</text>
+</g>
+<!-- WW2_Trauma&#45;&gt;WW2_WestMemory -->
+<g id="edge9" class="edge">
+<title>WW2_Trauma-&gt;WW2_WestMemory</title>
+<path fill="none" stroke="black" d="M774.76,-520.61C768.17,-494.55 758.36,-455.8 751.01,-426.77"/>
+<polygon fill="black" stroke="black" points="754.45,-426.08 748.6,-417.24 747.66,-427.8 754.45,-426.08"/>
+</g>
+<!-- WW2_Trauma&#45;&gt;Meaning_Core -->
+<g id="edge33" class="edge">
+<title>WW2_Trauma-&gt;Meaning_Core</title>
+<path fill="none" stroke="black" d="M895.31,-520.52C1019.65,-489.04 1216.77,-439.15 1331.31,-410.16"/>
+<polygon fill="black" stroke="black" points="1331.83,-413.64 1340.66,-407.79 1330.11,-406.85 1331.83,-413.64"/>
+<text xml:space="preserve" text-anchor="middle" x="1211.08" y="-473.6" font-family="Helvetica,sans-Serif" font-size="14.00">shapes</text>
+<text xml:space="preserve" text-anchor="middle" x="1211.08" y="-456.8" font-family="Helvetica,sans-Serif" font-size="14.00">perception today</text>
+</g>
+<!-- RUUA_RusDead -->
+<g id="node11" class="node">
+<title>RUUA_RusDead</title>
+<path fill="none" stroke="black" d="M2622.36,-571C2622.36,-571 2485.64,-571 2485.64,-571 2479.64,-571 2473.64,-565 2473.64,-559 2473.64,-559 2473.64,-541.4 2473.64,-541.4 2473.64,-535.4 2479.64,-529.4 2485.64,-529.4 2485.64,-529.4 2622.36,-529.4 2622.36,-529.4 2628.36,-529.4 2634.36,-535.4 2634.36,-541.4 2634.36,-541.4 2634.36,-559 2634.36,-559 2634.36,-565 2628.36,-571 2622.36,-571"/>
+<text xml:space="preserve" text-anchor="middle" x="2554" y="-554.4" font-family="Helvetica,sans-Serif" font-size="14.00">Russian military deaths</text>
+<text xml:space="preserve" text-anchor="middle" x="2554" y="-537.6" font-family="Helvetica,sans-Serif" font-size="14.00">≈ 500,000 (estimate)</text>
+</g>
+<!-- RUUA_Core&#45;&gt;RUUA_RusDead -->
+<g id="edge10" class="edge">
+<title>RUUA_Core-&gt;RUUA_RusDead</title>
+<path fill="none" stroke="black" d="M2595.33,-676.21C2587.23,-651.72 2573.5,-610.19 2564.11,-581.77"/>
+<polygon fill="black" stroke="black" points="2567.55,-581.05 2561.09,-572.66 2560.91,-583.25 2567.55,-581.05"/>
+</g>
+<!-- RUUA_RusTotal -->
+<g id="node12" class="node">
+<title>RUUA_RusTotal</title>
+<path fill="none" stroke="black" d="M2820.08,-579.4C2820.08,-579.4 2663.92,-579.4 2663.92,-579.4 2657.92,-579.4 2651.92,-573.4 2651.92,-567.4 2651.92,-567.4 2651.92,-533 2651.92,-533 2651.92,-527 2657.92,-521 2663.92,-521 2663.92,-521 2820.08,-521 2820.08,-521 2826.08,-521 2832.08,-527 2832.08,-533 2832.08,-533 2832.08,-567.4 2832.08,-567.4 2832.08,-573.4 2826.08,-579.4 2820.08,-579.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2742" y="-562.8" font-family="Helvetica,sans-Serif" font-size="14.00">Russian total casualties</text>
+<text xml:space="preserve" text-anchor="middle" x="2742" y="-546" font-family="Helvetica,sans-Serif" font-size="14.00">(dead + wounded)</text>
+<text xml:space="preserve" text-anchor="middle" x="2742" y="-529.2" font-family="Helvetica,sans-Serif" font-size="14.00">≈ 1–1.5 million (estimate)</text>
+</g>
+<!-- RUUA_Core&#45;&gt;RUUA_RusTotal -->
+<g id="edge11" class="edge">
+<title>RUUA_Core-&gt;RUUA_RusTotal</title>
+<path fill="none" stroke="black" d="M2621.47,-676.21C2643.49,-653.37 2679.79,-615.72 2706.81,-587.7"/>
+<polygon fill="black" stroke="black" points="2709.05,-590.42 2713.47,-580.79 2704.01,-585.56 2709.05,-590.42"/>
+</g>
+<!-- RUUA_Sources -->
+<g id="node13" class="node">
+<title>RUUA_Sources</title>
+<path fill="none" stroke="black" d="M3098.19,-596.2C3098.19,-596.2 2861.81,-596.2 2861.81,-596.2 2855.81,-596.2 2849.81,-590.2 2849.81,-584.2 2849.81,-584.2 2849.81,-516.2 2849.81,-516.2 2849.81,-510.2 2855.81,-504.2 2861.81,-504.2 2861.81,-504.2 3098.19,-504.2 3098.19,-504.2 3104.19,-504.2 3110.19,-510.2 3110.19,-516.2 3110.19,-516.2 3110.19,-584.2 3110.19,-584.2 3110.19,-590.2 3104.19,-596.2 3098.19,-596.2"/>
+<text xml:space="preserve" text-anchor="middle" x="2980" y="-579.6" font-family="Helvetica,sans-Serif" font-size="14.00">Sources &amp; reliability:</text>
+<text xml:space="preserve" text-anchor="middle" x="2980" y="-562.8" font-family="Helvetica,sans-Serif" font-size="14.00">• Western intelligence</text>
+<text xml:space="preserve" text-anchor="middle" x="2980" y="-546" font-family="Helvetica,sans-Serif" font-size="14.00">• Independent analysts</text>
+<text xml:space="preserve" text-anchor="middle" x="2980" y="-529.2" font-family="Helvetica,sans-Serif" font-size="14.00">• Russia does not publish reliable data</text>
+<text xml:space="preserve" text-anchor="middle" x="2980" y="-512.4" font-family="Helvetica,sans-Serif" font-size="14.00">→ Figures are estimates, not official</text>
+</g>
+<!-- RUUA_Core&#45;&gt;RUUA_Sources -->
+<g id="edge12" class="edge">
+<title>RUUA_Core-&gt;RUUA_Sources</title>
+<path fill="none" stroke="black" d="M2670.27,-676.14C2718.51,-661.24 2784.39,-639.71 2841,-617 2853,-612.19 2865.44,-606.84 2877.72,-601.33"/>
+<polygon fill="black" stroke="black" points="2878.94,-604.62 2886.6,-597.3 2876.05,-598.24 2878.94,-604.62"/>
+</g>
+<!-- RUUA_HumanToll -->
+<g id="node14" class="node">
+<title>RUUA_HumanToll</title>
+<path fill="none" stroke="black" d="M3293.54,-579.4C3293.54,-579.4 3140.46,-579.4 3140.46,-579.4 3134.46,-579.4 3128.46,-573.4 3128.46,-567.4 3128.46,-567.4 3128.46,-533 3128.46,-533 3128.46,-527 3134.46,-521 3140.46,-521 3140.46,-521 3293.54,-521 3293.54,-521 3299.54,-521 3305.54,-527 3305.54,-533 3305.54,-533 3305.54,-567.4 3305.54,-567.4 3305.54,-573.4 3299.54,-579.4 3293.54,-579.4"/>
+<text xml:space="preserve" text-anchor="middle" x="3217" y="-562.8" font-family="Helvetica,sans-Serif" font-size="14.00">Human toll:</text>
+<text xml:space="preserve" text-anchor="middle" x="3217" y="-546" font-family="Helvetica,sans-Serif" font-size="14.00">Even lower-end estimates</text>
+<text xml:space="preserve" text-anchor="middle" x="3217" y="-529.2" font-family="Helvetica,sans-Serif" font-size="14.00">= catastrophic loss of life</text>
+</g>
+<!-- RUUA_Core&#45;&gt;RUUA_HumanToll -->
+<g id="edge13" class="edge">
+<title>RUUA_Core-&gt;RUUA_HumanToll</title>
+<path fill="none" stroke="black" d="M2676.53,-695.07C2779.43,-691 2969.25,-675.4 3119,-617 3138.15,-609.53 3157.34,-597.81 3173.6,-586.32"/>
+<polygon fill="black" stroke="black" points="3175.56,-589.22 3181.59,-580.51 3171.44,-583.56 3175.56,-589.22"/>
+</g>
+<!-- RUUA_Core&#45;&gt;Jarring_Core -->
+<g id="edge34" class="edge">
+<title>RUUA_Core-&gt;Jarring_Core</title>
+<path fill="none" stroke="black" d="M2527.45,-678.89C2425.08,-654.83 2239.43,-611.21 2113.94,-581.73"/>
+<polygon fill="black" stroke="black" points="2114.75,-578.33 2104.22,-579.45 2113.15,-585.14 2114.75,-578.33"/>
+<text xml:space="preserve" text-anchor="middle" x="2467.38" y="-646" font-family="Helvetica,sans-Serif" font-size="14.00">modern</text>
+<text xml:space="preserve" text-anchor="middle" x="2467.38" y="-629.2" font-family="Helvetica,sans-Serif" font-size="14.00">casualties</text>
+</g>
+<!-- RUUA_HumanToll&#45;&gt;Human_Core -->
+<g id="edge35" class="edge">
+<title>RUUA_HumanToll-&gt;Human_Core</title>
+<path fill="none" stroke="black" d="M3185.41,-520.66C3111.51,-453.88 2928.33,-288.35 2858.58,-225.32"/>
+<polygon fill="black" stroke="black" points="2861.15,-222.93 2851.39,-218.82 2856.46,-228.13 2861.15,-222.93"/>
+<text xml:space="preserve" text-anchor="middle" x="3146.07" y="-390.4" font-family="Helvetica,sans-Serif" font-size="14.00">feeds into</text>
+<text xml:space="preserve" text-anchor="middle" x="3146.07" y="-373.6" font-family="Helvetica,sans-Serif" font-size="14.00">human tragedy</text>
+</g>
+<!-- Jarring_A -->
+<g id="node16" class="node">
+<title>Jarring_A</title>
+<path fill="none" stroke="black" d="M1800.83,-432.2C1800.83,-432.2 1597.17,-432.2 1597.17,-432.2 1591.17,-432.2 1585.17,-426.2 1585.17,-420.2 1585.17,-420.2 1585.17,-352.2 1585.17,-352.2 1585.17,-346.2 1591.17,-340.2 1597.17,-340.2 1597.17,-340.2 1800.83,-340.2 1800.83,-340.2 1806.83,-340.2 1812.83,-346.2 1812.83,-352.2 1812.83,-352.2 1812.83,-420.2 1812.83,-420.2 1812.83,-426.2 1806.83,-432.2 1800.83,-432.2"/>
+<text xml:space="preserve" text-anchor="middle" x="1699" y="-415.6" font-family="Helvetica,sans-Serif" font-size="14.00">A. UK public memory is selective:</text>
+<text xml:space="preserve" text-anchor="middle" x="1699" y="-398.8" font-family="Helvetica,sans-Serif" font-size="14.00">• Focus on Blitz, Dunkirk,</text>
+<text xml:space="preserve" text-anchor="middle" x="1699" y="-382" font-family="Helvetica,sans-Serif" font-size="14.00">  Battle of Britain, D‑Day</text>
+<text xml:space="preserve" text-anchor="middle" x="1699" y="-365.2" font-family="Helvetica,sans-Serif" font-size="14.00">• Eastern Front largely peripheral</text>
+<text xml:space="preserve" text-anchor="middle" x="1699" y="-348.4" font-family="Helvetica,sans-Serif" font-size="14.00">  in popular narrative</text>
+</g>
+<!-- Jarring_Core&#45;&gt;Jarring_A -->
+<g id="edge14" class="edge">
+<title>Jarring_Core-&gt;Jarring_A</title>
+<path fill="none" stroke="black" d="M1933.7,-520.61C1893.64,-497.84 1836.53,-465.37 1788.68,-438.17"/>
+<polygon fill="black" stroke="black" points="1790.67,-435.28 1780.24,-433.38 1787.21,-441.36 1790.67,-435.28"/>
+</g>
+<!-- Jarring_B -->
+<g id="node18" class="node">
+<title>Jarring_B</title>
+<path fill="none" stroke="black" d="M2124.73,-415.4C2124.73,-415.4 1843.27,-415.4 1843.27,-415.4 1837.27,-415.4 1831.27,-409.4 1831.27,-403.4 1831.27,-403.4 1831.27,-369 1831.27,-369 1831.27,-363 1837.27,-357 1843.27,-357 1843.27,-357 2124.73,-357 2124.73,-357 2130.73,-357 2136.73,-363 2136.73,-369 2136.73,-369 2136.73,-403.4 2136.73,-403.4 2136.73,-409.4 2130.73,-415.4 2124.73,-415.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-398.8" font-family="Helvetica,sans-Serif" font-size="14.00">B. Scale of Soviet loss vs Western experience:</text>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-382" font-family="Helvetica,sans-Serif" font-size="14.00">• UK has not seen mass battlefield death</text>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-365.2" font-family="Helvetica,sans-Serif" font-size="14.00">  on that scale since WWI</text>
+</g>
+<!-- Jarring_Core&#45;&gt;Jarring_B -->
+<g id="edge15" class="edge">
+<title>Jarring_Core-&gt;Jarring_B</title>
+<path fill="none" stroke="black" d="M1984,-520.61C1984,-494.66 1984,-456.14 1984,-427.16"/>
+<polygon fill="black" stroke="black" points="1987.5,-427.29 1984,-417.29 1980.5,-427.29 1987.5,-427.29"/>
+</g>
+<!-- Jarring_C -->
+<g id="node20" class="node">
+<title>Jarring_C</title>
+<path fill="none" stroke="black" d="M2407.32,-423.8C2407.32,-423.8 2166.68,-423.8 2166.68,-423.8 2160.68,-423.8 2154.68,-417.8 2154.68,-411.8 2154.68,-411.8 2154.68,-360.6 2154.68,-360.6 2154.68,-354.6 2160.68,-348.6 2166.68,-348.6 2166.68,-348.6 2407.32,-348.6 2407.32,-348.6 2413.32,-348.6 2419.32,-354.6 2419.32,-360.6 2419.32,-360.6 2419.32,-411.8 2419.32,-411.8 2419.32,-417.8 2413.32,-423.8 2407.32,-423.8"/>
+<text xml:space="preserve" text-anchor="middle" x="2287" y="-407.2" font-family="Helvetica,sans-Serif" font-size="14.00">C. Modern numbers feel "impossible":</text>
+<text xml:space="preserve" text-anchor="middle" x="2287" y="-390.4" font-family="Helvetica,sans-Serif" font-size="14.00">• Europe largely peaceful for ~80 years</text>
+<text xml:space="preserve" text-anchor="middle" x="2287" y="-373.6" font-family="Helvetica,sans-Serif" font-size="14.00">• 500,000 dead in ~2 years feels</text>
+<text xml:space="preserve" text-anchor="middle" x="2287" y="-356.8" font-family="Helvetica,sans-Serif" font-size="14.00">  like a throwback to another era</text>
+</g>
+<!-- Jarring_Core&#45;&gt;Jarring_C -->
+<g id="edge16" class="edge">
+<title>Jarring_Core-&gt;Jarring_C</title>
+<path fill="none" stroke="black" d="M2037.47,-520.61C2084.73,-495.34 2154.3,-458.15 2207.98,-429.45"/>
+<polygon fill="black" stroke="black" points="2209.31,-432.71 2216.48,-424.9 2206.01,-426.53 2209.31,-432.71"/>
+</g>
+<!-- Jarring_EasternFront -->
+<g id="node17" class="node">
+<title>Jarring_EasternFront</title>
+<path fill="none" stroke="black" d="M1797.72,-237C1797.72,-237 1600.28,-237 1600.28,-237 1594.28,-237 1588.28,-231 1588.28,-225 1588.28,-225 1588.28,-173.8 1588.28,-173.8 1588.28,-167.8 1594.28,-161.8 1600.28,-161.8 1600.28,-161.8 1797.72,-161.8 1797.72,-161.8 1803.72,-161.8 1809.72,-167.8 1809.72,-173.8 1809.72,-173.8 1809.72,-225 1809.72,-225 1809.72,-231 1803.72,-237 1797.72,-237"/>
+<text xml:space="preserve" text-anchor="middle" x="1699" y="-220.4" font-family="Helvetica,sans-Serif" font-size="14.00">Eastern Front reality:</text>
+<text xml:space="preserve" text-anchor="middle" x="1699" y="-203.6" font-family="Helvetica,sans-Serif" font-size="14.00">• Decisive theatre of WWII</text>
+<text xml:space="preserve" text-anchor="middle" x="1699" y="-186.8" font-family="Helvetica,sans-Serif" font-size="14.00">• Most of Hitler’s army died</text>
+<text xml:space="preserve" text-anchor="middle" x="1699" y="-170" font-family="Helvetica,sans-Serif" font-size="14.00">  fighting the USSR, not the West</text>
+</g>
+<!-- Jarring_A&#45;&gt;Jarring_EasternFront -->
+<g id="edge17" class="edge">
+<title>Jarring_A-&gt;Jarring_EasternFront</title>
+<path fill="none" stroke="black" d="M1699,-339.99C1699,-312.29 1699,-276.84 1699,-248.61"/>
+<polygon fill="black" stroke="black" points="1702.5,-248.9 1699,-238.9 1695.5,-248.9 1702.5,-248.9"/>
+</g>
+<!-- Jarring_Stalingrad -->
+<g id="node19" class="node">
+<title>Jarring_Stalingrad</title>
+<path fill="none" stroke="black" d="M2082.34,-237C2082.34,-237 1885.66,-237 1885.66,-237 1879.66,-237 1873.66,-231 1873.66,-225 1873.66,-225 1873.66,-173.8 1873.66,-173.8 1873.66,-167.8 1879.66,-161.8 1885.66,-161.8 1885.66,-161.8 2082.34,-161.8 2082.34,-161.8 2088.34,-161.8 2094.34,-167.8 2094.34,-173.8 2094.34,-173.8 2094.34,-225 2094.34,-225 2094.34,-231 2088.34,-237 2082.34,-237"/>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-220.4" font-family="Helvetica,sans-Serif" font-size="14.00">Example:</text>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-203.6" font-family="Helvetica,sans-Serif" font-size="14.00">Russia lost more soldiers in</text>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-186.8" font-family="Helvetica,sans-Serif" font-size="14.00">Stalingrad alone than the UK lost</text>
+<text xml:space="preserve" text-anchor="middle" x="1984" y="-170" font-family="Helvetica,sans-Serif" font-size="14.00">in the entire war</text>
+</g>
+<!-- Jarring_B&#45;&gt;Jarring_Stalingrad -->
+<g id="edge18" class="edge">
+<title>Jarring_B-&gt;Jarring_Stalingrad</title>
+<path fill="none" stroke="black" d="M1984,-356.73C1984,-327.89 1984,-282.77 1984,-248.39"/>
+<polygon fill="black" stroke="black" points="1987.5,-248.7 1984,-238.7 1980.5,-248.7 1987.5,-248.7"/>
+</g>
+<!-- Jarring_Continuity -->
+<g id="node21" class="node">
+<title>Jarring_Continuity</title>
+<path fill="none" stroke="black" d="M2406.83,-228.6C2406.83,-228.6 2133.17,-228.6 2133.17,-228.6 2127.17,-228.6 2121.17,-222.6 2121.17,-216.6 2121.17,-216.6 2121.17,-182.2 2121.17,-182.2 2121.17,-176.2 2127.17,-170.2 2133.17,-170.2 2133.17,-170.2 2406.83,-170.2 2406.83,-170.2 2412.83,-170.2 2418.83,-176.2 2418.83,-182.2 2418.83,-182.2 2418.83,-216.6 2418.83,-216.6 2418.83,-222.6 2412.83,-228.6 2406.83,-228.6"/>
+<text xml:space="preserve" text-anchor="middle" x="2270" y="-212" font-family="Helvetica,sans-Serif" font-size="14.00">Yet it is happening now:</text>
+<text xml:space="preserve" text-anchor="middle" x="2270" y="-195.2" font-family="Helvetica,sans-Serif" font-size="14.00">• Modern war with industrial-scale casualties</text>
+<text xml:space="preserve" text-anchor="middle" x="2270" y="-178.4" font-family="Helvetica,sans-Serif" font-size="14.00">• Cognitive dissonance in Western publics</text>
+</g>
+<!-- Jarring_C&#45;&gt;Jarring_Continuity -->
+<g id="edge19" class="edge">
+<title>Jarring_C-&gt;Jarring_Continuity</title>
+<path fill="none" stroke="black" d="M2283.6,-348.25C2280.72,-316.91 2276.59,-272.08 2273.64,-240.02"/>
+<polygon fill="black" stroke="black" points="2277.16,-239.97 2272.75,-230.33 2270.18,-240.61 2277.16,-239.97"/>
+</g>
+<!-- Meaning_Point -->
+<g id="node23" class="node">
+<title>Meaning_Point</title>
+<path fill="none" stroke="black" d="M1253.68,-270.6C1253.68,-270.6 968.32,-270.6 968.32,-270.6 962.32,-270.6 956.32,-264.6 956.32,-258.6 956.32,-258.6 956.32,-140.2 956.32,-140.2 956.32,-134.2 962.32,-128.2 968.32,-128.2 968.32,-128.2 1253.68,-128.2 1253.68,-128.2 1259.68,-128.2 1265.68,-134.2 1265.68,-140.2 1265.68,-140.2 1265.68,-258.6 1265.68,-258.6 1265.68,-264.6 1259.68,-270.6 1253.68,-270.6"/>
+<text xml:space="preserve" text-anchor="middle" x="1111" y="-254" font-family="Helvetica,sans-Serif" font-size="14.00">Key idea:</text>
+<text xml:space="preserve" text-anchor="middle" x="1111" y="-237.2" font-family="Helvetica,sans-Serif" font-size="14.00">If people understood the historical scale</text>
+<text xml:space="preserve" text-anchor="middle" x="1111" y="-220.4" font-family="Helvetica,sans-Serif" font-size="14.00">of Soviet sacrifice in WWII,</text>
+<text xml:space="preserve" text-anchor="middle" x="1111" y="-203.6" font-family="Helvetica,sans-Serif" font-size="14.00">they would better grasp:</text>
+<text xml:space="preserve" text-anchor="middle" x="1111" y="-186.8" font-family="Helvetica,sans-Serif" font-size="14.00">• How today’s casualty figures land in Russia</text>
+<text xml:space="preserve" text-anchor="middle" x="1111" y="-170" font-family="Helvetica,sans-Serif" font-size="14.00">• Why Kremlin can absorb losses</text>
+<text xml:space="preserve" text-anchor="middle" x="1111" y="-153.2" font-family="Helvetica,sans-Serif" font-size="14.00">  that would be politically impossible</text>
+<text xml:space="preserve" text-anchor="middle" x="1111" y="-136.4" font-family="Helvetica,sans-Serif" font-size="14.00">  in Western democracies</text>
+</g>
+<!-- Meaning_Core&#45;&gt;Meaning_Point -->
+<g id="edge20" class="edge">
+<title>Meaning_Core-&gt;Meaning_Point</title>
+<path fill="none" stroke="black" d="M1388.13,-365.07C1352.33,-343.8 1293.69,-308.95 1239.54,-276.78"/>
+<polygon fill="black" stroke="black" points="1241.53,-273.89 1231.14,-271.79 1237.95,-279.91 1241.53,-273.89"/>
+</g>
+<!-- Meaning_Psych -->
+<g id="node24" class="node">
+<title>Meaning_Psych</title>
+<path fill="none" stroke="black" d="M1548.72,-237C1548.72,-237 1295.28,-237 1295.28,-237 1289.28,-237 1283.28,-231 1283.28,-225 1283.28,-225 1283.28,-173.8 1283.28,-173.8 1283.28,-167.8 1289.28,-161.8 1295.28,-161.8 1295.28,-161.8 1548.72,-161.8 1548.72,-161.8 1554.72,-161.8 1560.72,-167.8 1560.72,-173.8 1560.72,-173.8 1560.72,-225 1560.72,-225 1560.72,-231 1554.72,-237 1548.72,-237"/>
+<text xml:space="preserve" text-anchor="middle" x="1422" y="-220.4" font-family="Helvetica,sans-Serif" font-size="14.00">Psychological/political implication:</text>
+<text xml:space="preserve" text-anchor="middle" x="1422" y="-203.6" font-family="Helvetica,sans-Serif" font-size="14.00">• Not a justification of policy</text>
+<text xml:space="preserve" text-anchor="middle" x="1422" y="-186.8" font-family="Helvetica,sans-Serif" font-size="14.00">• But an explanation of tolerance for loss</text>
+<text xml:space="preserve" text-anchor="middle" x="1422" y="-170" font-family="Helvetica,sans-Serif" font-size="14.00">  rooted in historical memory and narrative</text>
+</g>
+<!-- Meaning_Core&#45;&gt;Meaning_Psych -->
+<g id="edge21" class="edge">
+<title>Meaning_Core-&gt;Meaning_Psych</title>
+<path fill="none" stroke="black" d="M1422,-365.07C1422,-337.35 1422,-286.55 1422,-248.68"/>
+<polygon fill="black" stroke="black" points="1425.5,-248.89 1422,-238.89 1418.5,-248.89 1425.5,-248.89"/>
+</g>
+<!-- Meaning_Core&#45;&gt;Human_Core -->
+<g id="edge36" class="edge">
+<title>Meaning_Core-&gt;Human_Core</title>
+<path fill="none" stroke="black" d="M1479.74,-364.91C1507.59,-355.92 1541.68,-346.07 1573,-340.2 1949.04,-269.72 2051.51,-319.19 2431,-270.6 2535.03,-257.28 2653.22,-235.74 2733.99,-220.03"/>
+<polygon fill="black" stroke="black" points="2734.5,-223.49 2743.65,-218.14 2733.16,-216.62 2734.5,-223.49"/>
+<text xml:space="preserve" text-anchor="middle" x="2283.9" y="-309.6" font-family="Helvetica,sans-Serif" font-size="14.00">from explanation</text>
+<text xml:space="preserve" text-anchor="middle" x="2283.9" y="-292.8" font-family="Helvetica,sans-Serif" font-size="14.00">to moral weight</text>
+</g>
+<!-- Human_Dead -->
+<g id="node26" class="node">
+<title>Human_Dead</title>
+<path fill="none" stroke="black" d="M2601.41,-74.4C2601.41,-74.4 2454.59,-74.4 2454.59,-74.4 2448.59,-74.4 2442.59,-68.4 2442.59,-62.4 2442.59,-62.4 2442.59,-44.8 2442.59,-44.8 2442.59,-38.8 2448.59,-32.8 2454.59,-32.8 2454.59,-32.8 2601.41,-32.8 2601.41,-32.8 2607.41,-32.8 2613.41,-38.8 2613.41,-44.8 2613.41,-44.8 2613.41,-62.4 2613.41,-62.4 2613.41,-68.4 2607.41,-74.4 2601.41,-74.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2528" y="-57.8" font-family="Helvetica,sans-Serif" font-size="14.00">≈ 500,000 dead soldiers</text>
+<text xml:space="preserve" text-anchor="middle" x="2528" y="-41" font-family="Helvetica,sans-Serif" font-size="14.00">(in current war, estimate)</text>
+</g>
+<!-- Human_Core&#45;&gt;Human_Dead -->
+<g id="edge22" class="edge">
+<title>Human_Core-&gt;Human_Dead</title>
+<path fill="none" stroke="black" d="M2794.15,-180.91C2740.85,-155.62 2641.96,-108.68 2580.88,-79.7"/>
+<polygon fill="black" stroke="black" points="2582.58,-76.63 2572.04,-75.5 2579.58,-82.95 2582.58,-76.63"/>
+</g>
+<!-- Human_Families -->
+<g id="node27" class="node">
+<title>Human_Families</title>
+<path fill="none" stroke="black" d="M2820.61,-74.4C2820.61,-74.4 2643.39,-74.4 2643.39,-74.4 2637.39,-74.4 2631.39,-68.4 2631.39,-62.4 2631.39,-62.4 2631.39,-44.8 2631.39,-44.8 2631.39,-38.8 2637.39,-32.8 2643.39,-32.8 2643.39,-32.8 2820.61,-32.8 2820.61,-32.8 2826.61,-32.8 2832.61,-38.8 2832.61,-44.8 2832.61,-44.8 2832.61,-62.4 2832.61,-62.4 2832.61,-68.4 2826.61,-74.4 2820.61,-74.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2732" y="-57.8" font-family="Helvetica,sans-Serif" font-size="14.00">Millions of families affected</text>
+<text xml:space="preserve" text-anchor="middle" x="2732" y="-41" font-family="Helvetica,sans-Serif" font-size="14.00">by death, injury, displacement</text>
+</g>
+<!-- Human_Core&#45;&gt;Human_Families -->
+<g id="edge23" class="edge">
+<title>Human_Core-&gt;Human_Families</title>
+<path fill="none" stroke="black" d="M2819.06,-181.05C2802.52,-157.03 2772.4,-113.28 2752.29,-84.08"/>
+<polygon fill="black" stroke="black" points="2755.31,-82.28 2746.75,-76.03 2749.54,-86.25 2755.31,-82.28"/>
+</g>
+<!-- Human_Cities -->
+<g id="node28" class="node">
+<title>Human_Cities</title>
+<path fill="none" stroke="black" d="M2999.37,-74.4C2999.37,-74.4 2862.63,-74.4 2862.63,-74.4 2856.63,-74.4 2850.63,-68.4 2850.63,-62.4 2850.63,-62.4 2850.63,-44.8 2850.63,-44.8 2850.63,-38.8 2856.63,-32.8 2862.63,-32.8 2862.63,-32.8 2999.37,-32.8 2999.37,-32.8 3005.37,-32.8 3011.37,-38.8 3011.37,-44.8 3011.37,-44.8 3011.37,-62.4 3011.37,-62.4 3011.37,-68.4 3005.37,-74.4 2999.37,-74.4"/>
+<text xml:space="preserve" text-anchor="middle" x="2931" y="-57.8" font-family="Helvetica,sans-Serif" font-size="14.00">Cities destroyed</text>
+<text xml:space="preserve" text-anchor="middle" x="2931" y="-41" font-family="Helvetica,sans-Serif" font-size="14.00">Infrastructure shattered</text>
+</g>
+<!-- Human_Core&#45;&gt;Human_Cities -->
+<g id="edge24" class="edge">
+<title>Human_Core-&gt;Human_Cities</title>
+<path fill="none" stroke="black" d="M2843.06,-181.05C2859.77,-157.03 2890.19,-113.28 2910.5,-84.08"/>
+<polygon fill="black" stroke="black" points="2913.27,-86.23 2916.1,-76.02 2907.52,-82.23 2913.27,-86.23"/>
+</g>
+<!-- Human_Generations -->
+<g id="node29" class="node">
+<title>Human_Generations</title>
+<path fill="none" stroke="black" d="M3204.6,-91.2C3204.6,-91.2 3041.4,-91.2 3041.4,-91.2 3035.4,-91.2 3029.4,-85.2 3029.4,-79.2 3029.4,-79.2 3029.4,-28 3029.4,-28 3029.4,-22 3035.4,-16 3041.4,-16 3041.4,-16 3204.6,-16 3204.6,-16 3210.6,-16 3216.6,-22 3216.6,-28 3216.6,-28 3216.6,-79.2 3216.6,-79.2 3216.6,-85.2 3210.6,-91.2 3204.6,-91.2"/>
+<text xml:space="preserve" text-anchor="middle" x="3123" y="-74.6" font-family="Helvetica,sans-Serif" font-size="14.00">Generations scarred:</text>
+<text xml:space="preserve" text-anchor="middle" x="3123" y="-57.8" font-family="Helvetica,sans-Serif" font-size="14.00">• Psychological trauma</text>
+<text xml:space="preserve" text-anchor="middle" x="3123" y="-41" font-family="Helvetica,sans-Serif" font-size="14.00">• Demographic impact</text>
+<text xml:space="preserve" text-anchor="middle" x="3123" y="-24.2" font-family="Helvetica,sans-Serif" font-size="14.00">• Long-term social wounds</text>
+</g>
+<!-- Human_Core&#45;&gt;Human_Generations -->
+<g id="edge25" class="edge">
+<title>Human_Core-&gt;Human_Generations</title>
+<path fill="none" stroke="black" d="M2866.51,-180.91C2908.74,-160.12 2980.66,-124.7 3037.61,-96.65"/>
+<polygon fill="black" stroke="black" points="3038.92,-99.91 3046.34,-92.35 3035.83,-93.63 3038.92,-99.91"/>
+</g>
+<!-- Human_Moral -->
+<g id="node30" class="node">
+<title>Human_Moral</title>
+<path fill="none" stroke="black" d="M3425.76,-82.8C3425.76,-82.8 3246.24,-82.8 3246.24,-82.8 3240.24,-82.8 3234.24,-76.8 3234.24,-70.8 3234.24,-70.8 3234.24,-36.4 3234.24,-36.4 3234.24,-30.4 3240.24,-24.4 3246.24,-24.4 3246.24,-24.4 3425.76,-24.4 3425.76,-24.4 3431.76,-24.4 3437.76,-30.4 3437.76,-36.4 3437.76,-36.4 3437.76,-70.8 3437.76,-70.8 3437.76,-76.8 3431.76,-82.8 3425.76,-82.8"/>
+<text xml:space="preserve" text-anchor="middle" x="3336" y="-66.2" font-family="Helvetica,sans-Serif" font-size="14.00">Moral conclusion:</text>
+<text xml:space="preserve" text-anchor="middle" x="3336" y="-49.4" font-family="Helvetica,sans-Serif" font-size="14.00">This is a tragedy for humanity,</text>
+<text xml:space="preserve" text-anchor="middle" x="3336" y="-32.6" font-family="Helvetica,sans-Serif" font-size="14.00">not just a geopolitical statistic</text>
+</g>
+<!-- Human_Core&#45;&gt;Human_Moral -->
+<g id="edge26" class="edge">
+<title>Human_Core-&gt;Human_Moral</title>
+<path fill="none" stroke="black" d="M2899.84,-180.97C2978.92,-160.66 3112.4,-125.49 3226,-91.2 3230.79,-89.75 3235.69,-88.24 3240.62,-86.7"/>
+<polygon fill="black" stroke="black" points="3241.56,-90.07 3250.03,-83.71 3239.44,-83.4 3241.56,-90.07"/>
+</g>
+</g>
+</svg>
