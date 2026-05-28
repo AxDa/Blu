@@ -10117,6 +10117,18 @@
   "cluster": "civil testimony",
   "size": 1900,
   "type": "svg"
+},
+{
+  "title": "fuel_tax_panel_pillow_math_axd_28052026",
+  "url": "https://axda.github.io/Blu/fuel_tax_panel_pillow_axd_28052026.svg",
+  "thumbnail": "https://axda.github.io/Blu/fuel_tax_panel_pillow_axd_28052026.svg",
+  "tags": ["fuel", "tax", "panel", "pillow", "svg"],
+  "date": "2026-05-28T00:00:00Z",
+  "motif": "fuel_tax_panel",
+  "cluster": "economic_visuals",
+  "size": "1100",
+  "type": "svg"
 }
+
 
 ]
