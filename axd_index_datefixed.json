@@ -10139,8 +10139,16 @@
   "cluster": "economic_tables",
   "size": "54900",
   "type": "png"
+},
+{
+  "title": "Double Yellow Lines of Dire Straits",
+  "url": "https://axda.github.io/Blu/Double%20Yellow%20Lines%20of%20Dire%20Straits_28052026.png",
+  "thumbnail": "https://axda.github.io/Blu/Double%20Yellow%20Lines%20of%20Dire%20Straits_28052026.png",
+  "tags": ["2026", "energy", "economics", "metaphor", "infrastructure"],
+  "date": "2026-05-28",
+  "motif": "Dire_Stratism",
+  "cluster": "Civic_Economics",
+  "size": 16200,
+  "type": "png"
 }
-
-
-
 ]
