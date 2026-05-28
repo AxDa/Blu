@@ -10061,6 +10061,16 @@
   "cluster": "testimony",
   "size": 582200,
   "type": "mp3"
+},
+{
+  "title": "Kurdish Lentil Soup (Nisk) recipe book",
+  "url": "https://axda.github.io/Blu/Kurdish%20Lentil%20Soup%20(Nisk)_28-05-2026.png",
+  "thumbnail": "thumbnails/png_placeholder.png",
+  "tags": ["image", "food", "kurdish", "lentil soup", "nisk", "recipe book"],
+  "date": "2026-05-28",
+  "motif": "humanitas",
+  "cluster": "civil society",
+  "size": 5700,
+  "type": "png"
 }
-
 ]
