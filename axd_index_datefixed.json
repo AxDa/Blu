@@ -10072,5 +10072,17 @@
   "cluster": "civil society",
   "size": 5700,
   "type": "png"
+},
+{
+  "title": "Casualty Context",
+  "url": "https://axda.github.io/Blu/Casualty_Context_axd_28052026.svg",
+  "thumbnail": "thumbnails/svg_placeholder.png",
+  "tags": ["diagram", "context", "war", "casualties"],
+  "date": "2026-05-28",
+  "motif": "humanitas",
+  "cluster": "civil testimony",
+  "description": "- 500,000 dead soldiers\n- millions of families affected\n- cities destroyed\n- generations scarred\n\nThis is a tragedy for humanity, not just geopolitics.",
+  "size": 1100,
+  "type": "svg"
 }
 ]
