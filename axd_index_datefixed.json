@@ -10106,6 +10106,17 @@
   "cluster": "civil testimony",
   "size": 17200,
   "type": "png"
+},
+{
+  "title": "Energy Systemic Comparison inc Electricity Petrol & Diesel Taxation",
+  "url": "https://axda.github.io/Blu/EnergySystemicComparison_axd_28052026.svg",
+  "thumbnail": "thumbnails/svg_placeholder.png",
+  "tags": ["diagram", "energy", "fuel", "electricity", "systemic comparison"],
+  "date": "2026-05-28",
+  "motif": "humanitas",
+  "cluster": "civil testimony",
+  "size": 1900,
+  "type": "svg"
 }
 
 ]
