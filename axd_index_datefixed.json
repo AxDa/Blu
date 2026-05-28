@@ -10084,5 +10084,16 @@
   "description": "- 500,000 dead soldiers\n- millions of families affected\n- cities destroyed\n- generations scarred\n\nThis is a tragedy for humanity, not just geopolitics.",
   "size": 1100,
   "type": "svg"
+},
+{
+  "title": "Energy kWh Chart & Punative (low-user) standing charge",
+  "url": "https://axda.github.io/Blu/Energy_kWh_28052026.png",
+  "thumbnail": "thumbnails/png_placeholder.png",
+  "tags": ["image", "energy", "kwh", "chart"],
+  "date": "2026-05-28",
+  "motif": "civic infrastructure",
+  "cluster": "systems",
+  "size": 6500,
+  "type": "png"
 }
 ]
