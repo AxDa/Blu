@@ -10159,7 +10159,7 @@
   "date": "2026-05-29T00:00:00Z",
   "motif": "BoE",
   "cluster": "uk_economy",
-  "size_kb": 79200,
+  "size": 79200,
   "type": "audio"
 },
 {
@@ -10170,7 +10170,18 @@
   "date": "2026-05-29T19:00:00Z",
   "motif": "civic_decay",
   "cluster": "testimony",
-  "size_bytes": 174800,
+  "size": 174800,
+  "type": "audio"
+},
+{
+  "title": "Laos Cave Rescue – Xaysomboun Province – Jonathan Head (Bangkok WS)",
+  "url": "https://axda.github.io/Blu/Laos Cave Rescue Xaysomboun province_Johnathan_Head_Bankok_WS_29052026_v0.1.mp3",
+  "thumbnail": "audio_thumb_default.png",
+  "tags": ["Laos", "Cave Rescue", "Xaysomboun", "Jonathan Head", "World Service", "Nato", "Thai", "Rescue group"],
+  "date": "2026-05-29T00:00:00Z",
+  "motif": "international_affairs",
+  "cluster": "crisis_response",
+  "size": 154900,
   "type": "audio"
 }
 ]
