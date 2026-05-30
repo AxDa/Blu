@@ -2,14 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh"
-        content="0; url=https://earth.google.com/web/?authuser=0&usp=sharing&url=https://drive.google.com/uc?id=1_aZtE0jVnabkAW3FHJ3nPbz7aOATosyd&export=download">
-  <title>Open Tour Route in Google Earth</title>
+  <title>Open Tour Route in Google Earth Web</title>
+  <script>
+    // Direct Drive download link for the KMZ
+    const kmzUrl = "https://drive.google.com/uc?id=1_aZtE0jVnabkAW3FHJ3nPbz7aOATosyd&export=download";
+
+    // Try to detect if Earth Web is already open
+    function openInEarth() {
+      const earthUrl = `https://earth.google.com/web/?authuser=0&usp=sharing&url=${encodeURIComponent(kmzUrl)}`;
+      // If Earth Web is already open, open in same tab; otherwise, open a new one
+      if (window.opener && window.opener.location.href.includes("earth.google.com/web")) {
+        window.opener.location.href = earthUrl;
+        window.close();
+      } else {
+        window.location.href = earthUrl;
+      }
+    }
+
+    // Auto‑launch after short delay
+    window.onload = () => setTimeout(openInEarth, 800);
+  </script>
 </head>
-<body>
-  <p>If Google Earth Web doesn’t open automatically, 
+<body style="font-family:Segoe UI, sans-serif; text-align:center; margin-top:3em;">
+  <h2>Launching Tour Route in Google Earth Web…</h2>
+  <p>If it doesn’t open automatically, 
      <a href="https://earth.google.com/web/?authuser=0&usp=sharing&url=https://drive.google.com/uc?id=1_aZtE0jVnabkAW3FHJ3nPbz7aOATosyd&export=download">
-     click here to open the KMZ in Google Earth Web</a>.
+     click here to open manually</a>.
   </p>
 </body>
 </html>
