@@ -10199,7 +10199,7 @@
   ],
   "date": "2026-05-30",
   "motif": "civic decay",
-  "cluster": "testimony",
+  "cluster": "Times news",
   "size": 174800,
   "type": "mp3",
   "description": "Malarky (exaggerated_meaningless_talk_association)."
@@ -10210,7 +10210,8 @@
   "description": "Composite map/visual for the Laos cave rescue in Xaysomboun Province, linked to BBC World Service reporting by Jonathan Head (Bangkok). Used to explore overlap of gold geology, volcanic arc, and limestone cave systems.",
   "file_name": "Laos Cave Rescue Xaysomboun province_Johnathan_Head_Bankok_WS_29052026_axd.png",
   "date": "2026-05-29",
-  "source_url": "https://axda.github.io/Blu/Laos Cave Rescue Xaysomboun province_Johnathan_Head_Bankok_WS_29052026_axd.png",
+  "url": "https://axda.github.io/Blu/Laos Cave Rescue Xaysomboun province_Johnathan_Head_Bankok_WS_29052026_axd.png",
+  "thumbnail": "waveform_thumbnails/Laos Cave Rescue Xaysomboun province_Johnathan_Head_Bankok_WS_29052026_axd.png",
   "motif": "Laos_Cave_Rescue_Xaysomboun",
   "cluster": "gold_geology_volcanic_arc_caves",
   "tags": [
