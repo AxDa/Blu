@@ -10240,6 +10240,17 @@
   "cluster": "mapping",
   "size": null,
   "type": "kml"
+},
+{
+  "title": "Tour Route Enhanced",
+  "url": "https://drive.google.com/file/d/1_aZtE0jVnabkAW3FHJ3nPbz7aOATosyd/view?usp=sharing",
+  "thumbnail": "",
+  "tags": ["map", "earth", "route", "kmz"],
+  "date": "2026-05-30",
+  "motif": "geospatial_route",
+  "cluster": "earth_projects",
+  "size": 14,
+  "type": "kmz"
 }
 
 ]
