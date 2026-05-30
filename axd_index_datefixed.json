@@ -10229,6 +10229,22 @@
   "size": 348800,
   "type": "png",
   "notes": "Image associated with analysis of reports that trapped villagers/miners entered a limestone cave system in Xaysomboun Province to look for gold, and with mapping of the Loei–Luang Prabang volcanic arc and karst–gold overlap."
+},
+{
+  "title": "tour_route_enhanced_v0.1a",
+  "url": "https://axda.github.io/Blu/tour_route_enhanced.kml",
+  "thumbnail": "waveform_thumbnails/tour_route_enhanced_v0.1a.png",
+  "tags": [
+    "map",
+    "archive",
+    "tour",
+    "kml",
+    "GoogleEarth"
+  ],
+  "date": "2026-05-30",
+  "motif": "geospatial_tour",
+  "cluster": "mapping",
+  "size": null,
+  "type": "kml"
 }
-
 ]
