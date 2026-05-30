@@ -2187,14 +2187,14 @@
     <name>Santa Monic Pier</name>
     <styleUrl>#cityStyle</styleUrl>
     <description>Date: 20-Apr-08 | Miles: None</description>
-    <Point><coordinates>34.00889605,34.00889605,0.0</coordinates></Point>
+    <Point><coordinates>34.00889605,-118.50,0.0</coordinates></Point>
   </Placemark>
 
   <Placemark>
     <name>Santa Monic Pier</name>
     <styleUrl>#cityStyle</styleUrl>
     <description>Date: 20-Apr-08 | Miles: None</description>
-    <Point><coordinates>34.00889605,34.00889605,0.0</coordinates></Point>
+    <Point><coordinates>34.00889605,-118.50,0.0</coordinates></Point>
   </Placemark>
 
   <Placemark>
@@ -3531,14 +3531,14 @@
     <name>Bari</name>
     <styleUrl>#cityStyle</styleUrl>
     <description>Date: 14-Jul-09 | Miles: None</description>
-    <Point><coordinates>41.1257843,41.1257843,0.0</coordinates></Point>
+    <Point><coordinates>41.1257843,16.87,0.0</coordinates></Point>
   </Placemark>
 
   <Placemark>
     <name>Bari</name>
     <styleUrl>#cityStyle</styleUrl>
     <description>Date: 14-Jul-09 | Miles: None</description>
-    <Point><coordinates>41.1257843,41.1257843,0.0</coordinates></Point>
+    <Point><coordinates>41.1257843,16.87,0.0</coordinates></Point>
   </Placemark>
 
   <Placemark>
