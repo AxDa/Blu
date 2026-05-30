@@ -10251,6 +10251,17 @@
   "cluster": "earth_projects",
   "size": 14,
   "type": "kmz"
+},
+{
+  "title": "Tour Route Enhanced",
+  "url": "https://axda.github.io/Blu/tour_route_enhanced_drive.html",
+  "thumbnail": "",
+  "tags": ["map", "earth", "route", "kmz"],
+  "date": "2026-05-30",
+  "motif": "geospatial_route",
+  "cluster": "earth_projects",
+  "size": 14,
+  "type": "kmz"
 }
 
 ]
