@@ -10183,5 +10183,25 @@
   "cluster": "crisis_response",
   "size": 154900,
   "type": "audio"
+},
+{
+  "title": "Times_News_Rob_Malarky_exaggerated_meaningless_talk_association_1030_utc+1_30052026_v0.1",
+  "url": "https://axda.github.io/Blu/Times_News_Rob_Malarky_exaggerated_meaningless_talk_association_1030_utc+1_30052026_v0.1.mp3",
+  "thumbnail": "waveform_thumbnails/Times_News_Rob_Malarky_exaggerated_meaningless_talk_association_1030_utc+1_30052026_v0.1.png",
+  "tags": [
+    "audio",
+    "archive",
+    "testimony",
+    "Times News",
+    "political_rhetoric",
+    "exaggeration",
+    "meaningless_talk"
+  ],
+  "date": "2026-05-30",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 1748,
+  "type": "mp3"
+  "description": "Segment featuring Rob Malarky discussing exaggerated and largely meaningless political talk, framed as part of a wider pattern of rhetorical inflation and low‑value discourse."
 }
 ]
