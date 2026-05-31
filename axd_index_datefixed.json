@@ -10284,6 +10284,16 @@
   "cluster": "documents",
   "size": null,
   "type": "doc"
+},
+{
+  "title": "Tour Route coral drive",
+  "url": "https://axda.github.io/Blu/tour_route_drive_wrapper.html",
+  "thumbnail": "waveform_thumbnails/tour_route_enhanced_v0.1a.png",
+  "tags": ["map", "earth", "route", "kml", "drive"],
+  "date": "2026-05-31",
+  "motif": "geospatial_route",
+  "cluster": "earth_projects",
+  "size": 285,
+  "type": "kml"
 }
-
 ]
