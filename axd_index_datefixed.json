@@ -9654,7 +9654,7 @@
   "motif": "reference_material",
   "cluster": "documents",
   "size": 3800,
-  "type": "file"
+  "type": "doc"
 },
 {
   "date": "2026-04-01",
@@ -10273,5 +10273,17 @@
   "cluster": "Times news",
   "size": 70000,
   "type": "mp3"
+},
+{
+  "title": "2026_Untitled_34_document_wk23_01062026",
+  "url": "https://docs.google.com/document/d/1ucLq2KXZLszqM2gTeshLi5hcBe_his16KwHndT1K4G0/edit?usp=sharing",
+  "thumbnail": "thumbnails/html_placeholder.png",
+  "tags": ["document", "google", "reference"],
+  "date": "2026-06-01",
+  "motif": "reference_material",
+  "cluster": "documents",
+  "size": null,
+  "type": "doc"
 }
+
 ]
