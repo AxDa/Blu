@@ -314,18 +314,25 @@ async function fixMissingThumbnails(entries) {
     entries.forEach(entry => {
         const isAudio = getFileType(entry) === "mp3";
 
+        // 1. Fix MP3 thumbnails
         if (isAudio && (!entry.thumbnail || entry.thumbnail.trim() === "")) {
             entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
             thumbIndex++;
         }
-if (!entry.thumbnail || entry.thumbnail.trim() === "") {
-    entry.thumbnail = "thumbnails/default_placeholder.png";
-}
 
+        // 2. Fix ALL invalid or missing thumbnails
+        if (!entry.thumbnail ||
+            entry.thumbnail.trim() === "" ||
+            entry.thumbnail.startsWith("thumbnails/") ||
+            entry.thumbnail === "audio_thumb_default.png") {
+
+            entry.thumbnail = "default_placeholder.png";
+        }
     });
 
     return entries;
 }
+
 
 
 function render(items) {
