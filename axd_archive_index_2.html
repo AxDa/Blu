@@ -287,6 +287,23 @@ function getFileIcon(type) {
         default: return "";
     }
 }
+/* --- LEGEND + MOTIF DROPDOWN --- */
+if (legend) {
+    const motifs = [...new Set(data.map(item => item.motif))];
+
+    // Populate motif filter dropdown
+    tagFilter.innerHTML =
+        `<option value="">All motifs</option>` +
+        motifs.map(m => `<option value="${m}">${m}</option>`).join('');
+
+    // Populate legend
+    legend.innerHTML = motifs.map(m => `
+        <div class="legend-item">
+            <div class="legend-color" style="background:${motifColors[m] || '#999'}"></div>
+            <span>${m}</span>
+        </div>
+    `).join('');
+}
 
 
     async function loadWaveformThumbnails() {
