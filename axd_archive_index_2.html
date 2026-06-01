@@ -320,6 +320,18 @@ function getFileType(item) {
             default: return "";
         }
     }
+async function loadAllValidThumbnails() {
+    const waveform = await loadWaveformThumbnails();
+
+    const staticThumbs = [
+        "default_placeholder.png"
+    ];
+
+    return new Set([
+        ...waveform.map(x => x.toLowerCase()),
+        ...staticThumbs
+    ]);
+}
 
 async function loadWaveformThumbnails() {
     const res = await fetch("index_thumbnails.json");
@@ -329,12 +341,15 @@ async function loadWaveformThumbnails() {
 
 function isAudioEntry(entry) {
     const url = (entry.url || "").toLowerCase();
-    return url.endsWith(".mp3");
+    return url.includes(".mp3");
 }
+
 
 async function fixMissingThumbnails(entries) {
     const waveformThumbs = await loadWaveformThumbnails();
     const waveformSet = new Set(waveformThumbs);
+    const validThumbs = await loadAllValidThumbnails();
+
     let thumbIndex = 0;
 
     entries.forEach(entry => {
@@ -342,39 +357,33 @@ async function fixMissingThumbnails(entries) {
         let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
         const tLower = t.toLowerCase();
 
-        // AUDIO: fix missing or invalid waveform thumbnails
-        if (audio) {
-            const missing =
-                !t ||
-                t === "" ||
-                tLower === "audio_thumb_default.png" ||
-                tLower.includes("placeholder") ||
-                tLower.startsWith("thumbnails/");
-
-            const badWaveform =
-                tLower.startsWith("waveform_thumbnails/") &&
-                !waveformSet.has(tLower);
-
-            if (missing || badWaveform) {
-                entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
-                thumbIndex++;
-                return;
-            }
-
-            return; // valid waveform thumbnail → keep it
-        }
-
-        // NON-AUDIO: fix invalid thumbnails
-        const invalidNonAudio =
+        const missing =
             !t ||
             t === "" ||
+            t === "undefined" ||
+            t === "null";
+
+        const malformed =
+            tLower.includes(" ") ||
+            tLower.includes("%20") ||
+            tLower.includes("+");
+
+        const invalid =
+            missing ||
+            malformed ||
             tLower.startsWith("thumbnails/") ||
             tLower.includes("placeholder") ||
-            tLower === "audio_thumb_default.png" ||
-            tLower.startsWith("waveform_thumbnails/");
+            !validThumbs.has(tLower);
 
-        if (invalidNonAudio) {
-            entry.thumbnail = "default_placeholder.png";
+        if (audio) {
+            if (invalid) {
+                entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
+                thumbIndex++;
+            }
+        } else {
+            if (invalid) {
+                entry.thumbnail = "default_placeholder.png";
+            }
         }
     });
 
