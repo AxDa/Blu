@@ -229,229 +229,76 @@
 <script>
 async function loadIndex() {
 
-    // Load JSON
-    const res = await fetch("./axd_index_datefixed.json");
-    let data = await res.json();
+    // --- all your variables, motifColors, safeDate, getFileType, etc. ---
 
-    // 🔥 Apply waveform thumbnail fix BEFORE anything else
-    data = await fixMissingThumbnails(data);
-
-    // Store total count
-    window.fullIndexCount = data.length;
-  
-    const container = document.getElementById('index');
-    const searchBox = document.getElementById('search');
-    const tagFilter = document.getElementById('tagFilter');
-    const sortOrder = document.getElementById('sortOrder');
-    const sortBy = document.getElementById('sortBy');
-    const fileTypeFilter = document.getElementById('fileTypeFilter');
-    const legend = document.getElementById('legend');
-    const toggleView = document.getElementById('toggleView');
-
-    let compactMode = false;
-
-    const motifColors = {
-        "civic decay": "#2b6cb0",
-        "moral inquiry": "#38a169",
-        "rhetorical indictment": "#d69e2e",
-        "technical audit": "#805ad5"
-    };
-
-    function safeDate(d) {
-        const parsed = new Date(d);
-        return isNaN(parsed) ? 0 : parsed;
+    async function fixMissingThumbnails(entries) {
+        // your full fixMissingThumbnails code here
     }
 
-function getFileType(item) {
-    const raw = (item.type || '').toLowerCase();
-
-    // If type is explicitly set, trust it
-    if (raw && raw !== "file") return raw;
-
-    const url = item.url || '';
-
-    // Detect Google Docs
-    if (url.includes("docs.google.com/document")) return "doc";
-
-    // Detect MP3 even with ?ref=master
-    if (url.toLowerCase().includes(".mp3")) return "mp3";
-
-    // Detect PNG
-    if (url.toLowerCase().includes(".png")) return "png";
-
-    // Detect JPG/JPEG
-    if (url.toLowerCase().includes(".jpg") || url.toLowerCase().includes(".jpeg")) return "jpg";
-
-    // Detect GIF
-    if (url.toLowerCase().includes(".gif")) return "gif";
-
-    // Fallback
-    return "file";
-}
-
-
-    /* --- FIXED: legend null check --- */
-    if (legend) {
-        const motifs = [...new Set(data.map(item => item.motif))];
-        tagFilter.innerHTML =
-            `<option value="">All motifs</option>` +
-            motifs.map(m => `<option value="${m}">${m}</option>`).join('');
-
-        legend.innerHTML = motifs.map(m => `
-            <div class="legend-item">
-                <div class="legend-color" style="background:${motifColors[m] || '#999'}"></div>
-                <span>${m}</span>
-            </div>
-        `).join('');
+    function render(items) {
+        // your full updated render() code here
     }
 
-        const fileTypes = [...new Set(data.map(getFileType).filter(ft => ft))].sort();
-        fileTypes.forEach(ft => {
-            fileTypeFilter.innerHTML += `<option value="${ft}">${ft.toUpperCase()}</option>`;
+    function filterAndRender() {
+        const q = searchBox.value.toLowerCase();
+        const motif = tagFilter.value.toLowerCase();
+        const fileType = fileTypeFilter.value.toLowerCase();
+
+        let filtered = data.filter(item => {
+            const titleMatch = (item.title || "").toLowerCase().includes(q);
+            const tagMatch = (item.tags || []).some(tag =>
+                tag.toLowerCase().includes(q)
+            );
+            const motifMatch = motif === '' || (item.motif || "").toLowerCase() === motif;
+            const type = getFileType(item);
+            const typeMatch = fileType === '' || type === fileType;
+
+            return (titleMatch || tagMatch) && motifMatch && typeMatch;
         });
-    function getFileIcon(type) {
-        switch (type) {
-            case "doc": return "icon-doc";
-            case "mp3": return "icon-mp3";
-            case "png": return "icon-png";
-            case "html": return "icon-html";
-            case "svg": return "icon-svg";
-            case "pdf": return "icon-pdf";
-            default: return "";
-        }
+
+        filtered.sort((a, b) => {
+            if (sortBy.value === 'title') {
+                return sortOrder.value === 'asc'
+                    ? a.title.localeCompare(b.title)
+                    : b.title.localeCompare(a.title);
+            } else {
+                const da = safeDate(a.date);
+                const db = safeDate(b.date);
+                return sortOrder.value === 'asc' ? da - db : db - da;
+            }
+        });
+
+        render(filtered);
+        updateCount();
     }
-async function loadAllValidThumbnails() {
-    const waveform = await loadWaveformThumbnails();
 
-    const staticThumbs = [
-        "default_placeholder.png"
-    ];
+    function updateCount() {
+        const displayed = document.querySelectorAll('.item').length;
+        const total = window.fullIndexCount || 0;
+        const counter = document.getElementById('itemCount');
+        if (counter) counter.textContent = `Items displayed: ${displayed} / ${total}`;
+    }
 
-    return new Set([
-        ...waveform.map(x => x.toLowerCase()),
-        ...staticThumbs
-    ]);
-}
-
-async function loadWaveformThumbnails() {
-    const res = await fetch("index_thumbnails.json");
-    const list = await res.json();
-    return list.map(f => "waveform_thumbnails/" + f.toLowerCase());
-}
-
-function isAudioEntry(entry) {
-    const url = (entry.url || "").toLowerCase();
-    return url.includes(".mp3");
-}
-
-
-async function fixMissingThumbnails(entries) {
-    const waveformThumbs = await loadWaveformThumbnails();
-    const waveformSet = new Set(waveformThumbs);
-    const validThumbs = await loadAllValidThumbnails();
-
-    let thumbIndex = 0;
-
-    entries.forEach(entry => {
-        const audio = isAudioEntry(entry);
-        let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
-        const tLower = t.toLowerCase();
-
-        const missing =
-            !t ||
-            t === "" ||
-            t === "undefined" ||
-            t === "null";
-
-        const malformed =
-            tLower.includes(" ") ||
-            tLower.includes("%20") ||
-            tLower.includes("+");
-
-        const invalid =
-            missing ||
-            malformed ||
-            tLower.startsWith("thumbnails/") ||
-            tLower.includes("placeholder") ||
-            !validThumbs.has(tLower);
-
-        if (audio) {
-            if (invalid) {
-                entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
-                thumbIndex++;
-            }
-        } else {
-            if (invalid) {
-                entry.thumbnail = "default_placeholder.png";
-            }
-        }
+    // --- event listeners ---
+    toggleView.addEventListener('click', () => {
+        compactMode = !compactMode;
+        toggleView.textContent = compactMode ? 'Full View' : 'Compact View';
+        filterAndRender();
     });
 
-    return entries;
-}
+    searchBox.addEventListener('input', filterAndRender);
+    tagFilter.addEventListener('change', filterAndRender);
+    sortOrder.addEventListener('change', filterAndRender);
+    sortBy.addEventListener('change', filterAndRender);
+    fileTypeFilter.addEventListener('change', filterAndRender);
 
-function filterAndRender() {
-    const q = searchBox.value.toLowerCase();
-    const motif = tagFilter.value.toLowerCase();
-    const fileType = fileTypeFilter.value.toLowerCase();
-
-    let filtered = data.filter(item => {
-        const titleMatch = (item.title || "").toLowerCase().includes(q);
-        const tagMatch = (item.tags || []).some(tag =>
-            tag.toLowerCase().includes(q)
-        );
-        const motifMatch = motif === '' || (item.motif || "").toLowerCase() === motif;
-        const type = getFileType(item);
-        const typeMatch = fileType === '' || type === fileType;
-
-        return (titleMatch || tagMatch) && motifMatch && typeMatch;
-    });
-
-    filtered.sort((a, b) => {
-        if (sortBy.value === 'title') {
-            return sortOrder.value === 'asc'
-                ? a.title.localeCompare(b.title)
-                : b.title.localeCompare(a.title);
-        } else {
-            const da = safeDate(a.date);
-            const db = safeDate(b.date);
-            return sortOrder.value === 'asc' ? da - db : db - da;
-        }
-    });
-
-    render(filtered);
-
-    // 🔥 Call the counter here
-    updateCount();
-}
-
-// ✅ This must be OUTSIDE filterAndRender()
-function updateCount() {
-    const displayed = document.querySelectorAll('.item').length;
-    const total = window.fullIndexCount || 0;
-    const counter = document.getElementById('itemCount');
-    if (counter) counter.textContent = `Items displayed: ${displayed} / ${total}`;
-}
-
-// ✅ Event listeners must be OUTSIDE filterAndRender()
-toggleView.addEventListener('click', () => {
-    compactMode = !compactMode;
-    toggleView.textContent = compactMode ? 'Full View' : 'Compact View';
+    // --- initial render ---
     filterAndRender();
-});
-
-searchBox.addEventListener('input', filterAndRender);
-tagFilter.addEventListener('change', filterAndRender);
-sortOrder.addEventListener('change', filterAndRender);
-sortBy.addEventListener('change', filterAndRender);
-fileTypeFilter.addEventListener('change', filterAndRender);
-
-// Initial render
-filterAndRender();
-
 }
 
 loadIndex();
+</script>
+
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
