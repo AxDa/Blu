@@ -208,9 +208,15 @@
 
 <script>
 async function loadIndex() {
-    const res = await fetch('axd_index_datefixed.json');
-    const data = await res.json();
-  
+
+    // Load JSON
+    const res = await fetch("axd_index_datefixed.json");
+    let data = await res.json();
+
+    // 🔥 Apply waveform thumbnail fix BEFORE anything else
+    data = await fixMissingThumbnails(data);
+
+    // Store total count
     window.fullIndexCount = data.length;
   
     const container = document.getElementById('index');
@@ -294,6 +300,32 @@ function getFileType(item) {
             default: return "";
         }
     }
+
+async function loadWaveformThumbnails() {
+    const response = await fetch("waveform_thumbnails/");
+    const text = await response.text();
+
+    // Extract PNG filenames from directory listing
+    const matches = [...text.matchAll(/href="([^"]+\.png)"/g)];
+    return matches.map(m => "waveform_thumbnails/" + m[1]);
+}
+
+async function fixMissingThumbnails(entries) {
+    const waveformThumbs = await loadWaveformThumbnails();
+    let thumbIndex = 0;
+
+    entries.forEach(entry => {
+        const isAudio = entry.type === "audio" || entry.url.toLowerCase().endsWith(".mp3");
+
+        if (isAudio && entry.thumbnail === "No thumbnail available") {
+            // Assign next available waveform thumbnail
+            entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
+            thumbIndex++;
+        }
+    });
+
+    return entries;
+}
 
 function render(items) {
     container.innerHTML = '';
