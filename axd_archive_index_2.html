@@ -421,9 +421,7 @@ function render(items) {
         const link = document.createElement('a');
         link.href = item.url;
         link.target = "_blank";
-        link.innerHTML = `
-         ${item.title}
-        `;
+        link.textContent = item.title;
 
         // Date
         const date = document.createElement('p');
