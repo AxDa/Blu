@@ -208,9 +208,15 @@
 
 <script>
 async function loadIndex() {
-    const res = await fetch('axd_index_datefixed.json');
-    const data = await res.json();
-  
+
+    // Load JSON
+    const res = await fetch("axd_index_datefixed.json");
+    let data = await res.json();
+
+    // 🔥 Apply waveform thumbnail fix BEFORE anything else
+    data = await fixMissingThumbnails(data);
+
+    // Store total count
     window.fullIndexCount = data.length;
   
     const container = document.getElementById('index');
@@ -294,6 +300,29 @@ function getFileType(item) {
             default: return "";
         }
     }
+
+async function loadWaveformThumbnails() {
+    const res = await fetch("index_thumbnails.json");
+    const list = await res.json();
+    return list.map(f => "waveform_thumbnails/" + f);
+}
+
+async function fixMissingThumbnails(entries) {
+    const waveformThumbs = await loadWaveformThumbnails();
+    let thumbIndex = 0;
+
+    entries.forEach(entry => {
+        const isAudio = getFileType(entry) === "mp3";
+
+        if (isAudio && (!entry.thumbnail || entry.thumbnail.trim() === "")) {
+            entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
+            thumbIndex++;
+        }
+    });
+
+    return entries;
+}
+
 
 function render(items) {
     container.innerHTML = '';
@@ -487,6 +516,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-
 </body>
 </html>
