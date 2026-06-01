@@ -261,30 +261,33 @@ async function loadIndex() {
         return isNaN(parsed) ? 0 : parsed;
     }
 
-    function getFileType(item) {
-        const raw = (item.type || '').toLowerCase();
-        if (raw && raw !== "file") return raw;
+function getFileType(item) {
+    const raw = (item.type || "").toLowerCase();
+    if (raw && raw !== "file") return raw;
 
-        const url = item.url || '';
-        if (url.includes("docs.google.com/document")) return "doc";
-        if (url.toLowerCase().includes(".mp3")) return "mp3";
-        if (url.toLowerCase().includes(".png")) return "png";
-        if (url.toLowerCase().includes(".jpg") || url.toLowerCase().includes(".jpeg")) return "jpg";
-        if (url.toLowerCase().includes(".gif")) return "gif";
-        return "file";
-    }
+    const url = (item.url || "").toLowerCase();
 
-    function getFileIcon(type) {
-        switch (type) {
-            case "doc": return "icon-doc";
-            case "mp3": return "icon-mp3";
-            case "png": return "icon-png";
-            case "html": return "icon-html";
-            case "svg": return "icon-svg";
-            case "pdf": return "icon-pdf";
-            default: return "";
-        }
+    if (url.includes("docs.google.com/document")) return "doc";
+    if (url.includes(".mp3")) return "mp3";
+    if (url.includes(".png")) return "png";
+    if (url.includes(".jpg") || url.includes(".jpeg")) return "jpg";
+    if (url.includes(".gif")) return "gif";
+
+    return "file";
+}
+
+function getFileIcon(type) {
+    switch (type) {
+        case "doc": return "icon-doc";
+        case "mp3": return "icon-mp3";
+        case "png": return "icon-png";
+        case "html": return "icon-html";
+        case "svg": return "icon-svg";
+        case "pdf": return "icon-pdf";
+        default: return "";
     }
+}
+
 
     async function loadWaveformThumbnails() {
         const res = await fetch("index_thumbnails.json");
