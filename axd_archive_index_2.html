@@ -13,12 +13,22 @@
   background-position: center;
 }
 
-.icon-doc  { background-image: url('icons/doc.svg'); }
+/*.icon-doc  { background-image: url('icons/doc.svg'); }
 .icon-mp3  { background-image: url('icons/mp3.svg'); }
 .icon-png  { background-image: url('icons/png.svg'); }
 .icon-html { background-image: url('icons/html.svg'); }
 .icon-svg  { background-image: url('icons/svg.svg'); }
 .icon-pdf  { background-image: url('icons/pdf.svg'); }
+*/
+/* Icons should only appear when NO thumbnail exists */
+.icon-mp3,
+.icon-png,
+.icon-html,
+.icon-svg,
+.icon-doc,
+.icon-file {
+    background-image: none !important;
+}
 
 
 </style>
@@ -304,56 +314,62 @@ function getFileType(item) {
 async function loadWaveformThumbnails() {
     const res = await fetch("index_thumbnails.json");
     const list = await res.json();
-    return list.map(f => "waveform_thumbnails/" + f);
+    return list.map(f => "waveform_thumbnails/" + f.toLowerCase());
+}
+
+function isAudioEntry(entry) {
+    const url = (entry.url || "").toLowerCase();
+    return url.endsWith(".mp3");
 }
 
 async function fixMissingThumbnails(entries) {
     const waveformThumbs = await loadWaveformThumbnails();
-    const waveformSet = new Set(waveformThumbs.map(x => x.toLowerCase()));
+    const waveformSet = new Set(waveformThumbs);
     let thumbIndex = 0;
 
     entries.forEach(entry => {
-        const type = getFileType(entry);
-        const isAudio = (type === "mp3" || type === "audio");
-
+        const audio = isAudioEntry(entry);
         let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
         const tLower = t.toLowerCase();
 
-        // 1. If audio and thumbnail points to a waveform file that does NOT exist → replace it
-        if (isAudio &&
-            tLower.startsWith("waveform_thumbnails/") &&
-            !waveformSet.has(tLower)) {
+        // AUDIO: fix missing or invalid waveform thumbnails
+        if (audio) {
+            const missing =
+                !t ||
+                t === "" ||
+                tLower === "audio_thumb_default.png" ||
+                tLower.includes("placeholder") ||
+                tLower.startsWith("thumbnails/");
 
-            entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
-            thumbIndex++;
-            return;
+            const badWaveform =
+                tLower.startsWith("waveform_thumbnails/") &&
+                !waveformSet.has(tLower);
+
+            if (missing || badWaveform) {
+                entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
+                thumbIndex++;
+                return;
+            }
+
+            return; // valid waveform thumbnail → keep it
         }
 
-        // 2. If audio and missing thumbnail → assign waveform
-        if (isAudio && (!t || t === "")) {
-            entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
-            thumbIndex++;
-            return;
-        }
-
-        // 3. Universal fallback for ALL other invalid thumbnails
-        const invalid =
+        // NON-AUDIO: fix invalid thumbnails
+        const invalidNonAudio =
             !t ||
             t === "" ||
             tLower.startsWith("thumbnails/") ||
             tLower.includes("placeholder") ||
-            tLower.includes("%20") ||
-            tLower.includes(" ") ||
-            tLower === "audio_thumb_default.png";
+            tLower === "audio_thumb_default.png" ||
+            tLower.startsWith("waveform_thumbnails/");
 
-        if (invalid) {
+        if (invalidNonAudio) {
             entry.thumbnail = "default_placeholder.png";
         }
     });
 
     return entries;
 }
-
 
 function render(items) {
     container.innerHTML = '';
