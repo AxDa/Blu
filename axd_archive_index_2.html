@@ -314,38 +314,34 @@ async function fixMissingThumbnails(entries) {
 
     entries.forEach(entry => {
         const type = getFileType(entry);
-        let t = entry.thumbnail ? entry.thumbnail.trim() : "";
+        let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
+        const tLower = t.toLowerCase();
 
-        // Normalize URL encoding
-        t = decodeURIComponent(t);
+        // 1. If thumbnail points to a waveform file that does NOT exist → replace it
+        if (tLower.startsWith("waveform_thumbnails/") &&
+            !waveformSet.has(tLower)) {
 
-        // 1. Fix MP3 thumbnails
-        if (type === "mp3") {
-            if (!t || t === "" || t.startsWith("thumbnails/") || t === "audio_thumb_default.png") {
-                entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
-                thumbIndex++;
-                return;
-            }
-
-            // If MP3 thumbnail points to a waveform file that doesn't exist → fix it
-            if (t.toLowerCase().startsWith("waveform_thumbnails/") &&
-                !waveformSet.has(t.toLowerCase())) {
-                entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
-                thumbIndex++;
-                return;
-            }
+            entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
+            thumbIndex++;
+            return;
         }
 
-        // 2. Universal fallback for ALL other invalid thumbnails
+        // 2. If MP3 and missing thumbnail → assign waveform
+        if (type === "mp3" && (!t || t === "")) {
+            entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
+            thumbIndex++;
+            return;
+        }
+
+        // 3. If ANY other invalid thumbnail → fallback
         const invalid =
             !t ||
             t === "" ||
-            t.startsWith("thumbnails/") ||
-            t === "audio_thumb_default.png" ||
-            t.endsWith("_placeholder.png") ||
-            t.includes(" ") ||                 // filenames with spaces break on GitHub Pages
-            t.includes("%20") ||               // encoded spaces
-            t.startsWith("waveform_thumbnails/") && !waveformSet.has(t.toLowerCase());
+            tLower.startsWith("thumbnails/") ||
+            tLower.includes("placeholder") ||
+            tLower.includes("%20") ||
+            tLower.includes(" ") ||
+            tLower === "audio_thumb_default.png";
 
         if (invalid) {
             entry.thumbnail = "default_placeholder.png";
@@ -354,6 +350,7 @@ async function fixMissingThumbnails(entries) {
 
     return entries;
 }
+
 
 
 
