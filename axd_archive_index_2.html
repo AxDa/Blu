@@ -309,29 +309,52 @@ async function loadWaveformThumbnails() {
 
 async function fixMissingThumbnails(entries) {
     const waveformThumbs = await loadWaveformThumbnails();
+    const waveformSet = new Set(waveformThumbs.map(x => x.toLowerCase()));
     let thumbIndex = 0;
 
     entries.forEach(entry => {
-        const isAudio = getFileType(entry) === "mp3";
+        const type = getFileType(entry);
+        let t = entry.thumbnail ? entry.thumbnail.trim() : "";
+
+        // Normalize URL encoding
+        t = decodeURIComponent(t);
 
         // 1. Fix MP3 thumbnails
-        if (isAudio && (!entry.thumbnail || entry.thumbnail.trim() === "")) {
-            entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
-            thumbIndex++;
+        if (type === "mp3") {
+            if (!t || t === "" || t.startsWith("thumbnails/") || t === "audio_thumb_default.png") {
+                entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
+                thumbIndex++;
+                return;
+            }
+
+            // If MP3 thumbnail points to a waveform file that doesn't exist → fix it
+            if (t.toLowerCase().startsWith("waveform_thumbnails/") &&
+                !waveformSet.has(t.toLowerCase())) {
+                entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
+                thumbIndex++;
+                return;
+            }
         }
 
-        // 2. Fix ALL invalid or missing thumbnails
-        if (!entry.thumbnail ||
-            entry.thumbnail.trim() === "" ||
-            entry.thumbnail.startsWith("thumbnails/") ||
-            entry.thumbnail === "audio_thumb_default.png") {
+        // 2. Universal fallback for ALL other invalid thumbnails
+        const invalid =
+            !t ||
+            t === "" ||
+            t.startsWith("thumbnails/") ||
+            t === "audio_thumb_default.png" ||
+            t.endsWith("_placeholder.png") ||
+            t.includes(" ") ||                 // filenames with spaces break on GitHub Pages
+            t.includes("%20") ||               // encoded spaces
+            t.startsWith("waveform_thumbnails/") && !waveformSet.has(t.toLowerCase());
 
+        if (invalid) {
             entry.thumbnail = "default_placeholder.png";
         }
     });
 
     return entries;
 }
+
 
 
 
