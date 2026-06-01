@@ -318,6 +318,10 @@ async function fixMissingThumbnails(entries) {
             entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
             thumbIndex++;
         }
+if (!entry.thumbnail || entry.thumbnail.trim() === "") {
+    entry.thumbnail = "thumbnails/default_placeholder.png";
+}
+
     });
 
     return entries;
