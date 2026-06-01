@@ -314,11 +314,14 @@ async function fixMissingThumbnails(entries) {
 
     entries.forEach(entry => {
         const type = getFileType(entry);
+        const isAudio = (type === "mp3" || type === "audio");
+
         let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
         const tLower = t.toLowerCase();
 
-        // 1. If thumbnail points to a waveform file that does NOT exist → replace it
-        if (tLower.startsWith("waveform_thumbnails/") &&
+        // 1. If audio and thumbnail points to a waveform file that does NOT exist → replace it
+        if (isAudio &&
+            tLower.startsWith("waveform_thumbnails/") &&
             !waveformSet.has(tLower)) {
 
             entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
@@ -326,14 +329,14 @@ async function fixMissingThumbnails(entries) {
             return;
         }
 
-        // 2. If MP3 and missing thumbnail → assign waveform
-        if (type === "mp3" && (!t || t === "")) {
+        // 2. If audio and missing thumbnail → assign waveform
+        if (isAudio && (!t || t === "")) {
             entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
             thumbIndex++;
             return;
         }
 
-        // 3. If ANY other invalid thumbnail → fallback
+        // 3. Universal fallback for ALL other invalid thumbnails
         const invalid =
             !t ||
             t === "" ||
@@ -350,6 +353,7 @@ async function fixMissingThumbnails(entries) {
 
     return entries;
 }
+
 
 
 
