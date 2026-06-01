@@ -225,18 +225,194 @@
      🌍 Open in Google Earth Web
   </a>
 </div>
-
 <script>
 async function loadIndex() {
 
-    // --- all your variables, motifColors, safeDate, getFileType, etc. ---
+    // Load JSON
+    const res = await fetch("./axd_index_datefixed.json");
+    let data = await res.json();
+
+    // Apply waveform thumbnail fix BEFORE anything else
+    data = await fixMissingThumbnails(data);
+
+    // Store total count
+    window.fullIndexCount = data.length;
+
+    const container = document.getElementById('index');
+    const searchBox = document.getElementById('search');
+    const tagFilter = document.getElementById('tagFilter');
+    const sortOrder = document.getElementById('sortOrder');
+    const sortBy = document.getElementById('sortBy');
+    const fileTypeFilter = document.getElementById('fileTypeFilter');
+    const legend = document.getElementById('legend');
+    const toggleView = document.getElementById('toggleView');
+
+    let compactMode = false;
+
+    const motifColors = {
+        "civic decay": "#2b6cb0",
+        "moral inquiry": "#38a169",
+        "rhetorical indictment": "#d69e2e",
+        "technical audit": "#805ad5"
+    };
+
+    function safeDate(d) {
+        const parsed = new Date(d);
+        return isNaN(parsed) ? 0 : parsed;
+    }
+
+    function getFileType(item) {
+        const raw = (item.type || '').toLowerCase();
+        if (raw && raw !== "file") return raw;
+
+        const url = item.url || '';
+        if (url.includes("docs.google.com/document")) return "doc";
+        if (url.toLowerCase().includes(".mp3")) return "mp3";
+        if (url.toLowerCase().includes(".png")) return "png";
+        if (url.toLowerCase().includes(".jpg") || url.toLowerCase().includes(".jpeg")) return "jpg";
+        if (url.toLowerCase().includes(".gif")) return "gif";
+        return "file";
+    }
+
+    function getFileIcon(type) {
+        switch (type) {
+            case "doc": return "icon-doc";
+            case "mp3": return "icon-mp3";
+            case "png": return "icon-png";
+            case "html": return "icon-html";
+            case "svg": return "icon-svg";
+            case "pdf": return "icon-pdf";
+            default: return "";
+        }
+    }
+
+    async function loadWaveformThumbnails() {
+        const res = await fetch("index_thumbnails.json");
+        const list = await res.json();
+        return list.map(f => "waveform_thumbnails/" + f.toLowerCase());
+    }
+
+    async function loadAllValidThumbnails() {
+        const waveform = await loadWaveformThumbnails();
+        const staticThumbs = ["default_placeholder.png"];
+        return new Set([
+            ...waveform.map(x => x.toLowerCase()),
+            ...staticThumbs
+        ]);
+    }
+
+    function isAudioEntry(entry) {
+        const url = (entry.url || "").toLowerCase();
+        return url.includes(".mp3");
+    }
 
     async function fixMissingThumbnails(entries) {
-        // your full fixMissingThumbnails code here
+        const waveformThumbs = await loadWaveformThumbnails();
+        const validThumbs = await loadAllValidThumbnails();
+
+        let thumbIndex = 0;
+
+        entries.forEach(entry => {
+            const audio = isAudioEntry(entry);
+            let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
+            const tLower = t.toLowerCase();
+
+            const missing =
+                !t ||
+                t === "" ||
+                t === "undefined" ||
+                t === "null";
+
+            const malformed =
+                tLower.includes(" ") ||
+                tLower.includes("%20") ||
+                tLower.includes("+");
+
+            const invalid =
+                missing ||
+                malformed ||
+                tLower.includes("placeholder") ||
+                !validThumbs.has(tLower);
+
+            if (audio) {
+                if (invalid) {
+                    entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
+                    thumbIndex++;
+                }
+            } else {
+                if (invalid) {
+                    entry.thumbnail = "default_placeholder.png";
+                }
+            }
+        });
+
+        return entries;
     }
 
     function render(items) {
-        // your full updated render() code here
+        container.innerHTML = '';
+        const grid = document.createElement('div');
+        grid.className = compactMode ? 'index-grid compact' : 'index-grid';
+
+        items.forEach(item => {
+            const motifClass = `motif-${(item.motif || "unknown").replace(/\s+/g, '-')}`;
+            const div = document.createElement('div');
+            div.className = `item ${motifClass}`;
+
+            const isAudio = isAudioEntry(item);
+
+            const img = document.createElement('img');
+            if (item.thumbnail && item.thumbnail.trim() !== "") {
+                img.src = item.thumbnail;
+                img.loading = "lazy";
+            } else {
+                img.style.background = motifColors[(item.motif || "").toLowerCase().trim()] || "#ccc";
+                img.style.width = "160px";
+                img.style.height = "96px";
+            }
+
+            img.alt = item.title || "Untitled";
+
+            img.onerror = () => {
+                if (isAudio) {
+                    img.src = "default_placeholder.png";
+                } else {
+                    img.style.background =
+                        motifColors[(item.motif || "").toLowerCase().trim()] || "#ccc";
+                    img.src = "";
+                }
+                img.alt = "No thumbnail available";
+            };
+
+            if (!compactMode) div.appendChild(img);
+
+            const link = document.createElement('a');
+            link.href = item.url;
+            link.target = "_blank";
+            link.textContent = item.title;
+
+            const date = document.createElement('p');
+            date.textContent = item.date;
+
+            let extra;
+            if (compactMode) {
+                extra = document.createElement('span');
+                extra.style.color = motifColors[item.motif] || '#999';
+                extra.textContent = item.motif;
+            } else {
+                extra = document.createElement('p');
+                extra.textContent = item.cluster;
+            }
+
+            const sizeEl = document.createElement('p');
+            sizeEl.className = "item-size";
+            sizeEl.textContent = item.size ? `Size: ${item.size} bytes` : "";
+
+            div.append(link, date, extra, sizeEl);
+            grid.appendChild(div);
+        });
+
+        container.appendChild(grid);
     }
 
     function filterAndRender() {
@@ -279,7 +455,7 @@ async function loadIndex() {
         if (counter) counter.textContent = `Items displayed: ${displayed} / ${total}`;
     }
 
-    // --- event listeners ---
+    // Event listeners
     toggleView.addEventListener('click', () => {
         compactMode = !compactMode;
         toggleView.textContent = compactMode ? 'Full View' : 'Compact View';
@@ -292,14 +468,13 @@ async function loadIndex() {
     sortBy.addEventListener('change', filterAndRender);
     fileTypeFilter.addEventListener('change', filterAndRender);
 
-    // --- initial render ---
+    // Initial render
     filterAndRender();
 }
 
 loadIndex();
 </script>
 
-</script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("hoverAudio");
