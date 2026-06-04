@@ -520,16 +520,37 @@ loadIndex();
 </script>
 
 <script>
-document.addEventListener("error", function (e) {
+window.addEventListener("error", function (e) {
     const el = e.target;
 
-    if (el.tagName === "IMG") {
-        // Replace broken thumbnail with your orange icon
+    // Only act on <img> elements
+    if (el && el.tagName === "IMG") {
+        // Avoid infinite loop if the fallback itself 404s
+        if (el.dataset.fallbackApplied === "true") {
+            return;
+        }
+
         el.src = "icon_orange.png?ref=master";
+        el.dataset.fallbackApplied = "true";
         el.classList.add("thumb-orange");
     }
 }, true);
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("img").forEach(function (img) {
+        img.addEventListener("error", function () {
+            if (img.dataset.fallbackApplied === "true") {
+                return;
+            }
+            img.src = "icon_orange.png?ref=master";
+            img.dataset.fallbackApplied = "true";
+            img.classList.add("thumb-orange");
+        });
+    });
+});
+</script>
+
 
   
 <script>
