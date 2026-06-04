@@ -162,6 +162,13 @@
     color: #666;
     margin-top: 4px;
 }
+.thumb-orange {
+    width: 64px;       /* adjust to taste */
+    height: auto;
+    opacity: 0.9;
+    object-fit: contain;
+}
+
 </style>
 </head>
 <body>
@@ -512,6 +519,19 @@ filterAndRender();
 loadIndex();
 </script>
 
+<script>
+document.addEventListener("error", function (e) {
+    const el = e.target;
+
+    if (el.tagName === "IMG") {
+        // Replace broken thumbnail with your orange icon
+        el.src = "icon_orange.png?ref=master";
+        el.classList.add("thumb-orange");
+    }
+}, true);
+</script>
+
+  
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("hoverAudio");
