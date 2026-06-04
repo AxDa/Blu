@@ -240,7 +240,9 @@ async function loadIndex() {
     let data = await res.json();
 
     // Apply waveform thumbnail fix BEFORE anything else
-    /*data = await fixMissingThumbnails(data); */
+    let data = await res.json();
+    data = await fixMissingThumbnails(data);
+
 
     // Store total count
     window.fullIndexCount = data.length;
@@ -349,50 +351,22 @@ function isAudioEntry(entry) {
     const url = (entry.url || "").toLowerCase();
     return url.includes(".mp3");
 }
-/*
 async function fixMissingThumbnails(entries) {
-    const waveformThumbs = await loadWaveformThumbnails();
     const validThumbs = await loadAllValidThumbnails();
 
-    let thumbIndex = 0;
-
     entries.forEach(entry => {
-        const audio = isAudioEntry(entry);
         let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
         const tLower = t.toLowerCase();
 
-        const missing =
-            !t ||
-            t === "" ||
-            t === "undefined" ||
-            t === "null";
-
-        const malformed =
-            tLower.includes(" ") ||
-            tLower.includes("%20") ||
-            tLower.includes("+");
-
-        const invalid =
-            missing ||
-            malformed ||
-            tLower.includes("placeholder") ||
-            !validThumbs.has(tLower);
-
-        if (audio) {
-            if (invalid) {
-                entry.thumbnail = waveformThumbs[thumbIndex % waveformThumbs.length];
-                thumbIndex++;
-            }
-        } else {
-            if (invalid) {
-                entry.thumbnail = "default_placeholder.png";
-            }
+        // If thumbnail missing or not in valid list → replace BEFORE render()
+        if (!t || !validThumbs.has(tLower)) {
+            entry.thumbnail = "icon_orange.png?ref=master";
         }
     });
 
     return entries;
 }
-*/
+
 function render(items) {
     container.innerHTML = '';
     const grid = document.createElement('div');
