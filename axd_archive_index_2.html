@@ -233,7 +233,7 @@ async function loadIndex() {
     let data = await res.json();
 
     // Apply waveform thumbnail fix BEFORE anything else
-    data = await fixMissingThumbnails(data);
+    /*data = await fixMissingThumbnails(data); */
 
     // Store total count
     window.fullIndexCount = data.length;
@@ -342,7 +342,7 @@ function isAudioEntry(entry) {
     const url = (entry.url || "").toLowerCase();
     return url.includes(".mp3");
 }
-
+/*
 async function fixMissingThumbnails(entries) {
     const waveformThumbs = await loadWaveformThumbnails();
     const validThumbs = await loadAllValidThumbnails();
@@ -385,7 +385,7 @@ async function fixMissingThumbnails(entries) {
 
     return entries;
 }
-
+*/
 function render(items) {
     container.innerHTML = '';
     const grid = document.createElement('div');
