@@ -357,10 +357,15 @@ async function fixMissingThumbnails(entries) {
         // Only repair MP3 entries
         if (!isAudioEntry(entry)) return;
 
+        // EXEMPTION: "civic sound" MP3s use custom icons (icon_bw.png, etc.)
+        if ((entry.motif || "").toLowerCase().trim() === "civic sound") {
+            return;
+        }
+
         let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
         const tLower = t.toLowerCase();
 
-        // If MP3 thumbnail missing or invalid → replace BEFORE render()
+        // If thumbnail missing or invalid → replace BEFORE render()
         if (!t || !validThumbs.has(tLower)) {
             entry.thumbnail = "icon_orange.png?ref=master";
         }
@@ -368,6 +373,7 @@ async function fixMissingThumbnails(entries) {
 
     return entries;
 }
+
 function render(items) {
     container.innerHTML = '';
     const grid = document.createElement('div');
