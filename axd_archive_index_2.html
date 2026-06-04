@@ -358,7 +358,7 @@ async function fixMissingThumbnails(entries) {
         let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
         const tLower = t.toLowerCase();
 
-        // If thumbnail missing or not in valid list → replace BEFORE render()
+        // If thumbnail missing or invalid, replace BEFORE render()
         if (!t || !validThumbs.has(tLower)) {
             entry.thumbnail = "icon_orange.png?ref=master";
         }
@@ -366,6 +366,7 @@ async function fixMissingThumbnails(entries) {
 
     return entries;
 }
+
 
 function render(items) {
     container.innerHTML = '';
