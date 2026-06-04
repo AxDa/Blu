@@ -406,6 +406,7 @@ function render(items) {
         const isAudio = isAudioEntry(item);
 
         const img = document.createElement('img');
+
         if (item.thumbnail && item.thumbnail.trim() !== "") {
             img.src = item.thumbnail;
             img.loading = "lazy";
@@ -414,18 +415,16 @@ function render(items) {
             img.style.width = "160px";
             img.style.height = "96px";
         }
-
+        
         img.alt = item.title || "Untitled";
-
+        
+        // 🔶 UNIVERSAL FALLBACK FOR ANY BROKEN THUMBNAIL
         img.onerror = () => {
-            if (isAudio) {
-                img.src = "default_placeholder.png";
-            } else {
-                img.style.background =
-                    motifColors[(item.motif || "").toLowerCase().trim()] || "#ccc";
-                img.src = "";
-            }
-            img.alt = "No thumbnail available";
+            if (img.dataset.fallbackApplied === "true") return;
+        
+            img.src = "icon_orange.png?ref=master";
+            img.dataset.fallbackApplied = "true";
+            img.classList.add("thumb-orange");
         };
 
         if (!compactMode) div.appendChild(img);
