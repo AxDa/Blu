@@ -354,10 +354,13 @@ async function fixMissingThumbnails(entries) {
     const validThumbs = await loadAllValidThumbnails();
 
     entries.forEach(entry => {
+        // Only repair MP3 entries
+        if (!isAudioEntry(entry)) return;
+
         let t = entry.thumbnail ? decodeURIComponent(entry.thumbnail.trim()) : "";
         const tLower = t.toLowerCase();
 
-        // If thumbnail missing or invalid, replace BEFORE render()
+        // If MP3 thumbnail missing or invalid → replace BEFORE render()
         if (!t || !validThumbs.has(tLower)) {
             entry.thumbnail = "icon_orange.png?ref=master";
         }
@@ -365,8 +368,6 @@ async function fixMissingThumbnails(entries) {
 
     return entries;
 }
-
-
 function render(items) {
     container.innerHTML = '';
     const grid = document.createElement('div');
