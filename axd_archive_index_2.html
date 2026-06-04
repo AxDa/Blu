@@ -240,7 +240,6 @@ async function loadIndex() {
     let data = await res.json();
 
     // Apply waveform thumbnail fix BEFORE anything else
-    let data = await res.json();
     data = await fixMissingThumbnails(data);
 
 
@@ -492,40 +491,6 @@ filterAndRender();
 
 loadIndex();
 </script>
-
-<script>
-window.addEventListener("error", function (e) {
-    const el = e.target;
-
-    // Only act on <img> elements
-    if (el && el.tagName === "IMG") {
-        // Avoid infinite loop if the fallback itself 404s
-        if (el.dataset.fallbackApplied === "true") {
-            return;
-        }
-
-        el.src = "icon_orange.png?ref=master";
-        el.dataset.fallbackApplied = "true";
-        el.classList.add("thumb-orange");
-    }
-}, true);
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("img").forEach(function (img) {
-        img.addEventListener("error", function () {
-            if (img.dataset.fallbackApplied === "true") {
-                return;
-            }
-            img.src = "icon_orange.png?ref=master";
-            img.dataset.fallbackApplied = "true";
-            img.classList.add("thumb-orange");
-        });
-    });
-});
-</script>
-
-
   
 <script>
 document.addEventListener("DOMContentLoaded", () => {
