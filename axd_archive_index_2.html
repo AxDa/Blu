@@ -629,7 +629,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Reverse mode forces audio ON
     audioEnabled = true;
     toggle.textContent = "Audio: ON";
-  
+
+      // CRITICAL: Resume AudioContext here
+    audioCtx.resume().catch(() => {});
+    
     // Mute but keep audio "playing"
     audio.volume = 0;
   
