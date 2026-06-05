@@ -626,11 +626,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function startReverse() {
     stopReverse();
   
+    // Reverse mode forces audio ON
+    audioEnabled = true;
+    toggle.textContent = "Audio: ON";
+  
     // Mute but keep audio "playing"
     audio.volume = 0;
   
     audio.play().then(() => {
-      // Allow the audio element to fully enter "playing" state
       setTimeout(() => {
   
         reverseInterval = setInterval(() => {
@@ -645,7 +648,7 @@ document.addEventListener("DOMContentLoaded", () => {
           audio.currentTime -= 0.05;
         }, 50);
   
-      }, 40); // <-- the magic delay
+      }, 40);
     }).catch(() => {});
   }
 
