@@ -215,15 +215,27 @@
   <button id="audioToggle">Audio: OFF</button>
   <button id="audioPlay">▶ Play</button>
 
-  <!-- NEW: audio selector -->
+  <!-- Audio selector -->
   <select id="audioSelect">
     <option value="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3">
       David Lowe & Matt Chorley
     </option>
-    <option value="Times_clips.mp3">
-      The Times clipping's (in association w handels frank'n)
+    <option value="Times_clip.mp3">
+      Times Clip
     </option>
   </select>
+
+  <!-- Speed control -->
+  <select id="speedControl">
+    <option value="0.25">0.25×</option>
+    <option value="0.5">0.5×</option>
+    <option value="1" selected>1×</option>
+    <option value="1.5">1.5×</option>
+    <option value="2">2×</option>
+  </select>
+
+  <!-- Reverse toggle -->
+  <button id="reverseBtn">Reverse: OFF</button>
 
   <span id="audioTitle">
     Audio Clip David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3
@@ -233,6 +245,7 @@
 <audio id="hoverAudio"
        src="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3">
 </audio>
+<canvas id="waveCanvas" width="600" height="80" style="width:100%; height:80px;"></canvas>
 </div>
 <!-- INDEX GRID BELOW CONTROLS -->
 <div id="index"></div>
@@ -519,54 +532,141 @@ document.addEventListener("DOMContentLoaded", () => {
   const playBtn = document.getElementById("audioPlay");
   const title = document.getElementById("audioTitle");
   const selector = document.getElementById("audioSelect");
+  const speedControl = document.getElementById("speedControl");
+  const reverseBtn = document.getElementById("reverseBtn");
+  const canvas = document.getElementById("waveCanvas");
+  const ctx = canvas.getContext("2d");
 
   let audioEnabled = false;
+  let reverseMode = false;
+  let reverseInterval = null;
 
-  // Default volume
+  // Web Audio API
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const track = audioCtx.createMediaElementSource(audio);
+  const analyser = audioCtx.createAnalyser();
+  analyser.fftSize = 2048;
+
+  track.connect(analyser);
+  analyser.connect(audioCtx.destination);
+
+  const bufferLength = analyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+
+  function drawWaveform() {
+    requestAnimationFrame(drawWaveform);
+
+    analyser.getByteTimeDomainData(dataArray);
+
+    ctx.fillStyle = "#111";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "#00ff88";
+    ctx.beginPath();
+
+    const sliceWidth = canvas.width / bufferLength;
+    let x = 0;
+
+    for (let i = 0; i < bufferLength; i++) {
+      const v = dataArray[i] / 128.0;
+      const y = (v * canvas.height) / 2;
+
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+
+      x += sliceWidth;
+    }
+
+    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.stroke();
+  }
+
+  drawWaveform();
+
+  // -------------------------
+  // Existing audio logic
+  // -------------------------
+
   audio.volume = 0.5;
 
-  // Toggle ON/OFF
   toggle.addEventListener("click", () => {
     audioEnabled = !audioEnabled;
     toggle.textContent = audioEnabled ? "Audio: ON" : "Audio: OFF";
 
     if (!audioEnabled) {
+      stopReverse();
       audio.pause();
       audio.currentTime = 0;
     }
   });
 
-  // NEW: change audio source when selector changes
   selector.addEventListener("change", () => {
     const file = selector.value;
+    stopReverse();
     audio.src = file;
     title.textContent = "Audio Clip " + file;
-
-    // Reset playback if switching while ON
-    if (audioEnabled) {
-      audio.pause();
-      audio.currentTime = 0;
-    }
+    audio.pause();
+    audio.currentTime = 0;
   });
 
-  // Play button
+  speedControl.addEventListener("change", () => {
+    audio.playbackRate = parseFloat(speedControl.value);
+  });
+
+  reverseBtn.addEventListener("click", () => {
+    reverseMode = !reverseMode;
+    reverseBtn.textContent = reverseMode ? "Reverse: ON" : "Reverse: OFF";
+
+    if (reverseMode) startReverse();
+    else stopReverse();
+  });
+
+  function startReverse() {
+    audio.pause();
+    stopReverse();
+
+    reverseInterval = setInterval(() => {
+      if (audio.currentTime <= 0) {
+        stopReverse();
+        return;
+      }
+      audio.currentTime -= 0.05;
+    }, 50);
+  }
+
+  function stopReverse() {
+    if (reverseInterval) {
+      clearInterval(reverseInterval);
+      reverseInterval = null;
+    }
+  }
+
   playBtn.addEventListener("click", () => {
     if (!audioEnabled) return;
-    audio.play().catch(() => {});
+
+    stopReverse();
+
+    if (!reverseMode) {
+      audio.play().catch(() => {});
+    } else {
+      startReverse();
+    }
   });
 
-  // Hover play
   title.addEventListener("mouseenter", () => {
-    if (audioEnabled) {
-      audio.play().catch(() => {});
-    }
+    if (!audioEnabled) return;
+
+    stopReverse();
+
+    if (!reverseMode) audio.play().catch(() => {});
+    else startReverse();
   });
 
   title.addEventListener("mouseleave", () => {
-    if (audioEnabled) {
-      audio.pause();
-      audio.currentTime = 0;
-    }
+    stopReverse();
+    audio.pause();
+    audio.currentTime = 0;
   });
 });
 </script>
