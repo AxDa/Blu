@@ -624,23 +624,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function startReverse() {
-    audio.pause();
     stopReverse();
-
+  
+    // Mute the audio but keep it "playing"
+    audio.volume = 0;
+    audio.play().catch(() => {});
+  
     reverseInterval = setInterval(() => {
       if (audio.currentTime <= 0) {
         stopReverse();
+        audio.pause();
+        audio.currentTime = 0;
+        audio.volume = 0.5;
         return;
       }
+  
       audio.currentTime -= 0.05;
     }, 50);
   }
+
 
   function stopReverse() {
     if (reverseInterval) {
       clearInterval(reverseInterval);
       reverseInterval = null;
     }
+
+      // Restore volume
+      audio.volume = 0.5;
   }
 
   playBtn.addEventListener("click", () => {
