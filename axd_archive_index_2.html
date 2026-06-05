@@ -543,7 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Web Audio API
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  const track = audioCtx.createMediaElementSource(audio);
+  let track = audioCtx.createMediaElementSource(audio);
   const analyser = audioCtx.createAnalyser();
   analyser.fftSize = 2048;
 
@@ -604,11 +604,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   selector.addEventListener("change", () => {
     const file = selector.value;
+  
     stopReverse();
+  
     audio.src = file;
     title.textContent = "Audio Clip " + file;
     audio.pause();
     audio.currentTime = 0;
+  
+    // RECREATE MEDIA ELEMENT SOURCE (CRITICAL)
+    track.disconnect();
+    const newTrack = audioCtx.createMediaElementSource(audio);
+    newTrack.connect(analyser);
+    analyser.connect(audioCtx.destination);
+  
+    // Update reference
+    track = newTrack;
   });
 
   speedControl.addEventListener("change", () => {
