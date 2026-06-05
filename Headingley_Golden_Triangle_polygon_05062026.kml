@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Headingley Golden Triangle (Shire Oak Micro‑District)</name>
+    <description>
+      Detailed polygon for the informal "Golden Triangle" micro‑area in Headingley, Leeds.
+      Core streets: Shire Oak Road, Shire Oak Street, Shire Oak Gardens, upper St Michael’s Lane,
+      Bennett Road, part of North Lane, back‑streets behind the Arndale, towards Grosvenor Road.
+      Boundary based on 7 key junctions: 
+      1) Otley Rd × Shire Oak Rd 
+      2) Shire Oak Rd × Shire Oak St 
+      3) Shire Oak St × Shire Oak Gdns 
+      4) Shire Oak Gdns × North Ln 
+      5) North Ln × Headingley Ln 
+      6) Headingley Ln × Grosvenor Rd 
+      7) Grosvenor Rd × Otley Rd
+    </description>
+
+    <!-- Style for the polygon -->
+    <Style id="goldenTriangleStyle">
+      <LineStyle>
+        <color>ff00a5ff</color> <!-- ARGB: opaque, orange-ish line -->
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>5500a5ff</color> <!-- ARGB: semi‑transparent fill -->
+      </PolyStyle>
+    </Style>
+
+    <!-- Main polygon -->
+    <Placemark>
+      <name>Headingley Golden Triangle</name>
+      <styleUrl>#goldenTriangleStyle</styleUrl>
+      <Polygon>
+        <extrude>1</extrude>
+        <altitudeMode>clampToGround</altitudeMode>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              <!-- 1. Otley Road × Shire Oak Road -->
+              -1.58320,53.81990,0
+              <!-- Intermediate along Shire Oak Road -->
+              -1.58260,53.82020,0
+              <!-- 2. Shire Oak Road × Shire Oak Street -->
+              -1.58130,53.82060,0
+              <!-- Intermediate along Shire Oak Street -->
+              -1.58070,53.82040,0
+              <!-- 3. Shire Oak Street × Shire Oak Gardens -->
+              -1.58000,53.82040,0
+              <!-- Intermediate along Shire Oak Gardens -->
+              -1.57950,53.82020,0
+              <!-- 4. Shire Oak Gardens × North Lane -->
+              -1.57900,53.82000,0
+              <!-- Intermediate along North Lane -->
+              -1.57940,53.81970,0
+              <!-- 5. North Lane × Headingley Lane -->
+              -1.57990,53.81950,0
+              <!-- Intermediate along Headingley Lane -->
+              -1.58080,53.81930,0
+              <!-- 6. Headingley Lane × Grosvenor Road -->
+              -1.58180,53.81890,0
+              <!-- Intermediate along Grosvenor Road -->
+              -1.58260,53.81850,0
+              <!-- 7. Grosvenor Road × Otley Road -->
+              -1.58390,53.81790,0
+              <!-- Intermediate back up Otley Road towards Shire Oak Road -->
+              -1.58370,53.81860,0
+              -1.58350,53.81920,0
+              <!-- Close ring back to 1. Otley Road × Shire Oak Road -->
+              -1.58320,53.81990,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- Optional key junction placemarks for notation -->
+
+    <Placemark>
+      <name>1. Otley Rd × Shire Oak Rd</name>
+      <Point>
+        <coordinates>-1.58320,53.81990,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>2. Shire Oak Rd × Shire Oak St</name>
+      <Point>
+        <coordinates>-1.58130,53.82060,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>3. Shire Oak St × Shire Oak Gdns</name>
+      <Point>
+        <coordinates>-1.58000,53.82040,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>4. Shire Oak Gdns × North Ln</name>
+      <Point>
+        <coordinates>-1.57900,53.82000,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>5. North Ln × Headingley Ln</name>
+      <Point>
+        <coordinates>-1.57990,53.81950,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>6. Headingley Ln × Grosvenor Rd</name>
+      <Point>
+        <coordinates>-1.58180,53.81890,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>7. Grosvenor Rd × Otley Rd</name>
+      <Point>
+        <coordinates>-1.58390,53.81790,0</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>
