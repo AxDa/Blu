@@ -626,25 +626,29 @@ document.addEventListener("DOMContentLoaded", () => {
   function startReverse() {
     stopReverse();
   
-    // Force audio element into a "playing" state
+    // Mute but keep audio "playing"
     audio.volume = 0;
+  
     audio.play().then(() => {
-      // Nudge forward by 1 frame so the browser commits to playback
-      audio.currentTime += 0.001;
+      // Allow the audio element to fully enter "playing" state
+      setTimeout(() => {
   
-      reverseInterval = setInterval(() => {
-        if (audio.currentTime <= 0) {
-          stopReverse();
-          audio.pause();
-          audio.currentTime = 0;
-          audio.volume = 0.5;
-          return;
-        }
+        reverseInterval = setInterval(() => {
+          if (audio.currentTime <= 0) {
+            stopReverse();
+            audio.pause();
+            audio.currentTime = 0;
+            audio.volume = 0.5;
+            return;
+          }
   
-        audio.currentTime -= 0.05;
-      }, 50);
+          audio.currentTime -= 0.05;
+        }, 50);
+  
+      }, 40); // <-- the magic delay
     }).catch(() => {});
   }
+
 
   function stopReverse() {
     if (reverseInterval) {
