@@ -10758,30 +10758,26 @@
     "size": 25900,
     "type": "mp3"
   },
-  {
-    "title": "Headingley_Golden_Triangle_polygon_05062026.kml",
-    "url": "https://axda.github.io/Blu/Headingley_Golden_Triangle_polygon_05062026.kml",
-    "thumbnail": "The “Golden Triangle” within Headingley.png",
-    "tags": [
-      "Bleakst", "Bleaksirenst"
-    ],
-    "date": "2026-06-05",
-    "motif": "acoustic territoriality",
-    "cluster": "yel",
-    "size": 500,
-    "type": "kml"
-  },
-  {
-    "title": "The “Golden Triangle” within Headingley.png",
-    "url": "https://axda.github.io/Blu/The “Golden Triangle” within Headingley.png",
-    "thumbnail": "The “Golden Triangle” within Headingley.png",
-    "tags": [
-      "", ""
-    ],
-    "date": "2026-06-05",
-    "motif": "acoustic territoriality",,
-    "cluster": "yel",
-    "size": 463100,
-    "type": "png"
-  }
+{
+  "title": "Headingley_Golden_Triangle_polygon_05062026.kml",
+  "url": "https://axda.github.io/Blu/Headingley_Golden_Triangle_polygon_05062026.kml",
+  "thumbnail": "The_Golden_Triangle_within_Headingley.png",
+  "tags": ["Bleakst", "Bleaksirenst"],
+  "date": "2026-06-05",
+  "motif": "acoustic territoriality",
+  "cluster": "yel",
+  "size": 500,
+  "type": "kml"
+},
+{
+  "title": "The_Golden_Triangle_within_Headingley.png",
+  "url": "https://axda.github.io/Blu/The_Golden_Triangle_within_Headingley.png",
+  "thumbnail": "The_Golden_Triangle_within_Headingley.png",
+  "tags": [],
+  "date": "2026-06-05",
+  "motif": "acoustic territoriality",
+  "cluster": "yel",
+  "size": 463100,
+  "type": "png"
+}
 ]
