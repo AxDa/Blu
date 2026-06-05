@@ -591,6 +591,7 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.volume = 0.5;
 
   toggle.addEventListener("click", () => {
+    audioCtx.resume();   // ← REQUIRED
     audioEnabled = !audioEnabled;
     toggle.textContent = audioEnabled ? "Audio: ON" : "Audio: OFF";
 
@@ -643,6 +644,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   playBtn.addEventListener("click", () => {
+    audioCtx.resume();   // ← REQUIRED
     if (!audioEnabled) return;
 
     stopReverse();
@@ -655,6 +657,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   title.addEventListener("mouseenter", () => {
+    audioCtx.resume();   // ← prevents hover-block
     if (!audioEnabled) return;
 
     stopReverse();
