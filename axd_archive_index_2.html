@@ -543,7 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Web Audio API
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  let track = audioCtx.createMediaElementSource(audio);
+  const track = audioCtx.createMediaElementSource(audio);
   const analyser = audioCtx.createAnalyser();
   analyser.fftSize = 2048;
 
@@ -604,22 +604,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   selector.addEventListener("change", () => {
     const file = selector.value;
-  
     stopReverse();
-  
     audio.src = file;
     title.textContent = "Audio Clip " + file;
     audio.pause();
     audio.currentTime = 0;
-  
-    // RECREATE MEDIA ELEMENT SOURCE (CRITICAL)
-    track.disconnect();
-    const newTrack = audioCtx.createMediaElementSource(audio);
-    newTrack.connect(analyser);
-    analyser.connect(audioCtx.destination);
-  
-    // Update reference
-    track = newTrack;
   });
 
   speedControl.addEventListener("change", () => {
@@ -635,39 +624,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function startReverse() {
-  stopReverse();
+    stopReverse();
+  
+    // Mute the audio but keep it "playing"
+    audio.volume = 0;
+    audio.play().catch(() => {});
+  
+    reverseInterval = setInterval(() => {
+      if (audio.currentTime <= 0) {
+        stopReverse();
+        audio.pause();
+        audio.currentTime = 0;
+        audio.volume = 0.5;
+        return;
+      }
+  
+      audio.currentTime -= 0.05;
+    }, 50);
+  }
 
-  // Reverse mode forces audio ON
-  audioEnabled = true;
-  toggle.textContent = "Audio: ON";
-
-  // Resume AudioContext
-  audioCtx.resume().catch(() => {});
-
-  // Jump to end of audio before reversing
-  audio.currentTime = audio.duration;
-
-  // Mute but keep audio "playing"
-  audio.volume = 0;
-
-  audio.play().then(() => {
-    setTimeout(() => {
-
-      reverseInterval = setInterval(() => {
-        if (audio.currentTime <= 0) {
-          stopReverse();
-          audio.pause();
-          audio.currentTime = 0;
-          audio.volume = 0.5;
-          return;
-        }
-
-        audio.currentTime -= 0.05;
-      }, 50);
-
-    }, 40);
-  }).catch(() => {});
-}
 
   function stopReverse() {
     if (reverseInterval) {
@@ -690,7 +665,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       startReverse();
     }
-    console.log("CTX:", audioCtx.state);
   });
 
   title.addEventListener("mouseenter", () => {
