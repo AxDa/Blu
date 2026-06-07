@@ -10800,10 +10800,21 @@
   "url": "https://axda.github.io/Blu/major_ree_deposits_polygons_global.kml",
   "thumbnail": "Rare_Earth_Metals_Mtn_Pass_US_location_axd_07062026_2.png",
   "tags": ["rare_earth", "ree", "deposits"],
-  "date": "2026-06-05",
+  "date": "2026-06-07",
   "motif": "rare earth locations",
   "cluster": "deposits",
   "size": 1400,
   "type": "kml"
+},
+{
+  "title": "Nolans_Bore_Mount_Weld_Rare_Earth_Metals_AU_loc_axd_07062026_#_3_4.png",
+  "url": "https://axda.github.io/Blu/Nolans_Bore_Mount_Weld_Rare_Earth_Metals_AU_loc_axd_07062026_3_4.png",
+  "thumbnail": "Nolans_Bore_Mount_Weld_Rare_Earth_Metals_AU_loc_axd_07062026_3_4.png",
+  "tags": ["rare_earth", "ree", "deposits", australia],
+  "date": "2026-06-07",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 459600,
+  "type": "png"
 }
 ]
