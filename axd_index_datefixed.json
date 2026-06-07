@@ -10794,5 +10794,16 @@
   "cluster": "yel",
   "size": 463100,
   "type": "png"
+},
+{
+  "title": "major_ree_deposits_polygons_global.kml",
+  "url": "https://axda.github.io/Blu/major_ree_deposits_polygons_global.kml",
+  "thumbnail": "",
+  "tags": ["rare_earth", "ree", "deposits"],
+  "date": "2026-06-05",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 500,
+  "type": "kml"
 }
 ]
