@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Major Rare Earth Element Deposits – Global Polygons (Approximate)</name>
+    <description>
+      Approximate polygon envelopes for major REE deposits containing La, Ce, Nd, Pr.
+      Polygons are conceptual only, not legal or engineering boundaries.
+    </description>
+
+    <!-- Helper: each polygon is a small rectangle around an approximate centre -->
+
+    <!-- 01_Bayan_Obo_CN -->
+    <Placemark>
+      <name>01_Bayan_Obo_CN</name>
+      <description>Bayan Obo REE Deposit, Inner Mongolia, China.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              109.93,41.82,0
+              110.02,41.82,0
+              110.02,41.75,0
+              109.93,41.75,0
+              109.93,41.82,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 02_Mountain_Pass_US -->
+    <Placemark>
+      <name>02_Mountain_Pass_US</name>
+      <description>Mountain Pass REE Deposit, California, USA.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -115.53,35.52,0
+              -115.45,35.52,0
+              -115.45,35.45,0
+              -115.53,35.45,0
+              -115.53,35.52,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 03_Mount_Weld_AU -->
+    <Placemark>
+      <name>03_Mount_Weld_AU</name>
+      <description>Mount Weld REE Deposit, Western Australia.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              121.60,-28.85,0
+              121.70,-28.85,0
+              121.70,-28.95,0
+              121.60,-28.95,0
+              121.60,-28.85,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 04_Nolans_Bore_AU -->
+    <Placemark>
+      <name>04_Nolans_Bore_AU</name>
+      <description>Nolans Bore REE Deposit, Northern Territory, Australia.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              133.20,-22.55,0
+              133.28,-22.55,0
+              133.28,-22.62,0
+              133.20,-22.62,0
+              133.20,-22.55,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 05_Kvanefjeld_GL -->
+    <Placemark>
+      <name>05_Kvanefjeld_GL</name>
+      <description>Kvanefjeld REE-U Deposit, southern Greenland.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -45.65,-60.95,0
+              -45.55,-60.95,0
+              -45.55,-61.02,0
+              -45.65,-61.02,0
+              -45.65,-60.95,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 06_Nechalacho_CA -->
+    <Placemark>
+      <name>06_Nechalacho_CA</name>
+      <description>Nechalacho REE Deposit, Northwest Territories, Canada.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -111.75,62.10,0
+              -111.60,62.10,0
+              -111.60,62.00,0
+              -111.75,62.00,0
+              -111.75,62.10,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 07_Steenkampskraal_ZA -->
+    <Placemark>
+      <name>07_Steenkampskraal_ZA</name>
+      <description>Steenkampskraal REE Deposit, Western Cape, South Africa.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              18.70,-31.20,0
+              18.80,-31.20,0
+              18.80,-31.28,0
+              18.70,-31.28,0
+              18.70,-31.20,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 08_Tomtor_RU -->
+    <Placemark>
+      <name>08_Tomtor_RU</name>
+      <description>Tomtor REE-Nb Deposit, Yakutia, Russia.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              114.90,69.75,0
+              115.05,69.75,0
+              115.05,69.65,0
+              114.90,69.65,0
+              114.90,69.75,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 09_Bear_Lodge_US -->
+    <Placemark>
+      <name>09_Bear_Lodge_US</name>
+      <description>Bear Lodge REE Deposit, Wyoming, USA.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -104.55,44.80,0
+              -104.45,44.80,0
+              -104.45,44.72,0
+              -104.55,44.72,0
+              -104.55,44.80,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 10_Strange_Lake_CA -->
+    <Placemark>
+      <name>10_Strange_Lake_CA</name>
+      <description>Strange Lake REE Deposit, Quebec/Labrador, Canada.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -64.60,57.40,0
+              -64.45,57.40,0
+              -64.45,57.30,0
+              -64.60,57.30,0
+              -64.60,57.40,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 11_Norra_Karr_SE -->
+    <Placemark>
+      <name>11_Norra_Karr_SE</name>
+      <description>Norra Kärr REE Deposit, southern Sweden.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              14.70,58.05,0
+              14.80,58.05,0
+              14.80,57.98,0
+              14.70,57.98,0
+              14.70,58.05,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 12_Dubbo_Toongi_AU -->
+    <Placemark>
+      <name>12_Dubbo_Toongi_AU</name>
+      <description>Dubbo (Toongi) REE-Zr Deposit, New South Wales, Australia.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              148.55,-32.25,0
+              148.65,-32.25,0
+              148.65,-32.33,0
+              148.55,-32.33,0
+              148.55,-32.25,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 13_Lofdal_NA -->
+    <Placemark>
+      <name>13_Lofdal_NA</name>
+      <description>Lofdal Heavy REE Project, Namibia.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              16.95,-24.35,0
+              17.05,-24.35,0
+              17.05,-24.43,0
+              16.95,-24.43,0
+              16.95,-24.35,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 14_Greenland_Makgadikgadi_BW (placeholder REE prospect in Botswana region) -->
+    <Placemark>
+      <name>14_Kangankunde_MW</name>
+      <description>Kangankunde REE Deposit, Malawi (approximate).</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              34.25,-14.35,0
+              34.35,-14.35,0
+              34.35,-14.43,0
+              34.25,-14.43,0
+              34.25,-14.35,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 15_Weishan_CN -->
+    <Placemark>
+      <name>15_Weishan_CN</name>
+      <description>Weishan REE Deposit, Shandong, China (approximate).</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              117.95,36.95,0
+              118.05,36.95,0
+              118.05,36.87,0
+              117.95,36.87,0
+              117.95,36.95,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 16_Maoniuping_CN -->
+    <Placemark>
+      <name>16_Maoniuping_CN</name>
+      <description>Maoniuping REE Deposit, Sichuan, China (approximate).</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              102.00,28.45,0
+              102.10,28.45,0
+              102.10,28.37,0
+              102.00,28.37,0
+              102.00,28.45,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 17_Liangshan_CN -->
+    <Placemark>
+      <name>17_Liangshan_CN</name>
+      <description>Liangshan REE region, Sichuan, China (conceptual polygon).</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              102.90,27.95,0
+              103.05,27.95,0
+              103.05,27.85,0
+              102.90,27.85,0
+              102.90,27.95,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 18_Guanshan_CN -->
+    <Placemark>
+      <name>18_Guanshan_CN</name>
+      <description>Guanshan REE Deposit, Jiangxi, China (approximate).</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              114.80,27.10,0
+              114.90,27.10,0
+              114.90,27.02,0
+              114.80,27.02,0
+              114.80,27.10,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 19_Misery_Lake_CA (example Canadian prospect) -->
+    <Placemark>
+      <name>19_Misery_Lake_CA</name>
+      <description>Misery Lake REE Prospect, Quebec, Canada (conceptual).</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -69.20,55.50,0
+              -69.05,55.50,0
+              -69.05,55.40,0
+              -69.20,55.40,0
+              -69.20,55.50,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 20_Wicheeda_CA -->
+    <Placemark>
+      <name>20_Wicheeda_CA</name>
+      <description>Wicheeda REE Deposit, British Columbia, Canada.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -122.35,55.05,0
+              -122.25,55.05,0
+              -122.25,54.97,0
+              -122.35,54.97,0
+              -122.35,55.05,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 21_Ngualla_TZ -->
+    <Placemark>
+      <name>21_Ngualla_TZ</name>
+      <description>Ngualla REE Deposit, Tanzania.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              33.20,-7.65,0
+              33.30,-7.65,0
+              33.30,-7.73,0
+              33.20,-7.73,0
+              33.20,-7.65,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 22_Manavalakurichi_IN (monazite sands region, conceptual) -->
+    <Placemark>
+      <name>22_Manavalakurichi_IN</name>
+      <description>Monazite-bearing coastal sands, Tamil Nadu, India (conceptual REE polygon).</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              77.25,8.15,0
+              77.35,8.15,0
+              77.35,8.05,0
+              77.25,8.05,0
+              77.25,8.15,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 23_Ytterby_SE -->
+    <Placemark>
+      <name>23_Ytterby_SE</name>
+      <description>Historic Ytterby REE locality, Sweden (symbolic, not a modern mine).</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              18.30,59.45,0
+              18.38,59.45,0
+              18.38,59.40,0
+              18.30,59.40,0
+              18.30,59.45,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- 24_Alces_Lake_CA -->
+    <Placemark>
+      <name>24_Alces_Lake_CA</name>
+      <description>Alces Lake REE Project, Saskatchewan, Canada (approximate).</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -106.80,59.00,0
+              -106.70,59.00,0
+              -106.70,58.92,0
+              -106.80,58.92,0
+              -106.80,59.00,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+  </Document>
+</kml>
