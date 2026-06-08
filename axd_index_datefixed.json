@@ -10827,5 +10827,16 @@
   "cluster": "deposits",
   "size": 2500,
   "type": "png"
+},
+{
+  "title": "one_global_patternfactors_bind_all_24_REE_sites_08062026.png",
+  "url": "https://axda.github.io/Blu/one_global_patternfactors_bind_all_24_REE_sites_08062026.png",
+  "thumbnail": "one_global_patternfactors_bind_all_24_REE_sites_08062026.png",
+  "tags": ["rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind"],
+  "date": "2026-06-08",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 12800,
+  "type": "png"
 }
 ]
