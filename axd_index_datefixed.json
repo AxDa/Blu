@@ -10838,5 +10838,16 @@
   "cluster": "deposits",
   "size": 12800,
   "type": "png"
+},
+{
+  "title": "NiMH Bat ree's dual‑mode 3D.png",
+  "url": "https://axda.github.io/Blu/dual‑mode 3D panel_opilot_20260609_153221.png",
+  "thumbnail": "dual‑mode 3D panel_opilot_20260609_153221.png.png",
+  "tags": ["NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold"],
+  "date": "2026-06-09",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 198500,
+  "type": "png"
 }
 ]
