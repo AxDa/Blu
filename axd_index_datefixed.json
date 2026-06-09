@@ -10849,5 +10849,16 @@
   "cluster": "deposits",
   "size": 198500,
   "type": "png"
+},
+{
+  "title": "The_Hidden_Coductor_Ion's_Shroud_09062026.png",
+  "url": "https://axda.github.io/Blu/The_Hidden_Coductor_Ion's_Shroud_09062026.png",
+  "thumbnail": "The_Hidden_Coductor_Ion's_Shroud_09062026.png",
+  "tags": ["NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "shroud", "verse"],
+  "date": "2026-06-09",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 8500,
+  "type": "png"
 }
 ]
