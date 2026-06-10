@@ -10882,5 +10882,16 @@
   "cluster": "deposits",
   "size": 8500,
   "type": "png"
+},
+{
+  "title": "permanent_magnets_REE_Motor_Efficiency",
+  "url": "https://axda.github.io/Blu/REE_Motor_Efficiency_10062026_axd.svg",
+  "thumbnail": "REE_Motor_Efficiency_10062026_axd.svg",
+  "tags": ["Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)  ", "NdFeB", "permanent magnets", "NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "EV", "motors],
+  "date": "2026-06-10",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 3400,
+  "type": "png"
 }
 ]
