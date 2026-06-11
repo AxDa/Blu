@@ -10915,5 +10915,16 @@
   "cluster": "deposits",
   "size": 264100,
   "type": "svg"
+},
+{
+  "title": "Rare_Earth_Magnet_Supply_Chain_Risk_Map_11062026_axd",
+  "url": "https://axda.github.io/Blu/Rare_Earth_Magnet_Supply_Chain_Risk_Map_11062026_axd.png",
+  "thumbnail": "Rare_Earth_Magnet_Supply_Chain_Risk_Map_11062026_axd.png",
+  "tags": ["Dynamics", "Operations", "Technology", "Supply_Chain_Risk_Map", "Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)  ", "NdFeB", "permanent magnets", "NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "EV", "motors"],
+  "date": "2026-06-11",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 34600,
+  "type": "png"
 }
 ]
