@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>REE_Refining_and_Magnet_Hubs.kml</name>
+
+    <!-- Styles -->
+    <Style id="refiningStyle">
+      <IconStyle>
+        <color>ff00ff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+
+    <Style id="magnetStyle">
+      <IconStyle>
+        <color>ff0000ff</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+
+    <!-- 1. Key rare-earth oxide separation & refining (ex-China) -->
+    <Folder>
+      <name>Rare-Earth Oxide Separation & Refining (ex-China)</name>
+
+      <Placemark>
+        <name>Lynas – Kalgoorlie (Mt Weld / Cracking & Leaching)</name>
+        <styleUrl>#refiningStyle</styleUrl>
+        <description>Mining + cracking/leaching for NdPr and other REEs.</description>
+        <Point>
+          <coordinates>121.47,-30.75,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Lynas – Kuantan (Gebeng Plant)</name>
+        <styleUrl>#refiningStyle</styleUrl>
+        <description>Major NdPr and heavy REE separation plant.</description>
+        <Point>
+          <coordinates>103.39,3.98,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>MP Materials – Mountain Pass</name>
+        <styleUrl>#refiningStyle</styleUrl>
+        <description>NdPr oxide separation facility in the USA.</description>
+        <Point>
+          <coordinates>-115.53,35.48,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Neo Performance Materials – Sillamäe</name>
+        <styleUrl>#refiningStyle</styleUrl>
+        <description>REE processing and separation in Europe.</description>
+        <Point>
+          <coordinates>27.77,59.40,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Iluka – Eneabba / Narngulu (Geraldton Region)</name>
+        <styleUrl>#refiningStyle</styleUrl>
+        <description>REE refinery project in Western Australia.</description>
+        <Point>
+          <coordinates>114.61,-28.78,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Carester / Caremag – Lacq</name>
+        <styleUrl>#refiningStyle</styleUrl>
+        <description>REE recycling and oxide production (France, under development).</description>
+        <Point>
+          <coordinates>-0.57,43.38,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+
+    <!-- 2. Major magnet manufacturing hubs (non-exhaustive) -->
+    <Folder>
+      <name>Major NdFeB Magnet Manufacturing Hubs (Non-Exhaustive)</name>
+
+      <Placemark>
+        <name>Shin-Etsu Chemical – Niigata Region</name>
+        <styleUrl>#magnetStyle</styleUrl>
+        <description>NdFeB magnet manufacturing (Japan).</description>
+        <Point>
+          <coordinates>139.02,37.90,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Proterial (Hitachi Metals) – Kumagaya</name>
+        <styleUrl>#magnetStyle</styleUrl>
+        <description>NdFeB magnet production site (Japan).</description>
+        <Point>
+          <coordinates>139.39,36.15,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>VAC Group – Hanau</name>
+        <styleUrl>#magnetStyle</styleUrl>
+        <description>NdFeB and SmCo magnet manufacturing (Germany).</description>
+        <Point>
+          <coordinates>8.92,50.13,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>VAC / E-VAC – Sumter Plant</name>
+        <styleUrl>#magnetStyle</styleUrl>
+        <description>New NdFeB plant for EV applications (USA).</description>
+        <Point>
+          <coordinates>-80.34,33.92,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Noveon Magnetics – San Marcos</name>
+        <styleUrl>#magnetStyle</styleUrl>
+        <description>NdFeB magnets with strong recycling focus (USA).</description>
+        <Point>
+          <coordinates>-97.94,29.88,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Neo Performance Materials – Peterborough</name>
+        <styleUrl>#magnetStyle</styleUrl>
+        <description>NdFeB magnet manufacturing (Canada).</description>
+        <Point>
+          <coordinates>-78.32,44.30,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+
+  </Document>
+</kml>
