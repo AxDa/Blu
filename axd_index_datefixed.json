@@ -10926,5 +10926,16 @@
   "cluster": "deposits",
   "size": 34600,
   "type": "png"
+},
+{
+  "title": "rare_earth_oxide_refining_major_magnet_manufacturing_hubs_axd.png",
+  "url": "https://axda.github.io/Blu/rare_earth_oxide_refining_major_magnet_manufacturing_hubs_axd.png",
+  "thumbnail": "rare_earth_oxide_refining_major_magnet_manufacturing_hubs_axd.png",
+  "tags": ["Dynamics", "Operations", "Technology", "Supply_Chain_Risk_Map", "Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)  ", "NdFeB", "permanent magnets", "NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "EV", "motors"],
+  "date": "2026-06-11",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 13000,
+  "type": "png"
 }
 ]
