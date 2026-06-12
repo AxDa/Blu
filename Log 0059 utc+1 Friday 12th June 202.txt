@@ -1,0 +1,191 @@
+Log 00:59 utc+1 Friday 12th June 2026
+"This is evil torture" being broadcast - no sound (the machine speaks) 
+ repetitively over and over again
+
+
+
+
+Once these REE deposits "tags": ["Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)", "Yttrium (Y)"], are harvested.
+Explain in a few paragraphs, smelting processes, dynamics and operations technology's that gets these deposits into permanent magnets. Where in the chain of production might there be bottle-necks or limited production facilities.  In other words where/what are the potential risks involved in production and ownership of the final product. 
+
+
+Dynamics_Operations_tech_ree's_11062026_axd.png
+Rare_Earth_Magnet_Supply_Chain_Risk_Map_11062026_axd
+
+{
+  "title": "Dynamics_Operations_tech_ree's",
+  "url": "https://axda.github.io/Blu/Dynamics_Operations_tech_ree's_11062026_axd.png",
+  "thumbnail": "Dynamics_Operations_tech_ree's_11062026_axd.png",
+  "tags": ["Dynamics", "Operations", "Technology", "Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)  ", "NdFeB", "permanent magnets", "NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "EV", "motors"],
+  "date": "2026-06-11",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 19100,
+  "type": "png"
+}
+
+  Novon Magnets san Marcos -97.9593307
+{
+  "title": "Rare_Earth_Magnet_Supply_Chain_Risk_Map_11062026_axd",
+  "url": "https://axda.github.io/Blu/Rare_Earth_Magnet_Supply_Chain_Risk_Map_11062026_axd.png",
+  "thumbnail": "Rare_Earth_Magnet_Supply_Chain_Risk_Map_11062026_axd.png",
+  "tags": ["Dynamics", "Operations", "Technology", "Supply_Chain_Risk_Map", "Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)  ", "NdFeB", "permanent magnets", "NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "EV", "motors"],
+  "date": "2026-06-11",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 34600,
+  "type": "png"
+}
+
+rare_earth_oxide_refining_major_magnet_manufacturing_hubs_axd.png
+{
+  "title": "rare_earth_oxide_refining_major_magnet_manufacturing_hubs_axd.png",
+  "url": "https://axda.github.io/Blu/rare_earth_oxide_refining_major_magnet_manufacturing_hubs_axd.png",
+  "thumbnail": "rare_earth_oxide_refining_major_magnet_manufacturing_hubs_axd.png",
+  "tags": ["Dynamics", "Operations", "Technology", "Supply_Chain_Risk_Map", "Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)  ", "NdFeB", "permanent magnets", "NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "EV", "motors"],
+  "date": "2026-06-11",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 13000,
+  "type": "png"
+}
+
+
+Global_rare_earth_oxide_separation_refining_opilot_axd_12062026
+
+{
+  "title": "Global_rare_earth_oxide_separation_refining_opilot_axd_12062026.png",
+  "url": "https://axda.github.io/Blu/Global_rare_earth_oxide_separation_refining_opilot_axd_12062026.png",
+  "thumbnail": "Global_rare_earth_oxide_separation_refining_opilot_axd_12062026.png",
+  "tags": ["verse", "risk", "Dynamics", "Operations", "Technology", "Supply_Chain_Risk_Map", "Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)  ", "NdFeB", "permanent magnets", "NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "EV", "motors"],
+  "date": "2026-06-11",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 9400,
+  "type": "png"
+}
+
+{
+  "title": "Risk_weighted_supply_chain_China_Vs_India_Russia.png",
+  "url": "https://axda.github.io/Blu/Risk_weighted_supply_chain_China_Vs_India_Russia_11062026.png",
+  "thumbnail": "Risk_weighted_supply_chain_China_Vs_India_Russia_11062026.png",
+  "tags": ["risk", "Dynamics", "Operations", "Technology", "Supply_Chain_Risk_Map", "Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)  ", "NdFeB", "permanent magnets", "NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "EV", "motors"],
+  "date": "2026-06-11",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 30200,
+  "type": "png"
+}
+
+
+{
+  "title": "REE_Usage_EV_Batts_other",
+  "url": "https://axda.github.io/Blu/REE_Usage_EV_11062026.svg",
+  "thumbnail": "REE_Motor_Efficiency_10062026_axd.svg",
+  "tags": ["Neodymium (Nd)", "Praseodymium (Pr)", "Dysprosium (Dy)", "Terbium (Tb)  ", "NdFeB", "permanent magnets", "NiMH", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "Graphene", "conductive scaffold", "Ion's", "EV", "motors"],
+  "date": "2026-06-11",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 264100,
+  "type": "svg"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Section	Description	Function
+Stator Housing	Fixed outer shell with copper windings	Carries alternating current to create a rotating magnetic field
+Rotor Core	Cylindrical permanent magnet or induction cage	Experiences tangential Lorentz force that drives rotation
+Air Gap	Narrow space between stator and rotor	Region where magnetic flux crosses and interacts with rotor conductors
+Shaft	Central axis	Transfers torque to drivetrain
+
+
+
+Ok I want to know more about ree metals in the EV Motor I assume it is within the engineering of the magnets principally: Stator Housing	Fixed outer shell with copper windings	Carries alternating current to create a rotating magnetic field
+Rotor Core	Cylindrical permanent magnet or induction cage	Experiences tangential Lorentz force that drives rotation
+Air Gap	Narrow space between stator and rotor	Region where magnetic flux crosses and interacts with rotor conductors
+
+So lets understand how the improvement of using ree in magnets improve its magnetic field, flux and induction
+
+
+digraph REE_Motor_Efficiency {
+    rankdir=TB;
+    bgcolor="#111111";
+    fontname="Segoe UI";
+    node [fontname="Segoe UI", style=filled, fontcolor="white"];
+    edge [color="white", penwidth=1.6];
+
+    // COLOR MAPPING (legend)
+    subgraph cluster_legend {
+        label="Color Mapping";
+        fontsize=12;
+        color="#444444";
+        style=dashed;
+        Legend_Materials   [label="Materials / REEs",        fillcolor="#2E86C1", shape=box];
+        Legend_Magnetics   [label="Magnetic Properties",     fillcolor="#8E44AD", shape=box];
+        Legend_FieldFlux   [label="Field & Flux Density",    fillcolor="#16A085", shape=box];
+        Legend_Induction   [label="Induction & Forces",      fillcolor="#D35400", shape=box];
+        Legend_System      [label="System-Level Outcomes",   fillcolor="#B7950B", shape=box];
+    }
+
+    // MATERIALS / REEs
+    REE_Core [label="Rare-earth elements\nNd, Pr, Dy, Tb", fillcolor="#2E86C1", shape=box];
+    Electron_Structure [label="4f electron-shell\nstructure", fillcolor="#2E86C1", shape=box];
+
+    // MAGNETIC PROPERTIES
+    Anisotropy [label="High magnetic\nanisotropy", fillcolor="#8E44AD", shape=ellipse];
+    Coercivity [label="High coercivity\n(resists demagnetisation)", fillcolor="#8E44AD", shape=ellipse];
+    Stable_Magnets [label="Stable rotor magnets\nunder AC fields", fillcolor="#8E44AD", shape=ellipse];
+
+    // FIELD & FLUX
+    Flux_Density [label="Higher magnetic\nflux density (B)\nin air gap", fillcolor="#16A085", shape=box];
+    Better_Than_Ferrite [label="Stronger than\nferrite / iron magnets", fillcolor="#16A085", shape=box];
+
+    // INDUCTION & FORCES
+    Lorentz_Force [label="Stronger Lorentz\nforces on rotor", fillcolor="#D35400", shape=box];
+    Torque_Per_Amp [label="More torque\nper ampere", fillcolor="#D35400", shape=box];
+    Copper_Losses [label="Reduced copper\nlosses", fillcolor="#D35400", shape=box];
+
+    // SYSTEM-LEVEL OUTCOMES
+    Smaller_Motor [label="Smaller & lighter\nmotor", fillcolor="#B7950B", shape=box];
+    Power_Density [label="Higher power\ndensity", fillcolor="#B7950B", shape=box];
+    Efficiency [label="Higher efficiency\n(lower energy use)", fillcolor="#B7950B", shape=box];
+    Thermal [label="Reduced heat\nat high RPM", fillcolor="#B7950B", shape=box];
+    Trifecta [label="More flux / geometry\nMore torque / current\nMore efficiency / mass", fillcolor="#B7950B", shape=box];
+
+    // RELATIONSHIPS (all white edges)
+    REE_Core -> Electron_Structure;
+    Electron_Structure -> Anisotropy;
+    Electron_Structure -> Coercivity;
+
+    Anisotropy -> Stable_Magnets;
+    Coercivity -> Stable_Magnets;
+
+    Stable_Magnets -> Flux_Density;
+    Stable_Magnets -> Better_Than_Ferrite;
+
+    Flux_Density -> Lorentz_Force;
+    Better_Than_Ferrite -> Lorentz_Force;
+
+    Lorentz_Force -> Torque_Per_Amp;
+    Torque_Per_Amp -> Copper_Losses;
+
+    Torque_Per_Amp -> Smaller_Motor;
+    Torque_Per_Amp -> Power_Density;
+    Copper_Losses -> Efficiency;
+    Flux_Density -> Efficiency;
+    Efficiency -> Thermal;
+
+    Smaller_Motor -> Trifecta;
+    Power_Density -> Trifecta;
+    Efficiency -> Trifecta;
+}
