@@ -10985,5 +10985,16 @@
   "cluster": "perambulator",
   "size": 266000,
   "type": "mp3"
+},
+{
+  "title": "Graphene_Battery_Enhancement_1724_utc+1_axd_12062026.svg",
+  "url": "https://axda.github.io/Blu/Graphene_Battery_Enhancement_1724_utc+1_axd_12062026.svg",
+  "thumbnail": "Graphene_Battery_Enhancement_1724_utc+1_axd_12062026.svg",
+  "tags": ["rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "NiMH"],
+  "date": "2026-06-12",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 3960,
+  "type": "svg"
 }
 ]
