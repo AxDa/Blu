@@ -10970,5 +10970,20 @@
   "cluster": "testimony",
   "size": 19000,
   "type": "svg"
+},
+{
+  "title": "Bleakst_perambulator_0330_utc+1_12062026",
+  "url": "https://axda.github.io/Blu/Bleakst_perambulator_0330_12062026.mp3",
+  "thumbnail": "waveform_thumbnails/0015_0025_ut_bleak_bleed_06032025.png",
+  "tags": [
+    "audio",
+    "archive",
+    "testimony"
+  ],
+  "date": "2026-06-12",
+  "motif": "civic decay",
+  "cluster": "perambulator",
+  "size": 266000,
+  "type": "mp3"
 }
 ]
