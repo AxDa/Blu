@@ -11029,5 +11029,20 @@
   "cluster": "deposits",
   "size": 34500,
   "type": "png"
+},
+{
+  "title": "Bleakst_Fireworks_positional_0032_0037_utc+1_13062026_axd_v0.0.mp3",
+  "url": "https://axda.github.io/Blu/Bleakst_Fireworks_positional_0032_0037_utc+1_13062026_axd_v0.0.mp3",
+  "thumbnail": "waveform_thumbnails/",
+  "tags": [
+    "audio",
+    "archive",
+    "testimony"
+  ],
+  "date": "2026-06-14",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 391000,
+  "type": "mp3"
 }
 ]
