@@ -10996,5 +10996,16 @@
   "cluster": "deposits",
   "size": 3960,
   "type": "svg"
+},
+{
+  "title": "REE_Water_Comparison_ mine_separation_facility_v_recycling_magnet_plant_13062026_axd.svg",
+  "url": "https://axda.github.io/Blu/REE_Water_Comparison_ mine_separation_facility_v_recycling_magnet_plant_13062026_axd.svg",
+  "thumbnail": "REE_Water_Comparison_ mine_separation_facility_v_recycling_magnet_plant_13062026_axd.svg",
+  "tags": ["Water","rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "NiMH"],
+  "date": "2026-06-13",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 44000,
+  "type": "svg"
 }
 ]
