@@ -11007,5 +11007,27 @@
   "cluster": "deposits",
   "size": 44000,
   "type": "svg"
+},
+{
+  "title": "MP_Water_Electric_Supply_2325_utc+1_13062026.png",
+  "url": "https://axda.github.io/Blu/MP_Water_Electric_Supply_2325_utc+1_13062026.png",
+  "thumbnail": "MP_Water_Electric_Supply_2325_utc+1_13062026.png",
+  "tags": ["Water", "Electric", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "NiMH"],
+  "date": "2026-06-13",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 51900,
+  "type": "png"
+},
+{
+  "title": "MP_mine_v_SanMarcos_Plant_ree's_2344_utc+1_13062026.png",
+  "url": "https://axda.github.io/Blu/MP_mine_v_SanMarcos_Plant_ree's_2344_utc+1_13062026.png",
+  "thumbnail": "MP_mine_v_SanMarcos_Plant_ree's_2344_utc+1_13062026.png",
+  "tags": ["Water", "Electric", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "NiMH"],
+  "date": "2026-06-13",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 34500,
+  "type": "png"
 }
 ]
