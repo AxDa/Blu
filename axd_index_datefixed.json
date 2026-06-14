@@ -11059,5 +11059,27 @@
   "cluster": "testimony",
   "size": 39100,
   "type": "mp3"
+},
+{
+  "title": "Ivanpah_Valley_Groundwater_Basin_Ca_(Simplified)_1924_utc+1_14062026_axd.png",
+  "url": "https://axda.github.io/Blu/Ivanpah_Valley_Groundwater_Basin_Ca_(Simplified)_1924_utc+1_14062026_axd.png",
+  "thumbnail": "Ivanpah_Valley_Groundwater_Basin_Ca_(Simplified)_1924_utc+1_14062026_axd.png",
+  "tags": ["Ivanpah Valley", "Water", "Electric", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "NiMH"],
+  "date": "2026-06-14",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 38100,
+  "type": "png"
+},
+{
+  "title": "Ivanpah_Valley_Groundwater_Basin_Ca_(Simplified)_1822_utc+1_14062026_axd.png",
+  "url": "https://axda.github.io/Blu/Ivanpah_Valley_Groundwater_Basin_Ca_(Simplified)_1822_utc+1_14062026_axd.png",
+  "thumbnail": "Ivanpah_Valley_Groundwater_Basin_Ca_(Simplified)_1822_utc+1_14062026_axd.png",
+  "tags": ["Ivanpah Valley", "Water", "Electric", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "NiMH"],
+  "date": "2026-06-14",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 740800,
+  "type": "png"
 }
 ]
