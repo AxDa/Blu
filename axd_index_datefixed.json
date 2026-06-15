@@ -11103,5 +11103,16 @@
   "cluster": "deposits",
   "size": 740800,
   "type": "png"
+},
+{
+  "title": "MP_DepletionCurves_Ivanpah_Valley_Groundwater_Basin _6-030)_15062026_axd.svg",
+  "url": "https://axda.github.io/Blu/MP_DepletionCurves_Ivanpah_Valley_Groundwater_Basin _6-030)_15062026_axd.svg",
+  "thumbnail": "MP_DepletionCurves_Ivanpah_Valley_Groundwater_Basin _6-030)_15062026_axd.svg",
+  "tags": ["Ivanpah Valley", "Water", "Electric", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "NiMH"],
+  "date": "2026-06-15",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 155900,
+  "type": "svg"
 }
 ]
