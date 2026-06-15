@@ -11114,5 +11114,18 @@
   "cluster": "deposits",
   "size": 155900,
   "type": "svg"
+},
+{
+  "title": "Bleakst_0413e_utc+1_15062026_axd.mp3",
+  "url": "https://axda.github.io/Blu/Bleakst_0413e_utc+1_15062026_axd.mp3",
+  "thumbnail": "waveform_thumbnails/trk_2_v1.2_Bleak-Street_1703_utc_1_axd_27072024.png",
+  "tags": [
+    "Bleakst"
+  ],
+  "date": "2026-06-15",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 634700,
+  "type": "mp3"
 }
 ]
