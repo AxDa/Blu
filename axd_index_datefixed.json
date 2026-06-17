@@ -11149,5 +11149,16 @@
   "cluster": "deposits",
   "size": 240000,
   "type": "svg"
+},
+{
+  "title": "log_0121_utc+1_17062026.png",
+  "url": "https://axda.github.io/Blu/log_0121_utc+1_17062026.png",
+  "thumbnail": "log_0121_utc+1_17062026.png",
+  "tags": ["Log"],
+  "date": "2026-06-17",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 23900,
+  "type": "png"
 }
 ]
