@@ -430,7 +430,7 @@ function render(items) {
         img.onerror = () => {
             if (img.dataset.fallbackApplied === "true") return;
         
-            img.src = "icon_orange.png?ref=master";
+            img.src = "icon_orange.png";   // this file exists
             img.dataset.fallbackApplied = "true";
             img.classList.add("thumb-orange");
         };
