@@ -8375,13 +8375,13 @@
     "date": "2023-09-17",
     "motif": "media_reference",
     "cluster": "audio_archive",
-    "size": 0,
+    "size": 6000,
     "type": "mp3"
    },
     {
     "title": "Drew_Barrymore_Jennifer_CNNOnline_17092023_axd_v2ba",
-    "url": "https://axda.github.io/Blu/Drew_Barrymore_v2ba_Jennifer_saw_CNN Online_17092023.mp3",
-    "thumbnail": "DrewBarrymore_Jennifer_CNNOnline_17092023_axd_v2ba.png",
+    "url": "https://axda.github.io/Blu/Drew_Barrymore_v2ba_Jennifer_saw_CNN_Online_17092023.mp3",
+    "thumbnail": "icon_red.png",
     "tags": [
       "audio",
       "archive",
