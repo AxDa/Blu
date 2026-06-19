@@ -11503,5 +11503,27 @@
     "cluster": "testimony",
     "size": 21300,
     "type": "png"
-  }
+  }.
+  {
+  "title": "IMG_20260617_2224_utc+1_axd.svg",
+  "url": "https://axda.github.io/Blu/IMG_20260617_2224_utc+1_axd.svg",
+  "thumbnail": "IMG_20260617_2224_utc+1_axd.svg",
+  "tags": ["IMG", "population", "L_M_H", "Ivanpah Valley", "Water", "Electric", "rare_earth", "ree", "deposits", "La-Ce-Nd-Pr", "global bind", "NiMH"],
+  "date": "2026-06-16",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 947800,
+  "type": "svg"
+},
+{
+  "title": "Machine+voice_obs_19062026.png",
+  "url": "https://axda.github.io/Blu/Machine+voice_obs_19062026.png",
+  "thumbnail": "Machine+voice_obs_19062026.png",
+  "tags": ["Log", "observation"],
+  "date": "2026-06-19",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 10700,
+  "type": "png"
+}
 ]
