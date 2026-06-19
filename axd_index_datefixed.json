@@ -105,18 +105,18 @@
     "type": "mp3"
   },
   {
-    "title": "whiteBackGroundGlass2009_v0.1a.png",
-    "url": "https://axda.github.io/Blu/whiteBackGroundGlass20092025%20.png",
-    "thumbnail": "whiteBackGroundGlass20092025 .png",
+    "title": "whiteBackGroundGlass20092025_v0.1a.png",
+    "url": "https://axda.github.io/Blu/whiteBackGroundGlass20092025.png",
+    "thumbnail": "whiteBackGroundGlass20092025.png",
     "tags": [
-      "audio",
-      "archive",
+      "icon",
+      "background",
       "visual"
     ],
     "date": "2025-09-01",
     "motif": "moral inquiry",
-    "cluster": "dialogue",
-    "size": null,
+    "cluster": "interface",
+    "size": 10000,
     "type": "png"
   },
   {
