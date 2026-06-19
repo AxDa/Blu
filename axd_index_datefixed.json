@@ -8377,11 +8377,11 @@
     "cluster": "audio_archive",
     "size": 6000,
     "type": "mp3"
-   },
-    {
+  },
+  {
     "title": "Drew_Barrymore_Jennifer_CNNOnline_17092023_axd_v2ba",
     "url": "https://axda.github.io/Blu/Drew_Barrymore_v2ba_Jennifer_saw_CNN_Online_17092023.mp3",
-    "thumbnail": "icon_red.png",
+    "thumbnail": "icon_bw.png",
     "tags": [
       "audio",
       "archive",
