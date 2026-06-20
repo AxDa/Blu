@@ -11574,6 +11574,17 @@
   "type": "png"
 },
 {
+"title": "IraKellerFountainParkWGS84Park_Boundary_Waterfall_axda_state_0355_utc_1__20062029.png",
+"url": "https://axda.github.io/Blu/IraKellerFountainParkWGS84Park_Boundary_Waterfall_axda_state_0355_utc_1__20062029.png",
+"thumbnail": "IraKellerFountainParkWGS84Park_Boundary_Waterfall_axda_state_0355_utc_1__20062029.png",
+"tags": ["Ira", "Keller", "Fountain", "Park"],
+"date": "2026-06-20",
+"motif": "rare earth locations",
+"cluster": "deposits",
+"size": 56000,
+"type": "png"
+},
+{
   "title": "IraKellerFountainParkWGS84Park_Boundary_Waterfall_axd.kml",
   "url": "https://earth.google.com/web/@?link=IraKellerFountainParkWGS84Park_Boundary_Waterfall_Point_axda.kml",
   "thumbnail": "IraKellerFountainParkWGS84Park_Boundary_Waterfall_axda_thumb.png",
@@ -11591,6 +11602,7 @@
 {
   "title": "Test_IraKellerFountainParkWGS84Park_Boundary_Waterfall_axd.kml",
   "url": "https://earth.google.com/earth/d/12kDyEQl5lheG_OfPVWw0wpFq_ExB7qlR?usp=sharing",
+  "thumbnail": "IraKellerFountainParkWGS84Park_Boundary_Waterfall_axda_thumb.png",
   "thumbnail": "",
   "tags": [
     "rare_earth",
