@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Ira Keller Fountain Park – Boundary + Waterfall</name>
+
+    <!-- Waterfall Point -->
+    <Placemark>
+      <name>Ira Keller Fountain – Waterfall</name>
+      <Point>
+        <coordinates>-122.6790134,45.5126602,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- Park Boundary Polygon -->
+    <Placemark>
+      <name>Ira Keller Fountain Park – Boundary</name>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -122.679215,45.512829,0
+              -122.678842,45.512842,0
+              -122.678829,45.512540,0
+              -122.679207,45.512536,0
+              -122.679215,45.512829,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+  </Document>
+</kml>
+
+
+
