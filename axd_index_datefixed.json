@@ -11584,6 +11584,22 @@
   "size": 3714000,
   "type": "png"
 },
+ {
+  "title": "Bleaksirenst_1100_utc_1_20062026_v0.2.mp3",
+  "url": "https://axda.github.io/Blu/Bleaksirenst_1100_utc_1_20062026_v0.2.mp3",
+  "thumbnail": "Bleaksirenst",
+  "tags": [
+    "audio",
+    "archive",
+    "Bleaksirenst",
+    "testimony"
+  ],
+  "date": "2026-06-20",
+  "motif": "civic sound",
+  "cluster": "siren_blue",
+  "size": 829000,
+  "type": "mp3"
+},
 {
   "title": "Bleaksirenst_0440_utc_1_20062026_v0.2.mp3",
   "url": "https://axda.github.io/Blu/Bleaksirenst_0440_utc_1_20062026_v0.2.mp3",
@@ -11597,7 +11613,7 @@
   "date": "2026-06-20",
   "motif": "civic sound",
   "cluster": "siren_blue",
-  "size": 38200,
+  "size": 382000,
   "type": "mp3"
 },
 {
