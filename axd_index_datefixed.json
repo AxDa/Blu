@@ -11572,5 +11572,20 @@
   "cluster": "testimony",
   "size": 10700,
   "type": "png"
+},
+{
+  "title": "IraKellerFountainParkWGS84Park_Boundary_Waterfall_axd.kml",
+  "url": "https://earth.google.com/web/@?link=IraKellerFountainParkWGS84Park_Boundary_Waterfall_Point_axda.kml",
+  "thumbnail": "",
+  "tags": [
+    "rare_earth",
+    "water",
+    "deposits"
+  ],
+  "date": "2026-06-20",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 1000,
+  "type": "kml"
 }
 ]
