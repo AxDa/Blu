@@ -11587,5 +11587,20 @@
   "cluster": "deposits",
   "size": 1000,
   "type": "kml"
+},
+{
+  "title": "Test_IraKellerFountainParkWGS84Park_Boundary_Waterfall_axd.kml",
+  "url": "https://earth.google.com/earth/d/12kDyEQl5lheG_OfPVWw0wpFq_ExB7qlR?usp=sharing",
+  "thumbnail": "",
+  "tags": [
+    "rare_earth",
+    "water",
+    "deposits"
+  ],
+  "date": "2026-06-20",
+  "motif": "rare earth locations",
+  "cluster": "deposits",
+  "size": 1000,
+  "type": "kml"
 }
 ]
