@@ -11573,6 +11573,22 @@
   "size": 10700,
   "type": "png"
 },
+ {
+  "title": "Bleaksirenst_1628_utc_1_20062026_V0.01.mp3",
+  "url": "https://axda.github.io/Blu/Bleaksirenst_1628_utc_1_20062026_V0.01.mp3",
+  "thumbnail": "",
+  "tags": [
+    "audio",
+    "archive",
+    "Bleaksirenst",
+    "testimony"
+  ],
+  "date": "2026-06-20",
+  "motif": "civic sound",
+  "cluster": "siren_blue",
+  "size": 190000,
+  "type": "mp3"
+},
 {
   "title": "Transmission_opilot_20260620_095348_Log_0622_930_utc_1_20062026_axd.png",
   "url": "https://axda.github.io/Blu/Transmission_opilot_20260620_095348_Log_0622_930_utc_1_20062026_axd.png",
