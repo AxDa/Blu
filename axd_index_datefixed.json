@@ -11694,5 +11694,16 @@
   "cluster": "cross_state_conectivity_deposits",
   "size": 3380000,
   "type": "png"
+},
+{
+  "title": "burg_lattice_balanced_map_7620_nodes_edge_USGS_knn_warp_weft_algorithm_woven_21062026_axd.svg",
+  "url": "https://axda.github.io/Blu/7260_burg_lattice_balanced_axd_0254_1_21062026_axd.svg",
+  "thumbnail": "burg_lattice_map_762_nodes_edge_USGS_knn_warp_weft_algorithm_woven_21062026_axd_thumb.png",
+  "tags": ["7620", "nodes", "USGS", "warp", "weft", "woven", "fabric"],
+  "date": "2026-06-21",
+  "motif": "rare earth locations",
+  "cluster": "cross_state_conectivity_deposits",
+  "size": 1589000,
+  "type": "png"
 }
 ]
