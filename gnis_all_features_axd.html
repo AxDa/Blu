@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GNIS Feature Explorer</title>
+
+<!-- LOCAL Leaflet first -->
+<link rel="stylesheet" href="leaflet/leaflet.css" onerror="this.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'">
+<script src="leaflet/leaflet.js" onerror="this.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'"></script>
+
+<style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { margin-bottom: 10px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+    select, input, button { padding: 6px; font-size: 13px; }
+    select[multiple] { min-width: 150px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 5px; font-size: 12px; }
+    th { background: #f0f0f0; }
+    mark { background: yellow; padding: 0 1px; }
+    #map { height: 350px; margin-top: 15px; border: 1px solid #ccc; }
+    #pagination { margin-top: 10px; }
+    #pagination button { margin: 0 5px; }
+</style>
+</head>
+<body>
+
+<h2>GNIS Feature Explorer</h2>
+
+<div class="filters">
+    <input type="text" id="searchBox" placeholder="Search all fields...">
+
+    <input list="names" id="nameSearch" placeholder="Auto-complete name...">
+    <datalist id="names"></datalist>
+
+    <select id="feature_id" multiple size="5"></select>
+    <select id="name" multiple size="5"></select>
+    <select id="state" multiple size="5"></select>
+    <select id="county" multiple size="5"></select>
+    <select id="feature_class" multiple size="5"></select>
+    <select id="latitude" multiple size="5"></select>
+    <select id="longitude" multiple size="5"></select>
+    <select id="map_name" multiple size="5"></select>
+</div>
+
+<div>
+    <button onclick="exportJSON()">Export JSON</button>
+    <button onclick="exportCSV()">Export CSV</button>
+</div>
+
+<table id="resultsTable">
+    <thead>
+        <tr>
+            <th>feature_id</th>
+            <th>name</th>
+            <th>state</th>
+            <th>county</th>
+            <th>feature_class</th>
+            <th>latitude</th>
+            <th>longitude</th>
+            <th>map_name</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<div id="pagination"></div>
+
+<div id="map"></div>
+
+<script>
+let gnisData = [];
+let filteredResults = [];
+let currentPage = 1;
+let rowsPerPage = 50;
+let map;
+let markersLayer;
+
+window.onload = () => {
+    loadData();
+};
+
+async function loadData() {
+    gnisData = await fetchLargeDriveFile("1v8QoXW3vfve-IZKavHkqTDlC_PFnr_C4");
+    filteredResults = gnisData.slice();
+    initMap();
+    populateDropdowns();
+    populateNameAutocomplete();
+    renderTable(filteredResults);
+}
+
+
+async function fetchLargeDriveFile(fileId) {
+    let url = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    let response = await fetch(url);
+
+    let text = await response.text();
+    let tokenMatch = text.match(/confirm=([0-9A-Za-z_-]+)/);
+
+    if (!tokenMatch) {
+        return JSON.parse(text);
+    }
+
+    let confirmToken = tokenMatch[1];
+
+    let downloadUrl =
+        `https://drive.google.com/uc?export=download&confirm=${confirmToken}&id=${fileId}`;
+
+    let finalResponse = await fetch(downloadUrl);
+    return await finalResponse.json();
+}
+
+
+
+function initMap() {
+    if (typeof L === "undefined") {
+        alert("Leaflet failed to load. Check leaflet.js path.");
+        return;
+    }
+
+    map = L.map('map').setView([39, -98], 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 }).addTo(map);
+    markersLayer = L.layerGroup().addTo(map);
+}
+
+function populateDropdowns() {
+    const fields = ["feature_id", "name", "state", "county", "feature_class", "latitude", "longitude", "map_name"];
+
+    fields.forEach(field => {
+        const select = document.getElementById(field);
+        const values = [...new Set(gnisData.map(item => item[field]))].sort();
+
+        values.forEach(v => {
+            const opt = document.createElement("option");
+            opt.value = v;
+            opt.textContent = v;
+            select.appendChild(opt);
+        });
+
+        select.addEventListener("change", filterData);
+    });
+
+    document.getElementById("searchBox").addEventListener("input", () => { currentPage = 1; filterData(); });
+    document.getElementById("nameSearch").addEventListener("input", () => { currentPage = 1; filterData(); });
+}
+
+function populateNameAutocomplete() {
+    const nameList = document.getElementById("names");
+    const names = [...new Set(gnisData.map(x => x.name))].sort();
+    names.forEach(n => {
+        const opt = document.createElement("option");
+        opt.value = n;
+        nameList.appendChild(opt);
+    });
+}
+
+function getSelectedValues(id) {
+    return [...document.getElementById(id).selectedOptions].map(o => o.value);
+}
+
+function highlight(text, term) {
+    if (!term) return text;
+    const re = new RegExp("(" + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ")", "gi");
+    return text.replace(re, "<mark>$1</mark>");
+}
+
+function filterData() {
+    let data = gnisData.slice();
+    const searchText = document.getElementById("searchBox").value.trim().toLowerCase();
+    const nameAuto = document.getElementById("nameSearch").value.trim();
+
+    if (searchText) {
+        data = data.filter(item =>
+            Object.values(item).some(val =>
+                String(val).toLowerCase().includes(searchText)
+            )
+        );
+    }
+
+    if (nameAuto) {
+        data = data.filter(item => String(item.name) === nameAuto);
+    }
+
+    const fields = ["feature_id", "name", "state", "county", "feature_class", "latitude", "longitude", "map_name"];
+    fields.forEach(field => {
+        const selected = getSelectedValues(field);
+        if (selected.length > 0) {
+            data = data.filter(item => selected.includes(String(item[field])));
+        }
+    });
+
+    filteredResults = data;
+    renderTable(filteredResults);
+}
+
+function paginate(data) {
+    const start = (currentPage - 1) * rowsPerPage;
+    return data.slice(start, start + rowsPerPage);
+}
+
+function renderPaginationControls(totalRows) {
+    const totalPages = Math.max(1, Math.ceil(totalRows / rowsPerPage));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const container = document.getElementById("pagination");
+    container.innerHTML = `
+        <button ${currentPage===1?"disabled":""} onclick="changePage(-1)">Prev</button>
+        Page ${currentPage} of ${totalPages}
+        <button ${currentPage===totalPages?"disabled":""} onclick="changePage(1)">Next</button>
+    `;
+}
+
+function changePage(delta) {
+    currentPage += delta;
+    renderTable(filteredResults);
+}
+
+function renderTable(data) {
+    const tbody = document.querySelector("#resultsTable tbody");
+    tbody.innerHTML = "";
+
+    const paged = paginate(data);
+    const searchText = document.getElementById("searchBox").value.trim();
+
+    paged.forEach(item => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${highlight(String(item.feature_id), searchText)}</td>
+            <td>${highlight(String(item.name), searchText)}</td>
+            <td>${highlight(String(item.state), searchText)}</td>
+            <td>${highlight(String(item.county), searchText)}</td>
+            <td>${highlight(String(item.feature_class), searchText)}</td>
+            <td>${highlight(String(item.latitude), searchText)}</td>
+            <td>${highlight(String(item.longitude), searchText)}</td>
+            <td>${highlight(String(item.map_name), searchText)}</td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    renderPaginationControls(data.length);
+    updateMap(paged);
+}
+
+function updateMap(data) {
+    markersLayer.clearLayers();
+    if (!data.length) return;
+
+    const latlngs = [];
+    data.forEach(item => {
+        if (item.latitude != null && item.longitude != null) {
+            const lat = Number(item.latitude);
+            const lon = Number(item.longitude);
+            const marker = L.marker([lat, lon]).bindPopup(
+                `<b>${item.name}</b><br>${item.county}, ${item.state}<br>${item.feature_class}`
+            );
+            markersLayer.addLayer(marker);
+            latlngs.push([lat, lon]);
+        }
+    });
+
+    if (latlngs.length) {
+        const bounds = L.latLngBounds(latlngs);
+        map.fitBounds(bounds, {padding: [20, 20]});
+    }
+}
+
+function exportJSON() {
+    const blob = new Blob([JSON.stringify(filteredResults, null, 2)], {type:"application/json"});
+    download(blob, "gnis_filtered.json");
+}
+
+function exportCSV() {
+    if (!filteredResults.length) return;
+    const headers = Object.keys(filteredResults[0]);
+    const rows = [
+        headers.join(","),
+        ...filteredResults.map(o => headers.map(h => csvEscape(o[h])).join(","))
+    ];
+    const blob = new Blob([rows.join("\n")], {type:"text/csv"});
+    download(blob, "gnis_filtered.csv");
+}
+
+function csvEscape(value) {
+    if (value == null) return "";
+    const s = String(value);
+    if (/[",\n]/.test(s)) {
+        return '"' + s.replace(/"/g, '""') + '"';
+    }
+    return s;
+}
+
+function download(blob, filename) {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+</script>
+
+</body>
+</html>
