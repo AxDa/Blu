@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GNIS SQLite Feature Explorer</title>
+
+<link rel="stylesheet" href="leaflet/leaflet.css">
+<script src="leaflet/leaflet.js"></script>
+<script src="sql-wasm.js"></script>
+
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  h2 { margin-bottom: 10px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+  select, input, button { padding: 6px; font-size: 13px; }
+  select[multiple] { min-width: 150px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th, td { border: 1px solid #ccc; padding: 5px; font-size: 12px; }
+  th { background: #f0f0f0; }
+  mark { background: yellow; padding: 0 1px; }
+  #map { height: 350px; margin-top: 15px; border: 1px solid #ccc; }
+  #pagination { margin-top: 10px; }
+  #pagination button { margin: 0 5px; }
+</style>
+</head>
+<body>
+
+<h2>GNIS SQLite Feature Explorer</h2>
+
+<div class="filters">
+  <input type="text" id="searchBox" placeholder="Search all fields...">
+  <input list="names" id="nameSearch" placeholder="Auto-complete name...">
+  <datalist id="names"></datalist>
+
+  <select id="state" multiple size="5"></select>
+  <select id="county" multiple size="5"></select>
+  <select id="feature_class" multiple size="5"></select>
+</div>
+
+<div>
+  <button onclick="exportJSON()">Export JSON</button>
+  <button onclick="exportCSV()">Export CSV</button>
+</div>
+
+<table id="resultsTable">
+  <thead>
+    <tr>
+      <th>feature_id</th>
+      <th>name</th>
+      <th>state</th>
+      <th>county</th>
+      <th>feature_class</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>map_name</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<div id="pagination"></div>
+<div id="map"></div>
+
+<script>
+let SQL;
+let db;
+let currentPage = 1;
+let rowsPerPage = 50;
+let map, markersLayer;
+let lastResultRows = []; // current page rows for export
+
+window.onload = async () => {
+  await initSql();
+  await loadDatabase();
+  initMap();
+  await populateFilterOptions();
+  attachFilterEvents();
+  await runQueryAndRender();
+};
+
+async function initSql() {
+  SQL = await initSqlJs({
+    locateFile: file => 'sql-wasm.wasm'
+  });
+}
+
+async function loadDatabase() {
+  const res = await fetch('gnis.db');
+  const buf = await res.arrayBuffer();
+  db = new SQL.Database(new Uint8Array(buf));
+}
+
+function initMap() {
+  map = L.map('map').setView([39, -98], 4);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18
+  }).addTo(map);
+  markersLayer = L.layerGroup().addTo(map);
+}
+
+async function populateFilterOptions() {
+  // get distinct values from SQLite
+  const states = queryColumn("SELECT DISTINCT state FROM gnis ORDER BY state");
+  const counties = queryColumn("SELECT DISTINCT county FROM gnis ORDER BY county");
+  const classes = queryColumn("SELECT DISTINCT feature_class FROM gnis ORDER BY feature_class");
+  const names = queryColumn("SELECT DISTINCT name FROM gnis ORDER BY name LIMIT 5000"); // cap for sanity
+
+  fillSelect('state', states);
+  fillSelect('county', counties);
+  fillSelect('feature_class', classes);
+  fillDatalist('names', names);
+}
+
+function queryColumn(sql) {
+  const res = db.exec(sql);
+  if (!res.length) return [];
+  return res[0].values.map(row => row[0]).filter(v => v != null && v !== '');
+}
+
+function fillSelect(id, values) {
+  const sel = document.getElementById(id);
+  sel.innerHTML = '';
+  values.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
+    sel.appendChild(opt);
+  });
+}
+
+function fillDatalist(id, values) {
+  const dl = document.getElementById(id);
+  dl.innerHTML = '';
+  values.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    dl.appendChild(opt);
+  });
+}
+
+function attachFilterEvents() {
+  document.getElementById('searchBox').addEventListener('input', () => { currentPage = 1; runQueryAndRender(); });
+  document.getElementById('nameSearch').addEventListener('input', () => { currentPage = 1; runQueryAndRender(); });
+  ['state','county','feature_class'].forEach(id => {
+    document.getElementById(id).addEventListener('change', () => { currentPage = 1; runQueryAndRender(); });
+  });
+}
+
+function getSelectedValues(id) {
+  return [...document.getElementById(id).selectedOptions].map(o => o.value);
+}
+
+function buildWhereClause(params) {
+  const clauses = [];
+  const values = [];
+
+  if (params.searchText) {
+    const like = `%${params.searchText}%`;
+    clauses.push("(feature_id LIKE ? OR name LIKE ? OR state LIKE ? OR county LIKE ? OR feature_class LIKE ? OR map_name LIKE ?)");
+    values.push(like, like, like, like, like, like);
+  }
+
+  if (params.nameAuto) {
+    clauses.push("name = ?");
+    values.push(params.nameAuto);
+  }
+
+  if (params.states.length) {
+    clauses.push(`state IN (${params.states.map(() => '?').join(',')})`);
+    values.push(...params.states);
+  }
+
+  if (params.counties.length) {
+    clauses.push(`county IN (${params.counties.map(() => '?').join(',')})`);
+    values.push(...params.counties);
+  }
+
+  if (params.classes.length) {
+    clauses.push(`feature_class IN (${params.classes.map(() => '?').join(',')})`);
+    values.push(...params.classes);
+  }
+
+  const where = clauses.length ? 'WHERE ' + clauses.join(' AND ') : '';
+  return { where, values };
+}
+
+async function runQueryAndRender() {
+  const searchText = document.getElementById('searchBox').value.trim();
+  const nameAuto = document.getElementById('nameSearch').value.trim();
+  const states = getSelectedValues('state');
+  const counties = getSelectedValues('county');
+  const classes = getSelectedValues('feature_class');
+
+  const params = { searchText, nameAuto, states, counties, classes };
+  const { where, values } = buildWhereClause(params);
+
+  const offset = (currentPage - 1) * rowsPerPage;
+
+  const countStmt = db.prepare(`SELECT COUNT(*) FROM gnis ${where}`);
+  countStmt.bind(values);
+  countStmt.step();
+  const totalRows = countStmt.get()[0];
+  countStmt.free();
+
+  const stmt = db.prepare(`
+    SELECT feature_id, name, state, county, feature_class, latitude, longitude, map_name
+    FROM gnis
+    ${where}
+    ORDER BY name
+    LIMIT ${rowsPerPage} OFFSET ${offset}
+  `);
+  stmt.bind(values);
+
+  const rows = [];
+  while (stmt.step()) {
+    rows.push(stmt.get());
+  }
+  stmt.free();
+
+  lastResultRows = rows;
+  renderTable(rows, searchText);
+  renderPaginationControls(totalRows);
+  updateMap(rows);
+}
+
+function renderPaginationControls(totalRows) {
+  const totalPages = Math.max(1, Math.ceil(totalRows / rowsPerPage));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  const container = document.getElementById('pagination');
+  container.innerHTML = `
+    <button ${currentPage===1?"disabled":""} onclick="changePage(-1)">Prev</button>
+    Page ${currentPage} of ${totalPages} (${totalRows} rows)
+    <button ${currentPage===totalPages?"disabled":""} onclick="changePage(1)">Next</button>
+  `;
+}
+
+function changePage(delta) {
+  currentPage += delta;
+  runQueryAndRender();
+}
+
+function highlight(text, term) {
+  if (!term) return text;
+  const re = new RegExp("(" + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ")", "gi");
+  return text.replace(re, "<mark>$1</mark>");
+}
+
+function renderTable(rows, searchText) {
+  const tbody = document.querySelector('#resultsTable tbody');
+  tbody.innerHTML = '';
+
+  rows.forEach(r => {
+    const [feature_id, name, state, county, feature_class, lat, lon, map_name] = r;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${highlight(String(feature_id), searchText)}</td>
+      <td>${highlight(String(name), searchText)}</td>
+      <td>${highlight(String(state), searchText)}</td>
+      <td>${highlight(String(county), searchText)}</td>
+      <td>${highlight(String(feature_class), searchText)}</td>
+      <td>${lat}</td>
+      <td>${lon}</td>
+      <td>${highlight(String(map_name), searchText)}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function updateMap(rows) {
+  markersLayer.clearLayers();
+  if (!rows.length) return;
+
+  const latlngs = [];
+  rows.forEach(r => {
+    const [, name, state, county, feature_class, lat, lon] = r;
+    if (lat != null && lon != null) {
+      const marker = L.marker([lat, lon]).bindPopup(
+        `<b>${name}</b><br>${county}, ${state}<br>${feature_class}`
+      );
+      markersLayer.addLayer(marker);
+      latlngs.push([lat, lon]);
+    }
+  });
+
+  if (latlngs.length) {
+    const bounds = L.latLngBounds(latlngs);
+    map.fitBounds(bounds, { padding: [20, 20] });
+  }
+}
+
+function exportJSON() {
+  const objs = lastResultRows.map(r => ({
+    feature_id: r[0],
+    name: r[1],
+    state: r[2],
+    county: r[3],
+    feature_class: r[4],
+    latitude: r[5],
+    longitude: r[6],
+    map_name: r[7]
+  }));
+  const blob = new Blob([JSON.stringify(objs, null, 2)], { type: 'application/json' });
+  download(blob, 'gnis_filtered_sqlite.json');
+}
+
+function exportCSV() {
+  if (!lastResultRows.length) return;
+  const headers = ['feature_id','name','state','county','feature_class','latitude','longitude','map_name'];
+  const lines = [headers.join(',')];
+  lastResultRows.forEach(r => {
+    const row = r.map(csvEscape).join(',');
+    lines.push(row);
+  });
+  const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+  download(blob, 'gnis_filtered_sqlite.csv');
+}
+
+function csvEscape(value) {
+  if (value == null) return '';
+  const s = String(value);
+  if (/[",\n]/.test(s)) {
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  return s;
+}
+
+function download(blob, filename) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+</script>
+
+</body>
+</html>
