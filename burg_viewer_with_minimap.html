@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Large SVG Viewer with Minimap</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #111;
+    font-family: sans-serif;
+  }
+
+  #viewport {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  /* Minimap container */
+  #minimap {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #888;
+    background: #222;
+    overflow: hidden;
+    opacity: 0.85;
+  }
+
+  #minimap svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Viewport rectangle inside minimap */
+  #minimap-viewport {
+    position: absolute;
+    border: 2px solid #00ffff;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div id="viewport"></div>
+<div id="minimap">
+  <div id="minimap-viewport"></div>
+</div>
+
+<script src="https://unpkg.com/svg-pan-zoom/dist/svg-pan-zoom.min.js"></script>
+
+<script>
+  const SVG_FILE = "7260_burg_lattice_balanced_axd_0254_1_21062026_axd.svg";
+
+  fetch(SVG_FILE)
+    .then(r => r.text())
+    .then(svgText => {
+      // Insert SVG into main viewport
+      document.getElementById("viewport").innerHTML = svgText;
+
+      const svg = document.querySelector("#viewport svg");
+      svg.removeAttribute("width");
+      svg.removeAttribute("height");
+      svg.style.width = "100%";
+      svg.style.height = "100%";
+
+      // Clone SVG for minimap
+      const mini = document.createElement("div");
+      mini.innerHTML = svgText;
+      const miniSvg = mini.querySelector("svg");
+      miniSvg.removeAttribute("width");
+      miniSvg.removeAttribute("height");
+      miniSvg.style.width = "100%";
+      miniSvg.style.height = "100%";
+      document.getElementById("minimap").appendChild(miniSvg);
+
+      // Pan/zoom controller
+      const panZoom = svgPanZoom(svg, {
+        zoomEnabled: true,
+        controlIconsEnabled: true,
+        fit: true,
+        center: true,
+        minZoom: 0.01,
+        maxZoom: 200
+      });
+
+      // Update minimap viewport rectangle
+      function updateMinimap() {
+        const real = svg.getBoundingClientRect();
+        const view = panZoom.getSizes();
+
+        const scaleX = 200 / view.viewBox.width;
+        const scaleY = 200 / view.viewBox.height;
+
+        const vp = document.getElementById("minimap-viewport");
+        vp.style.width = (real.width * scaleX) + "px";
+        vp.style.height = (real.height * scaleY) + "px";
+        vp.style.left = (-view.viewBox.x * scaleX) + "px";
+        vp.style.top = (-view.viewBox.y * scaleY) + "px";
+      }
+
+      // Update on zoom/pan
+      svg.addEventListener("pan", updateMinimap);
+      svg.addEventListener("zoom", updateMinimap);
+
+      // Initial update
+      setTimeout(updateMinimap, 500);
+    });
+</script>
+
+</body>
+</html>
