@@ -11317,7 +11317,7 @@
   },
   {
     "title": "2026_Untitled_36_document_wk25_14062026",
-    "url": "https://axda.github.io/Blu/html_placeholder.png",
+    "url": "https://docs.google.com/document/d/1NtCgCL3hq-wXwqcP7x6HPMDI1XOfmTWcXbxiWraQ_QE/edit?usp=sharingg",
     "thumbnail": "html_placeholder.png",
     "tags": [
       "document",
@@ -11747,5 +11747,20 @@
   "cluster": "testimony",
   "size": 122000,
   "type": "mp3"
+},
+{
+  "title": "2026_Untitled_37_document_wk26_21062026",
+  "url": "https://docs.google.com/document/d/1Sf2CLnqWPduW2GNfstec57-cmf2lSn17DC1AdtKkKXM/edit?usp=sharing",
+  "thumbnail": "html_placeholder.png",
+  "tags": [
+    "document",
+    "google",
+    "reference"
+  ],
+  "date": "2026-06-21",
+  "motif": "reference_material",
+  "cluster": "documents",
+  "size": null,
+  "type": "doc"
 }
 ]
