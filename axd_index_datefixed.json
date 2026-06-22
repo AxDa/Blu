@@ -11762,5 +11762,25 @@
   "cluster": "documents",
   "size": null,
   "type": "doc"
+},
+{
+  "title": "Bleakst_perambulator_exhausts_1140_utc_1_22062026_v0.1.mp3",
+  "url": "https://axda.github.io/Blu/Bleakst_perambulator_exhausts_1140_utc_1_22062026_v0.1.mp3",
+  "thumbnail": "waveform_thumbnails/0041_bleak_bleed_agency_06032025_2.png",
+  "tags": [
+    "audio",
+    "archive",
+    "testimony",
+    "perambulator",
+    "exhausts",
+    "neighbours",
+    "business",
+    "bbcreau"
+  ],
+  "date": "2026-06-22",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 2201000,
+  "type": "mp3"
 }
 ]
