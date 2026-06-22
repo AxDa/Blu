@@ -11718,9 +11718,30 @@
   "type": "html"
 },
 {
+  "title": "Bleaksirenst_drum_perambulator_1832_1838_utc_1_22062026_v0.1.mp3",
+  "url": "https://axda.github.io/Blu/Bleaksirenst_drum_perambulator_1832_1838_utc_1_22062026_v0.1.mp3",
+  "thumbnail": "waveform_thumbnails/bleaksirenst2301_2301utc_1_17042025.png",
+  "tags": [
+    "audio",
+    "bleaksirenst",
+    "archive",
+    "testimony",
+    "same_evil",
+    "neighbours",
+    "business",
+    "perambulator",
+    "bbcreau"
+  ],
+  "date": "2026-06-22",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 698000,
+  "type": "mp3"
+},
+{
   "title": "Bleaksi_1648___utc_1_22062026.mp3",
   "url": "https://axda.github.io/Blu/Bleaksi_1648___utc_1_22062026.mp3",
-  "thumbnail": "waveform_thumbnails/waveform_thumbnails/0041_bleak_bleed_agency_06032025_2.png",
+  "thumbnail": "waveform_thumbnails/0041_bleak_bleed_agency_06032025_2.png",
   "tags": [
     "audio",
     "archive",
