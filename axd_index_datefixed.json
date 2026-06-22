@@ -11718,9 +11718,28 @@
   "type": "html"
 },
 {
+  "title": "Bleaksirenst_2145_utc_1_22062026.mp3",
+  "url": "https://axda.github.io/Blu/Bleaksirenst_2145_utc_1_22062026.mp3",
+  "thumbnail": "waveform_thumbnails/bleaksirenst2301_2301utc_1_17042025.png",
+  "tags": [
+    "audio",
+    "bleaksirenst",
+    "archive",
+    "testimony",
+    "neighbours",
+    "business",
+    "bbcreau"
+  ],
+  "date": "2026-06-22",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 57000,
+  "type": "mp3"
+},
+{
   "title": "Brandenburg_Brandenburger_Tor_Gates_Combined_KML_Both_MSTs_22062026_axd.svg",
   "url": "https://axda.github.io/Blu/Brandenburg_Brandenburger_Tor_Gates_Combined_KML_Both_MSTs_22062026_axd.svg",
-  "thumbnail": "Brandenburg_Gate_Brandenburger_Tor_1949_utc_1_22062026_axd.png",
+  "thumbnail": "Brandenburg_Brandenburger_Tor_Gates_Combined_KML_Both_MSTs_22062026_axd.png",
   "tags": ["historical", "nodes", "burg", "tor", "Gates"],
   "date": "2026-06-22",
   "motif": "rare earth locations",
