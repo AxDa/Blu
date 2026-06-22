@@ -11716,5 +11716,21 @@
   "cluster": "cross_state_conectivity_deposits",
   "size": 1589000,
   "type": "html"
+},
+{
+  "title": "bizarre_story_fragment_v0.1",
+  "url": "https://axda.github.io/Blu/This_is_a_bizarre story_nay_0100_utc_1_22062026.png",
+  "thumbnail": "This_is_a_bizarre story_nay_0100_utc_1_22062026.png",
+  "tags": [
+    "bizarre",
+    "archive",
+    "weekly",
+    "story"
+  ],
+  "date": "2026-06-22",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 266000,
+  "type": "fragment"
 }
 ]
