@@ -11836,9 +11836,11 @@
 {
   "title": "Bleakst_audio_alt_0124_utc_1_22062026_v0.1.mp3",
   "url": "https://axda.github.io/Blu/Bleakst_audio_alt_0124_utc_1_22062026_v0.1.mp3",
-  "thumbnail": "waveform_thumbnails/0041_bleak_bleed_agency_06032025_2.png",
+  "thumbnail": "waveform_thumbnails/audio_thumb_v1.png",
   "tags": [
     "audio",
+    "alt",
+    "ia",
     "archive",
     "testimony"
   ],
@@ -11981,5 +11983,22 @@
   "cluster": "allegory",
   "size": 247000,
   "type": "file"
+},
+{
+"title": "Bleakst_alt_internal_affairs_0247_utc_1_24062026_c_v0.0.mp3",
+"url": "https://axda.github.io/Blu/Bleakst_alt_internal_affairs_0247_utc_1_24062026_c_v0.0.mp3",
+"thumbnail": "waveform_thumbnails/audio_thumb_v1.png",
+"tags": [
+  "audio",
+  "alt",
+  "ia",
+  "archive",
+  "testimony"
+],
+"date": "2026-06-24",
+"motif": "civic decay",
+"cluster": "testimony",
+"size": 1050000,
+"type": "mp3"
 }
 ]
