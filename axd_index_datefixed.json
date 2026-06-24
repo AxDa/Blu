@@ -11884,8 +11884,8 @@
   "cluster": "testimony",
   "size": 2201000,
   "type": "mp3"
-},
-{
+ },
+ {
   "title": "Bleakst_business_national_emergency_bank_rate_history_dot_2139_utc_1_23062026_v0.1.mp3",
   "url": "https://axda.github.io/Blu/Bleakst_business_national_emergency_bank_rate_history_dot_2139_utc_1_23062026_v0.1.mp3",
   "thumbnail": "waveform_thumbnails/audio_thumb.png",
@@ -11903,8 +11903,8 @@
   "cluster": "testimony",
   "size": 3634000,
   "type": "mp3"
-},
-{
+ },
+ {
   "title": "Bleaksirenst_1806_utc_1_23062023.mp3",
   "url": "https://axda.github.io/Blu/Bleaksirenst_1806_utc_1_23062023.mp3",
   "thumbnail": "waveform_thumbnails/bleakbluesirenst_1950_circa_utc_1_27042025_v0.2_axd.png",
@@ -11919,8 +11919,8 @@
   "cluster": "testimony",
   "size": 177000,
   "type": "mp3"
-},
-{
+ },
+ {
   "title": "Bleaksirenst_1750_utc_1_23062023_v0.2_axd.mp3",
   "url": "https://axda.github.io/Blu/Bleaksirenst_1750_utc_1_23062023_v0.2.mp3",
   "thumbnail": "waveform_thumbnails/bleakbluesirenst_full_1252_utc_1_25042025.png",
@@ -11935,8 +11935,8 @@
   "cluster": "testimony",
   "size": 536000,
   "type": "mp3"
-},
-{
+ },
+ {
   "title": "Bleakst_k9_agency_street_0525_0528_utc_23062026.mp3 ",
   "url": "https://axda.github.io/Blu/Bleakst_k9_agency_street_0525_0528_utc_23062026.mp3 ",
   "thumbnail": "waveform_thumbnails/trk_1_Bleak-Street_36_2052utc_1_dog_patrol_rescue_vanguard_14072024.png",
@@ -11951,8 +11951,8 @@
   "cluster": "testimony",
   "size": 703000,
   "type": "mp3"
-},
-{
+ },
+ {
   "title": "Bleakairest_0400_utc_1_23062026_v0.1_axd.mp3",
   "url": "https://axda.github.io/Blu/Bleakairest_0400_utc_1_23062026_v0.1_axd.mp3",
   "thumbnail": "waveform_thumbnails/bleakstaire1838_1844_utc_1_07052025.png",
@@ -11967,8 +11967,8 @@
   "cluster": "testimony",
   "size": 1045000,
   "type": "mp3"
-},
-{
+ },
+ {
   "title": "Budget_923_days_thru_23062026_axd.pdf",
   "url": "https://axda.github.io/Blu/Budget_923_days_thru_23062023_axd.pdf",
   "thumbnail": "waveform_thumbnails/Budget_923_days_thru_23062026_axd_0156_utc_1_thumb.png",
@@ -11984,22 +11984,39 @@
   "size": 247000,
   "type": "file"
 },
- {
-  "title": "Bleakst_1526_1534_utc_1_24062026.mp3",
-  "url": "https://axda.github.io/Blu/Bleakst_1526_1534_utc_1_24062026.mp3",
-  "thumbnail": "waveform_thumbnails/0041_bleak_bleed_agency_06032025_2.png",
-  "tags": [
-    "audio",
-    "archive",
-    "testimony",
-    "harassment",
-    "bbcreau"
-  ],
-  "date": "2026-06-24",
-  "motif": "civic decay",
-  "cluster": "perambulator",
-  "size": 1900000,
-  "type": "mp3"
+{
+"title": "Bleakst_1612_1616_utc_1_24062026_v0.0a.mp3",
+"url": "https://axda.github.io/Blu/Bleakst_1612_1616_utc_1_24062026_v0.0a.mp3",
+"thumbnail": "waveform_thumbnails/bleak_circus_2_1735gmt_27102024.png",
+"tags": [
+"audio",
+"archive",
+"testimony",
+"harassment",
+"bbcreau"
+],
+"date": "2026-06-24",
+"motif": "civic decay",
+"cluster": "perambulator",
+"size": 783000,
+"type": "mp3"
+},
+{
+"title": "Bleakst_1526_1534_utc_1_24062026.mp3",
+"url": "https://axda.github.io/Blu/Bleakst_1526_1534_utc_1_24062026.mp3",
+"thumbnail": "waveform_thumbnails/0041_bleak_bleed_agency_06032025_2.png",
+"tags": [
+  "audio",
+  "archive",
+  "testimony",
+  "harassment",
+  "bbcreau"
+],
+"date": "2026-06-24",
+"motif": "civic decay",
+"cluster": "perambulator",
+"size": 1900000,
+"type": "mp3"
 },
 {
 "title": "Bleakst_alt_ia_0247_utc_1_24062026_c_v0.0.mp3",
