@@ -11983,6 +11983,23 @@
   "cluster": "allegory",
   "size": 247000,
   "type": "file"
+ },
+ {
+  "title": "Bleakst_2029_utc_1_24062026_v0.0.mp3",
+  "url": "https://axda.github.io/Blu/Bleakst_2029_utc_1_24062026_v0.0.mp3",
+  "thumbnail": "waveform_thumbnails/bleakst_1835_1842_utc_1_09052025_v0.0.png",
+  "tags": [
+    "audio",
+    "archive",
+    "testimony",
+    "street",
+    "bbcreau"
+  ],
+  "date": "2026-06-24",
+  "motif": "civic decay",
+  "cluster": "perambulator",
+  "size": 216000,
+  "type": "mp3"
 },
 {
   "title": "Thrinacie_1830_utc_1_axd_24062026.png",
@@ -12048,5 +12065,21 @@
 "cluster": "testimony",
 "size": 1050000,
 "type": "mp3"
-}
+},
+{
+"Eon_Budget_812_days_thru_23062026_axd_0404_utc_1_25062026.png",
+"url": "https://axda.github.io/Blu/Eon_Budget_812_days_thru_23062026_axd_0404_utc_1_25062026.png",
+"thumbnail": "Eon_budget_summary_812_days_thru_23062026_axd_0420_utc_1_25062026.png",
+"tags": [
+  "eon",
+  "document",
+  "budget",
+  "literary"
+],
+"date": "2026-06-25",
+"motif": "moral inquiry",
+"cluster": "allegory",
+"size": 464000,
+"type": "file"
+},
 ]
