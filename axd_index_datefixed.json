@@ -12097,5 +12097,20 @@
 "cluster": "allegory",
 "size": 464000,
 "type": "file"
+},
+{
+  "title": "Bleakst_0825_utc_1_26062026_v0.0.mp3",
+  "url": "https://axda.github.io/Blu/Bleakst_0825_utc_1_26062026_v0.0.mp3",
+  "thumbnail": "waveform_thumbnails/Bleak-St_0759_0801_utc_22032025.png",
+  "tags": [
+    "audio",
+    "archive",
+    "testimony"
+  ],
+  "date": "2026-06-26",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 80000,
+  "type": "mp3"
 }
 ]
