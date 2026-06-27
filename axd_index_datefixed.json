@@ -12112,5 +12112,21 @@
   "cluster": "testimony",
   "size": 80000,
   "type": "mp3"
+},
+{
+  "title": "Bleakst_0007_utc_1_27062026_v0.0.mp3",
+  "url": "https://axda.github.io/Blu/Bleakst_0007_utc_1_27062026_v0.0.mp3",
+  "thumbnail": "waveform_thumbnails/Bleak-Street_bbc_v2.1_2204_utc_1_axd18072024.png",
+  "tags": [
+    "audio",
+    "bbcreau",
+    "archive",
+    "testimony"
+  ],
+  "date": "2026-06-27",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 1908000,
+  "type": "mp3"
 }
 ]
