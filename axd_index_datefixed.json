@@ -11862,7 +11862,7 @@
   "date": "2026-06-21",
   "motif": "reference_material",
   "cluster": "documents",
-  "size": null,
+  "size": 18400000,
   "type": "doc"
 },
 {
@@ -12214,5 +12214,20 @@
   "cluster": "testimony",
   "size": 1908000,
   "type": "mp3"
+},
+{
+"title": "2026_Untitled_38_document_wk27_28062026",
+"url": "https://docs.google.com/document/d/1SveL4OxYze6ILm1a15tPNjzErUpC0rdyvlHpn0MJajc/edit?usp=sharing",
+"thumbnail": "",
+"tags": [
+  "document",
+  "google",
+  "reference"
+],
+"date": "2026-06-28",
+"motif": "reference_material",
+"cluster": "documents",
+"size": null,
+"type": "doc"
 }
 ]
