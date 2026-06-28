@@ -8834,6 +8834,7 @@
     "date": "2025-02-28",
     "motif": "reference_material",
     "cluster": "documents",
+    "size": "99000",
     "type": "doc"
   },
   {
@@ -8960,7 +8961,7 @@
     "date": "2026-03-01",
     "motif": "reference_material",
     "cluster": "documents",
-    "size": null,
+    "size": 1730000,
     "type": "doc"
   },
   {
@@ -8975,7 +8976,7 @@
     "date": "2026-03-08",
     "motif": "reference_material",
     "cluster": "documents",
-    "size": null,
+    "size": 5000,
     "type": "doc"
   },
   {
@@ -8990,7 +8991,7 @@
     "date": "2026-03-15",
     "motif": "reference_material",
     "cluster": "documents",
-    "size": null,
+    "size": 2000000,
     "type": "doc"
   },
   {
@@ -9005,7 +9006,7 @@
     "date": "2026-03-30",
     "motif": "reference_material",
     "cluster": "documents",
-    "size": null,
+    "size": 2400000,
     "type": "doc"
   },
   {
@@ -9020,7 +9021,7 @@
     "date": "2026-04-06",
     "motif": "reference_material",
     "cluster": "documents",
-    "size": null,
+    "size": 2300000,
     "type": "doc"
   },
   {
@@ -9035,7 +9036,7 @@
     "date": "2026-04-13",
     "motif": "reference_material",
     "cluster": "documents",
-    "size": null,
+    "size": 5700000,
     "type": "doc"
   },
   {
@@ -9050,7 +9051,7 @@
     "date": "2026-04-20",
     "motif": "reference_material",
     "cluster": "documents",
-    "size": null,
+    "size": 8800000,
     "type": "doc"
   },
   {
@@ -9065,7 +9066,7 @@
     "date": "2026-05-05",
     "motif": "reference_material",
     "cluster": "documents",
-    "size": null,
+    "size": 600000,
     "type": "doc"
   },
   {
@@ -10786,7 +10787,7 @@
     ],
     "date": "2026-06-04",
     "motif": "civic sound",
-    "cluster": "testimony",
+    "cluster": "siren_blue",
     "size": 25900,
     "type": "mp3"
   },
@@ -11732,7 +11733,7 @@
   ],
   "date": "2026-06-22",
   "motif": "civic decay",
-  "cluster": "testimony",
+  "cluster": "siren_blue",
   "size": 57000,
   "type": "mp3"
 },
@@ -11775,12 +11776,12 @@
   ],
   "date": "2026-06-22",
   "motif": "civic decay",
-  "cluster": "testimony",
+  "cluster": "siren_blue",
   "size": 698000,
   "type": "mp3"
 },
 {
-  "title": "Bleaksi_1648___utc_1_22062026.mp3",
+  "title": "Bleakst_1648___utc_1_22062026.mp3",
   "url": "https://axda.github.io/Blu/Bleaksi_1648___utc_1_22062026.mp3",
   "thumbnail": "waveform_thumbnails/0041_bleak_bleed_agency_06032025_2.png",
   "tags": [
@@ -11916,7 +11917,7 @@
   ],
   "date": "2026-06-23",
   "motif": "civic decay",
-  "cluster": "testimony",
+  "cluster": "siren_blue",
   "size": 177000,
   "type": "mp3"
  },
@@ -11932,7 +11933,7 @@
   ],
   "date": "2026-06-23",
   "motif": "civic decay",
-  "cluster": "testimony",
+  "cluster": "siren_blue",
   "size": 536000,
   "type": "mp3"
  },
@@ -11964,7 +11965,7 @@
   ],
   "date": "2026-06-23",
   "motif": "civic decay",
-  "cluster": "testimony",
+  "cluster": "siren_blue",
   "size": 1045000,
   "type": "mp3"
  },
@@ -12145,7 +12146,7 @@
   ],
   "date": "2026-06-27",
   "motif": "civic decay",
-  "cluster": "testimony",
+  "cluster": "siren_blue",
   "size": 354000,
   "type": "mp3"
 },
@@ -12229,7 +12230,7 @@
   ],
   "date": "2026-06-28",
   "motif": "civic decay",
-  "cluster": "testimony",
+  "cluster": "siren_blue",
   "size": 424000,
   "type": "mp3"
 },
