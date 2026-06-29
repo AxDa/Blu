@@ -12283,5 +12283,20 @@
 "cluster": "documents",
 "size": null,
 "type": "doc"
+},
+{
+  "title": "circa_11400_163_avg_70_axd_29062026.png",
+  "url": "https://axda.github.io/Blu/circa_11400_163_avg_70_axd_29062026.png",
+  "thumbnail": "circa_11400_163_avg_70_axd_29062026.png",
+  "tags": [
+    "icon",
+    "background",
+    "visual"
+  ],
+  "date": "2026-06-29",
+  "motif": "moral inquiry",
+  "cluster": "interface",
+  "size": 2000,
+  "type": "png"
 }
 ]
