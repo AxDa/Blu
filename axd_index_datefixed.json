@@ -12285,6 +12285,24 @@
 "type": "doc"
 },
 {
+  "title": "Bleakst_snaptest_2034_utc_1_29062026_v0.01",
+  "url": "https://axda.github.io/Blu/Bleakst_snaptest_2034_utc_1_29062026_v0.01.mp3",
+  "thumbnail": "waveform_thumbnails/compass_chec_UnBS_sipp_bleak_desk_m_29062026.png",
+
+  "tags": [
+    "audio",
+    "snaptest",
+    "archive",
+    "testimony",
+    "log"
+  ],
+  "date": "2026-06-29",
+  "motif": "civic decay",
+  "cluster": "testimony",
+  "size": 147000,
+  "type": "mp3"
+},
+{
   "title": "BS_13hh15mm34ss_1834e_utc_1_29062026.wav",
   "url": "https://axda.github.io/Blu/BS_13hh15mm34ss_1834e_utc_1_29062026.wav",
   "thumbnail": "waveform_thumbnails/BS_sipp_bleak_desk_m_29062026.png",
