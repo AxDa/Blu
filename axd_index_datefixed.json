@@ -12400,5 +12400,37 @@
   "cluster": "interface",
   "size": 4000,
   "type": "png"
+},
+{
+"title": "Bleakairest_1230_utc_1_02072026_v0.0.mp3",
+"url": "https://axda.github.io/Blu/Bleakairest_1230_utc_1_02072026_v0.0.mp3",
+"thumbnail": "waveform_thumbnails/Bleakairest_1230_utc_1_02072026_v0.0_axd.png",
+"tags": [
+  "audio",
+  "bleakairest",
+  "archive",
+  "testimony"
+],
+"date": "2026-07-02",
+"motif": "civic decay",
+"cluster": "siren_blue",
+"size": 195000,
+"type": "mp3"
+},
+{
+"title": "Bleakairest_1230_utc_1_02072026_v0.2.mp3",
+"url": "https://axda.github.io/Blu/Bleakairest_1230_utc_1_02072026_v0.2.mp3",
+"thumbnail": "waveform_thumbnails/Bleakairest_1230_utc_1_02072026_v0.0_axd.png",
+"tags": [
+  "audio",
+  "bleakairest",
+  "archive",
+  "testimony"
+],
+"date": "2026-07-02",
+"motif": "civic decay",
+"cluster": "siren_blue",
+"size": 390000,
+"type": "mp3"
 }
 ]
