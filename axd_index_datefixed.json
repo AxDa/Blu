@@ -12402,6 +12402,40 @@
   "type": "png"
 },
 {
+"title": "Bleaksirenst_1526_utc_1_02072026_v0.2.mp3",
+"url": "https://axda.github.io/Blu/Bleaksirenst_1526_utc_1_02072026_v0.2",
+"thumbnail": "waveform_thumbnails/Bleaksirenst_1526_utc_1_02072026_v0.2_axd.png",
+"tags": [
+  "audio",
+  "bleakairest",
+  "archive",
+  "testimony",
+  "london"
+],
+"date": "2026-07-02",
+"motif": "civic decay",
+"cluster": "siren_blue",
+"size": 214000,
+"type": "mp3"
+},
+{
+"title": "Bleakairest_1511_utc_1_02072026_v0.01.mp3",
+"url": "https://axda.github.io/Blu/Bleakairest_1511_utc_1_02072026_v0.01.mp3",
+"thumbnail": "waveform_thumbnails/Bleakairest1511_utc_1_02072026_v0.1_axd.png",
+"tags": [
+  "audio",
+  "bleakairest",
+  "archive",
+  "testimony",
+  "london"
+],
+"date": "2026-07-02",
+"motif": "civic decay",
+"cluster": "siren_blue",
+"size": 2601000,
+"type": "mp3"
+},
+{
 "title": "Bleakairest_1230_utc_1_02072026_v0.0.mp3",
 "url": "https://axda.github.io/Blu/Bleakairest_1230_utc_1_02072026_v0.0.mp3",
 "thumbnail": "waveform_thumbnails/Bleakairest_1230_utc_1_02072026_v0.0_axd.png",
