@@ -17,12 +17,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Remove heavy folders
+      - name: Remove heavy folders and files
         run: |
           rm -rf output_audio
           rm -rf thumbnails
           rm -rf big_json
           rm -rf cache
+          rm -f Blu/opening_index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
