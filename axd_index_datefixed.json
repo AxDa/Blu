@@ -12621,5 +12621,16 @@
     "cluster": "testimony",
     "size": 11074472,
     "type": "mp3"
+  },
+  {
+    "title": "Bleakst_unverified_1956_2004_utc_1_04072026.mp3",
+    "url": "https://axda.github.io/Blu/Bleakst_unverified_1956_2004_utc_1_04072026.mp3",
+    "thumbnail": "waveform_thumbnails/Bleakst_unverified_1956_2004_utc_1_04072026_axd.png",
+    "tags": ["bbcreau", "significant"],
+    "date": "2026-07-04",
+    "motif": "civic decay",
+    "cluster": "unverified",
+    "size": 1955784,
+    "type": "mp3"
   }
 ]
