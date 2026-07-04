@@ -17,13 +17,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Remove heavy folders and files
+      - name: Remove heavy folders and large Blu HTML files
         run: |
           rm -rf output_audio
           rm -rf thumbnails
           rm -rf big_json
           rm -rf cache
+
+          # Remove ONLY the huge Blu HTML files
           rm -f Blu/opening_index.html
+          rm -f Blu/full_svg.html
+          rm -f Blu/index.html
+          rm -f Blu/Semantic_freq_extraction_dotfilesrawoutput_13092025_axd\(wip\).html
+          rm -f Blu/WorldTimeZonesNodeDripEcho_1908_27082025.html
+          rm -f Blu/InterrogationGlyphsHumanity_graph_1812_utc_10112025_axd.html
+          rm -f Blu/ButtonholeSanctum_RoyalHousesAmericanGlobalDynastiesIndictmentLatticefromSaxa-CoburgandGothaEst1917_1019_30102025_axd.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
