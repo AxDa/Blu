@@ -17,25 +17,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Exclude heavy files and folders from artifact
+      - name: Remove heavy folders ONLY (safe)
         run: |
-          # Heavy folders
           rm -rf big_json
           rm -rf cache
           rm -rf output_audio
           rm -rf thumbnails
 
-          # Heavy HTML files in repo root
-          rm -f Semantic_freq_extraction_dotfilesrawoutput_13092025_axd\(wip\).html
-          rm -f WorldTimeZonesNodeDripEcho_1908_27082025.html
-          rm -f InterrogationGlyphsHumanity_graph_1812_utc_10112025_axd.html
-          rm -f opening_index.html
-          rm -f index.html
-          rm -f ButtonholeSanctum_RoyalHousesAmericanGlobalDynastiesIndictmentLatticefromSaxa-CoburgandGothaEst1917_1019_30102025_axd.html
-          rm -f full_svg.html
-
-          # Heavy JSON (but stays in repo)
-          # rm -f axd_index_datefixed_rawurls.json
+          # DO NOT DELETE ANY ROOT FILES
+          # DO NOT DELETE ANY HTML
+          # DO NOT DELETE ANY JSON
+          # DO NOT DELETE ANY PNG
+          # DO NOT DELETE ANY SVG
+          # DO NOT DELETE ANYTHING your JSON references
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
