@@ -12648,7 +12648,18 @@
     "cluster": "unverified",
     "size": 1955784,
     "type": "mp3"
-  },  
+  },
+  {
+    "title": "Pew_unverified_Bleakst_soil_mechanics_ia_0734_utc_1_05072026.mp3",
+    "url": "https://axda.github.io/Blu/Pew_unverified_Bleakst_soil_mechanics_ia_0734_utc_1_05072026.mp3",
+    "thumbnail": "waveform_thumbnails/Pew_unverified_Bleakst_soil_mechanics_ia_0734_utc_1_05072026.png",
+    "tags": ["significant"],
+    "date": "2026-07-05",
+    "motif": "civic decay",
+    "cluster": "unverified",
+    "size": 623949,
+    "type": "mp3"
+  },
   {
     "title": "Notes_to_'Self'_0122_utc_1_05062026_axd",
     "url": "https://axda.github.io/Blu/Notes_to_Self_0122_utc_1_05062026_axd.png",
