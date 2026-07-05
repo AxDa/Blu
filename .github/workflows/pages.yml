@@ -35,7 +35,7 @@ jobs:
           rm -f full_svg.html
 
           # Heavy JSON (but stays in repo)
-          rm -f axd_index_datefixed_rawurls.json
+          # rm -f axd_index_datefixed_rawurls.json
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
