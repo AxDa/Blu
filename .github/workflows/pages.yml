@@ -17,17 +17,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Remove heavy folders and Blu before artifact upload
+      - name: Remove heavy folders and large Blu HTML files
         run: |
+          # Remove temporary heavy folders
           rm -rf big_json
           rm -rf cache
           rm -rf output_audio
           rm -rf thumbnails
 
-          # EXCLUDE Blu from the artifact (but keep it in the repo)
+          # Remove ALL large Blu HTML files you listed
+          rm -f Blu/Semantic_freq_extraction_dotfilesrawoutput_13092025_axd\(wip\).html
+          rm -f Blu/WorldTimeZonesNodeDripEcho_1908_27082025.html
+          rm -f Blu/InterrogationGlyphsHumanity_graph_1812_utc_10112025_axd.html
+          rm -f Blu/opening_index.html
+          rm -f Blu/index.html
+          rm -f Blu/ButtonholeSanctum_RoyalHousesAmericanGlobalDynastiesIndictmentLatticefromSaxa-CoburgandGothaEst1917_1019_30102025_axd.html
+          rm -f Blu/full_svg.html
+
+          # Remove the entire Blu folder from the artifact (but Blu stays in repo)
           rm -rf Blu
 
-          # EXCLUDE your new huge JSON from the artifact
+          # Remove your new JSON from the artifact (but keep it in repo)
           rm -f axd_index_datefixed_rawurls.json
 
       - name: Upload artifact
