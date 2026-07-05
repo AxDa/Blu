@@ -17,11 +17,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # SAFE CLEANUP: only remove folders that are truly safe to delete
-      - name: Remove safe temporary folders
+      - name: Exclude Blu and heavy folders from artifact
         run: |
+          rm -rf Blu
           rm -rf big_json
           rm -rf cache
+          rm -rf output_audio
+          rm -rf thumbnails
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
