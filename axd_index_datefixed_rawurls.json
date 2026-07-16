@@ -15668,6 +15668,21 @@
     "type": "png"
   },
   {
+    "title": "1_Bleakst_spurious_misc_bells_135430_utc_1_16072026_v0.2.mp3",
+    "url": "https://axda.github.io/1_Bleakst_spurious_misc_bells_135430_utc_1_16072026_v0.2.mp3",
+    "thumbnail": "https://axda.github.io/waveform_thumbnails/1_Bleakst_spurious_misc_bells_135430_utc_1_16072026_v0.2.mp3.png",
+    "tags": [
+      "harehills",
+      "bells",
+      "sounds"
+    ],
+    "date": "2026-07-16",
+    "motif": "civic decay",
+    "cluster": "abgency",
+    "size": 1308882,
+    "type": "mp3"
+  },
+  {
     "title": "1_Bleakst_perambulator_exhaust_1323_utc_1_16072026_v0.2.mp3",
     "url": "https://axda.github.io/1_Bleakst_perambulator_exhaust_1323_utc_1_16072026_v0.2.mp3",
     "thumbnail": "https://axda.github.io/waveform_thumbnails/1_Bleakst_perambulator_exhaust_1323_utc_1_16072026_v0.2.mp3.png",
@@ -15677,7 +15692,7 @@
       "exhaust",
       "sounds"
     ],
-    "date": "2026-07-13",
+    "date": "2026-07-16",
     "motif": "civic decay",
     "cluster": "perambulators",
     "size": 698243,
@@ -15693,7 +15708,7 @@
       "bleakst",
       "street"
     ],
-    "date": "2026-07-13",
+    "date": "2026-07-16",
     "motif": "civic decay",
     "cluster": "siren_blue",
     "size": 583305,
