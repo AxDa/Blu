@@ -16022,7 +16022,7 @@
   },
   {
     "title": "2026_Untitled_41_document_wk30_19072026_p",
-    "url": "https://docs.google.com/document/d/1943jDbzBIwMZHbz4aBmnX2Roqe-1n4-vFs4tXxHMcIk/edit?_",
+    "url": "https://docs.google.com/document/d/1943jDbzBIwMZHbz4aBmnX2Roqe-1n4-vFs4tXxHMcIk/edit?usp=sharing",
     "thumbnail": "edit",
     "tags": [
       "document",
@@ -16032,7 +16032,7 @@
     "date": "2026-07-19",
     "motif": "reference_material",
     "cluster": "documents",
-    "size": 1900000,
+    "size": 3060000,
     "type": "doc"
   },
   {
@@ -17073,5 +17073,20 @@
     "cluster": "neighbours",
     "size": 241832,
     "type": "mp3"
+  },
+  {
+    "title": "2026_Untitled_42_document_wk31_26072026_p",
+    "url": "https://docs.google.com/document/d/1Dk-1_GII5zIeOUm3q8l5JbkEHHWMpzDbwTz2wSyqGwY/edit?usp=sharing",
+    "thumbnail": "edit",
+    "tags": [
+      "document",
+      "google",
+      "reference"
+    ],
+    "date": "2026-07-26",
+    "motif": "reference_material",
+    "cluster": "documents",
+    "size": 0,
+    "type": "doc"
   }
 ]
