@@ -18062,5 +18062,20 @@
     "cluster": "signal",
     "size": 1115601,
     "type": "html"
+  },
+  {
+    "title": "1_Bleaksirenst_001745_001806_utc_1_31072026_v0.2.mp3",
+    "url": "https://axda.github.io/1_Bleaksirenst_001745_001806_utc_1_31072026_v0.2.mp3",
+    "thumbnail": "https://axda.github.io/waveform_thumbnails/1_Bleaksirenst_001745_001806_utc_1_31072026_v0.2.mp3.png",
+    "tags": [
+      "bleaksirenst",
+      "001745",
+      "clarity's"
+    ],
+    "date": "2026-07-30",
+    "motif": "civic decay",
+    "cluster": "testimony",
+    "size": 1489440,
+    "type": "mp3"
   }
 ]
