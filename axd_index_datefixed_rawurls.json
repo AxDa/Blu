@@ -18766,6 +18766,24 @@
   },
   {
     "title": "1_Bleakairest_111218_111252__ceausescu_bbcreau_frankenstinion_utc_1_03082026_v0.2.mp3",
+    "url": "https://axda.github.io/1_Bleakairest_111218_111252__ceausescu_frankenstinion_utc_1_03082026_v0.2.mp3",
+    "thumbnail": "https://axda.github.io/waveform_thumbnails/1_Bleakairest_111218_111252__ceausescu_frankenstinion_utc_1_03082026_v0.2.mp3.png",
+    "tags": [
+      "harehills",
+      "bleakst",
+      "ceausescu_frankenstinion",
+      "thru",
+      "111252",
+      "bleakairest"
+    ],
+    "date": "2026-08-01",
+    "motif": "civic decay",
+    "cluster": "aire",
+    "size": 4005554,
+    "type": "mp3"
+  },
+  {
+    "title": "1_Bleakairest_111218_111252__ceausescu_bbcreau_frankenstinion_utc_1_03082026_v0.2.mp3",
     "url_pages": "https://axda.github.io/1_Bleakairest_111218_111252__ceausescu_frankenstinion_utc_1_03082026_v0.2.mp3",
     "url_raw": "https://raw.githubusercontent.com/AxDa/Blu/master/1_Bleakairest_111218_111252__ceausescu_frankenstinion_utc_1_03082026_v0.2.mp3",
     "thumbnail_pages": "https://axda.github.io/waveform_thumbnails/1_Bleakairest_111218_111252__ceausescu_frankenstinion_utc_1_03082026_v0.2.mp3.png",
@@ -18778,7 +18796,7 @@
       "111252",
       "bleakairest"
     ],
-    "date": "2026-08-01",
+    "date": "2026-08-03",
     "motif": "civic decay",
     "cluster": "aire",
     "size": 4005554,
