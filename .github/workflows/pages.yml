@@ -3,12 +3,12 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - master     # ✔ correct
+      - master
 
 permissions:
   contents: read
-  pages: write     # ✔ correct
-  id-token: write  # ✔ correct
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
@@ -22,12 +22,12 @@ jobs:
 
       - name: Build
         run: |
-          echo "No build step"   # ✔ correct for static sites
+          echo "No build step"
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./Blu               # ✔ correct for static sites
+          path: ./Blu
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
