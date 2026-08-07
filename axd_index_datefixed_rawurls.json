@@ -19618,16 +19618,16 @@
 "tags": [
   "git"
 ],
-"date": "2026-08-07",
-"motif": "civic decay",
-"cluster": "deploy",
-"size": 441397,
-"type": "png"
+	"date": "2026-08-07",
+	"motif": "civic decay",
+	"cluster": "deploy",
+	"size": 441397,
+	"type": "png"
 },
 {
-	"title": "1_Bleakst_neighbour_085830_130800_utc_107082026_v0.1.mp3",
-	"url": "https://axda.github.io/1_Bleakst_neighbour_085830_130800_utc_107082026_v0.1.mp3",
-	"thumbnail": "https://axda.github.io/Thea/caucescu_1_bleakst_business_130800_07082026_v01.png",
+ "title": "1_Bleakst_neighbour_085830_130800_utc_107082026_v0.1.mp3",
+ "url": "https://axda.github.io/1_Bleakst_neighbour_085830_130800_utc_107082026_v0.1.mp3",
+ "thumbnail": "https://axda.github.io/waveform_thumbnails2/caucescu_1_bleakst_business_130800_07082026_v01.png",
 	"tags": [
 	  "harehills",
 	  "confidential",
