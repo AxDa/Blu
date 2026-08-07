@@ -1,1 +1,1 @@
-"wake": true
+"wake2": true
