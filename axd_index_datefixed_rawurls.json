@@ -19642,6 +19642,23 @@
 	"type": "mp3"
   },
   {
+    "title": "1_bleaksirenst_092725_092730_08082026_v0.2.mp3",
+    "url": "https://axda.github.io/1_bleaksirenst_092725_092730_08082026_v0.2.mp3",
+    "thumbnail": "https://axda.github.io/waveform_thumbnails/1_bleaksirenst_092725_092730_08082026_v0_2.png",
+    "tags": [
+      "bleaksirenst",
+      "interviews",
+      "092725",
+      "sirenblue",
+      "clarity's"
+    ],
+    "date": "2026-08-08",
+    "motif": "civic delay",
+    "cluster": "siren_blue",
+    "size": 1344826,
+    "type": "mp3"
+  },
+  {
     "title": "Mole_phone_to_c_0839_utc_1_08082026.png",
     "url": "https://axda.github.io/Mole_phone_to_c_0839_utc_1_08082026.png",
     "thumbnail": "https://axda.github.io/Mole_phone_to_c_0839_utc_1_08082026.png",
@@ -19653,5 +19670,20 @@
     "cluster": "deploy",
     "size": 85949,
     "type": "png"
+  },
+  {
+    "title": "2026_Untitled_44_document_wk33_09082026_p",
+    "url_pages": "https://docs.google.com/document/d/1oy200rMv-zWVViYwBXukZKaEywtNcjWXGLpbHGlCEnk/edit?usp=sharing",
+    "thumbnail_pages": "edit",
+    "tags": [
+      "document",
+      "google",
+      "reference"
+    ],
+    "date": "2026-07-19",
+    "motif": "reference_material",
+    "cluster": "documents",
+    "size": 1900000,
+    "type": "doc"
   }
 ]
