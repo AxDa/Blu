@@ -21129,5 +21129,61 @@
   "cluster": "signal",
   "size": 596745,
   "type": "html"
- }
+ },
+ {
+  "title": "rancidity_clamping_date_time_range_bleakst_14082026_graph13.svg",
+  "url": "https://axda.github.io/clamping_date_time_range_bleakst_14082026_graph13.svg",
+  "thumbnail": "https://axda.github.io/clamping_date_time_range_bleakst_14082026_graph13_thumb.png",
+  "tags": [
+    "graph",
+    "ash",
+    "warp_and_weft",
+    "fungal_tapestry",
+    "stack_effect",
+    "index_date_time",
+    "conical_chimneys",
+    "elevated_capability",
+    "archive",
+    "technical",
+    "rancidity",
+    "rancidity_realm_clamping",
+    "wypc_log",
+    "clamping",
+    "clarity",
+    "pioneer"
+  ],
+  "date": "2026-08-15",
+  "motif": "technical audit",
+  "cluster": "signal",
+  "size": 42727,
+  "type": "svg"
+},
+{
+  "title": "rancidity_clamping_date_time_range_bleakst_14082026_graph13.html",
+  "url": "https://axda.github.io/rancidity_clamping_date_time_range_bleakst_14082026_graph13.html",
+  "thumbnail": "https://axda.github.io/clamping_date_time_range_bleakst_14082026_graph13_thumb.png",
+  "tags": [
+    "graph",
+    "warp_and_weft",
+    "fungal_tapestry",
+    "ash",
+    "stack_effect",
+    "index_date_time",
+    "conical_chimneys",
+    "elevated_capability",
+    "archive",
+    "technical",
+    "rancidity",
+    "rancidity_realm_clamping",
+    "wypc_log",
+    "clamping",
+    "clarity",
+    "pioneer"
+  ],
+  "date": "2026-08-15",
+  "motif": "technical audit",
+  "cluster": "signal",
+  "size": 42727,
+  "type": "html"
+}
 ]
