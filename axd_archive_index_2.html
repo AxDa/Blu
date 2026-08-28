@@ -38,9 +38,6 @@
     display: none !important;
 }
 
-
-
-
 </style>
   
   <style>
@@ -277,6 +274,20 @@
 </audio>
 
 <canvas id="waveCanvas" width="600" height="80" style="width:100%; height:80px;"></canvas>
+
+<!-- Timestamp -->
+<div id="audioTime" style="color:#ccc; font-size:14px; margin-top:4px;">
+  00:00 / 00:00
+</div>
+
+<!-- Progress + buffer bar -->
+<div id="progressContainer" style="position:relative; width:100%; height:8px; background:#222; margin-top:6px; cursor:pointer;">
+  <div id="bufferBar" style="position:absolute; height:100%; width:0%; background:#444;"></div>
+  <div id="progressBar" style="position:absolute; height:100%; width:0%; background:#00ff88;"></div>
+</div>
+
+<!-- Scrub slider -->
+<input type="range" id="audioScrub" min="0" max="100" value="0" step="0.1" style="width:100%; margin-top:6px;">
 
 <!-- INDEX GRID BELOW CONTROLS -->
 <div id="index"></div>
@@ -558,163 +569,273 @@ loadIndex();
 </script>
   
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const audio = document.getElementById("hoverAudio");
-  const toggle = document.getElementById("audioToggle");
-  const playBtn = document.getElementById("audioPlay");
-  const title = document.getElementById("audioTitle");
-  const selector = document.getElementById("audioSelect");
-  const speedControl = document.getElementById("speedControl");
-  const reverseBtn = document.getElementById("reverseBtn");
-  const canvas = document.getElementById("waveCanvas");
-  const ctx = canvas.getContext("2d");
-
-  let audioEnabled = false;
-  let reverseMode = false;
-  let reverseInterval = null;
-
-  // Web Audio API
-  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  const track = audioCtx.createMediaElementSource(audio);
-  const analyser = audioCtx.createAnalyser();
-  analyser.fftSize = 2048;
-
-  track.connect(analyser);
-  analyser.connect(audioCtx.destination);
-
-  const bufferLength = analyser.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-
-  function drawWaveform() {
-    requestAnimationFrame(drawWaveform);
-
-    analyser.getByteTimeDomainData(dataArray);
-
-    ctx.fillStyle = "#111";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = "#00ff88";
-    ctx.beginPath();
-
-    const sliceWidth = canvas.width / bufferLength;
-    let x = 0;
-
-    for (let i = 0; i < bufferLength; i++) {
-      const v = dataArray[i] / 128.0;
-      const y = (v * canvas.height) / 2;
-
-      if (i === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-
-      x += sliceWidth;
+  document.addEventListener("DOMContentLoaded", () => {
+  
+    const audio = document.getElementById("hoverAudio");
+    const toggle = document.getElementById("audioToggle");
+    const playBtn = document.getElementById("audioPlay");
+    const title = document.getElementById("audioTitle");
+    const selector = document.getElementById("audioSelect");
+    const speedControl = document.getElementById("speedControl");
+    const reverseBtn = document.getElementById("reverseBtn");
+    const canvas = document.getElementById("waveCanvas");
+    const ctx = canvas.getContext("2d");
+  
+    const scrub = document.getElementById("audioScrub");
+    const timeDisplay = document.getElementById("audioTime");
+    const progressContainer = document.getElementById("progressContainer");
+    const progressBar = document.getElementById("progressBar");
+    const bufferBar = document.getElementById("bufferBar");
+  
+    let audioEnabled = false;
+    let reverseMode = false;
+    let reverseInterval = null;
+  
+    // -------------------------
+    // TIME FORMATTER
+    // -------------------------
+    function fmt(t) {
+      const m = Math.floor(t / 60);
+      const s = Math.floor(t % 60);
+      return `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
     }
-
-    ctx.lineTo(canvas.width, canvas.height / 2);
-    ctx.stroke();
-  }
-
-  drawWaveform();
-
-  // -------------------------
-  // Existing audio logic
-  // -------------------------
-
-  audio.volume = 0.5;
-
-  toggle.addEventListener("click", () => {
-    audioCtx.resume().catch(() => {});   // ← REQUIRED
-    audioEnabled = !audioEnabled;
-    toggle.textContent = audioEnabled ? "Audio: ON" : "Audio: OFF";
-
-    if (!audioEnabled) {
-      stopReverse();
+  
+    // -------------------------
+    // WAVEFORM SCRUBBING (Option C)
+    // -------------------------
+    let isScrubbing = false;
+    let wasPlaying = false;
+  
+    function scrubToEvent(e) {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const pct = Math.min(Math.max(x / rect.width, 0), 1);
+  
+      audio.currentTime = pct * audio.duration;
+  
+      const percent = pct * 100;
+      progressBar.style.width = percent + "%";
+      scrub.value = percent;
+  
+      timeDisplay.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
+    }
+  
+    canvas.addEventListener("mousedown", (e) => {
+      if (!audio.duration) return;
+  
+      isScrubbing = true;
+      wasPlaying = !audio.paused;
+  
       audio.pause();
-      audio.currentTime = 0;
+      scrubToEvent(e);
+    });
+  
+    canvas.addEventListener("mousemove", (e) => {
+      if (isScrubbing) scrubToEvent(e);
+    });
+  
+    canvas.addEventListener("mouseup", () => {
+      if (!isScrubbing) return;
+      isScrubbing = false;
+  
+      if (wasPlaying) audio.play().catch(() => {});
+    });
+  
+    canvas.addEventListener("mouseleave", () => {
+      if (!isScrubbing) return;
+      isScrubbing = false;
+  
+      if (wasPlaying) audio.play().catch(() => {});
+    });
+  
+    // Option C: click only jumps if NOT dragging
+    canvas.addEventListener("click", (e) => {
+      if (isScrubbing) return; // ignore click during drag
+  
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const pct = x / rect.width;
+  
+      audio.currentTime = pct * audio.duration;
+    });
+  
+    // -------------------------
+    // SCRUB SLIDER
+    // -------------------------
+    scrub.addEventListener("input", () => {
+      if (!audio.duration) return;
+      audio.currentTime = (scrub.value / 100) * audio.duration;
+    });
+  
+    // -------------------------
+    // PROGRESS BAR CLICK
+    // -------------------------
+    progressContainer.addEventListener("click", (e) => {
+      const rect = progressContainer.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const pct = x / rect.width;
+      audio.currentTime = pct * audio.duration;
+    });
+  
+    // -------------------------
+    // TIMEUPDATE + BUFFER BAR
+    // -------------------------
+    audio.addEventListener("timeupdate", () => {
+      if (!audio.duration) return;
+  
+      const cur = audio.currentTime;
+      const dur = audio.duration;
+  
+      timeDisplay.textContent = `${fmt(cur)} / ${fmt(dur)}`;
+  
+      const pct = (cur / dur) * 100;
+      progressBar.style.width = pct + "%";
+      scrub.value = pct;
+    });
+  
+    audio.addEventListener("progress", () => {
+      if (!audio.duration || audio.buffered.length === 0) return;
+  
+      const end = audio.buffered.end(audio.buffered.length - 1);
+      const pct = (end / audio.duration) * 100;
+      bufferBar.style.width = pct + "%";
+    });
+  
+    // -------------------------
+    // WEB AUDIO API (Waveform)
+    // -------------------------
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const track = audioCtx.createMediaElementSource(audio);
+    const analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 2048;
+  
+    track.connect(analyser);
+    analyser.connect(audioCtx.destination);
+  
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+  
+    function drawWaveform() {
+      requestAnimationFrame(drawWaveform);
+  
+      analyser.getByteTimeDomainData(dataArray);
+  
+      ctx.fillStyle = "#111";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#00ff88";
+      ctx.beginPath();
+  
+      const sliceWidth = canvas.width / bufferLength;
+      let x = 0;
+  
+      for (let i = 0; i < bufferLength; i++) {
+        const v = dataArray[i] / 128.0;
+        const y = (v * canvas.height) / 2;
+  
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+  
+        x += sliceWidth;
+      }
+  
+      ctx.lineTo(canvas.width, canvas.height / 2);
+      ctx.stroke();
     }
-  });
-
-  selector.addEventListener("change", () => {
-    const file = selector.value;
-    stopReverse();
-    audio.src = file;
-    title.textContent = "Audio Clip " + file;
-    audio.pause();
-    audio.currentTime = 0;
-  });
-
-  speedControl.addEventListener("change", () => {
-    audio.playbackRate = parseFloat(speedControl.value);
-  });
-
-  reverseBtn.addEventListener("click", () => {
-    reverseMode = !reverseMode;
-    reverseBtn.textContent = reverseMode ? "Reverse: ON" : "Reverse: OFF";
-
-    if (reverseMode) startReverse();
-    else stopReverse();
-  });
-
-  function startReverse() {
-    stopReverse();
   
-    // Mute the audio but keep it "playing"
-    audio.volume = 0;
-    audio.play().catch(() => {});
+    drawWaveform();
   
-    reverseInterval = setInterval(() => {
-      if (audio.currentTime <= 0) {
+    // -------------------------
+    // AUDIO LOGIC
+    // -------------------------
+    audio.volume = 0.5;
+  
+    toggle.addEventListener("click", () => {
+      audioCtx.resume().catch(() => {});
+      audioEnabled = !audioEnabled;
+      toggle.textContent = audioEnabled ? "Audio: ON" : "Audio: OFF";
+  
+      if (!audioEnabled) {
         stopReverse();
         audio.pause();
         audio.currentTime = 0;
-        audio.volume = 0.5;
-        return;
       }
+    });
   
-      audio.currentTime -= 0.05;
-    }, 50);
-  }
-
-
-  function stopReverse() {
-    if (reverseInterval) {
-      clearInterval(reverseInterval);
-      reverseInterval = null;
-    }
-
-      // Restore volume
-      audio.volume = 0.5;
-  }
-
-  playBtn.addEventListener("click", () => {
-    audioCtx.resume().catch(() => {});   // ← REQUIRED
-    if (!audioEnabled) return;
-
-    stopReverse();
-
-    if (!reverseMode) {
+    selector.addEventListener("change", () => {
+      const file = selector.value;
+      stopReverse();
+      audio.src = file;
+      title.textContent = "Audio Clip " + file;
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  
+    speedControl.addEventListener("change", () => {
+      audio.playbackRate = parseFloat(speedControl.value);
+    });
+  
+    reverseBtn.addEventListener("click", () => {
+      reverseMode = !reverseMode;
+      reverseBtn.textContent = reverseMode ? "Reverse: ON" : "Reverse: OFF";
+  
+      if (reverseMode) startReverse();
+      else stopReverse();
+    });
+  
+    function startReverse() {
+      stopReverse();
+      audio.volume = 0;
       audio.play().catch(() => {});
-    } else {
-      startReverse();
+  
+      reverseInterval = setInterval(() => {
+        if (audio.currentTime <= 0) {
+          stopReverse();
+          audio.pause();
+          audio.currentTime = 0;
+          audio.volume = 0.5;
+          return;
+        }
+        audio.currentTime -= 0.05;
+      }, 50);
     }
+  
+    function stopReverse() {
+      if (reverseInterval) {
+        clearInterval(reverseInterval);
+        reverseInterval = null;
+      }
+      audio.volume = 0.5;
+    }
+  
+    playBtn.addEventListener("click", () => {
+      audioCtx.resume().catch(() => {});
+      if (!audioEnabled) return;
+  
+      stopReverse();
+  
+      if (!reverseMode) audio.play().catch(() => {});
+      else startReverse();
+    });
+  
+    title.addEventListener("mouseenter", () => {
+      audioCtx.resume().catch(() => {});
+      if (!audioEnabled) return;
+  
+      stopReverse();
+  
+      if (!reverseMode) audio.play().catch(() => {});
+      else startReverse();
+    });
+  
+    title.addEventListener("mouseleave", () => {
+      stopReverse();
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  
   });
-
-  title.addEventListener("mouseenter", () => {
-    audioCtx.resume().catch(() => {});   // ← prevents hover-block
-    if (!audioEnabled) return;
-
-    stopReverse();
-
-    if (!reverseMode) audio.play().catch(() => {});
-    else startReverse();
-  });
-
-  title.addEventListener("mouseleave", () => {
-    stopReverse();
-    audio.pause();
-    audio.currentTime = 0;
-  });
-});
-</script>
+  </script>
 </body>
 </html>
