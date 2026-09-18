@@ -173,13 +173,15 @@
   <div id="legend" class="legend"></div>
 
   <div class="info-banner">
-  <h2>Current Context: King Charles in Bermuda</h2>
-  <p><strong>King Charles is currently on a high‑profile visit to Bermuda, where multiple reputable news outlets report he is carrying out a three‑day royal tour following his U.S. state visit.</strong></p>
-  <p>His Bermuda trip marks his first visit to a British Overseas Territory as monarch, and the first time in 400 years that a reigning king has visited the islands. Reports describe a full ceremonial welcome, key engagements in defence and space science, cultural and historical events, and a warm public reception across the island.</p>
-</div>
-<div class="controls">
+    <h2>Current Context: King Charles in Bermuda</h2>
+    <p><strong>King Charles is currently on a high‑profile visit to Bermuda, where multiple reputable news outlets report he is carrying out a three‑day royal tour following his U.S. state visit.</strong></p>
+    <p>His Bermuda trip marks his first visit to a British Overseas Territory as monarch, and the first time in 400 years that a reigning king has visited the islands. Reports describe a full ceremonial welcome, key engagements in defence and space science, cultural and historical events, and a warm public reception across the island.</p>
+  </div>
+
+  <div class="controls">
     <input type="text" id="search" placeholder="Search by title or tag...">
     <select id="tagFilter"></select>
+
     <select id="sortOrder">
       <option value="desc">Newest first</option>
       <option value="asc">Oldest first</option>
@@ -194,9 +196,8 @@
       <option value="title">Sort by Title</option>
     </select>
 
-<div id="itemCount" style="margin-top:10px; font-weight:bold;"></div>
+    <div id="itemCount" style="margin-top:10px; font-weight:bold;"></div>
 
-  
     <button id="toggleView">Compact View</button>
 
     <button id="openIndexFin2" onclick="window.open('indexfin2_data.html?ref=master', '_blank')">
@@ -207,114 +208,108 @@
       Enhanced Audio Player
     </button>
 
-<!-- AUDIO BOX INSIDE CONTROLS -->
-<!-- AUDIO BOX INSIDE CONTROLS -->
-<div class="audio-box">
+    <!-- AUDIO BOX INSIDE CONTROLS -->
+    <div class="audio-box">
+      <button id="audioToggle">Audio: OFF</button>
+      <button id="audioPlay">▶ Play</button>
 
-  <button id="audioToggle">Audio: OFF</button>
-  <button id="audioPlay">▶ Play</button>
+      <select id="audioSelect">
+        <option value="2_bleakst_sustained_perambulator_elite_exhaust_malfeasence_1727_circa_180800_circa_utc_1_27082026_v0.0x.mp3">
+          bleakst_sustained_41min_perambulator_elite_exhaust_malfeasence
+        </option>
 
-  <!-- Audio selector -->
-  <select id="audioSelect">
+        <option value="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3">
+          David Lowe & Matt Chorley
+        </option>
 
-    <option value="2_bleakst_sustained_perambulator_elite_exhaust_malfeasence_1727_circa_180800_circa_utc_1_27082026_v0.0x.mp3">
-      bleakst_sustained_41min_perambulator_elite_exhaust_malfeasence
-    </option>
+        <option value="Times_clips.mp3">
+          Times Clips (in association w/ handle frank'n)
+        </option>
 
-    <option value="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3">
-      David Lowe & Matt Chorley
-    </option>
+        <option value="Bleakst_alt_ia_0247_0301_utc_1_24062026_axd_v0.2_dead_dragon.mp3">
+          Bleakst_ia (alt_schadenfreude)
+        </option>
 
-    <option value="Times_clips.mp3">
-      Times Clips (in association w/ handle frank'n)
-    </option>
+        <option value="Bleakst_alt_ia_0247_0301_utc_1_24062026_axd_v0.22alt_dead_dragon - Copy.mp3">
+          Bleakst_ia (_v0.22alt_alt_24062026_v0.2) test2
+        </option>
 
-    <option value="Bleakst_alt_ia_0247_0301_utc_1_24062026_axd_v0.2_dead_dragon.mp3">
-      Bleakst_ia (alt_schadenfreude)
-    </option>
+        <option value="Bleakst_thunder_0557_utc_1_26062026_v0.1.mp3">
+          Bleakst_thunder distant alto nimbus
+        </option>
 
-    <option value="Bleakst_alt_ia_0247_0301_utc_1_24062026_axd_v0.22alt_dead_dragon - Copy.mp3">
-      Bleakst_ia (_v0.22alt_alt_24062026_v0.2) test2
-    </option>
+        <option value="Bleakst_thunder_0715_0736_utc_1_26062026.mp3">
+          Bleakst_thunder closer breaking alto nimbus
+        </option>
 
-    <option value="Bleakst_thunder_0557_utc_1_26062026_v0.1.mp3">
-      Bleakst_thunder distant alto nimbus
-    </option>
+        <option value="Bleakst_alt_thunder_0757_utc_1_26062026.mp3">
+          Bleakst_thunder alto nimbus
+        </option>
+      </select>
 
-    <option value="Bleakst_thunder_0715_0736_utc_1_26062026.mp3">
-      Bleakst_thunder closer breaking alto nimbus
-    </option>
+      <select id="speedControl">
+        <option value="0.25">0.25×</option>
+        <option value="0.5">0.5×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.5">1.5×</option>
+        <option value="2">2×</option>
+      </select>
 
-    <option value="Bleakst_alt_thunder_0757_utc_1_26062026.mp3">
-      Bleakst_thunder alto nimbus
-    </option>
+      <button id="reverseBtn">Reverse: OFF</button>
 
-  </select>
+      <span id="audioTitle">
+        Audio Clip David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3
+      </span>
+    </div>
+  </div>
 
-  <!-- Speed control -->
-  <select id="speedControl">
-    <option value="0.25">0.25×</option>
-    <option value="0.5">0.5×</option>
-    <option value="1" selected>1×</option>
-    <option value="1.5">1.5×</option>
-    <option value="2">2×</option>
-  </select>
+  <!-- INDEX GRID -->
+  <div id="index"></div>
+  <div class="item-size">Size: N bytes</div>
 
-  <!-- Reverse toggle -->
-  <button id="reverseBtn">Reverse: OFF</button>
+  <!-- FIRST EARTH BUTTON -->
+  <div class="earth-launch" style="margin-top:20px;">
+    <h3>T4 Tour Route</h3>
 
-  <span id="audioTitle">
-    Audio Clip David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3
-  </span></div>
+    <a href="https://earth.google.com/web/@?link=https://axda.github.io/Blu/t4_tour_route.kmz"
+       target="_blank"
+       style="display:inline-block;padding:12px 18px;background:#1a73e8;color:#fff;
+              text-decoration:none;border-radius:6px;font-weight:600;">
+       🌍 Open T4 Tour Route in Google Earth Web
+    </a>
+  </div>
 
-</div>
+  <!-- SECOND EARTH BUTTON -->
+  <div class="earth-launch" style="margin-top:20px;">
+    <h3>View Tour Route in Google Earth</h3>
 
-<div id="index"></div>
+    <a href="https://earth.google.com/web/@?link=https://axda.github.io/Blu/tour_route_enhanced.kml"
+       target="_blank"
+       style="display:inline-block;padding:12px 18px;background:#34a853;color:#fff;
+              text-decoration:none;border-radius:6px;font-weight:600;">
+       🌍 Open Enhanced Route in Google Earth Web
+    </a>
+  </div>
 
-<div class="item-size">Size: N bytes</div>
+  <!-- AUDIO ELEMENTS BELOW -->
+  <audio id="hoverAudio"
+         src="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3">
+  </audio>
 
-<div class="earth-launch" style="margin-top:20px;">
-  <h3>T4 Tour Route</h3>
+  <canvas id="waveCanvas" width="600" height="80" style="width:100%; height:80px;"></canvas>
 
-  <a href="https://earth.google.com/web/@?link=https://axda.github.io/Blu/t4_tour_route.kmz"
-     target="_blank"
-     style="display:inline-block;padding:12px 18px;background:#1a73e8;color:#fff;
-            text-decoration:none;border-radius:6px;font-weight:600;">
-     🌍 Open T4 Tour Route in Google Earth Web
-  </a>
-</div>
-  
-<audio id="hoverAudio"
-       src="David%20Lowe%20Matt%20Chorley_R5L_24042026_1010mmss_axd_v0.1.mp3">
-</audio>
+  <div id="audioTime" style="color:#ccc; font-size:14px; margin-top:4px;">
+    00:00 / 00:00
+  </div>
 
-<canvas id="waveCanvas" width="600" height="80" style="width:100%; height:80px;"></canvas>
+  <div id="progressContainer" style="position:relative; width:100%; height:8px; background:#222; margin-top:6px; cursor:pointer;">
+    <div id="bufferBar" style="position:absolute; height:100%; width:0%; background:#444;"></div>
+    <div id="progressBar" style="position:absolute; height:100%; width:0%; background:#00ff88;"></div>
+  </div>
 
-<!-- Timestamp -->
-<div id="audioTime" style="color:#ccc; font-size:14px; margin-top:4px;">
-  00:00 / 00:00
-</div>
+  <input type="range" id="audioScrub" min="0" max="100" value="0" step="0.1" style="width:100%; margin-top:6px;">
+</body>
 
-<!-- Progress + buffer bar -->
-<div id="progressContainer" style="position:relative; width:100%; height:8px; background:#222; margin-top:6px; cursor:pointer;">
-  <div id="bufferBar" style="position:absolute; height:100%; width:0%; background:#444;"></div>
-  <div id="progressBar" style="position:absolute; height:100%; width:0%; background:#00ff88;"></div>
-</div>
-
-<!-- Scrub slider -->
-<input type="range" id="audioScrub" min="0" max="100" value="0" step="0.1" style="width:100%; margin-top:6px;">
-
-<!-- INDEX GRID BELOW CONTROLS -->
-<div id="index"></div>
-<div class="item-size">Size: N bytes</div>
-<div class="earth-launch">
-  <h3>View Tour Route in Google Earth</h3>
-  <a href="https://earth.google.com/web/@?link=https://axda.github.io/Blu/tour_route_enhanced.kml"
-     target="_blank"
-     style="display:inline-block;padding:10px 16px;background:#4285f4;color:#fff;text-decoration:none;border-radius:4px;">
-     🌍 Open in Google Earth Web
-  </a>
-</div>
 <script>
 async function loadIndex() {
 
