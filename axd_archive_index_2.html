@@ -326,121 +326,258 @@
 </div>
 
 <!-- REE STRATEGIC DOSSIER (COLLAPSIBLE) -->
-<div style="margin-top:40px;">
+<!-- SIDE-BY-SIDE STRATEGIC DOSSIERS -->
+<div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:40px;">
 
-  <button onclick="toggleSection('reeDossierBlock')" 
-          style="padding:10px 16px;font-size:16px;background:#333;color:#fff;border:none;border-radius:6px;cursor:pointer;">
-    ▼ REE Strategic Capability Dossier (Click to Expand)
-  </button>
+  <!-- LEFT: REE STRATEGIC DOSSIER -->
+  <div style="flex:1;min-width:350px;">
 
-  <div id="reeDossierBlock" style="display:none;margin-top:20px;">
+    <button onclick="toggleSection('reeDossierBlock')" 
+            style="padding:10px 16px;font-size:16px;background:#333;color:#fff;border:none;border-radius:6px;cursor:pointer;width:100%;">
+      ▼ REE Strategic Capability Dossier
+    </button>
 
-    <!-- CORE TRUTH -->
-    <div style="border:1px solid #900;padding:12px;margin-bottom:16px;background:#ffebee;">
-      <h3 style="margin-top:0;">The Core Truth</h3>
-      <p>
-        REE dominance is NOT about the number of deposits, mines, clusters, or processing plants.
-        It is about vertical integration:
-        <strong>Mining → Concentrate → Oxide → Metal → Alloy → Magnet → Motor → Device</strong>.
-      </p>
-      <p>
-        Only one country currently controls this chain end‑to‑end: <strong>China</strong>.
-        Everyone else is missing at least one critical stage. This is the backbone of this dossier.
-      </p>
+    <div id="reeDossierBlock" style="display:none;margin-top:20px;">
+
+      <!-- CORE TRUTH -->
+      <div style="border:1px solid #900;padding:12px;margin-bottom:16px;background:#ffebee;">
+        <h3 style="margin-top:0;">The Core Truth</h3>
+        <p>
+          REE dominance is NOT about the number of deposits, mines, clusters, or processing plants.
+          It is about vertical integration:
+          <strong>Mining → Concentrate → Oxide → Metal → Alloy → Magnet → Motor → Device</strong>.
+        </p>
+        <p>
+          Only one country currently controls this chain end‑to‑end: <strong>China</strong>.
+          Everyone else is missing at least one critical stage.
+        </p>
+      </div>
+
+      <!-- MATRIX -->
+      <h3>REE Capability Matrix</h3>
+      <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
+        <thead>
+          <tr style="background:#333;color:#fff;">
+            <th style="padding:8px;border:1px solid #444;">Country</th>
+            <th style="padding:8px;border:1px solid #444;">Raw</th>
+            <th style="padding:8px;border:1px solid #444;">Processing</th>
+            <th style="padding:8px;border:1px solid #444;">Magnets</th>
+            <th style="padding:8px;border:1px solid #444;">End‑Point</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>China</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+          <tr><td>United States</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+          <tr><td>Australia</td><td>2</td><td>2</td><td>0</td><td>1</td></tr>
+          <tr><td>Canada</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>India</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+          <tr><td>Russia</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+          <tr><td>European Union</td><td>1</td><td>1</td><td>1</td><td>2</td></tr>
+        </tbody>
+      </table>
+
+      <!-- RADAR CHARTS -->
+      <h3>REE Capability Radar</h3>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <!-- Radar template: China -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>China</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
+            <polygon points="60,20 100,60 60,100 20,60" fill="rgba(255,0,0,0.3)" stroke="#f00"/>
+          </svg>
+        </div>
+
+        <!-- US -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>United States</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
+            <polygon points="60,40 110,60 60,80 10,60" fill="rgba(0,0,255,0.3)" stroke="#00f"/>
+          </svg>
+        </div>
+
+        <!-- Australia -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>Australia</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
+            <polygon points="60,30 95,60 60,90 25,60" fill="rgba(0,150,136,0.3)" stroke="#009688"/>
+          </svg>
+        </div>
+
+        <!-- Canada -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>Canada</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
+            <polygon points="60,30 110,60 60,110 10,60" fill="rgba(76,175,80,0.3)" stroke="#4caf50"/>
+          </svg>
+        </div>
+
+        <!-- India -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>India</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
+            <polygon points="60,40 95,60 60,110 10,60" fill="rgba(255,193,7,0.3)" stroke="#ffc107"/>
+          </svg>
+        </div>
+
+        <!-- Russia -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>Russia</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
+            <polygon points="60,40 95,60 60,80 10,60" fill="rgba(139,0,0,0.3)" stroke="#8b0000"/>
+          </svg>
+        </div>
+
+        <!-- EU -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>European Union</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
+            <polygon points="60,30 95,60 60,90 25,60" fill="rgba(0,0,128,0.3)" stroke="#000080"/>
+          </svg>
+        </div>
+
+      </div>
     </div>
+  </div>
 
-    <!-- COUNTRY MATRIX -->
-    <h3>Country Capability Matrix (0–3 Scale)</h3>
-    <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
-      <thead>
-        <tr style="background:#333;color:#fff;">
-          <th style="padding:8px;border:1px solid #444;">Country</th>
-          <th style="padding:8px;border:1px solid #444;">Raw</th>
-          <th style="padding:8px;border:1px solid #444;">Processing</th>
-          <th style="padding:8px;border:1px solid #444;">Magnets</th>
-          <th style="padding:8px;border:1px solid #444;">End‑Point</th>
-          <th style="padding:8px;border:1px solid #444;">Summary</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>China</td><td>3</td><td>3</td><td>3</td><td>3</td><td>Full vertical integration; global dominance.</td></tr>
-        <tr><td>United States</td><td>1</td><td>0</td><td>0</td><td>1</td><td>Strong tech; REE chain dependent on imports.</td></tr>
-        <tr><td>Australia</td><td>2</td><td>2</td><td>0</td><td>1</td><td>Strong upstream; weak downstream.</td></tr>
-        <tr><td>Canada</td><td>2</td><td>0</td><td>0</td><td>0</td><td>Strong deposits; no processing.</td></tr>
-        <tr><td>India</td><td>1</td><td>1</td><td>0</td><td>0</td><td>Emerging; incomplete chain.</td></tr>
-        <tr><td>Russia</td><td>1</td><td>1</td><td>0</td><td>1</td><td>Partial; dependent on imports.</td></tr>
-        <tr><td>European Union</td><td>1</td><td>1</td><td>1</td><td>2</td><td>Strong downstream; weak raw materials.</td></tr>
-      </tbody>
-    </table>
+  <!-- RIGHT: BATTERY CAPABILITY DOSSIER -->
+  <div style="flex:1;min-width:350px;">
 
-    <!-- RADAR CHARTS -->
-    <h3>Capability Radar Charts</h3>
-    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+    <button onclick="toggleSection('batteryDossierBlock')" 
+            style="padding:10px 16px;font-size:16px;background:#444;color:#fff;border:none;border-radius:6px;cursor:pointer;width:100%;">
+      ▼ Battery Capability Dossier
+    </button>
 
-      <!-- Radar Chart Template Function -->
-      <!-- China -->
-      <div style="flex:1;min-width:200px;text-align:center;">
-        <h4>China</h4>
-        <svg viewBox="0 0 120 120" width="120" height="120">
-          <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
-          <polygon points="60,20 100,60 60,100 20,60" fill="rgba(255,0,0,0.3)" stroke="#f00"/>
-        </svg>
+    <div id="batteryDossierBlock" style="display:none;margin-top:20px;">
+
+      <div style="border:1px solid #006;padding:12px;margin-bottom:16px;background:#e3f2fd;">
+        <h3 style="margin-top:0;">Battery Capability Overview</h3>
+        <p>
+          Battery technology is strategically critical, but unlike REE magnets  (NdFeB, SmCo) , it has multiple
+          chemistry pathways (Li‑ion, LFP, sodium‑ion, solid‑state).  
+          Dominance comes from:
+          <strong>materials → cell manufacturing → gigafactories → advanced chemistry → integration</strong>.
+        </p>
+         <p>
+         Because batteries are NOT the bottleneck of geopolitical power. Magnets are.
+	Batteries matter enormously — but they are:
+
+	chemistry‑diverse (Li‑ion, LFP, sodium‑ion, solid‑state, zinc‑air, vanadium flow…)
+
+	geographically distributed - substitutable - scalable - multi‑pathway
+
+	Whereas high‑performance permanent magnets (NdFeB, SmCo) are:
+
+	non‑substitutable - REE‑dependent - monopolised by China - critical for motors, drones, missiles, satellites, EVs, robotics
+
+	the true choke‑point of modern power - If you lose access to NdFeB magnets, you lose:
+
+	EV motors - drone motors - missile actuators - satellite reaction wheels - wind turbine generators - robotics joints - precision servos
+
+	If you lose access to lithium?
+	You can pivot to: sodium‑ion - LFP - zinc‑air -magnesium - vanadium flow - solid‑state variants - hybrid chemistries - 
+
+	Battery tech has multiple escape routes.  Magnet tech has none.
+
+	That’s why REE → magnet → motor → device is the backbone of the dossier.
+      </p>
       </div>
 
-      <!-- United States -->
-      <div style="flex:1;min-width:200px;text-align:center;">
-        <h4>United States</h4>
-        <svg viewBox="0 0 120 120" width="120" height="120">
-          <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
-          <polygon points="60,40 110,60 60,80 10,60" fill="rgba(0,0,255,0.3)" stroke="#00f"/>
-        </svg>
-      </div>
+      <!-- BATTERY MATRIX -->
+      <h3>Battery Capability Matrix (0–3 Scale)</h3>
+      <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
+        <thead>
+          <tr style="background:#444;color:#fff;">
+            <th style="padding:8px;border:1px solid #555;">Country</th>
+            <th style="padding:8px;border:1px solid #555;">Battery Score</th>
+            <th style="padding:8px;border:1px solid #555;">Summary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>China</td><td>3</td><td>Largest battery industry; advanced chemistries.</td></tr>
+          <tr><td>United States</td><td>2</td><td>Strong R&D; gigafactories; imports materials.</td></tr>
+          <tr><td>European Union</td><td>2</td><td>Northvolt + CATL Germany; strong downstream.</td></tr>
+          <tr><td>Australia</td><td>1</td><td>Lithium exporter; limited cell manufacturing.</td></tr>
+          <tr><td>Canada</td><td>1</td><td>Emerging gigafactories; strong raw materials.</td></tr>
+          <tr><td>India</td><td>1</td><td>Early‑stage; government‑backed expansion.</td></tr>
+          <tr><td>Russia</td><td>0</td><td>Minimal battery industry; reliant on imports.</td></tr>
+        </tbody>
+      </table>
 
-      <!-- Australia -->
-      <div style="flex:1;min-width:200px;text-align:center;">
-        <h4>Australia</h4>
-        <svg viewBox="0 0 120 120" width="120" height="120">
-          <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
-          <polygon points="60,30 95,60 60,90 25,60" fill="rgba(0,150,136,0.3)" stroke="#009688"/>
-        </svg>
-      </div>
+      <!-- BATTERY RADAR CHARTS -->
+      <h3>Battery Capability Radar</h3>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
 
-      <!-- Canada -->
-      <div style="flex:1;min-width:200px;text-align:center;">
-        <h4>Canada</h4>
-        <svg viewBox="0 0 120 120" width="120" height="120">
-          <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
-          <polygon points="60,30 110,60 60,110 10,60" fill="rgba(76,175,80,0.3)" stroke="#4caf50"/>
-        </svg>
-      </div>
+        <!-- China -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>China</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#ccc"/>
+            <circle cx="60" cy="60" r="40" fill="rgba(255,0,0,0.3)" stroke="#f00"/>
+          </svg>
+        </div>
 
-      <!-- India -->
-      <div style="flex:1;min-width:200px;text-align:center;">
-        <h4>India</h4>
-        <svg viewBox="0 0 120 120" width="120" height="120">
-          <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
-          <polygon points="60,40 95,60 60,110 10,60" fill="rgba(255,193,7,0.3)" stroke="#ffc107"/>
-        </svg>
-      </div>
+        <!-- US -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>United States</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#ccc"/>
+            <circle cx="60" cy="60" r="30" fill="rgba(0,0,255,0.3)" stroke="#00f"/>
+          </svg>
+        </div>
 
-      <!-- Russia -->
-      <div style="flex:1;min-width:200px;text-align:center;">
-        <h4>Russia</h4>
-        <svg viewBox="0 0 120 120" width="120" height="120">
-          <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
-          <polygon points="60,40 95,60 60,80 10,60" fill="rgba(139,0,0,0.3)" stroke="#8b0000"/>
-        </svg>
-      </div>
+        <!-- EU -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>European Union</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#ccc"/>
+            <circle cx="60" cy="60" r="30" fill="rgba(0,0,128,0.3)" stroke="#000080"/>
+          </svg>
+        </div>
 
-      <!-- European Union -->
-      <div style="flex:1;min-width:200px;text-align:center;">
-        <h4>European Union</h4>
-        <svg viewBox="0 0 120 120" width="120" height="120">
-          <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="#ccc"/>
-          <polygon points="60,30 95,60 60,90 25,60" fill="rgba(0,0,128,0.3)" stroke="#000080"/>
-        </svg>
-      </div>
+        <!-- Australia -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>Australia</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#ccc"/>
+            <circle cx="60" cy="60" r="20" fill="rgba(0,150,136,0.3)" stroke="#009688"/>
+          </svg>
+        </div>
 
+        <!-- Canada -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>Canada</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#ccc"/>
+            <circle cx="60" cy="60" r="20" fill="rgba(76,175,80,0.3)" stroke="#4caf50"/>
+          </svg>
+        </div>
+
+        <!-- India -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>India</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#ccc"/>
+            <circle cx="60" cy="60" r="20" fill="rgba(255,193,7,0.3)" stroke="#ffc107"/>
+          </svg>
+        </div>
+
+        <!-- Russia -->
+        <div style="flex:1;min-width:150px;text-align:center;">
+          <h4>Russia</h4>
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#ccc"/>
+            <circle cx="60" cy="60" r="10" fill="rgba(139,0,0,0.3)" stroke="#8b0000"/>
+          </svg>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
@@ -452,175 +589,6 @@ function toggleSection(id) {
 }
 </script>
 
-  
-<!-- REE INDEX TABLE -->
-<div id="reeTableContainer" style="margin-top:30px;">
-  <h3>Rare Earth Element Deposits & Processing Index</h3>
-
-  <!-- SEARCH -->
-  <input type="text" id="reeSearch" placeholder="Search REE deposits..." 
-         style="width:100%;padding:8px;margin-bottom:10px;font-size:16px;">
-
-  <!-- CATEGORY FILTER -->
-  <select id="reeFilter" style="padding:8px;margin-bottom:10px;font-size:16px;">
-    <option value="">All Categories</option>
-    <option value="deposit">Deposits</option>
-    <option value="processing">Processing</option>
-    <option value="cluster">Clusters</option>
-    <option value="basin">Basins</option>
-  </select>
-
-  <!-- COLLAPSIBLE SECTIONS -->
-  <button onclick="toggleSection('reeDeposits')" 
-          style="padding:8px;margin-bottom:10px;">Deposits</button>
-  <button onclick="toggleSection('reeProcessing')" 
-          style="padding:8px;margin-bottom:10px;">Processing</button>
-  <button onclick="toggleSection('reeClusters')" 
-          style="padding:8px;margin-bottom:10px;">Clusters</button>
-  <button onclick="toggleSection('reeBasins')" 
-          style="padding:8px;margin-bottom:10px;">Basins</button>
-
-  <!-- TABLE -->
-  <table id="reeTable" style="width:100%;border-collapse:collapse;">
-    <thead>
-      <tr style="background:#333;color:#fff;cursor:pointer;">
-        <th onclick="sortTable(0)" style="padding:8px;border:1px solid #444;">Name</th>
-        <th onclick="sortTable(1)" style="padding:8px;border:1px solid #444;">Description</th>
-        <th style="padding:8px;border:1px solid #444;">Map</th>
-      </tr>
-    </thead>
-    <tbody id="reeDeposits"></tbody>
-    <tbody id="reeProcessing"></tbody>
-    <tbody id="reeClusters"></tbody>
-    <tbody id="reeBasins"></tbody>
-  </table>
-</div>
-
-<script>
-/* ===========================
-   REE DATA
-   =========================== */
-const reeData = [
-  /* Deposits */
-  {cat:"deposit", name:"01_Bayan_Obo_CN", desc:"Bayan Obo REE Deposit, Inner Mongolia, China.", link:""},
-  {cat:"deposit", name:"02_Mountain_Pass_US", desc:"Mountain Pass REE Deposit, California, USA.", link:""},
-  {cat:"deposit", name:"03_Mount_Weld_AU", desc:"Mount Weld REE Deposit, Western Australia.", link:""},
-  {cat:"deposit", name:"04_Nolans_Bore_AU", desc:"Nolans Bore REE Deposit, Northern Territory, Australia.", link:""},
-  {cat:"deposit", name:"05_Kvanefjeld_GL", desc:"Kvanefjeld REE-U Deposit, southern Greenland.", link:""},
-  {cat:"deposit", name:"06_Nechalacho_CA", desc:"Nechalacho REE Deposit, Northwest Territories, Canada.", link:""},
-  {cat:"deposit", name:"07_Steenkampskraal_ZA", desc:"Steenkampskraal REE Deposit, Western Cape, South Africa.", link:""},
-  {cat:"deposit", name:"08_Tomtor_RU", desc:"Tomtor REE-Nb Deposit, Yakutia, Russia.", link:""},
-  {cat:"deposit", name:"09_Bear_Lodge_US", desc:"Bear Lodge REE Deposit, Wyoming, USA.", link:""},
-  {cat:"deposit", name:"10_Strange_Lake_CA", desc:"Strange Lake REE Deposit, Quebec/Labrador, Canada.", link:""},
-  {cat:"deposit", name:"11_Norra_Karr_SE", desc:"Norra Kärr REE Deposit, southern Sweden.", link:""},
-  {cat:"deposit", name:"12_Dubbo_Toongi_AU", desc:"Dubbo (Toongi) REE-Zr Deposit, New South Wales, Australia.", link:""},
-  {cat:"deposit", name:"13_Lofdal_NA", desc:"Lofdal Heavy REE Project, Namibia.", link:""},
-  {cat:"deposit", name:"14_Kangankunde_MW", desc:"Kangankunde REE Deposit, Malawi.", link:""},
-  {cat:"deposit", name:"15_Weishan_CN", desc:"Weishan REE Deposit, Shandong, China.", link:""},
-  {cat:"deposit", name:"16_Maoniuping_CN", desc:"Maoniuping REE Deposit, Sichuan, China.", link:""},
-  {cat:"deposit", name:"17_Liangshan_CN", desc:"Liangshan REE region, Sichuan, China.", link:""},
-  {cat:"deposit", name:"18_Guanshan_CN", desc:"Guanshan REE Deposit, Jiangxi, China.", link:""},
-  {cat:"deposit", name:"19_Misery_Lake_CA", desc:"Misery Lake REE Prospect, Quebec, Canada.", link:""},
-  {cat:"deposit", name:"20_Wicheeda_CA", desc:"Wicheeda REE Deposit, British Columbia, Canada.", link:""},
-  {cat:"deposit", name:"21_Ngualla_TZ", desc:"Ngualla REE Deposit, Tanzania.", link:""},
-  {cat:"deposit", name:"22_Manavalakurichi_IN", desc:"Monazite-bearing coastal sands, Tamil Nadu, India.", link:""},
-  {cat:"deposit", name:"23_Ytterby_SE", desc:"Historic Ytterby REE locality, Sweden.", link:""},
-  {cat:"deposit", name:"24_Alces_Lake_CA", desc:"Alces Lake REE Project, Saskatchewan, Canada.", link:""},
-
-  /* Processing */
-  {cat:"processing", name:"Lynas – Kalgoorlie", desc:"Cracking & leaching plant, Western Australia.", link:""},
-  {cat:"processing", name:"Lynas – Kuantan", desc:"Gebeng downstream processing plant, Malaysia.", link:""},
-  {cat:"processing", name:"MP Materials – Mountain Pass", desc:"US rare earth mining & processing complex.", link:""},
-  {cat:"processing", name:"Neo – Sillamäe", desc:"Estonian rare earth separation facility.", link:""},
-  {cat:"processing", name:"Iluka – Eneabba/Narngulu", desc:"Australian rare earth refinery.", link:""},
-  {cat:"processing", name:"Carester – Lacq France", desc:"French rare earth separation pilot facility.", link:""},
-
-  /* Clusters */
-  {cat:"cluster", name:"Baotou Inner Mongolia", desc:"Major Chinese REE industrial cluster.", link:""},
-  {cat:"cluster", name:"Ganzhou Jiangxi", desc:"Southern ion-adsorption REE hub.", link:""},
-  {cat:"cluster", name:"Ningbo Zhejiang", desc:"Downstream REE processing cluster.", link:""},
-  {cat:"cluster", name:"OSCOM Odisha", desc:"Indian Rare Earths Ltd (IREL) complex.", link:""},
-  {cat:"cluster", name:"Aluva Kerala", desc:"IREL processing facility.", link:""},
-  {cat:"cluster", name:"Nellore Andhra Pradesh", desc:"Planned magnet corridor.", link:""},
-  {cat:"cluster", name:"Solikamsk Perm Krai", desc:"Russian REE processing cluster.", link:""},
-  {cat:"cluster", name:"Moscow Giredmet Institute", desc:"Metallurgy & REE research institute.", link:""},
-  {cat:"cluster", name:"Krasnokamensk Tomtor", desc:"Planned Tomtor REE processing plant.", link:""},
-
-  /* Basin */
-  {cat:"basin", name:"Ivanpah Valley Basin", desc:"Simplified hydrological basin polygon.", link:""}
-];
-
-/* ===========================
-   TABLE POPULATION
-   =========================== */
-function populateTable() {
-  const sections = {
-    deposit: document.getElementById("reeDeposits"),
-    processing: document.getElementById("reeProcessing"),
-    cluster: document.getElementById("reeClusters"),
-    basin: document.getElementById("reeBasins")
-  };
-
-  Object.values(sections).forEach(sec => sec.innerHTML = "");
-
-  reeData.forEach(item => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td style="padding:8px;border:1px solid #444;">${item.name}</td>
-      <td style="padding:8px;border:1px solid #444;">${item.desc}</td>
-      <td style="padding:8px;border:1px solid #444;">
-        <a href="${item.link || '#'}" target="_blank">🗺️</a>
-      </td>
-    `;
-    sections[item.cat].appendChild(row);
-  });
-}
-populateTable();
-
-/* ===========================
-   SEARCH
-   =========================== */
-document.getElementById("reeSearch").addEventListener("input", function() {
-  const q = this.value.toLowerCase();
-  document.querySelectorAll("#reeTable tbody tr").forEach(r => {
-    r.style.display = r.innerText.toLowerCase().includes(q) ? "" : "none";
-  });
-});
-
-/* ===========================
-   CATEGORY FILTER
-   =========================== */
-document.getElementById("reeFilter").addEventListener("change", function() {
-  const val = this.value;
-  document.querySelectorAll("#reeTable tbody").forEach(sec => {
-    sec.style.display = (!val || sec.id.includes(val)) ? "" : "none";
-  });
-});
-
-/* ===========================
-   COLLAPSIBLE SECTIONS
-   =========================== */
-function toggleSection(id) {
-  const sec = document.getElementById(id);
-  sec.style.display = sec.style.display === "none" ? "" : "none";
-}
-
-/* ===========================
-   SORTING
-   =========================== */
-function sortTable(col) {
-  const rows = [...document.querySelectorAll("#reeTable tbody tr")];
-  const sorted = rows.sort((a,b) => 
-    a.children[col].innerText.localeCompare(b.children[col].innerText)
-  );
-  const tbodies = document.querySelectorAll("#reeTable tbody");
-  tbodies.forEach(t => t.innerHTML = "");
-  sorted.forEach(r => {
-    const cat = reeData.find(x => x.name === r.children[0].innerText).cat;
-    document.getElementById("ree" + cat.charAt(0).toUpperCase() + cat.slice(1)).appendChild(r);
-  });
-}
-</script>
 
 
   <!-- AUDIO ELEMENTS BELOW -->
