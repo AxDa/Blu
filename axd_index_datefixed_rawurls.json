@@ -26561,10 +26561,8 @@
 },
 {
     "title": "1_bleakst_bbcreau_street__neighbours_100500_100700_utc_1_22092026_v0.1.mp3",
-    "url_pages": "https://axda.github.io/1_bleakst_bbcreau_street__neighbours_100500_100700_utc_1_22092026_v0.1.mp3",
-    "url_raw": "https://raw.githubusercontent.com/AxDa/Blu/master/1_bleakst_bbcreau_street__neighbours_100500_100700_utc_1_22092026_v0.1.mp3",
-    "thumbnail_pages": "https://axda.github.io/waveform_thumbnails/1_bleakst_bbcreau_street__neighbours_100500_100700_utc_1_22092026_v0_1.png",
-    "thumbnail_raw": "https://raw.githubusercontent.com/AxDa/Blu/master/waveform_thumbnails/1_bleakst_bbcreau_street__neighbours_100500_100700_utc_1_22092026_v0_1.png",
+    "url": "https://axda.github.io/1_bleakst_bbcreau_street__neighbours_100500_100700_utc_1_22092026_v0.1.mp3",
+    "thumbnail": "https://axda.github.io/waveform_thumbnails/1_bleakst_bbcreau_street__neighbours_100500_100700_utc_1_22092026_v0_1.png",
     "tags": [
       "harehills",
       "street",
