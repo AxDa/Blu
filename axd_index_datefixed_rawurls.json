@@ -26782,6 +26782,28 @@
   "cluster": "signal",
   "size": 715380,
   "type": "svg"
-}
-
+},
+{
+    "title": "1_bleakst_1529hhmm_silence_soft_095700_012600_utc_1_23092026.mp3",
+    "url": "https://axda.github.io/1_bleakst_1529hhmm_silence_soft_095700_012600_utc_1_23092026.mp3",
+    "thumbnail": "https://axda.github.io/waveform_thumbnails/1_bleakst_1529hhmm_silence_soft_095700_012600_utc_1_23092026.png",
+    "tags": [
+      "harehills",
+      "bleakst",
+      "1529hhmm",
+      "silence_soft",
+      "095700",
+      "012600",
+      "23092026",
+      "bbcreau",
+      "the_business_corporation",
+      "Epstioniontraders",
+      "blu_index_entries_a9.json"
+    ],
+    "date": "2026-09-23",
+    "motif": "civic decay",
+    "cluster": "neighbour_trader",
+    "size": 8055997,
+    "type": "mp3"
+  }
 ]
