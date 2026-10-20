@@ -40,10 +40,10 @@
 
 </style>
   
-  <style>
-    body { font-family: Arial, sans-serif; background: #f8f8f8; margin: 20px; }
-    .controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
-    .index-grid { display: flex; flex-wrap: wrap; gap: 15px; }
+<style>
+body { font-family: Arial, sans-serif; background: #f8f8f8; margin: 20px; }
+.controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+.index-grid { display: flex; flex-wrap: wrap; gap: 15px; }
 .item {
   background: #fff;
   border: 2px solid #ddd;
@@ -53,6 +53,18 @@
   text-align: center;
   transition: all 0.3s ease;
   font-size: 13px;
+}
+
+.item-title {
+  display: block;
+  font-size: 13px;
+  line-height: 1.2;
+  max-height: 4.8em; /* four lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+  margin-bottom: 6px;
 }
 
 .item img {
