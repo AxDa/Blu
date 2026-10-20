@@ -758,7 +758,6 @@ async function fixMissingThumbnails(entries) {
 
 ## ⭐ **REVISED render() — MODE A  (prefer viewer) --> MODE C — dual links (viewer + mp3)**  
 ### (Drop this straight into axd_archive_index_2.html) ---Replaced the link block with:
-
 function render(items) {
     container.innerHTML = '';
     const grid = document.createElement('div');
@@ -791,31 +790,49 @@ function render(items) {
 
         if (!compactMode) div.appendChild(img);
 
-        // ⭐ NEW LOGIC: viewer preferred, fallback to url
-        const linkTarget = item.viewer && item.viewer.trim() !== ""
-            ? item.viewer
-            : item.url;
+        // --- TITLE ---
+        const title = document.createElement('p');
+        title.textContent = item.title;
 
-		const viewerLink = document.createElement('a');
-		viewerLink.href = item.viewer || "#";
-		viewerLink.target = "_blank";
-		viewerLink.textContent = "Viewer";
-		
-		const mp3Link = document.createElement('a');
-		mp3Link.href = item.url || "#";
-		mp3Link.target = "_blank";
-		mp3Link.textContent = "MP3";
-		
-		const title = document.createElement('p');
-		title.textContent = item.title;
-		
-		div.append(title, viewerLink, mp3Link, date, extra, sizeEl);
+        // --- DATE ---
+        const date = document.createElement('p');
+        date.textContent = item.date;
 
+        // --- EXTRA (motif or cluster) ---
+        let extra;
+        if (compactMode) {
+            extra = document.createElement('span');
+            extra.style.color = motifColors[item.motif] || '#999';
+            extra.textContent = item.motif;
+        } else {
+            extra = document.createElement('p');
+            extra.textContent = item.cluster;
+        }
+
+        // --- SIZE ---
+        const sizeEl = document.createElement('p');
+        sizeEl.className = "item-size";
+        sizeEl.textContent = item.size ? `Size: ${item.size} bytes` : "";
+
+        // --- VIEWER + MP3 LINKS ---
+        const viewerLink = document.createElement('a');
+        viewerLink.href = item.viewer || "#";
+        viewerLink.target = "_blank";
+        viewerLink.textContent = "Viewer";
+
+        const mp3Link = document.createElement('a');
+        mp3Link.href = item.url || "#";
+        mp3Link.target = "_blank";
+        mp3Link.textContent = "MP3";
+
+        // --- APPEND IN CORRECT ORDER ---
+        div.append(title, viewerLink, mp3Link, date, extra, sizeEl);
         grid.appendChild(div);
     });
 
     container.appendChild(grid);
 }
+
 
 function filterAndRender() {
     const q = searchBox.value.toLowerCase();
