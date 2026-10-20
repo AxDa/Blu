@@ -756,8 +756,9 @@ async function fixMissingThumbnails(entries) {
     return entries;
 }
 
-## ⭐ **REVISED render() — MODE A  (prefer viewer) --> MODE C — dual links (viewer + mp3)**  
-### (Drop this straight into axd_archive_index_2.html) ---Replaced the link block with:
+// MODE C — dual links (viewer + mp3)
+// Replaces the original link block
+
 function render(items) {
     container.innerHTML = '';
     const grid = document.createElement('div');
