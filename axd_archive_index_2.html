@@ -624,7 +624,7 @@ function toggleSection(id) {
   <!-- INDEX GRID -->
   <div id="index"></div>
   <div class="item-size">Size: N bytes</div>
-</body>
+
 <script>
 async function loadIndex() {
 
@@ -780,10 +780,9 @@ function render(items) {
         const motifClass = `motif-${(item.motif || "unknown").replace(/\s+/g, '-')}`;
         const div = document.createElement('div');
         div.className = `item ${motifClass}`;
-		
-        // ⭐ REQUIRED — you accidentally removed this
-        const isAudio = isAudioEntry(item);
-		
+
+        const fileType = getFileType(item);
+
         const img = document.createElement('img');
 
         if (item.thumbnail && item.thumbnail.trim() !== "") {
@@ -808,6 +807,7 @@ function render(items) {
 
         // --- TITLE ---
         const title = document.createElement('p');
+        title.className = "item-title";
         title.textContent = item.title;
 
         // --- DATE ---
@@ -830,25 +830,35 @@ function render(items) {
         sizeEl.className = "item-size";
         sizeEl.textContent = item.size ? `Size: ${item.size} bytes` : "";
 
-        // --- VIEWER + MP3 LINKS ---
+        // --- VIEWER + MP3 LINKS (type-aware) ---
         const viewerLink = document.createElement('a');
-        viewerLink.href = item.viewer || "#";
-        viewerLink.target = "_blank";
-        viewerLink.textContent = "Viewer";
-
         const mp3Link = document.createElement('a');
-        mp3Link.href = item.url || "#";
-        mp3Link.target = "_blank";
-        mp3Link.textContent = "MP3";
+
+        // Viewer only for mp3 + html
+        if (fileType === "mp3" || fileType === "html") {
+            viewerLink.href = item.viewer || item.viewer_pages || "#";
+            viewerLink.target = "_blank";
+            viewerLink.textContent = "Viewer";
+        }
+
+        // MP3 only for mp3
+        if (fileType === "mp3") {
+            mp3Link.href = item.url || item.url_pages || item.url_raw || "#";
+            mp3Link.target = "_blank";
+            mp3Link.textContent = "MP3";
+        }
 
         // --- APPEND IN CORRECT ORDER ---
-        div.append(title, viewerLink, mp3Link, date, extra, sizeEl);
+        div.append(title);
+        if (viewerLink.href && viewerLink.href !== "#") div.append(viewerLink);
+        if (mp3Link.href && mp3Link.href !== "#") div.append(mp3Link);
+        div.append(date, extra, sizeEl);
+
         grid.appendChild(div);
     });
 
     container.appendChild(grid);
 }
-
 
 function filterAndRender() {
     const q = searchBox.value.toLowerCase();
