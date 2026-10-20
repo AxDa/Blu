@@ -783,6 +783,7 @@ function render(items) {
 
         const fileType = getFileType(item);
 
+        // --- THUMBNAIL ---
         const img = document.createElement('img');
 
         if (item.thumbnail && item.thumbnail.trim() !== "") {
@@ -805,9 +806,15 @@ function render(items) {
 
         if (!compactMode) div.appendChild(img);
 
-        // --- TITLE ---
-        const title = document.createElement('p');
+        // --- TITLE (MAIN LINK FOR ALL FILE TYPES) ---
+        const title = document.createElement('a');
         title.className = "item-title";
+        title.href =
+            item.url ||
+            item.url_pages ||
+            item.url_raw ||
+            "#";
+        title.target = "_blank";
         title.textContent = item.title;
 
         // --- DATE ---
@@ -830,7 +837,7 @@ function render(items) {
         sizeEl.className = "item-size";
         sizeEl.textContent = item.size ? `Size: ${item.size} bytes` : "";
 
-        // --- VIEWER + MP3 LINKS (type-aware) ---
+        // --- VIEWER + MP3 LINKS (TYPE-AWARE) ---
         const viewerLink = document.createElement('a');
         const mp3Link = document.createElement('a');
 
@@ -843,15 +850,21 @@ function render(items) {
 
         // MP3 only for mp3
         if (fileType === "mp3") {
-            mp3Link.href = item.url || item.url_pages || item.url_raw || "#";
+            mp3Link.href =
+                item.url ||
+                item.url_pages ||
+                item.url_raw ||
+                "#";
             mp3Link.target = "_blank";
             mp3Link.textContent = "MP3";
         }
 
         // --- APPEND IN CORRECT ORDER ---
         div.append(title);
+
         if (viewerLink.href && viewerLink.href !== "#") div.append(viewerLink);
         if (mp3Link.href && mp3Link.href !== "#") div.append(mp3Link);
+
         div.append(date, extra, sizeEl);
 
         grid.appendChild(div);
