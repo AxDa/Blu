@@ -767,7 +767,10 @@ function render(items) {
         const motifClass = `motif-${(item.motif || "unknown").replace(/\s+/g, '-')}`;
         const div = document.createElement('div');
         div.className = `item ${motifClass}`;
-
+		
+        // ⭐ REQUIRED — you accidentally removed this
+        const isAudio = isAudioEntry(item);
+		
         const img = document.createElement('img');
 
         if (item.thumbnail && item.thumbnail.trim() !== "") {
